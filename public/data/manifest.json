@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T11:29:06.110883Z",
+  "generatedAt": "2026-07-02T11:54:03.461781Z",
   "tables": {
     "articles": {
       "path": "/data/articles.json",
@@ -296,6 +296,38 @@
     "nightmare_cities": {
       "path": "/data/nightmare_cities.json",
       "rowCount": 12
+    },
+    "seven_hero_stars": {
+      "path": "/data/seven_hero_stars.json",
+      "rowCount": 7
+    },
+    "seven_hero_little_stars": {
+      "path": "/data/seven_hero_little_stars.json",
+      "rowCount": 42
+    },
+    "seven_hero_souls": {
+      "path": "/data/seven_hero_souls.json",
+      "rowCount": 8
+    },
+    "seven_hero_armies": {
+      "path": "/data/seven_hero_armies.json",
+      "rowCount": 21
+    },
+    "seven_hero_daily_awards": {
+      "path": "/data/seven_hero_daily_awards.json",
+      "rowCount": 7
+    },
+    "soul_collection_rnds": {
+      "path": "/data/soul_collection_rnds.json",
+      "rowCount": 633
+    },
+    "soul_collection_shops": {
+      "path": "/data/soul_collection_shops.json",
+      "rowCount": 21
+    },
+    "soul_collection_bases": {
+      "path": "/data/soul_collection_bases.json",
+      "rowCount": 3
     }
   }
 }

@@ -1,0 +1,1518 @@
+{
+  "table": "seven_hero_little_stars",
+  "rowCount": 42,
+  "rows": [
+    {
+      "id": 82300001,
+      "big_star": 82200001,
+      "sort": 1,
+      "pre_little_star": 0,
+      "is_last": 0,
+      "cost_soul_id": 82400001,
+      "cost_soul": 30,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 300
+        },
+        {
+          "addType": 20,
+          "addValue": 300
+        },
+        {
+          "addType": 17,
+          "addValue": 150
+        },
+        {
+          "addType": 21,
+          "addValue": 150
+        },
+        {
+          "addType": 101,
+          "addValue": 1800
+        },
+        {
+          "addType": 11,
+          "addValue": 150
+        }
+      ],
+      "little_star_name": "Espada #4 Spirit Star 1"
+    },
+    {
+      "id": 82300002,
+      "big_star": 82200001,
+      "sort": 2,
+      "pre_little_star": 82300001,
+      "is_last": 0,
+      "cost_soul_id": 82400001,
+      "cost_soul": 60,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 450
+        },
+        {
+          "addType": 20,
+          "addValue": 450
+        },
+        {
+          "addType": 17,
+          "addValue": 225
+        },
+        {
+          "addType": 21,
+          "addValue": 225
+        },
+        {
+          "addType": 101,
+          "addValue": 2700
+        },
+        {
+          "addType": 11,
+          "addValue": 225
+        }
+      ],
+      "little_star_name": "Espada #4 Spirit Star 2"
+    },
+    {
+      "id": 82300003,
+      "big_star": 82200001,
+      "sort": 3,
+      "pre_little_star": 82300002,
+      "is_last": 0,
+      "cost_soul_id": 82400001,
+      "cost_soul": 120,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 600
+        },
+        {
+          "addType": 20,
+          "addValue": 600
+        },
+        {
+          "addType": 17,
+          "addValue": 300
+        },
+        {
+          "addType": 21,
+          "addValue": 300
+        },
+        {
+          "addType": 101,
+          "addValue": 3600
+        },
+        {
+          "addType": 11,
+          "addValue": 300
+        }
+      ],
+      "little_star_name": "Espada #4 Spirit Star 3"
+    },
+    {
+      "id": 82300004,
+      "big_star": 82200001,
+      "sort": 4,
+      "pre_little_star": 82300003,
+      "is_last": 0,
+      "cost_soul_id": 82400001,
+      "cost_soul": 240,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 800
+        },
+        {
+          "addType": 20,
+          "addValue": 800
+        },
+        {
+          "addType": 17,
+          "addValue": 400
+        },
+        {
+          "addType": 21,
+          "addValue": 400
+        },
+        {
+          "addType": 101,
+          "addValue": 4800
+        },
+        {
+          "addType": 11,
+          "addValue": 400
+        }
+      ],
+      "little_star_name": "Espada #4 Spirit Star 4"
+    },
+    {
+      "id": 82300005,
+      "big_star": 82200001,
+      "sort": 5,
+      "pre_little_star": 82300004,
+      "is_last": 0,
+      "cost_soul_id": 82400001,
+      "cost_soul": 450,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1000
+        },
+        {
+          "addType": 20,
+          "addValue": 1000
+        },
+        {
+          "addType": 17,
+          "addValue": 500
+        },
+        {
+          "addType": 21,
+          "addValue": 500
+        },
+        {
+          "addType": 101,
+          "addValue": 6000
+        },
+        {
+          "addType": 11,
+          "addValue": 500
+        }
+      ],
+      "little_star_name": "Espada #4 Spirit Star 5"
+    },
+    {
+      "id": 82300006,
+      "big_star": 82200001,
+      "sort": 6,
+      "pre_little_star": 82300005,
+      "is_last": 1,
+      "cost_soul_id": 82400001,
+      "cost_soul": 900,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1000
+        },
+        {
+          "addType": 20,
+          "addValue": 1000
+        },
+        {
+          "addType": 17,
+          "addValue": 500
+        },
+        {
+          "addType": 21,
+          "addValue": 500
+        },
+        {
+          "addType": 101,
+          "addValue": 6000
+        },
+        {
+          "addType": 11,
+          "addValue": 500
+        }
+      ],
+      "little_star_name": "Espada #4 Spirit Star 6"
+    },
+    {
+      "id": 82300007,
+      "big_star": 82200002,
+      "sort": 1,
+      "pre_little_star": 0,
+      "is_last": 0,
+      "cost_soul_id": 82400002,
+      "cost_soul": 40,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 360
+        },
+        {
+          "addType": 20,
+          "addValue": 360
+        },
+        {
+          "addType": 17,
+          "addValue": 180
+        },
+        {
+          "addType": 21,
+          "addValue": 180
+        },
+        {
+          "addType": 101,
+          "addValue": 2160
+        },
+        {
+          "addType": 11,
+          "addValue": 180
+        }
+      ],
+      "little_star_name": "Espada #3 Spirit Star 1"
+    },
+    {
+      "id": 82300008,
+      "big_star": 82200002,
+      "sort": 2,
+      "pre_little_star": 82300007,
+      "is_last": 0,
+      "cost_soul_id": 82400002,
+      "cost_soul": 80,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 480
+        },
+        {
+          "addType": 20,
+          "addValue": 480
+        },
+        {
+          "addType": 17,
+          "addValue": 240
+        },
+        {
+          "addType": 21,
+          "addValue": 240
+        },
+        {
+          "addType": 101,
+          "addValue": 2880
+        },
+        {
+          "addType": 11,
+          "addValue": 240
+        }
+      ],
+      "little_star_name": "Espada #3 Spirit Star 2"
+    },
+    {
+      "id": 82300009,
+      "big_star": 82200002,
+      "sort": 3,
+      "pre_little_star": 82300008,
+      "is_last": 0,
+      "cost_soul_id": 82400002,
+      "cost_soul": 160,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 660
+        },
+        {
+          "addType": 20,
+          "addValue": 660
+        },
+        {
+          "addType": 17,
+          "addValue": 330
+        },
+        {
+          "addType": 21,
+          "addValue": 330
+        },
+        {
+          "addType": 101,
+          "addValue": 3960
+        },
+        {
+          "addType": 11,
+          "addValue": 330
+        }
+      ],
+      "little_star_name": "Espada #3 Spirit Star 3"
+    },
+    {
+      "id": 82300010,
+      "big_star": 82200002,
+      "sort": 4,
+      "pre_little_star": 82300009,
+      "is_last": 0,
+      "cost_soul_id": 82400002,
+      "cost_soul": 320,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 900
+        },
+        {
+          "addType": 20,
+          "addValue": 900
+        },
+        {
+          "addType": 17,
+          "addValue": 450
+        },
+        {
+          "addType": 21,
+          "addValue": 450
+        },
+        {
+          "addType": 101,
+          "addValue": 5400
+        },
+        {
+          "addType": 11,
+          "addValue": 450
+        }
+      ],
+      "little_star_name": "Espada #3 Spirit Star 4"
+    },
+    {
+      "id": 82300011,
+      "big_star": 82200002,
+      "sort": 5,
+      "pre_little_star": 82300010,
+      "is_last": 0,
+      "cost_soul_id": 82400002,
+      "cost_soul": 600,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1200
+        },
+        {
+          "addType": 20,
+          "addValue": 1200
+        },
+        {
+          "addType": 17,
+          "addValue": 600
+        },
+        {
+          "addType": 21,
+          "addValue": 600
+        },
+        {
+          "addType": 101,
+          "addValue": 7200
+        },
+        {
+          "addType": 11,
+          "addValue": 600
+        }
+      ],
+      "little_star_name": "Espada #3 Spirit Star 5"
+    },
+    {
+      "id": 82300012,
+      "big_star": 82200002,
+      "sort": 6,
+      "pre_little_star": 82300011,
+      "is_last": 1,
+      "cost_soul_id": 82400002,
+      "cost_soul": 1200,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1200
+        },
+        {
+          "addType": 20,
+          "addValue": 1200
+        },
+        {
+          "addType": 17,
+          "addValue": 600
+        },
+        {
+          "addType": 21,
+          "addValue": 600
+        },
+        {
+          "addType": 101,
+          "addValue": 7200
+        },
+        {
+          "addType": 11,
+          "addValue": 600
+        }
+      ],
+      "little_star_name": "Espada #3 Spirit Star 6"
+    },
+    {
+      "id": 82300013,
+      "big_star": 82200003,
+      "sort": 1,
+      "pre_little_star": 0,
+      "is_last": 0,
+      "cost_soul_id": 82400003,
+      "cost_soul": 75,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 420
+        },
+        {
+          "addType": 20,
+          "addValue": 420
+        },
+        {
+          "addType": 17,
+          "addValue": 210
+        },
+        {
+          "addType": 21,
+          "addValue": 210
+        },
+        {
+          "addType": 101,
+          "addValue": 2520
+        },
+        {
+          "addType": 11,
+          "addValue": 210
+        }
+      ],
+      "little_star_name": "Espada #2 Spirit Star 1"
+    },
+    {
+      "id": 82300014,
+      "big_star": 82200003,
+      "sort": 2,
+      "pre_little_star": 82300013,
+      "is_last": 0,
+      "cost_soul_id": 82400003,
+      "cost_soul": 125,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 540
+        },
+        {
+          "addType": 20,
+          "addValue": 540
+        },
+        {
+          "addType": 17,
+          "addValue": 270
+        },
+        {
+          "addType": 21,
+          "addValue": 270
+        },
+        {
+          "addType": 101,
+          "addValue": 3240
+        },
+        {
+          "addType": 11,
+          "addValue": 270
+        }
+      ],
+      "little_star_name": "Espada #2 Spirit Star 2"
+    },
+    {
+      "id": 82300015,
+      "big_star": 82200003,
+      "sort": 3,
+      "pre_little_star": 82300014,
+      "is_last": 0,
+      "cost_soul_id": 82400003,
+      "cost_soul": 200,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 720
+        },
+        {
+          "addType": 20,
+          "addValue": 720
+        },
+        {
+          "addType": 17,
+          "addValue": 360
+        },
+        {
+          "addType": 21,
+          "addValue": 360
+        },
+        {
+          "addType": 101,
+          "addValue": 4320
+        },
+        {
+          "addType": 11,
+          "addValue": 360
+        }
+      ],
+      "little_star_name": "Espada #2 Spirit Star 3"
+    },
+    {
+      "id": 82300016,
+      "big_star": 82200003,
+      "sort": 4,
+      "pre_little_star": 82300015,
+      "is_last": 0,
+      "cost_soul_id": 82400003,
+      "cost_soul": 400,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 960
+        },
+        {
+          "addType": 20,
+          "addValue": 960
+        },
+        {
+          "addType": 17,
+          "addValue": 480
+        },
+        {
+          "addType": 21,
+          "addValue": 480
+        },
+        {
+          "addType": 101,
+          "addValue": 5760
+        },
+        {
+          "addType": 11,
+          "addValue": 480
+        }
+      ],
+      "little_star_name": "Espada #2 Spirit Star 4"
+    },
+    {
+      "id": 82300017,
+      "big_star": 82200003,
+      "sort": 5,
+      "pre_little_star": 82300016,
+      "is_last": 0,
+      "cost_soul_id": 82400003,
+      "cost_soul": 800,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1280
+        },
+        {
+          "addType": 20,
+          "addValue": 1280
+        },
+        {
+          "addType": 17,
+          "addValue": 640
+        },
+        {
+          "addType": 21,
+          "addValue": 640
+        },
+        {
+          "addType": 101,
+          "addValue": 7680
+        },
+        {
+          "addType": 11,
+          "addValue": 640
+        }
+      ],
+      "little_star_name": "Espada #2 Spirit Star 5"
+    },
+    {
+      "id": 82300018,
+      "big_star": 82200003,
+      "sort": 6,
+      "pre_little_star": 82300017,
+      "is_last": 1,
+      "cost_soul_id": 82400003,
+      "cost_soul": 1600,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1280
+        },
+        {
+          "addType": 20,
+          "addValue": 1280
+        },
+        {
+          "addType": 17,
+          "addValue": 640
+        },
+        {
+          "addType": 21,
+          "addValue": 640
+        },
+        {
+          "addType": 101,
+          "addValue": 7680
+        },
+        {
+          "addType": 11,
+          "addValue": 640
+        }
+      ],
+      "little_star_name": "Espada #2 Spirit Star 6"
+    },
+    {
+      "id": 82300019,
+      "big_star": 82200004,
+      "sort": 1,
+      "pre_little_star": 0,
+      "is_last": 0,
+      "cost_soul_id": 82400004,
+      "cost_soul": 120,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 480
+        },
+        {
+          "addType": 20,
+          "addValue": 480
+        },
+        {
+          "addType": 17,
+          "addValue": 240
+        },
+        {
+          "addType": 21,
+          "addValue": 240
+        },
+        {
+          "addType": 101,
+          "addValue": 2880
+        },
+        {
+          "addType": 11,
+          "addValue": 240
+        }
+      ],
+      "little_star_name": "Espada #1 Spirit Star 1"
+    },
+    {
+      "id": 82300020,
+      "big_star": 82200004,
+      "sort": 2,
+      "pre_little_star": 82300019,
+      "is_last": 0,
+      "cost_soul_id": 82400004,
+      "cost_soul": 200,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 600
+        },
+        {
+          "addType": 20,
+          "addValue": 600
+        },
+        {
+          "addType": 17,
+          "addValue": 300
+        },
+        {
+          "addType": 21,
+          "addValue": 300
+        },
+        {
+          "addType": 101,
+          "addValue": 3600
+        },
+        {
+          "addType": 11,
+          "addValue": 300
+        }
+      ],
+      "little_star_name": "Espada #1 Spirit Star 2"
+    },
+    {
+      "id": 82300021,
+      "big_star": 82200004,
+      "sort": 3,
+      "pre_little_star": 82300020,
+      "is_last": 0,
+      "cost_soul_id": 82400004,
+      "cost_soul": 300,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 800
+        },
+        {
+          "addType": 20,
+          "addValue": 800
+        },
+        {
+          "addType": 17,
+          "addValue": 400
+        },
+        {
+          "addType": 21,
+          "addValue": 400
+        },
+        {
+          "addType": 101,
+          "addValue": 4800
+        },
+        {
+          "addType": 11,
+          "addValue": 400
+        }
+      ],
+      "little_star_name": "Espada #1 Spirit Star 3"
+    },
+    {
+      "id": 82300022,
+      "big_star": 82200004,
+      "sort": 4,
+      "pre_little_star": 82300021,
+      "is_last": 0,
+      "cost_soul_id": 82400004,
+      "cost_soul": 500,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1080
+        },
+        {
+          "addType": 20,
+          "addValue": 1080
+        },
+        {
+          "addType": 17,
+          "addValue": 540
+        },
+        {
+          "addType": 21,
+          "addValue": 540
+        },
+        {
+          "addType": 101,
+          "addValue": 6480
+        },
+        {
+          "addType": 11,
+          "addValue": 540
+        }
+      ],
+      "little_star_name": "Espada #1 Spirit Star 4"
+    },
+    {
+      "id": 82300023,
+      "big_star": 82200004,
+      "sort": 5,
+      "pre_little_star": 82300022,
+      "is_last": 0,
+      "cost_soul_id": 82400004,
+      "cost_soul": 1000,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1440
+        },
+        {
+          "addType": 20,
+          "addValue": 1440
+        },
+        {
+          "addType": 17,
+          "addValue": 720
+        },
+        {
+          "addType": 21,
+          "addValue": 720
+        },
+        {
+          "addType": 101,
+          "addValue": 8640
+        },
+        {
+          "addType": 11,
+          "addValue": 720
+        }
+      ],
+      "little_star_name": "Espada #1 Spirit Star 5"
+    },
+    {
+      "id": 82300024,
+      "big_star": 82200004,
+      "sort": 6,
+      "pre_little_star": 82300023,
+      "is_last": 1,
+      "cost_soul_id": 82400004,
+      "cost_soul": 2400,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1440
+        },
+        {
+          "addType": 20,
+          "addValue": 1440
+        },
+        {
+          "addType": 17,
+          "addValue": 720
+        },
+        {
+          "addType": 21,
+          "addValue": 720
+        },
+        {
+          "addType": 101,
+          "addValue": 8640
+        },
+        {
+          "addType": 11,
+          "addValue": 720
+        }
+      ],
+      "little_star_name": "Espada #1 Spirit Star 6"
+    },
+    {
+      "id": 82300025,
+      "big_star": 82200005,
+      "sort": 1,
+      "pre_little_star": 0,
+      "is_last": 0,
+      "cost_soul_id": 82400005,
+      "cost_soul": 150,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 480
+        },
+        {
+          "addType": 20,
+          "addValue": 480
+        },
+        {
+          "addType": 17,
+          "addValue": 240
+        },
+        {
+          "addType": 21,
+          "addValue": 240
+        },
+        {
+          "addType": 101,
+          "addValue": 2880
+        },
+        {
+          "addType": 11,
+          "addValue": 240
+        }
+      ],
+      "little_star_name": "Tōsen Spirit Star 1"
+    },
+    {
+      "id": 82300026,
+      "big_star": 82200005,
+      "sort": 2,
+      "pre_little_star": 82300025,
+      "is_last": 0,
+      "cost_soul_id": 82400005,
+      "cost_soul": 250,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 640
+        },
+        {
+          "addType": 20,
+          "addValue": 640
+        },
+        {
+          "addType": 17,
+          "addValue": 320
+        },
+        {
+          "addType": 21,
+          "addValue": 320
+        },
+        {
+          "addType": 101,
+          "addValue": 3840
+        },
+        {
+          "addType": 11,
+          "addValue": 320
+        }
+      ],
+      "little_star_name": "Tōsen Spirit Star 2"
+    },
+    {
+      "id": 82300027,
+      "big_star": 82200005,
+      "sort": 3,
+      "pre_little_star": 82300026,
+      "is_last": 0,
+      "cost_soul_id": 82400005,
+      "cost_soul": 450,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 900
+        },
+        {
+          "addType": 20,
+          "addValue": 900
+        },
+        {
+          "addType": 17,
+          "addValue": 450
+        },
+        {
+          "addType": 21,
+          "addValue": 450
+        },
+        {
+          "addType": 101,
+          "addValue": 5400
+        },
+        {
+          "addType": 11,
+          "addValue": 450
+        }
+      ],
+      "little_star_name": "Tōsen Spirit Star 3"
+    },
+    {
+      "id": 82300028,
+      "big_star": 82200005,
+      "sort": 4,
+      "pre_little_star": 82300027,
+      "is_last": 0,
+      "cost_soul_id": 82400005,
+      "cost_soul": 800,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1280
+        },
+        {
+          "addType": 20,
+          "addValue": 1280
+        },
+        {
+          "addType": 17,
+          "addValue": 640
+        },
+        {
+          "addType": 21,
+          "addValue": 640
+        },
+        {
+          "addType": 101,
+          "addValue": 7680
+        },
+        {
+          "addType": 11,
+          "addValue": 640
+        }
+      ],
+      "little_star_name": "Tōsen Spirit Star 4"
+    },
+    {
+      "id": 82300029,
+      "big_star": 82200005,
+      "sort": 5,
+      "pre_little_star": 82300028,
+      "is_last": 0,
+      "cost_soul_id": 82400005,
+      "cost_soul": 1400,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1600
+        },
+        {
+          "addType": 20,
+          "addValue": 1600
+        },
+        {
+          "addType": 17,
+          "addValue": 800
+        },
+        {
+          "addType": 21,
+          "addValue": 800
+        },
+        {
+          "addType": 101,
+          "addValue": 9600
+        },
+        {
+          "addType": 11,
+          "addValue": 800
+        }
+      ],
+      "little_star_name": "Tōsen Spirit Star 5"
+    },
+    {
+      "id": 82300030,
+      "big_star": 82200005,
+      "sort": 6,
+      "pre_little_star": 82300029,
+      "is_last": 1,
+      "cost_soul_id": 82400005,
+      "cost_soul": 3000,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1600
+        },
+        {
+          "addType": 20,
+          "addValue": 1600
+        },
+        {
+          "addType": 17,
+          "addValue": 800
+        },
+        {
+          "addType": 21,
+          "addValue": 800
+        },
+        {
+          "addType": 101,
+          "addValue": 9600
+        },
+        {
+          "addType": 11,
+          "addValue": 800
+        }
+      ],
+      "little_star_name": "Tōsen Spirit Star 6"
+    },
+    {
+      "id": 82300031,
+      "big_star": 82200006,
+      "sort": 1,
+      "pre_little_star": 0,
+      "is_last": 0,
+      "cost_soul_id": 82400006,
+      "cost_soul": 200,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 540
+        },
+        {
+          "addType": 20,
+          "addValue": 540
+        },
+        {
+          "addType": 17,
+          "addValue": 270
+        },
+        {
+          "addType": 21,
+          "addValue": 270
+        },
+        {
+          "addType": 101,
+          "addValue": 3240
+        },
+        {
+          "addType": 11,
+          "addValue": 270
+        }
+      ],
+      "little_star_name": "Gin Spirit Star 1"
+    },
+    {
+      "id": 82300032,
+      "big_star": 82200006,
+      "sort": 2,
+      "pre_little_star": 82300031,
+      "is_last": 0,
+      "cost_soul_id": 82400006,
+      "cost_soul": 320,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 720
+        },
+        {
+          "addType": 20,
+          "addValue": 720
+        },
+        {
+          "addType": 17,
+          "addValue": 360
+        },
+        {
+          "addType": 21,
+          "addValue": 360
+        },
+        {
+          "addType": 101,
+          "addValue": 4320
+        },
+        {
+          "addType": 11,
+          "addValue": 360
+        }
+      ],
+      "little_star_name": "Gin Spirit Star 2"
+    },
+    {
+      "id": 82300033,
+      "big_star": 82200006,
+      "sort": 3,
+      "pre_little_star": 82300032,
+      "is_last": 0,
+      "cost_soul_id": 82400006,
+      "cost_soul": 540,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1000
+        },
+        {
+          "addType": 20,
+          "addValue": 1000
+        },
+        {
+          "addType": 17,
+          "addValue": 500
+        },
+        {
+          "addType": 21,
+          "addValue": 500
+        },
+        {
+          "addType": 101,
+          "addValue": 6000
+        },
+        {
+          "addType": 11,
+          "addValue": 500
+        }
+      ],
+      "little_star_name": "Gin Spirit Star 3"
+    },
+    {
+      "id": 82300034,
+      "big_star": 82200006,
+      "sort": 4,
+      "pre_little_star": 82300033,
+      "is_last": 0,
+      "cost_soul_id": 82400006,
+      "cost_soul": 1000,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1440
+        },
+        {
+          "addType": 20,
+          "addValue": 1440
+        },
+        {
+          "addType": 17,
+          "addValue": 720
+        },
+        {
+          "addType": 21,
+          "addValue": 720
+        },
+        {
+          "addType": 101,
+          "addValue": 8640
+        },
+        {
+          "addType": 11,
+          "addValue": 720
+        }
+      ],
+      "little_star_name": "Gin Spirit Star 4"
+    },
+    {
+      "id": 82300035,
+      "big_star": 82200006,
+      "sort": 5,
+      "pre_little_star": 82300034,
+      "is_last": 0,
+      "cost_soul_id": 82400006,
+      "cost_soul": 2000,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1800
+        },
+        {
+          "addType": 20,
+          "addValue": 1800
+        },
+        {
+          "addType": 17,
+          "addValue": 900
+        },
+        {
+          "addType": 21,
+          "addValue": 900
+        },
+        {
+          "addType": 101,
+          "addValue": 10800
+        },
+        {
+          "addType": 11,
+          "addValue": 900
+        }
+      ],
+      "little_star_name": "Gin Spirit Star 5"
+    },
+    {
+      "id": 82300036,
+      "big_star": 82200006,
+      "sort": 6,
+      "pre_little_star": 82300035,
+      "is_last": 1,
+      "cost_soul_id": 82400006,
+      "cost_soul": 4000,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1800
+        },
+        {
+          "addType": 20,
+          "addValue": 1800
+        },
+        {
+          "addType": 17,
+          "addValue": 900
+        },
+        {
+          "addType": 21,
+          "addValue": 900
+        },
+        {
+          "addType": 101,
+          "addValue": 10800
+        },
+        {
+          "addType": 11,
+          "addValue": 900
+        }
+      ],
+      "little_star_name": "Gin Spirit Star 6"
+    },
+    {
+      "id": 82300037,
+      "big_star": 82200007,
+      "sort": 1,
+      "pre_little_star": 0,
+      "is_last": 0,
+      "cost_soul_id": 82400007,
+      "cost_soul": 300,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 600
+        },
+        {
+          "addType": 20,
+          "addValue": 600
+        },
+        {
+          "addType": 17,
+          "addValue": 300
+        },
+        {
+          "addType": 21,
+          "addValue": 300
+        },
+        {
+          "addType": 101,
+          "addValue": 3600
+        },
+        {
+          "addType": 11,
+          "addValue": 300
+        }
+      ],
+      "little_star_name": "Aizen Spirit Star 1"
+    },
+    {
+      "id": 82300038,
+      "big_star": 82200007,
+      "sort": 2,
+      "pre_little_star": 82300037,
+      "is_last": 0,
+      "cost_soul_id": 82400007,
+      "cost_soul": 500,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 900
+        },
+        {
+          "addType": 20,
+          "addValue": 900
+        },
+        {
+          "addType": 17,
+          "addValue": 450
+        },
+        {
+          "addType": 21,
+          "addValue": 450
+        },
+        {
+          "addType": 101,
+          "addValue": 5400
+        },
+        {
+          "addType": 11,
+          "addValue": 450
+        }
+      ],
+      "little_star_name": "Aizen Spirit Star 2"
+    },
+    {
+      "id": 82300039,
+      "big_star": 82200007,
+      "sort": 3,
+      "pre_little_star": 82300038,
+      "is_last": 0,
+      "cost_soul_id": 82400007,
+      "cost_soul": 800,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1200
+        },
+        {
+          "addType": 20,
+          "addValue": 1200
+        },
+        {
+          "addType": 17,
+          "addValue": 600
+        },
+        {
+          "addType": 21,
+          "addValue": 600
+        },
+        {
+          "addType": 101,
+          "addValue": 7200
+        },
+        {
+          "addType": 11,
+          "addValue": 600
+        }
+      ],
+      "little_star_name": "Aizen Spirit Star 3"
+    },
+    {
+      "id": 82300040,
+      "big_star": 82200007,
+      "sort": 4,
+      "pre_little_star": 82300039,
+      "is_last": 0,
+      "cost_soul_id": 82400007,
+      "cost_soul": 1500,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1600
+        },
+        {
+          "addType": 20,
+          "addValue": 1600
+        },
+        {
+          "addType": 17,
+          "addValue": 800
+        },
+        {
+          "addType": 21,
+          "addValue": 800
+        },
+        {
+          "addType": 101,
+          "addValue": 9600
+        },
+        {
+          "addType": 11,
+          "addValue": 800
+        }
+      ],
+      "little_star_name": "Aizen Spirit Star 4"
+    },
+    {
+      "id": 82300041,
+      "big_star": 82200007,
+      "sort": 5,
+      "pre_little_star": 82300040,
+      "is_last": 0,
+      "cost_soul_id": 82400007,
+      "cost_soul": 2700,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 2000
+        },
+        {
+          "addType": 20,
+          "addValue": 2000
+        },
+        {
+          "addType": 17,
+          "addValue": 1000
+        },
+        {
+          "addType": 21,
+          "addValue": 1000
+        },
+        {
+          "addType": 101,
+          "addValue": 12000
+        },
+        {
+          "addType": 11,
+          "addValue": 1000
+        }
+      ],
+      "little_star_name": "Aizen Spirit Star 5"
+    },
+    {
+      "id": 82300042,
+      "big_star": 82200007,
+      "sort": 6,
+      "pre_little_star": 82300041,
+      "is_last": 1,
+      "cost_soul_id": 82400007,
+      "cost_soul": 5000,
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 2000
+        },
+        {
+          "addType": 20,
+          "addValue": 2000
+        },
+        {
+          "addType": 17,
+          "addValue": 1000
+        },
+        {
+          "addType": 21,
+          "addValue": 1000
+        },
+        {
+          "addType": 101,
+          "addValue": 12000
+        },
+        {
+          "addType": 11,
+          "addValue": 1000
+        }
+      ],
+      "little_star_name": "Aizen Spirit Star 6"
+    }
+  ]
+}

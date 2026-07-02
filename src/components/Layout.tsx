@@ -33,7 +33,9 @@ import {
   Wand2,
   Sparkles,
   HeartHandshake,
-  Trophy
+  Trophy,
+  Star,
+  Target
 } from 'lucide-react';
 
 interface LayoutProps {
@@ -142,6 +144,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     //{ name: 'Culling Abyss Tower', to: '/tools/culling-tower', icon: Swords }, // TODO: unclear
     //{ name: 'Equip Forge Planner', to: '/tools/forge-planner', icon: Sparkles }, // TODO: unclear
     //{ name: 'Nightmare Campaign', to: '/tools/nightmare-realms', icon: Globe }, // TODO: fix
+    { name: 'Seven Souls Altar', to: '/tools/seven-souls', icon: Star },
   ];
 
   return (

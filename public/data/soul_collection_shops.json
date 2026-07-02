@@ -1,0 +1,195 @@
+{
+  "table": "soul_collection_shops",
+  "rowCount": 21,
+  "rows": [
+    {
+      "id": 12000001,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100427,
+        "amount": 1
+      },
+      "frequency": 1
+    },
+    {
+      "id": 12000002,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100408,
+        "amount": 1
+      },
+      "frequency": 1
+    },
+    {
+      "id": 12000019,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100080,
+        "amount": 1
+      },
+      "frequency": 1
+    },
+    {
+      "id": 12000020,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100081,
+        "amount": 1
+      },
+      "frequency": 1
+    },
+    {
+      "id": 12000021,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100331,
+        "amount": 1
+      },
+      "frequency": 1
+    },
+    {
+      "id": 12000003,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14800010,
+        "amount": 4
+      },
+      "frequency": 1
+    },
+    {
+      "id": 12000004,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14800037,
+        "amount": 2
+      },
+      "frequency": 1
+    },
+    {
+      "id": 12000005,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14800038,
+        "amount": 1
+      },
+      "frequency": 1
+    },
+    {
+      "id": 12000006,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100690,
+        "amount": 1000
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000007,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100600,
+        "amount": 200
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000008,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100594,
+        "amount": 300
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000009,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100595,
+        "amount": 200
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000010,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100593,
+        "amount": 200
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000011,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14100589,
+        "amount": 400
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000012,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14120008,
+        "amount": 10
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000013,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14151504,
+        "amount": 1
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000014,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14320093,
+        "amount": 24
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000015,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14320094,
+        "amount": 20
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000016,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14320095,
+        "amount": 16
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000017,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14320096,
+        "amount": 12
+      },
+      "frequency": 0
+    },
+    {
+      "id": 12000018,
+      "exchange_reward": {
+        "type": 1,
+        "code": 14320097,
+        "amount": 8
+      },
+      "frequency": 0
+    }
+  ]
+}

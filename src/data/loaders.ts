@@ -8,7 +8,9 @@ import {
   TreasureUpgrade, SpiritSchool, SpiritSchoolExp, Butterfly, ButterflyFeeding, BlackMarketItem,
   Award, Enemy, EnemyArmy, ConfigValue, OrganizationBase, OrganizationAddition, OrganizationDevotion, VipConfig,
   OrnamentValue, OrnamentUpgrade, StarMap, StarPoint, TemplePoint, TempleValue, TemplePVP, TemplePliesNumber,
-  Military, CullingMagic, CullingStage, EquipForging, EquipAdvancement, NightmarePoint, NightmareCity
+  Military, CullingMagic, CullingStage, EquipForging, EquipAdvancement, NightmarePoint, NightmareCity,
+  SevenHeroStar, SevenHeroLittleStar, SevenHeroSoul, SevenHeroArmy, SevenHeroDailyAward,
+  SoulCollectionRnd, SoulCollectionShop, SoulCollectionBase
 } from '../types/db';
 
 const cache: { [key: string]: any } = {};
@@ -333,6 +335,38 @@ export async function loadNightmarePoints(): Promise<TableJson<NightmarePoint>> 
 
 export async function loadNightmareCities(): Promise<TableJson<NightmareCity>> {
   return fetchWithCache<TableJson<NightmareCity>>('data/nightmare_cities.json');
+}
+
+export async function loadSevenHeroStars(): Promise<TableJson<SevenHeroStar>> {
+  return fetchWithCache<TableJson<SevenHeroStar>>('data/seven_hero_stars.json');
+}
+
+export async function loadSevenHeroLittleStars(): Promise<TableJson<SevenHeroLittleStar>> {
+  return fetchWithCache<TableJson<SevenHeroLittleStar>>('data/seven_hero_little_stars.json');
+}
+
+export async function loadSevenHeroSouls(): Promise<TableJson<SevenHeroSoul>> {
+  return fetchWithCache<TableJson<SevenHeroSoul>>('data/seven_hero_souls.json');
+}
+
+export async function loadSevenHeroArmies(): Promise<TableJson<SevenHeroArmy>> {
+  return fetchWithCache<TableJson<SevenHeroArmy>>('data/seven_hero_armies.json');
+}
+
+export async function loadSevenHeroDailyAwards(): Promise<TableJson<SevenHeroDailyAward>> {
+  return fetchWithCache<TableJson<SevenHeroDailyAward>>('data/seven_hero_daily_awards.json');
+}
+
+export async function loadSoulCollectionRnds(): Promise<TableJson<SoulCollectionRnd>> {
+  return fetchWithCache<TableJson<SoulCollectionRnd>>('data/soul_collection_rnds.json');
+}
+
+export async function loadSoulCollectionShops(): Promise<TableJson<SoulCollectionShop>> {
+  return fetchWithCache<TableJson<SoulCollectionShop>>('data/soul_collection_shops.json');
+}
+
+export async function loadSoulCollectionBases(): Promise<TableJson<SoulCollectionBase>> {
+  return fetchWithCache<TableJson<SoulCollectionBase>>('data/soul_collection_bases.json');
 }
 
 

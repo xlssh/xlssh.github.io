@@ -347,6 +347,38 @@ def main():
         "path": "/data/nightmare_cities.json",
         "rowCount": 12
     }
+    manifest_tables["seven_hero_stars"] = {
+        "path": "/data/seven_hero_stars.json",
+        "rowCount": 7
+    }
+    manifest_tables["seven_hero_little_stars"] = {
+        "path": "/data/seven_hero_little_stars.json",
+        "rowCount": 42
+    }
+    manifest_tables["seven_hero_souls"] = {
+        "path": "/data/seven_hero_souls.json",
+        "rowCount": 8
+    }
+    manifest_tables["seven_hero_armies"] = {
+        "path": "/data/seven_hero_armies.json",
+        "rowCount": 21
+    }
+    manifest_tables["seven_hero_daily_awards"] = {
+        "path": "/data/seven_hero_daily_awards.json",
+        "rowCount": 7
+    }
+    manifest_tables["soul_collection_rnds"] = {
+        "path": "/data/soul_collection_rnds.json",
+        "rowCount": 633
+    }
+    manifest_tables["soul_collection_shops"] = {
+        "path": "/data/soul_collection_shops.json",
+        "rowCount": 21
+    }
+    manifest_tables["soul_collection_bases"] = {
+        "path": "/data/soul_collection_bases.json",
+        "rowCount": 3
+    }
     manifest_data = {
         "generatedAt": generated_at,
         "tables": manifest_tables

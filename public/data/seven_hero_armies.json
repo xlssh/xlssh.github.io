@@ -1,0 +1,447 @@
+{
+  "table": "seven_hero_armies",
+  "rowCount": 21,
+  "rows": [
+    {
+      "id": 82000001,
+      "name": "Vasto Lorde",
+      "seven_hero": 82100001,
+      "pre_point": 0,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 1,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 20
+        }
+      ],
+      "image": 12710001,
+      "model": 12710001
+    },
+    {
+      "id": 82000002,
+      "name": "Vasto Lorde Elite",
+      "seven_hero": 82100001,
+      "pre_point": 82000001,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 2,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 20
+        }
+      ],
+      "image": 12710002,
+      "model": 12710002
+    },
+    {
+      "id": 82000003,
+      "name": "Espada #4",
+      "seven_hero": 82100001,
+      "pre_point": 82000002,
+      "is_seven_hero": 1,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 3,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 20
+        }
+      ],
+      "image": 12710003,
+      "model": 12710003
+    },
+    {
+      "id": 82000004,
+      "name": "Adjuchas",
+      "seven_hero": 82100002,
+      "pre_point": 82000003,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 1,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 30
+        }
+      ],
+      "image": 12710004,
+      "model": 12710004
+    },
+    {
+      "id": 82000005,
+      "name": "Adjuchas Elite",
+      "seven_hero": 82100002,
+      "pre_point": 82000004,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 2,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 30
+        }
+      ],
+      "image": 12710005,
+      "model": 12710005
+    },
+    {
+      "id": 82000006,
+      "name": "Espada #3",
+      "seven_hero": 82100002,
+      "pre_point": 82000005,
+      "is_seven_hero": 1,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 3,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 45
+        }
+      ],
+      "image": 12710006,
+      "model": 12710006
+    },
+    {
+      "id": 82000007,
+      "name": "Arrancar",
+      "seven_hero": 82100003,
+      "pre_point": 82000006,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 1,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 45
+        }
+      ],
+      "image": 12710007,
+      "model": 12710007
+    },
+    {
+      "id": 82000008,
+      "name": "Arrancar Elite",
+      "seven_hero": 82100003,
+      "pre_point": 82000007,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 2,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 45
+        }
+      ],
+      "image": 12710008,
+      "model": 12710008
+    },
+    {
+      "id": 82000009,
+      "name": "Espada #2",
+      "seven_hero": 82100003,
+      "pre_point": 82000008,
+      "is_seven_hero": 1,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 3,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 75
+        }
+      ],
+      "image": 12710009,
+      "model": 12710009
+    },
+    {
+      "id": 82000010,
+      "name": "Visor",
+      "seven_hero": 82100004,
+      "pre_point": 82000009,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 1,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 75
+        }
+      ],
+      "image": 12710010,
+      "model": 12710010
+    },
+    {
+      "id": 82000011,
+      "name": "Visor Elite",
+      "seven_hero": 82100004,
+      "pre_point": 82000010,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 2,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 75
+        }
+      ],
+      "image": 12710011,
+      "model": 12710011
+    },
+    {
+      "id": 82000012,
+      "name": "Espada #1",
+      "seven_hero": 82100004,
+      "pre_point": 82000011,
+      "is_seven_hero": 1,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 3,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 90
+        }
+      ],
+      "image": 12710012,
+      "model": 12710012
+    },
+    {
+      "id": 82000013,
+      "name": "Shinigami",
+      "seven_hero": 82100005,
+      "pre_point": 82000012,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 1,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 90
+        }
+      ],
+      "image": 12710013,
+      "model": 12710013
+    },
+    {
+      "id": 82000014,
+      "name": "Shinigami Elite",
+      "seven_hero": 82100005,
+      "pre_point": 82000013,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 2,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 90
+        }
+      ],
+      "image": 12710014,
+      "model": 12710014
+    },
+    {
+      "id": 82000015,
+      "name": "Tōsen",
+      "seven_hero": 82100005,
+      "pre_point": 82000014,
+      "is_seven_hero": 1,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 3,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 120
+        }
+      ],
+      "image": 12710015,
+      "model": 12710015
+    },
+    {
+      "id": 82000016,
+      "name": "Executor ",
+      "seven_hero": 82100006,
+      "pre_point": 82000015,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 1,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 120
+        }
+      ],
+      "image": 12710016,
+      "model": 12710016
+    },
+    {
+      "id": 82000017,
+      "name": "Executor Elite",
+      "seven_hero": 82100006,
+      "pre_point": 82000016,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 2,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 120
+        }
+      ],
+      "image": 12710017,
+      "model": 12710017
+    },
+    {
+      "id": 82000018,
+      "name": "Gin",
+      "seven_hero": 82100006,
+      "pre_point": 82000017,
+      "is_seven_hero": 1,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 3,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 150
+        }
+      ],
+      "image": 12710018,
+      "model": 12710018
+    },
+    {
+      "id": 82000019,
+      "name": "Dordoni Alessandro Del Socaccio",
+      "seven_hero": 82100007,
+      "pre_point": 82000018,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 1,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 150
+        }
+      ],
+      "image": 12710019,
+      "model": 12710019
+    },
+    {
+      "id": 82000020,
+      "name": "Cirucci Thunderwitch",
+      "seven_hero": 82100007,
+      "pre_point": 82000019,
+      "is_seven_hero": 0,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 2,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 150
+        }
+      ],
+      "image": 12710020,
+      "model": 12710020
+    },
+    {
+      "id": 82000021,
+      "name": "Aizen",
+      "seven_hero": 82100007,
+      "pre_point": 82000020,
+      "is_seven_hero": 1,
+      "open_level": 70,
+      "limit_level": 159,
+      "sort_number": 3,
+      "one_win_buff": "[{\"target\":18,\"addType\":104,\"addValue\":50},{\"target\":11,\"addType\":104,\"addValue\":-50}]",
+      "one_fail_buff": "[{\"target\":18,\"addType\":104,\"addValue\":-50},{\"target\":11,\"addType\":104,\"addValue\":50}]",
+      "many_win_reward": [
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 240
+        }
+      ],
+      "image": 12710021,
+      "model": 12710021
+    }
+  ]
+}

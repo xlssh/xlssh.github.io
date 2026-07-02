@@ -1,0 +1,62 @@
+{
+  "table": "seven_hero_souls",
+  "rowCount": 8,
+  "rows": [
+    {
+      "id": 82400001,
+      "hero_id": 82100001,
+      "soul_tips": "You can get this by defeating Vasto Lorde and Espada #4 and through Daily Swallow, use to activate Espada #4 Spirit Star.",
+      "name": "Espada #4 Hollow Soul",
+      "color": "0xFF00FF"
+    },
+    {
+      "id": 82400002,
+      "hero_id": 82100002,
+      "soul_tips": "You can get this by defeating Adjuchas and Espada #3 and through Daily Swallow, use to activate Espada #3 Spirit Star.",
+      "name": "Espada #3 Hollow Soul",
+      "color": "0x66FFFF"
+    },
+    {
+      "id": 82400003,
+      "hero_id": 82100003,
+      "soul_tips": "You can get this by defeating Arrancar and Espada #2 and through Daily Swallow, use to activate Espada #2 Spirit Star.",
+      "name": "Espada #2 Hollow Soul",
+      "color": "0x00FF99"
+    },
+    {
+      "id": 82400004,
+      "hero_id": 82100004,
+      "soul_tips": "You can get this by defeating Visor and Espada #1 and through Daily Swallow, use to activate Espada #1 Spirit Star.",
+      "name": "Espada #1 Hollow Soul",
+      "color": "0xCCFF00"
+    },
+    {
+      "id": 82400005,
+      "hero_id": 82100005,
+      "soul_tips": "You can get this by defeating Shinigami and Tōsen and through Daily Swallow, use to activate Tōsen Spirit Star.",
+      "name": "Tōsen Hollow Soul",
+      "color": "0xFF0000"
+    },
+    {
+      "id": 82400006,
+      "hero_id": 82100006,
+      "soul_tips": "You can get this by defeating Executor and Gin and through Daily Swallow, use to activate Gin Spirit Star.",
+      "name": "Gin Hollow Soul",
+      "color": "0xFF9900"
+    },
+    {
+      "id": 82400007,
+      "hero_id": 82100007,
+      "soul_tips": "You can get this by defeating Dordoni, Cirucci and Aizen and through Daily Swallow, use to activate Aizen Spirit Star.",
+      "name": "Aizen Hollow Soul",
+      "color": "0xFFCC00"
+    },
+    {
+      "id": 82400100,
+      "hero_id": 0,
+      "soul_tips": "Very rare and mysterious Hōgyoku Hollow Soul, legend is only you can get it, and can replace any type of Hollow Soul.",
+      "name": "Hōgyoku Hollow Soul",
+      "color": "0xFF99CC"
+    }
+  ]
+}

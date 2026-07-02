@@ -1,0 +1,8532 @@
+{
+  "table": "seven_hero_daily_awards",
+  "rowCount": 7,
+  "rows": [
+    {
+      "id": 82100001,
+      "name": "Espada #4 ",
+      "free_count": 1,
+      "rewards": [
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 13,
+          "amount": 15
+        }
+      ],
+      "cost": [
+        0,
+        10,
+        10,
+        10,
+        10,
+        20,
+        20,
+        30,
+        30,
+        40,
+        40,
+        60,
+        60,
+        80,
+        80,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        150,
+        150,
+        150,
+        150,
+        150,
+        200,
+        200,
+        200,
+        200,
+        200,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800
+      ],
+      "crit": "[0,0.4,0.4,0.6,0.4,0.4,0.6,0.4,0.4,0.4,0.6,0.35,0.35,0.525,0.35,0.35,0.35,0.525,0.35,0.35,0.525,0.3,0.3,0.3,0.45,0.3,0.3,0.45,0.3,0.3,0.3,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25]",
+      "starame": "Espada #4 Spirit Star",
+      "tips": "Ulquiorra is a slender, yet fairly muscular, male Arrancar of average height with a melancholic appearance. Ulquiorra is a very cold, callous, and dispassionate figure, and is rather aloof, brooding, and indifferent, willing to harm both his comrades and enemies should they get in his way. He refers to anyone he does not find interesting as \"trash\", and treats them as expendable. Despite this, like most of the other top Espada, he is not particularly violent, and will only fight when provoked or ordered to by Aizen."
+    },
+    {
+      "id": 82100002,
+      "name": "Espada #3 ",
+      "free_count": 1,
+      "rewards": [
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 14,
+          "amount": 15
+        }
+      ],
+      "cost": [
+        0,
+        10,
+        10,
+        10,
+        10,
+        20,
+        20,
+        30,
+        30,
+        40,
+        40,
+        60,
+        60,
+        80,
+        80,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        150,
+        150,
+        150,
+        150,
+        150,
+        200,
+        200,
+        200,
+        200,
+        200,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800
+      ],
+      "crit": "[0,0.4,0.4,0.6,0.4,0.4,0.6,0.4,0.4,0.4,0.6,0.35,0.35,0.525,0.35,0.35,0.35,0.525,0.35,0.35,0.525,0.3,0.3,0.3,0.45,0.3,0.3,0.45,0.3,0.3,0.3,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25]",
+      "starame": "Espada #3 Spirit Star",
+      "tips": "Nelliel is a female Arrancar that has hazel eyes and short green hair. In her child form, her eyes are incredibly wide, the canines on her lower jaw are larger than usual, and the remains of her Hollow mask make up a cartoon-like skull which sits on the top of her head.Her true form is that of a fully-grown curvaceous and well-endowed adult with long waving greenish-blue hair, retaining similar features to her child form."
+    },
+    {
+      "id": 82100003,
+      "name": "Espada #2 ",
+      "free_count": 1,
+      "rewards": [
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 15,
+          "amount": 15
+        }
+      ],
+      "cost": [
+        0,
+        10,
+        10,
+        10,
+        10,
+        20,
+        20,
+        30,
+        30,
+        40,
+        40,
+        60,
+        60,
+        80,
+        80,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        150,
+        150,
+        150,
+        150,
+        150,
+        200,
+        200,
+        200,
+        200,
+        200,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800
+      ],
+      "crit": "[0,0.4,0.4,0.6,0.4,0.4,0.6,0.4,0.4,0.4,0.6,0.35,0.35,0.525,0.35,0.35,0.35,0.525,0.35,0.35,0.525,0.3,0.3,0.3,0.45,0.3,0.3,0.45,0.3,0.3,0.3,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25]",
+      "starame": "Espada #2 Spirit Star",
+      "tips": "Baraggan has the appearance of an elderly man, with a white mustache and white hair. His face is lined by large scars on the left side of his chin and across his right eye. The remnants of his Hollow mask take the form of a five-pointed crown just above his forehead. Baraggan is boastful, arrogant, stubborn, and serious. He does not hesitate to impose his perceived authority over others, having taken the role of leader after Sōsuke Aizen was trapped. Baraggan refers to Aizen as \"the Boss\" and to his opponents as \"ants\"; his Fracción refer to him as \"his majesty\"."
+    },
+    {
+      "id": 82100004,
+      "name": "Espada #1 ",
+      "free_count": 1,
+      "rewards": [
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 16,
+          "amount": 15
+        }
+      ],
+      "cost": [
+        0,
+        10,
+        10,
+        10,
+        10,
+        20,
+        20,
+        30,
+        30,
+        40,
+        40,
+        60,
+        60,
+        80,
+        80,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        150,
+        150,
+        150,
+        150,
+        150,
+        200,
+        200,
+        200,
+        200,
+        200,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800
+      ],
+      "crit": "[0,0.4,0.4,0.6,0.4,0.4,0.6,0.4,0.4,0.4,0.6,0.35,0.35,0.525,0.35,0.35,0.35,0.525,0.35,0.35,0.525,0.3,0.3,0.3,0.45,0.3,0.3,0.45,0.3,0.3,0.3,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25]",
+      "starame": "Espada #1 Spirit Star",
+      "tips": "Starrk has blue-gray eyes and wavy, dark brown hair, which ends at the base of his neck, is always unkempt, and is parted down the middle. He has a faded goatee. Starrk is a lazy and unenthusiastic man who spends much of his time asleep, and no one, except Lilynette Gingerbuck, his other half, appears to try and stop him from doing so."
+    },
+    {
+      "id": 82100005,
+      "name": "Tōsen ",
+      "free_count": 1,
+      "rewards": [
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 17,
+          "amount": 15
+        }
+      ],
+      "cost": [
+        0,
+        10,
+        10,
+        10,
+        10,
+        20,
+        20,
+        30,
+        30,
+        40,
+        40,
+        60,
+        60,
+        80,
+        80,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        150,
+        150,
+        150,
+        150,
+        150,
+        200,
+        200,
+        200,
+        200,
+        200,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800
+      ],
+      "crit": "[0,0.4,0.4,0.6,0.4,0.4,0.6,0.4,0.4,0.4,0.6,0.35,0.35,0.525,0.35,0.35,0.35,0.525,0.35,0.35,0.525,0.3,0.3,0.3,0.45,0.3,0.3,0.45,0.3,0.3,0.3,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25]",
+      "starame": "Tōsen Spirit Star",
+      "tips": "Kaname Tōsen was the captain of the 9th Division of the Gotei 13 until he betrayed Soul Society. Tōsen dedicated his life to following the path with the least bloodshed when a woman special to him died."
+    },
+    {
+      "id": 82100006,
+      "name": "Gin ",
+      "free_count": 1,
+      "rewards": [
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 18,
+          "amount": 15
+        }
+      ],
+      "cost": [
+        0,
+        10,
+        10,
+        10,
+        10,
+        20,
+        20,
+        30,
+        30,
+        40,
+        40,
+        60,
+        60,
+        80,
+        80,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        150,
+        150,
+        150,
+        150,
+        150,
+        200,
+        200,
+        200,
+        200,
+        200,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800
+      ],
+      "crit": "[0,0.4,0.4,0.6,0.4,0.4,0.6,0.4,0.4,0.4,0.6,0.35,0.35,0.525,0.35,0.35,0.35,0.525,0.35,0.35,0.525,0.3,0.3,0.3,0.45,0.3,0.3,0.45,0.3,0.3,0.3,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25]",
+      "starame": "Gin Spirit Star",
+      "tips": "Gin Ichimaru was the captain of the 3rd Division of the Gotei 13 until he betrayed Soul Society. Gin is fairly ordinary in terms of clothing, and he doesn't wear any unique items. His overall appearance, however, is not as normal. He keeps his eyes constantly narrowed to slits, rarely ever opening his eyes enough to reveal their bright sky blue-color."
+    },
+    {
+      "id": 82100007,
+      "name": "Aizen ",
+      "free_count": 1,
+      "rewards": [
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 2
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 3
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 4
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 5
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 6
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 7
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 8
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 9
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 10
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 11
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 12
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 13
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        },
+        {
+          "type": 15,
+          "code": 19,
+          "amount": 15
+        }
+      ],
+      "cost": [
+        0,
+        10,
+        10,
+        10,
+        10,
+        20,
+        20,
+        30,
+        30,
+        40,
+        40,
+        60,
+        60,
+        80,
+        80,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        150,
+        150,
+        150,
+        150,
+        150,
+        200,
+        200,
+        200,
+        200,
+        200,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        600,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800,
+        800
+      ],
+      "crit": "[0,0.4,0.4,0.6,0.4,0.4,0.6,0.4,0.4,0.4,0.6,0.35,0.35,0.525,0.35,0.35,0.35,0.525,0.35,0.35,0.525,0.3,0.3,0.3,0.45,0.3,0.3,0.45,0.3,0.3,0.3,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25,0.25,0.375,0.25,0.25,0.25,0.375,0.25]",
+      "starame": "Aizen Spirit Star",
+      "tips": "Sōsuke Aizen is the former captain of the 5th Division in the Gotei 13. He later leaves Soul Society with his followers. Prior to his departure from Soul Society, Aizen appeared as a mild-featured man with brown scholarly hair enhanced by square glasses, along with soft brown eyes. During his ascent to Hueco Mundo, he removed his glasses and swept his hand through his hair, revealing menacing eyes and a very different hairstyle; his hair is now swept back, with a strand hanging down his face."
+    }
+  ]
+}

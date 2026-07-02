@@ -1,0 +1,30 @@
+{
+  "table": "soul_collection_bases",
+  "rowCount": 3,
+  "rows": [
+    {
+      "id": 10000001,
+      "lottery_consume": {
+        "type": 0,
+        "code": 0,
+        "amount": 300000
+      }
+    },
+    {
+      "id": 10000002,
+      "lottery_consume": {
+        "type": 0,
+        "code": 1,
+        "amount": 100
+      }
+    },
+    {
+      "id": 10000003,
+      "lottery_consume": {
+        "type": 0,
+        "code": 1,
+        "amount": 100
+      }
+    }
+  ]
+}

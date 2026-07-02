@@ -910,5 +910,79 @@ export interface NightmareCity {
   pass_awards: Array<{ type: number; code: number; amount: number }>;
 }
 
+export interface SevenHeroStar {
+  id: number;
+  position: number;
+  seven_hero_id: number;
+  hero_name: string;
+  desc: string;
+  final_star_name: string;
+  add_values: Array<{ addType: number; addValue: number }>;
+}
+
+export interface SevenHeroLittleStar {
+  id: number;
+  big_star: number;
+  sort: number;
+  pre_little_star: number;
+  is_last: number;
+  cost_soul_id: number;
+  cost_soul: number;
+  add_values: Array<{ addType: number; addValue: number }>;
+  little_star_name: string;
+}
+
+export interface SevenHeroSoul {
+  id: number;
+  hero_id: number;
+  soul_tips: string;
+  name: string;
+  color: string;
+}
+
+export interface SevenHeroArmy {
+  id: number;
+  name: string;
+  seven_hero: number;
+  pre_point: number;
+  is_seven_hero: number;
+  open_level: number;
+  limit_level: number;
+  sort_number: number;
+  one_win_buff: string;
+  one_fail_buff: string;
+  many_win_reward: any;
+  image: number;
+  model: number;
+}
+
+export interface SevenHeroDailyAward {
+  id: number;
+  name: string;
+  free_count: number;
+  rewards: Array<{ type: number; code: number; amount: number }>;
+  cost: Array<{ type: number; code: number; amount: number }>;
+  crit: string;
+  starame: string;
+  tips: string;
+}
+
+export interface SoulCollectionRnd {
+  id: number;
+  type: number;
+  reward: any;
+}
+
+export interface SoulCollectionShop {
+  id: number;
+  exchange_reward: any;
+  frequency: number;
+}
+
+export interface SoulCollectionBase {
+  id: number;
+  lottery_consume: any;
+}
+
 
 

@@ -1,0 +1,244 @@
+{
+  "table": "seven_hero_stars",
+  "rowCount": 7,
+  "rows": [
+    {
+      "id": 82200001,
+      "position": 1,
+      "seven_hero_id": 82100001,
+      "hero_name": "Espada #4 ",
+      "desc": "Espada #4 Hollow Spirit ",
+      "final_star_name": "Espada #4 Spirit Star",
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1000
+        },
+        {
+          "addType": 20,
+          "addValue": 1000
+        },
+        {
+          "addType": 17,
+          "addValue": 500
+        },
+        {
+          "addType": 21,
+          "addValue": 500
+        },
+        {
+          "addType": 101,
+          "addValue": 6000
+        },
+        {
+          "addType": 11,
+          "addValue": 500
+        }
+      ]
+    },
+    {
+      "id": 82200002,
+      "position": 1,
+      "seven_hero_id": 82100002,
+      "hero_name": "Espada #3 ",
+      "desc": "Espada #3 Hollow Spirit ",
+      "final_star_name": "Espada #3 Spirit Star",
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1200
+        },
+        {
+          "addType": 20,
+          "addValue": 1200
+        },
+        {
+          "addType": 17,
+          "addValue": 550
+        },
+        {
+          "addType": 21,
+          "addValue": 550
+        },
+        {
+          "addType": 101,
+          "addValue": 6600
+        },
+        {
+          "addType": 11,
+          "addValue": 550
+        }
+      ]
+    },
+    {
+      "id": 82200003,
+      "position": 1,
+      "seven_hero_id": 82100003,
+      "hero_name": "Espada #2 ",
+      "desc": "Espada #2 Hollow Spirit ",
+      "final_star_name": "Espada #2 Spirit Star",
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1280
+        },
+        {
+          "addType": 20,
+          "addValue": 1280
+        },
+        {
+          "addType": 17,
+          "addValue": 625
+        },
+        {
+          "addType": 21,
+          "addValue": 625
+        },
+        {
+          "addType": 101,
+          "addValue": 7500
+        },
+        {
+          "addType": 11,
+          "addValue": 625
+        }
+      ]
+    },
+    {
+      "id": 82200004,
+      "position": 1,
+      "seven_hero_id": 82100004,
+      "hero_name": "Espada #1 ",
+      "desc": "Espada #1 Hollow Spirit ",
+      "final_star_name": "Espada #1 Spirit Star",
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1440
+        },
+        {
+          "addType": 20,
+          "addValue": 1440
+        },
+        {
+          "addType": 17,
+          "addValue": 700
+        },
+        {
+          "addType": 21,
+          "addValue": 700
+        },
+        {
+          "addType": 101,
+          "addValue": 8400
+        },
+        {
+          "addType": 11,
+          "addValue": 700
+        }
+      ]
+    },
+    {
+      "id": 82200005,
+      "position": 1,
+      "seven_hero_id": 82100005,
+      "hero_name": "Tōsen ",
+      "desc": "Tōsen Hollow Spirit ",
+      "final_star_name": "Tōsen Spirit Star",
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1600
+        },
+        {
+          "addType": 20,
+          "addValue": 1600
+        },
+        {
+          "addType": 17,
+          "addValue": 800
+        },
+        {
+          "addType": 21,
+          "addValue": 800
+        },
+        {
+          "addType": 101,
+          "addValue": 9600
+        },
+        {
+          "addType": 11,
+          "addValue": 800
+        }
+      ]
+    },
+    {
+      "id": 82200006,
+      "position": 1,
+      "seven_hero_id": 82100006,
+      "hero_name": "Gin ",
+      "desc": "Gin Hollow Spirit ",
+      "final_star_name": "Gin Spirit Star",
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 1800
+        },
+        {
+          "addType": 20,
+          "addValue": 1800
+        },
+        {
+          "addType": 17,
+          "addValue": 900
+        },
+        {
+          "addType": 21,
+          "addValue": 900
+        },
+        {
+          "addType": 101,
+          "addValue": 10800
+        },
+        {
+          "addType": 11,
+          "addValue": 900
+        }
+      ]
+    },
+    {
+      "id": 82200007,
+      "position": 1,
+      "seven_hero_id": 82100007,
+      "hero_name": "Aizen ",
+      "desc": "Aizen Hollow Spirit ",
+      "final_star_name": "Aizen Spirit Star",
+      "add_values": [
+        {
+          "addType": 16,
+          "addValue": 2000
+        },
+        {
+          "addType": 20,
+          "addValue": 2000
+        },
+        {
+          "addType": 17,
+          "addValue": 1000
+        },
+        {
+          "addType": 21,
+          "addValue": 1000
+        },
+        {
+          "addType": 101,
+          "addValue": 12000
+        },
+        {
+          "addType": 11,
+          "addValue": 1000
+        }
+      ]
+    }
+  ]
+}

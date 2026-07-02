@@ -62,6 +62,8 @@ const MilitaryPage = React.lazy(() => import('./routes/MilitaryPage').then(m => 
 const CullingPage = React.lazy(() => import('./routes/CullingPage').then(m => ({ default: m.CullingPage })));
 const ForgePlannerPage = React.lazy(() => import('./routes/ForgePlannerPage').then(m => ({ default: m.ForgePlannerPage })));
 const NightmareRealmsPage = React.lazy(() => import('./routes/NightmareRealmsPage').then(m => ({ default: m.NightmareRealmsPage })));
+const SevenSoulsPage = React.lazy(() => import('./routes/SevenSoulsPage').then(m => ({ default: m.SevenSoulsPage })));
+const SoulHunterPage = React.lazy(() => import('./routes/SoulHunterPage').then(m => ({ default: m.SoulHunterPage })));
 
 
 function App() {
@@ -128,6 +130,8 @@ function App() {
             <Route path="/tools/culling-tower" element={<CullingPage />} />
             <Route path="/tools/forge-planner" element={<ForgePlannerPage />} />
             <Route path="/tools/nightmare-realms" element={<NightmareRealmsPage />} />
+            <Route path="/tools/seven-souls" element={<SevenSoulsPage />} />
+            <Route path="/tools/soul-hunter" element={<SoulHunterPage />} />
           </Routes>
         </React.Suspense>
       </Layout>
