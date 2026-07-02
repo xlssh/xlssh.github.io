@@ -135,6 +135,9 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Guild Devotion & VIP', to: '/tools/guild-vip', icon: Trophy },
     { name: 'Spiritual Ornaments', to: '/tools/ornaments', icon: Sparkles },
     { name: 'MC Soul Maps', to: '/tools/soul-maps', icon: Compass },
+    { name: 'Black Market Deals', to: '/tools/black-market', icon: Coins },
+    { name: 'Beast Souls Planner', to: '/tools/beast-souls', icon: BarChart3 },
+    { name: 'Temple Shrine', to: '/tools/shrine-simulator', icon: Trophy },
   ];
 
   return (

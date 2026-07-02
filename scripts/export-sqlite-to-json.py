@@ -303,6 +303,22 @@ def main():
         "path": "/data/star_points.json",
         "rowCount": 225
     }
+    manifest_tables["temple_points"] = {
+        "path": "/data/temple_points.json",
+        "rowCount": 360
+    }
+    manifest_tables["temple_values"] = {
+        "path": "/data/temple_values.json",
+        "rowCount": 1320
+    }
+    manifest_tables["temple_pvps"] = {
+        "path": "/data/temple_pvps.json",
+        "rowCount": 39
+    }
+    manifest_tables["temple_plies"] = {
+        "path": "/data/temple_plies.json",
+        "rowCount": 12
+    }
     manifest_data = {
         "generatedAt": generated_at,
         "tables": manifest_tables

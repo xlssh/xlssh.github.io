@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T19:44:59.787146Z",
+  "generatedAt": "2026-07-02T11:24:13.079952Z",
   "tables": {
     "articles": {
       "path": "/data/articles.json",
@@ -236,6 +236,38 @@
     "vip_configs": {
       "path": "/data/vip_configs.json",
       "rowCount": 11
+    },
+    "ornament_values": {
+      "path": "/data/ornament_values.json",
+      "rowCount": 15200
+    },
+    "ornament_upgrades": {
+      "path": "/data/ornament_upgrades.json",
+      "rowCount": 48
+    },
+    "star_maps": {
+      "path": "/data/star_maps.json",
+      "rowCount": 15
+    },
+    "star_points": {
+      "path": "/data/star_points.json",
+      "rowCount": 225
+    },
+    "temple_points": {
+      "path": "/data/temple_points.json",
+      "rowCount": 360
+    },
+    "temple_values": {
+      "path": "/data/temple_values.json",
+      "rowCount": 1320
+    },
+    "temple_pvps": {
+      "path": "/data/temple_pvps.json",
+      "rowCount": 39
+    },
+    "temple_plies": {
+      "path": "/data/temple_plies.json",
+      "rowCount": 12
     }
   }
 }

@@ -1,0 +1,66 @@
+{
+  "table": "temple_plies",
+  "rowCount": 12,
+  "rows": [
+    {
+      "id": 15930001,
+      "number_plies": 5,
+      "award_id": 21910001
+    },
+    {
+      "id": 15930002,
+      "number_plies": 10,
+      "award_id": 21910002
+    },
+    {
+      "id": 15930003,
+      "number_plies": 15,
+      "award_id": 21910003
+    },
+    {
+      "id": 15930004,
+      "number_plies": 20,
+      "award_id": 21910004
+    },
+    {
+      "id": 15930005,
+      "number_plies": 50,
+      "award_id": 21910005
+    },
+    {
+      "id": 15930006,
+      "number_plies": 100,
+      "award_id": 21910006
+    },
+    {
+      "id": 15930007,
+      "number_plies": 150,
+      "award_id": 21910007
+    },
+    {
+      "id": 15930008,
+      "number_plies": 200,
+      "award_id": 21910008
+    },
+    {
+      "id": 15930009,
+      "number_plies": 250,
+      "award_id": 21910009
+    },
+    {
+      "id": 15930010,
+      "number_plies": 300,
+      "award_id": 21910010
+    },
+    {
+      "id": 15930011,
+      "number_plies": 330,
+      "award_id": 21910011
+    },
+    {
+      "id": 15930012,
+      "number_plies": 360,
+      "award_id": 21910012
+    }
+  ]
+}

@@ -1,0 +1,3606 @@
+{
+  "table": "temple_points",
+  "rowCount": 360,
+  "rows": [
+    {
+      "id": 15910001,
+      "name": "13th Division Floor 1",
+      "next_point_id": 15910002,
+      "army_ids": [
+        20600001
+      ],
+      "battle_scene": 30000,
+      "akey_price": 13
+    },
+    {
+      "id": 15910002,
+      "name": "13th Division Floor 2",
+      "next_point_id": 15910003,
+      "army_ids": [
+        20600002
+      ],
+      "battle_scene": 30002,
+      "akey_price": 27
+    },
+    {
+      "id": 15910003,
+      "name": "13th Division Floor 3",
+      "next_point_id": 15910004,
+      "army_ids": [
+        20600003
+      ],
+      "battle_scene": 30003,
+      "akey_price": 40
+    },
+    {
+      "id": 15910004,
+      "name": "13th Division Floor 4",
+      "next_point_id": 15910005,
+      "army_ids": [
+        20600004
+      ],
+      "battle_scene": 30003,
+      "akey_price": 53
+    },
+    {
+      "id": 15910005,
+      "name": "13th Division Floor 5",
+      "next_point_id": 15910006,
+      "army_ids": [
+        20600005
+      ],
+      "battle_scene": 30003,
+      "akey_price": 67
+    },
+    {
+      "id": 15910006,
+      "name": "13th Division Floor 6",
+      "next_point_id": 15910007,
+      "army_ids": [
+        20600006
+      ],
+      "battle_scene": 30013,
+      "akey_price": 80
+    },
+    {
+      "id": 15910007,
+      "name": "13th Division Floor 7",
+      "next_point_id": 15910008,
+      "army_ids": [
+        20600007
+      ],
+      "battle_scene": 30013,
+      "akey_price": 93
+    },
+    {
+      "id": 15910008,
+      "name": "13th Division Floor 8",
+      "next_point_id": 15910009,
+      "army_ids": [
+        20600008
+      ],
+      "battle_scene": 30000,
+      "akey_price": 107
+    },
+    {
+      "id": 15910009,
+      "name": "13th Division Floor 9",
+      "next_point_id": 15910010,
+      "army_ids": [
+        20600009
+      ],
+      "battle_scene": 30002,
+      "akey_price": 120
+    },
+    {
+      "id": 15910010,
+      "name": "13th Division Floor 10",
+      "next_point_id": 15910011,
+      "army_ids": [
+        20600010
+      ],
+      "battle_scene": 30003,
+      "akey_price": 133
+    },
+    {
+      "id": 15910011,
+      "name": "13th Division Floor 11",
+      "next_point_id": 15910012,
+      "army_ids": [
+        20600011
+      ],
+      "battle_scene": 30003,
+      "akey_price": 147
+    },
+    {
+      "id": 15910012,
+      "name": "13th Division Floor 12",
+      "next_point_id": 15910013,
+      "army_ids": [
+        20600012
+      ],
+      "battle_scene": 30003,
+      "akey_price": 160
+    },
+    {
+      "id": 15910013,
+      "name": "13th Division Floor 13",
+      "next_point_id": 15910014,
+      "army_ids": [
+        20600013
+      ],
+      "battle_scene": 30013,
+      "akey_price": 173
+    },
+    {
+      "id": 15910014,
+      "name": "13th Division Floor 14",
+      "next_point_id": 15910015,
+      "army_ids": [
+        20600014
+      ],
+      "battle_scene": 30013,
+      "akey_price": 187
+    },
+    {
+      "id": 15910015,
+      "name": "13th Division Floor 15",
+      "next_point_id": 0,
+      "army_ids": [
+        20600015
+      ],
+      "battle_scene": 30000,
+      "akey_price": 200
+    },
+    {
+      "id": 15910101,
+      "name": "12th Division Floor 1",
+      "next_point_id": 15910102,
+      "army_ids": [
+        20600101
+      ],
+      "battle_scene": 30002,
+      "akey_price": 13
+    },
+    {
+      "id": 15910102,
+      "name": "12th Division Floor 2",
+      "next_point_id": 15910103,
+      "army_ids": [
+        20600102
+      ],
+      "battle_scene": 30003,
+      "akey_price": 27
+    },
+    {
+      "id": 15910103,
+      "name": "12th Division Floor 3",
+      "next_point_id": 15910104,
+      "army_ids": [
+        20600103
+      ],
+      "battle_scene": 30003,
+      "akey_price": 40
+    },
+    {
+      "id": 15910104,
+      "name": "12th Division Floor 4",
+      "next_point_id": 15910105,
+      "army_ids": [
+        20600104
+      ],
+      "battle_scene": 30003,
+      "akey_price": 53
+    },
+    {
+      "id": 15910105,
+      "name": "12th Division Floor 5",
+      "next_point_id": 15910106,
+      "army_ids": [
+        20600105
+      ],
+      "battle_scene": 30013,
+      "akey_price": 67
+    },
+    {
+      "id": 15910106,
+      "name": "12th Division Floor 6",
+      "next_point_id": 15910107,
+      "army_ids": [
+        20600106
+      ],
+      "battle_scene": 30013,
+      "akey_price": 80
+    },
+    {
+      "id": 15910107,
+      "name": "12th Division Floor 7",
+      "next_point_id": 15910108,
+      "army_ids": [
+        20600107
+      ],
+      "battle_scene": 30000,
+      "akey_price": 93
+    },
+    {
+      "id": 15910108,
+      "name": "12th Division Floor 8",
+      "next_point_id": 15910109,
+      "army_ids": [
+        20600108
+      ],
+      "battle_scene": 30002,
+      "akey_price": 107
+    },
+    {
+      "id": 15910109,
+      "name": "12th Division Floor 9",
+      "next_point_id": 15910110,
+      "army_ids": [
+        20600109
+      ],
+      "battle_scene": 30003,
+      "akey_price": 120
+    },
+    {
+      "id": 15910110,
+      "name": "12th Division Floor 10",
+      "next_point_id": 15910111,
+      "army_ids": [
+        20600110
+      ],
+      "battle_scene": 30003,
+      "akey_price": 133
+    },
+    {
+      "id": 15910111,
+      "name": "12th Division Floor 11",
+      "next_point_id": 15910112,
+      "army_ids": [
+        20600111
+      ],
+      "battle_scene": 30003,
+      "akey_price": 147
+    },
+    {
+      "id": 15910112,
+      "name": "12th Division Floor 12",
+      "next_point_id": 15910113,
+      "army_ids": [
+        20600112
+      ],
+      "battle_scene": 30013,
+      "akey_price": 160
+    },
+    {
+      "id": 15910113,
+      "name": "12th Division Floor 13",
+      "next_point_id": 15910114,
+      "army_ids": [
+        20600113
+      ],
+      "battle_scene": 30013,
+      "akey_price": 173
+    },
+    {
+      "id": 15910114,
+      "name": "12th Division Floor 14",
+      "next_point_id": 15910115,
+      "army_ids": [
+        20600114
+      ],
+      "battle_scene": 30000,
+      "akey_price": 187
+    },
+    {
+      "id": 15910115,
+      "name": "12th Division Floor 15",
+      "next_point_id": 0,
+      "army_ids": [
+        20600115
+      ],
+      "battle_scene": 30002,
+      "akey_price": 200
+    },
+    {
+      "id": 15910201,
+      "name": "11th Division Floor 1",
+      "next_point_id": 15910202,
+      "army_ids": [
+        20600201
+      ],
+      "battle_scene": 30003,
+      "akey_price": 13
+    },
+    {
+      "id": 15910202,
+      "name": "11th Division Floor 2",
+      "next_point_id": 15910203,
+      "army_ids": [
+        20600202
+      ],
+      "battle_scene": 30003,
+      "akey_price": 27
+    },
+    {
+      "id": 15910203,
+      "name": "11th Division Floor 3",
+      "next_point_id": 15910204,
+      "army_ids": [
+        20600203
+      ],
+      "battle_scene": 30003,
+      "akey_price": 40
+    },
+    {
+      "id": 15910204,
+      "name": "11th Division Floor 4",
+      "next_point_id": 15910205,
+      "army_ids": [
+        20600204
+      ],
+      "battle_scene": 30013,
+      "akey_price": 53
+    },
+    {
+      "id": 15910205,
+      "name": "11th Division Floor 5",
+      "next_point_id": 15910206,
+      "army_ids": [
+        20600205
+      ],
+      "battle_scene": 30013,
+      "akey_price": 67
+    },
+    {
+      "id": 15910206,
+      "name": "11th Division Floor 6",
+      "next_point_id": 15910207,
+      "army_ids": [
+        20600206
+      ],
+      "battle_scene": 30000,
+      "akey_price": 80
+    },
+    {
+      "id": 15910207,
+      "name": "11th Division Floor 7",
+      "next_point_id": 15910208,
+      "army_ids": [
+        20600207
+      ],
+      "battle_scene": 30002,
+      "akey_price": 93
+    },
+    {
+      "id": 15910208,
+      "name": "11th Division Floor 8",
+      "next_point_id": 15910209,
+      "army_ids": [
+        20600208
+      ],
+      "battle_scene": 30003,
+      "akey_price": 107
+    },
+    {
+      "id": 15910209,
+      "name": "11th Division Floor 9",
+      "next_point_id": 15910210,
+      "army_ids": [
+        20600209
+      ],
+      "battle_scene": 30003,
+      "akey_price": 120
+    },
+    {
+      "id": 15910210,
+      "name": "11th Division Floor 10",
+      "next_point_id": 15910211,
+      "army_ids": [
+        20600210
+      ],
+      "battle_scene": 30003,
+      "akey_price": 133
+    },
+    {
+      "id": 15910211,
+      "name": "11th Division Floor 11",
+      "next_point_id": 15910212,
+      "army_ids": [
+        20600211
+      ],
+      "battle_scene": 30013,
+      "akey_price": 147
+    },
+    {
+      "id": 15910212,
+      "name": "11th Division Floor 12",
+      "next_point_id": 15910213,
+      "army_ids": [
+        20600212
+      ],
+      "battle_scene": 30013,
+      "akey_price": 160
+    },
+    {
+      "id": 15910213,
+      "name": "11th Division Floor 13",
+      "next_point_id": 15910214,
+      "army_ids": [
+        20600213
+      ],
+      "battle_scene": 30000,
+      "akey_price": 173
+    },
+    {
+      "id": 15910214,
+      "name": "11th Division Floor 14",
+      "next_point_id": 15910215,
+      "army_ids": [
+        20600214
+      ],
+      "battle_scene": 30002,
+      "akey_price": 187
+    },
+    {
+      "id": 15910215,
+      "name": "11th Division Floor 15",
+      "next_point_id": 15910216,
+      "army_ids": [
+        20600215
+      ],
+      "battle_scene": 30003,
+      "akey_price": 200
+    },
+    {
+      "id": 15910216,
+      "name": "11th Division Floor 16",
+      "next_point_id": 15910217,
+      "army_ids": [
+        20600216
+      ],
+      "battle_scene": 30003,
+      "akey_price": 213
+    },
+    {
+      "id": 15910217,
+      "name": "11th Division Floor 17",
+      "next_point_id": 15910218,
+      "army_ids": [
+        20600217
+      ],
+      "battle_scene": 30003,
+      "akey_price": 227
+    },
+    {
+      "id": 15910218,
+      "name": "11th Division Floor 18",
+      "next_point_id": 15910219,
+      "army_ids": [
+        20600218
+      ],
+      "battle_scene": 30013,
+      "akey_price": 240
+    },
+    {
+      "id": 15910219,
+      "name": "11th Division Floor 19",
+      "next_point_id": 15910220,
+      "army_ids": [
+        20600219
+      ],
+      "battle_scene": 30013,
+      "akey_price": 253
+    },
+    {
+      "id": 15910220,
+      "name": "11th Division Floor 20",
+      "next_point_id": 15910221,
+      "army_ids": [
+        20600220
+      ],
+      "battle_scene": 30000,
+      "akey_price": 267
+    },
+    {
+      "id": 15910221,
+      "name": "11th Division Floor 21",
+      "next_point_id": 15910222,
+      "army_ids": [
+        20600221
+      ],
+      "battle_scene": 30002,
+      "akey_price": 280
+    },
+    {
+      "id": 15910222,
+      "name": "11th Division Floor 22",
+      "next_point_id": 15910223,
+      "army_ids": [
+        20600222
+      ],
+      "battle_scene": 30003,
+      "akey_price": 293
+    },
+    {
+      "id": 15910223,
+      "name": "11th Division Floor 23",
+      "next_point_id": 15910224,
+      "army_ids": [
+        20600223
+      ],
+      "battle_scene": 30003,
+      "akey_price": 307
+    },
+    {
+      "id": 15910224,
+      "name": "11th Division Floor 24",
+      "next_point_id": 15910225,
+      "army_ids": [
+        20600224
+      ],
+      "battle_scene": 30003,
+      "akey_price": 320
+    },
+    {
+      "id": 15910225,
+      "name": "11th Division Floor 25",
+      "next_point_id": 15910226,
+      "army_ids": [
+        20600225
+      ],
+      "battle_scene": 30013,
+      "akey_price": 333
+    },
+    {
+      "id": 15910226,
+      "name": "11th Division Floor 26",
+      "next_point_id": 15910227,
+      "army_ids": [
+        20600226
+      ],
+      "battle_scene": 30013,
+      "akey_price": 347
+    },
+    {
+      "id": 15910227,
+      "name": "11th Division Floor 27",
+      "next_point_id": 15910228,
+      "army_ids": [
+        20600227
+      ],
+      "battle_scene": 30000,
+      "akey_price": 360
+    },
+    {
+      "id": 15910228,
+      "name": "11th Division Floor 28",
+      "next_point_id": 15910229,
+      "army_ids": [
+        20600228
+      ],
+      "battle_scene": 30002,
+      "akey_price": 373
+    },
+    {
+      "id": 15910229,
+      "name": "11th Division Floor 29",
+      "next_point_id": 15910230,
+      "army_ids": [
+        20600229
+      ],
+      "battle_scene": 30003,
+      "akey_price": 387
+    },
+    {
+      "id": 15910230,
+      "name": "11th Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20600230
+      ],
+      "battle_scene": 30003,
+      "akey_price": 400
+    },
+    {
+      "id": 15910301,
+      "name": "10th Division Floor 1",
+      "next_point_id": 15910302,
+      "army_ids": [
+        20600301
+      ],
+      "battle_scene": 30003,
+      "akey_price": 13
+    },
+    {
+      "id": 15910302,
+      "name": "10th Division Floor 2",
+      "next_point_id": 15910303,
+      "army_ids": [
+        20600302
+      ],
+      "battle_scene": 30013,
+      "akey_price": 27
+    },
+    {
+      "id": 15910303,
+      "name": "10th Division Floor 3",
+      "next_point_id": 15910304,
+      "army_ids": [
+        20600303
+      ],
+      "battle_scene": 30013,
+      "akey_price": 40
+    },
+    {
+      "id": 15910304,
+      "name": "10th Division Floor 4",
+      "next_point_id": 15910305,
+      "army_ids": [
+        20600304
+      ],
+      "battle_scene": 30000,
+      "akey_price": 53
+    },
+    {
+      "id": 15910305,
+      "name": "10th Division Floor 5",
+      "next_point_id": 15910306,
+      "army_ids": [
+        20600305
+      ],
+      "battle_scene": 30002,
+      "akey_price": 67
+    },
+    {
+      "id": 15910306,
+      "name": "10th Division Floor 6",
+      "next_point_id": 15910307,
+      "army_ids": [
+        20600306
+      ],
+      "battle_scene": 30003,
+      "akey_price": 80
+    },
+    {
+      "id": 15910307,
+      "name": "10th Division Floor 7",
+      "next_point_id": 15910308,
+      "army_ids": [
+        20600307
+      ],
+      "battle_scene": 30003,
+      "akey_price": 93
+    },
+    {
+      "id": 15910308,
+      "name": "10th Division Floor 8",
+      "next_point_id": 15910309,
+      "army_ids": [
+        20600308
+      ],
+      "battle_scene": 30003,
+      "akey_price": 107
+    },
+    {
+      "id": 15910309,
+      "name": "10th Division Floor 9",
+      "next_point_id": 15910310,
+      "army_ids": [
+        20600309
+      ],
+      "battle_scene": 30013,
+      "akey_price": 120
+    },
+    {
+      "id": 15910310,
+      "name": "10th Division Floor 10",
+      "next_point_id": 15910311,
+      "army_ids": [
+        20600310
+      ],
+      "battle_scene": 30013,
+      "akey_price": 133
+    },
+    {
+      "id": 15910311,
+      "name": "10th Division Floor 11",
+      "next_point_id": 15910312,
+      "army_ids": [
+        20600311
+      ],
+      "battle_scene": 30000,
+      "akey_price": 147
+    },
+    {
+      "id": 15910312,
+      "name": "10th Division Floor 12",
+      "next_point_id": 15910313,
+      "army_ids": [
+        20600312
+      ],
+      "battle_scene": 30002,
+      "akey_price": 160
+    },
+    {
+      "id": 15910313,
+      "name": "10th Division Floor 13",
+      "next_point_id": 15910314,
+      "army_ids": [
+        20600313
+      ],
+      "battle_scene": 30003,
+      "akey_price": 173
+    },
+    {
+      "id": 15910314,
+      "name": "10th Division Floor 14",
+      "next_point_id": 15910315,
+      "army_ids": [
+        20600314
+      ],
+      "battle_scene": 30003,
+      "akey_price": 187
+    },
+    {
+      "id": 15910315,
+      "name": "10th Division Floor 15",
+      "next_point_id": 15910316,
+      "army_ids": [
+        20600315
+      ],
+      "battle_scene": 30003,
+      "akey_price": 200
+    },
+    {
+      "id": 15910316,
+      "name": "10th Division Floor 16",
+      "next_point_id": 15910317,
+      "army_ids": [
+        20600316
+      ],
+      "battle_scene": 30013,
+      "akey_price": 213
+    },
+    {
+      "id": 15910317,
+      "name": "10th Division Floor 17",
+      "next_point_id": 15910318,
+      "army_ids": [
+        20600317
+      ],
+      "battle_scene": 30013,
+      "akey_price": 227
+    },
+    {
+      "id": 15910318,
+      "name": "10th Division Floor 18",
+      "next_point_id": 15910319,
+      "army_ids": [
+        20600318
+      ],
+      "battle_scene": 30000,
+      "akey_price": 240
+    },
+    {
+      "id": 15910319,
+      "name": "10th Division Floor 19",
+      "next_point_id": 15910320,
+      "army_ids": [
+        20600319
+      ],
+      "battle_scene": 30002,
+      "akey_price": 253
+    },
+    {
+      "id": 15910320,
+      "name": "10th Division Floor 20",
+      "next_point_id": 15910321,
+      "army_ids": [
+        20600320
+      ],
+      "battle_scene": 30003,
+      "akey_price": 267
+    },
+    {
+      "id": 15910321,
+      "name": "10th Division Floor 21",
+      "next_point_id": 15910322,
+      "army_ids": [
+        20600321
+      ],
+      "battle_scene": 30003,
+      "akey_price": 280
+    },
+    {
+      "id": 15910322,
+      "name": "10th Division Floor 22",
+      "next_point_id": 15910323,
+      "army_ids": [
+        20600322
+      ],
+      "battle_scene": 30003,
+      "akey_price": 293
+    },
+    {
+      "id": 15910323,
+      "name": "10th Division Floor 23",
+      "next_point_id": 15910324,
+      "army_ids": [
+        20600323
+      ],
+      "battle_scene": 30013,
+      "akey_price": 307
+    },
+    {
+      "id": 15910324,
+      "name": "10th Division Floor 24",
+      "next_point_id": 15910325,
+      "army_ids": [
+        20600324
+      ],
+      "battle_scene": 30013,
+      "akey_price": 320
+    },
+    {
+      "id": 15910325,
+      "name": "10th Division Floor 25",
+      "next_point_id": 15910326,
+      "army_ids": [
+        20600325
+      ],
+      "battle_scene": 30000,
+      "akey_price": 333
+    },
+    {
+      "id": 15910326,
+      "name": "10th Division Floor 26",
+      "next_point_id": 15910327,
+      "army_ids": [
+        20600326
+      ],
+      "battle_scene": 30002,
+      "akey_price": 347
+    },
+    {
+      "id": 15910327,
+      "name": "10th Division Floor 27",
+      "next_point_id": 15910328,
+      "army_ids": [
+        20600327
+      ],
+      "battle_scene": 30003,
+      "akey_price": 360
+    },
+    {
+      "id": 15910328,
+      "name": "10th Division Floor 28",
+      "next_point_id": 15910329,
+      "army_ids": [
+        20600328
+      ],
+      "battle_scene": 30003,
+      "akey_price": 373
+    },
+    {
+      "id": 15910329,
+      "name": "10th Division Floor 29",
+      "next_point_id": 15910330,
+      "army_ids": [
+        20600329
+      ],
+      "battle_scene": 30003,
+      "akey_price": 387
+    },
+    {
+      "id": 15910330,
+      "name": "10th Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20600330
+      ],
+      "battle_scene": 30013,
+      "akey_price": 400
+    },
+    {
+      "id": 15910401,
+      "name": "9th Division Floor 1",
+      "next_point_id": 15910402,
+      "army_ids": [
+        20600401
+      ],
+      "battle_scene": 30013,
+      "akey_price": 13
+    },
+    {
+      "id": 15910402,
+      "name": "9th Division Floor 2",
+      "next_point_id": 15910403,
+      "army_ids": [
+        20600402
+      ],
+      "battle_scene": 30000,
+      "akey_price": 27
+    },
+    {
+      "id": 15910403,
+      "name": "9th Division Floor 3",
+      "next_point_id": 15910404,
+      "army_ids": [
+        20600403
+      ],
+      "battle_scene": 30002,
+      "akey_price": 40
+    },
+    {
+      "id": 15910404,
+      "name": "9th Division Floor 4",
+      "next_point_id": 15910405,
+      "army_ids": [
+        20600404
+      ],
+      "battle_scene": 30003,
+      "akey_price": 53
+    },
+    {
+      "id": 15910405,
+      "name": "9th Division Floor 5",
+      "next_point_id": 15910406,
+      "army_ids": [
+        20600405
+      ],
+      "battle_scene": 30003,
+      "akey_price": 67
+    },
+    {
+      "id": 15910406,
+      "name": "9th Division Floor 6",
+      "next_point_id": 15910407,
+      "army_ids": [
+        20600406
+      ],
+      "battle_scene": 30003,
+      "akey_price": 80
+    },
+    {
+      "id": 15910407,
+      "name": "9th Division Floor 7",
+      "next_point_id": 15910408,
+      "army_ids": [
+        20600407
+      ],
+      "battle_scene": 30013,
+      "akey_price": 93
+    },
+    {
+      "id": 15910408,
+      "name": "9th Division Floor 8",
+      "next_point_id": 15910409,
+      "army_ids": [
+        20600408
+      ],
+      "battle_scene": 30013,
+      "akey_price": 107
+    },
+    {
+      "id": 15910409,
+      "name": "9th Division Floor 9",
+      "next_point_id": 15910410,
+      "army_ids": [
+        20600409
+      ],
+      "battle_scene": 30000,
+      "akey_price": 120
+    },
+    {
+      "id": 15910410,
+      "name": "9th Division Floor 10",
+      "next_point_id": 15910411,
+      "army_ids": [
+        20600410
+      ],
+      "battle_scene": 30002,
+      "akey_price": 133
+    },
+    {
+      "id": 15910411,
+      "name": "9th Division Floor 11",
+      "next_point_id": 15910412,
+      "army_ids": [
+        20600411
+      ],
+      "battle_scene": 30003,
+      "akey_price": 147
+    },
+    {
+      "id": 15910412,
+      "name": "9th Division Floor 12",
+      "next_point_id": 15910413,
+      "army_ids": [
+        20600412
+      ],
+      "battle_scene": 30003,
+      "akey_price": 160
+    },
+    {
+      "id": 15910413,
+      "name": "9th Division Floor 13",
+      "next_point_id": 15910414,
+      "army_ids": [
+        20600413
+      ],
+      "battle_scene": 30003,
+      "akey_price": 173
+    },
+    {
+      "id": 15910414,
+      "name": "9th Division Floor 14",
+      "next_point_id": 15910415,
+      "army_ids": [
+        20600414
+      ],
+      "battle_scene": 30013,
+      "akey_price": 187
+    },
+    {
+      "id": 15910415,
+      "name": "9th Division Floor 15",
+      "next_point_id": 15910416,
+      "army_ids": [
+        20600415
+      ],
+      "battle_scene": 30013,
+      "akey_price": 200
+    },
+    {
+      "id": 15910416,
+      "name": "9th Division Floor 16",
+      "next_point_id": 15910417,
+      "army_ids": [
+        20600416
+      ],
+      "battle_scene": 30000,
+      "akey_price": 213
+    },
+    {
+      "id": 15910417,
+      "name": "9th Division Floor 17",
+      "next_point_id": 15910418,
+      "army_ids": [
+        20600417
+      ],
+      "battle_scene": 30002,
+      "akey_price": 227
+    },
+    {
+      "id": 15910418,
+      "name": "9th Division Floor 18",
+      "next_point_id": 15910419,
+      "army_ids": [
+        20600418
+      ],
+      "battle_scene": 30003,
+      "akey_price": 240
+    },
+    {
+      "id": 15910419,
+      "name": "9th Division Floor 19",
+      "next_point_id": 15910420,
+      "army_ids": [
+        20600419
+      ],
+      "battle_scene": 30003,
+      "akey_price": 253
+    },
+    {
+      "id": 15910420,
+      "name": "9th Division Floor 20",
+      "next_point_id": 15910421,
+      "army_ids": [
+        20600420
+      ],
+      "battle_scene": 30003,
+      "akey_price": 267
+    },
+    {
+      "id": 15910421,
+      "name": "9th Division Floor 21",
+      "next_point_id": 15910422,
+      "army_ids": [
+        20600421
+      ],
+      "battle_scene": 30013,
+      "akey_price": 280
+    },
+    {
+      "id": 15910422,
+      "name": "9th Division Floor 22",
+      "next_point_id": 15910423,
+      "army_ids": [
+        20600422
+      ],
+      "battle_scene": 30013,
+      "akey_price": 293
+    },
+    {
+      "id": 15910423,
+      "name": "9th Division Floor 23",
+      "next_point_id": 15910424,
+      "army_ids": [
+        20600423
+      ],
+      "battle_scene": 30000,
+      "akey_price": 307
+    },
+    {
+      "id": 15910424,
+      "name": "9th Division Floor 24",
+      "next_point_id": 15910425,
+      "army_ids": [
+        20600424
+      ],
+      "battle_scene": 30002,
+      "akey_price": 320
+    },
+    {
+      "id": 15910425,
+      "name": "9th Division Floor 25",
+      "next_point_id": 15910426,
+      "army_ids": [
+        20600425
+      ],
+      "battle_scene": 30003,
+      "akey_price": 333
+    },
+    {
+      "id": 15910426,
+      "name": "9th Division Floor 26",
+      "next_point_id": 15910427,
+      "army_ids": [
+        20600426
+      ],
+      "battle_scene": 30003,
+      "akey_price": 347
+    },
+    {
+      "id": 15910427,
+      "name": "9th Division Floor 27",
+      "next_point_id": 15910428,
+      "army_ids": [
+        20600427
+      ],
+      "battle_scene": 30003,
+      "akey_price": 360
+    },
+    {
+      "id": 15910428,
+      "name": "9th Division Floor 28",
+      "next_point_id": 15910429,
+      "army_ids": [
+        20600428
+      ],
+      "battle_scene": 30013,
+      "akey_price": 373
+    },
+    {
+      "id": 15910429,
+      "name": "9th Division Floor 29",
+      "next_point_id": 15910430,
+      "army_ids": [
+        20600429
+      ],
+      "battle_scene": 30013,
+      "akey_price": 387
+    },
+    {
+      "id": 15910430,
+      "name": "9th Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20600430
+      ],
+      "battle_scene": 30000,
+      "akey_price": 400
+    },
+    {
+      "id": 15910501,
+      "name": "8th Division Floor 1",
+      "next_point_id": 15910502,
+      "army_ids": [
+        20600501
+      ],
+      "battle_scene": 30002,
+      "akey_price": 13
+    },
+    {
+      "id": 15910502,
+      "name": "8th Division Floor 2",
+      "next_point_id": 15910503,
+      "army_ids": [
+        20600502
+      ],
+      "battle_scene": 30003,
+      "akey_price": 27
+    },
+    {
+      "id": 15910503,
+      "name": "8th Division Floor 3",
+      "next_point_id": 15910504,
+      "army_ids": [
+        20600503
+      ],
+      "battle_scene": 30003,
+      "akey_price": 40
+    },
+    {
+      "id": 15910504,
+      "name": "8th Division Floor 4",
+      "next_point_id": 15910505,
+      "army_ids": [
+        20600504
+      ],
+      "battle_scene": 30003,
+      "akey_price": 53
+    },
+    {
+      "id": 15910505,
+      "name": "8th Division Floor 5",
+      "next_point_id": 15910506,
+      "army_ids": [
+        20600505
+      ],
+      "battle_scene": 30013,
+      "akey_price": 67
+    },
+    {
+      "id": 15910506,
+      "name": "8th Division Floor 6",
+      "next_point_id": 15910507,
+      "army_ids": [
+        20600506
+      ],
+      "battle_scene": 30013,
+      "akey_price": 80
+    },
+    {
+      "id": 15910507,
+      "name": "8th Division Floor 7",
+      "next_point_id": 15910508,
+      "army_ids": [
+        20600507
+      ],
+      "battle_scene": 30000,
+      "akey_price": 93
+    },
+    {
+      "id": 15910508,
+      "name": "8th Division Floor 8",
+      "next_point_id": 15910509,
+      "army_ids": [
+        20600508
+      ],
+      "battle_scene": 30002,
+      "akey_price": 107
+    },
+    {
+      "id": 15910509,
+      "name": "8th Division Floor 9",
+      "next_point_id": 15910510,
+      "army_ids": [
+        20600509
+      ],
+      "battle_scene": 30003,
+      "akey_price": 120
+    },
+    {
+      "id": 15910510,
+      "name": "8th Division Floor 10",
+      "next_point_id": 15910511,
+      "army_ids": [
+        20600510
+      ],
+      "battle_scene": 30003,
+      "akey_price": 133
+    },
+    {
+      "id": 15910511,
+      "name": "8th Division Floor 11",
+      "next_point_id": 15910512,
+      "army_ids": [
+        20600511
+      ],
+      "battle_scene": 30003,
+      "akey_price": 147
+    },
+    {
+      "id": 15910512,
+      "name": "8th Division Floor 12",
+      "next_point_id": 15910513,
+      "army_ids": [
+        20600512
+      ],
+      "battle_scene": 30013,
+      "akey_price": 160
+    },
+    {
+      "id": 15910513,
+      "name": "8th Division Floor 13",
+      "next_point_id": 15910514,
+      "army_ids": [
+        20600513
+      ],
+      "battle_scene": 30013,
+      "akey_price": 173
+    },
+    {
+      "id": 15910514,
+      "name": "8th Division Floor 14",
+      "next_point_id": 15910515,
+      "army_ids": [
+        20600514
+      ],
+      "battle_scene": 30000,
+      "akey_price": 187
+    },
+    {
+      "id": 15910515,
+      "name": "8th Division Floor 15",
+      "next_point_id": 15910516,
+      "army_ids": [
+        20600515
+      ],
+      "battle_scene": 30002,
+      "akey_price": 200
+    },
+    {
+      "id": 15910516,
+      "name": "8th Division Floor 16",
+      "next_point_id": 15910517,
+      "army_ids": [
+        20600516
+      ],
+      "battle_scene": 30003,
+      "akey_price": 213
+    },
+    {
+      "id": 15910517,
+      "name": "8th Division Floor 17",
+      "next_point_id": 15910518,
+      "army_ids": [
+        20600517
+      ],
+      "battle_scene": 30003,
+      "akey_price": 227
+    },
+    {
+      "id": 15910518,
+      "name": "8th Division Floor 18",
+      "next_point_id": 15910519,
+      "army_ids": [
+        20600518
+      ],
+      "battle_scene": 30003,
+      "akey_price": 240
+    },
+    {
+      "id": 15910519,
+      "name": "8th Division Floor 19",
+      "next_point_id": 15910520,
+      "army_ids": [
+        20600519
+      ],
+      "battle_scene": 30013,
+      "akey_price": 253
+    },
+    {
+      "id": 15910520,
+      "name": "8th Division Floor 20",
+      "next_point_id": 15910521,
+      "army_ids": [
+        20600520
+      ],
+      "battle_scene": 30013,
+      "akey_price": 267
+    },
+    {
+      "id": 15910521,
+      "name": "8th Division Floor 21",
+      "next_point_id": 15910522,
+      "army_ids": [
+        20600521
+      ],
+      "battle_scene": 30000,
+      "akey_price": 280
+    },
+    {
+      "id": 15910522,
+      "name": "8th Division Floor 22",
+      "next_point_id": 15910523,
+      "army_ids": [
+        20600522
+      ],
+      "battle_scene": 30002,
+      "akey_price": 293
+    },
+    {
+      "id": 15910523,
+      "name": "8th Division Floor 23",
+      "next_point_id": 15910524,
+      "army_ids": [
+        20600523
+      ],
+      "battle_scene": 30003,
+      "akey_price": 307
+    },
+    {
+      "id": 15910524,
+      "name": "8th Division Floor 24",
+      "next_point_id": 15910525,
+      "army_ids": [
+        20600524
+      ],
+      "battle_scene": 30003,
+      "akey_price": 320
+    },
+    {
+      "id": 15910525,
+      "name": "8th Division Floor 25",
+      "next_point_id": 15910526,
+      "army_ids": [
+        20600525
+      ],
+      "battle_scene": 30003,
+      "akey_price": 333
+    },
+    {
+      "id": 15910526,
+      "name": "8th Division Floor 26",
+      "next_point_id": 15910527,
+      "army_ids": [
+        20600526
+      ],
+      "battle_scene": 30013,
+      "akey_price": 347
+    },
+    {
+      "id": 15910527,
+      "name": "8th Division Floor 27",
+      "next_point_id": 15910528,
+      "army_ids": [
+        20600527
+      ],
+      "battle_scene": 30013,
+      "akey_price": 360
+    },
+    {
+      "id": 15910528,
+      "name": "8th Division Floor 28",
+      "next_point_id": 15910529,
+      "army_ids": [
+        20600528
+      ],
+      "battle_scene": 30000,
+      "akey_price": 373
+    },
+    {
+      "id": 15910529,
+      "name": "8th Division Floor 29",
+      "next_point_id": 15910530,
+      "army_ids": [
+        20600529
+      ],
+      "battle_scene": 30002,
+      "akey_price": 387
+    },
+    {
+      "id": 15910530,
+      "name": "8th Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20600530
+      ],
+      "battle_scene": 30003,
+      "akey_price": 400
+    },
+    {
+      "id": 15910601,
+      "name": "7th Division Floor 1",
+      "next_point_id": 15910602,
+      "army_ids": [
+        20600601
+      ],
+      "battle_scene": 30003,
+      "akey_price": 13
+    },
+    {
+      "id": 15910602,
+      "name": "7th Division Floor 2",
+      "next_point_id": 15910603,
+      "army_ids": [
+        20600602
+      ],
+      "battle_scene": 30003,
+      "akey_price": 27
+    },
+    {
+      "id": 15910603,
+      "name": "7th Division Floor 3",
+      "next_point_id": 15910604,
+      "army_ids": [
+        20600603
+      ],
+      "battle_scene": 30013,
+      "akey_price": 40
+    },
+    {
+      "id": 15910604,
+      "name": "7th Division Floor 4",
+      "next_point_id": 15910605,
+      "army_ids": [
+        20600604
+      ],
+      "battle_scene": 30013,
+      "akey_price": 53
+    },
+    {
+      "id": 15910605,
+      "name": "7th Division Floor 5",
+      "next_point_id": 15910606,
+      "army_ids": [
+        20600605
+      ],
+      "battle_scene": 30000,
+      "akey_price": 67
+    },
+    {
+      "id": 15910606,
+      "name": "7th Division Floor 6",
+      "next_point_id": 15910607,
+      "army_ids": [
+        20600606
+      ],
+      "battle_scene": 30002,
+      "akey_price": 80
+    },
+    {
+      "id": 15910607,
+      "name": "7th Division Floor 7",
+      "next_point_id": 15910608,
+      "army_ids": [
+        20600607
+      ],
+      "battle_scene": 30003,
+      "akey_price": 93
+    },
+    {
+      "id": 15910608,
+      "name": "7th Division Floor 8",
+      "next_point_id": 15910609,
+      "army_ids": [
+        20600608
+      ],
+      "battle_scene": 30003,
+      "akey_price": 107
+    },
+    {
+      "id": 15910609,
+      "name": "7th Division Floor 9",
+      "next_point_id": 15910610,
+      "army_ids": [
+        20600609
+      ],
+      "battle_scene": 30003,
+      "akey_price": 120
+    },
+    {
+      "id": 15910610,
+      "name": "7th Division Floor 10",
+      "next_point_id": 15910611,
+      "army_ids": [
+        20600610
+      ],
+      "battle_scene": 30013,
+      "akey_price": 133
+    },
+    {
+      "id": 15910611,
+      "name": "7th Division Floor 11",
+      "next_point_id": 15910612,
+      "army_ids": [
+        20600611
+      ],
+      "battle_scene": 30013,
+      "akey_price": 147
+    },
+    {
+      "id": 15910612,
+      "name": "7th Division Floor 12",
+      "next_point_id": 15910613,
+      "army_ids": [
+        20600612
+      ],
+      "battle_scene": 30000,
+      "akey_price": 160
+    },
+    {
+      "id": 15910613,
+      "name": "7th Division Floor 13",
+      "next_point_id": 15910614,
+      "army_ids": [
+        20600613
+      ],
+      "battle_scene": 30002,
+      "akey_price": 173
+    },
+    {
+      "id": 15910614,
+      "name": "7th Division Floor 14",
+      "next_point_id": 15910615,
+      "army_ids": [
+        20600614
+      ],
+      "battle_scene": 30003,
+      "akey_price": 187
+    },
+    {
+      "id": 15910615,
+      "name": "7th Division Floor 15",
+      "next_point_id": 15910616,
+      "army_ids": [
+        20600615
+      ],
+      "battle_scene": 30003,
+      "akey_price": 200
+    },
+    {
+      "id": 15910616,
+      "name": "7th Division Floor 16",
+      "next_point_id": 15910617,
+      "army_ids": [
+        20600616
+      ],
+      "battle_scene": 30003,
+      "akey_price": 213
+    },
+    {
+      "id": 15910617,
+      "name": "7th Division Floor 17",
+      "next_point_id": 15910618,
+      "army_ids": [
+        20600617
+      ],
+      "battle_scene": 30013,
+      "akey_price": 227
+    },
+    {
+      "id": 15910618,
+      "name": "7th Division Floor 18",
+      "next_point_id": 15910619,
+      "army_ids": [
+        20600618
+      ],
+      "battle_scene": 30013,
+      "akey_price": 240
+    },
+    {
+      "id": 15910619,
+      "name": "7th Division Floor 19",
+      "next_point_id": 15910620,
+      "army_ids": [
+        20600619
+      ],
+      "battle_scene": 30000,
+      "akey_price": 253
+    },
+    {
+      "id": 15910620,
+      "name": "7th Division Floor 20",
+      "next_point_id": 15910621,
+      "army_ids": [
+        20600620
+      ],
+      "battle_scene": 30002,
+      "akey_price": 267
+    },
+    {
+      "id": 15910621,
+      "name": "7th Division Floor 21",
+      "next_point_id": 15910622,
+      "army_ids": [
+        20600621
+      ],
+      "battle_scene": 30003,
+      "akey_price": 280
+    },
+    {
+      "id": 15910622,
+      "name": "7th Division Floor 22",
+      "next_point_id": 15910623,
+      "army_ids": [
+        20600622
+      ],
+      "battle_scene": 30003,
+      "akey_price": 293
+    },
+    {
+      "id": 15910623,
+      "name": "7th Division Floor 23",
+      "next_point_id": 15910624,
+      "army_ids": [
+        20600623
+      ],
+      "battle_scene": 30003,
+      "akey_price": 307
+    },
+    {
+      "id": 15910624,
+      "name": "7th Division Floor 24",
+      "next_point_id": 15910625,
+      "army_ids": [
+        20600624
+      ],
+      "battle_scene": 30013,
+      "akey_price": 320
+    },
+    {
+      "id": 15910625,
+      "name": "7th Division Floor 25",
+      "next_point_id": 15910626,
+      "army_ids": [
+        20600625
+      ],
+      "battle_scene": 30013,
+      "akey_price": 333
+    },
+    {
+      "id": 15910626,
+      "name": "7th Division Floor 26",
+      "next_point_id": 15910627,
+      "army_ids": [
+        20600626
+      ],
+      "battle_scene": 30000,
+      "akey_price": 347
+    },
+    {
+      "id": 15910627,
+      "name": "7th Division Floor 27",
+      "next_point_id": 15910628,
+      "army_ids": [
+        20600627
+      ],
+      "battle_scene": 30002,
+      "akey_price": 360
+    },
+    {
+      "id": 15910628,
+      "name": "7th Division Floor 28",
+      "next_point_id": 15910629,
+      "army_ids": [
+        20600628
+      ],
+      "battle_scene": 30003,
+      "akey_price": 373
+    },
+    {
+      "id": 15910629,
+      "name": "7th Division Floor 29",
+      "next_point_id": 15910630,
+      "army_ids": [
+        20600629
+      ],
+      "battle_scene": 30003,
+      "akey_price": 387
+    },
+    {
+      "id": 15910630,
+      "name": "7th Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20600630
+      ],
+      "battle_scene": 30003,
+      "akey_price": 400
+    },
+    {
+      "id": 15910701,
+      "name": "6th Division Floor 1",
+      "next_point_id": 15910702,
+      "army_ids": [
+        20600701
+      ],
+      "battle_scene": 30013,
+      "akey_price": 13
+    },
+    {
+      "id": 15910702,
+      "name": "6th Division Floor 2",
+      "next_point_id": 15910703,
+      "army_ids": [
+        20600702
+      ],
+      "battle_scene": 30013,
+      "akey_price": 27
+    },
+    {
+      "id": 15910703,
+      "name": "6th Division Floor 3",
+      "next_point_id": 15910704,
+      "army_ids": [
+        20600703
+      ],
+      "battle_scene": 30000,
+      "akey_price": 40
+    },
+    {
+      "id": 15910704,
+      "name": "6th Division Floor 4",
+      "next_point_id": 15910705,
+      "army_ids": [
+        20600704
+      ],
+      "battle_scene": 30002,
+      "akey_price": 53
+    },
+    {
+      "id": 15910705,
+      "name": "6th Division Floor 5",
+      "next_point_id": 15910706,
+      "army_ids": [
+        20600705
+      ],
+      "battle_scene": 30003,
+      "akey_price": 67
+    },
+    {
+      "id": 15910706,
+      "name": "6th Division Floor 6",
+      "next_point_id": 15910707,
+      "army_ids": [
+        20600706
+      ],
+      "battle_scene": 30003,
+      "akey_price": 80
+    },
+    {
+      "id": 15910707,
+      "name": "6th Division Floor 7",
+      "next_point_id": 15910708,
+      "army_ids": [
+        20600707
+      ],
+      "battle_scene": 30003,
+      "akey_price": 93
+    },
+    {
+      "id": 15910708,
+      "name": "6th Division Floor 8",
+      "next_point_id": 15910709,
+      "army_ids": [
+        20600708
+      ],
+      "battle_scene": 30013,
+      "akey_price": 107
+    },
+    {
+      "id": 15910709,
+      "name": "6th Division Floor 9",
+      "next_point_id": 15910710,
+      "army_ids": [
+        20600709
+      ],
+      "battle_scene": 30013,
+      "akey_price": 120
+    },
+    {
+      "id": 15910710,
+      "name": "6th Division Floor 10",
+      "next_point_id": 15910711,
+      "army_ids": [
+        20600710
+      ],
+      "battle_scene": 30000,
+      "akey_price": 133
+    },
+    {
+      "id": 15910711,
+      "name": "6th Division Floor 11",
+      "next_point_id": 15910712,
+      "army_ids": [
+        20600711
+      ],
+      "battle_scene": 30002,
+      "akey_price": 147
+    },
+    {
+      "id": 15910712,
+      "name": "6th Division Floor 12",
+      "next_point_id": 15910713,
+      "army_ids": [
+        20600712
+      ],
+      "battle_scene": 30003,
+      "akey_price": 160
+    },
+    {
+      "id": 15910713,
+      "name": "6th Division Floor 13",
+      "next_point_id": 15910714,
+      "army_ids": [
+        20600713
+      ],
+      "battle_scene": 30003,
+      "akey_price": 173
+    },
+    {
+      "id": 15910714,
+      "name": "6th Division Floor 14",
+      "next_point_id": 15910715,
+      "army_ids": [
+        20600714
+      ],
+      "battle_scene": 30003,
+      "akey_price": 187
+    },
+    {
+      "id": 15910715,
+      "name": "6th Division Floor 15",
+      "next_point_id": 15910716,
+      "army_ids": [
+        20600715
+      ],
+      "battle_scene": 30013,
+      "akey_price": 200
+    },
+    {
+      "id": 15910716,
+      "name": "6th Division Floor 16",
+      "next_point_id": 15910717,
+      "army_ids": [
+        20600716
+      ],
+      "battle_scene": 30013,
+      "akey_price": 213
+    },
+    {
+      "id": 15910717,
+      "name": "6th Division Floor 17",
+      "next_point_id": 15910718,
+      "army_ids": [
+        20600717
+      ],
+      "battle_scene": 30000,
+      "akey_price": 227
+    },
+    {
+      "id": 15910718,
+      "name": "6th Division Floor 18",
+      "next_point_id": 15910719,
+      "army_ids": [
+        20600718
+      ],
+      "battle_scene": 30002,
+      "akey_price": 240
+    },
+    {
+      "id": 15910719,
+      "name": "6th Division Floor 19",
+      "next_point_id": 15910720,
+      "army_ids": [
+        20600719
+      ],
+      "battle_scene": 30003,
+      "akey_price": 253
+    },
+    {
+      "id": 15910720,
+      "name": "6th Division Floor 20",
+      "next_point_id": 15910721,
+      "army_ids": [
+        20600720
+      ],
+      "battle_scene": 30003,
+      "akey_price": 267
+    },
+    {
+      "id": 15910721,
+      "name": "6th Division Floor 21",
+      "next_point_id": 15910722,
+      "army_ids": [
+        20600721
+      ],
+      "battle_scene": 30003,
+      "akey_price": 280
+    },
+    {
+      "id": 15910722,
+      "name": "6th Division Floor 22",
+      "next_point_id": 15910723,
+      "army_ids": [
+        20600722
+      ],
+      "battle_scene": 30013,
+      "akey_price": 293
+    },
+    {
+      "id": 15910723,
+      "name": "6th Division Floor 23",
+      "next_point_id": 15910724,
+      "army_ids": [
+        20600723
+      ],
+      "battle_scene": 30013,
+      "akey_price": 307
+    },
+    {
+      "id": 15910724,
+      "name": "6th Division Floor 24",
+      "next_point_id": 15910725,
+      "army_ids": [
+        20600724
+      ],
+      "battle_scene": 30000,
+      "akey_price": 320
+    },
+    {
+      "id": 15910725,
+      "name": "6th Division Floor 25",
+      "next_point_id": 15910726,
+      "army_ids": [
+        20600725
+      ],
+      "battle_scene": 30002,
+      "akey_price": 333
+    },
+    {
+      "id": 15910726,
+      "name": "6th Division Floor 26",
+      "next_point_id": 15910727,
+      "army_ids": [
+        20600726
+      ],
+      "battle_scene": 30003,
+      "akey_price": 347
+    },
+    {
+      "id": 15910727,
+      "name": "6th Division Floor 27",
+      "next_point_id": 15910728,
+      "army_ids": [
+        20600727
+      ],
+      "battle_scene": 30003,
+      "akey_price": 360
+    },
+    {
+      "id": 15910728,
+      "name": "6th Division Floor 28",
+      "next_point_id": 15910729,
+      "army_ids": [
+        20600728
+      ],
+      "battle_scene": 30003,
+      "akey_price": 373
+    },
+    {
+      "id": 15910729,
+      "name": "6th Division Floor 29",
+      "next_point_id": 15910730,
+      "army_ids": [
+        20600729
+      ],
+      "battle_scene": 30013,
+      "akey_price": 387
+    },
+    {
+      "id": 15910730,
+      "name": "6th Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20600730
+      ],
+      "battle_scene": 30013,
+      "akey_price": 400
+    },
+    {
+      "id": 15910801,
+      "name": "5th Division Floor 1",
+      "next_point_id": 15910802,
+      "army_ids": [
+        20600801
+      ],
+      "battle_scene": 30000,
+      "akey_price": 13
+    },
+    {
+      "id": 15910802,
+      "name": "5th Division Floor 2",
+      "next_point_id": 15910803,
+      "army_ids": [
+        20600802
+      ],
+      "battle_scene": 30002,
+      "akey_price": 27
+    },
+    {
+      "id": 15910803,
+      "name": "5th Division Floor 3",
+      "next_point_id": 15910804,
+      "army_ids": [
+        20600803
+      ],
+      "battle_scene": 30003,
+      "akey_price": 40
+    },
+    {
+      "id": 15910804,
+      "name": "5th Division Floor 4",
+      "next_point_id": 15910805,
+      "army_ids": [
+        20600804
+      ],
+      "battle_scene": 30003,
+      "akey_price": 53
+    },
+    {
+      "id": 15910805,
+      "name": "5th Division Floor 5",
+      "next_point_id": 15910806,
+      "army_ids": [
+        20600805
+      ],
+      "battle_scene": 30003,
+      "akey_price": 67
+    },
+    {
+      "id": 15910806,
+      "name": "5th Division Floor 6",
+      "next_point_id": 15910807,
+      "army_ids": [
+        20600806
+      ],
+      "battle_scene": 30013,
+      "akey_price": 80
+    },
+    {
+      "id": 15910807,
+      "name": "5th Division Floor 7",
+      "next_point_id": 15910808,
+      "army_ids": [
+        20600807
+      ],
+      "battle_scene": 30013,
+      "akey_price": 93
+    },
+    {
+      "id": 15910808,
+      "name": "5th Division Floor 8",
+      "next_point_id": 15910809,
+      "army_ids": [
+        20600808
+      ],
+      "battle_scene": 30000,
+      "akey_price": 107
+    },
+    {
+      "id": 15910809,
+      "name": "5th Division Floor 9",
+      "next_point_id": 15910810,
+      "army_ids": [
+        20600809
+      ],
+      "battle_scene": 30002,
+      "akey_price": 120
+    },
+    {
+      "id": 15910810,
+      "name": "5th Division Floor 10",
+      "next_point_id": 15910811,
+      "army_ids": [
+        20600810
+      ],
+      "battle_scene": 30003,
+      "akey_price": 133
+    },
+    {
+      "id": 15910811,
+      "name": "5th Division Floor 11",
+      "next_point_id": 15910812,
+      "army_ids": [
+        20600811
+      ],
+      "battle_scene": 30003,
+      "akey_price": 147
+    },
+    {
+      "id": 15910812,
+      "name": "5th Division Floor 12",
+      "next_point_id": 15910813,
+      "army_ids": [
+        20600812
+      ],
+      "battle_scene": 30003,
+      "akey_price": 160
+    },
+    {
+      "id": 15910813,
+      "name": "5th Division Floor 13",
+      "next_point_id": 15910814,
+      "army_ids": [
+        20600813
+      ],
+      "battle_scene": 30013,
+      "akey_price": 173
+    },
+    {
+      "id": 15910814,
+      "name": "5th Division Floor 14",
+      "next_point_id": 15910815,
+      "army_ids": [
+        20600814
+      ],
+      "battle_scene": 30013,
+      "akey_price": 187
+    },
+    {
+      "id": 15910815,
+      "name": "5th Division Floor 15",
+      "next_point_id": 15910816,
+      "army_ids": [
+        20600815
+      ],
+      "battle_scene": 30000,
+      "akey_price": 200
+    },
+    {
+      "id": 15910816,
+      "name": "5th Division Floor 16",
+      "next_point_id": 15910817,
+      "army_ids": [
+        20600816
+      ],
+      "battle_scene": 30002,
+      "akey_price": 213
+    },
+    {
+      "id": 15910817,
+      "name": "5th Division Floor 17",
+      "next_point_id": 15910818,
+      "army_ids": [
+        20600817
+      ],
+      "battle_scene": 30003,
+      "akey_price": 227
+    },
+    {
+      "id": 15910818,
+      "name": "5th Division Floor 18",
+      "next_point_id": 15910819,
+      "army_ids": [
+        20600818
+      ],
+      "battle_scene": 30003,
+      "akey_price": 240
+    },
+    {
+      "id": 15910819,
+      "name": "5th Division Floor 19",
+      "next_point_id": 15910820,
+      "army_ids": [
+        20600819
+      ],
+      "battle_scene": 30003,
+      "akey_price": 253
+    },
+    {
+      "id": 15910820,
+      "name": "5th Division Floor 20",
+      "next_point_id": 15910821,
+      "army_ids": [
+        20600820
+      ],
+      "battle_scene": 30013,
+      "akey_price": 267
+    },
+    {
+      "id": 15910821,
+      "name": "5th Division Floor 21",
+      "next_point_id": 15910822,
+      "army_ids": [
+        20600821
+      ],
+      "battle_scene": 30013,
+      "akey_price": 280
+    },
+    {
+      "id": 15910822,
+      "name": "5th Division Floor 22",
+      "next_point_id": 15910823,
+      "army_ids": [
+        20600822
+      ],
+      "battle_scene": 30000,
+      "akey_price": 293
+    },
+    {
+      "id": 15910823,
+      "name": "5th Division Floor 23",
+      "next_point_id": 15910824,
+      "army_ids": [
+        20600823
+      ],
+      "battle_scene": 30002,
+      "akey_price": 307
+    },
+    {
+      "id": 15910824,
+      "name": "5th Division Floor 24",
+      "next_point_id": 15910825,
+      "army_ids": [
+        20600824
+      ],
+      "battle_scene": 30003,
+      "akey_price": 320
+    },
+    {
+      "id": 15910825,
+      "name": "5th Division Floor 25",
+      "next_point_id": 15910826,
+      "army_ids": [
+        20600825
+      ],
+      "battle_scene": 30003,
+      "akey_price": 333
+    },
+    {
+      "id": 15910826,
+      "name": "5th Division Floor 26",
+      "next_point_id": 15910827,
+      "army_ids": [
+        20600826
+      ],
+      "battle_scene": 30003,
+      "akey_price": 347
+    },
+    {
+      "id": 15910827,
+      "name": "5th Division Floor 27",
+      "next_point_id": 15910828,
+      "army_ids": [
+        20600827
+      ],
+      "battle_scene": 30013,
+      "akey_price": 360
+    },
+    {
+      "id": 15910828,
+      "name": "5th Division Floor 28",
+      "next_point_id": 15910829,
+      "army_ids": [
+        20600828
+      ],
+      "battle_scene": 30013,
+      "akey_price": 373
+    },
+    {
+      "id": 15910829,
+      "name": "5th Division Floor 29",
+      "next_point_id": 15910830,
+      "army_ids": [
+        20600829
+      ],
+      "battle_scene": 30000,
+      "akey_price": 387
+    },
+    {
+      "id": 15910830,
+      "name": "5th Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20600830
+      ],
+      "battle_scene": 30002,
+      "akey_price": 400
+    },
+    {
+      "id": 15910901,
+      "name": "4th Division Floor 1",
+      "next_point_id": 15910902,
+      "army_ids": [
+        20600901
+      ],
+      "battle_scene": 30003,
+      "akey_price": 13
+    },
+    {
+      "id": 15910902,
+      "name": "4th Division Floor 2",
+      "next_point_id": 15910903,
+      "army_ids": [
+        20600902
+      ],
+      "battle_scene": 30003,
+      "akey_price": 27
+    },
+    {
+      "id": 15910903,
+      "name": "4th Division Floor 3",
+      "next_point_id": 15910904,
+      "army_ids": [
+        20600903
+      ],
+      "battle_scene": 30003,
+      "akey_price": 40
+    },
+    {
+      "id": 15910904,
+      "name": "4th Division Floor 4",
+      "next_point_id": 15910905,
+      "army_ids": [
+        20600904
+      ],
+      "battle_scene": 30013,
+      "akey_price": 53
+    },
+    {
+      "id": 15910905,
+      "name": "4th Division Floor 5",
+      "next_point_id": 15910906,
+      "army_ids": [
+        20600905
+      ],
+      "battle_scene": 30013,
+      "akey_price": 67
+    },
+    {
+      "id": 15910906,
+      "name": "4th Division Floor 6",
+      "next_point_id": 15910907,
+      "army_ids": [
+        20600906
+      ],
+      "battle_scene": 30000,
+      "akey_price": 80
+    },
+    {
+      "id": 15910907,
+      "name": "4th Division Floor 7",
+      "next_point_id": 15910908,
+      "army_ids": [
+        20600907
+      ],
+      "battle_scene": 30002,
+      "akey_price": 93
+    },
+    {
+      "id": 15910908,
+      "name": "4th Division Floor 8",
+      "next_point_id": 15910909,
+      "army_ids": [
+        20600908
+      ],
+      "battle_scene": 30003,
+      "akey_price": 107
+    },
+    {
+      "id": 15910909,
+      "name": "4th Division Floor 9",
+      "next_point_id": 15910910,
+      "army_ids": [
+        20600909
+      ],
+      "battle_scene": 30003,
+      "akey_price": 120
+    },
+    {
+      "id": 15910910,
+      "name": "4th Division Floor 10",
+      "next_point_id": 15910911,
+      "army_ids": [
+        20600910
+      ],
+      "battle_scene": 30003,
+      "akey_price": 133
+    },
+    {
+      "id": 15910911,
+      "name": "4th Division Floor 11",
+      "next_point_id": 15910912,
+      "army_ids": [
+        20600911
+      ],
+      "battle_scene": 30013,
+      "akey_price": 147
+    },
+    {
+      "id": 15910912,
+      "name": "4th Division Floor 12",
+      "next_point_id": 15910913,
+      "army_ids": [
+        20600912
+      ],
+      "battle_scene": 30013,
+      "akey_price": 160
+    },
+    {
+      "id": 15910913,
+      "name": "4th Division Floor 13",
+      "next_point_id": 15910914,
+      "army_ids": [
+        20600913
+      ],
+      "battle_scene": 30000,
+      "akey_price": 173
+    },
+    {
+      "id": 15910914,
+      "name": "4th Division Floor 14",
+      "next_point_id": 15910915,
+      "army_ids": [
+        20600914
+      ],
+      "battle_scene": 30002,
+      "akey_price": 187
+    },
+    {
+      "id": 15910915,
+      "name": "4th Division Floor 15",
+      "next_point_id": 15910916,
+      "army_ids": [
+        20600915
+      ],
+      "battle_scene": 30003,
+      "akey_price": 200
+    },
+    {
+      "id": 15910916,
+      "name": "4th Division Floor 16",
+      "next_point_id": 15910917,
+      "army_ids": [
+        20600916
+      ],
+      "battle_scene": 30003,
+      "akey_price": 213
+    },
+    {
+      "id": 15910917,
+      "name": "4th Division Floor 17",
+      "next_point_id": 15910918,
+      "army_ids": [
+        20600917
+      ],
+      "battle_scene": 30003,
+      "akey_price": 227
+    },
+    {
+      "id": 15910918,
+      "name": "4th Division Floor 18",
+      "next_point_id": 15910919,
+      "army_ids": [
+        20600918
+      ],
+      "battle_scene": 30013,
+      "akey_price": 240
+    },
+    {
+      "id": 15910919,
+      "name": "4th Division Floor 19",
+      "next_point_id": 15910920,
+      "army_ids": [
+        20600919
+      ],
+      "battle_scene": 30013,
+      "akey_price": 253
+    },
+    {
+      "id": 15910920,
+      "name": "4th Division Floor 20",
+      "next_point_id": 15910921,
+      "army_ids": [
+        20600920
+      ],
+      "battle_scene": 30000,
+      "akey_price": 267
+    },
+    {
+      "id": 15910921,
+      "name": "4th Division Floor 21",
+      "next_point_id": 15910922,
+      "army_ids": [
+        20600921
+      ],
+      "battle_scene": 30002,
+      "akey_price": 280
+    },
+    {
+      "id": 15910922,
+      "name": "4th Division Floor 22",
+      "next_point_id": 15910923,
+      "army_ids": [
+        20600922
+      ],
+      "battle_scene": 30003,
+      "akey_price": 293
+    },
+    {
+      "id": 15910923,
+      "name": "4th Division Floor 23",
+      "next_point_id": 15910924,
+      "army_ids": [
+        20600923
+      ],
+      "battle_scene": 30003,
+      "akey_price": 307
+    },
+    {
+      "id": 15910924,
+      "name": "4th Division Floor 24",
+      "next_point_id": 15910925,
+      "army_ids": [
+        20600924
+      ],
+      "battle_scene": 30003,
+      "akey_price": 320
+    },
+    {
+      "id": 15910925,
+      "name": "4th Division Floor 25",
+      "next_point_id": 15910926,
+      "army_ids": [
+        20600925
+      ],
+      "battle_scene": 30013,
+      "akey_price": 333
+    },
+    {
+      "id": 15910926,
+      "name": "4th Division Floor 26",
+      "next_point_id": 15910927,
+      "army_ids": [
+        20600926
+      ],
+      "battle_scene": 30013,
+      "akey_price": 347
+    },
+    {
+      "id": 15910927,
+      "name": "4th Division Floor 27",
+      "next_point_id": 15910928,
+      "army_ids": [
+        20600927
+      ],
+      "battle_scene": 30000,
+      "akey_price": 360
+    },
+    {
+      "id": 15910928,
+      "name": "4th Division Floor 28",
+      "next_point_id": 15910929,
+      "army_ids": [
+        20600928
+      ],
+      "battle_scene": 30002,
+      "akey_price": 373
+    },
+    {
+      "id": 15910929,
+      "name": "4th Division Floor 29",
+      "next_point_id": 15910930,
+      "army_ids": [
+        20600929
+      ],
+      "battle_scene": 30003,
+      "akey_price": 387
+    },
+    {
+      "id": 15910930,
+      "name": "4th Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20600930
+      ],
+      "battle_scene": 30003,
+      "akey_price": 400
+    },
+    {
+      "id": 15911001,
+      "name": "3rd Division Floor 1",
+      "next_point_id": 15911002,
+      "army_ids": [
+        20601001
+      ],
+      "battle_scene": 30003,
+      "akey_price": 13
+    },
+    {
+      "id": 15911002,
+      "name": "3rd Division Floor 2",
+      "next_point_id": 15911003,
+      "army_ids": [
+        20601002
+      ],
+      "battle_scene": 30013,
+      "akey_price": 27
+    },
+    {
+      "id": 15911003,
+      "name": "3rd Division Floor 3",
+      "next_point_id": 15911004,
+      "army_ids": [
+        20601003
+      ],
+      "battle_scene": 30013,
+      "akey_price": 40
+    },
+    {
+      "id": 15911004,
+      "name": "3rd Division Floor 4",
+      "next_point_id": 15911005,
+      "army_ids": [
+        20601004
+      ],
+      "battle_scene": 30000,
+      "akey_price": 53
+    },
+    {
+      "id": 15911005,
+      "name": "3rd Division Floor 5",
+      "next_point_id": 15911006,
+      "army_ids": [
+        20601005
+      ],
+      "battle_scene": 30002,
+      "akey_price": 67
+    },
+    {
+      "id": 15911006,
+      "name": "3rd Division Floor 6",
+      "next_point_id": 15911007,
+      "army_ids": [
+        20601006
+      ],
+      "battle_scene": 30003,
+      "akey_price": 80
+    },
+    {
+      "id": 15911007,
+      "name": "3rd Division Floor 7",
+      "next_point_id": 15911008,
+      "army_ids": [
+        20601007
+      ],
+      "battle_scene": 30003,
+      "akey_price": 93
+    },
+    {
+      "id": 15911008,
+      "name": "3rd Division Floor 8",
+      "next_point_id": 15911009,
+      "army_ids": [
+        20601008
+      ],
+      "battle_scene": 30003,
+      "akey_price": 107
+    },
+    {
+      "id": 15911009,
+      "name": "3rd Division Floor 9",
+      "next_point_id": 15911010,
+      "army_ids": [
+        20601009
+      ],
+      "battle_scene": 30013,
+      "akey_price": 120
+    },
+    {
+      "id": 15911010,
+      "name": "3rd Division Floor 10",
+      "next_point_id": 15911011,
+      "army_ids": [
+        20601010
+      ],
+      "battle_scene": 30013,
+      "akey_price": 133
+    },
+    {
+      "id": 15911011,
+      "name": "3rd Division Floor 11",
+      "next_point_id": 15911012,
+      "army_ids": [
+        20601011
+      ],
+      "battle_scene": 30000,
+      "akey_price": 147
+    },
+    {
+      "id": 15911012,
+      "name": "3rd Division Floor 12",
+      "next_point_id": 15911013,
+      "army_ids": [
+        20601012
+      ],
+      "battle_scene": 30002,
+      "akey_price": 160
+    },
+    {
+      "id": 15911013,
+      "name": "3rd Division Floor 13",
+      "next_point_id": 15911014,
+      "army_ids": [
+        20601013
+      ],
+      "battle_scene": 30003,
+      "akey_price": 173
+    },
+    {
+      "id": 15911014,
+      "name": "3rd Division Floor 14",
+      "next_point_id": 15911015,
+      "army_ids": [
+        20601014
+      ],
+      "battle_scene": 30003,
+      "akey_price": 187
+    },
+    {
+      "id": 15911015,
+      "name": "3rd Division Floor 15",
+      "next_point_id": 15911016,
+      "army_ids": [
+        20601015
+      ],
+      "battle_scene": 30003,
+      "akey_price": 200
+    },
+    {
+      "id": 15911016,
+      "name": "3rd Division Floor 16",
+      "next_point_id": 15911017,
+      "army_ids": [
+        20601016
+      ],
+      "battle_scene": 30013,
+      "akey_price": 213
+    },
+    {
+      "id": 15911017,
+      "name": "3rd Division Floor 17",
+      "next_point_id": 15911018,
+      "army_ids": [
+        20601017
+      ],
+      "battle_scene": 30013,
+      "akey_price": 227
+    },
+    {
+      "id": 15911018,
+      "name": "3rd Division Floor 18",
+      "next_point_id": 15911019,
+      "army_ids": [
+        20601018
+      ],
+      "battle_scene": 30000,
+      "akey_price": 240
+    },
+    {
+      "id": 15911019,
+      "name": "3rd Division Floor 19",
+      "next_point_id": 15911020,
+      "army_ids": [
+        20601019
+      ],
+      "battle_scene": 30002,
+      "akey_price": 253
+    },
+    {
+      "id": 15911020,
+      "name": "3rd Division Floor 20",
+      "next_point_id": 15911021,
+      "army_ids": [
+        20601020
+      ],
+      "battle_scene": 30003,
+      "akey_price": 267
+    },
+    {
+      "id": 15911021,
+      "name": "3rd Division Floor 21",
+      "next_point_id": 15911022,
+      "army_ids": [
+        20601021
+      ],
+      "battle_scene": 30003,
+      "akey_price": 280
+    },
+    {
+      "id": 15911022,
+      "name": "3rd Division Floor 22",
+      "next_point_id": 15911023,
+      "army_ids": [
+        20601022
+      ],
+      "battle_scene": 30003,
+      "akey_price": 293
+    },
+    {
+      "id": 15911023,
+      "name": "3rd Division Floor 23",
+      "next_point_id": 15911024,
+      "army_ids": [
+        20601023
+      ],
+      "battle_scene": 30013,
+      "akey_price": 307
+    },
+    {
+      "id": 15911024,
+      "name": "3rd Division Floor 24",
+      "next_point_id": 15911025,
+      "army_ids": [
+        20601024
+      ],
+      "battle_scene": 30013,
+      "akey_price": 320
+    },
+    {
+      "id": 15911025,
+      "name": "3rd Division Floor 25",
+      "next_point_id": 15911026,
+      "army_ids": [
+        20601025
+      ],
+      "battle_scene": 30000,
+      "akey_price": 333
+    },
+    {
+      "id": 15911026,
+      "name": "3rd Division Floor 26",
+      "next_point_id": 15911027,
+      "army_ids": [
+        20601026
+      ],
+      "battle_scene": 30002,
+      "akey_price": 347
+    },
+    {
+      "id": 15911027,
+      "name": "3rd Division Floor 27",
+      "next_point_id": 15911028,
+      "army_ids": [
+        20601027
+      ],
+      "battle_scene": 30003,
+      "akey_price": 360
+    },
+    {
+      "id": 15911028,
+      "name": "3rd Division Floor 28",
+      "next_point_id": 15911029,
+      "army_ids": [
+        20601028
+      ],
+      "battle_scene": 30003,
+      "akey_price": 373
+    },
+    {
+      "id": 15911029,
+      "name": "3rd Division Floor 29",
+      "next_point_id": 15911030,
+      "army_ids": [
+        20601029
+      ],
+      "battle_scene": 30003,
+      "akey_price": 387
+    },
+    {
+      "id": 15911030,
+      "name": "3rd Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20601030
+      ],
+      "battle_scene": 30013,
+      "akey_price": 400
+    },
+    {
+      "id": 15911101,
+      "name": "2nd Division Floor 1",
+      "next_point_id": 15911102,
+      "army_ids": [
+        20601101
+      ],
+      "battle_scene": 30013,
+      "akey_price": 13
+    },
+    {
+      "id": 15911102,
+      "name": "2nd Division Floor 2",
+      "next_point_id": 15911103,
+      "army_ids": [
+        20601102
+      ],
+      "battle_scene": 30000,
+      "akey_price": 27
+    },
+    {
+      "id": 15911103,
+      "name": "2nd Division Floor 3",
+      "next_point_id": 15911104,
+      "army_ids": [
+        20601103
+      ],
+      "battle_scene": 30002,
+      "akey_price": 40
+    },
+    {
+      "id": 15911104,
+      "name": "2nd Division Floor 4",
+      "next_point_id": 15911105,
+      "army_ids": [
+        20601104
+      ],
+      "battle_scene": 30003,
+      "akey_price": 53
+    },
+    {
+      "id": 15911105,
+      "name": "2nd Division Floor 5",
+      "next_point_id": 15911106,
+      "army_ids": [
+        20601105
+      ],
+      "battle_scene": 30003,
+      "akey_price": 67
+    },
+    {
+      "id": 15911106,
+      "name": "2nd Division Floor 6",
+      "next_point_id": 15911107,
+      "army_ids": [
+        20601106
+      ],
+      "battle_scene": 30003,
+      "akey_price": 80
+    },
+    {
+      "id": 15911107,
+      "name": "2nd Division Floor 7",
+      "next_point_id": 15911108,
+      "army_ids": [
+        20601107
+      ],
+      "battle_scene": 30013,
+      "akey_price": 93
+    },
+    {
+      "id": 15911108,
+      "name": "2nd Division Floor 8",
+      "next_point_id": 15911109,
+      "army_ids": [
+        20601108
+      ],
+      "battle_scene": 30013,
+      "akey_price": 107
+    },
+    {
+      "id": 15911109,
+      "name": "2nd Division Floor 9",
+      "next_point_id": 15911110,
+      "army_ids": [
+        20601109
+      ],
+      "battle_scene": 30000,
+      "akey_price": 120
+    },
+    {
+      "id": 15911110,
+      "name": "2nd Division Floor 10",
+      "next_point_id": 15911111,
+      "army_ids": [
+        20601110
+      ],
+      "battle_scene": 30002,
+      "akey_price": 133
+    },
+    {
+      "id": 15911111,
+      "name": "2nd Division Floor 11",
+      "next_point_id": 15911112,
+      "army_ids": [
+        20601111
+      ],
+      "battle_scene": 30003,
+      "akey_price": 147
+    },
+    {
+      "id": 15911112,
+      "name": "2nd Division Floor 12",
+      "next_point_id": 15911113,
+      "army_ids": [
+        20601112
+      ],
+      "battle_scene": 30003,
+      "akey_price": 160
+    },
+    {
+      "id": 15911113,
+      "name": "2nd Division Floor 13",
+      "next_point_id": 15911114,
+      "army_ids": [
+        20601113
+      ],
+      "battle_scene": 30003,
+      "akey_price": 173
+    },
+    {
+      "id": 15911114,
+      "name": "2nd Division Floor 14",
+      "next_point_id": 15911115,
+      "army_ids": [
+        20601114
+      ],
+      "battle_scene": 30013,
+      "akey_price": 187
+    },
+    {
+      "id": 15911115,
+      "name": "2nd Division Floor 15",
+      "next_point_id": 15911116,
+      "army_ids": [
+        20601115
+      ],
+      "battle_scene": 30013,
+      "akey_price": 200
+    },
+    {
+      "id": 15911116,
+      "name": "2nd Division Floor 16",
+      "next_point_id": 15911117,
+      "army_ids": [
+        20601116
+      ],
+      "battle_scene": 30000,
+      "akey_price": 213
+    },
+    {
+      "id": 15911117,
+      "name": "2nd Division Floor 17",
+      "next_point_id": 15911118,
+      "army_ids": [
+        20601117
+      ],
+      "battle_scene": 30002,
+      "akey_price": 227
+    },
+    {
+      "id": 15911118,
+      "name": "2nd Division Floor 18",
+      "next_point_id": 15911119,
+      "army_ids": [
+        20601118
+      ],
+      "battle_scene": 30003,
+      "akey_price": 240
+    },
+    {
+      "id": 15911119,
+      "name": "2nd Division Floor 19",
+      "next_point_id": 15911120,
+      "army_ids": [
+        20601119
+      ],
+      "battle_scene": 30003,
+      "akey_price": 253
+    },
+    {
+      "id": 15911120,
+      "name": "2nd Division Floor 20",
+      "next_point_id": 15911121,
+      "army_ids": [
+        20601120
+      ],
+      "battle_scene": 30003,
+      "akey_price": 267
+    },
+    {
+      "id": 15911121,
+      "name": "2nd Division Floor 21",
+      "next_point_id": 15911122,
+      "army_ids": [
+        20601121
+      ],
+      "battle_scene": 30013,
+      "akey_price": 280
+    },
+    {
+      "id": 15911122,
+      "name": "2nd Division Floor 22",
+      "next_point_id": 15911123,
+      "army_ids": [
+        20601122
+      ],
+      "battle_scene": 30013,
+      "akey_price": 293
+    },
+    {
+      "id": 15911123,
+      "name": "2nd Division Floor 23",
+      "next_point_id": 15911124,
+      "army_ids": [
+        20601123
+      ],
+      "battle_scene": 30000,
+      "akey_price": 307
+    },
+    {
+      "id": 15911124,
+      "name": "2nd Division Floor 24",
+      "next_point_id": 15911125,
+      "army_ids": [
+        20601124
+      ],
+      "battle_scene": 30002,
+      "akey_price": 320
+    },
+    {
+      "id": 15911125,
+      "name": "2nd Division Floor 25",
+      "next_point_id": 15911126,
+      "army_ids": [
+        20601125
+      ],
+      "battle_scene": 30003,
+      "akey_price": 333
+    },
+    {
+      "id": 15911126,
+      "name": "2nd Division Floor 26",
+      "next_point_id": 15911127,
+      "army_ids": [
+        20601126
+      ],
+      "battle_scene": 30003,
+      "akey_price": 347
+    },
+    {
+      "id": 15911127,
+      "name": "2nd Division Floor 27",
+      "next_point_id": 15911128,
+      "army_ids": [
+        20601127
+      ],
+      "battle_scene": 30003,
+      "akey_price": 360
+    },
+    {
+      "id": 15911128,
+      "name": "2nd Division Floor 28",
+      "next_point_id": 15911129,
+      "army_ids": [
+        20601128
+      ],
+      "battle_scene": 30013,
+      "akey_price": 373
+    },
+    {
+      "id": 15911129,
+      "name": "2nd Division Floor 29",
+      "next_point_id": 15911130,
+      "army_ids": [
+        20601129
+      ],
+      "battle_scene": 30013,
+      "akey_price": 387
+    },
+    {
+      "id": 15911130,
+      "name": "2nd Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20601130
+      ],
+      "battle_scene": 30000,
+      "akey_price": 400
+    },
+    {
+      "id": 15911201,
+      "name": "1st Division Floor 1",
+      "next_point_id": 15911202,
+      "army_ids": [
+        20601201
+      ],
+      "battle_scene": 30002,
+      "akey_price": 13
+    },
+    {
+      "id": 15911202,
+      "name": "1st Division Floor 2",
+      "next_point_id": 15911203,
+      "army_ids": [
+        20601202
+      ],
+      "battle_scene": 30003,
+      "akey_price": 27
+    },
+    {
+      "id": 15911203,
+      "name": "1st Division Floor 3",
+      "next_point_id": 15911204,
+      "army_ids": [
+        20601203
+      ],
+      "battle_scene": 30003,
+      "akey_price": 40
+    },
+    {
+      "id": 15911204,
+      "name": "1st Division Floor 4",
+      "next_point_id": 15911205,
+      "army_ids": [
+        20601204
+      ],
+      "battle_scene": 30003,
+      "akey_price": 53
+    },
+    {
+      "id": 15911205,
+      "name": "1st Division Floor 5",
+      "next_point_id": 15911206,
+      "army_ids": [
+        20601205
+      ],
+      "battle_scene": 30013,
+      "akey_price": 67
+    },
+    {
+      "id": 15911206,
+      "name": "1st Division Floor 6",
+      "next_point_id": 15911207,
+      "army_ids": [
+        20601206
+      ],
+      "battle_scene": 30013,
+      "akey_price": 80
+    },
+    {
+      "id": 15911207,
+      "name": "1st Division Floor 7",
+      "next_point_id": 15911208,
+      "army_ids": [
+        20601207
+      ],
+      "battle_scene": 30000,
+      "akey_price": 93
+    },
+    {
+      "id": 15911208,
+      "name": "1st Division Floor 8",
+      "next_point_id": 15911209,
+      "army_ids": [
+        20601208
+      ],
+      "battle_scene": 30002,
+      "akey_price": 107
+    },
+    {
+      "id": 15911209,
+      "name": "1st Division Floor 9",
+      "next_point_id": 15911210,
+      "army_ids": [
+        20601209
+      ],
+      "battle_scene": 30003,
+      "akey_price": 120
+    },
+    {
+      "id": 15911210,
+      "name": "1st Division Floor 10",
+      "next_point_id": 15911211,
+      "army_ids": [
+        20601210
+      ],
+      "battle_scene": 30003,
+      "akey_price": 133
+    },
+    {
+      "id": 15911211,
+      "name": "1st Division Floor 11",
+      "next_point_id": 15911212,
+      "army_ids": [
+        20601211
+      ],
+      "battle_scene": 30003,
+      "akey_price": 147
+    },
+    {
+      "id": 15911212,
+      "name": "1st Division Floor 12",
+      "next_point_id": 15911213,
+      "army_ids": [
+        20601212
+      ],
+      "battle_scene": 30013,
+      "akey_price": 160
+    },
+    {
+      "id": 15911213,
+      "name": "1st Division Floor 13",
+      "next_point_id": 15911214,
+      "army_ids": [
+        20601213
+      ],
+      "battle_scene": 30013,
+      "akey_price": 173
+    },
+    {
+      "id": 15911214,
+      "name": "1st Division Floor 14",
+      "next_point_id": 15911215,
+      "army_ids": [
+        20601214
+      ],
+      "battle_scene": 30000,
+      "akey_price": 187
+    },
+    {
+      "id": 15911215,
+      "name": "1st Division Floor 15",
+      "next_point_id": 15911216,
+      "army_ids": [
+        20601215
+      ],
+      "battle_scene": 30002,
+      "akey_price": 200
+    },
+    {
+      "id": 15911216,
+      "name": "1st Division Floor 16",
+      "next_point_id": 15911217,
+      "army_ids": [
+        20601216
+      ],
+      "battle_scene": 30003,
+      "akey_price": 213
+    },
+    {
+      "id": 15911217,
+      "name": "1st Division Floor 17",
+      "next_point_id": 15911218,
+      "army_ids": [
+        20601217
+      ],
+      "battle_scene": 30003,
+      "akey_price": 227
+    },
+    {
+      "id": 15911218,
+      "name": "1st Division Floor 18",
+      "next_point_id": 15911219,
+      "army_ids": [
+        20601218
+      ],
+      "battle_scene": 30003,
+      "akey_price": 240
+    },
+    {
+      "id": 15911219,
+      "name": "1st Division Floor 19",
+      "next_point_id": 15911220,
+      "army_ids": [
+        20601219
+      ],
+      "battle_scene": 30013,
+      "akey_price": 253
+    },
+    {
+      "id": 15911220,
+      "name": "1st Division Floor 20",
+      "next_point_id": 15911221,
+      "army_ids": [
+        20601220
+      ],
+      "battle_scene": 30013,
+      "akey_price": 267
+    },
+    {
+      "id": 15911221,
+      "name": "1st Division Floor 21",
+      "next_point_id": 15911222,
+      "army_ids": [
+        20601221
+      ],
+      "battle_scene": 30000,
+      "akey_price": 280
+    },
+    {
+      "id": 15911222,
+      "name": "1st Division Floor 22",
+      "next_point_id": 15911223,
+      "army_ids": [
+        20601222
+      ],
+      "battle_scene": 30002,
+      "akey_price": 293
+    },
+    {
+      "id": 15911223,
+      "name": "1st Division Floor 23",
+      "next_point_id": 15911224,
+      "army_ids": [
+        20601223
+      ],
+      "battle_scene": 30003,
+      "akey_price": 307
+    },
+    {
+      "id": 15911224,
+      "name": "1st Division Floor 24",
+      "next_point_id": 15911225,
+      "army_ids": [
+        20601224
+      ],
+      "battle_scene": 30003,
+      "akey_price": 320
+    },
+    {
+      "id": 15911225,
+      "name": "1st Division Floor 25",
+      "next_point_id": 15911226,
+      "army_ids": [
+        20601225
+      ],
+      "battle_scene": 30003,
+      "akey_price": 333
+    },
+    {
+      "id": 15911226,
+      "name": "1st Division Floor 26",
+      "next_point_id": 15911227,
+      "army_ids": [
+        20601226
+      ],
+      "battle_scene": 30013,
+      "akey_price": 347
+    },
+    {
+      "id": 15911227,
+      "name": "1st Division Floor 27",
+      "next_point_id": 15911228,
+      "army_ids": [
+        20601227
+      ],
+      "battle_scene": 30013,
+      "akey_price": 360
+    },
+    {
+      "id": 15911228,
+      "name": "1st Division Floor 28",
+      "next_point_id": 15911229,
+      "army_ids": [
+        20601228
+      ],
+      "battle_scene": 30000,
+      "akey_price": 373
+    },
+    {
+      "id": 15911229,
+      "name": "1st Division Floor 29",
+      "next_point_id": 15911230,
+      "army_ids": [
+        20601229
+      ],
+      "battle_scene": 30002,
+      "akey_price": 387
+    },
+    {
+      "id": 15911230,
+      "name": "1st Division Floor 30",
+      "next_point_id": 0,
+      "army_ids": [
+        20601230
+      ],
+      "battle_scene": 30003,
+      "akey_price": 400
+    }
+  ]
+}

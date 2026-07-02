@@ -801,5 +801,36 @@ export interface StarPoint {
   seven_star_level_limit: number;
 }
 
+export interface TemplePoint {
+  id: number;
+  name: string;
+  next_point_id: number;
+  army_ids: number[];
+  battle_scene: number;
+  akey_price: number;
+}
+
+export interface TempleValue {
+  id: number;
+  level_coefficient: number;
+  type_coefficient: number;
+  flush_spirit_consume: number;
+  flush_spirit_successrate: number;
+  flush_spirit_stone: number[];
+  protected_stone: number;
+}
+
+export interface TemplePVP {
+  id: number;
+  layer_id: number;
+  award_id: number;
+}
+
+export interface TemplePliesNumber {
+  id: number;
+  number_plies: number;
+  award_id: number;
+}
+
 
 

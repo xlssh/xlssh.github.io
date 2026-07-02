@@ -55,6 +55,9 @@ const PveEncounterPage = React.lazy(() => import('./routes/PveEncounterPage').th
 const GuildVipPlannerPage = React.lazy(() => import('./routes/GuildVipPlannerPage').then(m => ({ default: m.GuildVipPlannerPage })));
 const OrnamentsPlannerPage = React.lazy(() => import('./routes/OrnamentsPlannerPage').then(m => ({ default: m.OrnamentsPlannerPage })));
 const SoulMapsPlannerPage = React.lazy(() => import('./routes/SoulMapsPlannerPage').then(m => ({ default: m.SoulMapsPlannerPage })));
+const BlackMarketPage = React.lazy(() => import('./routes/BlackMarketPage').then(m => ({ default: m.BlackMarketPage })));
+const BeastSoulsPlannerPage = React.lazy(() => import('./routes/BeastSoulsPlannerPage').then(m => ({ default: m.BeastSoulsPlannerPage })));
+const ShrineSimulatorPage = React.lazy(() => import('./routes/ShrineSimulatorPage').then(m => ({ default: m.ShrineSimulatorPage })));
 
 
 function App() {
@@ -114,6 +117,9 @@ function App() {
             <Route path="/tools/guild-vip" element={<GuildVipPlannerPage />} />
             <Route path="/tools/ornaments" element={<OrnamentsPlannerPage />} />
             <Route path="/tools/soul-maps" element={<SoulMapsPlannerPage />} />
+            <Route path="/tools/black-market" element={<BlackMarketPage />} />
+            <Route path="/tools/beast-souls" element={<BeastSoulsPlannerPage />} />
+            <Route path="/tools/shrine-simulator" element={<ShrineSimulatorPage />} />
           </Routes>
         </React.Suspense>
       </Layout>
