@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://xlssh.github.io/shinigamiworld-db",
+  "homepage": "https://xlssh.github.io",
   "scripts": {
     "dev": "bun x --bun vite",
     "export:data": "python3 scripts/export-sqlite-to-json.py",

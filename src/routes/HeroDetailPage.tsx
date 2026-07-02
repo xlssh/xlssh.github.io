@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { loadHeroes, loadRecommendHeroes, loadRelatedPartners, loadRelatedPartnerTypes, loadRelatedConditions, loadRelatedPartnerPoints, loadPartnerChanges, loadHeroChangeAttrs, loadArticles, loadBaseStones } from '../data/loaders';
-import { Hero, RecommendHero, RelatedPartner, RelatedPartnerType, RelatedCondition, RelatedPartnerPoint, PartnerChange, HeroChangeAttr, Article, BaseStone } from '../types/db';
+import { loadHeroes, loadRecommendHeroes, loadRelatedPartners, loadRelatedPartnerTypes, loadRelatedConditions, loadRelatedPartnerPoints, loadPartnerChanges, loadHeroChangeAttrs, loadArticles, loadBaseStones, loadSkills, loadHeroTalents } from '../data/loaders';
+import { Hero, RecommendHero, RelatedPartner, RelatedPartnerType, RelatedCondition, RelatedPartnerPoint, PartnerChange, HeroChangeAttr, Article, BaseStone, Skill, HeroTalent } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { JsonViewer } from '../components/JsonViewer';
@@ -21,6 +21,8 @@ export const HeroDetailPage: React.FC = () => {
   const [conditions, setConditions] = useState<RelatedCondition[]>([]);
   const [partnerPoints, setPartnerPoints] = useState<RelatedPartnerPoint[]>([]);
   const [bondLevelsState, setBondLevelsState] = useState<Record<number, number>>({});
+  const [skills, setSkills] = useState<Skill[]>([]);
+  const [heroTalents, setHeroTalents] = useState<HeroTalent[]>([]);
 
   const [partnerChanges, setPartnerChanges] = useState<PartnerChange[]>([]);
   const [heroChangeAttrs, setHeroChangeAttrs] = useState<HeroChangeAttr[]>([]);
@@ -82,7 +84,9 @@ export const HeroDetailPage: React.FC = () => {
         changesRes,
         attrsRes,
         artRes,
-        stonesRes
+        stonesRes,
+        skillsRes,
+        talentsRes
       ] = await Promise.all([
         loadHeroes(),
         loadRecommendHeroes(),
@@ -93,7 +97,9 @@ export const HeroDetailPage: React.FC = () => {
         loadPartnerChanges(),
         loadHeroChangeAttrs(),
         loadArticles(),
-        loadBaseStones()
+        loadBaseStones(),
+        loadSkills(),
+        loadHeroTalents()
       ]);
       const match = heroesRes.rows.find(h => h.id === parseInt(id || ''));
       setAllHeroes(heroesRes.rows);
@@ -106,6 +112,8 @@ export const HeroDetailPage: React.FC = () => {
       setHeroChangeAttrs(attrsRes.rows);
       setArticles(artRes.rows);
       setBaseStones(stonesRes.rows);
+      setSkills(skillsRes.rows);
+      setHeroTalents(talentsRes.rows);
       if (match) {
         setHero(match);
       } else {
@@ -135,11 +143,11 @@ export const HeroDetailPage: React.FC = () => {
 
   const getJadeStoneAndAttrType = useCallback((jadeName: string) => {
     const lower = jadeName.toLowerCase();
-    
+
     // Default values
     let stoneType = 101;
     let attrType = 101;
-    
+
     if (lower.includes('swift')) {
       stoneType = 24; // Crit Stone
       attrType = 24;  // Crit Rate
@@ -183,7 +191,7 @@ export const HeroDetailPage: React.FC = () => {
       stoneType = 4;  // Stamina Stone
       attrType = 17;  // Physical Defense
     }
-    
+
     return { stoneType, attrType };
   }, []);
 
@@ -206,11 +214,11 @@ export const HeroDetailPage: React.FC = () => {
   const simulatedJadeStatsTotal = useMemo(() => {
     const totals: Record<number, number> = {};
     if (!recommendedJades) return totals;
-    
+
     recommendedJades.jades.forEach((jadeName, idx) => {
       const { stoneType } = getJadeStoneAndAttrType(jadeName);
       const lvl = simulatedJadeLevels[idx] || 10;
-      
+
       const stone = getJadeAtLevel(stoneType, lvl);
       if (stone) {
         totals[stoneType] = (totals[stoneType] || 0) + stone.add_value;
@@ -221,7 +229,7 @@ export const HeroDetailPage: React.FC = () => {
 
   const calculatedStats = useMemo(() => {
     if (!hero) return [];
-    
+
     const strPct = simulatedJadeStatsTotal[1] || 0;
     const agiPct = simulatedJadeStatsTotal[2] || 0;
     const intPct = simulatedJadeStatsTotal[3] || 0;
@@ -264,6 +272,18 @@ export const HeroDetailPage: React.FC = () => {
       .map(stageId => partnerChanges.find(pc => pc.id === stageId))
       .filter(Boolean) as PartnerChange[];
   }, [heroChangeAttr, partnerChanges]);
+
+  const heroSkills = useMemo(() => {
+    if (!hero || !skills.length) return null;
+    const normalAttack = skills.find(s => s.id === hero.normal_attack);
+    const activeSkill = skills.find(s => s.id === hero.active);
+    return { normalAttack, activeSkill };
+  }, [hero, skills]);
+
+  const heroTalent = useMemo(() => {
+    if (!hero || !heroTalents.length) return null;
+    return heroTalents.find(t => t.id === hero.talent);
+  }, [hero, heroTalents]);
 
   const getItemName = (code: number) => {
     const art = articles.find(a => a.id === code);
@@ -585,6 +605,38 @@ export const HeroDetailPage: React.FC = () => {
         </div>
       </div>
 
+      {/* Skills and Talent */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {heroSkills?.normalAttack && (
+          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm">
+            <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+              <Swords size={18} className="text-gray-500" />
+              <span>Normal Attack: {heroSkills.normalAttack.name}</span>
+            </h3>
+            <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-2">{heroSkills.normalAttack.description}</p>
+          </div>
+        )}
+        {heroSkills?.activeSkill && (
+          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm">
+            <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+              <Sparkles size={18} className="text-yellow-500" />
+              <span>Active Skill: {heroSkills.activeSkill.name}</span>
+            </h3>
+            <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-2">{heroSkills.activeSkill.description}</p>
+          </div>
+        )}
+      </div>
+
+      {heroTalent && (
+        <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm">
+          <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+            <Star size={18} className="text-blue-500" />
+            <span>Talent: {heroTalent.talent_name}</span>
+          </h3>
+          <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-2">{heroTalent.talent_desc}</p>
+        </div>
+      )}
+
       {/* Soul Jade Progression & Build Recommendations */}
       {hero.crash_jade_open_level && (
         <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4 animate-fade-in">
@@ -637,7 +689,7 @@ export const HeroDetailPage: React.FC = () => {
                     const stoneData = getJadeAtLevel(stoneType, lvl);
                     const name = getAttributeName(attrType);
                     const isPercent = name.toLowerCase().includes('rate') || name.toLowerCase().includes('immunity') || name.toLowerCase().includes('avoidance') || (stoneData && stoneData.add_value < 1);
-                    const formattedValue = stoneData 
+                    const formattedValue = stoneData
                       ? (isPercent ? `+${(stoneData.add_value * 100).toFixed(1)}%` : `+${stoneData.add_value}`)
                       : 'N/A';
 

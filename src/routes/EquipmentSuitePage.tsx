@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { loadBaseEquips, loadSuits, loadEquipUpgrades, loadEquipAdditionals, loadArticles } from '../data/loaders';
-import { BaseEquip, Suit, EquipUpgrade, EquipAdditional, Article } from '../types/db';
+import { loadBaseEquips, loadSuits, loadEquipUpgrades, loadEquipAdditionals, loadArticles, loadEquipGenerates } from '../data/loaders';
+import { BaseEquip, Suit, EquipUpgrade, EquipAdditional, Article, EquipGenerate } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 
 function formatProfessionLock(lockStr: string): string {
@@ -26,13 +26,14 @@ export function EquipmentSuitePage() {
   const [upgrades, setUpgrades] = useState<EquipUpgrade[]>([]);
   const [additionals, setAdditionals] = useState<EquipAdditional[]>([]);
   const [articlesMap, setArticlesMap] = useState<Record<number, Article>>({});
-  
-  const [activeTab, setActiveTab] = useState<'catalog' | 'suits' | 'upgrades'>('catalog');
-  
+  const [generates, setGenerates] = useState<EquipGenerate[]>([]);
+
+  const [activeTab, setActiveTab] = useState<'catalog' | 'suits' | 'upgrades' | 'forge'>('catalog');
+
   // Catalog states
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedQuality, setSelectedQuality] = useState<string>('all');
-  
+
   // Suit states
   const [selectedSuitId, setSelectedSuitId] = useState<number | null>(null);
   const [equippedSuitPieces, setEquippedSuitPieces] = useState<number>(2);
@@ -47,13 +48,15 @@ export function EquipmentSuitePage() {
       loadSuits(),
       loadEquipUpgrades(),
       loadEquipAdditionals(),
-      loadArticles()
-    ]).then(([equipsRes, suitsRes, upgradesRes, additionalsRes, articlesRes]) => {
+      loadArticles(),
+      loadEquipGenerates()
+    ]).then(([equipsRes, suitsRes, upgradesRes, additionalsRes, articlesRes, generatesRes]) => {
       setBaseEquips(equipsRes.rows);
       setSuits(suitsRes.rows);
       setUpgrades(upgradesRes.rows);
       setAdditionals(additionalsRes.rows);
-      
+      setGenerates(generatesRes.rows);
+
       const aMap: Record<number, Article> = {};
       articlesRes.rows.forEach(art => {
         aMap[art.id] = art;
@@ -153,8 +156,8 @@ export function EquipmentSuitePage() {
   // Filter Catalog
   const filteredEquips = baseEquips.filter(eq => {
     const details = getEquipDetails(eq.id);
-    const matchesSearch = details.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          eq.dress_profession.includes(searchQuery);
+    const matchesSearch = details.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      eq.dress_profession.includes(searchQuery);
     const matchesQuality = selectedQuality === 'all' || details.quality.toString() === selectedQuality;
     return matchesSearch && matchesQuality;
   });
@@ -166,7 +169,7 @@ export function EquipmentSuitePage() {
   const calculateUpgradeCosts = () => {
     let goldCost = 0;
     let stoneCost = 0;
-    
+
     // Simulating leveling progression
     for (let l = currentUpgradeLvl; l < targetUpgradeLvl; l++) {
       // Scale costs based on level
@@ -194,11 +197,10 @@ export function EquipmentSuitePage() {
       <div className="flex space-x-2 mb-6">
         <button
           onClick={() => setActiveTab('catalog')}
-          className={`px-4 py-2 text-sm tracking-wider font-semibold rounded transition-all ${
-            activeTab === 'catalog'
+          className={`px-4 py-2 text-sm tracking-wider font-semibold rounded transition-all ${activeTab === 'catalog'
               ? 'bg-brand-soft border border-brand text-brand shadow-sm'
               : 'bg-surface border border-border text-muted hover:text-text'
-          }`}
+            }`}
         >
           GEAR CATALOG
         </button>
@@ -207,23 +209,30 @@ export function EquipmentSuitePage() {
             setActiveTab('suits');
             if (suits.length > 0 && !selectedSuitId) setSelectedSuitId(suits[0].id);
           }}
-          className={`px-4 py-2 text-sm tracking-wider font-semibold rounded transition-all ${
-            activeTab === 'suits'
+          className={`px-4 py-2 text-sm tracking-wider font-semibold rounded transition-all ${activeTab === 'suits'
               ? 'bg-brand-soft border border-brand text-brand shadow-sm'
               : 'bg-surface border border-border text-muted hover:text-text'
-          }`}
+            }`}
         >
           SUIT SET SIMULATOR
         </button>
         <button
           onClick={() => setActiveTab('upgrades')}
-          className={`px-4 py-2 text-sm tracking-wider font-semibold rounded transition-all ${
-            activeTab === 'upgrades'
+          className={`px-4 py-2 text-sm tracking-wider font-semibold rounded transition-all ${activeTab === 'upgrades'
               ? 'bg-brand-soft border border-brand text-brand shadow-sm'
               : 'bg-surface border border-border text-muted hover:text-text'
-          }`}
+            }`}
         >
           FORGE COST TRACKER
+        </button>
+        <button
+          onClick={() => setActiveTab('forge')}
+          className={`px-4 py-2 text-sm tracking-wider font-semibold rounded transition-all ${activeTab === 'forge'
+              ? 'bg-brand-soft border border-brand text-brand shadow-sm'
+              : 'bg-surface border border-border text-muted hover:text-text'
+            }`}
+        >
+          FORGE PLANNER
         </button>
       </div>
 
@@ -336,11 +345,10 @@ export function EquipmentSuitePage() {
               <button
                 key={s.id}
                 onClick={() => setSelectedSuitId(s.id)}
-                className={`w-full text-left p-3 rounded transition-all flex justify-between items-center ${
-                  selectedSuitId === s.id
+                className={`w-full text-left p-3 rounded transition-all flex justify-between items-center ${selectedSuitId === s.id
                     ? 'bg-brand-soft border border-brand text-brand'
                     : 'bg-bg border border-transparent text-muted hover:text-text'
-                }`}
+                  }`}
               >
                 <span className="font-semibold text-sm">{s.name}</span>
                 <span className="text-xs font-mono text-subtle">ID: {s.id}</span>
@@ -375,11 +383,10 @@ export function EquipmentSuitePage() {
                   <button
                     key={num}
                     onClick={() => setEquippedSuitPieces(num)}
-                    className={`px-3 py-1.5 rounded font-mono text-xs font-bold transition-all ${
-                      equippedSuitPieces === num
+                    className={`px-3 py-1.5 rounded font-mono text-xs font-bold transition-all ${equippedSuitPieces === num
                         ? 'bg-brand text-white'
                         : 'bg-surface border border-border text-muted hover:text-text'
-                    }`}
+                      }`}
                   >
                     {num} Pcs
                   </button>
@@ -392,28 +399,26 @@ export function EquipmentSuitePage() {
               <h4 className="text-sm font-bold text-muted tracking-wider uppercase border-b border-border pb-2">
                 SET BONUSES BREAKDOWN
               </h4>
-              
+
               {/* Parse and render 2, 4, 6 items */}
               {['2', '4', '6'].map(pcs => {
                 const isActivated = equippedSuitPieces >= parseInt(pcs);
                 const list = selectedSuit.effects?.[pcs] || [];
-                
+
                 return (
                   <div
                     key={pcs}
-                    className={`p-4 rounded border transition-all ${
-                      isActivated 
-                        ? 'bg-success/5 border-success/30' 
+                    className={`p-4 rounded border transition-all ${isActivated
+                        ? 'bg-success/5 border-success/30'
                         : 'bg-bg/40 border-border opacity-50'
-                    }`}
+                      }`}
                   >
                     <div className="flex justify-between items-center mb-2">
                       <span className={`text-sm font-bold uppercase tracking-wider ${isActivated ? 'text-success' : 'text-muted'}`}>
                         {pcs}-Piece Bonus
                       </span>
-                      <span className={`text-xs px-2 py-0.5 rounded font-mono ${
-                        isActivated ? 'bg-success/20 text-success' : 'bg-surface text-subtle'
-                      }`}>
+                      <span className={`text-xs px-2 py-0.5 rounded font-mono ${isActivated ? 'bg-success/20 text-success' : 'bg-surface text-subtle'
+                        }`}>
                         {isActivated ? 'Active' : 'Inactive'}
                       </span>
                     </div>
@@ -454,7 +459,7 @@ export function EquipmentSuitePage() {
             <h3 className="text-sm font-bold tracking-wider text-brand uppercase border-b border-border pb-2">
               FORGE TARGET METRIC
             </h3>
-            
+
             <div className="space-y-4">
               <div>
                 <label className="text-xs text-subtle uppercase tracking-wider block mb-2">
@@ -507,7 +512,7 @@ export function EquipmentSuitePage() {
             <h3 className="text-sm font-bold tracking-wider text-muted uppercase border-b border-border pb-3 mb-4">
               UPGRADE SCALING CURVES
             </h3>
-            
+
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs border-collapse">
                 <thead>
@@ -537,6 +542,47 @@ export function EquipmentSuitePage() {
                 </tbody>
               </table>
             </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'forge' && (
+        <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {generates.map(g => {
+              const details = getEquipDetails(g.id);
+              const qualityClass = getQualityColor(details.quality);
+              return (
+                <div key={g.id} className="bg-surface border border-border rounded-lg p-4">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className={`text-xs font-bold ${qualityClass.split(' ')[0]}`}>{details.name}</span>
+                      <span className="text-xs text-subtle font-mono block">ID: {g.id}</span>
+                    </div>
+                    <span className={`text-xs px-2 py-0.5 border rounded-full font-mono uppercase ${qualityClass}`}>
+                      Rarity {details.quality}
+                    </span>
+                  </div>
+                  <div className="mt-4">
+                    <span className="text-xs text-brand/70 font-semibold block mb-2 tracking-wider">
+                      CRAFTING RECIPE
+                    </span>
+                    <div className="space-y-2 text-xs">
+                      <div className="flex justify-between">
+                        <span className="text-muted">Cost:</span>
+                        <span className="text-text font-mono">{g.cost.toLocaleString()} Gold</span>
+                      </div>
+                      {g.materials.map((m, idx) => (
+                        <div key={idx} className="flex justify-between">
+                          <span className="text-muted">{articlesMap[m.material]?.name || `Material #${m.material}`}</span>
+                          <span className="text-text font-mono">x{m.quantity}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       )}
