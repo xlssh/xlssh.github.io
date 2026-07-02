@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { loadWakeUps, loadLeaderWakeUps, loadWakeUpEquips, loadHeroes } from '../data/loaders';
-import { WakeUp, LeaderWakeUp, WakeUpEquip, Hero } from '../types/db';
+import { loadWakeUps, loadLeaderWakeUps, loadWakeUpEquips, loadHeroes, loadArticles } from '../data/loaders';
+import { WakeUp, LeaderWakeUp, WakeUpEquip, Hero, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 
 export function AwakeningConsolePage() {
@@ -9,6 +9,7 @@ export function AwakeningConsolePage() {
   const [leaderWakeUps, setLeaderWakeUps] = useState<LeaderWakeUp[]>([]);
   const [wakeUpEquips, setWakeUpEquips] = useState<WakeUpEquip[]>([]);
   const [heroes, setHeroes] = useState<Hero[]>([]);
+  const [articlesMap, setArticlesMap] = useState<Record<number, Article>>({});
 
   const [activeTab, setActiveTab] = useState<'partner' | 'leader'>('partner');
 
@@ -25,12 +26,19 @@ export function AwakeningConsolePage() {
       loadWakeUps(),
       loadLeaderWakeUps(),
       loadWakeUpEquips(),
-      loadHeroes()
-    ]).then(([wakeRes, leaderRes, equipRes, heroesRes]) => {
+      loadHeroes(),
+      loadArticles()
+    ]).then(([wakeRes, leaderRes, equipRes, heroesRes, articlesRes]) => {
       setWakeUps(wakeRes.rows);
       setLeaderWakeUps(leaderRes.rows);
       setWakeUpEquips(equipRes.rows);
       
+      const aMap: Record<number, Article> = {};
+      articlesRes.rows.forEach(art => {
+        aMap[art.id] = art;
+      });
+      setArticlesMap(aMap);
+
       // Filter main vs partner heroes
       const partnersOnly = heroesRes.rows.filter(h => !h.is_main);
       setHeroes(partnersOnly);
@@ -74,13 +82,60 @@ export function AwakeningConsolePage() {
   // Find selected leader node details
   const selectedNode = leaderWakeUps.find(n => n.id === selectedNodeId) || leaderWakeUps[0];
 
-  const getStatName = (type: number) => {
+  const getStatName = (type: number): string => {
     switch (type) {
-      case 1: return 'Attack';
-      case 2: return 'Defense';
-      case 3: return 'HP';
-      case 4: return 'Agility';
-      default: return `Param #${type}`;
+      case 1: return 'Strength';
+      case 2: return 'Agility';
+      case 3: return 'Wisdom';
+      case 4: return 'Stamina';
+      case 11: return 'Speed';
+      case 12: return 'Strength Growth';
+      case 13: return 'Agility Growth';
+      case 14: return 'Int Growth';
+      case 15: return 'Stamina Growth';
+      case 16: return 'Physical Attack';
+      case 17: return 'Physical Defense';
+      case 18: return 'Ranged Attack';
+      case 19: return 'Defense vs Ranged';
+      case 20: return 'Kido Attack';
+      case 21: return 'Kido Defense';
+      case 22: return 'Hit Rate';
+      case 23: return 'Dodge Rate';
+      case 24: return 'Crit Rate';
+      case 25: return 'Block Rate';
+      case 26: return 'Combo Rate';
+      case 27: return 'Aid Rate';
+      case 28: return 'Damage Rate';
+      case 29: return 'Damage Immunity';
+      case 30: return 'Break Defense';
+      case 31: return 'Counter Rate';
+      case 32: return 'Attack Rate';
+      case 33: return 'Defense Rate';
+      case 34: return 'Recovery Rate';
+      case 35: return 'Reduce Enemy Attack';
+      case 36: return 'Reduce Enemy Defense';
+      case 37: return 'Silence Rate';
+      case 38: return 'Anti-silence';
+      case 39: return 'Stun Rate';
+      case 40: return 'Anti-stun';
+      case 41: return 'Fury Deduction %';
+      case 42: return 'Anti-fury Restriction';
+      case 43: return 'Crit Damage %';
+      case 44: return 'Physical Damage Rate';
+      case 45: return 'Physical Damage Rate';
+      case 46: return 'Physical Damage Immune';
+      case 47: return 'Spell Immunity';
+      case 48: return 'Attack';
+      case 49: return 'Defense';
+      case 50: return 'Str Jade Growth';
+      case 51: return 'Int Jade Growth';
+      case 52: return 'Agile Jade Growth';
+      case 53: return 'Stamina Jade Growth';
+      case 101: return 'HP';
+      case 102: return 'Current HP';
+      case 103: return 'Max Fury';
+      case 104: return 'Current Fury';
+      default: return `Stat #${type}`;
     }
   };
 
@@ -305,12 +360,15 @@ export function AwakeningConsolePage() {
                 </span>
                 {selectedNode.strengthen_price && selectedNode.strengthen_price.length > 0 ? (
                   <div className="space-y-2">
-                    {selectedNode.strengthen_price.map((p, idx) => (
-                      <div key={idx} className="flex justify-between text-xs font-mono">
-                        <span className="text-muted">Resource Code {p.code}</span>
-                        <span className="text-yellow-400 font-bold">{p.amount.toLocaleString()}</span>
-                      </div>
-                    ))}
+                    {selectedNode.strengthen_price.map((p, idx) => {
+                      const itemName = articlesMap[p.code]?.name || `Resource #${p.code}`;
+                      return (
+                        <div key={idx} className="flex justify-between text-xs font-mono">
+                          <span className="text-muted">{itemName}</span>
+                          <span className="text-yellow-400 font-bold">{p.amount.toLocaleString()}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 ) : (
                   <span className="text-xs text-subtle italic">No cost required.</span>
@@ -323,12 +381,15 @@ export function AwakeningConsolePage() {
                 </span>
                 {selectedNode.uplevel_price && selectedNode.uplevel_price.length > 0 ? (
                   <div className="space-y-2">
-                    {selectedNode.uplevel_price.map((p, idx) => (
-                      <div key={idx} className="flex justify-between text-xs font-mono">
-                        <span className="text-muted">Resource Code {p.code}</span>
-                        <span className="text-yellow-400 font-bold">{p.amount.toLocaleString()}</span>
-                      </div>
-                    ))}
+                    {selectedNode.uplevel_price.map((p, idx) => {
+                      const itemName = articlesMap[p.code]?.name || `Resource #${p.code}`;
+                      return (
+                        <div key={idx} className="flex justify-between text-xs font-mono">
+                          <span className="text-muted">{itemName}</span>
+                          <span className="text-yellow-400 font-bold">{p.amount.toLocaleString()}</span>
+                        </div>
+                      );
+                    })}
                   </div>
                 ) : (
                   <span className="text-xs text-subtle italic">No level cost required.</span>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { loadPetLevelUps, loadVicePetMakes, loadVicePetRankUps, loadVicePetTrains, loadMainPetRankUps } from '../data/loaders';
-import { PetLevelUp, VicePetMake, VicePetRankUp, VicePetTrain, MainPetRankUp } from '../types/db';
+import { loadPetLevelUps, loadVicePetMakes, loadVicePetRankUps, loadVicePetTrains, loadMainPetRankUps, loadArticles } from '../data/loaders';
+import { PetLevelUp, VicePetMake, VicePetRankUp, VicePetTrain, MainPetRankUp, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 
 export function PetSanctuaryPage() {
@@ -10,6 +10,7 @@ export function PetSanctuaryPage() {
   const [viceRankUps, setViceRankUps] = useState<VicePetRankUp[]>([]);
   const [viceTrains, setViceTrains] = useState<VicePetTrain[]>([]);
   const [mainRankUps, setMainRankUps] = useState<MainPetRankUp[]>([]);
+  const [articlesMap, setArticlesMap] = useState<Record<number, Article>>({});
 
   const [activeTab, setActiveTab] = useState<'roster' | 'level' | 'craft'>('roster');
 
@@ -27,13 +28,20 @@ export function PetSanctuaryPage() {
       loadVicePetMakes(),
       loadVicePetRankUps(),
       loadVicePetTrains(),
-      loadMainPetRankUps()
-    ]).then(([lvlRes, makeRes, rankRes, trainRes, mainRankRes]) => {
+      loadMainPetRankUps(),
+      loadArticles()
+    ]).then(([lvlRes, makeRes, rankRes, trainRes, mainRankRes, articlesRes]) => {
       setLevelUps(lvlRes.rows);
       setViceMakes(makeRes.rows);
       setViceRankUps(rankRes.rows);
       setViceTrains(trainRes.rows);
       setMainRankUps(mainRankRes.rows);
+
+      const aMap: Record<number, Article> = {};
+      articlesRes.rows.forEach(art => {
+        aMap[art.id] = art;
+      });
+      setArticlesMap(aMap);
 
       // Extract unique list of pets by name and base pet ID
       const map: Record<number, { id: number; name: string; quality: number }> = {};
@@ -332,12 +340,15 @@ export function PetSanctuaryPage() {
                   </div>
                   <div className="text-xs space-y-1.5 text-muted">
                     <span className="block text-subtle uppercase tracking-wider text-[10px]">Ingredients list</span>
-                    {recipe.consume?.map((itemCode, index) => (
-                      <div key={index} className="flex justify-between font-mono">
-                        <span>Material Code {itemCode}</span>
-                        <span className="text-success">x1</span>
-                      </div>
-                    ))}
+                    {recipe.consume?.map((itemCode, index) => {
+                      const itemName = articlesMap[itemCode]?.name || `Material #${itemCode}`;
+                      return (
+                        <div key={index} className="flex justify-between font-mono">
+                          <span>{itemName}</span>
+                          <span className="text-success">x1</span>
+                        </div>
+                      );
+                    })}
                     <div className="mt-3 border-t border-border pt-2 text-[11px] italic">
                       <span className="text-subtle">Acquisition Pathway: </span>
                       {recipe.pathway || 'Spirit gacha rolls / tavern exchanges.'}

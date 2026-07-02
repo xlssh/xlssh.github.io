@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { loadAchievements, loadAchievementTitles, loadAchievementGroups, loadAchievementClasses } from '../data/loaders';
-import { Achievement, AchievementTitle, AchievementGroup, AchievementClass } from '../types/db';
+import { loadAchievements, loadAchievementTitles, loadAchievementGroups, loadAchievementClasses, loadArticles } from '../data/loaders';
+import { Achievement, AchievementTitle, AchievementGroup, AchievementClass, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 
 export function AchievementTitlePage() {
@@ -9,6 +9,7 @@ export function AchievementTitlePage() {
   const [titles, setTitles] = useState<AchievementTitle[]>([]);
   const [groups, setGroups] = useState<AchievementGroup[]>([]);
   const [classes, setClasses] = useState<AchievementClass[]>([]);
+  const [articlesMap, setArticlesMap] = useState<Record<number, Article>>({});
 
   const [activeTab, setActiveTab] = useState<'achievements' | 'titles'>('achievements');
   
@@ -20,13 +21,20 @@ export function AchievementTitlePage() {
       loadAchievements(),
       loadAchievementTitles(),
       loadAchievementGroups(),
-      loadAchievementClasses()
-    ]).then(([achRes, titleRes, groupRes, classRes]) => {
+      loadAchievementClasses(),
+      loadArticles()
+    ]).then(([achRes, titleRes, groupRes, classRes, articlesRes]) => {
       setAchievements(achRes.rows);
       setTitles(titleRes.rows);
       setGroups(groupRes.rows);
       setClasses(classRes.rows);
       
+      const aMap: Record<number, Article> = {};
+      articlesRes.rows.forEach(art => {
+        aMap[art.id] = art;
+      });
+      setArticlesMap(aMap);
+
       if (classRes.rows.length > 0) {
         setSelectedClassId(classRes.rows[0].id);
       }
@@ -41,14 +49,59 @@ export function AchievementTitlePage() {
     return <LoadingState message="Extracting achievement archives & title stat matrix…" />;
   }
 
-  const getStatName = (type: number) => {
+  const getStatName = (type: number): string => {
     switch (type) {
-      case 1: return 'Attack';
-      case 2: return 'Defense';
-      case 3: return 'HP';
-      case 4: return 'Agility';
-      case 5: return 'Crit Rate';
-      case 6: return 'Dodge';
+      case 1: return 'Strength';
+      case 2: return 'Agility';
+      case 3: return 'Wisdom';
+      case 4: return 'Stamina';
+      case 11: return 'Speed';
+      case 12: return 'Strength Growth';
+      case 13: return 'Agility Growth';
+      case 14: return 'Int Growth';
+      case 15: return 'Stamina Growth';
+      case 16: return 'Physical Attack';
+      case 17: return 'Physical Defense';
+      case 18: return 'Ranged Attack';
+      case 19: return 'Defense vs Ranged';
+      case 20: return 'Kido Attack';
+      case 21: return 'Kido Defense';
+      case 22: return 'Hit Rate';
+      case 23: return 'Dodge Rate';
+      case 24: return 'Crit Rate';
+      case 25: return 'Block Rate';
+      case 26: return 'Combo Rate';
+      case 27: return 'Aid Rate';
+      case 28: return 'Damage Rate';
+      case 29: return 'Damage Immunity';
+      case 30: return 'Break Defense';
+      case 31: return 'Counter Rate';
+      case 32: return 'Attack Rate';
+      case 33: return 'Defense Rate';
+      case 34: return 'Recovery Rate';
+      case 35: return 'Reduce Enemy Attack';
+      case 36: return 'Reduce Enemy Defense';
+      case 37: return 'Silence Rate';
+      case 38: return 'Anti-silence';
+      case 39: return 'Stun Rate';
+      case 40: return 'Anti-stun';
+      case 41: return 'Fury Deduction %';
+      case 42: return 'Anti-fury Restriction';
+      case 43: return 'Crit Damage %';
+      case 44: return 'Physical Damage Rate';
+      case 45: return 'Physical Damage Rate';
+      case 46: return 'Physical Damage Immune';
+      case 47: return 'Spell Immunity';
+      case 48: return 'Attack';
+      case 49: return 'Defense';
+      case 50: return 'Str Jade Growth';
+      case 51: return 'Int Jade Growth';
+      case 52: return 'Agile Jade Growth';
+      case 53: return 'Stamina Jade Growth';
+      case 101: return 'HP';
+      case 102: return 'Current HP';
+      case 103: return 'Max Fury';
+      case 104: return 'Current Fury';
       default: return `Stat #${type}`;
     }
   };
@@ -168,12 +221,15 @@ export function AchievementTitlePage() {
                     <span className="text-[10px] text-subtle uppercase font-semibold block mb-1">Rewards</span>
                     {ach.rewards && ach.rewards.length > 0 ? (
                       <div className="space-y-1">
-                        {ach.rewards.map((r, idx) => (
-                          <div key={idx} className="flex justify-between text-xs font-mono">
-                            <span className="text-muted">Reward Code: {r.code}</span>
-                            <span className="text-success font-bold">x{r.amount}</span>
-                          </div>
-                        ))}
+                        {ach.rewards.map((r, idx) => {
+                          const itemName = articlesMap[r.code]?.name || `Item #${r.code}`;
+                          return (
+                            <div key={idx} className="flex justify-between text-xs font-mono">
+                              <span className="text-muted">{itemName}</span>
+                              <span className="text-success font-bold">x{r.amount}</span>
+                            </div>
+                          );
+                        })}
                       </div>
                     ) : (
                       <span className="text-[11px] text-subtle italic">Spiritual title unlocked only.</span>
