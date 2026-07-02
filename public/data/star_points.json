@@ -1,0 +1,4341 @@
+{
+  "table": "star_points",
+  "rowCount": 225,
+  "rows": [
+    {
+      "id": 17110001,
+      "map_id": 12,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 1",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110002,
+      "map_id": 12,
+      "index": 2,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100002
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 2",
+      "desc": "Receive Skill - \"13100002\"(Deals damage to Vanguard and decrease Armor )",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110003,
+      "map_id": 12,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 3",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110004,
+      "map_id": 12,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 150,
+      "name": "Soul Point 4",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110005,
+      "map_id": 12,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 250,
+      "name": "Soul Point 5",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110006,
+      "map_id": 12,
+      "index": 6,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100003
+          }
+        ]
+      },
+      "need_fetch": 350,
+      "name": "Soul Point 6",
+      "desc": "Receive Skill - \"13100003\"(Deals damage to Vanguard and control the enemy for 2 rounds)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110007,
+      "map_id": 12,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 350,
+      "name": "Soul Point 7",
+      "desc": "Main Character Strength Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110008,
+      "map_id": 12,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 400,
+      "name": "Soul Point 8",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110009,
+      "map_id": 12,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 450,
+      "name": "Soul Point 9",
+      "desc": "Main Character HP Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17110010,
+      "map_id": 12,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 500,
+      "name": "Soul Point 10",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character Quality upgrade to Blue",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111001,
+      "map_id": 13,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1000,
+      "name": "Soul Point 11",
+      "desc": "Supports Speed+5%|Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111002,
+      "map_id": 13,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1400,
+      "name": "Soul Point 12",
+      "desc": "Supports Speed+5%|Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111003,
+      "map_id": 13,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1800,
+      "name": "Soul Point 13",
+      "desc": "Supports Speed+5%|Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111004,
+      "map_id": 13,
+      "index": 4,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100004
+          }
+        ]
+      },
+      "need_fetch": 2200,
+      "name": "Soul Point 14",
+      "desc": "Receive Skill - \"13100004\"(Deals damage to enemy Vanguard and own Assaulter immune from Stun for 3 rounds)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111005,
+      "map_id": 13,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 2600,
+      "name": "Soul Point 15",
+      "desc": "Vanguard HP Recovery effect+20%|Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111006,
+      "map_id": 13,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 3000,
+      "name": "Soul Point 16",
+      "desc": "Vanguard HP Recovery effect+20%|Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111007,
+      "map_id": 13,
+      "index": 7,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100005
+          }
+        ]
+      },
+      "need_fetch": 3400,
+      "name": "Soul Point 17",
+      "desc": "Receive Skill - \"13100005\"(Deals damage to enemy Vanguard and decrease the healing effect the enemy receives)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111008,
+      "map_id": 13,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 3800,
+      "name": "Soul Point 18",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2|",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111009,
+      "map_id": 13,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 4400,
+      "name": "Soul Point 19",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17111010,
+      "map_id": 13,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 5000,
+      "name": "Soul Point 20",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Purple",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17112001,
+      "map_id": 14,
+      "index": 1,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100006
+          }
+        ]
+      },
+      "need_fetch": 6000,
+      "name": "Soul Point 21",
+      "desc": "Receive Skill - \"13100006\"(Avoid enemy vanguard and directly deals damage on enemy assaulters)",
+      "seven_star_level_limit": 2
+    },
+    {
+      "id": 17112002,
+      "map_id": 14,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 7000,
+      "name": "Soul Point 22",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 4
+    },
+    {
+      "id": 17112003,
+      "map_id": 14,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 8000,
+      "name": "Soul Point 23",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 6
+    },
+    {
+      "id": 17112004,
+      "map_id": 14,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 9000,
+      "name": "Soul Point 24",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 8
+    },
+    {
+      "id": 17112005,
+      "map_id": 14,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 10000,
+      "name": "Soul Point 25",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 10
+    },
+    {
+      "id": 17112006,
+      "map_id": 14,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 11000,
+      "name": "Soul Point 26",
+      "desc": "Receive Skill - \"13100007\"(Deal damage on assaulters, and main character now has Aid effect )",
+      "seven_star_level_limit": 12
+    },
+    {
+      "id": 17112007,
+      "map_id": 14,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 12000,
+      "name": "Soul Point 27",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 14
+    },
+    {
+      "id": 17112008,
+      "map_id": 14,
+      "index": 8,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100007
+          }
+        ]
+      },
+      "need_fetch": 13000,
+      "name": "Soul Point 28",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 16
+    },
+    {
+      "id": 17112009,
+      "map_id": 14,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 14000,
+      "name": "Soul Point 29",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 18
+    },
+    {
+      "id": 17112010,
+      "map_id": 14,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 15000,
+      "name": "Soul Point 30",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 20
+    },
+    {
+      "id": 17112011,
+      "map_id": 14,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 16000,
+      "name": "Soul Point 31",
+      "desc": "Receive Skill - \"13100008\"(Own assaulters get one extra rounds)",
+      "seven_star_level_limit": 22
+    },
+    {
+      "id": 17112012,
+      "map_id": 14,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 17000,
+      "name": "Soul Point 32",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 24
+    },
+    {
+      "id": 17112013,
+      "map_id": 14,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 18000,
+      "name": "Soul Point 33",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 26
+    },
+    {
+      "id": 17112014,
+      "map_id": 14,
+      "index": 14,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100008
+          }
+        ]
+      },
+      "need_fetch": 19000,
+      "name": "Soul Point 34",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 28
+    },
+    {
+      "id": 17112015,
+      "map_id": 14,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 20000,
+      "name": "Soul Point 35",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Gold",
+      "seven_star_level_limit": 30
+    },
+    {
+      "id": 17113001,
+      "map_id": 15,
+      "index": 1,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100009
+          }
+        ]
+      },
+      "need_fetch": 22000,
+      "name": "Soul Point 36",
+      "desc": "Receive Skill - \"13100009\"(Increase Main Character's combo rate by 100%)",
+      "seven_star_level_limit": 32
+    },
+    {
+      "id": 17113002,
+      "map_id": 15,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 24000,
+      "name": "Soul Point 37",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 34
+    },
+    {
+      "id": 17113003,
+      "map_id": 15,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 26000,
+      "name": "Soul Point 38",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 36
+    },
+    {
+      "id": 17113004,
+      "map_id": 15,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 28000,
+      "name": "Soul Point 39",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 38
+    },
+    {
+      "id": 17113005,
+      "map_id": 15,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 30000,
+      "name": "Soul Point 40",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 40
+    },
+    {
+      "id": 17113006,
+      "map_id": 15,
+      "index": 6,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100013
+          }
+        ]
+      },
+      "need_fetch": 30000,
+      "name": "Soul Point 41",
+      "desc": "Receive Skill - \"13100010\"(Attack enemy vanguard, and decrease Defense by 30% for 4 rounds.)",
+      "seven_star_level_limit": 42
+    },
+    {
+      "id": 17113007,
+      "map_id": 15,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 32500,
+      "name": "Soul Point 42",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 44
+    },
+    {
+      "id": 17113008,
+      "map_id": 15,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 35000,
+      "name": "Soul Point 43",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 46
+    },
+    {
+      "id": 17113009,
+      "map_id": 15,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 37500,
+      "name": "Soul Point 44",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 48
+    },
+    {
+      "id": 17113010,
+      "map_id": 15,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 40000,
+      "name": "Soul Point 45",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 50
+    },
+    {
+      "id": 17113011,
+      "map_id": 15,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 50000,
+      "name": "Soul Point 46",
+      "desc": "Receive Skill - \"13100011\"(Attack enemy vanguard, and decrease healing effects for 4 rounds.)",
+      "seven_star_level_limit": 53
+    },
+    {
+      "id": 17113012,
+      "map_id": 15,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 55000,
+      "name": "Soul Point 47",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 56
+    },
+    {
+      "id": 17113013,
+      "map_id": 15,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 60000,
+      "name": "Soul Point 48",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 59
+    },
+    {
+      "id": 17113014,
+      "map_id": 15,
+      "index": 14,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 65000,
+      "name": "Soul Point 49",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 62
+    },
+    {
+      "id": 17113015,
+      "map_id": 15,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 70000,
+      "name": "Soul Point 50",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 65
+    },
+    {
+      "id": 17113016,
+      "map_id": 15,
+      "index": 16,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 75000,
+      "name": "Soul Point 51",
+      "desc": "Receive Skill - \"13100012\"(Attack enemy assaulters, growth rate is 210%.)",
+      "seven_star_level_limit": 68
+    },
+    {
+      "id": 17113017,
+      "map_id": 15,
+      "index": 17,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 80000,
+      "name": "Soul Point 52",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 71
+    },
+    {
+      "id": 17113018,
+      "map_id": 15,
+      "index": 18,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 85000,
+      "name": "Soul Point 53",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 74
+    },
+    {
+      "id": 17113019,
+      "map_id": 15,
+      "index": 19,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 90000,
+      "name": "Soul Point 54",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 77
+    },
+    {
+      "id": 17113020,
+      "map_id": 15,
+      "index": 20,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 100000,
+      "name": "Soul Point 55",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Red",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114001,
+      "map_id": 16,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 200000,
+      "name": "Soul Point 56",
+      "desc": "Receive Skill - \"13100013\"(Attack all enemies, growth rate is 158%.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114002,
+      "map_id": 16,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 57",
+      "desc": "Main Character Strength Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114003,
+      "map_id": 16,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 58",
+      "desc": "Main Character Wisdom Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114004,
+      "map_id": 16,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 59",
+      "desc": "Main Character HP Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114005,
+      "map_id": 16,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 60",
+      "desc": "Main Character AGI Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114006,
+      "map_id": 16,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 400000,
+      "name": "Soul Point 61",
+      "desc": "Receive Skill - \"13100014\"(Attack enemy vanguard, growth rate is 260%, and increase main characters defense by 500% for one round.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114007,
+      "map_id": 16,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 62",
+      "desc": "Main Character Strength Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114008,
+      "map_id": 16,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 63",
+      "desc": "Main Character Wisdom Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114009,
+      "map_id": 16,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 64",
+      "desc": "Main Character HP Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114010,
+      "map_id": 16,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 65",
+      "desc": "Main Character AGI Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114011,
+      "map_id": 16,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 800000,
+      "name": "Soul Point 66",
+      "desc": "Receive Skill - \"13100015\"(Attack enemy assaulters, growth rate is 170%, increase Main Character's combo rate by 100% for 3 rounds.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114012,
+      "map_id": 16,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 67",
+      "desc": "Main Character Strength Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114013,
+      "map_id": 16,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 68",
+      "desc": "Main Character Wisdom Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114014,
+      "map_id": 16,
+      "index": 14,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 69",
+      "desc": "Main Character HP Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114015,
+      "map_id": 16,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 70",
+      "desc": "Main Character AGI Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114016,
+      "map_id": 16,
+      "index": 16,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1600000,
+      "name": "Soul Point 71",
+      "desc": "Receive Skill - \"13100016\"(Attack enemy vanguard, growth rate is 290%, and move own assaulters to supports position.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114017,
+      "map_id": 16,
+      "index": 17,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.6
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 72",
+      "desc": "Main Character Strength Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114018,
+      "map_id": 16,
+      "index": 18,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.6
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 73",
+      "desc": "Main Character Wisdom Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114019,
+      "map_id": 16,
+      "index": 19,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 74",
+      "desc": "Main Character HP Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17114020,
+      "map_id": 16,
+      "index": 20,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 75",
+      "desc": "Main Character AGI Growth Rate increases 0.8|Main Character quality upgrade to Dark Gold",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17120001,
+      "map_id": 22,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 1",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120002,
+      "map_id": 22,
+      "index": 2,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100018
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 2",
+      "desc": "Receive Skill - \"13100018\"(Deals damage to Vanguard and decrease Armor )",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120003,
+      "map_id": 22,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 3",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120004,
+      "map_id": 22,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 150,
+      "name": "Soul Point 4",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120005,
+      "map_id": 22,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 250,
+      "name": "Soul Point 5",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120006,
+      "map_id": 22,
+      "index": 6,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100019
+          }
+        ]
+      },
+      "need_fetch": 350,
+      "name": "Soul Point 6",
+      "desc": "Receive Skill - \"13100019\"(Deals damage to Vanguard and control the enemy for 2 rounds)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120007,
+      "map_id": 22,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 350,
+      "name": "Soul Point 7",
+      "desc": "Main Character Strength Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120008,
+      "map_id": 22,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 400,
+      "name": "Soul Point 8",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120009,
+      "map_id": 22,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 450,
+      "name": "Soul Point 9",
+      "desc": "Main Character HP Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17120010,
+      "map_id": 22,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 500,
+      "name": "Soul Point 10",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Blue",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121001,
+      "map_id": 23,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1000,
+      "name": "Soul Point 11",
+      "desc": "Supports Speed+5%|Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121002,
+      "map_id": 23,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1400,
+      "name": "Soul Point 12",
+      "desc": "Supports Speed+5%|Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121003,
+      "map_id": 23,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1800,
+      "name": "Soul Point 13",
+      "desc": "Supports Speed+5%|Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121004,
+      "map_id": 23,
+      "index": 4,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100020
+          }
+        ]
+      },
+      "need_fetch": 2200,
+      "name": "Soul Point 14",
+      "desc": "Receive Skill - \"13100020\"(Deals damage to enemy Vanguard and own Assaulter immune from Stun for 3 rounds)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121005,
+      "map_id": 23,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 2600,
+      "name": "Soul Point 15",
+      "desc": "Vanguard HP Recovery effect+20%|Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121006,
+      "map_id": 23,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 3000,
+      "name": "Soul Point 16",
+      "desc": "Vanguard HP Recovery effect+20%|Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121007,
+      "map_id": 23,
+      "index": 7,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100021
+          }
+        ]
+      },
+      "need_fetch": 3400,
+      "name": "Soul Point 17",
+      "desc": "Receive Skill - \"13100021\"(Deals damage to enemy Vanguard and decrease the healing effect the enemy receives)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121008,
+      "map_id": 23,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 3800,
+      "name": "Soul Point 18",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2|",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121009,
+      "map_id": 23,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 4400,
+      "name": "Soul Point 19",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17121010,
+      "map_id": 23,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 5000,
+      "name": "Soul Point 20",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Purple",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17122001,
+      "map_id": 24,
+      "index": 1,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100022
+          }
+        ]
+      },
+      "need_fetch": 6000,
+      "name": "Soul Point 21",
+      "desc": "Receive Skill - \"13100022\"(Avoid enemy vanguard and directly deals damage on enemy assaulters)",
+      "seven_star_level_limit": 2
+    },
+    {
+      "id": 17122002,
+      "map_id": 24,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 7000,
+      "name": "Soul Point 22",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 4
+    },
+    {
+      "id": 17122003,
+      "map_id": 24,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 8000,
+      "name": "Soul Point 23",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 6
+    },
+    {
+      "id": 17122004,
+      "map_id": 24,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 9000,
+      "name": "Soul Point 24",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 8
+    },
+    {
+      "id": 17122005,
+      "map_id": 24,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 10000,
+      "name": "Soul Point 25",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 10
+    },
+    {
+      "id": 17122006,
+      "map_id": 24,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 11000,
+      "name": "Soul Point 26",
+      "desc": "Receive Skill - \"13100023\"(Deal damage on assaulters, and main character now has Aid effect )",
+      "seven_star_level_limit": 12
+    },
+    {
+      "id": 17122007,
+      "map_id": 24,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 12000,
+      "name": "Soul Point 27",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 14
+    },
+    {
+      "id": 17122008,
+      "map_id": 24,
+      "index": 8,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100023
+          }
+        ]
+      },
+      "need_fetch": 13000,
+      "name": "Soul Point 28",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 16
+    },
+    {
+      "id": 17122009,
+      "map_id": 24,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 14000,
+      "name": "Soul Point 29",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 18
+    },
+    {
+      "id": 17122010,
+      "map_id": 24,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 15000,
+      "name": "Soul Point 30",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 20
+    },
+    {
+      "id": 17122011,
+      "map_id": 24,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 16000,
+      "name": "Soul Point 31",
+      "desc": "Receive Skill - \"13100024\"(Own assaulters get one extra rounds)",
+      "seven_star_level_limit": 22
+    },
+    {
+      "id": 17122012,
+      "map_id": 24,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 17000,
+      "name": "Soul Point 32",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 24
+    },
+    {
+      "id": 17122013,
+      "map_id": 24,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 18000,
+      "name": "Soul Point 33",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 26
+    },
+    {
+      "id": 17122014,
+      "map_id": 24,
+      "index": 14,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100024
+          }
+        ]
+      },
+      "need_fetch": 19000,
+      "name": "Soul Point 34",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 28
+    },
+    {
+      "id": 17122015,
+      "map_id": 24,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 20000,
+      "name": "Soul Point 35",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Gold",
+      "seven_star_level_limit": 30
+    },
+    {
+      "id": 17123001,
+      "map_id": 25,
+      "index": 1,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100025
+          }
+        ]
+      },
+      "need_fetch": 22000,
+      "name": "Soul Point 36",
+      "desc": "Receive Skill - \"13100025\"(Increase Main Character's combo rate by 100%)",
+      "seven_star_level_limit": 32
+    },
+    {
+      "id": 17123002,
+      "map_id": 25,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 24000,
+      "name": "Soul Point 37",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 34
+    },
+    {
+      "id": 17123003,
+      "map_id": 25,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 26000,
+      "name": "Soul Point 38",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 36
+    },
+    {
+      "id": 17123004,
+      "map_id": 25,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 28000,
+      "name": "Soul Point 39",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 38
+    },
+    {
+      "id": 17123005,
+      "map_id": 25,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 30000,
+      "name": "Soul Point 40",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 40
+    },
+    {
+      "id": 17123006,
+      "map_id": 25,
+      "index": 6,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100029
+          }
+        ]
+      },
+      "need_fetch": 30000,
+      "name": "Soul Point 41",
+      "desc": "Receive Skill - \"13100026\"(Attack enemy vanguard, and decrease Defense by 30% for 4 rounds.)",
+      "seven_star_level_limit": 42
+    },
+    {
+      "id": 17123007,
+      "map_id": 25,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 32500,
+      "name": "Soul Point 42",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 44
+    },
+    {
+      "id": 17123008,
+      "map_id": 25,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 35000,
+      "name": "Soul Point 43",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 46
+    },
+    {
+      "id": 17123009,
+      "map_id": 25,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 37500,
+      "name": "Soul Point 44",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 48
+    },
+    {
+      "id": 17123010,
+      "map_id": 25,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 40000,
+      "name": "Soul Point 45",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 50
+    },
+    {
+      "id": 17123011,
+      "map_id": 25,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 50000,
+      "name": "Soul Point 46",
+      "desc": "Receive Skill - \"13100027\"(Attack enemy vanguard, and decrease healing effects for 4 rounds.)",
+      "seven_star_level_limit": 53
+    },
+    {
+      "id": 17123012,
+      "map_id": 25,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 55000,
+      "name": "Soul Point 47",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 56
+    },
+    {
+      "id": 17123013,
+      "map_id": 25,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 60000,
+      "name": "Soul Point 48",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 59
+    },
+    {
+      "id": 17123014,
+      "map_id": 25,
+      "index": 14,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 65000,
+      "name": "Soul Point 49",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 62
+    },
+    {
+      "id": 17123015,
+      "map_id": 25,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 70000,
+      "name": "Soul Point 50",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 65
+    },
+    {
+      "id": 17123016,
+      "map_id": 25,
+      "index": 16,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 75000,
+      "name": "Soul Point 51",
+      "desc": "Receive Skill - \"13100028\"(Attack enemy assaulters, growth rate is 210%.)",
+      "seven_star_level_limit": 68
+    },
+    {
+      "id": 17123017,
+      "map_id": 25,
+      "index": 17,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 80000,
+      "name": "Soul Point 52",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 71
+    },
+    {
+      "id": 17123018,
+      "map_id": 25,
+      "index": 18,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 85000,
+      "name": "Soul Point 53",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 74
+    },
+    {
+      "id": 17123019,
+      "map_id": 25,
+      "index": 19,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 90000,
+      "name": "Soul Point 54",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 77
+    },
+    {
+      "id": 17123020,
+      "map_id": 25,
+      "index": 20,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 100000,
+      "name": "Soul Point 55",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Red",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124001,
+      "map_id": 26,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 200000,
+      "name": "Soul Point 56",
+      "desc": "Receive Skill - \"13100029\"(Attack all enemies, growth rate is 158%.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124002,
+      "map_id": 26,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 57",
+      "desc": "Main Character Strength Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124003,
+      "map_id": 26,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 58",
+      "desc": "Main Character Wisdom Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124004,
+      "map_id": 26,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 59",
+      "desc": "Main Character HP Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124005,
+      "map_id": 26,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 60",
+      "desc": "Main Character AGI Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124006,
+      "map_id": 26,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 400000,
+      "name": "Soul Point 61",
+      "desc": "Receive Skill - \"13100030\"(Attack enemy vanguard, growth rate is 260%, and increase main characters defense by 500% for one round.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124007,
+      "map_id": 26,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 62",
+      "desc": "Main Character Strength Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124008,
+      "map_id": 26,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 63",
+      "desc": "Main Character Wisdom Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124009,
+      "map_id": 26,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 64",
+      "desc": "Main Character HP Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124010,
+      "map_id": 26,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 65",
+      "desc": "Main Character AGI Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124011,
+      "map_id": 26,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 800000,
+      "name": "Soul Point 66",
+      "desc": "Receive Skill - \"13100031\"(Attack enemy assaulters, growth rate is 170%, increase Main Character's combo rate by 100% for 3 rounds.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124012,
+      "map_id": 26,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 67",
+      "desc": "Main Character Strength Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124013,
+      "map_id": 26,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 68",
+      "desc": "Main Character Wisdom Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124014,
+      "map_id": 26,
+      "index": 14,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 69",
+      "desc": "Main Character HP Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124015,
+      "map_id": 26,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 70",
+      "desc": "Main Character AGI Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124016,
+      "map_id": 26,
+      "index": 16,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1600000,
+      "name": "Soul Point 71",
+      "desc": "Receive Skill - \"13100032\"(Attack enemy vanguard, growth rate is 290%, and move own assaulters to supports position.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124017,
+      "map_id": 26,
+      "index": 17,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.6
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 72",
+      "desc": "Main Character Strength Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124018,
+      "map_id": 26,
+      "index": 18,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.6
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 73",
+      "desc": "Main Character Wisdom Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124019,
+      "map_id": 26,
+      "index": 19,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 74",
+      "desc": "Main Character HP Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17124020,
+      "map_id": 26,
+      "index": 20,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 75",
+      "desc": "Main Character AGI Growth Rate increases 0.8|Main Character quality upgrade to Dark Gold",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17130001,
+      "map_id": 32,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 1",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130002,
+      "map_id": 32,
+      "index": 2,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100034
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 2",
+      "desc": "Receive Skill - \"13100034\"(Deals damage to Vanguard and decrease Armor )",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130003,
+      "map_id": 32,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 100,
+      "name": "Soul Point 3",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130004,
+      "map_id": 32,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 150,
+      "name": "Soul Point 4",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Assaulters Damage+5%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130005,
+      "map_id": 32,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 1,
+            "target": 1,
+            "value": 20.0
+          },
+          {
+            "type": 3,
+            "target": 1,
+            "value": 20.0
+          }
+        ]
+      },
+      "need_fetch": 250,
+      "name": "Soul Point 5",
+      "desc": "Main Character Strength+20|Main Character Wisdom+20|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130006,
+      "map_id": 32,
+      "index": 6,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100035
+          }
+        ]
+      },
+      "need_fetch": 350,
+      "name": "Soul Point 6",
+      "desc": "Receive Skill - \"13100035\"(Deals damage to Vanguard and control the enemy for 2 rounds)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130007,
+      "map_id": 32,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 350,
+      "name": "Soul Point 7",
+      "desc": "Main Character Strength Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130008,
+      "map_id": 32,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 400,
+      "name": "Soul Point 8",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130009,
+      "map_id": 32,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 450,
+      "name": "Soul Point 9",
+      "desc": "Main Character HP Growth Rate increases 0.2|Vanguard HP+20%",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17130010,
+      "map_id": 32,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 500,
+      "name": "Soul Point 10",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Blue",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131001,
+      "map_id": 33,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1000,
+      "name": "Soul Point 11",
+      "desc": "Supports Speed+5%|Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131002,
+      "map_id": 33,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1400,
+      "name": "Soul Point 12",
+      "desc": "Supports Speed+5%|Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131003,
+      "map_id": 33,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 1800,
+      "name": "Soul Point 13",
+      "desc": "Supports Speed+5%|Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131004,
+      "map_id": 33,
+      "index": 4,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100036
+          }
+        ]
+      },
+      "need_fetch": 2200,
+      "name": "Soul Point 14",
+      "desc": "Receive Skill - \"13100036\"(Deals damage to enemy Vanguard and own Assaulter immune from Stun for 3 rounds)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131005,
+      "map_id": 33,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 2600,
+      "name": "Soul Point 15",
+      "desc": "Vanguard HP Recovery effect+20%|Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131006,
+      "map_id": 33,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 3000,
+      "name": "Soul Point 16",
+      "desc": "Vanguard HP Recovery effect+20%|Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131007,
+      "map_id": 33,
+      "index": 7,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100037
+          }
+        ]
+      },
+      "need_fetch": 3400,
+      "name": "Soul Point 17",
+      "desc": "Receive Skill - \"13100037\"(Deals damage to enemy Vanguard and decrease the healing effect the enemy receives)",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131008,
+      "map_id": 33,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 3800,
+      "name": "Soul Point 18",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2|",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131009,
+      "map_id": 33,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 4400,
+      "name": "Soul Point 19",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17131010,
+      "map_id": 33,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 5000,
+      "name": "Soul Point 20",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Purple",
+      "seven_star_level_limit": 0
+    },
+    {
+      "id": 17132001,
+      "map_id": 34,
+      "index": 1,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100038
+          }
+        ]
+      },
+      "need_fetch": 6000,
+      "name": "Soul Point 21",
+      "desc": "Receive Skill - \"13100038\"(Avoid enemy vanguard and directly deals damage on enemy assaulters)",
+      "seven_star_level_limit": 2
+    },
+    {
+      "id": 17132002,
+      "map_id": 34,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 7000,
+      "name": "Soul Point 22",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 4
+    },
+    {
+      "id": 17132003,
+      "map_id": 34,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 8000,
+      "name": "Soul Point 23",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 6
+    },
+    {
+      "id": 17132004,
+      "map_id": 34,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 9000,
+      "name": "Soul Point 24",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 8
+    },
+    {
+      "id": 17132005,
+      "map_id": 34,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 10000,
+      "name": "Soul Point 25",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 10
+    },
+    {
+      "id": 17132006,
+      "map_id": 34,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 11000,
+      "name": "Soul Point 26",
+      "desc": "Receive Skill - \"13100039\"(Deal damage on assaulters, and main character now has Aid effect )",
+      "seven_star_level_limit": 12
+    },
+    {
+      "id": 17132007,
+      "map_id": 34,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 12000,
+      "name": "Soul Point 27",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 14
+    },
+    {
+      "id": 17132008,
+      "map_id": 34,
+      "index": 8,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100039
+          }
+        ]
+      },
+      "need_fetch": 13000,
+      "name": "Soul Point 28",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 16
+    },
+    {
+      "id": 17132009,
+      "map_id": 34,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 14000,
+      "name": "Soul Point 29",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 18
+    },
+    {
+      "id": 17132010,
+      "map_id": 34,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 15000,
+      "name": "Soul Point 30",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 20
+    },
+    {
+      "id": 17132011,
+      "map_id": 34,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 16000,
+      "name": "Soul Point 31",
+      "desc": "Receive Skill - \"13100040\"(Own assaulters get one extra rounds)",
+      "seven_star_level_limit": 22
+    },
+    {
+      "id": 17132012,
+      "map_id": 34,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 17000,
+      "name": "Soul Point 32",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 24
+    },
+    {
+      "id": 17132013,
+      "map_id": 34,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 18000,
+      "name": "Soul Point 33",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 26
+    },
+    {
+      "id": 17132014,
+      "map_id": 34,
+      "index": 14,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100040
+          }
+        ]
+      },
+      "need_fetch": 19000,
+      "name": "Soul Point 34",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 28
+    },
+    {
+      "id": 17132015,
+      "map_id": 34,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 20000,
+      "name": "Soul Point 35",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Gold",
+      "seven_star_level_limit": 30
+    },
+    {
+      "id": 17133001,
+      "map_id": 35,
+      "index": 1,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100041
+          }
+        ]
+      },
+      "need_fetch": 22000,
+      "name": "Soul Point 36",
+      "desc": "Receive Skill - \"13100041\"(Increase Main Character's combo rate by 100%)",
+      "seven_star_level_limit": 32
+    },
+    {
+      "id": 17133002,
+      "map_id": 35,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 24000,
+      "name": "Soul Point 37",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 34
+    },
+    {
+      "id": 17133003,
+      "map_id": 35,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 26000,
+      "name": "Soul Point 38",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 36
+    },
+    {
+      "id": 17133004,
+      "map_id": 35,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 28000,
+      "name": "Soul Point 39",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 38
+    },
+    {
+      "id": 17133005,
+      "map_id": 35,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 30000,
+      "name": "Soul Point 40",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 40
+    },
+    {
+      "id": 17133006,
+      "map_id": 35,
+      "index": 6,
+      "is_skill": 1,
+      "add_type": {
+        "add": [
+          {
+            "type": 100,
+            "target": 1,
+            "value": 13100045
+          }
+        ]
+      },
+      "need_fetch": 30000,
+      "name": "Soul Point 41",
+      "desc": "Receive Skill - \"13100042\"(Attack enemy vanguard, and decrease Defense by 30% for 4 rounds.)",
+      "seven_star_level_limit": 42
+    },
+    {
+      "id": 17133007,
+      "map_id": 35,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 32500,
+      "name": "Soul Point 42",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 44
+    },
+    {
+      "id": 17133008,
+      "map_id": 35,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 35000,
+      "name": "Soul Point 43",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 46
+    },
+    {
+      "id": 17133009,
+      "map_id": 35,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 37500,
+      "name": "Soul Point 44",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 48
+    },
+    {
+      "id": 17133010,
+      "map_id": 35,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 40000,
+      "name": "Soul Point 45",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 50
+    },
+    {
+      "id": 17133011,
+      "map_id": 35,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 50000,
+      "name": "Soul Point 46",
+      "desc": "Receive Skill - \"13100043\"(Attack enemy vanguard, and decrease healing effects for 4 rounds.)",
+      "seven_star_level_limit": 53
+    },
+    {
+      "id": 17133012,
+      "map_id": 35,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 55000,
+      "name": "Soul Point 47",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 56
+    },
+    {
+      "id": 17133013,
+      "map_id": 35,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 60000,
+      "name": "Soul Point 48",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 59
+    },
+    {
+      "id": 17133014,
+      "map_id": 35,
+      "index": 14,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 65000,
+      "name": "Soul Point 49",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 62
+    },
+    {
+      "id": 17133015,
+      "map_id": 35,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 70000,
+      "name": "Soul Point 50",
+      "desc": "Main Character AGI Growth Rate increases 0.2",
+      "seven_star_level_limit": 65
+    },
+    {
+      "id": 17133016,
+      "map_id": 35,
+      "index": 16,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 75000,
+      "name": "Soul Point 51",
+      "desc": "Receive Skill - \"13100044\"(Attack enemy assaulters, growth rate is 210%.)",
+      "seven_star_level_limit": 68
+    },
+    {
+      "id": 17133017,
+      "map_id": 35,
+      "index": 17,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 80000,
+      "name": "Soul Point 52",
+      "desc": "Main Character Strength Growth Rate increases 0.2",
+      "seven_star_level_limit": 71
+    },
+    {
+      "id": 17133018,
+      "map_id": 35,
+      "index": 18,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.2
+          }
+        ]
+      },
+      "need_fetch": 85000,
+      "name": "Soul Point 53",
+      "desc": "Main Character Wisdom Growth Rate increases 0.2",
+      "seven_star_level_limit": 74
+    },
+    {
+      "id": 17133019,
+      "map_id": 35,
+      "index": 19,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 90000,
+      "name": "Soul Point 54",
+      "desc": "Main Character HP Growth Rate increases 0.2",
+      "seven_star_level_limit": 77
+    },
+    {
+      "id": 17133020,
+      "map_id": 35,
+      "index": 20,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 100000,
+      "name": "Soul Point 55",
+      "desc": "Main Character AGI Growth Rate increases 0.2|Main Character quality upgrade to Red",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134001,
+      "map_id": 36,
+      "index": 1,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 200000,
+      "name": "Soul Point 56",
+      "desc": "Receive Skill - \"13100045\"(Attack all enemies, growth rate is 158%.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134002,
+      "map_id": 36,
+      "index": 2,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.3
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 57",
+      "desc": "Main Character Strength Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134003,
+      "map_id": 36,
+      "index": 3,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 58",
+      "desc": "Main Character Wisdom Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134004,
+      "map_id": 36,
+      "index": 4,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 59",
+      "desc": "Main Character HP Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134005,
+      "map_id": 36,
+      "index": 5,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 160000,
+      "name": "Soul Point 60",
+      "desc": "Main Character AGI Growth Rate increases 0.3",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134006,
+      "map_id": 36,
+      "index": 6,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 400000,
+      "name": "Soul Point 61",
+      "desc": "Receive Skill - \"13100046\"(Attack enemy vanguard, growth rate is 260%, and increase main characters defense by 500% for one round.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134007,
+      "map_id": 36,
+      "index": 7,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 62",
+      "desc": "Main Character Strength Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134008,
+      "map_id": 36,
+      "index": 8,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 63",
+      "desc": "Main Character Wisdom Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134009,
+      "map_id": 36,
+      "index": 9,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 64",
+      "desc": "Main Character HP Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134010,
+      "map_id": 36,
+      "index": 10,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 320000,
+      "name": "Soul Point 65",
+      "desc": "Main Character AGI Growth Rate increases 0.4",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134011,
+      "map_id": 36,
+      "index": 11,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 800000,
+      "name": "Soul Point 66",
+      "desc": "Receive Skill - \"13100047\"(Attack enemy assaulters, growth rate is 170%, increase Main Character's combo rate by 100% for 3 rounds.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134012,
+      "map_id": 36,
+      "index": 12,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 67",
+      "desc": "Main Character Strength Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134013,
+      "map_id": 36,
+      "index": 13,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 68",
+      "desc": "Main Character Wisdom Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134014,
+      "map_id": 36,
+      "index": 14,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 69",
+      "desc": "Main Character HP Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134015,
+      "map_id": 36,
+      "index": 15,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 640000,
+      "name": "Soul Point 70",
+      "desc": "Main Character AGI Growth Rate increases 0.6",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134016,
+      "map_id": 36,
+      "index": 16,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1600000,
+      "name": "Soul Point 71",
+      "desc": "Receive Skill - \"13100048\"(Attack enemy vanguard, growth rate is 290%, and move own assaulters to supports position.)",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134017,
+      "map_id": 36,
+      "index": 17,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 15,
+            "target": 1,
+            "value": 0.6
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 72",
+      "desc": "Main Character Strength Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134018,
+      "map_id": 36,
+      "index": 18,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 13,
+            "target": 1,
+            "value": 0.6
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 73",
+      "desc": "Main Character Wisdom Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134019,
+      "map_id": 36,
+      "index": 19,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 14,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 74",
+      "desc": "Main Character HP Growth Rate increases 0.8",
+      "seven_star_level_limit": 80
+    },
+    {
+      "id": 17134020,
+      "map_id": 36,
+      "index": 20,
+      "is_skill": 0,
+      "add_type": {
+        "add": [
+          {
+            "type": 12,
+            "target": 1,
+            "value": 0.4
+          }
+        ]
+      },
+      "need_fetch": 1280000,
+      "name": "Soul Point 75",
+      "desc": "Main Character AGI Growth Rate increases 0.8|Main Character quality upgrade to Dark Gold",
+      "seven_star_level_limit": 80
+    }
+  ]
+}

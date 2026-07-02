@@ -17,6 +17,7 @@ import {
   Sun,
   Moon,
   Globe,
+  Compass,
   ChevronRight,
   ChevronLeft,
   Scale,
@@ -133,6 +134,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Campaign Encounters', to: '/tools/pve-campaign', icon: Swords },
     { name: 'Guild Devotion & VIP', to: '/tools/guild-vip', icon: Trophy },
     { name: 'Spiritual Ornaments', to: '/tools/ornaments', icon: Sparkles },
+    { name: 'MC Soul Maps', to: '/tools/soul-maps', icon: Compass },
   ];
 
   return (

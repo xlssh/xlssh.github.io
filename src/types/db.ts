@@ -778,5 +778,28 @@ export interface OrnamentUpgrade {
   new_item_id: number;
 }
 
+export interface StarMap {
+  id: number;
+  name: string;
+  profession: number;
+  quality: number;
+  point_count: number;
+  pic: string;
+  desc: string;
+  start_id: number;
+}
+
+export interface StarPoint {
+  id: number;
+  map_id: number;
+  index: number;
+  is_skill: number;
+  add_type: { add: Array<{ type: number; target: number; value: number }> };
+  need_fetch: number;
+  name: string;
+  desc: string;
+  seven_star_level_limit: number;
+}
+
 
 

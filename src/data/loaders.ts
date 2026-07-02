@@ -7,7 +7,7 @@ import {
   AchievementGroup, AchievementClass, TavernGrade, TavernPayConfig, TavernWarrior, TreasureLevelup,
   TreasureUpgrade, SpiritSchool, SpiritSchoolExp, Butterfly, ButterflyFeeding, BlackMarketItem,
   Award, Enemy, EnemyArmy, ConfigValue, OrganizationBase, OrganizationAddition, OrganizationDevotion, VipConfig,
-  OrnamentValue, OrnamentUpgrade
+  OrnamentValue, OrnamentUpgrade, StarMap, StarPoint
 } from '../types/db';
 
 const cache: { [key: string]: any } = {};
@@ -280,6 +280,14 @@ export async function loadOrnamentValues(): Promise<TableJson<OrnamentValue>> {
 
 export async function loadOrnamentUpgrades(): Promise<TableJson<OrnamentUpgrade>> {
   return fetchWithCache<TableJson<OrnamentUpgrade>>('data/ornament_upgrades.json');
+}
+
+export async function loadStarMaps(): Promise<TableJson<StarMap>> {
+  return fetchWithCache<TableJson<StarMap>>('data/star_maps.json');
+}
+
+export async function loadStarPoints(): Promise<TableJson<StarPoint>> {
+  return fetchWithCache<TableJson<StarPoint>>('data/star_points.json');
 }
 
 

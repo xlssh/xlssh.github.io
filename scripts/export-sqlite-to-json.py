@@ -295,6 +295,14 @@ def main():
         "path": "/data/ornament_upgrades.json",
         "rowCount": 48
     }
+    manifest_tables["star_maps"] = {
+        "path": "/data/star_maps.json",
+        "rowCount": 15
+    }
+    manifest_tables["star_points"] = {
+        "path": "/data/star_points.json",
+        "rowCount": 225
+    }
     manifest_data = {
         "generatedAt": generated_at,
         "tables": manifest_tables
