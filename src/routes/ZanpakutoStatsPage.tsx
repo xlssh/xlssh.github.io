@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { loadKnives, loadArticles, loadMallItems, loadHeroes, loadKnifeStrengthens } from '../data/loaders';
-import { Knife, Article, MallItem, Hero, KnifeStrengthen } from '../types/db';
+import { loadKnives, loadArticles, loadMallItems, loadHeroes, loadKnifeStrengthens, loadSkills } from '../data/loaders';
+import { Knife, Article, MallItem, Hero, KnifeStrengthen, Skill } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getMallItemsSellingArticle, getAttributeName } from '../data/relationships';
@@ -15,6 +15,7 @@ export const ZanpakutoStatsPage: React.FC = () => {
   const [strengthens, setStrengthens] = useState<KnifeStrengthen[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [skillsMap, setSkillsMap] = useState<Record<number, Skill>>({});
 
   // Comparison State
   const [compareIds, setCompareIds] = useState<number[]>([]);
@@ -27,18 +28,25 @@ export const ZanpakutoStatsPage: React.FC = () => {
     try {
       setLoading(true);
       setError(null);
-      const [knivesRes, articlesRes, mallRes, heroesRes, strengthensRes] = await Promise.all([
+      const [knivesRes, articlesRes, mallRes, heroesRes, strengthensRes, skillsRes] = await Promise.all([
         loadKnives(),
         loadArticles(),
         loadMallItems(),
         loadHeroes(),
-        loadKnifeStrengthens()
+        loadKnifeStrengthens(),
+        loadSkills()
       ]);
       setKnives(knivesRes.rows);
       setArticles(articlesRes.rows);
       setMallItems(mallRes.rows);
       setHeroes(heroesRes.rows);
       setStrengthens(strengthensRes.rows);
+
+      const skMap: Record<number, Skill> = {};
+      skillsRes.rows.forEach((s: Skill) => {
+        skMap[s.id] = s;
+      });
+      setSkillsMap(skMap);
 
       if (knivesRes.rows.length > 0) {
         setSelectedKnifeId(knivesRes.rows[0].id);
@@ -74,6 +82,13 @@ export const ZanpakutoStatsPage: React.FC = () => {
     return rawName.replace(/Picture Book/gi, '').replace(/Illustration/gi, '').trim();
   };
 
+  const cleanHtml = (htmlStr: string) => {
+    return htmlStr
+      .replace(/<[^>]*>/g, '') // remove tags
+      .replace(/&nbsp;/g, ' ')
+      .trim();
+  };
+
   // Compare List
   const comparedKnives = useMemo(() => {
     return compareIds.map(id => knives.find(k => k.id === id)).filter(Boolean) as Knife[];
@@ -82,11 +97,11 @@ export const ZanpakutoStatsPage: React.FC = () => {
   // Max stats for percentage visual scaling
   const maxStats = useMemo(() => {
     return {
-      attack: Math.max(...knives.map(k => k.attack_attr ?? 0), 1),
-      defense: Math.max(...knives.map(k => k.defense_attr ?? 0), 1),
-      recovery: Math.max(...knives.map(k => k.recovery_attr ?? 0), 1),
-      resistance: Math.max(...knives.map(k => k.resistance_attr ?? 0), 1),
-      speed: Math.max(...knives.map(k => k.speed_attr ?? 0), 1),
+      attack: Math.max(...knives.map(k => k.attack ?? 0), 1),
+      defense: Math.max(...knives.map(k => k.defense ?? 0), 1),
+      recovery: Math.max(...knives.map(k => k.recovery ?? 0), 1),
+      resistance: Math.max(...knives.map(k => k.resistance ?? 0), 1),
+      speed: Math.max(...knives.map(k => k.speed ?? 0), 1),
     };
   }, [knives]);
 
@@ -107,11 +122,11 @@ export const ZanpakutoStatsPage: React.FC = () => {
   // Simulated Stats calculation
   const simulatedStats = useMemo(() => {
     if (!selectedKnife) return null;
-    const baseAttack = selectedKnife.attack_attr ?? 0;
-    const baseDefense = selectedKnife.defense_attr ?? 0;
-    const baseRecovery = selectedKnife.recovery_attr ?? 0;
-    const baseResistance = selectedKnife.resistance_attr ?? 0;
-    const baseSpeed = selectedKnife.speed_attr ?? 0;
+    const baseAttack = selectedKnife.attack ?? 0;
+    const baseDefense = selectedKnife.defense ?? 0;
+    const baseRecovery = selectedKnife.recovery ?? 0;
+    const baseResistance = selectedKnife.resistance ?? 0;
+    const baseSpeed = selectedKnife.speed ?? 0;
 
     // growth value JSON array structure [atk_grow, def_grow, rec_grow, res_grow, spd_grow]
     const growth = selectedKnife.growth_value || [10, 5, 5, 5, 2];
@@ -183,7 +198,7 @@ export const ZanpakutoStatsPage: React.FC = () => {
                 >
                   <div>
                     <span className="font-semibold block truncate">{cleanName(k.name)}</span>
-                    <span className="text-[10px] text-zinc-400 font-mono">ATK: {k.attack_attr} | SPD: {k.speed_attr}</span>
+                    <span className="text-[10px] text-zinc-400 font-mono">ATK: {k.attack} | SPD: {k.speed}</span>
                   </div>
                   <Scale size={14} className={selected ? 'text-fuchsia-500' : 'text-zinc-300'} />
                 </button>
@@ -224,12 +239,12 @@ export const ZanpakutoStatsPage: React.FC = () => {
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
                             <span className="text-zinc-450 font-sans">Attack</span>
-                            <span>{knife.attack_attr}</span>
+                            <span>{knife.attack}</span>
                           </div>
                           <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-rose-500 h-1.5 rounded-full"
-                              style={{ width: `${((knife.attack_attr ?? 0) / maxStats.attack) * 100}%` }}
+                              style={{ width: `${((knife.attack ?? 0) / maxStats.attack) * 100}%` }}
                             />
                           </div>
                         </div>
@@ -237,12 +252,12 @@ export const ZanpakutoStatsPage: React.FC = () => {
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
                             <span className="text-zinc-450 font-sans">Defense</span>
-                            <span>{knife.defense_attr}</span>
+                            <span>{knife.defense}</span>
                           </div>
                           <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-blue-500 h-1.5 rounded-full"
-                              style={{ width: `${((knife.defense_attr ?? 0) / maxStats.defense) * 100}%` }}
+                              style={{ width: `${((knife.defense ?? 0) / maxStats.defense) * 100}%` }}
                             />
                           </div>
                         </div>
@@ -250,12 +265,12 @@ export const ZanpakutoStatsPage: React.FC = () => {
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
                             <span className="text-zinc-450 font-sans">Recovery</span>
-                            <span>{knife.recovery_attr}</span>
+                            <span>{knife.recovery}</span>
                           </div>
                           <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-emerald-500 h-1.5 rounded-full"
-                              style={{ width: `${((knife.recovery_attr ?? 0) / maxStats.recovery) * 100}%` }}
+                              style={{ width: `${((knife.recovery ?? 0) / maxStats.recovery) * 100}%` }}
                             />
                           </div>
                         </div>
@@ -263,12 +278,12 @@ export const ZanpakutoStatsPage: React.FC = () => {
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
                             <span className="text-zinc-450 font-sans">Resistance</span>
-                            <span>{knife.resistance_attr}</span>
+                            <span>{knife.resistance}</span>
                           </div>
                           <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-amber-500 h-1.5 rounded-full"
-                              style={{ width: `${((knife.resistance_attr ?? 0) / maxStats.resistance) * 100}%` }}
+                              style={{ width: `${((knife.resistance ?? 0) / maxStats.resistance) * 100}%` }}
                             />
                           </div>
                         </div>
@@ -276,12 +291,12 @@ export const ZanpakutoStatsPage: React.FC = () => {
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
                             <span className="text-zinc-450 font-sans">Speed</span>
-                            <span>{knife.speed_attr}</span>
+                            <span>{knife.speed}</span>
                           </div>
                           <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-violet-500 h-1.5 rounded-full"
-                              style={{ width: `${((knife.speed_attr ?? 0) / maxStats.speed) * 100}%` }}
+                              style={{ width: `${((knife.speed ?? 0) / maxStats.speed) * 100}%` }}
                             />
                           </div>
                         </div>
@@ -447,6 +462,24 @@ export const ZanpakutoStatsPage: React.FC = () => {
                         <span className="block text-[9px] font-bold text-zinc-400 uppercase">Phase Attribute Buffs</span>
                         <div className="space-y-1">
                           {phase.attributes.map((attr, aIdx) => {
+                            if (attr.oper === 0) {
+                              const skill = skillsMap[attr.value];
+                              const skillName = skill?.name || `Skill #${attr.value}`;
+                              const skillDesc = skill?.description ? cleanHtml(skill.description) : 'Unlocks passive combat effects.';
+                              return (
+                                <div
+                                  key={aIdx}
+                                  className="py-1.5 border-b border-zinc-100 dark:border-zinc-800/40 last:border-0 text-xs"
+                                >
+                                  <div className="flex justify-between items-center">
+                                    <span className="text-fuchsia-600 dark:text-fuchsia-400 font-bold">{skillName}</span>
+                                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500 uppercase font-mono">Passive</span>
+                                  </div>
+                                  <p className="text-[11px] text-zinc-500 mt-0.5 leading-relaxed">{skillDesc}</p>
+                                </div>
+                              );
+                            }
+
                             const isPercent = attr.oper === 2 || (attr.oper === 1 && attr.value < 1);
                             const formattedValue = isPercent
                               ? `+${(attr.value * 100).toFixed(2)}%`

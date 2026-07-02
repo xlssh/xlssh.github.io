@@ -57,12 +57,12 @@ export const SkillHandbookPage: React.FC = () => {
       .trim();
   };
 
-  // Group raw skill levels by their base Skill ID (e.g. 131010101 to 131010199 belong to same skill ID 1310101)
+  // Group raw skill levels by their base Skill ID (s.skill_id)
   const skillGroups = useMemo(() => {
     const groups: Record<number, Skill[]> = {};
     skills.forEach(s => {
-      if (!s.id) return;
-      const baseId = Math.floor(s.id / 100);
+      if (!s.skill_id) return;
+      const baseId = s.skill_id;
       if (!groups[baseId]) {
         groups[baseId] = [];
       }
@@ -71,7 +71,12 @@ export const SkillHandbookPage: React.FC = () => {
 
     return Object.entries(groups).map(([baseIdStr, levels]) => {
       const baseId = parseInt(baseIdStr);
-      const sortedLevels = levels.sort((a, b) => (a.id ?? 0) - (b.id ?? 0));
+      // Sort: level 1 has id equal to skill_id, levels 2+ have ids starting with 13106001, etc.
+      const sortedLevels = levels.sort((a, b) => {
+        if (a.id === baseId) return -1;
+        if (b.id === baseId) return 1;
+        return (a.id ?? 0) - (b.id ?? 0);
+      });
       const first = sortedLevels[0];
       const name = first.name || `Ability #${baseId}`;
       const isTalent = String(baseId).startsWith('132');

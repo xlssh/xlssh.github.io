@@ -104,10 +104,12 @@ export function PetSanctuaryPage() {
 
   const getStatName = (index: number) => {
     switch (index) {
-      case 0: return 'Attack';
-      case 1: return 'Defense';
-      case 2: return 'HP';
-      case 3: return 'Agility';
+      case 0: return 'Physical Attack';
+      case 1: return 'Kido Attack';
+      case 2: return 'Physical Defense';
+      case 3: return 'Kido Defense';
+      case 4: return 'Speed';
+      case 5: return 'HP';
       default: return `Stat #${index + 1}`;
     }
   };
@@ -340,15 +342,18 @@ export function PetSanctuaryPage() {
                   </div>
                   <div className="text-xs space-y-1.5 text-muted">
                     <span className="block text-subtle uppercase tracking-wider text-[10px]">Ingredients list</span>
-                    {recipe.consume?.map((itemCode, index) => {
+                    {(() => {
+                      const itemCode = recipe.consume?.[0];
+                      const quantity = recipe.consume?.[1] || 1;
+                      if (!itemCode) return <span className="text-subtle italic">No materials configured.</span>;
                       const itemName = articlesMap[itemCode]?.name || `Material #${itemCode}`;
                       return (
-                        <div key={index} className="flex justify-between font-mono">
+                        <div className="flex justify-between font-mono">
                           <span>{itemName}</span>
-                          <span className="text-success">x1</span>
+                          <span className="text-success">x{quantity}</span>
                         </div>
                       );
-                    })}
+                    })()}
                     <div className="mt-3 border-t border-border pt-2 text-[11px] italic">
                       <span className="text-subtle">Acquisition Pathway: </span>
                       {recipe.pathway || 'Spirit gacha rolls / tavern exchanges.'}

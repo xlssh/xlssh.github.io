@@ -8,6 +8,45 @@ import { DataTable } from '../components/DataTable';
 import { ColumnDef } from '@tanstack/react-table';
 import { Flame } from 'lucide-react';
 
+function getTimeTypeLabel(type: number): string {
+  switch (type) {
+    case 1: return 'Daily Cycle';
+    case 2: return 'Weekly Cycle';
+    case 3: return 'Fixed Calendar Dates';
+    case 4: return 'Minute Cooldown';
+    case 5: return 'Server Open Day Cycle';
+    default: return `Time Type #${type}`;
+  }
+}
+
+function getActivityTypeLabel(type: number): string {
+  switch (type) {
+    case 1: return 'Open Server Challenge';
+    case 2: return 'Recharge Reward';
+    case 3: return 'Login Gift';
+    case 4: return 'Growth Fund';
+    case 5: return 'Single Recharge';
+    case 6: return 'Total Recharge';
+    case 7: return 'Total Spending';
+    case 8: return 'Daily Spending';
+    case 9: return 'VIP Exclusive Shop';
+    case 10: return 'Recruit Event';
+    case 11: return 'Tavern Rebate';
+    case 12: return 'Stone Merge Event';
+    case 13: return 'Gear Collection';
+    case 14: return 'Relic Upgrade Event';
+    case 15: return 'Butterfly Event';
+    case 16: return 'Guild Defense';
+    case 17: return 'Circle Trial';
+    case 18: return 'Lucky Turntable';
+    case 19: return 'Jigsaw Puzzle';
+    case 20: return 'Warrior Gacha';
+    case 21: return 'Shop Discount';
+    case 22: return 'Black Market Sale';
+    default: return `Activity Type #${type}`;
+  }
+}
+
 export const PromotionsPage: React.FC = () => {
   const [promotions, setPromotions] = useState<PromotionalActivity[]>([]);
   const [loading, setLoading] = useState(true);
@@ -71,12 +110,12 @@ export const PromotionsPage: React.FC = () => {
     {
       accessorKey: 'act_type',
       header: 'Activity Type',
-      cell: (info) => <span className="text-xs font-semibold text-zinc-500">Type {info.getValue() as number}</span>,
+      cell: (info) => <span className="text-xs font-semibold text-zinc-500">{getActivityTypeLabel(info.getValue() as number)}</span>,
     },
     {
       accessorKey: 'time_type',
       header: 'Time Category',
-      cell: (info) => <span className="text-xs font-semibold text-zinc-400">Type {info.getValue() as number}</span>,
+      cell: (info) => <span className="text-xs font-semibold text-zinc-400">{getTimeTypeLabel(info.getValue() as number)}</span>,
     },
     {
       accessorKey: 'start_time',
@@ -132,7 +171,7 @@ export const PromotionsPage: React.FC = () => {
           >
             <option value="all">All Activity Types</option>
             {uniqueActTypes.sort((a,b)=>a-b).map(t => (
-              <option key={t} value={String(t)}>Activity Type {t}</option>
+              <option key={t} value={String(t)}>{getActivityTypeLabel(t)}</option>
             ))}
           </select>
         </div>
@@ -146,7 +185,7 @@ export const PromotionsPage: React.FC = () => {
           >
             <option value="all">All Time Types</option>
             {uniqueTimeTypes.sort((a,b)=>a-b).map(t => (
-              <option key={t} value={String(t)}>Time Type {t}</option>
+              <option key={t} value={String(t)}>{getTimeTypeLabel(t)}</option>
             ))}
           </select>
         </div>

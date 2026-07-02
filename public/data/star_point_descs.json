@@ -1,0 +1,310 @@
+{
+  "table": "star_point_descs",
+  "rowCount": 76,
+  "rows": [
+    {
+      "id": 17500001,
+      "desc": "Strength"
+    },
+    {
+      "id": 17500002,
+      "desc": "Agility"
+    },
+    {
+      "id": 17500003,
+      "desc": "Wisdom"
+    },
+    {
+      "id": 17500004,
+      "desc": "Stamina"
+    },
+    {
+      "id": 17500011,
+      "desc": "Speed"
+    },
+    {
+      "id": 17500012,
+      "desc": "Strength Growth Rate"
+    },
+    {
+      "id": 17500013,
+      "desc": "Agility Growth Rate"
+    },
+    {
+      "id": 17500014,
+      "desc": "Int Growth Rate"
+    },
+    {
+      "id": 17500015,
+      "desc": "Stamina Growth Rate"
+    },
+    {
+      "id": 17500016,
+      "desc": "Physical Attack"
+    },
+    {
+      "id": 17500017,
+      "desc": "Physical Defense"
+    },
+    {
+      "id": 17500018,
+      "desc": "Character's Ranged Attack"
+    },
+    {
+      "id": 17500019,
+      "desc": "Character's Defense against Ranged Attack"
+    },
+    {
+      "id": 17500020,
+      "desc": "Kido Attack"
+    },
+    {
+      "id": 17500021,
+      "desc": "Kido Defense"
+    },
+    {
+      "id": 17500022,
+      "desc": "Hit Rate"
+    },
+    {
+      "id": 17500023,
+      "desc": "Dodge Rate"
+    },
+    {
+      "id": 17500024,
+      "desc": "Crit Rate"
+    },
+    {
+      "id": 17500025,
+      "desc": "Block Rate"
+    },
+    {
+      "id": 17500026,
+      "desc": "Combo Rate"
+    },
+    {
+      "id": 17500027,
+      "desc": "Aid Rate"
+    },
+    {
+      "id": 17500028,
+      "desc": "Damage Rate"
+    },
+    {
+      "id": 17500029,
+      "desc": "Damage Immunity Rate"
+    },
+    {
+      "id": 17500030,
+      "desc": "Break Defense Rate"
+    },
+    {
+      "id": 17500031,
+      "desc": "Counter Rate"
+    },
+    {
+      "id": 17500032,
+      "desc": "Attack Rate"
+    },
+    {
+      "id": 17500033,
+      "desc": "Defense Rate"
+    },
+    {
+      "id": 17500034,
+      "desc": "Recovery Rate"
+    },
+    {
+      "id": 17500035,
+      "desc": "Reduce Enemy Attack"
+    },
+    {
+      "id": 17500036,
+      "desc": "Reduce Enemy Defense"
+    },
+    {
+      "id": 17500037,
+      "desc": "Silence Rate"
+    },
+    {
+      "id": 17500038,
+      "desc": "Anti-silence Rate"
+    },
+    {
+      "id": 17500039,
+      "desc": "Stun Rate"
+    },
+    {
+      "id": 17500040,
+      "desc": "Anti-stun Rate"
+    },
+    {
+      "id": 17500041,
+      "desc": "Fury Deduction Percentage"
+    },
+    {
+      "id": 17500042,
+      "desc": "Anti-fury-restriction Rate"
+    },
+    {
+      "id": 17500043,
+      "desc": "Increase Crit Damage"
+    },
+    {
+      "id": 17500044,
+      "desc": "Physical Damage Rate"
+    },
+    {
+      "id": 17500045,
+      "desc": "Physical Damage Rate"
+    },
+    {
+      "id": 17500046,
+      "desc": "Physical Damage Immune Rate"
+    },
+    {
+      "id": 17500047,
+      "desc": "Spell Immunity Rate"
+    },
+    {
+      "id": 17500048,
+      "desc": "Attack"
+    },
+    {
+      "id": 17500049,
+      "desc": "Defense"
+    },
+    {
+      "id": 17500050,
+      "desc": "Strength Spirit Stone Growth Rate"
+    },
+    {
+      "id": 17500051,
+      "desc": "Intelligence Spirit Stone Growth Rate"
+    },
+    {
+      "id": 17500052,
+      "desc": "Agility Spirit Stone Growth Rate"
+    },
+    {
+      "id": 17500053,
+      "desc": "Stamina Spirit Stone Growth Rate"
+    },
+    {
+      "id": 17500101,
+      "desc": "Max HP"
+    },
+    {
+      "id": 17500102,
+      "desc": "Current HP"
+    },
+    {
+      "id": 17500103,
+      "desc": "Max Fury"
+    },
+    {
+      "id": 17500104,
+      "desc": "Current Fury Fury"
+    },
+    {
+      "id": 17500105,
+      "desc": "Character function module immunity"
+    },
+    {
+      "id": 17500106,
+      "desc": "In-battle Temporary Buff"
+    },
+    {
+      "id": 17500107,
+      "desc": "For loading chatacter skill only"
+    },
+    {
+      "id": 17500200,
+      "desc": "Starting Skill"
+    },
+    {
+      "id": 17500201,
+      "desc": "Passive Skill"
+    },
+    {
+      "id": 17500202,
+      "desc": "Skill after Death"
+    },
+    {
+      "id": 17500203,
+      "desc": "Halo"
+    },
+    {
+      "id": 17500901,
+      "desc": "Hit"
+    },
+    {
+      "id": 17500902,
+      "desc": "Dodge"
+    },
+    {
+      "id": 17500903,
+      "desc": "Crit Hit"
+    },
+    {
+      "id": 17500904,
+      "desc": "Block"
+    },
+    {
+      "id": 17500905,
+      "desc": "Combo"
+    },
+    {
+      "id": 17500906,
+      "desc": "Aid"
+    },
+    {
+      "id": 17500907,
+      "desc": "Damage"
+    },
+    {
+      "id": 17500908,
+      "desc": "Damage Immune"
+    },
+    {
+      "id": 17500909,
+      "desc": "Break Defense"
+    },
+    {
+      "id": 17500910,
+      "desc": "Counter"
+    },
+    {
+      "id": 17500911,
+      "desc": "Attack"
+    },
+    {
+      "id": 17500912,
+      "desc": "Defense"
+    },
+    {
+      "id": 17500913,
+      "desc": "Recovery"
+    },
+    {
+      "id": 17500914,
+      "desc": "HP"
+    },
+    {
+      "id": 17600001,
+      "desc": "Captain"
+    },
+    {
+      "id": 17600002,
+      "desc": "Vanguard"
+    },
+    {
+      "id": 17600003,
+      "desc": "Assaulter"
+    },
+    {
+      "id": 17600004,
+      "desc": "Support"
+    }
+  ]
+}

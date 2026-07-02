@@ -205,11 +205,11 @@ export interface Knife {
   handbook_id: number | null;
   appraise: string | null;
   get_road: string | null;
-  attack_attr: number | null;
-  defense_attr: number | null;
-  recovery_attr: number | null;
-  resistance_attr: number | null;
-  speed_attr: number | null;
+  attack: number | null;
+  defense: number | null;
+  recovery: number | null;
+  resistance: number | null;
+  speed: number | null;
   direction: number | null;
   attribute_type: number[];
   base_value: number[];

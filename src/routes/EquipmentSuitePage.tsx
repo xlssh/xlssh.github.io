@@ -3,6 +3,22 @@ import { loadBaseEquips, loadSuits, loadEquipUpgrades, loadEquipAdditionals, loa
 import { BaseEquip, Suit, EquipUpgrade, EquipAdditional, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 
+function formatProfessionLock(lockStr: string): string {
+  if (!lockStr || lockStr === '0') return 'Any';
+  const parts = lockStr.split('_');
+  return parts.map(p => {
+    const val = parseInt(p);
+    switch (val) {
+      case 1: return 'Agility';
+      case 2: return 'Defending';
+      case 3: return 'Intellect';
+      case 4: return 'Strength';
+      case 5: return 'Warlock';
+      default: return `Class ${val}`;
+    }
+  }).join(' / ');
+}
+
 export function EquipmentSuitePage() {
   const [loading, setLoading] = useState(true);
   const [baseEquips, setBaseEquips] = useState<BaseEquip[]>([]);
@@ -279,7 +295,7 @@ export function EquipmentSuitePage() {
                       </div>
                       <div className="flex justify-between text-xs border-b border-border pb-1">
                         <span className="text-subtle">Profession Lock</span>
-                        <span className="text-text uppercase font-mono">{eq.dress_profession || 'Any'}</span>
+                        <span className="text-text uppercase font-mono">{formatProfessionLock(eq.dress_profession)}</span>
                       </div>
                       <div className="flex justify-between text-xs">
                         <span className="text-subtle">Required Level</span>

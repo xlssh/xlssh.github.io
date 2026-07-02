@@ -1,7 +1,46 @@
 import React, { useEffect, useState } from 'react';
-import { loadTreasureLevelups, loadTreasureUpgrades, loadSpiritSchools, loadSpiritSchoolExps, loadButterflies, loadButterflyFeedings } from '../data/loaders';
-import { TreasureLevelup, TreasureUpgrade, SpiritSchool, SpiritSchoolExp, Butterfly, ButterflyFeeding } from '../types/db';
+import { loadTreasureLevelups, loadTreasureUpgrades, loadSpiritSchools, loadSpiritSchoolExps, loadButterflies, loadButterflyFeedings, loadArticles } from '../data/loaders';
+import { TreasureLevelup, TreasureUpgrade, SpiritSchool, SpiritSchoolExp, Butterfly, ButterflyFeeding, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
+
+function resolveItemName(type: number, code: number, articlesMap: Record<number, any>): string {
+  switch (type) {
+    case 0:
+      switch (code) {
+        case 0: return 'Silver';
+        case 1: return 'Gold';
+        case 2: return 'Vouchers';
+        case 3: return 'Integral';
+        default: return 'Currency';
+      }
+    case 1:
+      return articlesMap[code]?.name || `Item #${code}`;
+    case 2:
+      return 'EXP';
+    case 3:
+      return 'Merit';
+    case 5:
+      return 'Prestige';
+    case 6:
+      return 'Soul Points';
+    case 7:
+      switch (code) {
+        case 3: return 'Blue Soul';
+        case 4: return 'Purple Soul';
+        case 5: return 'Golden Soul';
+        case 6: return 'Red Soul';
+        default: return 'Soul';
+      }
+    case 13:
+      switch (code) {
+        case 8: return 'Blue Star';
+        case 9: return 'Red Star';
+        default: return 'Star';
+      }
+    default:
+      return articlesMap[code]?.name || `Resource #${code}`;
+  }
+}
 
 export function AcademyRelicsPage() {
   const [loading, setLoading] = useState(true);
@@ -11,6 +50,7 @@ export function AcademyRelicsPage() {
   const [schoolExps, setSchoolExps] = useState<SpiritSchoolExp[]>([]);
   const [butterflies, setButterflies] = useState<Butterfly[]>([]);
   const [feedings, setFeedings] = useState<ButterflyFeeding[]>([]);
+  const [articlesMap, setArticlesMap] = useState<Record<number, Article>>({});
 
   const [activeTab, setActiveTab] = useState<'academy' | 'relics' | 'butterfly'>('academy');
 
@@ -31,14 +71,21 @@ export function AcademyRelicsPage() {
       loadSpiritSchools(),
       loadSpiritSchoolExps(),
       loadButterflies(),
-      loadButterflyFeedings()
-    ]).then(([lvlRes, upRes, schoolRes, schoolExpRes, bfRes, feedRes]) => {
+      loadButterflyFeedings(),
+      loadArticles()
+    ]).then(([lvlRes, upRes, schoolRes, schoolExpRes, bfRes, feedRes, articlesRes]) => {
       setLevelups(lvlRes.rows);
       setUpgrades(upRes.rows);
       setSchools(schoolRes.rows);
       setSchoolExps(schoolExpRes.rows);
       setButterflies(bfRes.rows);
       setFeedings(feedRes.rows);
+
+      const aMap: Record<number, Article> = {};
+      articlesRes.rows.forEach(art => {
+        aMap[art.id] = art;
+      });
+      setArticlesMap(aMap);
 
       if (schoolRes.rows.length > 0) {
         setSelectedSchoolId(schoolRes.rows[0].id);
@@ -342,12 +389,15 @@ export function AcademyRelicsPage() {
                   </div>
                   {feed.butterfly_rewards && feed.butterfly_rewards.length > 0 ? (
                     <div className="space-y-1">
-                      {feed.butterfly_rewards.map((r, idx) => (
-                        <div key={idx} className="flex justify-between">
-                          <span className="text-muted">Reward Code: {r.code}</span>
-                          <span className="text-success font-bold">x{r.amount}</span>
-                        </div>
-                      ))}
+                      {feed.butterfly_rewards.map((r, idx) => {
+                        const itemName = resolveItemName(r.type, r.code, articlesMap);
+                        return (
+                          <div key={idx} className="flex justify-between">
+                            <span className="text-muted">{itemName}</span>
+                            <span className="text-success font-bold">x{r.amount}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   ) : (
                     <span className="text-subtle italic">No rewards configured.</span>
