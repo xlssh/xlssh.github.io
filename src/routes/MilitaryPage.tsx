@@ -15,6 +15,8 @@ const STATS_MAP: Record<number, string> = {
   3: 'Wisdom',
   4: 'Stamina',
   11: 'Speed',
+  28: 'Damage Rate',
+  29: 'Damage Immunity',
   101: 'HP Pool',
 };
 
@@ -25,8 +27,8 @@ export const MilitaryPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   // Simulator selections
-  const [startRankId, setStartRankId] = useState<number>(1);
-  const [targetRankId, setTargetRankId] = useState<number>(10);
+  const [startRankId, setStartRankId] = useState<number>(40100001);
+  const [targetRankId, setTargetRankId] = useState<number>(40100010);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,8 +39,14 @@ export const MilitaryPage: React.FC = () => {
           loadMilitary(),
           loadArticles()
         ]);
-        setMilitaryRanks(milRes.rows.sort((a, b) => a.id - b.id));
+        const sorted = milRes.rows.sort((a, b) => a.id - b.id);
+        setMilitaryRanks(sorted);
         setArticles(artRes.rows);
+        
+        if (sorted.length > 0) {
+          setStartRankId(sorted[0].id);
+          setTargetRankId(sorted[Math.min(9, sorted.length - 1)].id);
+        }
       } catch (err: any) {
         console.error(err);
         setError(err.message || 'Failed to load Seireitei Military database.');
@@ -137,7 +145,8 @@ export const MilitaryPage: React.FC = () => {
   if (loading) return <LoadingState message="Decoding Seireitei Military hierarchy..." />;
   if (error) return <ErrorState message={error} onRetry={() => window.location.reload()} />;
 
-  const maxSimRank = militaryRanks.length > 0 ? militaryRanks[militaryRanks.length - 1].id : 36;
+  const startRankIndex = militaryRanks.findIndex(r => r.id === startRankId);
+  const targetRankIndex = militaryRanks.findIndex(r => r.id === targetRankId);
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
@@ -215,14 +224,21 @@ export const MilitaryPage: React.FC = () => {
                 <span className="block text-[10px] font-bold text-zinc-400 uppercase">Starting Military Rank</span>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-zinc-450">Select Rank</span>
-                  <span className="font-mono text-xs font-bold text-zinc-700 dark:text-zinc-300">Rank {startRankId}</span>
+                  <span className="font-mono text-xs font-bold text-zinc-700 dark:text-zinc-300">
+                    {activeStart?.name || `Rank #${startRankId}`}
+                  </span>
                 </div>
                 <input
                   type="range"
-                  min="1"
-                  max={maxSimRank}
-                  value={startRankId}
-                  onChange={(e) => setStartRankId(parseInt(e.target.value))}
+                  min="0"
+                  max={militaryRanks.length - 1}
+                  value={startRankIndex >= 0 ? startRankIndex : 0}
+                  onChange={(e) => {
+                    const idx = parseInt(e.target.value);
+                    if (militaryRanks[idx]) {
+                      setStartRankId(militaryRanks[idx].id);
+                    }
+                  }}
                   className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
               </div>
@@ -232,14 +248,21 @@ export const MilitaryPage: React.FC = () => {
                 <span className="block text-[10px] font-bold text-zinc-400 uppercase">Target Military Rank</span>
                 <div className="flex justify-between items-center">
                   <span className="text-xs text-zinc-450">Select Rank</span>
-                  <span className="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">Rank {targetRankId}</span>
+                  <span className="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">
+                    {activeTarget?.name || `Rank #${targetRankId}`}
+                  </span>
                 </div>
                 <input
                   type="range"
-                  min="1"
-                  max={maxSimRank}
-                  value={targetRankId}
-                  onChange={(e) => setTargetRankId(parseInt(e.target.value))}
+                  min="0"
+                  max={militaryRanks.length - 1}
+                  value={targetRankIndex >= 0 ? targetRankIndex : 0}
+                  onChange={(e) => {
+                    const idx = parseInt(e.target.value);
+                    if (militaryRanks[idx]) {
+                      setTargetRankId(militaryRanks[idx].id);
+                    }
+                  }}
                   className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
               </div>

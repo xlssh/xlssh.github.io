@@ -99,7 +99,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Promotion Schedules', to: '/calendar/schedules', icon: Clock },
     { name: 'Heroes', to: '/heroes', icon: Users },
     { name: 'Hero Comparison', to: '/heroes/compare', icon: Scale },
-    { name: 'Hero SFX Board', to: '/heroes/sounds', icon: Volume2 },
+    //{ name: 'Hero SFX Board', to: '/heroes/sounds', icon: Volume2 },
     { name: 'Class Stat Curves', to: '/heroes/stats', icon: BarChart3 },
     { name: 'Articles / Items', to: '/articles', icon: Package },
     { name: 'Farming Planner', to: '/articles/farming', icon: Navigation },
@@ -137,11 +137,11 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'MC Soul Maps', to: '/tools/soul-maps', icon: Compass },
     { name: 'Black Market Deals', to: '/tools/black-market', icon: Coins },
     { name: 'Beast Souls Planner', to: '/tools/beast-souls', icon: BarChart3 },
-    { name: 'Temple Shrine', to: '/tools/shrine-simulator', icon: Trophy },
+    //{ name: 'Temple Shrine', to: '/tools/shrine-simulator', icon: Trophy }, // TODO: unclear
     { name: 'Military Ranks', to: '/tools/military', icon: Trophy },
-    { name: 'Culling Abyss Tower', to: '/tools/culling-tower', icon: Swords },
-    { name: 'Equip Forge Planner', to: '/tools/forge-planner', icon: Sparkles },
-    { name: 'Nightmare Campaign', to: '/tools/nightmare-realms', icon: Globe },
+    //{ name: 'Culling Abyss Tower', to: '/tools/culling-tower', icon: Swords }, // TODO: unclear
+    //{ name: 'Equip Forge Planner', to: '/tools/forge-planner', icon: Sparkles }, // TODO: unclear
+    //{ name: 'Nightmare Campaign', to: '/tools/nightmare-realms', icon: Globe }, // TODO: fix
   ];
 
   return (
