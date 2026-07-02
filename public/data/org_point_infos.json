@@ -1,0 +1,10227 @@
+{
+  "table": "org_point_infos",
+  "rowCount": 180,
+  "generatedAt": "2026-07-02",
+  "rows": [
+    {
+      "id": 16000001,
+      "name": "Prelude of Hunger I",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800001
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600001,
+      "guild_rate_award": 0,
+      "next_point": 16000002,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000002,
+      "name": "Prelude of Hunger II",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800002
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600002,
+      "guild_rate_award": 0,
+      "next_point": 16000003,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000003,
+      "name": "Prelude of Hunger III",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800003
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600003,
+      "guild_rate_award": 0,
+      "next_point": 16000004,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000004,
+      "name": "Prelude of Hunger IV",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800004
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600004,
+      "guild_rate_award": 0,
+      "next_point": 16000005,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000005,
+      "name": "Prelude of Hunger V",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800005
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600005,
+      "guild_rate_award": 0,
+      "next_point": 16000006,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000006,
+      "name": "Prelude of Hunger VI",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800006
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600006,
+      "guild_rate_award": 0,
+      "next_point": 16000007,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000007,
+      "name": "Prelude of Hunger VII",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800007
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600007,
+      "guild_rate_award": 0,
+      "next_point": 16000008,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000008,
+      "name": "Prelude of Hunger VIII",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800008
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600008,
+      "guild_rate_award": 0,
+      "next_point": 16000009,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000009,
+      "name": "Prelude of Hunger IX",
+      "action_eexertion": 2,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800009
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600009,
+      "guild_rate_award": 0,
+      "next_point": 16000101,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000101,
+      "name": "Hueon Mundo Shinigami I",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800101
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600010,
+      "guild_rate_award": 0,
+      "next_point": 16000102,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000102,
+      "name": "Hueon Mundo Shinigami II",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800102
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600011,
+      "guild_rate_award": 0,
+      "next_point": 16000103,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000103,
+      "name": "Hueon Mundo Shinigami III",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800103
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600012,
+      "guild_rate_award": 0,
+      "next_point": 16000104,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000104,
+      "name": "Hueon Mundo Shinigami IV",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800104
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600013,
+      "guild_rate_award": 0,
+      "next_point": 16000105,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000105,
+      "name": "Hueon Mundo Shinigami V",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800105
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600014,
+      "guild_rate_award": 0,
+      "next_point": 16000106,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000106,
+      "name": "Hueon Mundo Shinigami VI",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800106
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600015,
+      "guild_rate_award": 0,
+      "next_point": 16000107,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000107,
+      "name": "Hueon Mundo Shinigami VII",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800107
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600016,
+      "guild_rate_award": 0,
+      "next_point": 16000108,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000108,
+      "name": "Hueon Mundo Shinigami VIII",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800108
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600017,
+      "guild_rate_award": 0,
+      "next_point": 16000109,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000109,
+      "name": "Hueon Mundo Shinigami IX",
+      "action_eexertion": 4,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800109
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600018,
+      "guild_rate_award": 0,
+      "next_point": 16000201,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000201,
+      "name": "Reality of Nightmare I",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800201
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600019,
+      "guild_rate_award": 0,
+      "next_point": 16000202,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000202,
+      "name": "Reality of Nightmare II",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800202
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600020,
+      "guild_rate_award": 0,
+      "next_point": 16000203,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000203,
+      "name": "Reality of Nightmare III",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800203
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600021,
+      "guild_rate_award": 0,
+      "next_point": 16000204,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000204,
+      "name": "Reality of Nightmare IV",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800204
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600022,
+      "guild_rate_award": 0,
+      "next_point": 16000205,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000205,
+      "name": "Reality of Nightmare V",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800205
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600023,
+      "guild_rate_award": 0,
+      "next_point": 16000206,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000206,
+      "name": "Reality of Nightmare VI",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800206
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600024,
+      "guild_rate_award": 0,
+      "next_point": 16000207,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000207,
+      "name": "Reality of Nightmare VII",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800207
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600025,
+      "guild_rate_award": 0,
+      "next_point": 16000208,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000208,
+      "name": "Reality of Nightmare VIII",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800208
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600026,
+      "guild_rate_award": 0,
+      "next_point": 16000209,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000209,
+      "name": "Reality of Nightmare IX",
+      "action_eexertion": 6,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800209
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600027,
+      "guild_rate_award": 0,
+      "next_point": 16000301,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000301,
+      "name": "Dark Memory I",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800301
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600028,
+      "guild_rate_award": 0,
+      "next_point": 16000302,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000302,
+      "name": "Dark Memory II",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800302
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600029,
+      "guild_rate_award": 0,
+      "next_point": 16000303,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000303,
+      "name": "Dark Memory III",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800303
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600030,
+      "guild_rate_award": 0,
+      "next_point": 16000304,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000304,
+      "name": "Dark Memory IV",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800304
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600031,
+      "guild_rate_award": 0,
+      "next_point": 16000305,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000305,
+      "name": "Dark Memory V",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800305
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600032,
+      "guild_rate_award": 0,
+      "next_point": 16000306,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000306,
+      "name": "Dark Memory VI",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800306
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600033,
+      "guild_rate_award": 0,
+      "next_point": 16000307,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000307,
+      "name": "Dark Memory VII",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800307
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600034,
+      "guild_rate_award": 0,
+      "next_point": 16000308,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000308,
+      "name": "Dark Memory VIII",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800308
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600035,
+      "guild_rate_award": 0,
+      "next_point": 16000309,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000309,
+      "name": "Dark Memory IX",
+      "action_eexertion": 8,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800309
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600036,
+      "guild_rate_award": 0,
+      "next_point": 16000401,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000401,
+      "name": "Desperate Visored I",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800401
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600037,
+      "guild_rate_award": 0,
+      "next_point": 16000402,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000402,
+      "name": "Desperate Visored II",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800402
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600038,
+      "guild_rate_award": 0,
+      "next_point": 16000403,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000403,
+      "name": "Desperate Visored III",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800403
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600039,
+      "guild_rate_award": 0,
+      "next_point": 16000404,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000404,
+      "name": "Desperate Visored IV",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800404
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600040,
+      "guild_rate_award": 0,
+      "next_point": 16000405,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000405,
+      "name": "Desperate Visored V",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800405
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600041,
+      "guild_rate_award": 0,
+      "next_point": 16000406,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000406,
+      "name": "Desperate Visored VI",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800406
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600042,
+      "guild_rate_award": 0,
+      "next_point": 16000407,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000407,
+      "name": "Desperate Visored VII",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800407
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600043,
+      "guild_rate_award": 0,
+      "next_point": 16000408,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000408,
+      "name": "Desperate Visored VIII",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800408
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600044,
+      "guild_rate_award": 0,
+      "next_point": 16000409,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000409,
+      "name": "Desperate Visored IX",
+      "action_eexertion": 10,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800409
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600045,
+      "guild_rate_award": 0,
+      "next_point": 16000501,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000501,
+      "name": "Engetsu Attack I",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800501
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600046,
+      "guild_rate_award": 0,
+      "next_point": 16000502,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000502,
+      "name": "Engetsu Attack II",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800502
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600047,
+      "guild_rate_award": 0,
+      "next_point": 16000503,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000503,
+      "name": "Engetsu Attack III",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800503
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600048,
+      "guild_rate_award": 0,
+      "next_point": 16000504,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000504,
+      "name": "Engetsu Attack IV",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800504
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600049,
+      "guild_rate_award": 0,
+      "next_point": 16000505,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000505,
+      "name": "Engetsu Attack V",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800505
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600050,
+      "guild_rate_award": 0,
+      "next_point": 16000506,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000506,
+      "name": "Engetsu Attack VI",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800506
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600051,
+      "guild_rate_award": 0,
+      "next_point": 16000507,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000507,
+      "name": "Engetsu Attack VII",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800507
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600052,
+      "guild_rate_award": 0,
+      "next_point": 16000508,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000508,
+      "name": "Engetsu Attack VIII",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800508
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600053,
+      "guild_rate_award": 0,
+      "next_point": 16000509,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000509,
+      "name": "Engetsu Attack IX",
+      "action_eexertion": 11,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800509
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600054,
+      "guild_rate_award": 0,
+      "next_point": 16000601,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000601,
+      "name": "Shura Twilight I",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800601
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600055,
+      "guild_rate_award": 0,
+      "next_point": 16000602,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000602,
+      "name": "Shura Twilight II",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800602
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600056,
+      "guild_rate_award": 0,
+      "next_point": 16000603,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000603,
+      "name": "Shura Twilight III",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800603
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600057,
+      "guild_rate_award": 0,
+      "next_point": 16000604,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000604,
+      "name": "Shura Twilight IV",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800604
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600058,
+      "guild_rate_award": 0,
+      "next_point": 16000605,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000605,
+      "name": "Shura Twilight V",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800605
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600059,
+      "guild_rate_award": 0,
+      "next_point": 16000606,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000606,
+      "name": "Shura Twilight VI",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800606
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600060,
+      "guild_rate_award": 0,
+      "next_point": 16000607,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000607,
+      "name": "Shura Twilight VII",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800607
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600061,
+      "guild_rate_award": 0,
+      "next_point": 16000608,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000608,
+      "name": "Shura Twilight VIII",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800608
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600062,
+      "guild_rate_award": 0,
+      "next_point": 16000609,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000609,
+      "name": "Shura Twilight IX",
+      "action_eexertion": 12,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800609
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600063,
+      "guild_rate_award": 0,
+      "next_point": 16000701,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000701,
+      "name": "Prosperous World I",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800701
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600064,
+      "guild_rate_award": 0,
+      "next_point": 16000702,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000702,
+      "name": "Prosperous World II",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800702
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600065,
+      "guild_rate_award": 0,
+      "next_point": 16000703,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000703,
+      "name": "Prosperous World III",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800703
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600066,
+      "guild_rate_award": 0,
+      "next_point": 16000704,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000704,
+      "name": "Prosperous World IV",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800704
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600067,
+      "guild_rate_award": 0,
+      "next_point": 16000705,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000705,
+      "name": "Prosperous World V",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800705
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600068,
+      "guild_rate_award": 0,
+      "next_point": 16000706,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000706,
+      "name": "Prosperous World VI",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800706
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600069,
+      "guild_rate_award": 0,
+      "next_point": 16000707,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000707,
+      "name": "Prosperous World VII",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800707
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600070,
+      "guild_rate_award": 0,
+      "next_point": 16000708,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000708,
+      "name": "Prosperous World VIII",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800708
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600071,
+      "guild_rate_award": 0,
+      "next_point": 16000709,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000709,
+      "name": "Prosperous World IX",
+      "action_eexertion": 14,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800709
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600072,
+      "guild_rate_award": 0,
+      "next_point": 16000801,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000801,
+      "name": "Fading Stars I",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800801
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600073,
+      "guild_rate_award": 0,
+      "next_point": 16000802,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000802,
+      "name": "Fading Stars II",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800802
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600074,
+      "guild_rate_award": 0,
+      "next_point": 16000803,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000803,
+      "name": "Fading Stars III",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800803
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600075,
+      "guild_rate_award": 0,
+      "next_point": 16000804,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000804,
+      "name": "Fading Stars IV",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800804
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600076,
+      "guild_rate_award": 0,
+      "next_point": 16000805,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000805,
+      "name": "Fading Stars V",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800805
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600077,
+      "guild_rate_award": 0,
+      "next_point": 16000806,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000806,
+      "name": "Fading Stars VI",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800806
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600078,
+      "guild_rate_award": 0,
+      "next_point": 16000807,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000807,
+      "name": "Fading Stars VII",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800807
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600079,
+      "guild_rate_award": 0,
+      "next_point": 16000808,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000808,
+      "name": "Fading Stars VIII",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800808
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600080,
+      "guild_rate_award": 0,
+      "next_point": 16000809,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000809,
+      "name": "Fading Stars IX",
+      "action_eexertion": 15,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800809
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600081,
+      "guild_rate_award": 0,
+      "next_point": 16000901,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16000901,
+      "name": "Ghost's Scar I",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800901
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 22600082,
+      "guild_rate_award": 0,
+      "next_point": 16000902,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16000902,
+      "name": "Ghost's Scar II",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800902
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600083,
+      "guild_rate_award": 0,
+      "next_point": 16000903,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16000903,
+      "name": "Ghost's Scar III",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800903
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600084,
+      "guild_rate_award": 0,
+      "next_point": 16000904,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16000904,
+      "name": "Ghost's Scar IV",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800904
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 22600085,
+      "guild_rate_award": 0,
+      "next_point": 16000905,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16000905,
+      "name": "Ghost's Scar V",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800905
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 22600086,
+      "guild_rate_award": 0,
+      "next_point": 16000906,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16000906,
+      "name": "Ghost's Scar VI",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800906
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 22600087,
+      "guild_rate_award": 0,
+      "next_point": 16000907,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16000907,
+      "name": "Ghost's Scar VII",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800907
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 22600088,
+      "guild_rate_award": 0,
+      "next_point": 16000908,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16000908,
+      "name": "Ghost's Scar VIII",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800908
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 22600089,
+      "guild_rate_award": 0,
+      "next_point": 16000909,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16000909,
+      "name": "Ghost's Scar IX",
+      "action_eexertion": 16,
+      "remaining_number": 10,
+      "army": {
+        "army": [
+          20800909
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 22600090,
+      "guild_rate_award": 0,
+      "next_point": 0,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010001,
+      "name": "Prelude of Hunger I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810001
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611001,
+      "next_point": 16010002,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010002,
+      "name": "Prelude of Hunger II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810002
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611002,
+      "next_point": 16010003,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010003,
+      "name": "Prelude of Hunger III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810003
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611003,
+      "next_point": 16010004,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010004,
+      "name": "Prelude of Hunger IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810004
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611004,
+      "next_point": 16010005,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010005,
+      "name": "Prelude of Hunger V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810005
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611005,
+      "next_point": 16010006,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010006,
+      "name": "Prelude of Hunger VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810006
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611006,
+      "next_point": 16010007,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010007,
+      "name": "Prelude of Hunger VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810007
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611007,
+      "next_point": 16010008,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010008,
+      "name": "Prelude of Hunger VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810008
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611008,
+      "next_point": 16010009,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010009,
+      "name": "Prelude of Hunger IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810009
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611009,
+      "next_point": 16010101,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010101,
+      "name": "Hueon Mundo Shinigami I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810101
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611010,
+      "next_point": 16010102,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010102,
+      "name": "Hueon Mundo Shinigami II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810102
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611011,
+      "next_point": 16010103,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010103,
+      "name": "Hueon Mundo Shinigami III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810103
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611012,
+      "next_point": 16010104,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010104,
+      "name": "Hueon Mundo Shinigami IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810104
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611013,
+      "next_point": 16010105,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010105,
+      "name": "Hueon Mundo Shinigami V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810105
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611014,
+      "next_point": 16010106,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010106,
+      "name": "Hueon Mundo Shinigami VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810106
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611015,
+      "next_point": 16010107,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010107,
+      "name": "Hueon Mundo Shinigami VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810107
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611016,
+      "next_point": 16010108,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010108,
+      "name": "Hueon Mundo Shinigami VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810108
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611017,
+      "next_point": 16010109,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010109,
+      "name": "Hueon Mundo Shinigami IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810109
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611018,
+      "next_point": 16010201,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010201,
+      "name": "Reality of Nightmare I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810201
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611019,
+      "next_point": 16010202,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010202,
+      "name": "Reality of Nightmare II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810202
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611020,
+      "next_point": 16010203,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010203,
+      "name": "Reality of Nightmare III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810203
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611021,
+      "next_point": 16010204,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010204,
+      "name": "Reality of Nightmare IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810204
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611022,
+      "next_point": 16010205,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010205,
+      "name": "Reality of Nightmare V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810205
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611023,
+      "next_point": 16010206,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010206,
+      "name": "Reality of Nightmare VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810206
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611024,
+      "next_point": 16010207,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010207,
+      "name": "Reality of Nightmare VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810207
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611025,
+      "next_point": 16010208,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010208,
+      "name": "Reality of Nightmare VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810208
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611026,
+      "next_point": 16010209,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010209,
+      "name": "Reality of Nightmare IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810209
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611027,
+      "next_point": 16010301,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010301,
+      "name": "Dark Memory I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810301
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611028,
+      "next_point": 16010302,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010302,
+      "name": "Dark Memory II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810302
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611029,
+      "next_point": 16010303,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010303,
+      "name": "Dark Memory III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810303
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611030,
+      "next_point": 16010304,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010304,
+      "name": "Dark Memory IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810304
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611031,
+      "next_point": 16010305,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010305,
+      "name": "Dark Memory V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810305
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611032,
+      "next_point": 16010306,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010306,
+      "name": "Dark Memory VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810306
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611033,
+      "next_point": 16010307,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010307,
+      "name": "Dark Memory VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810307
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611034,
+      "next_point": 16010308,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010308,
+      "name": "Dark Memory VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810308
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611035,
+      "next_point": 16010309,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010309,
+      "name": "Dark Memory IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810309
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611036,
+      "next_point": 16010401,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010401,
+      "name": "Desperate Visored I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810401
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611037,
+      "next_point": 16010402,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010402,
+      "name": "Desperate Visored II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810402
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611038,
+      "next_point": 16010403,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010403,
+      "name": "Desperate Visored III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810403
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611039,
+      "next_point": 16010404,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010404,
+      "name": "Desperate Visored IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810404
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611040,
+      "next_point": 16010405,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010405,
+      "name": "Desperate Visored V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810405
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611041,
+      "next_point": 16010406,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010406,
+      "name": "Desperate Visored VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810406
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611042,
+      "next_point": 16010407,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010407,
+      "name": "Desperate Visored VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810407
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611043,
+      "next_point": 16010408,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010408,
+      "name": "Desperate Visored VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810408
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611044,
+      "next_point": 16010409,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010409,
+      "name": "Desperate Visored IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810409
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611045,
+      "next_point": 16010501,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010501,
+      "name": "Engetsu Attack I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810501
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611046,
+      "next_point": 16010502,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010502,
+      "name": "Engetsu Attack II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810502
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611047,
+      "next_point": 16010503,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010503,
+      "name": "Engetsu Attack III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810503
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611048,
+      "next_point": 16010504,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010504,
+      "name": "Engetsu Attack IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810504
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611049,
+      "next_point": 16010505,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010505,
+      "name": "Engetsu Attack V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810505
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611050,
+      "next_point": 16010506,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010506,
+      "name": "Engetsu Attack VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810506
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611051,
+      "next_point": 16010507,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010507,
+      "name": "Engetsu Attack VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810507
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611052,
+      "next_point": 16010508,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010508,
+      "name": "Engetsu Attack VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810508
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611053,
+      "next_point": 16010509,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010509,
+      "name": "Engetsu Attack IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810509
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611054,
+      "next_point": 16010601,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010601,
+      "name": "Shura Twilight I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810601
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611055,
+      "next_point": 16010602,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010602,
+      "name": "Shura Twilight II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810602
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611056,
+      "next_point": 16010603,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010603,
+      "name": "Shura Twilight III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810603
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611057,
+      "next_point": 16010604,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010604,
+      "name": "Shura Twilight IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810604
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611058,
+      "next_point": 16010605,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010605,
+      "name": "Shura Twilight V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810605
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611059,
+      "next_point": 16010606,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010606,
+      "name": "Shura Twilight VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810606
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611060,
+      "next_point": 16010607,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010607,
+      "name": "Shura Twilight VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810607
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611061,
+      "next_point": 16010608,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010608,
+      "name": "Shura Twilight VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810608
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611062,
+      "next_point": 16010609,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010609,
+      "name": "Shura Twilight IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810609
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611063,
+      "next_point": 16010701,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010701,
+      "name": "Prosperous World I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810701
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611064,
+      "next_point": 16010702,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010702,
+      "name": "Prosperous World II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810702
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611065,
+      "next_point": 16010703,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010703,
+      "name": "Prosperous World III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810703
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611066,
+      "next_point": 16010704,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010704,
+      "name": "Prosperous World IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810704
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611067,
+      "next_point": 16010705,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010705,
+      "name": "Prosperous World V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810705
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611068,
+      "next_point": 16010706,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010706,
+      "name": "Prosperous World VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810706
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611069,
+      "next_point": 16010707,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010707,
+      "name": "Prosperous World VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810707
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611070,
+      "next_point": 16010708,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010708,
+      "name": "Prosperous World VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810708
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611071,
+      "next_point": 16010709,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010709,
+      "name": "Prosperous World IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810709
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611072,
+      "next_point": 16010801,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010801,
+      "name": "Fading Stars I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810801
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611073,
+      "next_point": 16010802,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010802,
+      "name": "Fading Stars II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810802
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611074,
+      "next_point": 16010803,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010803,
+      "name": "Fading Stars III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810803
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611075,
+      "next_point": 16010804,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010804,
+      "name": "Fading Stars IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810804
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611076,
+      "next_point": 16010805,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010805,
+      "name": "Fading Stars V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810805
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611077,
+      "next_point": 16010806,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010806,
+      "name": "Fading Stars VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810806
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611078,
+      "next_point": 16010807,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010807,
+      "name": "Fading Stars VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810807
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611079,
+      "next_point": 16010808,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010808,
+      "name": "Fading Stars VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810808
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611080,
+      "next_point": 16010809,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010809,
+      "name": "Fading Stars IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810809
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611081,
+      "next_point": 16010901,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 16010901,
+      "name": "Ghost's Scar I",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810901
+        ]
+      },
+      "role_model": 40077,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611082,
+      "next_point": 16010902,
+      "coordinate": {
+        "coordinate": [
+          168,
+          350
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": []
+    },
+    {
+      "id": 16010902,
+      "name": "Ghost's Scar II",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810902
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611083,
+      "next_point": 16010903,
+      "coordinate": {
+        "coordinate": [
+          238,
+          243
+        ]
+      },
+      "battle_scene": 30001,
+      "to_target": [
+        [
+          153,
+          282
+        ],
+        [
+          153,
+          267
+        ],
+        [
+          158,
+          251
+        ],
+        [
+          169,
+          241
+        ],
+        [
+          184,
+          234
+        ],
+        [
+          198,
+          234
+        ],
+        [
+          215,
+          235
+        ]
+      ]
+    },
+    {
+      "id": 16010903,
+      "name": "Ghost's Scar III",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810903
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611084,
+      "next_point": 16010904,
+      "coordinate": {
+        "coordinate": [
+          358,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          257,
+          252
+        ],
+        [
+          264,
+          263
+        ],
+        [
+          264,
+          279
+        ],
+        [
+          263,
+          294
+        ],
+        [
+          269,
+          309
+        ],
+        [
+          278,
+          321
+        ],
+        [
+          289,
+          324
+        ],
+        [
+          301,
+          316
+        ],
+        [
+          316,
+          312
+        ],
+        [
+          333,
+          315
+        ],
+        [
+          344,
+          326
+        ]
+      ]
+    },
+    {
+      "id": 16010904,
+      "name": "Ghost's Scar IV",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810904
+        ]
+      },
+      "role_model": 40014,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611085,
+      "next_point": 16010905,
+      "coordinate": {
+        "coordinate": [
+          383,
+          484
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          359,
+          353
+        ],
+        [
+          354,
+          369
+        ],
+        [
+          339,
+          378
+        ],
+        [
+          328,
+          388
+        ],
+        [
+          321,
+          404
+        ],
+        [
+          320,
+          420
+        ],
+        [
+          326,
+          439
+        ],
+        [
+          338,
+          450
+        ],
+        [
+          352,
+          455
+        ],
+        [
+          367,
+          461
+        ],
+        [
+          373,
+          473
+        ]
+      ]
+    },
+    {
+      "id": 16010905,
+      "name": "Ghost's Scar V",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810905
+        ]
+      },
+      "role_model": 40088,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611086,
+      "next_point": 16010906,
+      "coordinate": {
+        "coordinate": [
+          510,
+          499
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          390,
+          498
+        ],
+        [
+          393,
+          514
+        ],
+        [
+          405,
+          524
+        ],
+        [
+          423,
+          527
+        ],
+        [
+          439,
+          520
+        ],
+        [
+          452,
+          509
+        ],
+        [
+          464,
+          492
+        ],
+        [
+          483,
+          490
+        ]
+      ]
+    },
+    {
+      "id": 16010906,
+      "name": "Ghost's Scar VI",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810906
+        ]
+      },
+      "role_model": 40015,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611087,
+      "next_point": 16010907,
+      "coordinate": {
+        "coordinate": [
+          590,
+          429
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          534,
+          501
+        ],
+        [
+          555,
+          503
+        ],
+        [
+          573,
+          496
+        ],
+        [
+          584,
+          485
+        ],
+        [
+          596,
+          468
+        ],
+        [
+          595,
+          448
+        ]
+      ]
+    },
+    {
+      "id": 16010907,
+      "name": "Ghost's Scar VII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810907
+        ]
+      },
+      "role_model": 40078,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611088,
+      "next_point": 16010908,
+      "coordinate": {
+        "coordinate": [
+          723,
+          334
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          601,
+          398
+        ],
+        [
+          613,
+          385
+        ],
+        [
+          629,
+          376
+        ],
+        [
+          649,
+          373
+        ],
+        [
+          673,
+          376
+        ],
+        [
+          688,
+          384
+        ],
+        [
+          705,
+          391
+        ],
+        [
+          722,
+          392
+        ],
+        [
+          735,
+          385
+        ],
+        [
+          741,
+          370
+        ],
+        [
+          739,
+          352
+        ]
+      ]
+    },
+    {
+      "id": 16010908,
+      "name": "Ghost's Scar VIII",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810908
+        ]
+      },
+      "role_model": 40017,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611089,
+      "next_point": 16010909,
+      "coordinate": {
+        "coordinate": [
+          749,
+          165
+        ]
+      },
+      "battle_scene": 30006,
+      "to_target": [
+        [
+          704,
+          316
+        ],
+        [
+          694,
+          306
+        ],
+        [
+          691,
+          285
+        ],
+        [
+          691,
+          265
+        ],
+        [
+          690,
+          241
+        ],
+        [
+          689,
+          219
+        ],
+        [
+          692,
+          203
+        ],
+        [
+          703,
+          193
+        ],
+        [
+          720,
+          186
+        ],
+        [
+          731,
+          174
+        ]
+      ]
+    },
+    {
+      "id": 16010909,
+      "name": "Ghost's Scar IX",
+      "action_eexertion": 0,
+      "remaining_number": 5,
+      "army": {
+        "army": [
+          20810909
+        ]
+      },
+      "role_model": 40079,
+      "show_rate_award": 0,
+      "guild_rate_award": 22611090,
+      "next_point": 0,
+      "coordinate": {
+        "coordinate": [
+          922,
+          207
+        ]
+      },
+      "battle_scene": 30022,
+      "to_target": [
+        [
+          768,
+          159
+        ],
+        [
+          789,
+          158
+        ],
+        [
+          807,
+          165
+        ],
+        [
+          817,
+          177
+        ],
+        [
+          834,
+          185
+        ],
+        [
+          852,
+          191
+        ],
+        [
+          866,
+          184
+        ],
+        [
+          883,
+          182
+        ],
+        [
+          893,
+          185
+        ],
+        [
+          905,
+          194
+        ]
+      ]
+    }
+  ]
+}

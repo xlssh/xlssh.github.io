@@ -18,6 +18,7 @@ const ArticlesPage = React.lazy(() => import('./routes/ArticlesPage').then(m => 
 const FarmingPlannerPage = React.lazy(() => import('./routes/FarmingPlannerPage').then(m => ({ default: m.FarmingPlannerPage })));
 const ArticleDetailPage = React.lazy(() => import('./routes/ArticleDetailPage').then(m => ({ default: m.ArticleDetailPage })));
 const ZanpakutoEvolutionPage = React.lazy(() => import('./routes/ZanpakutoEvolutionPage').then(m => ({ default: m.ZanpakutoEvolutionPage })));
+const WeaponSkillsPage = React.lazy(() => import('./routes/WeaponSkillsPage').then(m => ({ default: m.WeaponSkillsPage })));
 const ZanpakutoStatsPage = React.lazy(() => import('./routes/ZanpakutoStatsPage').then(m => ({ default: m.ZanpakutoStatsPage })));
 const StoryQuestsPage = React.lazy(() => import('./routes/StoryQuestsPage').then(m => ({ default: m.StoryQuestsPage })));
 const QuestChainPage = React.lazy(() => import('./routes/QuestChainPage').then(m => ({ default: m.QuestChainPage })));
@@ -68,6 +69,8 @@ const WardrobePage = React.lazy(() => import('./routes/WardrobePage').then(m => 
 const TalentsPage = React.lazy(() => import('./routes/TalentsPage').then(m => ({ default: m.TalentsPage })));
 const LuckyWheelPage = React.lazy(() => import('./routes/LuckyWheelPage').then(m => ({ default: m.LuckyWheelPage })));
 const FightReportPage = React.lazy(() => import('./routes/FightReportPage').then(m => ({ default: m.FightReportPage })));
+const ActivityCodexPage = React.lazy(() => import('./routes/ActivityCodexPage').then(m => ({ default: m.ActivityCodexPage })));
+const GuildTacticsPlannerPage = React.lazy(() => import('./routes/GuildTacticsPlannerPage').then(m => ({ default: m.GuildTacticsPlannerPage })));
 
 
 function App() {
@@ -89,6 +92,7 @@ function App() {
             <Route path="/articles/farming" element={<FarmingPlannerPage />} />
             <Route path="/articles/:id" element={<ArticleDetailPage />} />
             <Route path="/weapons/evolution" element={<ZanpakutoEvolutionPage />} />
+            <Route path="/weapons/skills" element={<WeaponSkillsPage />} />
             <Route path="/weapons/stats" element={<ZanpakutoStatsPage />} />
             <Route path="/story-quests" element={<StoryQuestsPage />} />
             <Route path="/story-quests/tree" element={<QuestChainPage />} />
@@ -140,6 +144,8 @@ function App() {
             <Route path="/tools/talents" element={<TalentsPage />} />
             <Route path="/tools/lucky-wheel" element={<LuckyWheelPage />} />
             <Route path="/tools/fight-report" element={<FightReportPage />} />
+            <Route path="/tools/activity-codex" element={<ActivityCodexPage />} />
+            <Route path="/tools/guild-tactics" element={<GuildTacticsPlannerPage />} />
           </Routes>
         </React.Suspense>
       </Layout>

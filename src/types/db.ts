@@ -1075,5 +1075,39 @@ export interface BuffEffect {
   icon_url: number;
 }
 
+export interface OrgPointInfo {
+  id: number;
+  name: string;
+  action_eexertion: number;
+  remaining_number: number;
+  army: {
+    front: number[];
+    middle: number[];
+    back: number[];
+    leader_id: number;
+    award_id: number;
+    text: string;
+  } | null;
+  role_model: number;
+  show_rate_award: number;
+  guild_rate_award: number;
+  next_point: number;
+  coordinate: { x: number; y: number } | null;
+  battle_scene: number;
+  to_target: number[] | null;
+}
+
+export interface OrgPointAward {
+  id: number;
+  arr: Array<{ type: number; code: number; amount: number }> | null;
+}
+
+export interface WeaponSkill {
+  id: number;
+  name: string;
+  desc: string;
+  skill_quality: number;
+}
+
 
 

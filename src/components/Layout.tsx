@@ -107,6 +107,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Articles / Items', to: '/articles', icon: Package },
     { name: 'Farming Planner', to: '/articles/farming', icon: Navigation },
     { name: 'Zanpakuto Evolution', to: '/weapons/evolution', icon: Swords },
+    { name: 'Zanpakuto Weapon Skills', to: '/weapons/skills', icon: Sparkles },
     { name: 'Zanpakuto Stats', to: '/weapons/stats', icon: BarChart3 },
     { name: 'Story Quests', to: '/story-quests', icon: BookOpen },
     { name: 'Quest Tree', to: '/story-quests/tree', icon: GitFork },
@@ -149,6 +150,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Hero Talents Planner', to: '/tools/talents', icon: Wand2 },
     //{ name: 'Lucky Wheel Simulator', to: '/tools/lucky-wheel', icon: Coins }, // TODO: unclear
     { name: 'Fight Report Analyzer', to: '/tools/fight-report', icon: Swords },
+    //{ name: 'Activity Codex', to: '/tools/activity-codex', icon: Calendar },
+    //{ name: 'Guild Tactics Planner', to: '/tools/guild-tactics', icon: Map },
   ];
 
   return (

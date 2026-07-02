@@ -3,19 +3,19 @@ import { loadHeroes, loadSkills, loadBuffEffects } from '../data/loaders';
 import { Hero, Skill, BuffEffect } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { 
-  Swords, 
-  Search, 
-  FileCode, 
-  UploadCloud, 
-  HelpCircle, 
-  Play, 
-  TrendingUp, 
-  ShieldAlert, 
-  Heart, 
-  User, 
-  Info, 
-  ListOrdered 
+import {
+  Swords,
+  Search,
+  FileCode,
+  UploadCloud,
+  HelpCircle,
+  Play,
+  TrendingUp,
+  ShieldAlert,
+  Heart,
+  User,
+  Info,
+  ListOrdered
 } from 'lucide-react';
 
 // --- Binary parser helper class ---
@@ -68,7 +68,7 @@ class FightReportParser {
     if (this.pos + 2 > this.view.byteLength) return "";
     const len = this.readUShort();
     if (this.pos + len > this.view.byteLength) return "";
-    
+
     const bytes = new Uint8Array(this.view.buffer, this.view.byteOffset + this.pos, len);
     this.pos += len;
     return new TextDecoder("utf-8").decode(bytes);
@@ -155,10 +155,10 @@ export const FightReportPage: React.FC = () => {
   const [inputUrl, setInputUrl] = useState('');
   const [parseLoading, setParseLoading] = useState(false);
   const [parseError, setParseError] = useState<string | null>(null);
-  
+
   // Decoded Fight Report
   const [report, setReport] = useState<FightReportData | null>(null);
-  
+
   // Tab states
   const [activeTab, setActiveTab] = useState<'analytics' | 'fighters' | 'log'>('analytics');
   const [selectedRoundTab, setSelectedRoundTab] = useState<number>(1);
@@ -332,9 +332,9 @@ export const FightReportPage: React.FC = () => {
       }
 
       const targetUrl = `https://game.shinigamiworld.com/fightreport/data.php?rid=${rid}&aid=${aid}&version=2026021215&versiondir=en_Eu&cacheKey=frv=1779820963&isCombin=0&agent=${aid}&server=0&lang=${lang}`;
-      
+
       // Fetch via CORS Proxy
-      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`;
+      const proxyUrl = `https://cors-proxy.shinigamiworld-fightreport.workers.dev/?url=${encodeURIComponent(targetUrl)}`;
       const response = await fetch(proxyUrl);
       if (!response.ok) {
         throw new Error(`Proxy request failed: ${response.statusText}`);
@@ -434,7 +434,7 @@ export const FightReportPage: React.FC = () => {
             // Negative hurt HP is healing!
             const healVal = -hurtHp;
             healingDone.set(attKey, (healingDone.get(attKey) || 0) + healVal);
-            
+
             if (attCamp === 0) totalHealTeam1 += healVal;
             else totalHealTeam2 += healVal;
           }
@@ -445,7 +445,7 @@ export const FightReportPage: React.FC = () => {
     // Determine Winner: check who has remaining health or check last turn statuses
     let team1AliveHp = 0;
     let team2AliveHp = 0;
-    
+
     report.team1.roles.forEach(r => {
       const taken = damageTaken.get(`0_${r.pos}`) || 0;
       const heals = healingDone.get(`0_${r.pos}`) || 0; // wait, healing is healing done, not necessarily received. But let's check remaining HP simply:
@@ -546,7 +546,7 @@ export const FightReportPage: React.FC = () => {
         </div>
 
         {/* Drag-Drop Card */}
-        <div 
+        <div
           onClick={() => fileInputRef.current?.click()}
           className="p-6 border-2 border-dashed border-zinc-300 dark:border-zinc-800 hover:border-violet-500 dark:hover:border-violet-500/50 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm flex flex-col items-center justify-center gap-3 cursor-pointer group transition-all"
         >
@@ -608,31 +608,28 @@ export const FightReportPage: React.FC = () => {
           <div className="border-b border-zinc-200 dark:border-zinc-800 flex gap-4 text-xs md:text-sm font-semibold">
             <button
               onClick={() => setActiveTab('analytics')}
-              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${
-                activeTab === 'analytics'
-                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                  : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
-              }`}
+              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'analytics'
+                ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
+                }`}
             >
               Battle Analytics
             </button>
             <button
               onClick={() => setActiveTab('fighters')}
-              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${
-                activeTab === 'fighters'
-                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                  : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
-              }`}
+              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'fighters'
+                ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
+                }`}
             >
               Fighters Stats Matrix
             </button>
             <button
               onClick={() => setActiveTab('log')}
-              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${
-                activeTab === 'log'
-                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                  : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
-              }`}
+              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'log'
+                ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
+                }`}
             >
               Combat Replay Log
             </button>
@@ -655,7 +652,7 @@ export const FightReportPage: React.FC = () => {
                       <span className="font-mono font-bold text-red-500">{battleStats.totalDmgTeam1.toLocaleString()} HP</span>
                     </div>
                     <div className="w-full h-3.5 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className="h-full bg-gradient-to-r from-red-500 to-rose-600 transition-all duration-500 rounded-full"
                         style={{ width: `${Math.max(5, (battleStats.totalDmgTeam1 / (battleStats.totalDmgTeam1 + battleStats.totalDmgTeam2 || 1)) * 100)}%` }}
                       ></div>
@@ -669,7 +666,7 @@ export const FightReportPage: React.FC = () => {
                       <span className="font-mono font-bold text-red-500">{battleStats.totalDmgTeam2.toLocaleString()} HP</span>
                     </div>
                     <div className="w-full h-3.5 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className="h-full bg-gradient-to-r from-rose-600 to-indigo-600 transition-all duration-500 rounded-full"
                         style={{ width: `${Math.max(5, (battleStats.totalDmgTeam2 / (battleStats.totalDmgTeam1 + battleStats.totalDmgTeam2 || 1)) * 100)}%` }}
                       ></div>
@@ -692,7 +689,7 @@ export const FightReportPage: React.FC = () => {
                       <span className="font-mono font-bold text-emerald-500">{battleStats.totalHealTeam1.toLocaleString()} HP</span>
                     </div>
                     <div className="w-full h-3.5 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className="h-full bg-gradient-to-r from-emerald-500 to-teal-600 transition-all duration-500 rounded-full"
                         style={{ width: `${Math.max(5, (battleStats.totalHealTeam1 / (battleStats.totalHealTeam1 + battleStats.totalHealTeam2 || 1)) * 100)}%` }}
                       ></div>
@@ -706,7 +703,7 @@ export const FightReportPage: React.FC = () => {
                       <span className="font-mono font-bold text-emerald-500">{battleStats.totalHealTeam2.toLocaleString()} HP</span>
                     </div>
                     <div className="w-full h-3.5 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className="h-full bg-gradient-to-r from-teal-600 to-cyan-500 transition-all duration-500 rounded-full"
                         style={{ width: `${Math.max(5, (battleStats.totalHealTeam2 / (battleStats.totalHealTeam1 + battleStats.totalHealTeam2 || 1)) * 100)}%` }}
                       ></div>
@@ -750,8 +747,8 @@ export const FightReportPage: React.FC = () => {
                               <span className="font-mono font-bold text-red-500">{dmg.toLocaleString()} HP</span>
                             </div>
                             <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-red-500 rounded-full" 
+                              <div
+                                className="h-full bg-red-500 rounded-full"
                                 style={{ width: `${(dmg / battleStats.maxDamageDone) * 100}%` }}
                               ></div>
                             </div>
@@ -764,8 +761,8 @@ export const FightReportPage: React.FC = () => {
                               <span className="font-mono font-bold text-orange-500">{taken.toLocaleString()} HP</span>
                             </div>
                             <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-orange-500 rounded-full" 
+                              <div
+                                className="h-full bg-orange-500 rounded-full"
                                 style={{ width: `${(taken / battleStats.maxDamageTaken) * 100}%` }}
                               ></div>
                             </div>
@@ -779,8 +776,8 @@ export const FightReportPage: React.FC = () => {
                                 <span className="font-mono font-bold text-emerald-500">{heals.toLocaleString()} HP</span>
                               </div>
                               <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                                <div 
-                                  className="h-full bg-emerald-500 rounded-full" 
+                                <div
+                                  className="h-full bg-emerald-500 rounded-full"
                                   style={{ width: `${(heals / battleStats.maxHealing) * 100}%` }}
                                 ></div>
                               </div>
@@ -823,8 +820,8 @@ export const FightReportPage: React.FC = () => {
                               <span className="font-mono font-bold text-red-500">{dmg.toLocaleString()} HP</span>
                             </div>
                             <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-red-500 rounded-full" 
+                              <div
+                                className="h-full bg-red-500 rounded-full"
                                 style={{ width: `${(dmg / battleStats.maxDamageDone) * 100}%` }}
                               ></div>
                             </div>
@@ -837,8 +834,8 @@ export const FightReportPage: React.FC = () => {
                               <span className="font-mono font-bold text-orange-500">{taken.toLocaleString()} HP</span>
                             </div>
                             <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                              <div 
-                                className="h-full bg-orange-500 rounded-full" 
+                              <div
+                                className="h-full bg-orange-500 rounded-full"
                                 style={{ width: `${(taken / battleStats.maxDamageTaken) * 100}%` }}
                               ></div>
                             </div>
@@ -852,8 +849,8 @@ export const FightReportPage: React.FC = () => {
                                 <span className="font-mono font-bold text-emerald-500">{heals.toLocaleString()} HP</span>
                               </div>
                               <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                                <div 
-                                  className="h-full bg-emerald-500 rounded-full" 
+                                <div
+                                  className="h-full bg-emerald-500 rounded-full"
                                   style={{ width: `${(heals / battleStats.maxHealing) * 100}%` }}
                                 ></div>
                               </div>
@@ -881,11 +878,10 @@ export const FightReportPage: React.FC = () => {
                     <button
                       key={t.curTurn}
                       onClick={() => setSelectedRoundTab(t.curTurn)}
-                      className={`py-2.5 px-4 rounded-xl border text-xs font-bold text-left transition-all shrink-0 cursor-pointer ${
-                        selectedRoundTab === t.curTurn
-                          ? 'border-violet-500 bg-violet-500/5 text-violet-900 dark:text-violet-400'
-                          : 'border-zinc-100 dark:border-zinc-800 text-zinc-650 hover:bg-zinc-50 dark:hover:bg-zinc-950'
-                      }`}
+                      className={`py-2.5 px-4 rounded-xl border text-xs font-bold text-left transition-all shrink-0 cursor-pointer ${selectedRoundTab === t.curTurn
+                        ? 'border-violet-500 bg-violet-500/5 text-violet-900 dark:text-violet-400'
+                        : 'border-zinc-100 dark:border-zinc-800 text-zinc-650 hover:bg-zinc-50 dark:hover:bg-zinc-950'
+                        }`}
                     >
                       Round {t.curTurn} Replay
                     </button>
@@ -907,7 +903,7 @@ export const FightReportPage: React.FC = () => {
                     const attackerGroup = attackerCamp === 0 ? report.team1 : report.team2;
                     const attackerRole = attackerGroup.roles.find(r => r.pos === attackerPos);
                     const attackerName = attackerRole ? resolveRoleName(attackerRole) : `Fighter Pos ${attackerPos}`;
-                    
+
                     // Determine Action label
                     let actionLabel = "attacks";
                     if (act.activeType === 2) {
@@ -923,11 +919,10 @@ export const FightReportPage: React.FC = () => {
                       <div key={actIdx} className={`pt-4 ${actIdx === 0 ? 'pt-0' : ''} space-y-2`}>
                         <div className="flex items-center justify-between">
                           <span className="text-[11px] font-bold text-zinc-450 uppercase">ACTION #{actIdx + 1}</span>
-                          <span className={`text-[10px] px-2 py-0.5 rounded font-black uppercase ${
-                            attackerCamp === 0 
-                              ? 'bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-400' 
-                              : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-400'
-                          }`}>
+                          <span className={`text-[10px] px-2 py-0.5 rounded font-black uppercase ${attackerCamp === 0
+                            ? 'bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-400'
+                            : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-400'
+                            }`}>
                             {attackerCamp === 0 ? 'Team 1 (Attacker)' : 'Team 2 (Defender)'}
                           </span>
                         </div>

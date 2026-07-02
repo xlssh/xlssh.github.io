@@ -11,7 +11,8 @@ import {
   Military, CullingMagic, CullingStage, EquipForging, EquipAdvancement, NightmarePoint, NightmareCity,
   SevenHeroStar, SevenHeroLittleStar, SevenHeroSoul, SevenHeroArmy, SevenHeroDailyAward,
   SoulCollectionRnd, SoulCollectionShop, SoulCollectionBase,
-  BeautifulClothes, Beauty, HeroTalent, HdBigTurntable, HdJigsaw, BleachJigsaw, BuffEffect
+  BeautifulClothes, Beauty, HeroTalent, HdBigTurntable, HdJigsaw, BleachJigsaw, BuffEffect,
+  OrgPointInfo, OrgPointAward, WeaponSkill
 } from '../types/db';
 
 const cache: { [key: string]: any } = {};
@@ -396,6 +397,18 @@ export async function loadBleachJigsaws(): Promise<TableJson<BleachJigsaw>> {
 
 export async function loadBuffEffects(): Promise<TableJson<BuffEffect>> {
   return fetchWithCache<TableJson<BuffEffect>>('data/buff_effects.json');
+}
+
+export async function loadOrgPointInfos(): Promise<TableJson<OrgPointInfo>> {
+  return fetchWithCache<TableJson<OrgPointInfo>>('data/org_point_infos.json');
+}
+
+export async function loadOrgPointAwards(): Promise<TableJson<OrgPointAward>> {
+  return fetchWithCache<TableJson<OrgPointAward>>('data/org_point_awards.json');
+}
+
+export async function loadWeaponSkills(): Promise<TableJson<WeaponSkill>> {
+  return fetchWithCache<TableJson<WeaponSkill>>('data/weapon_skills.json');
 }
 
 

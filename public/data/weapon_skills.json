@@ -1,0 +1,487 @@
+{
+  "table": "weapon_skills",
+  "rowCount": 80,
+  "generatedAt": "2026-07-02",
+  "rows": [
+    {
+      "id": 13700001,
+      "name": "Angry Slash ",
+      "desc": "When enemy HP is less than 15%, increase damage by 5%.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13700002,
+      "name": "Angry Slash ",
+      "desc": "When enemy HP is less than 20%, increase damage by 8%.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13700003,
+      "name": "Angry Slash ",
+      "desc": "When enemy HP is less than 25%, increase damage by 10%.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13700004,
+      "name": "Angry Slash ",
+      "desc": "When enemy HP is less than 30%, increase damage by 15%.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13700005,
+      "name": "Angry Slash ",
+      "desc": "When enemy HP is less than 35%, increase damage by 20%.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13701001,
+      "name": "Stand Fast",
+      "desc": "After entering into battle, directly increase defense by 2%. ",
+      "skill_quality": 1
+    },
+    {
+      "id": 13701002,
+      "name": "Stand Fast",
+      "desc": "After entering into battle, directly increase defense by 4%. ",
+      "skill_quality": 2
+    },
+    {
+      "id": 13701003,
+      "name": "Stand Fast",
+      "desc": "After entering into battle, directly increase defense by 6%. ",
+      "skill_quality": 3
+    },
+    {
+      "id": 13701004,
+      "name": "Stand Fast",
+      "desc": "After entering into battle, directly increase defense by 8%. ",
+      "skill_quality": 4
+    },
+    {
+      "id": 13701005,
+      "name": "Stand Fast",
+      "desc": "After entering into battle, directly increase defense by 10%. ",
+      "skill_quality": 5
+    },
+    {
+      "id": 13702001,
+      "name": "Psychic",
+      "desc": "Increase starting Fury by 2 points.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13702002,
+      "name": "Psychic",
+      "desc": "Increase starting Fury by 4 points.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13702003,
+      "name": "Psychic",
+      "desc": "Increase starting Fury by 6 points.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13702004,
+      "name": "Psychic",
+      "desc": "Increase starting Fury by 8 points.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13702005,
+      "name": "Psychic",
+      "desc": "Increase starting Fury by 10 points.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13703001,
+      "name": "Revive",
+      "desc": "After every action, recovers 1% HP.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13703002,
+      "name": "Revive",
+      "desc": "After every action, recovers 2% HP.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13703003,
+      "name": "Revive",
+      "desc": "After every action, recovers 3% HP.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13703004,
+      "name": "Revive",
+      "desc": "After every action, recovers 4% HP.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13703005,
+      "name": "Revive",
+      "desc": "After every action, recovers 5% HP.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13704001,
+      "name": "Blood-sucking",
+      "desc": "Recover own HP equivalent to 1% damage.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13704002,
+      "name": "Blood-sucking",
+      "desc": "Recover own HP equivalent to 3% damage.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13704003,
+      "name": "Blood-sucking",
+      "desc": "Recover own HP equivalent to 5% damage.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13704004,
+      "name": "Blood-sucking",
+      "desc": "Recover own HP equivalent to 8% damage.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13704005,
+      "name": "Blood-sucking",
+      "desc": "Recover own HP equivalent to 10% damage.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13705001,
+      "name": "Spirit-sucking",
+      "desc": "After attacking, suck 1% of enemy's current Fury.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13705002,
+      "name": "Spirit-sucking",
+      "desc": "After attacking, suck 2% of enemy's current Fury.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13705003,
+      "name": "Spirit-sucking",
+      "desc": "After attacking, suck 3% of enemy's current Fury.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13705004,
+      "name": "Spirit-sucking",
+      "desc": "After attacking, suck 4% of enemy's current Fury.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13705005,
+      "name": "Spirit-sucking",
+      "desc": "After attacking, suck 5% of enemy's current Fury.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13706001,
+      "name": "Spirit-destroying",
+      "desc": "After attacking, decrease enemy Fury by 1 point.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13706002,
+      "name": "Spirit-destroying",
+      "desc": "After attacking, decrease enemy Fury by 2 points.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13706003,
+      "name": "Spirit-destroying",
+      "desc": "After attacking, decrease enemy Fury by 3 points.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13706004,
+      "name": "Spirit-destroying",
+      "desc": "After attacking, decrease enemy Fury by 4 points.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13706005,
+      "name": "Spirit-destroying",
+      "desc": "After attacking, decrease enemy Fury by 5 points.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13707001,
+      "name": "Soul Blade",
+      "desc": "Increase damge rate by 2%.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13707002,
+      "name": "Soul Blade",
+      "desc": "Increase damge rate by 4%.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13707003,
+      "name": "Soul Blade",
+      "desc": "Increase damge rate by 6%.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13707004,
+      "name": "Soul Blade",
+      "desc": "Increase damge rate by 8%.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13707005,
+      "name": "Soul Blade",
+      "desc": "Increase damge rate by 10%.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13708001,
+      "name": "Tenacity",
+      "desc": "Increase immune rate by 2%.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13708002,
+      "name": "Tenacity",
+      "desc": "Increase immune rate by 4%.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13708003,
+      "name": "Tenacity",
+      "desc": "Increase immune rate by 6%.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13708004,
+      "name": "Tenacity",
+      "desc": "Increase immune rate by 8%.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13708005,
+      "name": "Tenacity",
+      "desc": "Increase immune rate by 10%.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13709001,
+      "name": "Tenacity",
+      "desc": "Increase immune from control rate by 5%.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13709002,
+      "name": "Tenacity",
+      "desc": "Increase immune from control rate by 8%.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13709003,
+      "name": "Tenacity",
+      "desc": "Increase immune from control rate by 10%.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13709004,
+      "name": "Tenacity",
+      "desc": "Increase immune from control rate by 12%.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13709005,
+      "name": "Tenacity",
+      "desc": "Increase immune from control rate by 15%.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13710001,
+      "name": "Royal Bone",
+      "desc": "Increase decrease Fury Reduction rate by 5%.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13710002,
+      "name": "Royal Bone",
+      "desc": "Increase decrease Fury Reduction rate by 8%.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13710003,
+      "name": "Royal Bone",
+      "desc": "Increase decrease Fury Reduction rate by 10%.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13710004,
+      "name": "Royal Bone",
+      "desc": "Increase decrease Fury Reduction rate by 15%.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13710005,
+      "name": "Royal Bone",
+      "desc": "Increase decrease Fury Reduction rate by 20%.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13711001,
+      "name": "Piercing",
+      "desc": "While attacking, ingnore enemy defense by 2%.",
+      "skill_quality": 1
+    },
+    {
+      "id": 13711002,
+      "name": "Piercing",
+      "desc": "While attacking, ingnore enemy defense by 4%.",
+      "skill_quality": 2
+    },
+    {
+      "id": 13711003,
+      "name": "Piercing",
+      "desc": "While attacking, ingnore enemy defense by 6%.",
+      "skill_quality": 3
+    },
+    {
+      "id": 13711004,
+      "name": "Piercing",
+      "desc": "While attacking, ingnore enemy defense by 8%.",
+      "skill_quality": 4
+    },
+    {
+      "id": 13711005,
+      "name": "Piercing",
+      "desc": "While attacking, ingnore enemy defense by 10%.",
+      "skill_quality": 5
+    },
+    {
+      "id": 13712001,
+      "name": "Silent Immunity",
+      "desc": "Add 5% chance to immune Silent",
+      "skill_quality": 1
+    },
+    {
+      "id": 13712002,
+      "name": "Silent Immunity",
+      "desc": "Add 8% chance to immune Silent",
+      "skill_quality": 2
+    },
+    {
+      "id": 13712003,
+      "name": "Silent Immunity",
+      "desc": "Add 10% chance to immune Silent",
+      "skill_quality": 3
+    },
+    {
+      "id": 13712004,
+      "name": "Silent Immunity",
+      "desc": "Add 12% chance to immune Silent",
+      "skill_quality": 4
+    },
+    {
+      "id": 13712005,
+      "name": "Silent Immunity",
+      "desc": "Add 15% chance to immune Silent",
+      "skill_quality": 5
+    },
+    {
+      "id": 13713001,
+      "name": "Crit Hit",
+      "desc": "Add 10% Crit Damage",
+      "skill_quality": 1
+    },
+    {
+      "id": 13713002,
+      "name": "Crit Hit",
+      "desc": "Add 20% Crit Damage",
+      "skill_quality": 2
+    },
+    {
+      "id": 13713003,
+      "name": "Crit Hit",
+      "desc": "Add 30% Crit Damage",
+      "skill_quality": 3
+    },
+    {
+      "id": 13713004,
+      "name": "Crit Hit",
+      "desc": "Add 40% Crit Damage",
+      "skill_quality": 4
+    },
+    {
+      "id": 13713005,
+      "name": "Crit Hit",
+      "desc": "Add 50% Crit Damage",
+      "skill_quality": 5
+    },
+    {
+      "id": 13714001,
+      "name": "Stun",
+      "desc": "Add 5% chance to stun enemy",
+      "skill_quality": 1
+    },
+    {
+      "id": 13714002,
+      "name": "Stun",
+      "desc": "Add 8% chance to stun enemy",
+      "skill_quality": 2
+    },
+    {
+      "id": 13714003,
+      "name": "Stun",
+      "desc": "Add 10% chance to stun enemy",
+      "skill_quality": 3
+    },
+    {
+      "id": 13714004,
+      "name": "Stun",
+      "desc": "Add 12% chance to stun enemy",
+      "skill_quality": 4
+    },
+    {
+      "id": 13714005,
+      "name": "Stun",
+      "desc": "Add 15% chance to stun enemy",
+      "skill_quality": 5
+    },
+    {
+      "id": 13715001,
+      "name": "Silent",
+      "desc": "Add 5% chance to Silent enemy",
+      "skill_quality": 1
+    },
+    {
+      "id": 13715002,
+      "name": "Silent",
+      "desc": "Add 8% chance to Silent enemy",
+      "skill_quality": 2
+    },
+    {
+      "id": 13715003,
+      "name": "Silent",
+      "desc": "Add 10% chance to Silent enemy",
+      "skill_quality": 3
+    },
+    {
+      "id": 13715004,
+      "name": "Silent",
+      "desc": "Add 12% chance to Silent enemy",
+      "skill_quality": 4
+    },
+    {
+      "id": 13715005,
+      "name": "Silent",
+      "desc": "Add 15% chance to Silent enemy",
+      "skill_quality": 5
+    }
+  ]
+}
