@@ -67,6 +67,7 @@ const SoulHunterPage = React.lazy(() => import('./routes/SoulHunterPage').then(m
 const WardrobePage = React.lazy(() => import('./routes/WardrobePage').then(m => ({ default: m.WardrobePage })));
 const TalentsPage = React.lazy(() => import('./routes/TalentsPage').then(m => ({ default: m.TalentsPage })));
 const LuckyWheelPage = React.lazy(() => import('./routes/LuckyWheelPage').then(m => ({ default: m.LuckyWheelPage })));
+const FightReportPage = React.lazy(() => import('./routes/FightReportPage').then(m => ({ default: m.FightReportPage })));
 
 
 function App() {
@@ -138,6 +139,7 @@ function App() {
             <Route path="/tools/wardrobe" element={<WardrobePage />} />
             <Route path="/tools/talents" element={<TalentsPage />} />
             <Route path="/tools/lucky-wheel" element={<LuckyWheelPage />} />
+            <Route path="/tools/fight-report" element={<FightReportPage />} />
           </Routes>
         </React.Suspense>
       </Layout>

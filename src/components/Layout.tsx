@@ -148,6 +148,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     //{ name: 'Fashion Wardrobe', to: '/tools/wardrobe', icon: Sparkles }, // TODO: unclear
     { name: 'Hero Talents Planner', to: '/tools/talents', icon: Wand2 },
     //{ name: 'Lucky Wheel Simulator', to: '/tools/lucky-wheel', icon: Coins }, // TODO: unclear
+    { name: 'Fight Report Analyzer', to: '/tools/fight-report', icon: Swords },
   ];
 
   return (
