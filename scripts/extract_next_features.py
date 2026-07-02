@@ -77,7 +77,8 @@ def main():
         16777247: "hero_talents",
         16777400: "hd_big_turntables",
         16777398: "hd_jigsaws",
-        16777413: "bleach_jigsaws"
+        16777413: "bleach_jigsaws",
+        16777225: "buff_effects"
     }
 
     scan_package("0F000000.binPackage", bins, target_ids)
@@ -300,6 +301,39 @@ def main():
         with open(os.path.join(output_dir, "bleach_jigsaws.json"), "w", encoding="utf-8") as f:
             json.dump({"table": "bleach_jigsaws", "rowCount": len(rows), "rows": rows}, f, indent=2, ensure_ascii=False)
         print(f"Extracted bleach_jigsaws: {len(rows)} rows.")
+
+    # 7. buff_effects (16777225)
+    if 16777225 in bins:
+        reader = BinReader(bins[16777225])
+        reader.read_uint()
+        count = reader.read_uint()
+        rows = []
+        for _ in range(count):
+            row_id = reader.read_uint()
+            buff_type = reader.read_uint()
+            alter = reader.read_utf()
+            buff_key = reader.read_uint()
+            weight = reader.read_uint()
+            continued = reader.read_uint()
+            name = reader.read_utf()
+            description = reader.read_utf()
+            icon_url = reader.read_uint()
+
+            rows.append({
+                "id": row_id,
+                "buff_type": buff_type,
+                "alter": try_parse_json(alter),
+                "buff_key": buff_key,
+                "weight": weight,
+                "continued": continued,
+                "name": name,
+                "description": description,
+                "icon_url": icon_url
+            })
+
+        with open(os.path.join(output_dir, "buff_effects.json"), "w", encoding="utf-8") as f:
+            json.dump({"table": "buff_effects", "rowCount": len(rows), "rows": rows}, f, indent=2, ensure_ascii=False)
+        print(f"Extracted buff_effects: {len(rows)} rows.")
 
 if __name__ == "__main__":
     main()

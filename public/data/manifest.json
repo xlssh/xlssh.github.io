@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T15:28:17.085018Z",
+  "generatedAt": "2026-07-02T15:54:23.570919Z",
   "tables": {
     "articles": {
       "path": "/data/articles.json",
@@ -352,6 +352,10 @@
     "bleach_jigsaws": {
       "path": "/data/bleach_jigsaws.json",
       "rowCount": 1
+    },
+    "buff_effects": {
+      "path": "/data/buff_effects.json",
+      "rowCount": 93
     }
   }
 }

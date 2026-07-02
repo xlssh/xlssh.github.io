@@ -1,0 +1,1411 @@
+{
+  "table": "buff_effects",
+  "rowCount": 93,
+  "rows": [
+    {
+      "id": 13500001,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          104
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Rising up",
+      "description": "Increase some fury at the end of each round.",
+      "icon_url": 13500005
+    },
+    {
+      "id": 13500002,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          104
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Battle-shy",
+      "description": "Decrease some fury at the end of each round.",
+      "icon_url": 13500006
+    },
+    {
+      "id": 13500003,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          20
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase strategy attack HP",
+      "description": "Increase fixed amount of strategy attack HP.",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500004,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          20
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase strategy attack HP by percent",
+      "description": "Increase a certain strategy attack HP by percent.",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500005,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          20
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease strategy attack HP by percent",
+      "description": "Decrease a certain strategy attack HP by percent.",
+      "icon_url": 13500002
+    },
+    {
+      "id": 13500006,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          16
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase  physical attack HP",
+      "description": "Increase fixed amount of physical attack HP.",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500007,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          16
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase  physical attack HP by percent",
+      "description": "Increase a certain physical attack HP by percent.",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500008,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          16
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease physical attack HP",
+      "description": "Decrease a certain physical attack HP by percent.",
+      "icon_url": 13500002
+    },
+    {
+      "id": 13500009,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          16,
+          20
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase attack HP",
+      "description": "Increase a certain attack HP by percent.",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500010,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          16,
+          20
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease attack HP",
+      "description": "Decrease a certain attack HP by percent.",
+      "icon_url": 13500002
+    },
+    {
+      "id": 13500011,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          17,
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase defense HP",
+      "description": "Incrase fixed amount of defense HP.",
+      "icon_url": 13500003
+    },
+    {
+      "id": 13500012,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          17,
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease defense HP",
+      "description": "Decrase fixed amount of defense HP.",
+      "icon_url": 13500004
+    },
+    {
+      "id": 13500013,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          17,
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase  percentage of defense HP",
+      "description": "Increase a certain defense HP by percent.",
+      "icon_url": 13500003
+    },
+    {
+      "id": 13500014,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          17,
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease defense HP by percent",
+      "description": "Decrease a certain defense HP by percent.",
+      "icon_url": 13500004
+    },
+    {
+      "id": 13500015,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase strategy defense HP by percent",
+      "description": "Increase a certain strategy defense HP by percent.",
+      "icon_url": 13500003
+    },
+    {
+      "id": 13500016,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease strategy defense HP by percent",
+      "description": "Decrease a certain strategy defense HP by percent.",
+      "icon_url": 13500004
+    },
+    {
+      "id": 13500017,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          17
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase physical defense HP by percent",
+      "description": "Increase a certain physical defense HP by percent.",
+      "icon_url": 13500003
+    },
+    {
+      "id": 13500018,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          17
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "DEcrease physical defense HP by percent",
+      "description": "Decrease a certain physical defense HP by percent.",
+      "icon_url": 13500004
+    },
+    {
+      "id": 13500019,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          102
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Continuous recovery",
+      "description": "Recover some HP at the end of each round.",
+      "icon_url": 13500007
+    },
+    {
+      "id": 13500020,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          102
+        ]
+      },
+      "buff_key": 10,
+      "weight": 0,
+      "continued": 1,
+      "name": "Poison",
+      "description": "Lose some HP by the end of each round.",
+      "icon_url": 13500008
+    },
+    {
+      "id": 13500021,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          102
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 1,
+      "name": "Bleeding",
+      "description": "Lose some HP by the end of each round.",
+      "icon_url": 13500009
+    },
+    {
+      "id": 13500022,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          102
+        ]
+      },
+      "buff_key": 2,
+      "weight": 0,
+      "continued": 1,
+      "name": "Ignite",
+      "description": "Lose some HP by the end of each round.",
+      "icon_url": 13500010
+    },
+    {
+      "id": 13500023,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          106
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase HP recovery ",
+      "description": "Increase recovered HP by percent.",
+      "icon_url": 13500011
+    },
+    {
+      "id": 13500024,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          107
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease HP recovery ",
+      "description": "Decrease recovered HP by percent.",
+      "icon_url": 13500012
+    },
+    {
+      "id": 13500025,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          106
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "HP increase aura",
+      "description": "Increase HP by percent.",
+      "icon_url": 13500013
+    },
+    {
+      "id": 13500026,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          106
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "HP decrease aura",
+      "description": "Decrease HP by percent.",
+      "icon_url": 13500014
+    },
+    {
+      "id": 13500027,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          16,
+          20
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Attack increase  aura",
+      "description": "Increase a certain attack HP by percent.",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500028,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          16,
+          20
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Attack decrease  aura",
+      "description": "Decrease a certain attack HP by percent.",
+      "icon_url": 13500002
+    },
+    {
+      "id": 13500029,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          25
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Block increase  aura",
+      "description": "Increase a certain block rate.",
+      "icon_url": 13500015
+    },
+    {
+      "id": 13500030,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          25
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Block decrease aura",
+      "description": "Decrease a certain block rate.",
+      "icon_url": 13500016
+    },
+    {
+      "id": 13500031,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          17,
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Defense increase  aura",
+      "description": "Increase a certain defense HP by percent.",
+      "icon_url": 13500003
+    },
+    {
+      "id": 13500032,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          17,
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Defense decrease  aura",
+      "description": "Decrease a certain defense HP by percent.",
+      "icon_url": 13500004
+    },
+    {
+      "id": 13500033,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          23
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Dodge Increase  aura",
+      "description": "Increase a certain dodge rate.",
+      "icon_url": 13500017
+    },
+    {
+      "id": 13500034,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          23
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Dodge reduce aura",
+      "description": "Decrease a certain dodge rate.",
+      "icon_url": 13500018
+    },
+    {
+      "id": 13500035,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          24
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Crit increase  aura",
+      "description": "Increase a certain crit. rate.",
+      "icon_url": 13500019
+    },
+    {
+      "id": 13500036,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          24
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Crit decrease aura",
+      "description": "Decrease a certain crit. rate.",
+      "icon_url": 13500020
+    },
+    {
+      "id": 13500037,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          22
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Hit increase  aura",
+      "description": "Increase a certain hit rate.",
+      "icon_url": 13500021
+    },
+    {
+      "id": 13500038,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          22
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Hit decrease aura",
+      "description": "Decrease a certain hit rate.",
+      "icon_url": 13500022
+    },
+    {
+      "id": 13500039,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          26
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Combo increase  aura",
+      "description": "Increase a certain Combo rate.",
+      "icon_url": 13500023
+    },
+    {
+      "id": 13500040,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          26
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Combo decrease aura",
+      "description": "Decrease a certain Combo rate.",
+      "icon_url": 13500024
+    },
+    {
+      "id": 13500041,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          27
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Aid increase  aura",
+      "description": "Increase a certain aid rate.",
+      "icon_url": 13500025
+    },
+    {
+      "id": 13500042,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          27
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Aid decrease aura",
+      "description": "Decrease a certain aid rate.",
+      "icon_url": 13500026
+    },
+    {
+      "id": 13500043,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          34
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Healing increase  aura",
+      "description": "Increase recovered HP by percent.",
+      "icon_url": 13500011
+    },
+    {
+      "id": 13500044,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          34
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Healing decrease aura",
+      "description": "Decrease recovered HP by percent.",
+      "icon_url": 13500012
+    },
+    {
+      "id": 13500045,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          11
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase  speed",
+      "description": "Increase speed by percent.",
+      "icon_url": 13500027
+    },
+    {
+      "id": 13500046,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          11
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease speed",
+      "description": "Decrease speed by percent.",
+      "icon_url": 13500028
+    },
+    {
+      "id": 13500047,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Avoid control ",
+      "description": "Avoid control in this round.",
+      "icon_url": 13500029
+    },
+    {
+      "id": 13500048,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Avoid fury reduction",
+      "description": "Avoid fury reduction in this round.",
+      "icon_url": 13500030
+    },
+    {
+      "id": 13500049,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Stun",
+      "description": "Unable to move in this round.",
+      "icon_url": 13500031
+    },
+    {
+      "id": 13500050,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Silence",
+      "description": "Unable to release skill in this round.",
+      "icon_url": 13500032
+    },
+    {
+      "id": 13500051,
+      "buff_type": 9,
+      "alter": {
+        "alter": [
+          0
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Shift",
+      "description": "Ninja position is changed.",
+      "icon_url": 13500033
+    },
+    {
+      "id": 13500052,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          29
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase  avoid injury rate",
+      "description": "Increase avoid-injury rate by percent.",
+      "icon_url": 13500034
+    },
+    {
+      "id": 13500053,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          29
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease avoid injury rate",
+      "description": "Decrease avoid-injury rate by percent.",
+      "icon_url": 13500035
+    },
+    {
+      "id": 13500054,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          28
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase  damage rate",
+      "description": "Increase damage rate by percent.",
+      "icon_url": 13500034
+    },
+    {
+      "id": 13500055,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          28
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease damage rate",
+      "description": "Decrease damage rate by percent.",
+      "icon_url": 13500035
+    },
+    {
+      "id": 13500056,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          104
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase  fury",
+      "description": "Increase a certain fury",
+      "icon_url": 13500005
+    },
+    {
+      "id": 13500057,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          104
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Reduce fury",
+      "description": "Increase a certain fury",
+      "icon_url": 13500006
+    },
+    {
+      "id": 13500058,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          30
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increases the probability of Break Defense",
+      "description": "Increases the probability of Break Defense",
+      "icon_url": 13500036
+    },
+    {
+      "id": 13500059,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          30
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decreases the probability of Break Defense",
+      "description": "Decreases the probability of Break Defense",
+      "icon_url": 13500037
+    },
+    {
+      "id": 13500060,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 2,
+      "weight": 0,
+      "continued": 0,
+      "name": "Fury Restriction",
+      "description": "Fury Restriction",
+      "icon_url": 13500038
+    },
+    {
+      "id": 13500061,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 3,
+      "weight": 0,
+      "continued": 0,
+      "name": "Silence",
+      "description": "Silence",
+      "icon_url": 13500039
+    },
+    {
+      "id": 13500062,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 4,
+      "weight": 0,
+      "continued": 0,
+      "name": "Laceration",
+      "description": "Laceration",
+      "icon_url": 13500040
+    },
+    {
+      "id": 13500063,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 5,
+      "weight": 0,
+      "continued": 0,
+      "name": "Disarm",
+      "description": "Disarm",
+      "icon_url": 13500041
+    },
+    {
+      "id": 13500064,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 6,
+      "weight": 0,
+      "continued": 0,
+      "name": "Fossilize",
+      "description": "Fossilize",
+      "icon_url": 13500042
+    },
+    {
+      "id": 13500065,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 7,
+      "weight": 0,
+      "continued": 0,
+      "name": "Void",
+      "description": "Void",
+      "icon_url": 13500043
+    },
+    {
+      "id": 13500066,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 2,
+      "weight": 0,
+      "continued": 0,
+      "name": "Invincibility",
+      "description": "Invincibility",
+      "icon_url": 13500044
+    },
+    {
+      "id": 13500067,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 8,
+      "weight": 0,
+      "continued": 0,
+      "name": "Chaos",
+      "description": "Chaos",
+      "icon_url": 13500045
+    },
+    {
+      "id": 13500068,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          20
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Increase Strategic ATK by certain percentage",
+      "description": "Increase Strategic ATK by certain percentage",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500069,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          16
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Increase Physical ATK by certain percentage",
+      "description": "Increase Physical ATK by certain percentage",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500070,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          21
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Increase Strategic DEF by certain percentage",
+      "description": "Increase Strategic DEF by certain percentage",
+      "icon_url": 13500003
+    },
+    {
+      "id": 13500071,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          17
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Increase Physical DEF by certain percentage",
+      "description": "Increase Physical DEF by certain percentage",
+      "icon_url": 13500003
+    },
+    {
+      "id": 13500072,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          102
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Continuous Recovery",
+      "description": "Restore certain HP at the end of each round.",
+      "icon_url": 13500007
+    },
+    {
+      "id": 13500073,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          25
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Block Aura",
+      "description": "Increase Block rate by certain amount.",
+      "icon_url": 13500015
+    },
+    {
+      "id": 13500074,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          24
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Crit Aura",
+      "description": "Increase Crit rate by certain amount.",
+      "icon_url": 13500019
+    },
+    {
+      "id": 13500075,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          22
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Hit Aura",
+      "description": "Increase Hit rate by certain amount.",
+      "icon_url": 13500021
+    },
+    {
+      "id": 13500076,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          29
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Increase Avoid Injury rate",
+      "description": "Increase Avoid Injury rate by certain amount.",
+      "icon_url": 13500034
+    },
+    {
+      "id": 13500077,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          28
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Increase Damage Rate",
+      "description": "Increase Damage rate by certain amount.",
+      "icon_url": 13500034
+    },
+    {
+      "id": 13500078,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          30
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Increase Break DEF rate",
+      "description": "Increase Break DEF rate by certain amount.",
+      "icon_url": 13500036
+    },
+    {
+      "id": 13500079,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          102
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 1,
+      "name": "Mutilate",
+      "description": "Decrease HP by certain percentage each round.",
+      "icon_url": 13500048
+    },
+    {
+      "id": 13500080,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          43
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Crit damage increased",
+      "description": "Increase certain crit damage.",
+      "icon_url": 13500049
+    },
+    {
+      "id": 13500081,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          11
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase  speed",
+      "description": "Increase speed by percent.",
+      "icon_url": 13500027
+    },
+    {
+      "id": 13500082,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          11
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease speed",
+      "description": "Decrease speed by percent.",
+      "icon_url": 13500028
+    },
+    {
+      "id": 13500083,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          28
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase Damage Rate",
+      "description": "Increase Damage Rate by certain percent",
+      "icon_url": 13500034
+    },
+    {
+      "id": 13500084,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          28
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Decrease Damage Rate",
+      "description": "Decrease Damage Rate by certain percent",
+      "icon_url": 13500035
+    },
+    {
+      "id": 13500085,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          24
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Crit Rate Increase Aura",
+      "description": "Increase Crit Rate by certain percent.",
+      "icon_url": 13500019
+    },
+    {
+      "id": 13500086,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          24
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Crit Rate Decrease Aura",
+      "description": "Decrease Crit Rate by certain percent.",
+      "icon_url": 13500020
+    },
+    {
+      "id": 13500087,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          43
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase Crit Damage",
+      "description": "Increase Crit Damage by certain percent.",
+      "icon_url": 13500049
+    },
+    {
+      "id": 13500088,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          29
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Increase Avoid Injury Rate",
+      "description": "Increase Avoid Injury Rate by certain percent",
+      "icon_url": 13500034
+    },
+    {
+      "id": 13500089,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Freeze",
+      "description": "Trap enemy and normal attacks will break the ice block.",
+      "icon_url": 13500050
+    },
+    {
+      "id": 13500090,
+      "buff_type": 9,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 8,
+      "weight": 0,
+      "continued": 0,
+      "name": "Almighty",
+      "description": "Immune to Damage",
+      "icon_url": 13500090
+    },
+    {
+      "id": 13500091,
+      "buff_type": 9,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 9,
+      "weight": 0,
+      "continued": 0,
+      "name": "Counter Damage",
+      "description": "Return 100% Normal and Skill Damage",
+      "icon_url": 13500091
+    },
+    {
+      "id": 13500092,
+      "buff_type": 9,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 10,
+      "weight": 0,
+      "continued": 0,
+      "name": "Debuff Immunity",
+      "description": "Immune to debuffs.",
+      "icon_url": 13500047
+    },
+    {
+      "id": 13500093,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Jail",
+      "description": "Trap enemy and normal attacks will break the jail.",
+      "icon_url": 13509993
+    }
+  ]
+}

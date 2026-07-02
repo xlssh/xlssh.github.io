@@ -1063,5 +1063,17 @@ export interface BleachJigsaw {
   unk: number;
 }
 
+export interface BuffEffect {
+  id: number;
+  buff_type: number;
+  alter: any;
+  buff_key: number;
+  weight: number;
+  continued: number;
+  name: string;
+  description: string;
+  icon_url: number;
+}
+
 
 

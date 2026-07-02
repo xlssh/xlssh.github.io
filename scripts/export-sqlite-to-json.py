@@ -403,6 +403,10 @@ def main():
         "path": "/data/bleach_jigsaws.json",
         "rowCount": 1
     }
+    manifest_tables["buff_effects"] = {
+        "path": "/data/buff_effects.json",
+        "rowCount": 93
+    }
     manifest_data = {
         "generatedAt": generated_at,
         "tables": manifest_tables

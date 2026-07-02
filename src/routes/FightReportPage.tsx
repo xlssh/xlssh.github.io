@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { loadHeroes, loadSkills } from '../data/loaders';
-import { Hero, Skill } from '../types/db';
+import { loadHeroes, loadSkills, loadBuffEffects } from '../data/loaders';
+import { Hero, Skill, BuffEffect } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { 
@@ -147,6 +147,7 @@ interface FightReportData {
 export const FightReportPage: React.FC = () => {
   const [heroes, setHeroes] = useState<Hero[]>([]);
   const [skills, setSkills] = useState<Skill[]>([]);
+  const [buffs, setBuffs] = useState<BuffEffect[]>([]);
   const [dbLoading, setDbLoading] = useState(true);
   const [dbError, setDbError] = useState<string | null>(null);
 
@@ -170,15 +171,17 @@ export const FightReportPage: React.FC = () => {
     try {
       setDbLoading(true);
       setDbError(null);
-      const [heroesRes, skillsRes] = await Promise.all([
+      const [heroesRes, skillsRes, buffsRes] = await Promise.all([
         loadHeroes(),
-        loadSkills()
+        loadSkills(),
+        loadBuffEffects()
       ]);
       setHeroes(heroesRes.rows);
       setSkills(skillsRes.rows);
+      setBuffs(buffsRes.rows);
     } catch (err: any) {
       console.error(err);
-      setDbError("Failed to load heroes or skills mapping templates.");
+      setDbError("Failed to load heroes, skills, or status buffs mapping templates.");
     } finally {
       setDbLoading(false);
     }
@@ -199,6 +202,12 @@ export const FightReportPage: React.FC = () => {
     skills.forEach(s => map.set(s.skill_id, s.name || `Skill #${s.skill_id}`));
     return map;
   }, [skills]);
+
+  const buffsMap = useMemo(() => {
+    const map = new Map<number, string>();
+    buffs.forEach(b => map.set(b.id, b.name || `Buff #${b.id}`));
+    return map;
+  }, [buffs]);
 
   // Decode binary data helper
   const decodeReportBinary = (arrayBuffer: ArrayBuffer): FightReportData => {
@@ -939,6 +948,34 @@ export const FightReportPage: React.FC = () => {
                             let logText = "";
                             let logClass = "text-zinc-500 dark:text-zinc-400";
 
+                            const getBuffName = (bId: number): string => {
+                              if (bId === 4294967295) return "Generic Buff";
+                              if (bId === 0) return "Null Buff";
+                              return buffsMap.get(bId) || `Buff #${bId}`;
+                            };
+
+                            const decodeStatusFlags = (statusNum: number): string[] => {
+                              const flags: string[] = [];
+                              if (statusNum & 1) flags.push("No Attack");
+                              if (statusNum & 2) flags.push("Stunned");
+                              if (statusNum & 4) flags.push("Control Immune");
+                              if (statusNum & 8) flags.push("Calm Immune");
+                              if (statusNum & 16) flags.push("Fury Locked");
+                              if (statusNum & 32) flags.push("Silence");
+                              if (statusNum & 64) flags.push("Anti-Heal");
+                              if (statusNum & 128) flags.push("Petrified");
+                              if (statusNum & 256) flags.push("Void");
+                              if (statusNum & 512) flags.push("Blind");
+                              if (statusNum & 1024) flags.push("Confused");
+                              if (statusNum & 1048576) flags.push("Frozen");
+                              if (statusNum & 2097152) flags.push("Invincible");
+                              if (statusNum & 33554432) flags.push("Hit");
+                              if (statusNum & 67108864) flags.push("Crit");
+                              if (statusNum & 134217728) flags.push("Block");
+                              if (statusNum & 1073741824) flags.push("Defeated");
+                              return flags;
+                            };
+
                             if (tgt.cmd === 1 || tgt.cmd === 7 || tgt.cmd === 3) {
                               if (hurtHp > 0) {
                                 logText = `Hits ${tName} (Pos ${tPos}) dealing ${hurtHp.toLocaleString()} Damage.`;
@@ -950,15 +987,39 @@ export const FightReportPage: React.FC = () => {
                                 logText = `Hits ${tName} (Pos ${tPos}) but does no Damage (Shielded/Evaded).`;
                               }
                             } else if (tgt.cmd === 8) {
-                              logText = `Applies Shield (Buff ID: ${tgt.result.buffId}) on ${tName} for ${tgt.result.buffTurn} rounds.`;
+                              const sId = tgt.result.buffId || 0;
+                              const turns = tgt.result.buffTurn || 0;
+                              if (turns === 0) {
+                                logText = `Cleanses/Removes Shield [${getBuffName(sId)}] from ${tName}.`;
+                              } else {
+                                logText = `Applies Shield [${getBuffName(sId)}] on ${tName} for ${turns} rounds.`;
+                              }
                               logClass = "text-blue-600 dark:text-blue-400";
                             } else if (tgt.cmd === 2 || tgt.cmd === 4) {
-                              logText = `Applies Buff (Buff ID: ${tgt.result.buffId}) on ${tName} for ${tgt.result.buffTurn} rounds.`;
+                              const bId = tgt.result.buffId || 0;
+                              const turns = tgt.result.buffTurn || 0;
+                              if (turns === 0) {
+                                if (bId === 0) {
+                                  logText = `Cleanses/Clears temporary buffs/debuffs from ${tName}.`;
+                                } else {
+                                  logText = `Cleanses/Removes Buff [${getBuffName(bId)}] from ${tName}.`;
+                                }
+                              } else {
+                                if (bId === 4294967295) {
+                                  logText = `Applies generic combat buff/debuff (System ID: -1) on ${tName} for ${turns} rounds.`;
+                                } else {
+                                  logText = `Applies Buff [${getBuffName(bId)}] on ${tName} for ${turns} rounds.`;
+                                }
+                              }
                               logClass = "text-purple-600 dark:text-purple-400";
                             } else if (tgt.cmd === 5 || tgt.cmd === 9) {
                               logText = `Knocks back / Displaces ${tName} to position ${tPos}.`;
                             } else if (tgt.cmd === 6) {
-                              logText = `Updates battle status for ${tName}.`;
+                              const activeFlags = decodeStatusFlags(tgt.status);
+                              const flagsStr = activeFlags.length > 0 ? ` (${activeFlags.join(", ")})` : "";
+                              logText = `Updates combat status for ${tName}${flagsStr}.`;
+                            } else if (tgt.cmd === 0) {
+                              logText = `Triggers script action / combat visual on ${tName}.`;
                             } else {
                               logText = `Performs CMD action #${tgt.cmd} on ${tName}.`;
                             }

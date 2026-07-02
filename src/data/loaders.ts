@@ -11,7 +11,7 @@ import {
   Military, CullingMagic, CullingStage, EquipForging, EquipAdvancement, NightmarePoint, NightmareCity,
   SevenHeroStar, SevenHeroLittleStar, SevenHeroSoul, SevenHeroArmy, SevenHeroDailyAward,
   SoulCollectionRnd, SoulCollectionShop, SoulCollectionBase,
-  BeautifulClothes, Beauty, HeroTalent, HdBigTurntable, HdJigsaw, BleachJigsaw
+  BeautifulClothes, Beauty, HeroTalent, HdBigTurntable, HdJigsaw, BleachJigsaw, BuffEffect
 } from '../types/db';
 
 const cache: { [key: string]: any } = {};
@@ -392,6 +392,10 @@ export async function loadHdJigsaws(): Promise<TableJson<HdJigsaw>> {
 
 export async function loadBleachJigsaws(): Promise<TableJson<BleachJigsaw>> {
   return fetchWithCache<TableJson<BleachJigsaw>>('data/bleach_jigsaws.json');
+}
+
+export async function loadBuffEffects(): Promise<TableJson<BuffEffect>> {
+  return fetchWithCache<TableJson<BuffEffect>>('data/buff_effects.json');
 }
 
 
