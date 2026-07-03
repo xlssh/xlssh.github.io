@@ -140,50 +140,94 @@ function getTimeTypeBadgeClass(type: number): string {
   }
 }
 
-// 1. Pyramid Calculator Component
+// 1. Pyramid Components
+const PyramidLootTable: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const awardsRates = details.extra.awards_rates?.[0]?.awardRate || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Star size={16} className="text-yellow-500" />
+        <span>Pyramid Loot Table</span>
+      </h4>
+      <div className="space-y-3">
+        {awardsRates.map((tier: any, tierIndex: number) => (
+          <div key={tierIndex} className="p-3 bg-surface rounded-lg border border-border">
+            <h5 className="text-xs font-bold text-subtle mb-2">Tier {tierIndex + 1}</h5>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+              {tier.map((item: any, itemIndex: number) => {
+                const award = awardsList.find(a => a.id === item.awardId);
+                const mergedRewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+                return (
+                  <div key={itemIndex} className="p-2 bg-bg/50 rounded-md border border-border/70">
+                    <RewardList rewardsJson={mergedRewards} articles={articlesList} />
+                    <span className="text-[10px] font-mono text-muted mt-1 block">Rate: {item.rate / 100}%</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const PyramidShop: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const gifts = details.extra.gifts || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Gift size={16} className="text-emerald-500" />
+        <span>Pyramid Point Shop</span>
+      </h4>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        {gifts.map((item: any, index: number) => {
+          const award = awardsList.find(a => a.id === item.awardId);
+          const mergedRewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+          return (
+            <div key={index} className="p-3 bg-surface rounded-xl border border-border space-y-2">
+              <RewardList rewardsJson={mergedRewards} articles={articlesList} />
+              <div className="text-xs font-semibold text-text">
+                Cost: <span className="font-bold text-violet-500">{item.costScore} Chips</span>
+              </div>
+               <div className="text-[10px] font-mono text-muted">Limit: {item.limit}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
 const PyramidCalculator: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
   const [smashCount, setSmashCount] = useState(10);
   const [targetChips, setTargetChips] = useState(100);
 
-  const smashOne = details.extra.smash_one || 100;
-  const smashTen = details.extra.smash_ten || 950;
-  const smashFifty = details.extra.smash_fifty || 4500;
-  const proportion = details.extra.proportion || 1; // chips per smash
+  const goldPerDraw = details.extra.proportion || 200; // Gold recharge required per draw chance
 
-  const getOptimalCost = (count: number) => {
-    let cost = 0;
-    let temp = count;
-    const fifties = Math.floor(temp / 50);
-    cost += fifties * smashFifty;
-    temp %= 50;
-    const tens = Math.floor(temp / 10);
-    cost += tens * smashTen;
-    temp %= 10;
-    cost += temp * smashOne;
-    return cost;
-  };
+  const cost = smashCount * goldPerDraw;
+  const estChips = smashCount; // Assuming 1 point (chip) per draw on average
 
-  const cost = getOptimalCost(smashCount);
-  const estChips = smashCount * proportion;
-
-  const reqSmashes = Math.ceil(targetChips / (proportion || 1));
-  const reqGold = getOptimalCost(reqSmashes);
+  const reqSmashes = targetChips;
+  const reqGold = targetChips * goldPerDraw;
 
   return (
     <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
       <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Target size={16} className="text-amber-500" />
-        <span>Pyramid Smash Simulator & Cost Estimator</span>
+        <span>Pyramid Draw Simulator & Recharge Estimator</span>
       </h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         {/* Left Column: Smashes to Cost & Points */}
         <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
           <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
-            Simulate Smashes
+            Simulate Draws
           </span>
           <div className="space-y-1">
-            <label className="text-subtle font-medium block">Number of Smashes:</label>
+            <label className="text-subtle font-medium block">Number of Draws:</label>
             <input
               type="number"
               min={1}
@@ -195,15 +239,15 @@ const PyramidCalculator: React.FC<{ details: ActivityDetail; articlesList: Artic
           </div>
           <div className="grid grid-cols-2 gap-2 pt-2">
             <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
-              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Cost</span>
+              <span className="text-[9px] text-subtle font-bold uppercase">Required Recharge</span>
               <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-sm">
                 {cost.toLocaleString()} Gold
               </span>
             </div>
             <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
-              <span className="text-[9px] text-subtle font-bold uppercase">Event Chips Earned</span>
+              <span className="text-[9px] text-subtle font-bold uppercase">Points (Chips) Earned</span>
               <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-sm">
-                {estChips.toLocaleString()} Chips
+                ~{estChips.toLocaleString()} Chips
               </span>
             </div>
           </div>
@@ -215,7 +259,7 @@ const PyramidCalculator: React.FC<{ details: ActivityDetail; articlesList: Artic
             Calculate Goal Cost
           </span>
           <div className="space-y-1">
-            <label className="text-subtle font-medium block">Target Event Chips:</label>
+            <label className="text-subtle font-medium block">Target Points (Chips):</label>
             <input
               type="number"
               min={1}
@@ -227,13 +271,13 @@ const PyramidCalculator: React.FC<{ details: ActivityDetail; articlesList: Artic
           </div>
           <div className="grid grid-cols-2 gap-2 pt-2">
             <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
-              <span className="text-[9px] text-subtle font-bold uppercase">Smashes Required</span>
+              <span className="text-[9px] text-subtle font-bold uppercase">Draws Required</span>
               <span className="font-mono font-extrabold text-text text-sm">
-                {reqSmashes.toLocaleString()} Smashes
+                {reqSmashes.toLocaleString()} Draws
               </span>
             </div>
             <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
-              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Gold Cost</span>
+              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Recharge Cost</span>
               <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-sm">
                 {reqGold.toLocaleString()} Gold
               </span>
@@ -241,6 +285,9 @@ const PyramidCalculator: React.FC<{ details: ActivityDetail; articlesList: Artic
           </div>
         </div>
       </div>
+      <p className="text-[10px] text-muted leading-normal italic">
+        Tip: Topping up {goldPerDraw} Gold grants 1 draw chance. Each draw yields 1 Point (Chip) on average, which can be spent in the Point Shop.
+      </p>
     </div>
   );
 };
@@ -1808,7 +1855,11 @@ export const PromotionDetailPage: React.FC = () => {
                   Interactive System Tools & Calculators
                 </span>
                 {details.class === "THDPyramid" && (
-                  <PyramidCalculator details={details} articlesList={articlesList} awardsList={awardsList} />
+                  <>
+                    <PyramidCalculator details={details} articlesList={articlesList} awardsList={awardsList} />
+                    <PyramidLootTable details={details} articlesList={articlesList} awardsList={awardsList} />
+                    <PyramidShop details={details} articlesList={articlesList} awardsList={awardsList} />
+                  </>
                 )}
                 {details.class === "THDRushInSeireitei" && (
                   <RushInSeireiteiCalculator details={details} articlesList={articlesList} awardsList={awardsList} />
