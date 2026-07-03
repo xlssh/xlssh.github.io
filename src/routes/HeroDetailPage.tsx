@@ -332,7 +332,7 @@ export const HeroDetailPage: React.FC = () => {
       <div className="flex items-center justify-between">
         <Link
           to="/heroes"
-          className="flex items-center gap-1 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Heroes</span>
@@ -357,10 +357,10 @@ export const HeroDetailPage: React.FC = () => {
       </div>
 
       {/* Hero Header panel */}
-      <div className="p-6 md:p-8 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+      <div className="p-6 md:p-8 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
           <div className="flex flex-wrap items-center gap-2.5">
-            <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500 font-bold bg-zinc-100 dark:bg-zinc-950 px-2 py-0.5 rounded">
+            <span className="font-mono text-xs text-muted font-bold bg-bg px-2 py-0.5 rounded">
               ID: {hero.id}
             </span>
             <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold ${getQualityColorClass(hero.quality as number)}`}>
@@ -371,21 +371,21 @@ export const HeroDetailPage: React.FC = () => {
                 Protagonist Character
               </span>
             ) : (
-              <span className="px-2 py-0.5 text-[10px] font-extrabold uppercase rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">
+              <span className="px-2 py-0.5 text-[10px] font-extrabold uppercase rounded bg-surface-raised text-muted">
                 Mercenary Ally
               </span>
             )}
           </div>
 
           <div className="space-y-1">
-            <h1 className="text-3xl font-black text-zinc-900 dark:text-zinc-50">{hero.name}</h1>
+            <h1 className="text-3xl font-black text-text">{hero.name}</h1>
             {hero.role && <p className="text-sm font-semibold text-violet-600 dark:text-violet-400">{hero.role}</p>}
           </div>
 
           {hero.description && (
-            <div className="space-y-1.5 p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950/40 border border-zinc-200/50 dark:border-zinc-800/50">
-              <span className="block text-[10px] font-bold uppercase tracking-wider text-zinc-400">Lore Bio</span>
-              <p className="text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed italic">
+            <div className="space-y-1.5 p-4 rounded-xl bg-bg/40 border border-border/50">
+              <span className="block text-[10px] font-bold uppercase tracking-wider text-subtle">Lore Bio</span>
+              <p className="text-sm text-muted dark:text-subtle leading-relaxed italic">
                 "{hero.description}"
               </p>
             </div>
@@ -394,7 +394,7 @@ export const HeroDetailPage: React.FC = () => {
           {hero.assess && (
             <div className="space-y-1.5 p-4 rounded-xl bg-violet-500/5 dark:bg-violet-950/20 border border-violet-100/50 dark:border-violet-950/50">
               <span className="block text-[10px] font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">Tactical Assessment</span>
-              <p className="text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">
+              <p className="text-sm text-muted leading-relaxed">
                 {hero.assess}
               </p>
             </div>
@@ -402,29 +402,29 @@ export const HeroDetailPage: React.FC = () => {
         </div>
 
         {/* Quick Identity Grid */}
-        <div className="w-full md:w-64 border border-zinc-100 dark:border-zinc-800 rounded-xl p-4 bg-zinc-50/50 dark:bg-zinc-950/20 space-y-3 shrink-0">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-200 dark:border-zinc-800 pb-1.5">Entity Meta</h4>
+        <div className="w-full md:w-64 border border-border rounded-xl p-4 bg-bg/50 space-y-3 shrink-0">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-subtle border-b border-border pb-1.5">Entity Meta</h4>
           <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-xs">
             <div>
-              <span className="text-zinc-400 block mb-0.5">Gender</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-300">{hero.sex === 1 ? 'Male' : hero.sex === 2 ? 'Female' : `Sex ${hero.sex}`}</span>
+              <span className="text-subtle block mb-0.5">Gender</span>
+              <span className="font-semibold text-muted">{hero.sex === 1 ? 'Male' : hero.sex === 2 ? 'Female' : `Sex ${hero.sex}`}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5">Faction</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-300">{getFactionLabel(hero.country)}</span>
+              <span className="text-subtle block mb-0.5">Faction</span>
+              <span className="font-semibold text-muted">{getFactionLabel(hero.country)}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5">Class</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-300">{getProfessionLabel(hero.profession)}</span>
+              <span className="text-subtle block mb-0.5">Class</span>
+              <span className="font-semibold text-muted">{getProfessionLabel(hero.profession)}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5">Unlock Level</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-300">Level {hero.need_level ?? 1}</span>
+              <span className="text-subtle block mb-0.5">Unlock Level</span>
+              <span className="font-semibold text-muted">Level {hero.need_level ?? 1}</span>
             </div>
             {hero.source !== null && (
               <div className="col-span-2">
-                <span className="text-zinc-400 block mb-0.5">Sourcing ID</span>
-                <span className="font-mono text-zinc-600 dark:text-zinc-300 font-semibold">{hero.source}</span>
+                <span className="text-subtle block mb-0.5">Sourcing ID</span>
+                <span className="font-mono text-muted dark:text-subtle font-semibold">{hero.source}</span>
               </div>
             )}
           </div>
@@ -437,35 +437,35 @@ export const HeroDetailPage: React.FC = () => {
         <div className="lg:col-span-2 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Base Stats card */}
-            <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4">
-              <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+            <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+              <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
                 <Swords size={18} className="text-indigo-500" />
                 <span>Base Level-1 Attributes</span>
               </h3>
               <div className="space-y-3">
                 {baseStats.map((stat, idx) => (
-                  <div key={idx} className="flex items-center justify-between text-sm py-1 border-b border-zinc-50 dark:border-zinc-800/40 last:border-0">
+                  <div key={idx} className="flex items-center justify-between text-sm py-1 border-b border-zinc-50 dark:border-border/40 last:border-0">
                     <div>
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300 block">{stat.label}</span>
-                      <span className="text-[10px] text-zinc-400">{stat.labelDesc}</span>
+                      <span className="font-semibold text-muted block">{stat.label}</span>
+                      <span className="text-[10px] text-subtle">{stat.labelDesc}</span>
                     </div>
-                    <span className="font-mono font-bold text-zinc-800 dark:text-zinc-200 text-base">{stat.value ?? 'N/A'}</span>
+                    <span className="font-mono font-bold text-text text-base">{stat.value ?? 'N/A'}</span>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Growth stats card */}
-            <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4">
-              <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+            <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+              <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
                 <TrendingUp size={18} className="text-emerald-500" />
                 <span>Level Growth Multipliers</span>
               </h3>
               <div className="grid grid-cols-2 gap-4">
                 {growthStats.map((stat, idx) => (
-                  <div key={idx} className="p-3 border border-zinc-100 dark:border-zinc-800/80 rounded-lg bg-zinc-50/50 dark:bg-zinc-950/30">
-                    <span className="text-xs text-zinc-400 block">{stat.label}</span>
-                    <span className="font-mono text-base font-extrabold text-zinc-800 dark:text-zinc-200">
+                  <div key={idx} className="p-3 border border-border/80 rounded-lg bg-bg/50 dark:bg-bg/30">
+                    <span className="text-xs text-subtle block">{stat.label}</span>
+                    <span className="font-mono text-base font-extrabold text-text">
                       +{stat.value?.toFixed(2) ?? '0.00'}
                     </span>
                   </div>
@@ -475,21 +475,21 @@ export const HeroDetailPage: React.FC = () => {
           </div>
 
           {/* Interactive Stats Progression Calculator */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-5">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-100 dark:border-zinc-800 pb-3">
+          <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border pb-3">
               <div className="flex items-center gap-2">
                 <Scale size={18} className="text-fuchsia-500" />
-                <h3 className="font-bold text-zinc-800 dark:text-zinc-200">Attribute Progression Calculator</h3>
+                <h3 className="font-bold text-text">Attribute Progression Calculator</h3>
               </div>
               <div className="flex items-center gap-2">
-                <label className="text-xs font-bold text-zinc-400 uppercase">Target Level:</label>
+                <label className="text-xs font-bold text-subtle uppercase">Target Level:</label>
                 <input
                   type="number"
                   min="1"
                   max="130"
                   value={targetLevel}
                   onChange={(e) => setTargetLevel(Math.max(1, Math.min(130, parseInt(e.target.value) || 1)))}
-                  className="w-16 px-2 py-1 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 font-mono font-bold text-center"
+                  className="w-16 px-2 py-1 border border-border rounded bg-bg text-text font-mono font-bold text-center"
                 />
               </div>
             </div>
@@ -502,19 +502,19 @@ export const HeroDetailPage: React.FC = () => {
                 max="130"
                 value={targetLevel}
                 onChange={(e) => setTargetLevel(parseInt(e.target.value))}
-                className="w-full h-1.5 bg-zinc-200 dark:bg-zinc-850 rounded-lg appearance-none cursor-pointer accent-fuchsia-600"
+                className="w-full h-1.5 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-fuchsia-600"
               />
             </div>
 
             {/* Simulated Stats display */}
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
               {calculatedStats.map((stat, idx) => (
-                <div key={idx} className="p-3 border border-zinc-100 dark:border-zinc-800 bg-fuchsia-500/5 rounded-xl text-center space-y-1">
-                  <span className="text-[10px] text-zinc-400 block font-semibold">{stat.label}</span>
+                <div key={idx} className="p-3 border border-border bg-fuchsia-500/5 rounded-xl text-center space-y-1">
+                  <span className="text-[10px] text-subtle block font-semibold">{stat.label}</span>
                   <span className="font-mono text-base font-black text-fuchsia-600 dark:text-fuchsia-400 block">
                     {stat.val.toLocaleString()}
                   </span>
-                  <span className="text-[9px] text-zinc-400 font-mono block">
+                  <span className="text-[9px] text-subtle font-mono block">
                     {stat.base} + {stat.growth}×{targetLevel - 1}
                   </span>
                 </div>
@@ -526,16 +526,16 @@ export const HeroDetailPage: React.FC = () => {
         {/* Right Col: Rates */}
         <div className="lg:col-span-1">
           {/* Combat coefficients & Rates */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4 h-full">
-            <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+          <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4 h-full">
+            <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
               <Sparkles size={18} className="text-violet-500" />
               <span>Combat Rate Coefficients</span>
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {rates.map((rate, idx) => (
-                <div key={idx} className="p-2.5 border border-zinc-100 dark:border-zinc-800/50 rounded-lg text-center bg-zinc-50/20 dark:bg-zinc-950/10">
-                  <span className="text-[11px] text-zinc-400 block mb-0.5 truncate">{rate.label}</span>
-                  <span className="font-mono font-bold text-xs text-zinc-700 dark:text-zinc-300">
+                <div key={idx} className="p-2.5 border border-border/50 rounded-lg text-center bg-bg/10">
+                  <span className="text-[11px] text-subtle block mb-0.5 truncate">{rate.label}</span>
+                  <span className="font-mono font-bold text-xs text-muted">
                     {rate.value !== null && rate.value !== undefined ? `${rate.value}%` : '0.00%'}
                   </span>
                 </div>
@@ -546,58 +546,58 @@ export const HeroDetailPage: React.FC = () => {
       </div>
 
       {/* Hidden system settings */}
-      <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4">
-        <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+      <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+        <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
           <ShieldAlert size={18} className="text-amber-500" />
           <span>Internal Mechanics & System Configs</span>
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs">
           <div>
-            <span className="text-zinc-400 block mb-0.5">Active Skill ID</span>
-            <span className="font-mono font-semibold text-zinc-700 dark:text-zinc-300">{hero.active ?? 'None'}</span>
+            <span className="text-subtle block mb-0.5">Active Skill ID</span>
+            <span className="font-mono font-semibold text-muted">{hero.active ?? 'None'}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5">Normal Attack ID</span>
-            <span className="font-mono font-semibold text-zinc-700 dark:text-zinc-300">{hero.normal_attack ?? 'None'}</span>
+            <span className="text-subtle block mb-0.5">Normal Attack ID</span>
+            <span className="font-mono font-semibold text-muted">{hero.normal_attack ?? 'None'}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5">Talent ID</span>
-            <span className="font-mono font-semibold text-zinc-700 dark:text-zinc-300">{hero.talent ?? 'None'}</span>
+            <span className="text-subtle block mb-0.5">Talent ID</span>
+            <span className="font-mono font-semibold text-muted">{hero.talent ?? 'None'}</span>
           </div>
           {hero.sound !== null && (
             <div>
-              <span className="text-zinc-400 block mb-0.5">Vocal Sound Package</span>
-              <span className="font-mono font-semibold text-zinc-700 dark:text-zinc-300">{hero.sound}</span>
+              <span className="text-subtle block mb-0.5">Vocal Sound Package</span>
+              <span className="font-mono font-semibold text-muted">{hero.sound}</span>
             </div>
           )}
           {hero.attack_effect && (
             <div className="col-span-2">
-              <span className="text-zinc-400 block mb-0.5">Attack Sfx Asset Key</span>
-              <span className="font-mono text-xs text-zinc-700 dark:text-zinc-300 bg-zinc-50 dark:bg-zinc-950 px-2 py-1.5 rounded border border-zinc-100 dark:border-zinc-800 inline-block max-w-full overflow-x-auto">
+              <span className="text-subtle block mb-0.5">Attack Sfx Asset Key</span>
+              <span className="font-mono text-xs text-muted bg-bg px-2 py-1.5 rounded border border-border inline-block max-w-full overflow-x-auto">
                 {typeof hero.attack_effect === 'object' ? JSON.stringify(hero.attack_effect) : hero.attack_effect}
               </span>
             </div>
           )}
           {hero.head_style && (
             <div className="col-span-2">
-              <span className="text-zinc-400 block mb-0.5">UI Sprite Head Style</span>
-              <span className="font-mono font-semibold text-zinc-700 dark:text-zinc-300 bg-zinc-50 dark:bg-zinc-950 px-2 py-1 rounded border border-zinc-100 dark:border-zinc-800 inline-block">
+              <span className="text-subtle block mb-0.5">UI Sprite Head Style</span>
+              <span className="font-mono font-semibold text-muted bg-bg px-2 py-1 rounded border border-border inline-block">
                 {typeof hero.head_style === 'object' ? JSON.stringify(hero.head_style) : hero.head_style}
               </span>
             </div>
           )}
           {hero.hero_soul && (
             <div className="col-span-2">
-              <span className="text-zinc-400 block mb-0.5">Hero Soul Item Configuration</span>
-              <span className="font-mono text-xs text-zinc-550 dark:text-zinc-300 leading-relaxed font-semibold">
+              <span className="text-subtle block mb-0.5">Hero Soul Item Configuration</span>
+              <span className="font-mono text-xs text-muted dark:text-subtle leading-relaxed font-semibold">
                 {typeof hero.hero_soul === 'object' ? JSON.stringify(hero.hero_soul) : hero.hero_soul}
               </span>
             </div>
           )}
           {hero.crash_jade_open_level && (
             <div className="col-span-2">
-              <span className="text-zinc-400 block mb-0.5">Jade System Unlocks</span>
-              <span className="font-mono text-xs text-zinc-550 dark:text-zinc-300 leading-relaxed font-semibold">
+              <span className="text-subtle block mb-0.5">Jade System Unlocks</span>
+              <span className="font-mono text-xs text-muted dark:text-subtle leading-relaxed font-semibold">
                 {typeof hero.crash_jade_open_level === 'object' ? JSON.stringify(hero.crash_jade_open_level) : hero.crash_jade_open_level}
               </span>
             </div>
@@ -608,39 +608,39 @@ export const HeroDetailPage: React.FC = () => {
       {/* Skills and Talent */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {heroSkills?.normalAttack && (
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm">
-            <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
-              <Swords size={18} className="text-gray-500" />
+          <div className="p-5 border border-border bg-surface rounded-xl shadow-sm">
+            <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
+              <Swords size={18} className="text-muted" />
               <span>Normal Attack: {heroSkills.normalAttack.name}</span>
             </h3>
-            <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-2">{heroSkills.normalAttack.description}</p>
+            <p className="text-sm text-muted dark:text-subtle mt-2">{heroSkills.normalAttack.description}</p>
           </div>
         )}
         {heroSkills?.activeSkill && (
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm">
-            <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+          <div className="p-5 border border-border bg-surface rounded-xl shadow-sm">
+            <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
               <Sparkles size={18} className="text-yellow-500" />
               <span>Active Skill: {heroSkills.activeSkill.name}</span>
             </h3>
-            <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-2">{heroSkills.activeSkill.description}</p>
+            <p className="text-sm text-muted dark:text-subtle mt-2">{heroSkills.activeSkill.description}</p>
           </div>
         )}
       </div>
 
       {heroTalent && (
-        <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm">
-          <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+        <div className="p-5 border border-border bg-surface rounded-xl shadow-sm">
+          <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
             <Star size={18} className="text-blue-500" />
             <span>Talent: {heroTalent.talent_name}</span>
           </h3>
-          <p className="text-sm text-zinc-600 dark:text-zinc-300 mt-2">{heroTalent.talent_desc}</p>
+          <p className="text-sm text-muted dark:text-subtle mt-2">{heroTalent.talent_desc}</p>
         </div>
       )}
 
       {/* Soul Jade Progression & Build Recommendations */}
       {hero.crash_jade_open_level && (
-        <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4 animate-fade-in">
-          <h3 className="font-bold text-zinc-850 dark:text-zinc-150 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+        <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4 animate-fade-in">
+          <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
             <Cpu size={18} className="text-fuchsia-500" />
             <span>Soul Jade Progression & Build Suggestions</span>
           </h3>
@@ -648,7 +648,7 @@ export const HeroDetailPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Left: Slot roadmap */}
             <div className="md:col-span-2 space-y-3">
-              <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Unlock Milestones (Affected by Target Level Simulator)</span>
+              <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Unlock Milestones (Affected by Target Level Simulator)</span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                 {Array.isArray(hero.crash_jade_open_level) && hero.crash_jade_open_level.map((lvl: number, idx: number) => {
                   const unlocked = targetLevel >= lvl;
@@ -657,12 +657,12 @@ export const HeroDetailPage: React.FC = () => {
                       key={idx}
                       className={`p-3 border rounded-xl text-center space-y-1.5 transition-all ${unlocked
                         ? 'border-fuchsia-500 bg-fuchsia-500/5 text-fuchsia-850 dark:text-fuchsia-400 font-bold'
-                        : 'border-zinc-100 dark:border-zinc-800 bg-zinc-50/40 dark:bg-zinc-950/20 text-zinc-400'
+                        : 'border-border bg-bg/40 dark:bg-bg/20 text-subtle'
                         }`}
                     >
                       <div className="flex justify-between items-center px-1">
-                        <span className="text-[10px] uppercase font-bold text-zinc-400">Slot {idx + 1}</span>
-                        {unlocked ? <Check size={12} className="text-fuchsia-500" /> : <Lock size={10} className="text-zinc-400" />}
+                        <span className="text-[10px] uppercase font-bold text-subtle">Slot {idx + 1}</span>
+                        {unlocked ? <Check size={12} className="text-fuchsia-500" /> : <Lock size={10} className="text-subtle" />}
                       </div>
                       <span className="block font-mono text-sm">Lv. {lvl}</span>
                       <span className="block text-[9px] uppercase font-bold tracking-wider">
@@ -675,13 +675,13 @@ export const HeroDetailPage: React.FC = () => {
             </div>
 
             {/* Right: Build Recommendation */}
-            <div className="p-4 border border-zinc-100 dark:border-zinc-800/80 rounded-xl bg-zinc-50/50 dark:bg-zinc-950/30 space-y-4">
+            <div className="p-4 border border-border/80 rounded-xl bg-bg/50 dark:bg-bg/30 space-y-4">
               <div>
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase">Recommended Archetype</span>
-                <span className="font-extrabold text-sm text-zinc-800 dark:text-zinc-200">{recommendedJades?.archetype}</span>
+                <span className="block text-[10px] font-bold text-subtle uppercase">Recommended Archetype</span>
+                <span className="font-extrabold text-sm text-text">{recommendedJades?.archetype}</span>
               </div>
               <div className="space-y-3.5">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase">Spirit Jade Loadout Simulator</span>
+                <span className="block text-[10px] font-bold text-subtle uppercase">Spirit Jade Loadout Simulator</span>
                 <div className="space-y-3">
                   {recommendedJades?.jades.map((jade, idx) => {
                     const lvl = simulatedJadeLevels[idx] || 10;
@@ -697,13 +697,13 @@ export const HeroDetailPage: React.FC = () => {
                     const goldRequired = (baseStonesRequired - 1) * 1000;
 
                     return (
-                      <div key={idx} className="p-2.5 bg-white dark:bg-zinc-900 border border-zinc-150/45 dark:border-zinc-850 rounded-lg space-y-1.5 text-[11px]">
+                      <div key={idx} className="p-2.5 bg-surface border border-border rounded-lg space-y-1.5 text-[11px]">
                         <div className="flex justify-between items-center">
-                          <span className="font-bold text-zinc-800 dark:text-zinc-200 truncate">{jade.split(' (')[0]}</span>
+                          <span className="font-bold text-text truncate">{jade.split(' (')[0]}</span>
                           <span className="font-mono text-fuchsia-600 dark:text-fuchsia-400 font-extrabold">{formattedValue} {name}</span>
                         </div>
                         <div className="flex items-center justify-between gap-2">
-                          <span className="text-zinc-450 font-semibold font-mono">Lv. {lvl}</span>
+                          <span className="text-subtle font-semibold font-mono">Lv. {lvl}</span>
                           <input
                             type="range"
                             min="1"
@@ -713,10 +713,10 @@ export const HeroDetailPage: React.FC = () => {
                               const val = parseInt(e.target.value);
                               setSimulatedJadeLevels(prev => ({ ...prev, [idx]: val }));
                             }}
-                            className="flex-1 accent-fuchsia-500 bg-zinc-100 dark:bg-zinc-800 h-1 rounded appearance-none cursor-pointer"
+                            className="flex-1 accent-fuchsia-500 bg-surface-raised h-1 rounded appearance-none cursor-pointer"
                           />
                         </div>
-                        <div className="flex justify-between text-[9px] text-zinc-455 border-t border-zinc-100/50 dark:border-zinc-800/40 pt-1">
+                        <div className="flex justify-between text-[9px] text-subtle border-t border-border/40 pt-1">
                           <span>Merge: {baseStonesRequired.toLocaleString()}x Lv.1</span>
                           <span>Cost: {goldRequired.toLocaleString()} Gold</span>
                         </div>
@@ -732,8 +732,8 @@ export const HeroDetailPage: React.FC = () => {
 
       {/* Recommended Team Synergy Board */}
       {currentRec && (
-        <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4 animate-fade-in">
-          <h3 className="font-bold text-zinc-850 dark:text-zinc-150 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+        <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4 animate-fade-in">
+          <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
             <HeartHandshake size={18} className="text-fuchsia-500" />
             <span>Recommended Team Synergy & Partners</span>
           </h3>
@@ -742,21 +742,21 @@ export const HeroDetailPage: React.FC = () => {
             <div className="md:col-span-2 space-y-3.5 text-xs">
               {currentRec.ability && (
                 <div className="space-y-1">
-                  <span className="block text-[10px] font-bold text-zinc-400 uppercase">Combat Synergy Analysis</span>
-                  <p className="text-zinc-700 dark:text-zinc-300 font-semibold leading-relaxed">{currentRec.ability}</p>
+                  <span className="block text-[10px] font-bold text-subtle uppercase">Combat Synergy Analysis</span>
+                  <p className="text-muted font-semibold leading-relaxed">{currentRec.ability}</p>
                 </div>
               )}
               {currentRec.get_rode && (
-                <div className="space-y-1 pt-3 border-t border-zinc-100 dark:border-zinc-800/80">
-                  <span className="block text-[10px] font-bold text-zinc-400 uppercase">Obtain & Sourcing Tip</span>
-                  <p className="text-zinc-550 dark:text-zinc-400 font-semibold">{currentRec.get_rode}</p>
+                <div className="space-y-1 pt-3 border-t border-border/80">
+                  <span className="block text-[10px] font-bold text-subtle uppercase">Obtain & Sourcing Tip</span>
+                  <p className="text-muted font-semibold">{currentRec.get_rode}</p>
                 </div>
               )}
             </div>
 
             {currentRec.friends && currentRec.friends.length > 0 && (
-              <div className="p-4 border border-zinc-100 dark:border-zinc-800 rounded-xl bg-zinc-50/50 dark:bg-zinc-950/30 space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase">Best Synergy Partners</span>
+              <div className="p-4 border border-border rounded-xl bg-bg/50 dark:bg-bg/30 space-y-3">
+                <span className="block text-[10px] font-bold text-subtle uppercase">Best Synergy Partners</span>
                 <div className="space-y-2">
                   {currentRec.friends.map(friendId => {
                     const friendHero = allHeroes.find(h => h.id === friendId);
@@ -765,9 +765,9 @@ export const HeroDetailPage: React.FC = () => {
                       <Link
                         key={friendId}
                         to={`/heroes/${friendId}`}
-                        className="flex items-center justify-between p-2.5 rounded-lg border border-zinc-100 dark:border-zinc-850 bg-white dark:bg-zinc-900 hover:border-fuchsia-500 transition-colors"
+                        className="flex items-center justify-between p-2.5 rounded-lg border border-border bg-surface hover:border-fuchsia-500 transition-colors"
                       >
-                        <span className="text-xs font-bold text-zinc-800 dark:text-zinc-200">{friendHero.name}</span>
+                        <span className="text-xs font-bold text-text">{friendHero.name}</span>
                         <span className={`text-[10px] font-bold ${getQualityColorClass(friendHero.quality)}`}>
                           {getQualityLabel(friendHero.quality)}
                         </span>
@@ -783,16 +783,16 @@ export const HeroDetailPage: React.FC = () => {
 
       {/* Partner Bonds & Modify Section */}
       {(heroBonds.length > 0 || heroModifyStages.length > 0) && (
-        <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-5 animate-fade-in">
+        <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-5 animate-fade-in">
           {/* Tab Headers */}
-          <div className="flex border-b border-zinc-200 dark:border-zinc-800 pb-0.5 justify-between items-center flex-wrap gap-2">
+          <div className="flex border-b border-border pb-0.5 justify-between items-center flex-wrap gap-2">
             <div className="flex gap-4">
               {heroBonds.length > 0 && (
                 <button
                   onClick={() => setActiveSubTab('bonds')}
                   className={`pb-2 text-sm font-black flex items-center gap-1.5 transition-colors cursor-pointer ${activeSubTab === 'bonds'
                     ? 'text-fuchsia-600 dark:text-fuchsia-400 border-b-2 border-fuchsia-600 dark:border-fuchsia-400'
-                    : 'text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
+                    : 'text-subtle hover:text-text dark:hover:text-zinc-200'
                     }`}
                 >
                   <HeartHandshake size={16} />
@@ -804,7 +804,7 @@ export const HeroDetailPage: React.FC = () => {
                   onClick={() => setActiveSubTab('modify')}
                   className={`pb-2 text-sm font-black flex items-center gap-1.5 transition-colors cursor-pointer ${activeSubTab === 'modify'
                     ? 'text-fuchsia-600 dark:text-fuchsia-400 border-b-2 border-fuchsia-600 dark:border-fuchsia-400'
-                    : 'text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
+                    : 'text-subtle hover:text-text dark:hover:text-zinc-200'
                     }`}
                 >
                   <Star size={16} />
@@ -832,13 +832,13 @@ export const HeroDetailPage: React.FC = () => {
                 return (
                   <div
                     key={bond.id}
-                    className="p-4 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/15 dark:bg-zinc-950/15 rounded-2xl space-y-4 flex flex-col justify-between"
+                    className="p-4 border border-border/80 bg-bg/15 dark:bg-bg/15 rounded-2xl space-y-4 flex flex-col justify-between"
                   >
                     <div className="space-y-3">
-                      <div className="flex items-center justify-between gap-2 border-b border-zinc-100 dark:border-zinc-800/60 pb-2">
+                      <div className="flex items-center justify-between gap-2 border-b border-border/60 pb-2">
                         <div>
-                          <span className="text-[10px] font-mono text-zinc-400 block font-bold">BOND TYPE ID: {bond.type}</span>
-                          <h4 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-100">
+                          <span className="text-[10px] font-mono text-subtle block font-bold">BOND TYPE ID: {bond.type}</span>
+                          <h4 className="font-extrabold text-sm text-text">
                             {activeLevelData ? activeLevelData.name : `Bond #${bond.id}`}
                           </h4>
                         </div>
@@ -849,9 +849,9 @@ export const HeroDetailPage: React.FC = () => {
 
                       {/* Synergy Partner Hero link */}
                       {connectedHero && (
-                        <div className="p-3 bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-xl flex items-center justify-between text-xs">
+                        <div className="p-3 bg-surface border border-border rounded-xl flex items-center justify-between text-xs">
                           <div>
-                            <span className="block text-[8px] font-bold text-zinc-400 uppercase">Connected Partner required</span>
+                            <span className="block text-[8px] font-bold text-subtle uppercase">Connected Partner required</span>
                             <Link
                               to={`/heroes/${connectedHero.id}`}
                               className="font-bold text-violet-600 dark:text-violet-400 hover:underline"
@@ -868,7 +868,7 @@ export const HeroDetailPage: React.FC = () => {
                       {/* Stats Modifiers Preview */}
                       {activeLevelData && activeLevelData.properties && (
                         <div className="space-y-1.5">
-                          <span className="block text-[9px] font-bold text-zinc-400 uppercase">Bonds Active Stat Bonuses</span>
+                          <span className="block text-[9px] font-bold text-subtle uppercase">Bonds Active Stat Bonuses</span>
                           <div className="grid grid-cols-2 gap-2">
                             {activeLevelData.properties.map((prop, pIdx) => {
                               const isPercent = prop.oper === 2 || (prop.oper === 1 && prop.value < 1);
@@ -878,9 +878,9 @@ export const HeroDetailPage: React.FC = () => {
                               return (
                                 <div
                                   key={pIdx}
-                                  className="p-2 border border-zinc-100 dark:border-zinc-850 bg-white dark:bg-zinc-900 rounded-lg flex items-center justify-between text-xs"
+                                  className="p-2 border border-border bg-surface rounded-lg flex items-center justify-between text-xs"
                                 >
-                                  <span className="text-zinc-400 font-semibold">{getAttributeName(prop.type)}</span>
+                                  <span className="text-subtle font-semibold">{getAttributeName(prop.type)}</span>
                                   <span className="font-mono font-bold text-fuchsia-600 dark:text-fuchsia-400">{formattedVal}</span>
                                 </div>
                               );
@@ -892,17 +892,17 @@ export const HeroDetailPage: React.FC = () => {
                       {/* Unlock Milestones & Requirements */}
                       {(reqPoint || reqCond) && (
                         <div className="space-y-1.5">
-                          <span className="block text-[9px] font-bold text-zinc-400 uppercase">Unlock Requirements</span>
-                          <div className="p-3 border border-zinc-150 dark:border-zinc-800 bg-zinc-100/40 dark:bg-zinc-950/20 rounded-xl text-[11px] leading-relaxed text-zinc-550 dark:text-zinc-400 space-y-1">
+                          <span className="block text-[9px] font-bold text-subtle uppercase">Unlock Requirements</span>
+                          <div className="p-3 border border-border bg-bg/40 dark:bg-bg/20 rounded-xl text-[11px] leading-relaxed text-muted space-y-1">
                             {reqPoint && (
                               <p className="flex items-center gap-1.5 font-bold">
-                                <Activity size={12} className="text-zinc-400 shrink-0" />
+                                <Activity size={12} className="text-subtle shrink-0" />
                                 <span>Clear: {reqPoint.name} (★{bond.condition_star}+ required)</span>
                               </p>
                             )}
                             {reqCond && (
                               <p className="flex items-start gap-1.5 italic">
-                                <ShieldAlert size={12} className="text-zinc-400 mt-0.5 shrink-0" />
+                                <ShieldAlert size={12} className="text-subtle mt-0.5 shrink-0" />
                                 <span>"{reqCond.description}"</span>
                               </p>
                             )}
@@ -913,10 +913,10 @@ export const HeroDetailPage: React.FC = () => {
 
                     {/* Bond interactive Level slider */}
                     {maxLvl > 1 && (
-                      <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800/60 space-y-2">
+                      <div className="pt-3 border-t border-border/60 space-y-2">
                         <div className="flex items-center justify-between text-xs font-semibold">
-                          <span className="text-zinc-400 uppercase text-[9px] font-bold">Simulate Bond Upgrades</span>
-                          <span className="font-mono text-[11px] font-bold text-zinc-500">
+                          <span className="text-subtle uppercase text-[9px] font-bold">Simulate Bond Upgrades</span>
+                          <span className="font-mono text-[11px] font-bold text-muted">
                             Cost: {activeLevelData?.material_count ?? 0} bond chips
                           </span>
                         </div>
@@ -929,7 +929,7 @@ export const HeroDetailPage: React.FC = () => {
                             const val = parseInt(e.target.value);
                             setBondLevelsState(prev => ({ ...prev, [bond.id]: val }));
                           }}
-                          className="w-full accent-fuchsia-600 bg-zinc-100 dark:bg-zinc-800 h-1.5 rounded-lg appearance-none cursor-pointer"
+                          className="w-full accent-fuchsia-600 bg-surface-raised h-1.5 rounded-lg appearance-none cursor-pointer"
                         />
                       </div>
                     )}
@@ -943,10 +943,10 @@ export const HeroDetailPage: React.FC = () => {
           {activeSubTab === 'modify' && heroModifyStages.length > 0 && (
             <div className="space-y-6">
               {/* Star Slider Simulator */}
-              <div className="p-4 bg-zinc-50 dark:bg-zinc-950 rounded-xl border border-zinc-100 dark:border-zinc-850 flex items-center gap-4 flex-wrap">
+              <div className="p-4 bg-bg rounded-xl border border-border flex items-center gap-4 flex-wrap">
                 <div className="flex items-center gap-2">
                   <Star size={16} className="text-amber-500" fill="currentColor" />
-                  <span className="text-xs font-bold text-zinc-700 dark:text-zinc-200">Simulated Star Level:</span>
+                  <span className="text-xs font-bold text-text dark:text-zinc-200">Simulated Star Level:</span>
                 </div>
                 <input
                   type="range"
@@ -954,7 +954,7 @@ export const HeroDetailPage: React.FC = () => {
                   max={heroModifyStages.length}
                   value={simulatedStars}
                   onChange={(e) => setSimulatedStars(parseInt(e.target.value))}
-                  className="flex-1 accent-amber-500 bg-zinc-100 dark:bg-zinc-800 h-1.5 rounded-lg appearance-none cursor-pointer min-w-[150px]"
+                  className="flex-1 accent-amber-500 bg-surface-raised h-1.5 rounded-lg appearance-none cursor-pointer min-w-[150px]"
                 />
                 <span className="text-sm font-black text-amber-500 font-mono">{simulatedStars}★ / {heroModifyStages.length}★</span>
               </div>
@@ -971,13 +971,13 @@ export const HeroDetailPage: React.FC = () => {
                         className={`w-full p-3 text-left border rounded-xl text-xs transition-all flex items-center justify-between cursor-pointer ${simulatedStars === idx + 1
                           ? 'border-amber-500 bg-amber-500/5 text-amber-700 dark:text-amber-400 font-bold'
                           : isUnlocked
-                            ? 'border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-950/20 text-zinc-700 dark:text-zinc-300'
-                            : 'border-zinc-100 dark:border-zinc-900 opacity-60 text-zinc-400'
+                            ? 'border-border/80 bg-bg/50 text-muted'
+                            : 'border-border border-border opacity-60 text-subtle'
                           }`}
                       >
                         <div className="space-y-0.5">
                           <span className="font-extrabold block">{stage.name}</span>
-                          <span className="text-[10px] text-zinc-450 block font-mono">Stage ID: {stage.id} · Node {idx + 1}</span>
+                          <span className="text-[10px] text-subtle block font-mono">Stage ID: {stage.id} · Node {idx + 1}</span>
                         </div>
                         <div className="flex items-center gap-1">
                           {Array.from({ length: idx + 1 }, (_, i) => (
@@ -993,34 +993,34 @@ export const HeroDetailPage: React.FC = () => {
                 <div className="xl:col-span-2 space-y-6">
                   {/* Selected Node Details */}
                   {heroModifyStages[simulatedStars - 1] && (
-                    <div className="p-4 border border-zinc-150 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl space-y-4">
-                      <div className="flex justify-between items-start gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+                    <div className="p-4 border border-border bg-surface rounded-xl space-y-4">
+                      <div className="flex justify-between items-start gap-2 border-b border-border pb-2">
                         <div>
-                          <span className="text-[9px] font-mono text-zinc-400 uppercase font-black block">Star Node {simulatedStars} Detail</span>
-                          <h4 className="text-base font-black text-zinc-850 dark:text-zinc-100">{heroModifyStages[simulatedStars - 1].name}</h4>
+                          <span className="text-[9px] font-mono text-subtle uppercase font-black block">Star Node {simulatedStars} Detail</span>
+                          <h4 className="text-base font-black text-text">{heroModifyStages[simulatedStars - 1].name}</h4>
                         </div>
-                        <span className="text-xs font-mono font-bold text-zinc-400">Req. Level: Lv. {heroModifyStages[simulatedStars - 1].hero_level}</span>
+                        <span className="text-xs font-mono font-bold text-subtle">Req. Level: Lv. {heroModifyStages[simulatedStars - 1].hero_level}</span>
                       </div>
 
                       {/* Node description */}
-                      <p className="text-xs text-zinc-550 dark:text-zinc-400 italic font-semibold">
+                      <p className="text-xs text-muted italic font-semibold">
                         "{heroModifyStages[simulatedStars - 1].description}"
                       </p>
 
                       {/* Cost details */}
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-3 bg-zinc-50 dark:bg-zinc-950 rounded-lg border border-zinc-100 dark:border-zinc-850 space-y-1.5">
-                          <span className="block text-[8px] font-bold text-zinc-400 uppercase">Upgrade Cost for Node</span>
+                        <div className="p-3 bg-bg rounded-lg border border-border space-y-1.5">
+                          <span className="block text-[8px] font-bold text-subtle uppercase">Upgrade Cost for Node</span>
                           <div className="text-xs space-y-1">
                             {heroChangeAttr && (
                               <div className="flex justify-between font-mono">
-                                <span className="text-zinc-450">{getItemName(heroChangeAttr.chip_id) || 'Hero Shard'}</span>
+                                <span className="text-subtle">{getItemName(heroChangeAttr.chip_id) || 'Hero Shard'}</span>
                                 <span className="font-bold">x{heroChangeAttr.chip_val * simulatedStars}</span>
                               </div>
                             )}
                             {heroModifyStages[simulatedStars - 1].rewards?.map((cost, cIdx) => (
                               <div key={cIdx} className="flex justify-between font-mono">
-                                <span className="text-zinc-450">{cost.type === 2 ? 'Gold' : getItemName(cost.code)}</span>
+                                <span className="text-subtle">{cost.type === 2 ? 'Gold' : getItemName(cost.code)}</span>
                                 <span className="font-bold">{cost.type === 2 ? cost.amount.toLocaleString() : `x${cost.amount}`}</span>
                               </div>
                             ))}
@@ -1029,21 +1029,21 @@ export const HeroDetailPage: React.FC = () => {
 
                         {/* Connected battle stage */}
                         {heroChangeAttr?.city_id && (
-                          <div className="p-3 bg-zinc-50 dark:bg-zinc-950 rounded-lg border border-zinc-100 dark:border-zinc-850 space-y-1.5 text-xs">
-                            <span className="block text-[8px] font-bold text-zinc-400 uppercase">Modify Battle Trial Stage</span>
+                          <div className="p-3 bg-bg rounded-lg border border-border space-y-1.5 text-xs">
+                            <span className="block text-[8px] font-bold text-subtle uppercase">Modify Battle Trial Stage</span>
                             {(() => {
                               const point = partnerPoints.find(p => p.id === heroChangeAttr.city_id);
-                              if (!point) return <span className="text-zinc-550">Trial Stage #{heroChangeAttr.city_id}</span>;
+                              if (!point) return <span className="text-muted">Trial Stage #{heroChangeAttr.city_id}</span>;
                               return (
                                 <div className="space-y-1">
                                   <span className="font-bold block text-fuchsia-600 dark:text-fuchsia-400">{point.name}</span>
-                                  <div className="text-[10px] text-zinc-450 font-mono">Battle Scene: {point.battle_scene}</div>
-                                  <div className="space-y-0.5 pt-1 border-t border-zinc-150/45 dark:border-zinc-800/40 mt-1">
-                                    <span className="block text-[8px] font-bold text-zinc-400">Unlock Achievements:</span>
+                                  <div className="text-[10px] text-subtle font-mono">Battle Scene: {point.battle_scene}</div>
+                                  <div className="space-y-0.5 pt-1 border-t border-border/40 mt-1">
+                                    <span className="block text-[8px] font-bold text-subtle">Unlock Achievements:</span>
                                     {point.stars?.slice(0, 3).map((stArr, stIdx) => {
                                       const cDetail = conditions.find(c => c.id === stArr[0]);
                                       return (
-                                        <div key={stIdx} className="text-[9px] text-zinc-455 truncate">
+                                        <div key={stIdx} className="text-[9px] text-subtle truncate">
                                           ★{stIdx + 1}: {cDetail ? cDetail.description : `Achievement #${stArr[0]}`}
                                         </div>
                                       );
@@ -1084,8 +1084,8 @@ export const HeroDetailPage: React.FC = () => {
                     });
 
                     return (
-                      <div className="p-4 border border-zinc-150 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-xl space-y-4">
-                        <h4 className="font-extrabold text-xs text-zinc-700 dark:text-zinc-200 flex items-center gap-1.5 uppercase tracking-wider">
+                      <div className="p-4 border border-border bg-bg/20 rounded-xl space-y-4">
+                        <h4 className="font-extrabold text-xs text-text dark:text-zinc-200 flex items-center gap-1.5 uppercase tracking-wider">
                           <Scale size={14} className="text-amber-500" />
                           <span>Simulated Cumulative {simulatedStars}★ Modify Bonuses</span>
                         </h4>
@@ -1093,7 +1093,7 @@ export const HeroDetailPage: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {/* Stat totals */}
                           <div className="space-y-1.5">
-                            <span className="block text-[8px] font-bold text-zinc-400 uppercase">Cumulative Stat Modifiers</span>
+                            <span className="block text-[8px] font-bold text-subtle uppercase">Cumulative Stat Modifiers</span>
                             <div className="space-y-1">
                               {Object.keys(statsSum).length > 0 ? (
                                 Object.entries(statsSum).map(([type, val]) => {
@@ -1101,30 +1101,30 @@ export const HeroDetailPage: React.FC = () => {
                                   const isPercent = name.toLowerCase().includes('rate') || val < 1;
                                   const formatted = isPercent ? `+${(val * 100).toFixed(1)}%` : `+${val}`;
                                   return (
-                                    <div key={type} className="flex justify-between text-xs font-mono border-b border-zinc-100 dark:border-zinc-800 pb-1 last:border-0 last:pb-0">
-                                      <span className="text-zinc-500">{name}</span>
+                                    <div key={type} className="flex justify-between text-xs font-mono border-b border-border pb-1 last:border-0 last:pb-0">
+                                      <span className="text-muted">{name}</span>
                                       <span className="text-amber-600 dark:text-amber-400 font-bold">{formatted}</span>
                                     </div>
                                   );
                                 })
                               ) : (
-                                <span className="text-zinc-500 italic text-xs">No modifiers active</span>
+                                <span className="text-muted italic text-xs">No modifiers active</span>
                               )}
                             </div>
                           </div>
 
                           {/* Cost totals */}
                           <div className="space-y-1.5">
-                            <span className="block text-[8px] font-bold text-zinc-400 uppercase">Total Currency & Materials Consumed</span>
+                            <span className="block text-[8px] font-bold text-subtle uppercase">Total Currency & Materials Consumed</span>
                             <div className="space-y-1 text-xs">
-                              <div className="flex justify-between font-mono border-b border-zinc-100 dark:border-zinc-800 pb-1">
-                                <span className="text-zinc-500">Gold Coins</span>
+                              <div className="flex justify-between font-mono border-b border-border pb-1">
+                                <span className="text-muted">Gold Coins</span>
                                 <span className="font-bold text-amber-600">{totalGold.toLocaleString()} Gold</span>
                               </div>
                               {heroChangeAttr && (
                                 <div className="flex justify-between font-mono">
-                                  <span className="text-zinc-500">{getItemName(heroChangeAttr.chip_id) || 'Hero Shards'}</span>
-                                  <span className="font-bold text-zinc-700 dark:text-zinc-350">{totalShards} Shards</span>
+                                  <span className="text-muted">{getItemName(heroChangeAttr.chip_id) || 'Hero Shards'}</span>
+                                  <span className="font-bold text-muted">{totalShards} Shards</span>
                                 </div>
                               )}
                             </div>

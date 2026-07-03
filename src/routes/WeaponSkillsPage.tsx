@@ -17,7 +17,7 @@ const QUALITY_METADATA: Record<number, { label: string; color: string; ringColor
 };
 
 const APPRAISAL_COLORS: Record<string, string> = {
-  'C': 'text-zinc-500 bg-zinc-500/10 border-zinc-500/20',
+  'C': 'text-muted bg-zinc-500/10 border-zinc-500/20',
   'B': 'text-emerald-500 bg-emerald-500/10 border-emerald-500/20',
   'A': 'text-sky-500 bg-sky-500/10 border-sky-500/20',
   'S': 'text-violet-500 bg-violet-500/10 border-violet-500/20',
@@ -217,7 +217,7 @@ export const WeaponSkillsPage: React.FC = () => {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 max-h-[160px] overflow-y-auto pr-1 border border-border/60 rounded-xl p-3 bg-bg/20">
                 {knives.map((wp) => {
                   const appraisalVal = wp.appraise || 'C';
-                  const badgeColor = APPRAISAL_COLORS[appraisalVal] || 'text-zinc-500 bg-zinc-500/10 border-zinc-500/20';
+                  const badgeColor = APPRAISAL_COLORS[appraisalVal] || 'text-muted bg-zinc-500/10 border-zinc-500/20';
 
                   return (
                     <button
@@ -274,7 +274,7 @@ export const WeaponSkillsPage: React.FC = () => {
             {/* Sockets Container */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {slots.map((slot, idx) => {
-                const meta = slot ? (QUALITY_METADATA[slot.skill_quality] || { label: 'Unknown', color: 'bg-zinc-500/10 text-zinc-600 dark:text-zinc-400 border-zinc-500/20', ringColor: 'border-zinc-500/25', shadow: 'shadow-zinc-500/5' }) : null;
+                const meta = slot ? (QUALITY_METADATA[slot.skill_quality] || { label: 'Unknown', color: 'bg-zinc-500/10 text-muted border-zinc-500/20', ringColor: 'border-zinc-500/25', shadow: 'shadow-zinc-500/5' }) : null;
                 const isLocked = lockedSlots[idx];
 
                 return (
@@ -296,7 +296,7 @@ export const WeaponSkillsPage: React.FC = () => {
                         onClick={() => toggleSlotLock(idx)}
                         className={`p-1.5 rounded-lg border transition-all ${
                           !slot 
-                            ? 'text-zinc-300 dark:text-zinc-800 border-transparent cursor-not-allowed' 
+                            ? 'text-subtle dark:text-text border-transparent cursor-not-allowed' 
                             : isLocked 
                               ? 'bg-brand text-white border-brand' 
                               : 'bg-surface hover:bg-hover border-border text-muted hover:text-text cursor-pointer'
@@ -406,7 +406,7 @@ export const WeaponSkillsPage: React.FC = () => {
                 <div className="space-y-2 max-h-[140px] overflow-y-auto pr-1">
                   {slots.map((slot, idx) => {
                     if (!slot) return null;
-                    const meta = QUALITY_METADATA[slot.skill_quality] || { label: 'Unknown', color: 'bg-zinc-500/10 text-zinc-600 dark:text-zinc-400 border-zinc-500/20', ringColor: 'border-zinc-500/25', shadow: 'shadow-zinc-500/5' };
+                    const meta = QUALITY_METADATA[slot.skill_quality] || { label: 'Unknown', color: 'bg-zinc-500/10 text-muted border-zinc-500/20', ringColor: 'border-zinc-500/25', shadow: 'shadow-zinc-500/5' };
                     return (
                       <div key={`stat-out-${idx}`} className="flex justify-between items-center text-xs p-2.5 bg-bg border border-border rounded-xl">
                         <span className="font-semibold text-text truncate pr-4">{slot.name}</span>
@@ -471,7 +471,7 @@ export const WeaponSkillsPage: React.FC = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {filteredSkills.map(s => {
-              const meta = QUALITY_METADATA[s.skill_quality] || { label: 'Unknown', color: 'bg-zinc-500/10 text-zinc-600 dark:text-zinc-400 border-zinc-500/20', ringColor: 'border-zinc-500/25', shadow: 'shadow-zinc-500/5' };
+              const meta = QUALITY_METADATA[s.skill_quality] || { label: 'Unknown', color: 'bg-zinc-500/10 text-muted border-zinc-500/20', ringColor: 'border-zinc-500/25', shadow: 'shadow-zinc-500/5' };
               return (
                 <div 
                   key={s.id} 

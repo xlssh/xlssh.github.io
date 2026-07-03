@@ -173,34 +173,34 @@ export const SkillHandbookPage: React.FC = () => {
     <div className="space-y-6 pb-12">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-black text-zinc-900 dark:text-zinc-100 tracking-tight flex items-center gap-2">
+        <h1 className="text-3xl font-black text-text tracking-tight flex items-center gap-2">
           <BookOpen className="text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
           Skill & Talent Handbook
         </h1>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+        <p className="text-sm text-muted mt-1">
           Explore complete active abilities and passive talent growth curves parsed natively from the game client's databases.
         </p>
       </div>
 
       {/* Control Filters */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl shadow-sm">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-surface border border-border rounded-2xl shadow-sm">
         <div className="relative md:col-span-2">
           <input
             type="text"
             placeholder="Search by name, description, or Skill ID…"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-xs rounded-xl text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full pl-9 pr-4 py-2 border border-border bg-bg text-xs rounded-xl text-text placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             aria-label="Search by name, description, or Skill ID"
           />
-          <Search size={14} className="absolute left-3 top-3 text-zinc-400" aria-hidden="true" />
+          <Search size={14} className="absolute left-3 top-3 text-subtle" aria-hidden="true" />
         </div>
 
         <div>
           <select
             value={categoryFilter}
             onChange={(e: any) => setCategoryFilter(e.target.value)}
-            className="w-full px-3 py-2 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-xs rounded-xl text-zinc-800 dark:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+            className="w-full px-3 py-2 border border-border bg-bg text-xs rounded-xl text-text dark:text-subtle focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
             aria-label="Category filter"
           >
             <option value="all">All Category Types</option>
@@ -214,7 +214,7 @@ export const SkillHandbookPage: React.FC = () => {
           <select
             value={sortBy}
             onChange={(e: any) => setSortBy(e.target.value)}
-            className="w-full px-3 py-2 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-xs rounded-xl text-zinc-800 dark:text-zinc-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
+            className="w-full px-3 py-2 border border-border bg-bg text-xs rounded-xl text-text dark:text-subtle focus:outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer"
             aria-label="Sort options"
           >
             <option value="id_desc">Skill ID (Newest First)</option>
@@ -227,7 +227,7 @@ export const SkillHandbookPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Side: Scrollable Skills List */}
         <div className="lg:col-span-1 space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-          <div className="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 uppercase px-1 flex justify-between">
+          <div className="text-[10px] font-bold text-muted uppercase px-1 flex justify-between">
             <span>Abilities Found</span>
             <span>{filteredSkills.length} entries</span>
           </div>
@@ -249,12 +249,12 @@ export const SkillHandbookPage: React.FC = () => {
                 className={`p-3 rounded-xl border cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
                   isSelected
                     ? 'border-indigo-500 dark:border-indigo-400 bg-indigo-50/50 dark:bg-indigo-950/20'
-                    : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/60 hover:border-zinc-300 dark:hover:border-zinc-700'
+                    : 'border-border bg-surface hover:border-border-strong'
                 }`}
               >
                 <div className="flex items-start justify-between">
                   <div className="space-y-0.5">
-                    <div className="text-xs font-bold text-zinc-800 dark:text-white flex items-center gap-1.5">
+                    <div className="text-xs font-bold text-text flex items-center gap-1.5">
                       {g.isTalent ? (
                         <span className="px-1 py-0.5 text-[8px] bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 text-sky-700 dark:text-sky-400 rounded">Talent</span>
                       ) : (
@@ -262,11 +262,11 @@ export const SkillHandbookPage: React.FC = () => {
                       )}
                       {g.name}
                     </div>
-                    <div className="text-[10px] font-mono text-zinc-500 dark:text-zinc-400">ID: {g.skillId}</div>
+                    <div className="text-[10px] font-mono text-muted">ID: {g.skillId}</div>
                   </div>
-                  <span className="text-[9px] font-black text-zinc-500 dark:text-zinc-400 font-mono">Lv.1-{g.levels.length}</span>
+                  <span className="text-[9px] font-black text-muted font-mono">Lv.1-{g.levels.length}</span>
                 </div>
-                <p className="text-[10px] text-zinc-600 dark:text-zinc-300 line-clamp-2 mt-2">
+                <p className="text-[10px] text-muted dark:text-subtle line-clamp-2 mt-2">
                   {cleanHtml(g.levels[0]?.description || '')}
                 </p>
               </div>
@@ -274,7 +274,7 @@ export const SkillHandbookPage: React.FC = () => {
           })}
 
           {filteredSkills.length > 100 && (
-            <div className="text-center text-[10px] text-zinc-500 dark:text-zinc-400 py-2 border border-dashed border-zinc-205 dark:border-zinc-800 rounded-xl bg-zinc-50/40 dark:bg-zinc-950/40">
+            <div className="text-center text-[10px] text-muted py-2 border border-dashed border-border rounded-xl bg-bg/40 dark:bg-bg/40">
               Showing first 100 skills. Narrow down filters to find others.
             </div>
           )}
@@ -283,35 +283,35 @@ export const SkillHandbookPage: React.FC = () => {
         {/* Right Side: Skill Detail & Level Up Growth Curve Simulator */}
         <div className="lg:col-span-2 space-y-6">
           {selectedGroup ? (
-            <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl space-y-6 shadow-sm">
+            <div className="p-6 bg-surface border border-border rounded-2xl space-y-6 shadow-sm">
               {/* Header card info */}
               <div className="flex items-start justify-between">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-2xl font-black text-zinc-900 dark:text-zinc-100">{selectedGroup.name}</span>
+                    <span className="text-2xl font-black text-text">{selectedGroup.name}</span>
                     <span className={`text-xs px-2 py-0.5 rounded-full font-bold uppercase ${
                       selectedGroup.isTalent ? 'bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400 border border-sky-200 dark:border-sky-700/30' : 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-755 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-700/30'
                     }`}>
                       {selectedGroup.isTalent ? '🧬 Passive Talent' : '⚔️ Active Skill'}
                     </span>
                   </div>
-                  <div className="flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
-                    <span>Base Skill ID: <span className="font-mono text-zinc-700 dark:text-zinc-300">{selectedGroup.skillId}</span></span>
+                  <div className="flex items-center gap-3 text-xs text-muted">
+                    <span>Base Skill ID: <span className="font-mono text-muted">{selectedGroup.skillId}</span></span>
                     <span>•</span>
-                    <span>Engine Sort Priority: <span className="font-mono text-zinc-700 dark:text-zinc-300">{selectedGroup.sortId}</span></span>
+                    <span>Engine Sort Priority: <span className="font-mono text-muted">{selectedGroup.sortId}</span></span>
                   </div>
                 </div>
                 {selectedGroup.icon > 0 && (
-                  <div className="w-12 h-12 rounded-xl bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center font-mono text-xs text-zinc-500 dark:text-zinc-400 font-black">
+                  <div className="w-12 h-12 rounded-xl bg-bg border border-border flex items-center justify-center font-mono text-xs text-muted font-black">
                     #{selectedGroup.icon}
                   </div>
                 )}
               </div>
 
               {/* Slider for Level Simulator */}
-              <div className="p-4 bg-zinc-50 dark:bg-zinc-955 border border-zinc-200 dark:border-zinc-800 rounded-xl space-y-3">
+              <div className="p-4 bg-bg border border-border rounded-xl space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-650 dark:text-zinc-300">
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-muted">
                     <Sparkles size={14} className="text-amber-500" aria-hidden="true" />
                     Level Growth Simulator
                   </div>
@@ -328,7 +328,7 @@ export const SkillHandbookPage: React.FC = () => {
                   className="w-full accent-indigo-600 cursor-pointer"
                   aria-label="Simulate skill level"
                 />
-                <div className="text-[10px] text-zinc-500 dark:text-zinc-400 flex justify-between">
+                <div className="text-[10px] text-muted flex justify-between">
                   <span>Starting Form (Lv.1)</span>
                   <span>Endgame Master (Lv.{selectedGroup.levels.length})</span>
                 </div>
@@ -336,35 +336,35 @@ export const SkillHandbookPage: React.FC = () => {
 
               {/* Cleaned Description Panel */}
               <div className="space-y-2">
-                <span className="text-[11px] font-bold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block">Description Timeline (At simulated Level)</span>
-                <div className="p-4 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800/50 rounded-xl text-sm leading-relaxed text-zinc-800 dark:text-zinc-100 min-h-24">
+                <span className="text-[11px] font-bold text-muted uppercase tracking-wider block">Description Timeline (At simulated Level)</span>
+                <div className="p-4 bg-bg border border-border/50 rounded-xl text-sm leading-relaxed text-text dark:text-zinc-100 min-h-24">
                   {cleanHtml(selectedGroup.levels[simLevel - 1]?.description || '')}
                 </div>
               </div>
 
               {/* Skill multipliers breakdown */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div className="p-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-center">
-                  <span className="text-[10px] text-zinc-500 dark:text-zinc-400 block uppercase font-bold">Scaling Steps</span>
-                  <span className="text-sm font-bold text-zinc-800 dark:text-white">{selectedGroup.levels.length} levels</span>
+                <div className="p-3 bg-bg border border-border rounded-xl text-center">
+                  <span className="text-[10px] text-muted block uppercase font-bold">Scaling Steps</span>
+                  <span className="text-sm font-bold text-text">{selectedGroup.levels.length} levels</span>
                 </div>
-                <div className="p-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-center">
-                  <span className="text-[10px] text-zinc-500 dark:text-zinc-400 block uppercase font-bold">Wielders</span>
-                  <span className="text-sm font-bold text-zinc-800 dark:text-white">{skillWielders.length} heroes</span>
+                <div className="p-3 bg-bg border border-border rounded-xl text-center">
+                  <span className="text-[10px] text-muted block uppercase font-bold">Wielders</span>
+                  <span className="text-sm font-bold text-text">{skillWielders.length} heroes</span>
                 </div>
-                <div className="p-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-center">
-                  <span className="text-[10px] text-zinc-500 dark:text-zinc-400 block uppercase font-bold">Database ID</span>
+                <div className="p-3 bg-bg border border-border rounded-xl text-center">
+                  <span className="text-[10px] text-muted block uppercase font-bold">Database ID</span>
                   <span className="text-xs font-mono font-bold text-indigo-700 dark:text-violet-300">{selectedGroup.levels[simLevel - 1]?.id || selectedGroup.skillId}</span>
                 </div>
-                <div className="p-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-xl text-center">
-                  <span className="text-[10px] text-zinc-500 dark:text-zinc-400 block uppercase font-bold">Fury Charge</span>
+                <div className="p-3 bg-bg border border-border rounded-xl text-center">
+                  <span className="text-[10px] text-muted block uppercase font-bold">Fury Charge</span>
                   <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-300">{selectedGroup.isTalent ? 'N/A' : '100 starting'}</span>
                 </div>
               </div>
 
               {/* Eligible Wielders list */}
-              <div className="space-y-3 pt-4 border-t border-zinc-200 dark:border-zinc-800">
-                <span className="text-[11px] font-black text-zinc-500 dark:text-zinc-400 uppercase tracking-widest flex items-center gap-1">
+              <div className="space-y-3 pt-4 border-t border-border">
+                <span className="text-[11px] font-black text-muted uppercase tracking-widest flex items-center gap-1">
                   <User size={12} className="text-indigo-500" aria-hidden="true" />
                   Assigned Mercenary Wielders ({skillWielders.length})
                 </span>
@@ -374,26 +374,26 @@ export const SkillHandbookPage: React.FC = () => {
                       <Link
                         key={h.id}
                         to={`/heroes/${h.id}`}
-                        className="p-3 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 hover:border-indigo-500 dark:hover:border-indigo-400 transition-all flex items-center justify-between"
+                        className="p-3 rounded-xl border border-border bg-bg hover:border-indigo-500 dark:hover:border-indigo-400 transition-all flex items-center justify-between"
                       >
                         <div className="space-y-0.5">
-                          <span className="text-xs font-bold text-zinc-850 dark:text-white block">{h.name}</span>
-                          <span className="text-[9px] text-zinc-500 dark:text-zinc-400">{h.role || 'Mercenary'}</span>
+                          <span className="text-xs font-bold text-text block">{h.name}</span>
+                          <span className="text-[9px] text-muted">{h.role || 'Mercenary'}</span>
                         </div>
-                        <ChevronRightIcon size={12} className="text-zinc-500" aria-hidden="true" />
+                        <ChevronRightIcon size={12} className="text-muted" aria-hidden="true" />
                       </Link>
                     ))}
                   </div>
                 ) : (
-                  <div className="p-4 rounded-xl border border-dashed border-zinc-200 dark:border-zinc-800 bg-zinc-50/40 dark:bg-zinc-950/40 text-center">
-                    <Info size={14} className="text-zinc-500 mx-auto mb-1" aria-hidden="true" />
-                    <span className="text-[11px] text-zinc-500 dark:text-zinc-400">This ability is specialized or belongs to campaign bosses/unreleased roster partners.</span>
+                  <div className="p-4 rounded-xl border border-dashed border-border bg-bg/40 dark:bg-bg/40 text-center">
+                    <Info size={14} className="text-muted mx-auto mb-1" aria-hidden="true" />
+                    <span className="text-[11px] text-muted">This ability is specialized or belongs to campaign bosses/unreleased roster partners.</span>
                   </div>
                 )}
               </div>
             </div>
           ) : (
-            <div className="h-96 border-2 border-dashed border-zinc-200 dark:border-zinc-800 rounded-2xl flex flex-col items-center justify-center text-zinc-500">
+            <div className="h-96 border-2 border-dashed border-border rounded-2xl flex flex-col items-center justify-center text-muted">
               <Eye size={24} className="mb-2" aria-hidden="true" />
               <p className="text-sm">Select an ability on the left sidebar to simulate level growth curve</p>
             </div>

@@ -122,7 +122,7 @@ function getActivityTypeBadgeClass(type: number): string {
     case 22:
       return 'bg-cyan-50 text-cyan-700 dark:bg-cyan-950/40 dark:text-cyan-300 border border-cyan-200/50 dark:border-cyan-900/30';
     default:
-      return 'bg-zinc-50 text-zinc-600 dark:bg-zinc-900/40 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-800/30';
+      return 'bg-bg text-muted dark:bg-surface/40 dark:text-subtle border border-border/50 dark:border-border/30';
   }
 }
 
@@ -136,7 +136,7 @@ function getTimeTypeBadgeClass(type: number): string {
     case 3:
       return 'bg-teal-50 text-teal-700 dark:bg-teal-950/40 dark:text-teal-300 border border-teal-200/50 dark:border-teal-900/30';
     default:
-      return 'bg-zinc-50 text-zinc-650 dark:bg-zinc-900/40 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-800/30';
+      return 'bg-bg text-muted dark:bg-surface/40 dark:text-subtle border border-border/50 dark:border-border/30';
   }
 }
 
@@ -184,7 +184,7 @@ export const PromotionsPage: React.FC = () => {
     {
       accessorKey: 'id',
       header: 'ID',
-      cell: (info) => <span className="font-mono text-zinc-500 font-semibold">{info.getValue() as number}</span>,
+      cell: (info) => <span className="font-mono text-muted font-semibold">{info.getValue() as number}</span>,
     },
     {
       accessorKey: 'name',
@@ -193,10 +193,10 @@ export const PromotionsPage: React.FC = () => {
         const p = info.row.original;
         return (
           <div className="flex flex-col">
-            <span className="font-bold text-zinc-800 dark:text-zinc-200 hover:text-violet-600 transition-colors cursor-pointer">
+            <span className="font-bold text-text hover:text-violet-600 transition-colors cursor-pointer">
               {p.name || `Activity #${p.id}`}
             </span>
-            <span className="font-mono text-[10px] text-zinc-400">Act ID: #{p.act_id}</span>
+            <span className="font-mono text-[10px] text-subtle">Act ID: #{p.act_id}</span>
           </div>
         );
       },
@@ -230,7 +230,7 @@ export const PromotionsPage: React.FC = () => {
       header: 'Schedule / Duration',
       accessorFn: (row) => formatSchedule(row.time_type, row.start_time, row.end_time),
       cell: (info) => (
-        <span className="font-semibold text-zinc-850 dark:text-zinc-150">
+        <span className="font-semibold text-text">
           {info.getValue() as string}
         </span>
       ),
@@ -242,7 +242,7 @@ export const PromotionsPage: React.FC = () => {
         const p = info.row.original;
         const hasLevel = (p.player_lv ?? 0) > 0;
         const hasVip = (p.vip_lv ?? 0) > 0;
-        if (!hasLevel && !hasVip) return <span className="text-zinc-400 dark:text-zinc-650 text-xs font-semibold">-</span>;
+        if (!hasLevel && !hasVip) return <span className="text-subtle dark:text-muted text-xs font-semibold">-</span>;
         return (
           <div className="flex flex-wrap gap-1.5">
             {hasLevel && (
@@ -270,26 +270,26 @@ export const PromotionsPage: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-4">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-violet-100 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400 rounded-xl">
             <Flame size={24} />
           </div>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">Promotions & Recharge Events</h1>
-            <p className="text-sm text-zinc-500">Track recharge milestones, event schedules, active triggers and bonus campaign durations.</p>
+            <h1 className="text-2xl font-bold tracking-tight text-text dark:text-zinc-100">Promotions & Recharge Events</h1>
+            <p className="text-sm text-muted">Track recharge milestones, event schedules, active triggers and bonus campaign durations.</p>
           </div>
         </div>
       </div>
 
       {/* Filters */}
-      <div className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="p-4 border border-border bg-surface rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1.5">Activity Type</label>
+          <label className="block text-xs font-semibold text-subtle uppercase tracking-wider mb-1.5">Activity Type</label>
           <select
             value={selectedActType}
             onChange={(e) => setSelectedEventType(e.target.value)}
-            className="block w-full py-1.5 px-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
+            className="block w-full py-1.5 px-2 border border-border rounded-lg text-sm bg-bg focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
           >
             <option value="all">All Activity Types</option>
             {uniqueActTypes.sort((a, b) => a - b).map(t => (
@@ -299,11 +299,11 @@ export const PromotionsPage: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1.5">Time Category</label>
+          <label className="block text-xs font-semibold text-subtle uppercase tracking-wider mb-1.5">Time Category</label>
           <select
             value={selectedTimeType}
             onChange={(e) => setSelectedTimeType(e.target.value)}
-            className="block w-full py-1.5 px-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
+            className="block w-full py-1.5 px-2 border border-border rounded-lg text-sm bg-bg focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
           >
             <option value="all">All Time Types</option>
             {uniqueTimeTypes.sort((a, b) => a - b).map(t => (

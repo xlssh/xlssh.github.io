@@ -37,13 +37,13 @@ export const DailyQuestsPage: React.FC = () => {
     {
       accessorKey: 'id',
       header: 'Task ID',
-      cell: (info) => <span className="font-mono text-zinc-500 font-semibold">{info.getValue() as number}</span>,
+      cell: (info) => <span className="font-mono text-muted font-semibold">{info.getValue() as number}</span>,
     },
     {
       accessorKey: 'task_name',
       header: 'Task Name',
       cell: (info) => (
-        <span className="font-bold text-zinc-800 dark:text-zinc-200 hover:text-violet-600 transition-colors">
+        <span className="font-bold text-text hover:text-violet-600 transition-colors">
           {info.getValue() as string || `Daily Task #${info.row.original.id}`}
         </span>
       ),
@@ -51,12 +51,12 @@ export const DailyQuestsPage: React.FC = () => {
     {
       accessorKey: 'type',
       header: 'Quest Type',
-      cell: (info) => <span className="text-xs font-semibold text-zinc-500">Type {info.getValue() as number}</span>,
+      cell: (info) => <span className="text-xs font-semibold text-muted">Type {info.getValue() as number}</span>,
     },
     {
       accessorKey: 'event_type',
       header: 'Event Type',
-      cell: (info) => <span className="text-xs font-semibold text-zinc-400">Event {info.getValue() as number}</span>,
+      cell: (info) => <span className="text-xs font-semibold text-subtle">Event {info.getValue() as number}</span>,
     },
     {
       accessorKey: 'point',
@@ -66,7 +66,7 @@ export const DailyQuestsPage: React.FC = () => {
     {
       accessorKey: 'rate',
       header: 'Weight Rate',
-      cell: (info) => <span className="font-mono text-xs text-zinc-400">{info.getValue() as number || 0}</span>,
+      cell: (info) => <span className="font-mono text-xs text-subtle">{info.getValue() as number || 0}</span>,
     },
     {
       accessorKey: 'description',
@@ -74,7 +74,7 @@ export const DailyQuestsPage: React.FC = () => {
       cell: (info) => {
         const desc = info.getValue() as string | null;
         return (
-          <p className="max-w-md truncate text-xs text-zinc-500 italic" title={desc || ''}>
+          <p className="max-w-md truncate text-xs text-muted italic" title={desc || ''}>
             {desc || 'No description available.'}
           </p>
         );
@@ -91,14 +91,14 @@ export const DailyQuestsPage: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-4">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-violet-100 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400 rounded-xl">
             <Calendar size={24} />
           </div>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">Daily Quests</h1>
-            <p className="text-sm text-zinc-500">Inspect active recurring assignments, execution coefficients and target activity points.</p>
+            <h1 className="text-2xl font-bold tracking-tight text-text dark:text-zinc-100">Daily Quests</h1>
+            <p className="text-sm text-muted">Inspect active recurring assignments, execution coefficients and target activity points.</p>
           </div>
         </div>
       </div>

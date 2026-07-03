@@ -210,30 +210,30 @@ export const CullingPage: React.FC = () => {
   return (
     <div className="space-y-6 max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-5">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-border pb-5">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <Swords className="text-red-500 animate-pulse" size={28} />
             Culling Game & Magic training Auditor
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Analyze endless abyss trial drops, culling stage layouts, and optimize culling magic training requirements.
           </p>
         </div>
 
         {/* Tab Selector */}
-        <div className="flex bg-zinc-100 dark:bg-zinc-950 p-1.5 rounded-xl border border-zinc-200 dark:border-zinc-850 self-end">
+        <div className="flex bg-bg p-1.5 rounded-xl border border-border self-end">
           <button
             onClick={() => setActiveTab('stages')}
             className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
               activeTab === 'stages'
-                ? 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-sm'
-                : 'text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200'
+                ? 'bg-surface text-text shadow-sm'
+                : 'text-muted hover:text-text dark:hover:text-zinc-200'
             }`}
           >
             Endless Abyss stages
@@ -242,8 +242,8 @@ export const CullingPage: React.FC = () => {
             onClick={() => setActiveTab('calculator')}
             className={`px-4 py-2 rounded-lg text-xs font-bold transition-all ${
               activeTab === 'calculator'
-                ? 'bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white shadow-sm'
-                : 'text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200'
+                ? 'bg-surface text-text shadow-sm'
+                : 'text-muted hover:text-text dark:hover:text-zinc-200'
             }`}
           >
             Magic Upgrades Optimizer
@@ -256,8 +256,8 @@ export const CullingPage: React.FC = () => {
           
           {/* Left Column: Culling Floors selection */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-              <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Abyss Floors</span>
+            <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+              <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Abyss Floors</span>
               
               <div className="space-y-1.5 max-h-[460px] overflow-y-auto pr-1">
                 {stages.map((stage) => {
@@ -269,11 +269,11 @@ export const CullingPage: React.FC = () => {
                       className={`w-full flex items-center justify-between p-3 rounded-xl border text-xs font-bold transition-all ${
                         isSelected
                           ? 'border-red-500 bg-red-500/10 text-red-700 dark:text-red-400 shadow-sm'
-                          : 'border-zinc-50 dark:border-zinc-955 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 text-zinc-655 dark:text-zinc-305'
+                          : 'border-border bg-bg/50 hover:border-border text-muted'
                       }`}
                     >
                       <span>{stage.name || `Floor #${stage.id}`}</span>
-                      <span className="font-mono text-[9px] text-zinc-400 bg-zinc-100 dark:bg-zinc-950 px-2 py-0.5 rounded">
+                      <span className="font-mono text-[9px] text-subtle bg-bg px-2 py-0.5 rounded">
                         Lv. {stage.need_level}
                       </span>
                     </button>
@@ -287,17 +287,17 @@ export const CullingPage: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             
             {/* Boss Encounter card */}
-            <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-5">
-              <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Floor Encounter Boss Profile</span>
+            <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-5">
+              <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Floor Encounter Boss Profile</span>
               
               {activeStage ? (
                 <div className="space-y-5">
-                  <div className="flex justify-between items-start pb-3 border-b border-zinc-100 dark:border-zinc-800/60">
+                  <div className="flex justify-between items-start pb-3 border-b border-border/60">
                     <div>
-                      <h3 className="font-black text-base text-zinc-850 dark:text-zinc-100">
+                      <h3 className="font-black text-base text-text">
                         {activeStage.name || `Floor #${activeStage.id}`}
                       </h3>
-                      <p className="text-[10px] text-zinc-450 mt-1 font-mono">
+                      <p className="text-[10px] text-subtle mt-1 font-mono">
                         Location Index: {activeStage.location} | Entry level limit: {activeStage.need_level}
                       </p>
                     </div>
@@ -309,33 +309,33 @@ export const CullingPage: React.FC = () => {
                   {/* Boss Attributes block */}
                   {activeBoss ? (
                     <div className="space-y-4">
-                      <span className="text-[9.5px] font-semibold text-zinc-400 uppercase block">Boss Combat Properties</span>
+                      <span className="text-[9.5px] font-semibold text-subtle uppercase block">Boss Combat Properties</span>
                       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
                         
-                        <div className="p-3 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800/50 rounded-xl">
-                          <span className="text-zinc-455 text-[9px] uppercase block mb-0.5 font-bold">Health (HP)</span>
-                          <span className="font-mono font-black text-zinc-800 dark:text-white text-sm">
+                        <div className="p-3 bg-bg/20 border border-border/50 rounded-xl">
+                          <span className="text-subtle text-[9px] uppercase block mb-0.5 font-bold">Health (HP)</span>
+                          <span className="font-mono font-black text-text text-sm">
                             {activeBoss.life.toLocaleString()}
                           </span>
                         </div>
 
-                        <div className="p-3 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800/50 rounded-xl">
-                          <span className="text-zinc-455 text-[9px] uppercase block mb-0.5 font-bold">Strength</span>
-                          <span className="font-mono font-black text-zinc-800 dark:text-white text-sm">
+                        <div className="p-3 bg-bg/20 border border-border/50 rounded-xl">
+                          <span className="text-subtle text-[9px] uppercase block mb-0.5 font-bold">Strength</span>
+                          <span className="font-mono font-black text-text text-sm">
                             {activeBoss.power.toLocaleString()}
                           </span>
                         </div>
 
-                        <div className="p-3 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800/50 rounded-xl">
-                          <span className="text-zinc-455 text-[9px] uppercase block mb-0.5 font-bold">Agility</span>
-                          <span className="font-mono font-black text-zinc-800 dark:text-white text-sm">
+                        <div className="p-3 bg-bg/20 border border-border/50 rounded-xl">
+                          <span className="text-subtle text-[9px] uppercase block mb-0.5 font-bold">Agility</span>
+                          <span className="font-mono font-black text-text text-sm">
                             {activeBoss.agile.toLocaleString()}
                           </span>
                         </div>
 
-                        <div className="p-3 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800/50 rounded-xl">
-                          <span className="text-zinc-455 text-[9px] uppercase block mb-0.5 font-bold">Wisdom</span>
-                          <span className="font-mono font-black text-zinc-800 dark:text-white text-sm">
+                        <div className="p-3 bg-bg/20 border border-border/50 rounded-xl">
+                          <span className="text-subtle text-[9px] uppercase block mb-0.5 font-bold">Wisdom</span>
+                          <span className="font-mono font-black text-text text-sm">
                             {activeBoss.intelligence.toLocaleString()}
                           </span>
                         </div>
@@ -343,13 +343,13 @@ export const CullingPage: React.FC = () => {
                       </div>
                     </div>
                   ) : (
-                    <div className="p-3 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800/60 rounded-xl text-center text-xs text-zinc-400 italic">
+                    <div className="p-3 bg-bg/20 border border-border/60 rounded-xl text-center text-xs text-subtle italic">
                       Boss stats parameters not defined for this stage level.
                     </div>
                   )}
                 </div>
               ) : (
-                <div className="py-8 text-center text-xs text-zinc-400 italic">
+                <div className="py-8 text-center text-xs text-subtle italic">
                   Select a floor to view details.
                 </div>
               )}
@@ -359,18 +359,18 @@ export const CullingPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* First Clear rewards */}
-              <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">First-Clear Drop Package</span>
+              <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">First-Clear Drop Package</span>
                 <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1">
                   {firstClearAwards.length > 0 ? (
                     firstClearAwards.map((item, idx) => (
-                      <div key={idx} className="p-2.5 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/15 rounded-xl flex items-center justify-between text-xs font-bold">
-                        <span className="text-zinc-700 dark:text-zinc-300">{item.name}</span>
+                      <div key={idx} className="p-2.5 border border-border/80 bg-bg/20 dark:bg-bg/15 rounded-xl flex items-center justify-between text-xs font-bold">
+                        <span className="text-muted">{item.name}</span>
                         <span className="font-mono text-red-600 dark:text-red-400 font-bold">{item.amount.toLocaleString()}x</span>
                       </div>
                     ))
                   ) : (
-                    <div className="text-center py-6 text-xs text-zinc-400 italic">
+                    <div className="text-center py-6 text-xs text-subtle italic">
                       No first-clear drop package registered.
                     </div>
                   )}
@@ -378,18 +378,18 @@ export const CullingPage: React.FC = () => {
               </div>
 
               {/* Daily sweeps drops */}
-              <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Daily Extra Sweep Drops</span>
+              <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Daily Extra Sweep Drops</span>
                 <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1">
                   {extraAwards.length > 0 ? (
                     extraAwards.map((item, idx) => (
-                      <div key={idx} className="p-2.5 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/15 rounded-xl flex items-center justify-between text-xs font-bold">
-                        <span className="text-zinc-700 dark:text-zinc-300">{item.name}</span>
-                        <span className="font-mono text-zinc-800 dark:text-white font-bold">{item.amount.toLocaleString()}x</span>
+                      <div key={idx} className="p-2.5 border border-border/80 bg-bg/20 dark:bg-bg/15 rounded-xl flex items-center justify-between text-xs font-bold">
+                        <span className="text-muted">{item.name}</span>
+                        <span className="font-mono text-text font-bold">{item.amount.toLocaleString()}x</span>
                       </div>
                     ))
                   ) : (
-                    <div className="text-center py-6 text-xs text-zinc-400 italic">
+                    <div className="text-center py-6 text-xs text-subtle italic">
                       No extra sweep drops registered.
                     </div>
                   )}
@@ -405,12 +405,12 @@ export const CullingPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-fade-in">
           {/* Settings panel */}
           <div className="lg:col-span-1 space-y-6">
-            <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-              <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Configure Magic Node</span>
+            <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+              <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Configure Magic Node</span>
               
               {/* Magic Category Selector */}
               <div className="space-y-1.5">
-                <label className="text-[10px] font-bold text-zinc-400 uppercase block mb-1">Select Magic Force</label>
+                <label className="text-[10px] font-bold text-subtle uppercase block mb-1">Select Magic Force</label>
                 <div className="grid grid-cols-1 gap-2">
                   {[
                     { type: 1, label: 'Vanguard Force', desc: 'HP & Defense boost' },
@@ -424,11 +424,11 @@ export const CullingPage: React.FC = () => {
                       className={`text-left p-3 rounded-xl border text-xs font-bold transition-all ${
                         selectedMagicType === m.type
                           ? 'border-violet-500 bg-violet-500/10 text-violet-700 dark:text-violet-400'
-                          : 'border-zinc-50 dark:border-zinc-955 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 text-zinc-600 dark:text-zinc-400'
+                          : 'border-border bg-bg/50 hover:border-border text-muted'
                       }`}
                     >
                       <div className="font-extrabold text-sm">{m.label}</div>
-                      <span className="text-[10px] text-zinc-400 block font-normal mt-0.5">{m.desc}</span>
+                      <span className="text-[10px] text-subtle block font-normal mt-0.5">{m.desc}</span>
                     </button>
                   ))}
                 </div>
@@ -438,7 +438,7 @@ export const CullingPage: React.FC = () => {
               {selectedChain.length > 0 && (
                 <div className="grid grid-cols-2 gap-3 pt-2">
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-zinc-400 uppercase block">Current Step</label>
+                    <label className="text-[10px] font-bold text-subtle uppercase block">Current Step</label>
                     <select
                       value={currentStep}
                       onChange={(e) => {
@@ -448,7 +448,7 @@ export const CullingPage: React.FC = () => {
                           setTargetStep(Math.min(selectedChain.length - 1, val + 1));
                         }
                       }}
-                      className="w-full px-3 py-2 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50 dark:bg-zinc-950 text-xs font-bold text-zinc-800 dark:text-zinc-200 focus:outline-none"
+                      className="w-full px-3 py-2 border border-border rounded-xl bg-bg text-xs font-bold text-text focus:outline-none"
                     >
                       {selectedChain.map((step, idx) => (
                         <option key={idx} value={idx}>
@@ -459,11 +459,11 @@ export const CullingPage: React.FC = () => {
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-[10px] font-bold text-zinc-400 uppercase block">Target Step</label>
+                    <label className="text-[10px] font-bold text-subtle uppercase block">Target Step</label>
                     <select
                       value={targetStep}
                       onChange={(e) => setTargetStep(Math.max(currentStep + 1, parseInt(e.target.value)))}
-                      className="w-full px-3 py-2 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50 dark:bg-zinc-950 text-xs font-bold text-zinc-800 dark:text-zinc-200 focus:outline-none"
+                      className="w-full px-3 py-2 border border-border rounded-xl bg-bg text-xs font-bold text-text focus:outline-none"
                     >
                       {selectedChain.map((step, idx) => (
                         <option key={idx} value={idx} disabled={idx <= currentStep}>
@@ -481,90 +481,90 @@ export const CullingPage: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             
             {/* Required Resources Card */}
-            <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-5">
-              <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Required Training Resources</span>
+            <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-5">
+              <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Required Training Resources</span>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {/* Silver Practice */}
-                <div className="p-4 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800 rounded-xl flex flex-col gap-1 text-xs">
-                  <span className="font-bold text-zinc-400 flex items-center gap-1 uppercase text-[10px]">
-                    <Coins size={14} className="text-zinc-400" />
+                <div className="p-4 bg-bg/20 border border-border rounded-xl flex flex-col gap-1 text-xs">
+                  <span className="font-bold text-subtle flex items-center gap-1 uppercase text-[10px]">
+                    <Coins size={14} className="text-subtle" />
                     Silver Practice Cost
                   </span>
-                  <div className="mt-2 font-mono font-black text-zinc-800 dark:text-white text-base">
+                  <div className="mt-2 font-mono font-black text-text text-base">
                     {trainingCalculations.silver.toLocaleString()} Silver
                   </div>
-                  <span className="text-[10px] text-zinc-400 mt-1 font-normal block">
+                  <span className="text-[10px] text-subtle mt-1 font-normal block">
                     Requires {trainingCalculations.silverSteps.toLocaleString()} practice attempts.
                   </span>
                 </div>
 
                 {/* Gold Practice */}
-                <div className="p-4 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800 rounded-xl flex flex-col gap-1 text-xs">
-                  <span className="font-bold text-zinc-400 flex items-center gap-1 uppercase text-[10px]">
+                <div className="p-4 bg-bg/20 border border-border rounded-xl flex flex-col gap-1 text-xs">
+                  <span className="font-bold text-subtle flex items-center gap-1 uppercase text-[10px]">
                     <Sparkles size={14} className="text-violet-500" />
                     Gold Practice Cost
                   </span>
                   <div className="mt-2 font-mono font-black text-violet-600 dark:text-violet-400 text-base">
                     {trainingCalculations.gold.toLocaleString()} Gold
                   </div>
-                  <span className="text-[10px] text-zinc-400 mt-1 font-normal block">
+                  <span className="text-[10px] text-subtle mt-1 font-normal block">
                     Requires {trainingCalculations.goldSteps.toLocaleString()} practice attempts.
                   </span>
                 </div>
 
                 {/* Fragment Practice */}
-                <div className="p-4 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800 rounded-xl flex flex-col gap-1 text-xs">
-                  <span className="font-bold text-zinc-400 flex items-center gap-1 uppercase text-[10px]">
+                <div className="p-4 bg-bg/20 border border-border rounded-xl flex flex-col gap-1 text-xs">
+                  <span className="font-bold text-subtle flex items-center gap-1 uppercase text-[10px]">
                     <Gem size={14} className="text-emerald-500" />
                     Fragments Required
                   </span>
                   <div className="mt-2 font-mono font-black text-emerald-600 dark:text-emerald-400 text-base">
                     {trainingCalculations.items.toLocaleString()} Fragments
                   </div>
-                  <span className="text-[10px] text-zinc-400 mt-1 font-normal block font-sans">
+                  <span className="text-[10px] text-subtle mt-1 font-normal block font-sans">
                     Requires {trainingCalculations.itemSteps.toLocaleString()} practice attempts ({selectedMagicType === 4 ? 'Awakened' : 'Normal'}).
                   </span>
                 </div>
               </div>
 
               {/* Training Progression parameters info */}
-              <div className="p-4 bg-zinc-50 dark:bg-zinc-950/30 rounded-xl border border-zinc-150 dark:border-zinc-850 flex items-center gap-3 text-xs leading-normal text-zinc-500 italic">
+              <div className="p-4 bg-bg/30 rounded-xl border border-border flex items-center gap-3 text-xs leading-normal text-muted italic">
                 <Info size={24} className="text-violet-500 shrink-0" />
                 <p>
-                  Optimized for total experience of <span className="font-bold font-mono text-zinc-700 dark:text-zinc-300">+{trainingCalculations.totalExp.toLocaleString()} Exp</span> to advance from Step {currentStep} to Step {targetStep}. Values correspond to the training coefficients at your current tier.
+                  Optimized for total experience of <span className="font-bold font-mono text-muted">+{trainingCalculations.totalExp.toLocaleString()} Exp</span> to advance from Step {currentStep} to Step {targetStep}. Values correspond to the training coefficients at your current tier.
                 </p>
               </div>
             </div>
 
             {/* Total Stats Gain Card */}
-            <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-              <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Cumulative Attribute Increases</span>
+            <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+              <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Cumulative Attribute Increases</span>
               
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
-                <div className="p-3 bg-zinc-50 dark:bg-zinc-950/50 rounded-xl border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-                  <span className="text-[9px] text-zinc-400 font-sans font-bold uppercase">Power Boost</span>
+                <div className="p-3 bg-bg/50 rounded-xl border border-border flex flex-col gap-0.5">
+                  <span className="text-[9px] text-subtle font-sans font-bold uppercase">Power Boost</span>
                   <span className="font-bold text-emerald-600 dark:text-emerald-400 text-sm">
                     +{statGains.power.toLocaleString()}
                   </span>
                 </div>
 
-                <div className="p-3 bg-zinc-50 dark:bg-zinc-950/50 rounded-xl border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-                  <span className="text-[9px] text-zinc-400 font-sans font-bold uppercase">Agility Boost</span>
+                <div className="p-3 bg-bg/50 rounded-xl border border-border flex flex-col gap-0.5">
+                  <span className="text-[9px] text-subtle font-sans font-bold uppercase">Agility Boost</span>
                   <span className="font-bold text-emerald-600 dark:text-emerald-400 text-sm">
                     +{statGains.agile.toLocaleString()}
                   </span>
                 </div>
 
-                <div className="p-3 bg-zinc-50 dark:bg-zinc-950/50 rounded-xl border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-                  <span className="text-[9px] text-zinc-400 font-sans font-bold uppercase">Wisdom Boost</span>
+                <div className="p-3 bg-bg/50 rounded-xl border border-border flex flex-col gap-0.5">
+                  <span className="text-[9px] text-subtle font-sans font-bold uppercase">Wisdom Boost</span>
                   <span className="font-bold text-emerald-600 dark:text-emerald-400 text-sm">
                     +{statGains.intelligence.toLocaleString()}
                   </span>
                 </div>
 
-                <div className="p-3 bg-zinc-50 dark:bg-zinc-950/50 rounded-xl border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-                  <span className="text-[9px] text-zinc-400 font-sans font-bold uppercase">HP Life Boost</span>
+                <div className="p-3 bg-bg/50 rounded-xl border border-border flex flex-col gap-0.5">
+                  <span className="text-[9px] text-subtle font-sans font-bold uppercase">HP Life Boost</span>
                   <span className="font-bold text-emerald-600 dark:text-emerald-400 text-sm">
                     +{statGains.life.toLocaleString()}
                   </span>

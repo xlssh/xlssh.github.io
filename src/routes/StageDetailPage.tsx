@@ -63,7 +63,7 @@ export const StageDetailPage: React.FC = () => {
       <div>
         <Link
           to="/stages"
-          className="flex items-center gap-1 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Stages</span>
@@ -71,10 +71,10 @@ export const StageDetailPage: React.FC = () => {
       </div>
 
       {/* Main Stage Panel */}
-      <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+      <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
           <div className="flex items-center gap-2">
-            <span className="font-mono text-xs text-zinc-400 font-bold bg-zinc-100 dark:bg-zinc-950 px-2 py-0.5 rounded">
+            <span className="font-mono text-xs text-subtle font-bold bg-bg px-2 py-0.5 rounded">
               ID: {stage.id}
             </span>
             <span className={`px-2 py-0.5 rounded text-xs font-bold ${
@@ -86,15 +86,15 @@ export const StageDetailPage: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-zinc-50 flex items-center gap-2">
+          <h1 className="text-2xl md:text-3xl font-black text-text flex items-center gap-2">
             <Swords size={28} className="text-violet-500" />
             <span>{stage.name || `Stage #${stage.id}`}</span>
           </h1>
 
           {stage.desc && (
-            <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-950/40 border border-zinc-200/40 dark:border-zinc-800">
-              <span className="block text-[10px] font-bold uppercase tracking-wider text-zinc-400">Combat Scenario Briefing</span>
-              <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed italic">
+            <div className="p-4 rounded-xl bg-bg/40 border border-border">
+              <span className="block text-[10px] font-bold uppercase tracking-wider text-subtle">Combat Scenario Briefing</span>
+              <p className="mt-1 text-sm text-muted dark:text-subtle leading-relaxed italic">
                 "{stage.desc}"
               </p>
             </div>
@@ -102,32 +102,32 @@ export const StageDetailPage: React.FC = () => {
         </div>
 
         {/* Map Coordinates block */}
-        <div className="w-full md:w-64 border border-zinc-100 dark:border-zinc-800 rounded-xl p-4 bg-zinc-50/50 dark:bg-zinc-950/20 space-y-3 shrink-0">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-200 dark:border-zinc-800 pb-1.5">Instance Coordinates</h4>
+        <div className="w-full md:w-64 border border-border rounded-xl p-4 bg-bg/50 space-y-3 shrink-0">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-subtle border-b border-border pb-1.5">Instance Coordinates</h4>
           <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-xs">
             <div>
-              <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Recommended Level</span>
+              <span className="text-subtle block mb-0.5 font-sans font-semibold">Recommended Level</span>
               <span className="font-bold text-indigo-600 font-mono">Lv. {stage.level || 1}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Background Canvas ID</span>
-              <span className="font-mono text-zinc-700 dark:text-zinc-350 font-semibold">{stage.big_image || 'None'}</span>
+              <span className="text-subtle block mb-0.5 font-sans font-semibold">Background Canvas ID</span>
+              <span className="font-mono text-muted font-semibold">{stage.big_image || 'None'}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Starting Node ID</span>
-              <span className="font-mono text-zinc-700 dark:text-zinc-350 font-semibold">#{stage.start_id || 0}</span>
+              <span className="text-subtle block mb-0.5 font-sans font-semibold">Starting Node ID</span>
+              <span className="font-mono text-muted font-semibold">#{stage.start_id || 0}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Finishing Node ID</span>
-              <span className="font-mono text-zinc-700 dark:text-zinc-350 font-semibold">#{stage.end_id || 0}</span>
+              <span className="text-subtle block mb-0.5 font-sans font-semibold">Finishing Node ID</span>
+              <span className="font-mono text-muted font-semibold">#{stage.end_id || 0}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Loot clear drop awards */}
-      <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4">
-        <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+      <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+        <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
           <Award size={18} className="text-violet-500" />
           <span>Stage Clear Drop Registry</span>
         </h3>
@@ -138,22 +138,22 @@ export const StageDetailPage: React.FC = () => {
               <Link
                 key={item.id}
                 to={`/articles/${item.id}`}
-                className="p-3 border border-zinc-155 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/20 hover:border-violet-500/50 hover:shadow-sm rounded-lg flex items-center justify-between text-sm transition-all"
+                className="p-3 border border-border/80 bg-bg/20 hover:border-violet-500/50 hover:shadow-sm rounded-lg flex items-center justify-between text-sm transition-all"
               >
                 <div>
-                  <span className="font-bold text-zinc-800 dark:text-zinc-200 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
+                  <span className="font-bold text-text hover:text-violet-600 dark:hover:text-violet-400 transition-colors">
                     {item.name}
                   </span>
-                  <span className="block text-[10px] text-zinc-400">ID: {item.id} | Level {item.level ?? 0}</span>
+                  <span className="block text-[10px] text-subtle">ID: {item.id} | Level {item.level ?? 0}</span>
                 </div>
-                <span className="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-[9px] text-zinc-500 font-mono">
+                <span className="px-2 py-0.5 rounded bg-surface-raised text-[9px] text-muted font-mono">
                   View Specs
                 </span>
               </Link>
             ))}
           </div>
         ) : (
-          <div className="text-sm text-zinc-400 italic py-2 flex items-center gap-1.5">
+          <div className="text-sm text-subtle italic py-2 flex items-center gap-1.5">
             <AlertCircle size={14} />
             <span>No clear award drop indexes registered for this instance.</span>
           </div>

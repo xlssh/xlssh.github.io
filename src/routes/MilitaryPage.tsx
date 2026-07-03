@@ -153,16 +153,16 @@ export const MilitaryPage: React.FC = () => {
       {/* Breadcrumb & Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <Award className="text-amber-500" size={28} />
             Seireitei Military Rank & Captaincy Calculator
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Plan character military promotions, merit targets, daily salaries, and global squad stat buffs.
           </p>
         </div>
@@ -172,8 +172,8 @@ export const MilitaryPage: React.FC = () => {
         
         {/* Left Column: Military ranks listing */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Seireitei Rankings</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Seireitei Rankings</span>
             
             <div className="space-y-1.5 max-h-[380px] overflow-y-auto pr-1">
               {militaryRanks.map((rank) => {
@@ -185,11 +185,11 @@ export const MilitaryPage: React.FC = () => {
                     className={`w-full flex items-center justify-between p-3 rounded-xl border text-xs font-bold transition-all ${
                       isSelected
                         ? 'border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-400 shadow-sm'
-                        : 'border-zinc-50 dark:border-zinc-955 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 text-zinc-650 dark:text-zinc-305'
+                        : 'border-border bg-bg/50 hover:border-border text-muted'
                     }`}
                   >
                     <span>{rank.name}</span>
-                    <span className="font-mono text-[9px] text-zinc-400">Rank #{rank.id}</span>
+                    <span className="font-mono text-[9px] text-subtle">Rank #{rank.id}</span>
                   </button>
                 );
               })}
@@ -199,13 +199,13 @@ export const MilitaryPage: React.FC = () => {
 
         {/* Right Column: Simulator & Cost results */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
             
             {/* Overview details */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-zinc-100 dark:border-zinc-800/60 gap-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-border/60 gap-4">
               <div>
-                <span className="text-[9px] font-mono text-zinc-400 uppercase block">Selected Rank Info</span>
-                <h3 className="font-black text-lg text-zinc-850 dark:text-zinc-100">
+                <span className="text-[9px] font-mono text-subtle uppercase block">Selected Rank Info</span>
+                <h3 className="font-black text-lg text-text">
                   {activeStart?.name}
                 </h3>
               </div>
@@ -220,11 +220,11 @@ export const MilitaryPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Start Rank slider */}
-              <div className="p-4 border border-zinc-100 dark:border-zinc-855 bg-zinc-50/20 dark:bg-zinc-955/10 rounded-xl space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase">Starting Military Rank</span>
+              <div className="p-4 border border-border bg-bg/10 rounded-xl space-y-3">
+                <span className="block text-[10px] font-bold text-subtle uppercase">Starting Military Rank</span>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-zinc-450">Select Rank</span>
-                  <span className="font-mono text-xs font-bold text-zinc-700 dark:text-zinc-300">
+                  <span className="text-xs text-subtle">Select Rank</span>
+                  <span className="font-mono text-xs font-bold text-muted">
                     {activeStart?.name || `Rank #${startRankId}`}
                   </span>
                 </div>
@@ -239,15 +239,15 @@ export const MilitaryPage: React.FC = () => {
                       setStartRankId(militaryRanks[idx].id);
                     }
                   }}
-                  className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+                  className="w-full h-1 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
               </div>
 
               {/* Target Rank slider */}
-              <div className="p-4 border border-zinc-100 dark:border-zinc-855 bg-zinc-50/20 dark:bg-zinc-955/10 rounded-xl space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase">Target Military Rank</span>
+              <div className="p-4 border border-border bg-bg/10 rounded-xl space-y-3">
+                <span className="block text-[10px] font-bold text-subtle uppercase">Target Military Rank</span>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-zinc-450">Select Rank</span>
+                  <span className="text-xs text-subtle">Select Rank</span>
                   <span className="font-mono text-xs font-bold text-amber-600 dark:text-amber-400">
                     {activeTarget?.name || `Rank #${targetRankId}`}
                   </span>
@@ -263,46 +263,46 @@ export const MilitaryPage: React.FC = () => {
                       setTargetRankId(militaryRanks[idx].id);
                     }
                   }}
-                  className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+                  className="w-full h-1 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-amber-500"
                 />
               </div>
 
             </div>
 
             {/* Calculations results */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-border/60">
               
               {/* Daily Salary gains */}
               <div className="space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Salary & Merit requirements</span>
-                <div className="p-4 bg-zinc-50/40 dark:bg-zinc-955/15 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-3 text-xs">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Salary & Merit requirements</span>
+                <div className="p-4 bg-bg/20 border border-border rounded-xl space-y-3 text-xs">
                   
-                  <div className="flex justify-between items-center py-1 border-b border-zinc-100 dark:border-zinc-800/40">
-                    <span className="font-semibold text-zinc-700 dark:text-zinc-300">Merit Points Needed:</span>
+                  <div className="flex justify-between items-center py-1 border-b border-border/40">
+                    <span className="font-semibold text-muted">Merit Points Needed:</span>
                     <span className="font-mono font-black text-amber-600 dark:text-amber-400">
                       {simulationResults?.totalMeritNeeded.toLocaleString()} Merit
                     </span>
                   </div>
 
-                  <div className="flex justify-between items-center py-1 border-b border-zinc-100 dark:border-zinc-800/40">
-                    <span className="font-semibold text-zinc-700 dark:text-zinc-300">Daily Silver Wage:</span>
+                  <div className="flex justify-between items-center py-1 border-b border-border/40">
+                    <span className="font-semibold text-muted">Daily Silver Wage:</span>
                     <div className="text-right">
-                      <span className="font-mono font-bold text-zinc-700 dark:text-zinc-300 block">
+                      <span className="font-mono font-bold text-muted block">
                         {simulationResults?.targetSalary.toLocaleString()} Silver
                       </span>
-                      <span className="text-[9px] text-zinc-400 italic">
+                      <span className="text-[9px] text-subtle italic">
                         (+{( (simulationResults?.targetSalary || 0) - (simulationResults?.startSalary || 0) ).toLocaleString()} net change)
                       </span>
                     </div>
                   </div>
 
                   <div className="flex justify-between items-center py-1">
-                    <span className="font-semibold text-zinc-700 dark:text-zinc-300">Daily Spirit Wage:</span>
+                    <span className="font-semibold text-muted">Daily Spirit Wage:</span>
                     <div className="text-right">
-                      <span className="font-mono font-bold text-zinc-700 dark:text-zinc-300 block">
+                      <span className="font-mono font-bold text-muted block">
                         {simulationResults?.targetSpiritSalary.toLocaleString()} Spirit
                       </span>
-                      <span className="text-[9px] text-zinc-400 italic">
+                      <span className="text-[9px] text-subtle italic">
                         (+{( (simulationResults?.targetSpiritSalary || 0) - (simulationResults?.startSpiritSalary || 0) ).toLocaleString()} net change)
                       </span>
                     </div>
@@ -313,12 +313,12 @@ export const MilitaryPage: React.FC = () => {
 
               {/* Stats growth */}
               <div className="space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Aggregate Stats Net Gain</span>
-                <div className="p-4 bg-zinc-50/40 dark:bg-zinc-955/15 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-2 text-xs">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Aggregate Stats Net Gain</span>
+                <div className="p-4 bg-bg/20 border border-border rounded-xl space-y-2 text-xs">
                   {simulationResults && Object.keys(simulationResults.statsDiff).length > 0 ? (
                     Object.entries(simulationResults.statsDiff).map(([name, val]) => (
-                      <div key={name} className="flex justify-between items-center py-1 border-b border-zinc-100 dark:border-zinc-800/40 last:border-0">
-                        <span className="font-semibold text-zinc-700 dark:text-zinc-300">{name}</span>
+                      <div key={name} className="flex justify-between items-center py-1 border-b border-border/40 last:border-0">
+                        <span className="font-semibold text-muted">{name}</span>
                         <span className="font-mono font-black text-amber-600 dark:text-amber-400 flex items-center gap-0.5">
                           <TrendingUp size={10} />
                           +{val.toLocaleString()}
@@ -326,7 +326,7 @@ export const MilitaryPage: React.FC = () => {
                       </div>
                     ))
                   ) : (
-                    <div className="text-center py-6 text-[10px] text-zinc-400 italic">
+                    <div className="text-center py-6 text-[10px] text-subtle italic">
                       Promote rankings to show aggregate stat bonuses.
                     </div>
                   )}

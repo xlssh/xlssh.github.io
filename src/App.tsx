@@ -73,6 +73,7 @@ const ActivityCodexPage = React.lazy(() => import('./routes/ActivityCodexPage').
 const GuildTacticsPlannerPage = React.lazy(() => import('./routes/GuildTacticsPlannerPage').then(m => ({ default: m.GuildTacticsPlannerPage })));
 const YammyRampagePage = React.lazy(() => import('./routes/YammyRampagePage').then(m => ({ default: m.YammyRampagePage })));
 const CrossServerBattlePage = React.lazy(() => import('./routes/CrossServerBattlePage').then(m => ({ default: m.CrossServerBattlePage })));
+const SoulKingRefineryPage = React.lazy(() => import('./routes/SoulKingRefineryPage').then(m => ({ default: m.SoulKingRefineryPage })));
 
 
 function App() {
@@ -149,6 +150,7 @@ function App() {
             <Route path="/tools/activity-codex" element={<ActivityCodexPage />} />
             <Route path="/tools/yammy-rampage" element={<YammyRampagePage />} />
             <Route path="/tools/cross-server-battle" element={<CrossServerBattlePage />} />
+            <Route path="/tools/refinery" element={<SoulKingRefineryPage />} />
             {/*<Route path="/tools/guild-tactics" element={<GuildTacticsPlannerPage />} />*/}
           </Routes>
         </React.Suspense>

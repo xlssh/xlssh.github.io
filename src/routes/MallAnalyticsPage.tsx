@@ -124,7 +124,7 @@ export const MallAnalyticsPage: React.FC = () => {
       <div>
         <Link
           to="/mall-items"
-          className="flex items-center gap-1 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Mall Merchandise</span>
@@ -132,27 +132,27 @@ export const MallAnalyticsPage: React.FC = () => {
       </div>
 
       {/* Header Banner */}
-      <div className="p-6 md:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm space-y-4">
+      <div className="p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="p-2.5 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 rounded-xl">
               <ShoppingBag size={28} />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-zinc-55">Merchandise Analytics & Cart Calculator</h1>
-              <p className="text-xs text-zinc-500">Track best discount ratios, VIP tier unlocks, and calculate custom purchase bills.</p>
+              <h1 className="text-2xl md:text-3xl font-black text-text dark:text-subtle">Merchandise Analytics & Cart Calculator</h1>
+              <p className="text-xs text-muted">Track best discount ratios, VIP tier unlocks, and calculate custom purchase bills.</p>
             </div>
           </div>
         </div>
 
         {/* Tab Buttons */}
-        <div className="flex border-b border-zinc-100 dark:border-zinc-800 pt-2 gap-4 text-sm font-bold">
+        <div className="flex border-b border-border pt-2 gap-4 text-sm font-bold">
           <button
             onClick={() => setActiveTab('discounts')}
             className={`pb-2 transition-all relative ${
               activeTab === 'discounts'
                 ? 'text-fuchsia-600 dark:text-fuchsia-400 border-b-2 border-fuchsia-600 dark:border-fuchsia-400'
-                : 'text-zinc-450 hover:text-zinc-900 dark:hover:text-zinc-200'
+                : 'text-subtle hover:text-text dark:hover:text-zinc-200'
             } cursor-pointer`}
           >
             Hot Deals & Discounts ({discountDeals.length})
@@ -162,7 +162,7 @@ export const MallAnalyticsPage: React.FC = () => {
             className={`pb-2 transition-all relative ${
               activeTab === 'vip'
                 ? 'text-fuchsia-600 dark:text-fuchsia-400 border-b-2 border-fuchsia-600 dark:border-fuchsia-400'
-                : 'text-zinc-450 hover:text-zinc-900 dark:hover:text-zinc-200'
+                : 'text-subtle hover:text-text dark:hover:text-zinc-200'
             } cursor-pointer`}
           >
             VIP Roadmap ({vipRoadmap.length} Tiers)
@@ -172,7 +172,7 @@ export const MallAnalyticsPage: React.FC = () => {
             className={`pb-2 transition-all relative ${
               activeTab === 'calculator'
                 ? 'text-fuchsia-600 dark:text-fuchsia-400 border-b-2 border-fuchsia-600 dark:border-fuchsia-400'
-                : 'text-zinc-450 hover:text-zinc-900 dark:hover:text-zinc-200'
+                : 'text-subtle hover:text-text dark:hover:text-zinc-200'
             } cursor-pointer`}
           >
             Shopping Cart Calculator
@@ -188,19 +188,19 @@ export const MallAnalyticsPage: React.FC = () => {
             return (
               <div
                 key={item.id}
-                className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4 flex flex-col justify-between"
+                className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4 flex flex-col justify-between"
               >
                 <div className="space-y-2">
                   <div className="flex justify-between items-start gap-2">
-                    <span className="font-mono text-[9px] text-zinc-400 font-bold bg-zinc-50 dark:bg-zinc-950 px-2 py-0.5 rounded border border-zinc-100 dark:border-zinc-800/80">
+                    <span className="font-mono text-[9px] text-subtle font-bold bg-bg px-2 py-0.5 rounded border border-border/80">
                       ID: {item.id}
                     </span>
                     <span className="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-450 text-[10px] font-black uppercase">
                       -{item.discount}% Off
                     </span>
                   </div>
-                  <h3 className="font-bold text-base text-zinc-800 dark:text-zinc-200">{item.name}</h3>
-                  <div className="text-xs text-zinc-400 space-y-1">
+                  <h3 className="font-bold text-base text-text">{item.name}</h3>
+                  <div className="text-xs text-subtle space-y-1">
                     <p>Category: {getMajorTypeLabel(item.major_type)}</p>
                     {linkedArt && (
                       <Link to={`/articles/${linkedArt.id}`} className="text-violet-600 dark:text-violet-400 hover:underline block font-semibold">
@@ -210,10 +210,10 @@ export const MallAnalyticsPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800/60 flex items-center justify-between text-xs">
+                <div className="pt-3 border-t border-border/60 flex items-center justify-between text-xs">
                   <div>
-                    <span className="text-zinc-400 block text-[10px]">Regular Price</span>
-                    <span className="line-through text-zinc-400 font-mono">{(item.gold ?? 0).toLocaleString()} G</span>
+                    <span className="text-subtle block text-[10px]">Regular Price</span>
+                    <span className="line-through text-subtle font-mono">{(item.gold ?? 0).toLocaleString()} G</span>
                   </div>
                   <div className="text-right">
                     <span className="text-fuchsia-600 dark:text-fuchsia-400 block text-[10px] font-bold">Discount Hot Price</span>
@@ -232,9 +232,9 @@ export const MallAnalyticsPage: React.FC = () => {
           {vipRoadmap.map((tier) => (
             <div
               key={tier.tier}
-              className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4"
+              className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4"
             >
-              <h3 className="text-base font-extrabold text-zinc-800 dark:text-zinc-150 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2.5">
+              <h3 className="text-base font-extrabold text-text flex items-center gap-2 border-b border-border pb-2.5">
                 <Award className="text-fuchsia-500" size={18} />
                 <span>
                   {tier.tier === 0 ? "Default Ranks (No VIP Required)" : `VIP Level ${tier.tier} Unlocks`}
@@ -244,11 +244,11 @@ export const MallAnalyticsPage: React.FC = () => {
                 {tier.items.map((item) => (
                   <div
                     key={item.id}
-                    className="p-3 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/10 rounded-xl flex items-center justify-between text-xs"
+                    className="p-3 border border-border bg-bg/10 rounded-xl flex items-center justify-between text-xs"
                   >
                     <div>
-                      <span className="font-bold text-zinc-700 dark:text-zinc-250 block">{item.name}</span>
-                      <span className="text-[10px] text-zinc-400 font-mono">ID: {item.id}</span>
+                      <span className="font-bold text-text dark:text-zinc-250 block">{item.name}</span>
+                      <span className="text-[10px] text-subtle font-mono">ID: {item.id}</span>
                     </div>
                     <span className="font-mono font-bold text-amber-600">{(item.hotprice || item.gold || 0).toLocaleString()} Gold</span>
                   </div>
@@ -263,19 +263,19 @@ export const MallAnalyticsPage: React.FC = () => {
       {activeTab === 'calculator' && (
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 items-start">
           {/* Add Item form */}
-          <div className="xl:col-span-1 p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <h3 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2.5">
+          <div className="xl:col-span-1 p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <h3 className="font-bold text-sm text-text flex items-center gap-2 border-b border-border pb-2.5">
               <ShoppingCart size={16} className="text-fuchsia-500" />
               <span>Add Merchandise</span>
             </h3>
             
             <div className="space-y-3.5 text-xs">
               <div className="space-y-1.5">
-                <label className="block font-bold text-zinc-400 uppercase">Select Item</label>
+                <label className="block font-bold text-subtle uppercase">Select Item</label>
                 <select
                   value={selectedItemId}
                   onChange={(e) => setSelectedItemId(parseInt(e.target.value))}
-                  className="w-full px-3 py-2.5 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50 dark:bg-zinc-950 text-zinc-850 dark:text-zinc-150 font-bold focus:outline-none focus:ring-1.5 focus:ring-fuchsia-500 cursor-pointer"
+                  className="w-full px-3 py-2.5 border border-border rounded-xl bg-bg text-text font-bold focus:outline-none focus:ring-1.5 focus:ring-fuchsia-500 cursor-pointer"
                 >
                   {mallItems.map(item => (
                     <option key={item.id} value={item.id}>{item.name} (ID: {item.id})</option>
@@ -284,14 +284,14 @@ export const MallAnalyticsPage: React.FC = () => {
               </div>
 
               <div className="space-y-1.5">
-                <label className="block font-bold text-zinc-400 uppercase">Quantity</label>
+                <label className="block font-bold text-subtle uppercase">Quantity</label>
                 <input
                   type="number"
                   min="1"
                   max="999"
                   value={addQty}
                   onChange={(e) => setAddQty(Math.max(1, parseInt(e.target.value) || 1))}
-                  className="w-full px-3 py-2 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 font-bold"
+                  className="w-full px-3 py-2 border border-border rounded-xl bg-bg text-text font-bold"
                 />
               </div>
 
@@ -307,9 +307,9 @@ export const MallAnalyticsPage: React.FC = () => {
 
           {/* Cart items list */}
           <div className="xl:col-span-2 space-y-6">
-            <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-              <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-2.5">
-                <h3 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+            <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+              <div className="flex items-center justify-between border-b border-border pb-2.5">
+                <h3 className="font-bold text-sm text-text flex items-center gap-2">
                   <ShoppingCart size={16} className="text-fuchsia-500" />
                   <span>Items List ({cart.length})</span>
                 </h3>
@@ -325,7 +325,7 @@ export const MallAnalyticsPage: React.FC = () => {
               </div>
 
               {cart.length === 0 ? (
-                <p className="text-xs text-zinc-450 italic text-center py-8">Shopping cart is empty. Add merchandise to simulate gold savings.</p>
+                <p className="text-xs text-subtle italic text-center py-8">Shopping cart is empty. Add merchandise to simulate gold savings.</p>
               ) : (
                 <div className="space-y-3.5 max-h-96 overflow-y-auto pr-1">
                   {cart.map((entry) => {
@@ -335,11 +335,11 @@ export const MallAnalyticsPage: React.FC = () => {
                     return (
                       <div
                         key={entry.mallItem.id}
-                        className="p-3.5 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/10 rounded-xl flex items-center justify-between gap-4 text-xs"
+                        className="p-3.5 border border-border bg-bg/10 rounded-xl flex items-center justify-between gap-4 text-xs"
                       >
                         <div className="space-y-1">
-                          <span className="font-bold text-sm text-zinc-800 dark:text-zinc-200">{entry.mallItem.name}</span>
-                          <div className="flex flex-wrap gap-2 text-[10px] text-zinc-400">
+                          <span className="font-bold text-sm text-text">{entry.mallItem.name}</span>
+                          <div className="flex flex-wrap gap-2 text-[10px] text-subtle">
                             <span>Qty: {entry.quantity}</span>
                             <span>•</span>
                             <span>ID: {entry.mallItem.id}</span>
@@ -354,7 +354,7 @@ export const MallAnalyticsPage: React.FC = () => {
 
                         <div className="flex items-center gap-4 shrink-0">
                           <div className="text-right">
-                            <span className="block text-[10px] text-zinc-400">Total Price</span>
+                            <span className="block text-[10px] text-subtle">Total Price</span>
                             <span className="font-mono font-bold text-amber-600">{(hotPrice * entry.quantity).toLocaleString()} G</span>
                             {entry.mallItem.discount && entry.mallItem.discount > 0 ? (
                               <span className="block text-[9px] text-emerald-600 dark:text-emerald-450 font-bold">
@@ -364,7 +364,7 @@ export const MallAnalyticsPage: React.FC = () => {
                           </div>
                           <button
                             onClick={() => removeFromCart(entry.mallItem.id)}
-                            className="p-1 border border-zinc-100 dark:border-zinc-800 hover:border-rose-200 text-zinc-400 hover:text-rose-500 rounded-lg transition-colors cursor-pointer"
+                            className="p-1 border border-border hover:border-rose-200 text-subtle hover:text-rose-500 rounded-lg transition-colors cursor-pointer"
                           >
                             <Trash2 size={14} />
                           </button>
@@ -378,22 +378,22 @@ export const MallAnalyticsPage: React.FC = () => {
 
             {/* Calculations Aggregator Card */}
             {cart.length > 0 && (
-              <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm grid grid-cols-1 sm:grid-cols-4 gap-4 text-center items-center">
-                <div className="p-3 border border-zinc-100 dark:border-zinc-850 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-xl space-y-1">
-                  <span className="text-[10px] text-zinc-400 uppercase font-bold block">Base Gold Price</span>
-                  <span className="font-mono text-base font-bold text-zinc-500">{cartSummary.totalGoldBase.toLocaleString()} G</span>
+              <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm grid grid-cols-1 sm:grid-cols-4 gap-4 text-center items-center">
+                <div className="p-3 border border-border bg-bg/20 rounded-xl space-y-1">
+                  <span className="text-[10px] text-subtle uppercase font-bold block">Base Gold Price</span>
+                  <span className="font-mono text-base font-bold text-muted">{cartSummary.totalGoldBase.toLocaleString()} G</span>
                 </div>
-                <div className="p-3 border border-zinc-100 dark:border-zinc-850 bg-fuchsia-500/5 rounded-xl space-y-1">
+                <div className="p-3 border border-border bg-fuchsia-500/5 rounded-xl space-y-1">
                   <span className="text-[10px] text-fuchsia-600 dark:text-fuchsia-400 uppercase font-black block">Total Hot Price</span>
                   <span className="font-mono text-lg font-black text-amber-600">{cartSummary.totalHotPrice.toLocaleString()} Gold</span>
                 </div>
-                <div className="p-3 border border-zinc-100 dark:border-zinc-850 bg-emerald-500/5 rounded-xl space-y-1">
+                <div className="p-3 border border-border bg-emerald-500/5 rounded-xl space-y-1">
                   <span className="text-[10px] text-emerald-600 dark:text-emerald-400 uppercase font-bold block">Savings</span>
                   <span className="font-mono text-base font-black text-emerald-600 dark:text-emerald-400">
                     +{cartSummary.totalSavings.toLocaleString()} G
                   </span>
                 </div>
-                <div className="p-3 border border-zinc-100 dark:border-zinc-850 bg-violet-500/5 rounded-xl space-y-1">
+                <div className="p-3 border border-border bg-violet-500/5 rounded-xl space-y-1">
                   <span className="text-[10px] text-violet-600 dark:text-violet-400 uppercase font-bold block">Required VIP Tier</span>
                   <span className="font-mono text-base font-extrabold text-violet-750 dark:text-violet-400">
                     {cartSummary.maxVipRequired > 0 ? `VIP Rank ${cartSummary.maxVipRequired}` : 'None'}

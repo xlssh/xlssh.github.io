@@ -91,7 +91,7 @@ export const ActivityCodexPage: React.FC = () => {
 
   // Activity Type mapping based on ActionScript ActType Constants
   const getActivityTypeLabel = (type: number | null): { label: string; color: string; cat: string } => {
-    if (type === null) return { label: 'System', color: 'bg-zinc-500/10 text-zinc-600 dark:text-zinc-400 border-zinc-500/20', cat: 'system' };
+    if (type === null) return { label: 'System', color: 'bg-zinc-500/10 text-muted border-zinc-500/20', cat: 'system' };
     
     // Categorize for easier filter grouping with correct light/dark contrast
     switch (type) {
@@ -127,7 +127,7 @@ export const ActivityCodexPage: React.FC = () => {
       case 50:
         return { label: 'Limit Buy', color: 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20', cat: 'limit' };
       default:
-        return { label: `Type ${type}`, color: 'bg-zinc-500/10 text-zinc-600 dark:text-zinc-400 border-zinc-500/20', cat: 'other' };
+        return { label: `Type ${type}`, color: 'bg-zinc-500/10 text-muted border-zinc-500/20', cat: 'other' };
     }
   };
 

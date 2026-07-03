@@ -149,24 +149,24 @@ export const SoulHunterPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <Target className="text-indigo-500" size={28} />
             Limited Soul Hunter Event Oracle
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Audit collection drop rates across event phases, simulate pulls, and view event exchange shop ledgers.
           </p>
         </div>
       </div>
 
       {/* Phase selectors */}
-      <div className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-3">
-        <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Select Event Phase</span>
+      <div className="p-4 border border-border bg-surface rounded-2xl shadow-sm space-y-3">
+        <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Select Event Phase</span>
         <div className="flex gap-2.5 overflow-x-auto pb-1">
           {uniquePhases.map((phase) => (
             <button
@@ -178,7 +178,7 @@ export const SoulHunterPage: React.FC = () => {
               className={`py-2.5 px-4 text-xs font-bold rounded-xl border whitespace-nowrap transition-all ${
                 selectedPhaseType === phase
                   ? 'border-indigo-500 bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 shadow-sm'
-                  : 'border-zinc-100 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 text-zinc-650 dark:text-zinc-300'
+                  : 'border-border bg-bg/50 hover:border-border text-muted'
               }`}
             >
               Event Phase #{phase}
@@ -191,12 +191,12 @@ export const SoulHunterPage: React.FC = () => {
         
         {/* Left 2 Columns: Pulls simulator and statistics */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
             
-            <div className="flex justify-between items-center pb-3 border-b border-zinc-100 dark:border-zinc-800/60">
+            <div className="flex justify-between items-center pb-3 border-b border-border/60">
               <div>
-                <span className="text-[10px] font-mono text-zinc-400 uppercase block">Active Phase Pool</span>
-                <h3 className="font-black text-base text-zinc-850 dark:text-zinc-100 mt-0.5">
+                <span className="text-[10px] font-mono text-subtle uppercase block">Active Phase Pool</span>
+                <h3 className="font-black text-base text-text mt-0.5">
                   Phase #{selectedPhaseType} Drop Rates Pool ({phasePoolItems.length} entries)
                 </h3>
               </div>
@@ -212,16 +212,16 @@ export const SoulHunterPage: React.FC = () => {
 
             {/* Summons results display */}
             <div className="space-y-4">
-              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Summons Pulls Results</span>
+              <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Summons Pulls Results</span>
               
               {rolledPulls.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {rolledPulls.map((pull, idx) => (
                     <div
                       key={idx}
-                      className="p-3 border border-zinc-100 dark:border-zinc-850 bg-zinc-50/20 dark:bg-zinc-950/10 rounded-xl flex items-center justify-between text-xs"
+                      className="p-3 border border-border bg-bg/10 rounded-xl flex items-center justify-between text-xs"
                     >
-                      <span className="font-bold text-zinc-705 dark:text-zinc-250">
+                      <span className="font-bold text-text">
                         {pull.name}
                       </span>
                       <span className="font-mono font-bold text-indigo-600 dark:text-indigo-400">
@@ -231,7 +231,7 @@ export const SoulHunterPage: React.FC = () => {
                   ))}
                 </div>
               ) : (
-                <div className="py-12 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-2xl text-center text-xs text-zinc-400 italic">
+                <div className="py-12 border border-dashed border-border rounded-2xl text-center text-xs text-subtle italic">
                   Click the summons button to simulate 10 pulls from the active phase drop pool.
                 </div>
               )}
@@ -242,26 +242,26 @@ export const SoulHunterPage: React.FC = () => {
 
         {/* Right Column: Exchange Shop Ledger */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Event Exchange Shop</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Event Exchange Shop</span>
             
             <div className="space-y-3.5 max-h-[380px] overflow-y-auto pr-1">
               {shopOffers.map((offer) => (
                 <div
                   key={offer.id}
-                  className="p-3.5 border border-zinc-100 dark:border-zinc-850 bg-zinc-50/30 dark:bg-zinc-950/15 rounded-xl space-y-2.5 text-xs"
+                  className="p-3.5 border border-border bg-bg/30 dark:bg-bg/15 rounded-xl space-y-2.5 text-xs"
                 >
-                  <div className="flex justify-between items-start border-b border-zinc-100 dark:border-zinc-800 pb-1.5 w-full">
-                    <span className="font-bold text-zinc-750 dark:text-zinc-250 truncate pr-2">
+                  <div className="flex justify-between items-start border-b border-border pb-1.5 w-full">
+                    <span className="font-bold text-text truncate pr-2">
                       {offer.rewardName}
                     </span>
-                    <span className="font-mono text-zinc-400 text-[10px] whitespace-nowrap">
+                    <span className="font-mono text-subtle text-[10px] whitespace-nowrap">
                       Limit: {offer.weeklyLimit}
                     </span>
                   </div>
                   
                   <div className="flex justify-between items-center w-full">
-                    <span className="text-[10px] text-zinc-400 uppercase font-mono">Price:</span>
+                    <span className="text-[10px] text-subtle uppercase font-mono">Price:</span>
                     <span className="font-mono font-bold text-indigo-650 dark:text-indigo-400">
                       {offer.costAmount.toLocaleString()}x {offer.costName}
                     </span>

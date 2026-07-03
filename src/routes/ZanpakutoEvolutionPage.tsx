@@ -165,9 +165,7 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
       newLogs.unshift(`[EVOLUTION SUCCESS] ${zanpakutoName} evolved to ${stage.levelName}! Stats unlocked: ${stage.statBonus}`);
       setCurrentLevel(selectedTabLevel);
       setSimulatedExp(0);
-      if (selectedTabLevel < evolutionStages.length) {
-        setSelectedTabLevel(selectedTabLevel + 1);
-      }
+      setSelectedTabLevel(prev => prev < evolutionStages.length ? prev + 1 : prev);
     } else {
       newLogs.unshift(`[Refinement Attempt] Gained +${gain} EXP (Current: ${nextExp}/${needExp} EXP). Spent: ${stage.costGold} Gold, 1x Reiatsu Cultivating Pill, 1x ${selectedBook?.name}.`);
       setSimulatedExp(nextExp);
@@ -183,16 +181,16 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
   };
 
   const renderPositionalStats = (added: any[] | null) => {
-    if (!added || added.length === 0) return <span className="text-zinc-500 italic text-[11px]">No modifiers</span>;
+    if (!added || added.length === 0) return <span className="text-muted italic text-[11px]">No modifiers</span>;
     return (
-      <div className="space-y-1 bg-zinc-50 dark:bg-zinc-950 p-2.5 rounded-lg border border-zinc-100 dark:border-zinc-850">
+      <div className="space-y-1 bg-bg p-2.5 rounded-lg border border-border">
         {added.map((add, idx) => {
           const name = getAttributeName(add.type);
           const isPercent = name.toLowerCase().includes('rate') || name.toLowerCase().includes('immunity') || add.value < 1;
           const formattedVal = isPercent ? `${(add.value * 100).toFixed(0)}%` : `+${add.value}`;
           return (
-            <div key={idx} className="flex justify-between text-[11px] font-mono border-b border-zinc-150/45 dark:border-zinc-800/40 pb-0.5 last:border-0 last:pb-0">
-              <span className="text-zinc-400">{name}</span>
+            <div key={idx} className="flex justify-between text-[11px] font-mono border-b border-border/40 pb-0.5 last:border-0 last:pb-0">
+              <span className="text-subtle">{name}</span>
               <span className="text-fuchsia-450 dark:text-fuchsia-400 font-bold">{formattedVal}</span>
             </div>
           );
@@ -212,7 +210,7 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
       <div>
         <Link
           to="/articles"
-          className="flex items-center gap-1 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Articles Catalog</span>
@@ -220,22 +218,22 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
       </div>
 
       {/* Header Banner */}
-      <div className="p-6 md:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm space-y-2">
+      <div className="p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-sm space-y-2">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 rounded-xl">
             <Swords size={28} />
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-zinc-50">Zanpakuto Evolution Simulator</h1>
-            <p className="text-xs text-zinc-550 font-semibold">Simulate actual Bleach Zanpakutos (Muramasa, Senbonzakura, etc.) using their database picture books.</p>
+            <h1 className="text-2xl md:text-3xl font-black text-text">Zanpakuto Evolution Simulator</h1>
+            <p className="text-xs text-muted font-semibold">Simulate actual Bleach Zanpakutos (Muramasa, Senbonzakura, etc.) using their database picture books.</p>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Left Column: Zanpakuto Selector */}
-        <div className="xl:col-span-1 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 rounded-2xl shadow-sm space-y-4">
-          <h3 className="font-extrabold text-sm text-zinc-800 dark:text-zinc-200 border-b border-zinc-100 dark:border-zinc-800 pb-2.5">
+        <div className="xl:col-span-1 border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4">
+          <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5">
             Select Zanpakuto
           </h3>
           <div className="space-y-1.5 max-h-[500px] overflow-y-auto pr-1">
@@ -251,14 +249,14 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
                   className={`w-full p-3 text-left border rounded-xl text-xs transition-all flex items-center justify-between cursor-pointer ${
                     selectedBookId === b.id
                       ? 'border-fuchsia-500 bg-fuchsia-500/5 text-fuchsia-800 dark:text-fuchsia-400 font-bold'
-                      : 'border-zinc-100 dark:border-zinc-800 hover:border-zinc-200 dark:hover:border-zinc-700 hover:bg-zinc-50/50 dark:hover:bg-zinc-950/20 text-zinc-700 dark:text-zinc-300'
+                      : 'border-border hover:border-border-strong hover:bg-hover/50 text-muted'
                   }`}
                 >
                   <div>
                     <span className="font-semibold block truncate">{name}</span>
-                    <span className="text-[10px] text-zinc-400 font-mono">Book ID: {b.id}</span>
+                    <span className="text-[10px] text-subtle font-mono">Book ID: {b.id}</span>
                   </div>
-                  <Zap size={14} className={selectedBookId === b.id ? 'text-fuchsia-500' : 'text-zinc-300'} />
+                  <Zap size={14} className={selectedBookId === b.id ? 'text-fuchsia-500' : 'text-subtle'} />
                 </button>
               );
             })}
@@ -268,12 +266,12 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
         {/* Right Column: Simulator & Info */}
         <div className="xl:col-span-2 space-y-6">
           {selectedBook && (
-            <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-5">
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-100 dark:border-zinc-800 pb-3">
+            <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-5">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
                 <div>
-                  <span className="text-[9px] font-mono text-zinc-400 block font-bold">SOUL CUTTER BLADE</span>
-                  <h2 className="text-2xl font-black text-zinc-850 dark:text-zinc-50">{zanpakutoName}</h2>
-                  <span className="text-xs text-zinc-400 font-semibold block">Activated by using: {selectedBook.name}</span>
+                  <span className="text-[9px] font-mono text-subtle block font-bold">SOUL CUTTER BLADE</span>
+                  <h2 className="text-2xl font-black text-text">{zanpakutoName}</h2>
+                  <span className="text-xs text-subtle font-semibold block">Activated by using: {selectedBook.name}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="px-2.5 py-0.5 rounded bg-fuchsia-100 dark:bg-fuchsia-950 text-fuchsia-800 dark:text-fuchsia-400 text-xs font-black uppercase">
@@ -281,7 +279,7 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
                   </span>
                   <button
                     onClick={handleReset}
-                    className="p-1.5 border border-zinc-200 dark:border-zinc-850 hover:border-fuchsia-500 rounded-lg text-zinc-400 hover:text-fuchsia-500 transition-colors cursor-pointer"
+                    className="p-1.5 border border-border hover:border-fuchsia-500 rounded-lg text-subtle hover:text-fuchsia-500 transition-colors cursor-pointer"
                   >
                     <RefreshCw size={14} />
                   </button>
@@ -289,7 +287,7 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
               </div>
 
               {/* Tabs */}
-              <div className="flex border-b border-zinc-100 dark:border-zinc-800 gap-4 text-xs font-bold">
+              <div className="flex border-b border-border gap-4 text-xs font-bold">
                 {evolutionStages.map((stage) => (
                   <button
                     key={stage.levelNum}
@@ -304,7 +302,7 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
                         ? 'text-emerald-600 dark:text-emerald-450 cursor-not-allowed font-extrabold'
                         : selectedTabLevel === stage.levelNum
                         ? 'text-fuchsia-600 dark:text-fuchsia-400 border-b-2 border-fuchsia-600 dark:border-fuchsia-400'
-                        : 'text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 cursor-pointer'
+                        : 'text-subtle hover:text-text dark:hover:text-zinc-200 cursor-pointer'
                     }`}
                   >
                     {stage.levelName} {stage.levelNum <= currentLevel ? "✓" : ""}
@@ -323,13 +321,13 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
                         <h4 className="font-extrabold text-xs uppercase tracking-wider">Unlocked Skill details</h4>
                       </div>
                       <div>
-                        <div className="text-xs font-black text-zinc-800 dark:text-zinc-200">{activeStage.skill.name}</div>
-                        <p className="text-[11px] text-zinc-450 leading-relaxed mt-1 whitespace-pre-line">{activeStage.skill.description}</p>
+                        <div className="text-xs font-black text-text">{activeStage.skill.name}</div>
+                        <p className="text-[11px] text-subtle leading-relaxed mt-1 whitespace-pre-line">{activeStage.skill.description}</p>
                       </div>
                       {activeStage.expand?.turns && (
-                        <div className="flex items-center gap-1.5 pt-1 text-[10px] text-zinc-400">
+                        <div className="flex items-center gap-1.5 pt-1 text-[10px] text-subtle">
                           <span className="font-bold">Active Combat Turns:</span>
-                          <span className="font-mono bg-zinc-100 dark:bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-350">{activeStage.expand.turns.map(t => `Turn ${t}`).join(', ')}</span>
+                          <span className="font-mono bg-surface-raised px-1.5 py-0.5 rounded text-zinc-350">{activeStage.expand.turns.map(t => `Turn ${t}`).join(', ')}</span>
                         </div>
                       )}
                     </div>
@@ -355,34 +353,34 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
                     {/* Upgrade Materials Card */}
-                    <div className="p-4 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-xl space-y-4">
-                      <h4 className="font-extrabold text-xs text-zinc-700 dark:text-zinc-200 flex items-center gap-1.5 uppercase tracking-wider">
+                    <div className="p-4 border border-border bg-bg/20 rounded-xl space-y-4">
+                      <h4 className="font-extrabold text-xs text-text dark:text-zinc-200 flex items-center gap-1.5 uppercase tracking-wider">
                         <Cpu size={14} className="text-fuchsia-500" />
                         <span>Evolution Materials Requirement</span>
                       </h4>
                       <div className="space-y-3.5 text-xs">
-                        <div className="flex justify-between items-center py-1.5 border-b border-zinc-100 dark:border-zinc-800 last:border-0">
-                          <span className="text-zinc-450">Required Level</span>
+                        <div className="flex justify-between items-center py-1.5 border-b border-border last:border-0">
+                          <span className="text-subtle">Required Level</span>
                           <span className="font-bold font-mono">Lv. {activeStage.reqLevel}</span>
                         </div>
-                        <div className="flex justify-between items-center py-1.5 border-b border-zinc-100 dark:border-zinc-800 last:border-0">
-                          <span className="text-zinc-450">Quality Target</span>
+                        <div className="flex justify-between items-center py-1.5 border-b border-border last:border-0">
+                          <span className="text-subtle">Quality Target</span>
                           <span className="font-bold font-mono">Tier {activeStage.expand?.quality || 3}</span>
                         </div>
-                        <div className="flex justify-between items-center py-1.5 border-b border-zinc-100 dark:border-zinc-800 last:border-0">
-                          <span className="text-zinc-450">Reiatsu Added Value</span>
+                        <div className="flex justify-between items-center py-1.5 border-b border-border last:border-0">
+                          <span className="text-subtle">Reiatsu Added Value</span>
                           <span className="font-bold font-mono">+{activeStage.pelletsRequired}</span>
                         </div>
-                        <div className="flex justify-between items-center py-1.5 border-b border-zinc-100 dark:border-zinc-800 last:border-0">
-                          <span className="text-zinc-450">Gold Cost per Attempt</span>
+                        <div className="flex justify-between items-center py-1.5 border-b border-border last:border-0">
+                          <span className="text-subtle">Gold Cost per Attempt</span>
                           <span className="font-bold font-mono text-amber-600">{(activeStage.costGold).toLocaleString()} Gold</span>
                         </div>
                       </div>
                     </div>
 
                     {/* Refinement Control Console */}
-                    <div className="p-4 border border-zinc-150 dark:border-zinc-800 bg-zinc-50/10 dark:bg-zinc-950/10 rounded-xl space-y-4">
-                      <h4 className="font-extrabold text-xs text-zinc-750 dark:text-zinc-200 flex items-center gap-1.5 uppercase tracking-wider">
+                    <div className="p-4 border border-border bg-bg/10 rounded-xl space-y-4">
+                      <h4 className="font-extrabold text-xs text-text flex items-center gap-1.5 uppercase tracking-wider">
                         <Award size={14} className="text-fuchsia-500" />
                         <span>Upgrade Progression Simulator</span>
                       </h4>
@@ -390,10 +388,10 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
                       {/* Progress bar */}
                       <div className="space-y-2 text-xs">
                         <div className="flex justify-between font-mono">
-                          <span className="text-zinc-450">Refinement Experience</span>
+                          <span className="text-subtle">Refinement Experience</span>
                           <span className="font-bold">{simulatedExp} / {activeStage.expand?.need_exp || 100} EXP</span>
                         </div>
-                        <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-2 overflow-hidden border border-zinc-200 dark:border-zinc-800">
+                        <div className="w-full bg-bg rounded-full h-2 overflow-hidden border border-border">
                           <div
                             className="bg-fuchsia-600 h-2 rounded-full transition-all duration-300"
                             style={{ width: `${(simulatedExp / (activeStage.expand?.need_exp || 100)) * 100}%` }}
@@ -413,14 +411,14 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
               )}
 
               {/* Sourcing links for picture book */}
-              <div className="p-4 border border-zinc-100 dark:border-zinc-800 rounded-xl bg-zinc-50/50 dark:bg-zinc-950/20 text-xs space-y-3">
-                <h4 className="font-extrabold text-zinc-800 dark:text-zinc-250 flex items-center gap-1.5 uppercase tracking-wider">
+              <div className="p-4 border border-border rounded-xl bg-bg/50 text-xs space-y-3">
+                <h4 className="font-extrabold text-text dark:text-zinc-250 flex items-center gap-1.5 uppercase tracking-wider">
                   <ShoppingCart size={14} className="text-violet-500" />
                   <span>Activation Book Sourcing Reference</span>
                 </h4>
                 {bookSources.shops.length > 0 ? (
                   <div className="flex flex-wrap items-center gap-2">
-                    <span className="text-zinc-400">Available in Shop:</span>
+                    <span className="text-subtle">Available in Shop:</span>
                     {bookSources.shops.map(shop => (
                       <Link
                         key={shop.id}
@@ -432,7 +430,7 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
                     ))}
                   </div>
                 ) : (
-                  <div className="text-zinc-400 flex items-center gap-1.5">
+                  <div className="text-subtle flex items-center gap-1.5">
                     <HelpCircle size={14} />
                     <span>This Zanpakuto book is not sold in the default Mall Shop. Look up loot stages via the planner.</span>
                   </div>
@@ -440,7 +438,7 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
                 <Link
                   to={`/articles/farming`}
                   onClick={() => localStorage.setItem('farm_planner_focus', String(selectedBookId))}
-                  className="text-fuchsia-600 dark:text-fuchsia-400 hover:underline font-bold block pt-1.5 border-t border-zinc-100 dark:border-zinc-800"
+                  className="text-fuchsia-600 dark:text-fuchsia-400 hover:underline font-bold block pt-1.5 border-t border-border"
                 >
                   Open in Farming Planner Console →
                 </Link>
@@ -448,9 +446,9 @@ export const ZanpakutoEvolutionPage: React.FC = () => {
 
               {/* Simulated Logs */}
               {logs.length > 0 && (
-                <div className="space-y-2 pt-3 border-t border-zinc-100 dark:border-zinc-800/80">
-                  <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Upgrade Log Output</span>
-                  <div className="bg-zinc-50 dark:bg-zinc-950 rounded-xl p-3 border border-zinc-100 dark:border-zinc-800 font-mono text-[10px] text-zinc-500 dark:text-zinc-400 space-y-1 max-h-40 overflow-y-auto">
+                <div className="space-y-2 pt-3 border-t border-border/80">
+                  <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Upgrade Log Output</span>
+                  <div className="bg-bg rounded-xl p-3 border border-border font-mono text-[10px] text-muted space-y-1 max-h-40 overflow-y-auto">
                     {logs.map((log, idx) => (
                       <p key={idx} className={log.includes('SUCCESS') ? 'text-emerald-600 dark:text-emerald-450 font-bold' : ''}>{log}</p>
                     ))}

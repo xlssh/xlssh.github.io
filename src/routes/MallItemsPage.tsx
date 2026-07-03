@@ -57,13 +57,13 @@ export const MallItemsPage: React.FC = () => {
     {
       accessorKey: 'id',
       header: 'ID',
-      cell: (info) => <span className="font-mono text-zinc-500 font-semibold">{info.getValue() as number}</span>,
+      cell: (info) => <span className="font-mono text-muted font-semibold">{info.getValue() as number}</span>,
     },
     {
       accessorKey: 'name',
       header: 'Shop Entry Name',
       cell: (info) => (
-        <span className="font-bold text-zinc-800 dark:text-zinc-200 hover:text-violet-600 transition-colors">
+        <span className="font-bold text-text hover:text-violet-600 transition-colors">
           {info.getValue() as string}
         </span>
       ),
@@ -74,7 +74,7 @@ export const MallItemsPage: React.FC = () => {
       cell: (info) => {
         const itemId = info.getValue() as number;
         const matchingArticle = articles.find(a => a.id === itemId);
-        if (!matchingArticle) return <span className="text-zinc-400 font-mono text-xs">Item #{itemId}</span>;
+        if (!matchingArticle) return <span className="text-subtle font-mono text-xs">Item #{itemId}</span>;
         return (
           <Link
             to={`/articles/${itemId}`}
@@ -89,7 +89,7 @@ export const MallItemsPage: React.FC = () => {
     {
       accessorKey: 'gold',
       header: 'Base Gold Price',
-      cell: (info) => <span className="font-mono text-xs text-zinc-500">{(info.getValue() as number || 0).toLocaleString()}</span>,
+      cell: (info) => <span className="font-mono text-xs text-muted">{(info.getValue() as number || 0).toLocaleString()}</span>,
     },
     {
       accessorKey: 'hotprice',
@@ -101,7 +101,7 @@ export const MallItemsPage: React.FC = () => {
       header: 'Req. VIP Level',
       cell: (info) => {
         const vipVal = info.getValue() as number;
-        if (!vipVal) return <span className="text-zinc-400 italic text-xs">None</span>;
+        if (!vipVal) return <span className="text-subtle italic text-xs">None</span>;
         return <span className="px-2 py-0.5 rounded bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-300 font-mono font-bold text-xs">VIP {vipVal}</span>;
       },
     },
@@ -123,7 +123,7 @@ export const MallItemsPage: React.FC = () => {
               </span>
             ) : null}
             {!row.is_hot && !row.is_new ? (
-              <span className="text-zinc-400 text-xs">-</span>
+              <span className="text-subtle text-xs">-</span>
             ) : null}
           </div>
         );
@@ -140,26 +140,26 @@ export const MallItemsPage: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-4">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-violet-100 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400 rounded-xl">
             <ShoppingBag size={24} />
           </div>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">Mall Cash Shop</h1>
-            <p className="text-sm text-zinc-500">Compare item package pricing, VIP purchase barriers, limits and bundles.</p>
+            <h1 className="text-2xl font-bold tracking-tight text-text dark:text-zinc-100">Mall Cash Shop</h1>
+            <p className="text-sm text-muted">Compare item package pricing, VIP purchase barriers, limits and bundles.</p>
           </div>
         </div>
       </div>
 
       {/* Filters */}
-      <div className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="p-4 border border-border bg-surface rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1.5">VIP Tier Limit</label>
+          <label className="block text-xs font-semibold text-subtle uppercase tracking-wider mb-1.5">VIP Tier Limit</label>
           <select
             value={selectedVip}
             onChange={(e) => setSelectedVip(e.target.value)}
-            className="block w-full py-1.5 px-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
+            className="block w-full py-1.5 px-2 border border-border rounded-lg text-sm bg-bg focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
           >
             <option value="all">All VIP Ranks</option>
             {uniqueVips.sort((a,b)=>a-b).map(v => (
@@ -169,11 +169,11 @@ export const MallItemsPage: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1.5">Shop Tag</label>
+          <label className="block text-xs font-semibold text-subtle uppercase tracking-wider mb-1.5">Shop Tag</label>
           <select
             value={selectedHot}
             onChange={(e) => setSelectedHot(e.target.value)}
-            className="block w-full py-1.5 px-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
+            className="block w-full py-1.5 px-2 border border-border rounded-lg text-sm bg-bg focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
           >
             <option value="all">All Entries</option>
             <option value="hot">Hot Sellers Only</option>

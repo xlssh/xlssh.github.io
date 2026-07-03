@@ -1142,6 +1142,17 @@ export interface ActivityDetailsJson {
   [key: string]: ActivityDetail;
 }
 
+export interface ProfessionRefine {
+  id: number;
+  cost: number;
+  phy_atk: number;
+  magic_atk: number;
+  phy_def: number;
+  magic_def: number;
+  hp: number;
+  speed: number;
+}
+
 
 
 

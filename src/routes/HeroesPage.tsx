@@ -26,7 +26,7 @@ export const getQualityLabel = (quality: number | null): string => {
 export const getQualityColorClass = (quality: number | null): string => {
   if (quality === null) return 'bg-surface text-muted';
   switch (quality) {
-    case 1: return 'bg-zinc-100 text-zinc-800 dark:bg-zinc-800 dark:text-zinc-200 border border-zinc-200/20';
+    case 1: return 'bg-bg text-text dark:bg-surface dark:text-zinc-200 border border-border/20';
     case 2: return 'bg-green-100 text-green-900 dark:bg-green-950/40 dark:text-green-400 border border-green-200/30';
     case 3: return 'bg-blue-100 text-blue-900 dark:bg-blue-950/40 dark:text-blue-400 border border-blue-200/30';
     case 4: return 'bg-purple-100 text-purple-900 dark:bg-purple-950/40 dark:text-purple-400 border border-purple-200/30';

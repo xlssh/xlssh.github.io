@@ -24,18 +24,15 @@ import {
   GitFork,
   Coins,
   Navigation,
-  Volume2,
   BarChart3,
   Clock,
-  Network,
   Shield,
   LayoutGrid,
   Wand2,
   Sparkles,
   HeartHandshake,
   Trophy,
-  Star,
-  Target
+  Star
 } from 'lucide-react';
 
 interface LayoutProps {
@@ -138,6 +135,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Guild Devotion & VIP', to: '/tools/guild-vip', icon: Trophy },
     { name: 'Spiritual Ornaments', to: '/tools/ornaments', icon: Sparkles },
     { name: 'MC Soul Maps', to: '/tools/soul-maps', icon: Compass },
+    { name: 'Soul King Palace Refinery', to: '/tools/refinery', icon: Sparkles },
     { name: 'Black Market Deals', to: '/tools/black-market', icon: Coins },
     { name: 'Beast Souls Planner', to: '/tools/beast-souls', icon: BarChart3 },
     //{ name: 'Temple Shrine', to: '/tools/shrine-simulator', icon: Trophy }, // TODO: unclear
@@ -168,7 +166,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className="sticky top-0 z-30 w-full border-b border-border bg-surface/80 backdrop-blur-md px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => setMobileMenuOpen(prev => !prev)}
             className="p-1.5 rounded-lg hover:bg-hover md:hidden text-muted"
             aria-label="Toggle Navigation Menu"
             aria-expanded={mobileMenuOpen}
@@ -257,7 +255,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
           {/* Sidebar Collapse Toggle Button */}
           <div className="pt-3 border-t border-border">
             <button
-              onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+              onClick={() => setSidebarCollapsed(prev => !prev)}
               aria-label={sidebarCollapsed ? "Expand sidebar menu" : "Collapse sidebar menu"}
               className="w-full flex items-center justify-center p-2 rounded-xl border border-border hover:bg-hover text-muted hover:text-text font-semibold transition-all text-xs"
             >

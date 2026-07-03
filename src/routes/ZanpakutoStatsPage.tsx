@@ -107,16 +107,16 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
   // Toggle knife comparison selection
   const handleToggleCompare = (id: number) => {
-    if (compareIds.includes(id)) {
-      setCompareIds(compareIds.filter(x => x !== id));
-    } else {
-      if (compareIds.length >= 3) {
-        // limit to 3 knives maximum comparison
-        setCompareIds([...compareIds.slice(1), id]);
-      } else {
-        setCompareIds([...compareIds, id]);
+    setCompareIds(prev => {
+      if (prev.includes(id)) {
+        return prev.filter(x => x !== id);
       }
-    }
+      if (prev.length >= 3) {
+        // limit to 3 knives maximum comparison
+        return [...prev.slice(1), id];
+      }
+      return [...prev, id];
+    });
   };
 
   // Simulated Stats calculation
@@ -154,7 +154,7 @@ export const ZanpakutoStatsPage: React.FC = () => {
       <div>
         <Link
           to="/weapons/evolution"
-          className="flex items-center gap-1 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Zanpakuto Evolution</span>
@@ -162,14 +162,14 @@ export const ZanpakutoStatsPage: React.FC = () => {
       </div>
 
       {/* Header Banner */}
-      <div className="p-6 md:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm space-y-2">
+      <div className="p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-sm space-y-2">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 rounded-xl">
             <BarChart3 size={28} />
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-zinc-50">Zanpakuto Stats & Comparison</h1>
-            <p className="text-xs text-zinc-550 font-semibold">Analyze Zanpakuto stat curves, passive skill releases, and compare up to 3 blades side-by-side.</p>
+            <h1 className="text-2xl md:text-3xl font-black text-text">Zanpakuto Stats & Comparison</h1>
+            <p className="text-xs text-muted font-semibold">Analyze Zanpakuto stat curves, passive skill releases, and compare up to 3 blades side-by-side.</p>
           </div>
         </div>
       </div>
@@ -177,10 +177,10 @@ export const ZanpakutoStatsPage: React.FC = () => {
       {/* Grid: 1. Left Selector & Comparison Selector, 2. Right Stats Comparison, 3. bottom calculator */}
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Left Column: Selector */}
-        <div className="xl:col-span-1 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 rounded-2xl shadow-sm space-y-4">
-          <h3 className="font-extrabold text-sm text-zinc-800 dark:text-zinc-200 border-b border-zinc-100 dark:border-zinc-800 pb-2.5 flex items-center justify-between">
+        <div className="xl:col-span-1 border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4">
+          <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5 flex items-center justify-between">
             <span>Select Blades (Max 3)</span>
-            <span className="text-[10px] text-zinc-400 font-bold">{compareIds.length}/3 selected</span>
+            <span className="text-[10px] text-subtle font-bold">{compareIds.length}/3 selected</span>
           </h3>
 
           <div className="space-y-1.5 max-h-[500px] overflow-y-auto pr-1">
@@ -193,14 +193,14 @@ export const ZanpakutoStatsPage: React.FC = () => {
                   className={`w-full p-3 text-left border rounded-xl text-xs transition-all flex items-center justify-between cursor-pointer ${
                     selected
                       ? 'border-fuchsia-500 bg-fuchsia-500/5 text-fuchsia-800 dark:text-fuchsia-400 font-bold'
-                      : 'border-zinc-100 dark:border-zinc-800 hover:border-zinc-200 dark:hover:border-zinc-700 hover:bg-zinc-50/50 dark:hover:bg-zinc-950/20 text-zinc-700 dark:text-zinc-300'
+                      : 'border-border hover:border-border-strong hover:bg-hover/50 text-muted'
                   }`}
                 >
                   <div>
                     <span className="font-semibold block truncate">{cleanName(k.name)}</span>
-                    <span className="text-[10px] text-zinc-400 font-mono">ATK: {k.attack} | SPD: {k.speed}</span>
+                    <span className="text-[10px] text-subtle font-mono">ATK: {k.attack} | SPD: {k.speed}</span>
                   </div>
-                  <Scale size={14} className={selected ? 'text-fuchsia-500' : 'text-zinc-300'} />
+                  <Scale size={14} className={selected ? 'text-fuchsia-500' : 'text-subtle'} />
                 </button>
               );
             })}
@@ -209,14 +209,14 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
         {/* Right Column: Comparative Dashboard */}
         <div className="xl:col-span-2 space-y-6">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
-            <h3 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-100 border-b border-zinc-100 dark:border-zinc-800 pb-3 flex items-center gap-2">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
+            <h3 className="font-extrabold text-sm text-text border-b border-border pb-3 flex items-center gap-2">
               <Scale size={16} className="text-fuchsia-500" />
               <span>Comparative Stats Matrix</span>
             </h3>
 
             {comparedKnives.length === 0 ? (
-              <div className="text-xs text-zinc-450 italic text-center py-16">
+              <div className="text-xs text-subtle italic text-center py-16">
                 Select Zanpakutos from the sidebar to inspect and compare their attributes.
               </div>
             ) : (
@@ -225,23 +225,23 @@ export const ZanpakutoStatsPage: React.FC = () => {
                   return (
                     <div
                       key={knife.id}
-                      className="p-5 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/15 dark:bg-zinc-950/15 rounded-2xl space-y-4 shadow-xs"
+                      className="p-5 border border-border/80 bg-bg/15 dark:bg-bg/15 rounded-2xl space-y-4 shadow-xs"
                     >
                       <div>
-                        <h4 className="font-extrabold text-base text-zinc-850 dark:text-zinc-100 truncate">
+                        <h4 className="font-extrabold text-base text-text truncate">
                           {cleanName(knife.name)}
                         </h4>
-                        <span className="text-[9px] font-mono text-zinc-400">ID: {knife.id}</span>
+                        <span className="text-[9px] font-mono text-subtle">ID: {knife.id}</span>
                       </div>
 
                       {/* Stat Bars */}
                       <div className="space-y-3.5 text-xs">
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
-                            <span className="text-zinc-450 font-sans">Attack</span>
+                            <span className="text-subtle font-sans">Attack</span>
                             <span>{knife.attack}</span>
                           </div>
-                          <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
+                          <div className="w-full bg-bg rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-rose-500 h-1.5 rounded-full"
                               style={{ width: `${((knife.attack ?? 0) / maxStats.attack) * 100}%` }}
@@ -251,10 +251,10 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
-                            <span className="text-zinc-450 font-sans">Defense</span>
+                            <span className="text-subtle font-sans">Defense</span>
                             <span>{knife.defense}</span>
                           </div>
-                          <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
+                          <div className="w-full bg-bg rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-blue-500 h-1.5 rounded-full"
                               style={{ width: `${((knife.defense ?? 0) / maxStats.defense) * 100}%` }}
@@ -264,10 +264,10 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
-                            <span className="text-zinc-450 font-sans">Recovery</span>
+                            <span className="text-subtle font-sans">Recovery</span>
                             <span>{knife.recovery}</span>
                           </div>
-                          <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
+                          <div className="w-full bg-bg rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-emerald-500 h-1.5 rounded-full"
                               style={{ width: `${((knife.recovery ?? 0) / maxStats.recovery) * 100}%` }}
@@ -277,10 +277,10 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
-                            <span className="text-zinc-450 font-sans">Resistance</span>
+                            <span className="text-subtle font-sans">Resistance</span>
                             <span>{knife.resistance}</span>
                           </div>
-                          <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
+                          <div className="w-full bg-bg rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-amber-500 h-1.5 rounded-full"
                               style={{ width: `${((knife.resistance ?? 0) / maxStats.resistance) * 100}%` }}
@@ -290,10 +290,10 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
                         <div className="space-y-1">
                           <div className="flex justify-between font-mono font-bold">
-                            <span className="text-zinc-450 font-sans">Speed</span>
+                            <span className="text-subtle font-sans">Speed</span>
                             <span>{knife.speed}</span>
                           </div>
-                          <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-1.5 overflow-hidden">
+                          <div className="w-full bg-bg rounded-full h-1.5 overflow-hidden">
                             <div
                               className="bg-violet-500 h-1.5 rounded-full"
                               style={{ width: `${((knife.speed ?? 0) / maxStats.speed) * 100}%` }}
@@ -303,18 +303,18 @@ export const ZanpakutoStatsPage: React.FC = () => {
                       </div>
 
                       {/* Passive Skill and Lore info */}
-                      <div className="pt-3 border-t border-zinc-100 dark:border-zinc-800 space-y-2.5 text-[11px]">
+                      <div className="pt-3 border-t border-border space-y-2.5 text-[11px]">
                         <div className="space-y-0.5">
-                          <span className="block text-[8px] font-bold text-zinc-400 uppercase">Bind Skill ID</span>
-                          <span className="font-bold text-zinc-700 dark:text-zinc-300 font-mono flex items-center gap-1">
+                          <span className="block text-[8px] font-bold text-subtle uppercase">Bind Skill ID</span>
+                          <span className="font-bold text-muted font-mono flex items-center gap-1">
                             <Cpu size={11} className="text-fuchsia-500" />
                             <span>Passive #{knife.bind_skill_id}</span>
                           </span>
                         </div>
                         {knife.appraise && (
                           <div className="space-y-0.5">
-                            <span className="block text-[8px] font-bold text-zinc-400 uppercase">Appraisal Lore</span>
-                            <p className="text-zinc-500 italic leading-relaxed">"{knife.appraise}"</p>
+                            <span className="block text-[8px] font-bold text-subtle uppercase">Appraisal Lore</span>
+                            <p className="text-muted italic leading-relaxed">"{knife.appraise}"</p>
                           </div>
                         )}
                       </div>
@@ -329,19 +329,19 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
       {/* Section 3: Stat Growth Simulator slider */}
       {selectedKnife && simulatedStats && (
-        <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-100 dark:border-zinc-800 pb-3">
-            <h3 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-100 flex items-center gap-2">
+        <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
+            <h3 className="font-extrabold text-sm text-text flex items-center gap-2">
               <Sparkles size={16} className="text-fuchsia-500" />
               <span>Zanpakuto Growth Simulator</span>
             </h3>
 
             <div className="flex items-center gap-3">
-              <label className="text-xs font-bold text-zinc-450 uppercase whitespace-nowrap">Target Blade:</label>
+              <label className="text-xs font-bold text-subtle uppercase whitespace-nowrap">Target Blade:</label>
               <select
                 value={selectedKnifeId}
                 onChange={(e) => setSelectedKnifeId(Number(e.target.value))}
-                className="px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50 dark:bg-zinc-950 text-xs font-bold text-zinc-855 dark:text-zinc-250 cursor-pointer"
+                className="px-3 py-1.5 border border-border rounded-xl bg-bg text-xs font-bold text-text cursor-pointer"
               >
                 {knives.map(k => (
                   <option key={k.id} value={k.id}>{cleanName(k.name)}</option>
@@ -354,7 +354,7 @@ export const ZanpakutoStatsPage: React.FC = () => {
             {/* Slider Control */}
             <div className="space-y-4">
               <div className="flex justify-between items-center text-xs">
-                <span className="font-bold text-zinc-550 dark:text-zinc-400">Refine Level</span>
+                <span className="font-bold text-muted">Refine Level</span>
                 <span className="px-2 py-0.5 rounded bg-fuchsia-100 dark:bg-fuchsia-950 text-fuchsia-800 dark:text-fuchsia-400 font-mono font-bold">
                   +{refineLevel}
                 </span>
@@ -365,9 +365,9 @@ export const ZanpakutoStatsPage: React.FC = () => {
                 max="100"
                 value={refineLevel}
                 onChange={(e) => setRefineLevel(Number(e.target.value))}
-                className="w-full accent-fuchsia-600 bg-zinc-100 dark:bg-zinc-800 h-1.5 rounded-lg appearance-none cursor-pointer"
+                className="w-full accent-fuchsia-600 bg-surface-raised h-1.5 rounded-lg appearance-none cursor-pointer"
               />
-              <div className="flex justify-between text-[10px] text-zinc-400 font-mono">
+              <div className="flex justify-between text-[10px] text-subtle font-mono">
                 <span>+0 (Base)</span>
                 <span>+50 (High)</span>
                 <span>+100 (Max)</span>
@@ -376,24 +376,24 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
             {/* Simulated Stats display */}
             <div className="grid grid-cols-5 gap-3 text-center">
-              <div className="p-3 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-xl space-y-1">
-                <span className="block text-[8px] font-bold text-zinc-400 uppercase">Attack</span>
+              <div className="p-3 border border-border/80 bg-bg/20 rounded-xl space-y-1">
+                <span className="block text-[8px] font-bold text-subtle uppercase">Attack</span>
                 <span className="text-sm font-black text-rose-500 font-mono">{simulatedStats.attack}</span>
               </div>
-              <div className="p-3 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-xl space-y-1">
-                <span className="block text-[8px] font-bold text-zinc-400 uppercase">Defense</span>
+              <div className="p-3 border border-border/80 bg-bg/20 rounded-xl space-y-1">
+                <span className="block text-[8px] font-bold text-subtle uppercase">Defense</span>
                 <span className="text-sm font-black text-blue-500 font-mono">{simulatedStats.defense}</span>
               </div>
-              <div className="p-3 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-xl space-y-1">
-                <span className="block text-[8px] font-bold text-zinc-400 uppercase">Recovery</span>
+              <div className="p-3 border border-border/80 bg-bg/20 rounded-xl space-y-1">
+                <span className="block text-[8px] font-bold text-subtle uppercase">Recovery</span>
                 <span className="text-sm font-black text-emerald-500 font-mono">{simulatedStats.recovery}</span>
               </div>
-              <div className="p-3 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-xl space-y-1">
-                <span className="block text-[8px] font-bold text-zinc-400 uppercase">Resistance</span>
+              <div className="p-3 border border-border/80 bg-bg/20 rounded-xl space-y-1">
+                <span className="block text-[8px] font-bold text-subtle uppercase">Resistance</span>
                 <span className="text-sm font-black text-amber-500 font-mono">{simulatedStats.resistance}</span>
               </div>
-              <div className="p-3 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-xl space-y-1">
-                <span className="block text-[8px] font-bold text-zinc-400 uppercase">Speed</span>
+              <div className="p-3 border border-border/80 bg-bg/20 rounded-xl space-y-1">
+                <span className="block text-[8px] font-bold text-subtle uppercase">Speed</span>
                 <span className="text-sm font-black text-violet-500 font-mono">{simulatedStats.speed}</span>
               </div>
             </div>
@@ -403,8 +403,8 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
       {/* Zanpakuto Release Phases & Strengthen Effects */}
       {selectedKnife && knifePhases.length > 0 && (
-        <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-5 animate-fade-in">
-          <h3 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-100 border-b border-zinc-100 dark:border-zinc-800 pb-3 flex items-center gap-2">
+        <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-5 animate-fade-in">
+          <h3 className="font-extrabold text-sm text-text border-b border-border pb-3 flex items-center gap-2">
             <Swords size={16} className="text-fuchsia-500" />
             <span>Zanpakutō Release Phases & Strengthen Effects (Shikai / Bankai)</span>
           </h3>
@@ -422,13 +422,13 @@ export const ZanpakutoStatsPage: React.FC = () => {
               return (
                 <div
                   key={phase.id}
-                  className="p-5 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/15 dark:bg-zinc-950/15 rounded-2xl space-y-4 flex flex-col justify-between"
+                  className="p-5 border border-border/80 bg-bg/15 dark:bg-bg/15 rounded-2xl space-y-4 flex flex-col justify-between"
                 >
                   <div className="space-y-3">
-                    <div className="flex justify-between items-start gap-2 border-b border-zinc-100 dark:border-zinc-800/60 pb-2">
+                    <div className="flex justify-between items-start gap-2 border-b border-border/60 pb-2">
                       <div>
-                        <span className="text-[10px] font-mono text-zinc-400 block font-bold">STRENGTHEN ID: {phase.id}</span>
-                        <h4 className="font-black text-sm text-zinc-850 dark:text-zinc-100">
+                        <span className="text-[10px] font-mono text-subtle block font-bold">STRENGTHEN ID: {phase.id}</span>
+                        <h4 className="font-black text-sm text-text">
                           {phaseName}
                         </h4>
                       </div>
@@ -439,27 +439,27 @@ export const ZanpakutoStatsPage: React.FC = () => {
 
                     {/* Allowed Heroes */}
                     <div className="space-y-1">
-                      <span className="block text-[9px] font-bold text-zinc-400 uppercase">Allowed Wielders</span>
+                      <span className="block text-[9px] font-bold text-subtle uppercase">Allowed Wielders</span>
                       {allowedHeroesList.length > 0 ? (
                         <div className="flex flex-wrap gap-1.5">
                           {allowedHeroesList.map((name, hIdx) => (
                             <span
                               key={hIdx}
-                              className="px-2 py-0.5 rounded bg-white dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 text-[10px] font-semibold text-zinc-700 dark:text-zinc-300"
+                              className="px-2 py-0.5 rounded bg-surface border border-border text-[10px] font-semibold text-muted"
                             >
                               {name}
                             </span>
                           ))}
                         </div>
                       ) : (
-                        <span className="text-[10px] text-zinc-500 italic block">All Heroes Eligible</span>
+                        <span className="text-[10px] text-muted italic block">All Heroes Eligible</span>
                       )}
                     </div>
 
                     {/* Stat adjustments */}
                     {phase.attributes && phase.attributes.length > 0 ? (
                       <div className="space-y-1.5 pt-2">
-                        <span className="block text-[9px] font-bold text-zinc-400 uppercase">Phase Attribute Buffs</span>
+                        <span className="block text-[9px] font-bold text-subtle uppercase">Phase Attribute Buffs</span>
                         <div className="space-y-1">
                           {phase.attributes.map((attr, aIdx) => {
                             if (attr.oper === 0) {
@@ -469,13 +469,13 @@ export const ZanpakutoStatsPage: React.FC = () => {
                               return (
                                 <div
                                   key={aIdx}
-                                  className="py-1.5 border-b border-zinc-100 dark:border-zinc-800/40 last:border-0 text-xs"
+                                  className="py-1.5 border-b border-border/40 last:border-0 text-xs"
                                 >
                                   <div className="flex justify-between items-center">
                                     <span className="text-fuchsia-600 dark:text-fuchsia-400 font-bold">{skillName}</span>
-                                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500 uppercase font-mono">Passive</span>
+                                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-surface-raised text-muted uppercase font-mono">Passive</span>
                                   </div>
-                                  <p className="text-[11px] text-zinc-500 mt-0.5 leading-relaxed">{skillDesc}</p>
+                                  <p className="text-[11px] text-muted mt-0.5 leading-relaxed">{skillDesc}</p>
                                 </div>
                               );
                             }
@@ -488,9 +488,9 @@ export const ZanpakutoStatsPage: React.FC = () => {
                             return (
                               <div
                                 key={aIdx}
-                                className="flex justify-between items-center text-xs py-1 border-b border-zinc-100 dark:border-zinc-800/40 last:border-0"
+                                className="flex justify-between items-center text-xs py-1 border-b border-border/40 last:border-0"
                               >
-                                <span className="text-zinc-400 font-semibold">{getAttributeName(attr.type)}</span>
+                                <span className="text-subtle font-semibold">{getAttributeName(attr.type)}</span>
                                 <span className="font-mono font-bold text-fuchsia-600 dark:text-fuchsia-400">{formattedValue}</span>
                               </div>
                             );
@@ -498,15 +498,15 @@ export const ZanpakutoStatsPage: React.FC = () => {
                         </div>
                       </div>
                     ) : (
-                      <span className="text-[10px] text-zinc-500 italic block">No custom attributes on this release phase.</span>
+                      <span className="text-[10px] text-muted italic block">No custom attributes on this release phase.</span>
                     )}
                   </div>
 
                   {/* Effect ID and visual key */}
                   {phase.effect_ids && phase.effect_ids.length > 0 && (
-                    <div className="pt-2 border-t border-zinc-100 dark:border-zinc-800/60 text-[9px] font-mono text-zinc-400 flex justify-between items-center">
+                    <div className="pt-2 border-t border-border/60 text-[9px] font-mono text-subtle flex justify-between items-center">
                       <span>Visual Sfx IDs</span>
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300">[{phase.effect_ids.join(', ')}]</span>
+                      <span className="font-semibold text-muted">[{phase.effect_ids.join(', ')}]</span>
                     </div>
                   )}
                 </div>

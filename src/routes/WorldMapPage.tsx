@@ -90,7 +90,7 @@ export const WorldMapPage: React.FC = () => {
       <div>
         <Link
           to="/cities"
-          className="flex items-center gap-1 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Cities Catalog</span>
@@ -98,22 +98,22 @@ export const WorldMapPage: React.FC = () => {
       </div>
 
       {/* Header Banner */}
-      <div className="p-6 md:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm space-y-2">
+      <div className="p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-sm space-y-2">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 rounded-xl">
             <Compass size={28} />
           </div>
           <div>
-            <h1 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-zinc-50">World Map Progression Flow</h1>
-            <p className="text-xs text-zinc-500 font-semibold">Visualize chapter unlock pathways, required level criteria, and campaign stage limits.</p>
+            <h1 className="text-2xl md:text-3xl font-black text-text">World Map Progression Flow</h1>
+            <p className="text-xs text-muted font-semibold">Visualize chapter unlock pathways, required level criteria, and campaign stage limits.</p>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Left selector */}
-        <div className="xl:col-span-1 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 rounded-2xl shadow-sm space-y-4">
-          <h3 className="font-extrabold text-sm text-zinc-800 dark:text-zinc-200 border-b border-zinc-100 dark:border-zinc-800 pb-2.5">
+        <div className="xl:col-span-1 border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4">
+          <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5">
             Focus Map Zone
           </h3>
           <div className="relative">
@@ -122,9 +122,9 @@ export const WorldMapPage: React.FC = () => {
               placeholder="Search zones..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1.5 focus:ring-fuchsia-500 placeholder-zinc-400"
+              className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl border border-border bg-bg focus:outline-none focus:ring-1.5 focus:ring-fuchsia-500 placeholder-zinc-400"
             />
-            <Search size={14} className="absolute left-3.5 top-3.5 text-zinc-400" />
+            <Search size={14} className="absolute left-3.5 top-3.5 text-subtle" />
           </div>
 
           <div className="space-y-1.5 max-h-[500px] overflow-y-auto pr-1">
@@ -135,40 +135,40 @@ export const WorldMapPage: React.FC = () => {
                 className={`w-full p-3 text-left border rounded-xl text-xs transition-all flex items-center justify-between cursor-pointer ${
                   selectedCityId === c.id
                     ? 'border-fuchsia-500 bg-fuchsia-500/5 text-fuchsia-800 dark:text-fuchsia-400 font-bold'
-                    : 'border-zinc-100 dark:border-zinc-800 hover:border-zinc-200 dark:hover:border-zinc-700 hover:bg-zinc-50/50 dark:hover:bg-zinc-950/20 text-zinc-700 dark:text-zinc-300'
+                    : 'border-border hover:border-border-strong hover:bg-hover/50 text-muted'
                 }`}
               >
                 <div className="truncate pr-2">
                   <span className="font-semibold block truncate">{c.name}</span>
-                  <span className="text-[10px] text-zinc-400">Unlock: Lv. {c.open_level}</span>
+                  <span className="text-[10px] text-subtle">Unlock: Lv. {c.open_level}</span>
                 </div>
-                <span className="font-mono text-[9px] text-zinc-400 shrink-0">#{c.id}</span>
+                <span className="font-mono text-[9px] text-subtle shrink-0">#{c.id}</span>
               </button>
             ))}
             {filteredCities.length === 0 && (
-              <p className="text-xs text-zinc-400 text-center py-8">No zones match query.</p>
+              <p className="text-xs text-subtle text-center py-8">No zones match query.</p>
             )}
           </div>
         </div>
 
         {/* Progression path visualizer */}
         <div className="xl:col-span-2 space-y-6">
-          <div className="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm">
-            <h3 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-100 border-b border-zinc-100 dark:border-zinc-800 pb-3">
+          <div className="border border-border bg-surface p-6 rounded-2xl shadow-sm">
+            <h3 className="font-extrabold text-sm text-text border-b border-border pb-3">
               Geographical Chapter Timeline
             </h3>
 
-            <div className="pt-6 relative pl-6 md:pl-8 space-y-8 before:absolute before:left-[11px] before:top-8 before:bottom-8 before:w-0.5 before:bg-zinc-200 dark:before:bg-zinc-800">
+            <div className="pt-6 relative pl-6 md:pl-8 space-y-8 before:absolute before:left-[11px] before:top-8 before:bottom-8 before:w-0.5 before:bg-surface-raised dark:before:bg-surface">
               {cityChain.map((c, idx) => {
                 const isTarget = c.id === selectedCityId;
 
                 return (
                   <div key={c.id} className="relative space-y-3">
                     {/* Circle marker */}
-                    <div className={`absolute -left-[27px] md:-left-[35px] top-1.5 w-4 h-4 rounded-full border-2 bg-white dark:bg-zinc-900 transition-all flex items-center justify-center ${
+                    <div className={`absolute -left-[27px] md:-left-[35px] top-1.5 w-4 h-4 rounded-full border-2 bg-surface transition-all flex items-center justify-center ${
                       isTarget
                         ? 'border-fuchsia-500 scale-125 ring-4 ring-fuchsia-500/20'
-                        : 'border-zinc-300 dark:border-zinc-700'
+                        : 'border-border-strong'
                     }`}>
                       {isTarget && <div className="w-1.5 h-1.5 rounded-full bg-fuchsia-500" />}
                     </div>
@@ -177,21 +177,21 @@ export const WorldMapPage: React.FC = () => {
                     <div className={`p-4 md:p-5 border rounded-2xl shadow-sm transition-all flex flex-col sm:flex-row justify-between sm:items-center gap-4 ${
                       isTarget
                         ? 'border-fuchsia-555 dark:border-fuchsia-800 bg-fuchsia-500/5'
-                        : 'border-zinc-200 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/10'
+                        : 'border-border bg-bg/10'
                     }`}>
                       <div className="space-y-1">
                         <div className="flex items-center gap-2 text-xs">
-                          <span className="font-mono text-zinc-400 font-bold">Zone ID: {c.id}</span>
+                          <span className="font-mono text-subtle font-bold">Zone ID: {c.id}</span>
                           {c.pre_city === 0 && (
                             <span className="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-450 text-[9px] font-black uppercase tracking-wider">
                               Origin Zone
                             </span>
                           )}
                         </div>
-                        <h4 className="font-black text-zinc-850 dark:text-zinc-100 text-base">{c.name}</h4>
-                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-zinc-450 font-semibold pt-1">
+                        <h4 className="font-black text-text text-base">{c.name}</h4>
+                        <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-subtle font-semibold pt-1">
                           <span className="flex items-center gap-1">
-                            <MapPin size={13} className="text-zinc-400" />
+                            <MapPin size={13} className="text-subtle" />
                             <span>First Battle: Stage #{c.start}</span>
                           </span>
                           <span>•</span>
@@ -214,7 +214,7 @@ export const WorldMapPage: React.FC = () => {
 
                     {/* Connector Arrow */}
                     {idx < cityChain.length - 1 && (
-                      <div className="flex justify-center w-4 -ml-[27px] md:-ml-[35px] text-zinc-350 dark:text-zinc-700 py-1">
+                      <div className="flex justify-center w-4 -ml-[27px] md:-ml-[35px] text-zinc-350 dark:text-text py-1">
                         <ArrowDown size={14} />
                       </div>
                     )}

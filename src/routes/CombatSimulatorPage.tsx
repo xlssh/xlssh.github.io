@@ -1,10 +1,7 @@
 import React, { useEffect, useState, useMemo, useRef } from 'react';
-import { loadHeroes, loadRelatedPartnerPoints } from '../data/loaders';
-import { Hero, RelatedPartnerPoint } from '../types/db';
-import { LoadingState } from '../components/LoadingState';
-import { ErrorState } from '../components/ErrorState';
-import { getProfessionLabel } from '../data/relationships';
-import { Swords, RotateCcw, Play, AlertTriangle, Shield, Zap, Flame, User, Check, Heart } from 'lucide-react';
+import { loadHeroes } from '../data/loaders';
+import { Hero } from '../types/db';
+import { Swords, Play, Heart } from 'lucide-react';
 
 interface Combatant {
   id: number;
@@ -22,8 +19,6 @@ interface Combatant {
 
 export const CombatSimulatorPage: React.FC = () => {
   const [heroes, setHeroes] = useState<Hero[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
   // Challenger Team Selection (Up to 5)
   const [selectedHeroIds, setSelectedSkillHeroIds] = useState<number[]>([]);
@@ -35,7 +30,6 @@ export const CombatSimulatorPage: React.FC = () => {
   // Simulation Status
   const [isRunning, setIsRunning] = useState(false);
   const [combatLog, setCombatLog] = useState<string[]>([]);
-  const [combatWinner, setCombatWinner] = useState<'player' | 'enemy' | null>(null);
   const [playerTeamState, setPlayerTeamState] = useState<Combatant[]>([]);
   const [enemyTeamState, setEnemyTeamState] = useState<Combatant[]>([]);
 
@@ -43,8 +37,6 @@ export const CombatSimulatorPage: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      setLoading(true);
-      setError(null);
       const [hRes] = await Promise.all([
         loadHeroes()
       ]);
@@ -60,9 +52,6 @@ export const CombatSimulatorPage: React.FC = () => {
       }
     } catch (err: any) {
       console.error(err);
-      setError(err.message || "Failed to load combat simulator databases.");
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -294,7 +283,7 @@ export const CombatSimulatorPage: React.FC = () => {
                   <div key={c.id} className="p-2 border border-border bg-bg rounded-xl flex items-center justify-between text-xs">
                     <span className="font-bold text-text">{c.name}</span>
                     <button
-                      onClick={() => setSelectedSkillHeroIds(selectedHeroIds.filter(x => x !== c.id))}
+                      onClick={() => setSelectedSkillHeroIds(prev => prev.filter(x => x !== c.id))}
                       className="text-[10px] font-bold text-danger hover:text-danger/80 px-2 py-0.5 rounded bg-danger/10"
                       disabled={isRunning}
                     >
@@ -309,7 +298,8 @@ export const CombatSimulatorPage: React.FC = () => {
                   <select
                     onChange={(e) => {
                       if (e.target.value) {
-                        setSelectedSkillHeroIds([...selectedHeroIds, parseInt(e.target.value)]);
+                        const val = parseInt(e.target.value);
+                        setSelectedSkillHeroIds(prev => [...prev, val]);
                         e.target.value = '';
                       }
                     }}

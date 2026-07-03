@@ -12,7 +12,7 @@ import {
   SevenHeroStar, SevenHeroLittleStar, SevenHeroSoul, SevenHeroArmy, SevenHeroDailyAward,
   SoulCollectionRnd, SoulCollectionShop, SoulCollectionBase,
   BeautifulClothes, Beauty, HeroTalent, HdBigTurntable, HdJigsaw, BleachJigsaw, BuffEffect, BuildValue, BuildConsume,
-  OrgPointInfo, OrgPointAward, WeaponSkill, ActivityDetail, ActivityDetailsJson
+  OrgPointInfo, OrgPointAward, WeaponSkill, ActivityDetail, ActivityDetailsJson, ProfessionRefine
 } from '../types/db';
 
 const cache: { [key: string]: any } = {};
@@ -441,6 +441,10 @@ export async function loadSystemLanguage(): Promise<any> {
 
 export async function loadFighterDetails(): Promise<any> {
   return fetchWithCache<any>('data/tfighterdetail.json');
+}
+
+export async function loadProfessionRefines(): Promise<TableJson<ProfessionRefine>> {
+  return fetchWithCache<TableJson<ProfessionRefine>>('data/profession_refines.json');
 }
 
 

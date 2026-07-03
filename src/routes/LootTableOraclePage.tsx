@@ -173,13 +173,13 @@ export const LootTableOraclePage: React.FC = () => {
 
   const getQualityBg = (quality: number) => {
     switch (quality) {
-      case 1: return 'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-zinc-300 dark:border-zinc-700';
+      case 1: return 'bg-surface-raised text-text border-border-strong';
       case 2: return 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/50';
       case 3: return 'bg-blue-50 dark:bg-blue-950/30 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-800/50';
       case 4: return 'bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-400 border-purple-200 dark:border-purple-800/50';
       case 5: return 'bg-orange-50 dark:bg-orange-950/30 text-orange-700 dark:text-orange-400 border-orange-200 dark:border-orange-800/50';
       case 6: return 'bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400 border-red-200 dark:border-red-800/50';
-      default: return 'bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-zinc-200 border-zinc-300 dark:border-zinc-700';
+      default: return 'bg-surface-raised text-text border-border-strong';
     }
   };
 
@@ -205,24 +205,24 @@ export const LootTableOraclePage: React.FC = () => {
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6">
       {/* Title block */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-5">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+          <h1 className="text-2xl font-bold tracking-tight text-text flex items-center gap-2">
             <Sparkles className="w-6 h-6 text-indigo-500" /> Ultimate Loot Table Oracle
           </h1>
-          <p className="text-zinc-500 dark:text-zinc-400 mt-1">
+          <p className="text-muted mt-1">
             Map any drop item back to its stage encounters or simulate chest drop rates with actual game config weights.
           </p>
         </div>
 
         {/* Tab Selector */}
-        <div className="flex bg-zinc-100 dark:bg-zinc-900 p-1 rounded-xl border border-zinc-200 dark:border-zinc-800">
+        <div className="flex bg-surface-raised p-1 rounded-xl border border-border">
           <button
             onClick={() => setActiveTab('oracle')}
             className={`px-4 py-2 text-sm font-semibold rounded-lg flex items-center gap-2 transition-all ${
               activeTab === 'oracle'
-                ? 'bg-white dark:bg-zinc-800 text-indigo-600 dark:text-indigo-400 shadow-sm'
-                : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200'
+                ? 'bg-surface text-indigo-600 dark:text-indigo-400 shadow-sm'
+                : 'text-muted hover:text-text dark:hover:text-zinc-200'
             }`}
           >
             <GitPullRequest className="w-4 h-4" /> Oracle Console
@@ -231,8 +231,8 @@ export const LootTableOraclePage: React.FC = () => {
             onClick={() => setActiveTab('simulator')}
             className={`px-4 py-2 text-sm font-semibold rounded-lg flex items-center gap-2 transition-all ${
               activeTab === 'simulator'
-                ? 'bg-white dark:bg-zinc-800 text-indigo-600 dark:text-indigo-400 shadow-sm'
-                : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200'
+                ? 'bg-surface text-indigo-600 dark:text-indigo-400 shadow-sm'
+                : 'text-muted hover:text-text dark:hover:text-zinc-200'
             }`}
           >
             <Dices className="w-4 h-4" /> Loot Box Simulator
@@ -243,11 +243,11 @@ export const LootTableOraclePage: React.FC = () => {
       {activeTab === 'oracle' ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Search Column */}
-          <div className="lg:col-span-1 bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 space-y-4">
-            <h2 className="text-lg font-bold flex items-center gap-2 text-zinc-800 dark:text-zinc-200">
+          <div className="lg:col-span-1 bg-surface rounded-2xl border border-border p-5 space-y-4">
+            <h2 className="text-lg font-bold flex items-center gap-2 text-text">
               <Search className="w-5 h-5 text-indigo-500" /> Trace Item Drops
             </h2>
-            <p className="text-xs text-zinc-500">
+            <p className="text-xs text-muted">
               Enter item name (e.g. "shining", "stone", "relic", "scroll") or exact Article ID.
             </p>
 
@@ -258,9 +258,9 @@ export const LootTableOraclePage: React.FC = () => {
                 placeholder="Search articles..."
                 value={searchQuery}
                 onChange={e => setSearchVal(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-border bg-bg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
               />
-              <Search className="absolute left-3.5 top-3 w-4 h-4 text-zinc-400" />
+              <Search className="absolute left-3.5 top-3 w-4 h-4 text-subtle" />
             </div>
 
             {/* Matching Articles List */}
@@ -273,23 +273,23 @@ export const LootTableOraclePage: React.FC = () => {
                     className={`w-full text-left p-3 rounded-xl border transition-all flex items-center justify-between ${
                       selectedArticleId === art.id
                         ? 'border-indigo-500 bg-indigo-500/5 text-indigo-600 dark:text-indigo-400'
-                        : 'border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-950 text-zinc-700 dark:text-zinc-300'
+                        : 'border-border hover:bg-hover text-muted'
                     }`}
                   >
                     <div>
                       <div className="font-semibold text-sm line-clamp-1">{art.name}</div>
-                      <div className="text-xs text-zinc-500 mt-0.5">ID: {art.id} • Quality {art.quality}</div>
+                      <div className="text-xs text-muted mt-0.5">ID: {art.id} • Quality {art.quality}</div>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-zinc-400" />
+                    <ArrowRight className="w-4 h-4 text-subtle" />
                   </button>
                 ))
               ) : searchQuery ? (
-                <div className="text-center py-6 text-sm text-zinc-500">
+                <div className="text-center py-6 text-sm text-muted">
                   No matching articles found.
                 </div>
               ) : (
-                <div className="text-center py-6 text-sm text-zinc-500 flex flex-col items-center gap-2">
-                  <HelpCircle className="w-8 h-8 text-zinc-400" />
+                <div className="text-center py-6 text-sm text-muted flex flex-col items-center gap-2">
+                  <HelpCircle className="w-8 h-8 text-subtle" />
                   Type a keyword to start tracing.
                 </div>
               )}
@@ -303,7 +303,7 @@ export const LootTableOraclePage: React.FC = () => {
                 {/* Article Info Card */}
                 <div className={`p-5 rounded-2xl border ${getQualityBg(selectedArticle.quality || 1)} flex flex-col sm:flex-row justify-between gap-4 shadow-sm`}>
                   <div className="space-y-1">
-                    <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-black/5 dark:bg-white/10 uppercase tracking-wider">
+                    <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-black/5 dark:bg-surface/10 uppercase tracking-wider">
                       {getQualityBadge(selectedArticle.quality || 1)} Item
                     </span>
                     <h3 className="text-xl font-bold mt-1">{selectedArticle.name}</h3>
@@ -319,8 +319,8 @@ export const LootTableOraclePage: React.FC = () => {
                 {/* Drop Locations */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Matching Chests / Award entries */}
-                  <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 space-y-4">
-                    <h4 className="font-bold text-sm uppercase tracking-wider text-zinc-400 flex items-center gap-2">
+                  <div className="bg-surface border border-border rounded-2xl p-5 space-y-4">
+                    <h4 className="font-bold text-sm uppercase tracking-wider text-subtle flex items-center gap-2">
                       <Layers className="w-4 h-4" /> Award Pools ({articleDrops.awards.length})
                     </h4>
                     <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1">
@@ -332,10 +332,10 @@ export const LootTableOraclePage: React.FC = () => {
                           const pct = matchingReward && totalWeight ? ((matchingReward.prob || 0) / totalWeight) * 100 : 0;
 
                           return (
-                            <div key={aw.id} className="p-3 bg-zinc-50 dark:bg-zinc-950 rounded-xl border border-zinc-150 dark:border-zinc-850 flex items-center justify-between text-sm">
+                            <div key={aw.id} className="p-3 bg-bg rounded-xl border border-border flex items-center justify-between text-sm">
                               <div>
-                                <span className="font-bold text-xs text-zinc-400">Award ID {aw.id}</span>
-                                <div className="font-semibold text-zinc-800 dark:text-zinc-200 mt-0.5">
+                                <span className="font-bold text-xs text-subtle">Award ID {aw.id}</span>
+                                <div className="font-semibold text-text mt-0.5">
                                   {isFixed ? 'Guaranteed/Fixed drop' : `Weighted random drop`}
                                 </div>
                               </div>
@@ -354,7 +354,7 @@ export const LootTableOraclePage: React.FC = () => {
                           );
                         })
                       ) : (
-                        <div className="text-center py-8 text-zinc-500 text-sm">
+                        <div className="text-center py-8 text-muted text-sm">
                           This item is not mapped in any random Award chest.
                         </div>
                       )}
@@ -362,24 +362,24 @@ export const LootTableOraclePage: React.FC = () => {
                   </div>
 
                   {/* Active Campaigns */}
-                  <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 space-y-4">
-                    <h4 className="font-bold text-sm uppercase tracking-wider text-zinc-400 flex items-center gap-2">
+                  <div className="bg-surface border border-border rounded-2xl p-5 space-y-4">
+                    <h4 className="font-bold text-sm uppercase tracking-wider text-subtle flex items-center gap-2">
                       <Swords className="w-4 h-4" /> Combat Encounters ({articleDrops.armies.length})
                     </h4>
                     <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1">
                       {articleDrops.armies.length > 0 ? (
                         articleDrops.armies.map(army => (
-                          <div key={army.id} className="p-3 bg-zinc-50 dark:bg-zinc-950 rounded-xl border border-zinc-150 dark:border-zinc-850 space-y-1 text-sm">
+                          <div key={army.id} className="p-3 bg-bg rounded-xl border border-border space-y-1 text-sm">
                             <div className="flex justify-between items-center">
                               <span className="font-bold text-xs text-indigo-400">Encounter {army.id}</span>
-                              <span className="text-xs text-zinc-500">Award: {army.award_id}</span>
+                              <span className="text-xs text-muted">Award: {army.award_id}</span>
                             </div>
-                            <div className="font-semibold text-zinc-800 dark:text-zinc-200">{army.name}</div>
-                            {army.text && <p className="text-xs text-zinc-500 line-clamp-1 italic">"{army.text}"</p>}
+                            <div className="font-semibold text-text">{army.name}</div>
+                            {army.text && <p className="text-xs text-muted line-clamp-1 italic">"{army.text}"</p>}
                           </div>
                         ))
                       ) : (
-                        <div className="text-center py-8 text-zinc-500 text-sm">
+                        <div className="text-center py-8 text-muted text-sm">
                           No active enemy army drop pools configured for this item.
                         </div>
                       )}
@@ -388,9 +388,9 @@ export const LootTableOraclePage: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-10 text-center text-zinc-500 flex flex-col items-center justify-center gap-3">
-                <HelpCircle className="w-12 h-12 text-zinc-400" />
-                <h3 className="font-bold text-lg text-zinc-800 dark:text-zinc-200">No Item Selected</h3>
+              <div className="bg-surface border border-border rounded-2xl p-10 text-center text-muted flex flex-col items-center justify-center gap-3">
+                <HelpCircle className="w-12 h-12 text-subtle" />
+                <h3 className="font-bold text-lg text-text">No Item Selected</h3>
                 <p className="max-w-md text-sm">
                   Search and select a spiritual article from the sidebar to trace exactly which bosses drop it and inspect its drop rates.
                 </p>
@@ -402,18 +402,18 @@ export const LootTableOraclePage: React.FC = () => {
         /* GACHA / LOOT CHEST SIMULATOR TAB */
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Simulator Config */}
-          <div className="lg:col-span-1 bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 space-y-5">
-            <h2 className="text-lg font-bold flex items-center gap-2 text-zinc-800 dark:text-zinc-200">
+          <div className="lg:col-span-1 bg-surface rounded-2xl border border-border p-5 space-y-5">
+            <h2 className="text-lg font-bold flex items-center gap-2 text-text">
               <Dices className="w-5 h-5 text-indigo-500" /> Simulator Controls
             </h2>
 
             {/* Select Box */}
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Select Award Pool</label>
+              <label className="text-xs font-bold uppercase tracking-wider text-subtle">Select Award Pool</label>
               <select
                 value={selectedAwardId}
                 onChange={e => setSelectedAwardId(parseInt(e.target.value))}
-                className="w-full px-3 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                className="w-full px-3 py-2 rounded-xl border border-border bg-bg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
               >
                 {awards
                   .filter(aw => (aw.fixed && aw.fixed.length > 0) || (aw.rewards && aw.rewards.length > 0))
@@ -433,7 +433,7 @@ export const LootTableOraclePage: React.FC = () => {
 
             {/* Number of Chests */}
             <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-wider text-zinc-400">Number of Draws</label>
+              <label className="text-xs font-bold uppercase tracking-wider text-subtle">Number of Draws</label>
               <div className="grid grid-cols-3 gap-2">
                 {[10, 100, 1000].map(count => (
                   <button
@@ -443,7 +443,7 @@ export const LootTableOraclePage: React.FC = () => {
                     className={`py-2 rounded-xl border font-semibold text-sm transition-all ${
                       simulationCount === count
                         ? 'border-indigo-500 bg-indigo-500/5 text-indigo-600 dark:text-indigo-400'
-                        : 'border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-950 text-zinc-600 dark:text-zinc-400'
+                        : 'border-border hover:bg-hover text-muted'
                     }`}
                   >
                     {count} Opens
@@ -462,13 +462,13 @@ export const LootTableOraclePage: React.FC = () => {
           </div>
 
           {/* Simulator Results */}
-          <div className="lg:col-span-2 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 space-y-6">
+          <div className="lg:col-span-2 bg-surface border border-border rounded-2xl p-5 space-y-6">
             {simResults ? (
               <div className="space-y-6">
-                <div className="flex items-center justify-between border-b border-zinc-150 dark:border-zinc-8.50 pb-4">
+                <div className="flex items-center justify-between border-b border-border pb-4">
                   <div>
                     <h3 className="text-lg font-bold">Simulation Output</h3>
-                    <p className="text-xs text-zinc-500">Successfully processed {simResults.totalOpened} chest opens</p>
+                    <p className="text-xs text-muted">Successfully processed {simResults.totalOpened} chest opens</p>
                   </div>
                   <span className="px-3 py-1 bg-indigo-500/10 text-indigo-400 font-bold rounded-lg text-xs">
                     {simResults.items.length} Unique Items Drawn
@@ -482,20 +482,20 @@ export const LootTableOraclePage: React.FC = () => {
                       <div className="flex justify-between items-center text-sm">
                         <div className="flex items-center gap-2">
                           <span className={`w-3.5 h-3.5 rounded border ${getQualityBg(res.quality)} inline-block`} />
-                          <span className="font-semibold text-zinc-800 dark:text-zinc-200">{res.name}</span>
+                          <span className="font-semibold text-text">{res.name}</span>
                           {res.fixed && (
-                            <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-500">
+                            <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-surface-raised text-muted">
                               Fixed Drop
                             </span>
                           )}
                         </div>
-                        <div className="text-zinc-500">
-                          <span className="font-bold text-zinc-800 dark:text-zinc-200">{res.count}x</span> ({res.percentage.toFixed(1)}% rate)
+                        <div className="text-muted">
+                          <span className="font-bold text-text">{res.count}x</span> ({res.percentage.toFixed(1)}% rate)
                         </div>
                       </div>
 
                       {/* Bar graph */}
-                      <div className="w-full bg-zinc-100 dark:bg-zinc-950 rounded-full h-3.5 overflow-hidden flex">
+                      <div className="w-full bg-bg rounded-full h-3.5 overflow-hidden flex">
                         <div
                           className="bg-indigo-650 dark:bg-indigo-500 h-full transition-all duration-300"
                           style={{ width: `${Math.min(res.percentage, 100)}%` }}
@@ -508,7 +508,7 @@ export const LootTableOraclePage: React.FC = () => {
                         )}
                       </div>
                       {!res.fixed && res.expectedPercentage > 0 && (
-                        <div className="text-[10px] text-zinc-500 text-right">
+                        <div className="text-[10px] text-muted text-right">
                           Expected Design Probability: <b>{res.expectedPercentage.toFixed(2)}%</b>
                         </div>
                       )}
@@ -517,9 +517,9 @@ export const LootTableOraclePage: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <div className="h-full py-16 flex flex-col items-center justify-center text-center text-zinc-500 gap-3">
-                <Dices className="w-16 h-16 text-zinc-400" />
-                <h3 className="font-bold text-lg text-zinc-800 dark:text-zinc-200">No Simulation Active</h3>
+              <div className="h-full py-16 flex flex-col items-center justify-center text-center text-muted gap-3">
+                <Dices className="w-16 h-16 text-subtle" />
+                <h3 className="font-bold text-lg text-text">No Simulation Active</h3>
                 <p className="max-w-md text-sm">
                   Choose an Award config on the left panel and click simulate to view accurate percentage distributions.
                 </p>

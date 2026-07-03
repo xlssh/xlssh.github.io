@@ -164,24 +164,24 @@ export const SevenSoulsPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <Star className="text-amber-500 animate-pulse" size={28} />
             Seven Souls Altar & Royal Guard Simulator
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Activate division altars star nodes, calculate Zero Guard soul shard costs, and check combat battle buffs.
           </p>
         </div>
       </div>
 
       {/* Altar Star selectors */}
-      <div className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-3">
-        <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Select Altar Star</span>
+      <div className="p-4 border border-border bg-surface rounded-2xl shadow-sm space-y-3">
+        <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Select Altar Star</span>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-2">
           {stars.map((star) => (
             <button
@@ -193,10 +193,10 @@ export const SevenSoulsPage: React.FC = () => {
               className={`py-3 px-1 text-center rounded-xl border text-xs font-bold transition-all ${
                 selectedStarId === star.id
                   ? 'border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-400 shadow-sm'
-                  : 'border-zinc-100 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 text-zinc-700 dark:text-zinc-355'
+                  : 'border-border bg-bg/50 hover:border-border text-text dark:text-zinc-355'
               }`}
             >
-              <span className="block text-[9px] text-zinc-400 font-mono">Division Altar</span>
+              <span className="block text-[9px] text-subtle font-mono">Division Altar</span>
               <span className="block truncate mt-0.5">{star.hero_name}</span>
             </button>
           ))}
@@ -207,23 +207,23 @@ export const SevenSoulsPage: React.FC = () => {
         
         {/* Left 2 Columns: Altar Star map node checklist and cost simulator */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
             
-            <div className="flex justify-between items-center pb-3 border-b border-zinc-100 dark:border-zinc-800/60">
+            <div className="flex justify-between items-center pb-3 border-b border-border/60">
               <div>
-                <span className="text-[10px] font-mono text-zinc-400 uppercase block">Active Altar Member</span>
-                <h3 className="font-black text-base text-zinc-850 dark:text-zinc-100">
+                <span className="text-[10px] font-mono text-subtle uppercase block">Active Altar Member</span>
+                <h3 className="font-black text-base text-text">
                   {activeStar?.hero_name} ({activeStar?.final_star_name})
                 </h3>
               </div>
-              <span className="text-[10.5px] text-zinc-500 max-w-xs text-right line-clamp-1 italic">
+              <span className="text-[10.5px] text-muted max-w-xs text-right line-clamp-1 italic">
                 "{activeStar?.desc}"
               </span>
             </div>
 
             {/* Nodes constellation layout checklist */}
             <div className="space-y-4">
-              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Constellation Satellite Nodes</span>
+              <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Constellation Satellite Nodes</span>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {activeLittleStars.map((node) => {
@@ -235,23 +235,23 @@ export const SevenSoulsPage: React.FC = () => {
                       className={`p-4 border rounded-xl transition-all text-left flex flex-col justify-between h-28 ${
                         isActive
                           ? 'border-amber-500 bg-amber-500/5 shadow-sm'
-                          : 'border-zinc-100 dark:border-zinc-850 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200'
+                          : 'border-border bg-bg/50 hover:border-border'
                       }`}
                     >
                       <div className="flex justify-between items-start w-full">
-                        <span className={`text-[10px] font-mono font-bold ${isActive ? 'text-amber-500' : 'text-zinc-400'}`}>
+                        <span className={`text-[10px] font-mono font-bold ${isActive ? 'text-amber-500' : 'text-subtle'}`}>
                           Node #{node.sort}
                         </span>
-                        <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${isActive ? 'border-amber-500 bg-amber-500' : 'border-zinc-300'}`}>
-                          {isActive && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
+                        <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${isActive ? 'border-amber-500 bg-amber-500' : 'border-border-strong'}`}>
+                          {isActive && <div className="w-1.5 h-1.5 rounded-full bg-surface" />}
                         </div>
                       </div>
                       
                       <div className="mt-2 space-y-1">
-                        <span className="text-xs font-bold text-zinc-705 dark:text-zinc-250 block">
+                        <span className="text-xs font-bold text-text block">
                           {node.little_star_name || `Satellite Node`}
                         </span>
-                        <span className="text-[9px] text-zinc-450 block font-mono">
+                        <span className="text-[9px] text-subtle block font-mono">
                           Requires: {node.cost_soul} Shards
                         </span>
                       </div>
@@ -262,19 +262,19 @@ export const SevenSoulsPage: React.FC = () => {
             </div>
 
             {/* Cumulative Costs & Stats aggregates results */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 border-t border-zinc-100 dark:border-zinc-800/60">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-5 border-t border-border/60">
               
               <div className="space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Soul Shards Material Cost</span>
-                <div className="p-4 bg-zinc-50/40 dark:bg-zinc-950/15 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-3 text-xs">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Soul Shards Material Cost</span>
+                <div className="p-4 bg-bg/20 border border-border rounded-xl space-y-3 text-xs">
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-zinc-700 dark:text-zinc-300">Shards Type:</span>
-                    <span className="font-bold text-zinc-900 dark:text-white">
+                    <span className="font-semibold text-muted">Shards Type:</span>
+                    <span className="font-bold text-text">
                       {simulationResults.shardName}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-zinc-700 dark:text-zinc-300">Total Shards Cost:</span>
+                    <span className="font-semibold text-muted">Total Shards Cost:</span>
                     <span className="font-mono font-black text-amber-600 dark:text-amber-400">
                       {simulationResults.totalSoulShards.toLocaleString()}x Shards
                     </span>
@@ -283,12 +283,12 @@ export const SevenSoulsPage: React.FC = () => {
               </div>
 
               <div className="space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Aggregate Stats Boost</span>
-                <div className="p-4 bg-zinc-50/40 dark:bg-zinc-950/15 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-2 text-xs">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Aggregate Stats Boost</span>
+                <div className="p-4 bg-bg/20 border border-border rounded-xl space-y-2 text-xs">
                   {Object.keys(simulationResults.stats).length > 0 ? (
                     Object.entries(simulationResults.stats).map(([name, val]) => (
-                      <div key={name} className="flex justify-between items-center py-1 border-b border-zinc-100 dark:border-zinc-800/40 last:border-0">
-                        <span className="font-semibold text-zinc-700 dark:text-zinc-300">{name}</span>
+                      <div key={name} className="flex justify-between items-center py-1 border-b border-border/40 last:border-0">
+                        <span className="font-semibold text-muted">{name}</span>
                         <span className="font-mono font-black text-amber-600 dark:text-amber-400 flex items-center gap-0.5">
                           <TrendingUp size={10} />
                           +{val.toLocaleString()}
@@ -296,7 +296,7 @@ export const SevenSoulsPage: React.FC = () => {
                       </div>
                     ))
                   ) : (
-                    <div className="text-center py-4 text-[10px] text-zinc-400 italic">
+                    <div className="text-center py-4 text-[10px] text-subtle italic">
                       Toggle constellation nodes to simulate attribute gains.
                     </div>
                   )}
@@ -310,8 +310,8 @@ export const SevenSoulsPage: React.FC = () => {
 
         {/* Right Column: Zero Division Royal Guard Boss encounters guide */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Zero Division trials</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Zero Division trials</span>
             
             <div className="space-y-1.5 max-h-[160px] overflow-y-auto pr-1">
               {armies.map((army) => {
@@ -323,11 +323,11 @@ export const SevenSoulsPage: React.FC = () => {
                     className={`w-full flex items-center justify-between p-2.5 rounded-xl border text-xs font-bold transition-all ${
                       isSelected
                         ? 'border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-400 shadow-sm'
-                        : 'border-zinc-50 dark:border-zinc-950 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 text-zinc-655 dark:text-zinc-305'
+                        : 'border-border bg-bg/50 hover:border-border text-muted'
                     }`}
                   >
                     <span>{army.name}</span>
-                    <span className="font-mono text-[9px] text-zinc-400">Lv. {army.open_level}</span>
+                    <span className="font-mono text-[9px] text-subtle">Lv. {army.open_level}</span>
                   </button>
                 );
               })}
@@ -335,35 +335,35 @@ export const SevenSoulsPage: React.FC = () => {
 
             {/* Trial Details display */}
             {activeArmy && (
-              <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800/60 space-y-4 text-xs">
+              <div className="pt-4 border-t border-border/60 space-y-4 text-xs">
                 
                 <div className="space-y-1 bg-red-500/5 border border-red-500/10 p-3 rounded-xl">
                   <span className="font-bold text-red-600 dark:text-red-400 block uppercase text-[8.5px] font-mono">Stage Battle win Buff</span>
-                  <p className="text-[10px] text-zinc-550 leading-relaxed italic">
+                  <p className="text-[10px] text-muted leading-relaxed italic">
                     {activeArmy.one_win_buff || 'No passive buffs defined.'}
                   </p>
                 </div>
 
-                <div className="space-y-1 bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-850 p-3 rounded-xl">
-                  <span className="font-bold text-zinc-450 block uppercase text-[8.5px] font-mono">Stage Fail debuff</span>
-                  <p className="text-[10px] text-zinc-500 leading-relaxed italic">
+                <div className="space-y-1 bg-bg/20 border border-border p-3 rounded-xl">
+                  <span className="font-bold text-subtle block uppercase text-[8.5px] font-mono">Stage Fail debuff</span>
+                  <p className="text-[10px] text-muted leading-relaxed italic">
                     {activeArmy.one_fail_buff || 'No passive debuffs defined.'}
                   </p>
                 </div>
 
                 {/* Boss Clear Loot list */}
                 <div className="space-y-2">
-                  <span className="font-bold text-zinc-600 dark:text-zinc-400 block uppercase text-[8.5px] font-mono">First-Clear Loot Rewards</span>
+                  <span className="font-bold text-muted block uppercase text-[8.5px] font-mono">First-Clear Loot Rewards</span>
                   <div className="space-y-1.5">
                     {bossRewards.length > 0 ? (
                       bossRewards.map((item, idx) => (
-                        <div key={idx} className="p-2 border border-zinc-100 dark:border-zinc-850 rounded-lg flex items-center justify-between text-[11px]">
-                          <span className="font-semibold text-zinc-705 dark:text-zinc-300">{item.name}</span>
+                        <div key={idx} className="p-2 border border-border rounded-lg flex items-center justify-between text-[11px]">
+                          <span className="font-semibold text-text">{item.name}</span>
                           <span className="font-mono font-bold text-amber-600 dark:text-amber-400">{item.amount.toLocaleString()}x</span>
                         </div>
                       ))
                     ) : (
-                      <span className="text-[10px] text-zinc-400 italic">No drop rewards registered.</span>
+                      <span className="text-[10px] text-subtle italic">No drop rewards registered.</span>
                     )}
                   </div>
                 </div>

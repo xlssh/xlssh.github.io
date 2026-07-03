@@ -69,11 +69,9 @@ export const CampaignRoadmapPage: React.FC = () => {
   }, [quests, playerLevel]);
 
   const toggleQuestCompleted = (id: number) => {
-    if (completedQuestIds.includes(id)) {
-      setCompletedQuestIds(completedQuestIds.filter(x => x !== id));
-    } else {
-      setCompletedQuestIds([...completedQuestIds, id]);
-    }
+    setCompletedQuestIds(prev =>
+      prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+    );
   };
 
   // Completion analytics percentages

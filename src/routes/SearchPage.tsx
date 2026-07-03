@@ -244,8 +244,8 @@ export const SearchPage: React.FC = () => {
     <div className="space-y-6">
       {/* Title */}
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">Global Search</h1>
-        <p className="text-sm text-zinc-500">Query all 8 database tables instantly in the browser.</p>
+        <h1 className="text-2xl font-bold tracking-tight text-text dark:text-zinc-100">Global Search</h1>
+        <p className="text-sm text-muted">Query all 8 database tables instantly in the browser.</p>
       </div>
 
       {/* Main Search Input Form */}
@@ -255,10 +255,10 @@ export const SearchPage: React.FC = () => {
             type="text"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 placeholder-zinc-400 font-medium focus:outline-none focus:ring-2 focus:ring-violet-500 shadow-sm"
+            className="w-full pl-10 pr-4 py-3 border border-border rounded-xl bg-surface text-text placeholder-zinc-400 font-medium focus:outline-none focus:ring-2 focus:ring-violet-500 shadow-sm"
             placeholder="Search characters, items, quest details, stages, maps..."
           />
-          <Search className="absolute left-3.5 top-3.5 text-zinc-400 w-5 h-5" />
+          <Search className="absolute left-3.5 top-3.5 text-subtle w-5 h-5" />
         </div>
         <button
           type="submit"
@@ -270,8 +270,8 @@ export const SearchPage: React.FC = () => {
 
       {/* Search results stats */}
       {queryParam && (
-        <div className="text-sm text-zinc-500">
-          Found <span className="font-semibold text-zinc-800 dark:text-zinc-200">{results.length}</span> matches for "{queryParam}"
+        <div className="text-sm text-muted">
+          Found <span className="font-semibold text-text">{results.length}</span> matches for "{queryParam}"
         </div>
       )}
 
@@ -280,7 +280,7 @@ export const SearchPage: React.FC = () => {
         <div className="space-y-8">
           {Object.entries(groupedResults).map(([groupName, items]) => (
             <div key={groupName} className="space-y-3">
-              <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-subtle border-b border-border pb-2">
                 {groupName} ({items.length})
               </h3>
               
@@ -289,19 +289,19 @@ export const SearchPage: React.FC = () => {
                   <Link
                     key={`${item.table}-${item.id}`}
                     to={item.link}
-                    className="flex flex-col justify-between p-4 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-white dark:bg-zinc-900 hover:border-violet-500/50 dark:hover:border-violet-500/50 hover:shadow-sm transition-all group"
+                    className="flex flex-col justify-between p-4 border border-border rounded-xl bg-surface hover:border-violet-500/50 dark:hover:border-violet-500/50 hover:shadow-sm transition-all group"
                   >
                     <div>
-                      <div className="flex items-center justify-between text-xs font-semibold text-zinc-400 mb-1">
+                      <div className="flex items-center justify-between text-xs font-semibold text-subtle mb-1">
                         <span className="font-mono">ID: {item.id}</span>
-                        <span className="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 font-medium text-[10px] text-zinc-500">
+                        <span className="px-2 py-0.5 rounded bg-surface-raised font-medium text-[10px] text-muted">
                           {item.table}
                         </span>
                       </div>
-                      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                      <h4 className="font-bold text-sm text-text group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
                         {item.title}
                       </h4>
-                      <p className="mt-1.5 text-xs text-zinc-500 leading-relaxed line-clamp-2">
+                      <p className="mt-1.5 text-xs text-muted leading-relaxed line-clamp-2">
                         {item.subtitle}
                       </p>
                     </div>
@@ -312,7 +312,7 @@ export const SearchPage: React.FC = () => {
                   </Link>
                 ))}
                 {items.length > 50 && (
-                  <div className="col-span-full text-center py-2 text-xs text-zinc-400 italic">
+                  <div className="col-span-full text-center py-2 text-xs text-subtle italic">
                     Showing first 50 results. Narrow down your query to view remaining results.
                   </div>
                 )}
@@ -322,9 +322,9 @@ export const SearchPage: React.FC = () => {
         </div>
       ) : (
         queryParam && (
-          <div className="border border-zinc-200 dark:border-zinc-800 rounded-xl p-12 bg-white dark:bg-zinc-900/50 text-center text-zinc-500">
-            <Search className="w-12 h-12 text-zinc-400 mx-auto mb-3" />
-            <h3 className="font-semibold text-zinc-800 dark:text-zinc-200 mb-1">No results found</h3>
+          <div className="border border-border rounded-xl p-12 bg-surface/50 text-center text-muted">
+            <Search className="w-12 h-12 text-subtle mx-auto mb-3" />
+            <h3 className="font-semibold text-text mb-1">No results found</h3>
             <p className="text-xs">Try searching for other terms like "ichigo", "sword", "stamina", or "quest".</p>
           </div>
         )

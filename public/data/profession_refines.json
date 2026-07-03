@@ -1,0 +1,1006 @@
+{
+  "table": "profession_refines",
+  "rowCount": 100,
+  "rows": [
+    {
+      "id": 1,
+      "cost": 100,
+      "phy_atk": 0.007,
+      "magic_atk": 0.007,
+      "phy_def": 0.007,
+      "magic_def": 0.007,
+      "hp": 0.007,
+      "speed": 0.007
+    },
+    {
+      "id": 2,
+      "cost": 180,
+      "phy_atk": 0.014,
+      "magic_atk": 0.014,
+      "phy_def": 0.014,
+      "magic_def": 0.014,
+      "hp": 0.014,
+      "speed": 0.014
+    },
+    {
+      "id": 3,
+      "cost": 260,
+      "phy_atk": 0.021,
+      "magic_atk": 0.021,
+      "phy_def": 0.021,
+      "magic_def": 0.021,
+      "hp": 0.021,
+      "speed": 0.021
+    },
+    {
+      "id": 4,
+      "cost": 340,
+      "phy_atk": 0.028,
+      "magic_atk": 0.028,
+      "phy_def": 0.028,
+      "magic_def": 0.028,
+      "hp": 0.028,
+      "speed": 0.028
+    },
+    {
+      "id": 5,
+      "cost": 420,
+      "phy_atk": 0.035,
+      "magic_atk": 0.035,
+      "phy_def": 0.035,
+      "magic_def": 0.035,
+      "hp": 0.035,
+      "speed": 0.035
+    },
+    {
+      "id": 6,
+      "cost": 500,
+      "phy_atk": 0.042,
+      "magic_atk": 0.042,
+      "phy_def": 0.042,
+      "magic_def": 0.042,
+      "hp": 0.042,
+      "speed": 0.042
+    },
+    {
+      "id": 7,
+      "cost": 580,
+      "phy_atk": 0.049,
+      "magic_atk": 0.049,
+      "phy_def": 0.049,
+      "magic_def": 0.049,
+      "hp": 0.049,
+      "speed": 0.049
+    },
+    {
+      "id": 8,
+      "cost": 660,
+      "phy_atk": 0.056,
+      "magic_atk": 0.056,
+      "phy_def": 0.056,
+      "magic_def": 0.056,
+      "hp": 0.056,
+      "speed": 0.056
+    },
+    {
+      "id": 9,
+      "cost": 740,
+      "phy_atk": 0.063,
+      "magic_atk": 0.063,
+      "phy_def": 0.063,
+      "magic_def": 0.063,
+      "hp": 0.063,
+      "speed": 0.063
+    },
+    {
+      "id": 10,
+      "cost": 820,
+      "phy_atk": 0.07,
+      "magic_atk": 0.07,
+      "phy_def": 0.07,
+      "magic_def": 0.07,
+      "hp": 0.07,
+      "speed": 0.07
+    },
+    {
+      "id": 11,
+      "cost": 900,
+      "phy_atk": 0.077,
+      "magic_atk": 0.077,
+      "phy_def": 0.077,
+      "magic_def": 0.077,
+      "hp": 0.077,
+      "speed": 0.077
+    },
+    {
+      "id": 12,
+      "cost": 980,
+      "phy_atk": 0.084,
+      "magic_atk": 0.084,
+      "phy_def": 0.084,
+      "magic_def": 0.084,
+      "hp": 0.084,
+      "speed": 0.084
+    },
+    {
+      "id": 13,
+      "cost": 1060,
+      "phy_atk": 0.091,
+      "magic_atk": 0.091,
+      "phy_def": 0.091,
+      "magic_def": 0.091,
+      "hp": 0.091,
+      "speed": 0.091
+    },
+    {
+      "id": 14,
+      "cost": 1140,
+      "phy_atk": 0.098,
+      "magic_atk": 0.098,
+      "phy_def": 0.098,
+      "magic_def": 0.098,
+      "hp": 0.098,
+      "speed": 0.098
+    },
+    {
+      "id": 15,
+      "cost": 1220,
+      "phy_atk": 0.105,
+      "magic_atk": 0.105,
+      "phy_def": 0.105,
+      "magic_def": 0.105,
+      "hp": 0.105,
+      "speed": 0.105
+    },
+    {
+      "id": 16,
+      "cost": 1300,
+      "phy_atk": 0.112,
+      "magic_atk": 0.112,
+      "phy_def": 0.112,
+      "magic_def": 0.112,
+      "hp": 0.112,
+      "speed": 0.112
+    },
+    {
+      "id": 17,
+      "cost": 1380,
+      "phy_atk": 0.119,
+      "magic_atk": 0.119,
+      "phy_def": 0.119,
+      "magic_def": 0.119,
+      "hp": 0.119,
+      "speed": 0.119
+    },
+    {
+      "id": 18,
+      "cost": 1460,
+      "phy_atk": 0.126,
+      "magic_atk": 0.126,
+      "phy_def": 0.126,
+      "magic_def": 0.126,
+      "hp": 0.126,
+      "speed": 0.126
+    },
+    {
+      "id": 19,
+      "cost": 1540,
+      "phy_atk": 0.133,
+      "magic_atk": 0.133,
+      "phy_def": 0.133,
+      "magic_def": 0.133,
+      "hp": 0.133,
+      "speed": 0.133
+    },
+    {
+      "id": 20,
+      "cost": 1920,
+      "phy_atk": 0.14,
+      "magic_atk": 0.14,
+      "phy_def": 0.14,
+      "magic_def": 0.14,
+      "hp": 0.14,
+      "speed": 0.14
+    },
+    {
+      "id": 21,
+      "cost": 2015,
+      "phy_atk": 0.147,
+      "magic_atk": 0.147,
+      "phy_def": 0.147,
+      "magic_def": 0.147,
+      "hp": 0.147,
+      "speed": 0.147
+    },
+    {
+      "id": 22,
+      "cost": 2110,
+      "phy_atk": 0.154,
+      "magic_atk": 0.154,
+      "phy_def": 0.154,
+      "magic_def": 0.154,
+      "hp": 0.154,
+      "speed": 0.154
+    },
+    {
+      "id": 23,
+      "cost": 2205,
+      "phy_atk": 0.161,
+      "magic_atk": 0.161,
+      "phy_def": 0.161,
+      "magic_def": 0.161,
+      "hp": 0.161,
+      "speed": 0.161
+    },
+    {
+      "id": 24,
+      "cost": 2300,
+      "phy_atk": 0.168,
+      "magic_atk": 0.168,
+      "phy_def": 0.168,
+      "magic_def": 0.168,
+      "hp": 0.168,
+      "speed": 0.168
+    },
+    {
+      "id": 25,
+      "cost": 2395,
+      "phy_atk": 0.175,
+      "magic_atk": 0.175,
+      "phy_def": 0.175,
+      "magic_def": 0.175,
+      "hp": 0.175,
+      "speed": 0.175
+    },
+    {
+      "id": 26,
+      "cost": 2490,
+      "phy_atk": 0.182,
+      "magic_atk": 0.182,
+      "phy_def": 0.182,
+      "magic_def": 0.182,
+      "hp": 0.182,
+      "speed": 0.182
+    },
+    {
+      "id": 27,
+      "cost": 2585,
+      "phy_atk": 0.189,
+      "magic_atk": 0.189,
+      "phy_def": 0.189,
+      "magic_def": 0.189,
+      "hp": 0.189,
+      "speed": 0.189
+    },
+    {
+      "id": 28,
+      "cost": 2680,
+      "phy_atk": 0.196,
+      "magic_atk": 0.196,
+      "phy_def": 0.196,
+      "magic_def": 0.196,
+      "hp": 0.196,
+      "speed": 0.196
+    },
+    {
+      "id": 29,
+      "cost": 2775,
+      "phy_atk": 0.203,
+      "magic_atk": 0.203,
+      "phy_def": 0.203,
+      "magic_def": 0.203,
+      "hp": 0.203,
+      "speed": 0.203
+    },
+    {
+      "id": 30,
+      "cost": 2870,
+      "phy_atk": 0.21,
+      "magic_atk": 0.21,
+      "phy_def": 0.21,
+      "magic_def": 0.21,
+      "hp": 0.21,
+      "speed": 0.21
+    },
+    {
+      "id": 31,
+      "cost": 2965,
+      "phy_atk": 0.219,
+      "magic_atk": 0.219,
+      "phy_def": 0.219,
+      "magic_def": 0.219,
+      "hp": 0.219,
+      "speed": 0.219
+    },
+    {
+      "id": 32,
+      "cost": 3060,
+      "phy_atk": 0.228,
+      "magic_atk": 0.228,
+      "phy_def": 0.228,
+      "magic_def": 0.228,
+      "hp": 0.228,
+      "speed": 0.228
+    },
+    {
+      "id": 33,
+      "cost": 3155,
+      "phy_atk": 0.237,
+      "magic_atk": 0.237,
+      "phy_def": 0.237,
+      "magic_def": 0.237,
+      "hp": 0.237,
+      "speed": 0.237
+    },
+    {
+      "id": 34,
+      "cost": 3250,
+      "phy_atk": 0.246,
+      "magic_atk": 0.246,
+      "phy_def": 0.246,
+      "magic_def": 0.246,
+      "hp": 0.246,
+      "speed": 0.246
+    },
+    {
+      "id": 35,
+      "cost": 4045,
+      "phy_atk": 0.255,
+      "magic_atk": 0.255,
+      "phy_def": 0.255,
+      "magic_def": 0.255,
+      "hp": 0.255,
+      "speed": 0.255
+    },
+    {
+      "id": 36,
+      "cost": 4160,
+      "phy_atk": 0.264,
+      "magic_atk": 0.264,
+      "phy_def": 0.264,
+      "magic_def": 0.264,
+      "hp": 0.264,
+      "speed": 0.264
+    },
+    {
+      "id": 37,
+      "cost": 4275,
+      "phy_atk": 0.273,
+      "magic_atk": 0.273,
+      "phy_def": 0.273,
+      "magic_def": 0.273,
+      "hp": 0.273,
+      "speed": 0.273
+    },
+    {
+      "id": 38,
+      "cost": 4390,
+      "phy_atk": 0.282,
+      "magic_atk": 0.282,
+      "phy_def": 0.282,
+      "magic_def": 0.282,
+      "hp": 0.282,
+      "speed": 0.282
+    },
+    {
+      "id": 39,
+      "cost": 4505,
+      "phy_atk": 0.291,
+      "magic_atk": 0.291,
+      "phy_def": 0.291,
+      "magic_def": 0.291,
+      "hp": 0.291,
+      "speed": 0.291
+    },
+    {
+      "id": 40,
+      "cost": 4620,
+      "phy_atk": 0.3,
+      "magic_atk": 0.3,
+      "phy_def": 0.3,
+      "magic_def": 0.3,
+      "hp": 0.3,
+      "speed": 0.3
+    },
+    {
+      "id": 41,
+      "cost": 4735,
+      "phy_atk": 0.309,
+      "magic_atk": 0.309,
+      "phy_def": 0.309,
+      "magic_def": 0.309,
+      "hp": 0.309,
+      "speed": 0.309
+    },
+    {
+      "id": 42,
+      "cost": 4850,
+      "phy_atk": 0.318,
+      "magic_atk": 0.318,
+      "phy_def": 0.318,
+      "magic_def": 0.318,
+      "hp": 0.318,
+      "speed": 0.318
+    },
+    {
+      "id": 43,
+      "cost": 4965,
+      "phy_atk": 0.327,
+      "magic_atk": 0.327,
+      "phy_def": 0.327,
+      "magic_def": 0.327,
+      "hp": 0.327,
+      "speed": 0.327
+    },
+    {
+      "id": 44,
+      "cost": 5080,
+      "phy_atk": 0.336,
+      "magic_atk": 0.336,
+      "phy_def": 0.336,
+      "magic_def": 0.336,
+      "hp": 0.336,
+      "speed": 0.336
+    },
+    {
+      "id": 45,
+      "cost": 5195,
+      "phy_atk": 0.345,
+      "magic_atk": 0.345,
+      "phy_def": 0.345,
+      "magic_def": 0.345,
+      "hp": 0.345,
+      "speed": 0.345
+    },
+    {
+      "id": 46,
+      "cost": 5310,
+      "phy_atk": 0.354,
+      "magic_atk": 0.354,
+      "phy_def": 0.354,
+      "magic_def": 0.354,
+      "hp": 0.354,
+      "speed": 0.354
+    },
+    {
+      "id": 47,
+      "cost": 5425,
+      "phy_atk": 0.363,
+      "magic_atk": 0.363,
+      "phy_def": 0.363,
+      "magic_def": 0.363,
+      "hp": 0.363,
+      "speed": 0.363
+    },
+    {
+      "id": 48,
+      "cost": 5540,
+      "phy_atk": 0.372,
+      "magic_atk": 0.372,
+      "phy_def": 0.372,
+      "magic_def": 0.372,
+      "hp": 0.372,
+      "speed": 0.372
+    },
+    {
+      "id": 49,
+      "cost": 5655,
+      "phy_atk": 0.381,
+      "magic_atk": 0.381,
+      "phy_def": 0.381,
+      "magic_def": 0.381,
+      "hp": 0.381,
+      "speed": 0.381
+    },
+    {
+      "id": 50,
+      "cost": 5770,
+      "phy_atk": 0.39,
+      "magic_atk": 0.39,
+      "phy_def": 0.39,
+      "magic_def": 0.39,
+      "hp": 0.39,
+      "speed": 0.39
+    },
+    {
+      "id": 51,
+      "cost": 7670,
+      "phy_atk": 0.399,
+      "magic_atk": 0.399,
+      "phy_def": 0.399,
+      "magic_def": 0.399,
+      "hp": 0.399,
+      "speed": 0.399
+    },
+    {
+      "id": 52,
+      "cost": 7820,
+      "phy_atk": 0.408,
+      "magic_atk": 0.408,
+      "phy_def": 0.408,
+      "magic_def": 0.408,
+      "hp": 0.408,
+      "speed": 0.408
+    },
+    {
+      "id": 53,
+      "cost": 7970,
+      "phy_atk": 0.417,
+      "magic_atk": 0.417,
+      "phy_def": 0.417,
+      "magic_def": 0.417,
+      "hp": 0.417,
+      "speed": 0.417
+    },
+    {
+      "id": 54,
+      "cost": 8120,
+      "phy_atk": 0.426,
+      "magic_atk": 0.426,
+      "phy_def": 0.426,
+      "magic_def": 0.426,
+      "hp": 0.426,
+      "speed": 0.426
+    },
+    {
+      "id": 55,
+      "cost": 8270,
+      "phy_atk": 0.435,
+      "magic_atk": 0.435,
+      "phy_def": 0.435,
+      "magic_def": 0.435,
+      "hp": 0.435,
+      "speed": 0.435
+    },
+    {
+      "id": 56,
+      "cost": 8420,
+      "phy_atk": 0.444,
+      "magic_atk": 0.444,
+      "phy_def": 0.444,
+      "magic_def": 0.444,
+      "hp": 0.444,
+      "speed": 0.444
+    },
+    {
+      "id": 57,
+      "cost": 8570,
+      "phy_atk": 0.453,
+      "magic_atk": 0.453,
+      "phy_def": 0.453,
+      "magic_def": 0.453,
+      "hp": 0.453,
+      "speed": 0.453
+    },
+    {
+      "id": 58,
+      "cost": 8720,
+      "phy_atk": 0.462,
+      "magic_atk": 0.462,
+      "phy_def": 0.462,
+      "magic_def": 0.462,
+      "hp": 0.462,
+      "speed": 0.462
+    },
+    {
+      "id": 59,
+      "cost": 8870,
+      "phy_atk": 0.471,
+      "magic_atk": 0.471,
+      "phy_def": 0.471,
+      "magic_def": 0.471,
+      "hp": 0.471,
+      "speed": 0.471
+    },
+    {
+      "id": 60,
+      "cost": 9020,
+      "phy_atk": 0.48,
+      "magic_atk": 0.48,
+      "phy_def": 0.48,
+      "magic_def": 0.48,
+      "hp": 0.48,
+      "speed": 0.48
+    },
+    {
+      "id": 61,
+      "cost": 9170,
+      "phy_atk": 0.489,
+      "magic_atk": 0.489,
+      "phy_def": 0.489,
+      "magic_def": 0.489,
+      "hp": 0.489,
+      "speed": 0.489
+    },
+    {
+      "id": 62,
+      "cost": 9320,
+      "phy_atk": 0.498,
+      "magic_atk": 0.498,
+      "phy_def": 0.498,
+      "magic_def": 0.498,
+      "hp": 0.498,
+      "speed": 0.498
+    },
+    {
+      "id": 63,
+      "cost": 9470,
+      "phy_atk": 0.507,
+      "magic_atk": 0.507,
+      "phy_def": 0.507,
+      "magic_def": 0.507,
+      "hp": 0.507,
+      "speed": 0.507
+    },
+    {
+      "id": 64,
+      "cost": 9620,
+      "phy_atk": 0.516,
+      "magic_atk": 0.516,
+      "phy_def": 0.516,
+      "magic_def": 0.516,
+      "hp": 0.516,
+      "speed": 0.516
+    },
+    {
+      "id": 65,
+      "cost": 9770,
+      "phy_atk": 0.525,
+      "magic_atk": 0.525,
+      "phy_def": 0.525,
+      "magic_def": 0.525,
+      "hp": 0.525,
+      "speed": 0.525
+    },
+    {
+      "id": 66,
+      "cost": 9920,
+      "phy_atk": 0.538,
+      "magic_atk": 0.538,
+      "phy_def": 0.538,
+      "magic_def": 0.538,
+      "hp": 0.538,
+      "speed": 0.538
+    },
+    {
+      "id": 67,
+      "cost": 10070,
+      "phy_atk": 0.551,
+      "magic_atk": 0.551,
+      "phy_def": 0.551,
+      "magic_def": 0.551,
+      "hp": 0.551,
+      "speed": 0.551
+    },
+    {
+      "id": 68,
+      "cost": 10220,
+      "phy_atk": 0.564,
+      "magic_atk": 0.564,
+      "phy_def": 0.564,
+      "magic_def": 0.564,
+      "hp": 0.564,
+      "speed": 0.564
+    },
+    {
+      "id": 69,
+      "cost": 10370,
+      "phy_atk": 0.577,
+      "magic_atk": 0.577,
+      "phy_def": 0.577,
+      "magic_def": 0.577,
+      "hp": 0.577,
+      "speed": 0.577
+    },
+    {
+      "id": 70,
+      "cost": 10520,
+      "phy_atk": 0.59,
+      "magic_atk": 0.59,
+      "phy_def": 0.59,
+      "magic_def": 0.59,
+      "hp": 0.59,
+      "speed": 0.59
+    },
+    {
+      "id": 71,
+      "cost": 10670,
+      "phy_atk": 0.603,
+      "magic_atk": 0.603,
+      "phy_def": 0.603,
+      "magic_def": 0.603,
+      "hp": 0.603,
+      "speed": 0.603
+    },
+    {
+      "id": 72,
+      "cost": 10820,
+      "phy_atk": 0.616,
+      "magic_atk": 0.616,
+      "phy_def": 0.616,
+      "magic_def": 0.616,
+      "hp": 0.616,
+      "speed": 0.616
+    },
+    {
+      "id": 73,
+      "cost": 10970,
+      "phy_atk": 0.629,
+      "magic_atk": 0.629,
+      "phy_def": 0.629,
+      "magic_def": 0.629,
+      "hp": 0.629,
+      "speed": 0.629
+    },
+    {
+      "id": 74,
+      "cost": 11120,
+      "phy_atk": 0.642,
+      "magic_atk": 0.642,
+      "phy_def": 0.642,
+      "magic_def": 0.642,
+      "hp": 0.642,
+      "speed": 0.642
+    },
+    {
+      "id": 75,
+      "cost": 11270,
+      "phy_atk": 0.655,
+      "magic_atk": 0.655,
+      "phy_def": 0.655,
+      "magic_def": 0.655,
+      "hp": 0.655,
+      "speed": 0.655
+    },
+    {
+      "id": 76,
+      "cost": 11420,
+      "phy_atk": 0.668,
+      "magic_atk": 0.668,
+      "phy_def": 0.668,
+      "magic_def": 0.668,
+      "hp": 0.668,
+      "speed": 0.668
+    },
+    {
+      "id": 77,
+      "cost": 11570,
+      "phy_atk": 0.681,
+      "magic_atk": 0.681,
+      "phy_def": 0.681,
+      "magic_def": 0.681,
+      "hp": 0.681,
+      "speed": 0.681
+    },
+    {
+      "id": 78,
+      "cost": 11720,
+      "phy_atk": 0.694,
+      "magic_atk": 0.694,
+      "phy_def": 0.694,
+      "magic_def": 0.694,
+      "hp": 0.694,
+      "speed": 0.694
+    },
+    {
+      "id": 79,
+      "cost": 11870,
+      "phy_atk": 0.707,
+      "magic_atk": 0.707,
+      "phy_def": 0.707,
+      "magic_def": 0.707,
+      "hp": 0.707,
+      "speed": 0.707
+    },
+    {
+      "id": 80,
+      "cost": 12020,
+      "phy_atk": 0.72,
+      "magic_atk": 0.72,
+      "phy_def": 0.72,
+      "magic_def": 0.72,
+      "hp": 0.72,
+      "speed": 0.72
+    },
+    {
+      "id": 81,
+      "cost": 12170,
+      "phy_atk": 0.733,
+      "magic_atk": 0.733,
+      "phy_def": 0.733,
+      "magic_def": 0.733,
+      "hp": 0.733,
+      "speed": 0.733
+    },
+    {
+      "id": 82,
+      "cost": 12320,
+      "phy_atk": 0.746,
+      "magic_atk": 0.746,
+      "phy_def": 0.746,
+      "magic_def": 0.746,
+      "hp": 0.746,
+      "speed": 0.746
+    },
+    {
+      "id": 83,
+      "cost": 12470,
+      "phy_atk": 0.759,
+      "magic_atk": 0.759,
+      "phy_def": 0.759,
+      "magic_def": 0.759,
+      "hp": 0.759,
+      "speed": 0.759
+    },
+    {
+      "id": 84,
+      "cost": 12620,
+      "phy_atk": 0.772,
+      "magic_atk": 0.772,
+      "phy_def": 0.772,
+      "magic_def": 0.772,
+      "hp": 0.772,
+      "speed": 0.772
+    },
+    {
+      "id": 85,
+      "cost": 12770,
+      "phy_atk": 0.785,
+      "magic_atk": 0.785,
+      "phy_def": 0.785,
+      "magic_def": 0.785,
+      "hp": 0.785,
+      "speed": 0.785
+    },
+    {
+      "id": 86,
+      "cost": 15070,
+      "phy_atk": 0.799,
+      "magic_atk": 0.799,
+      "phy_def": 0.799,
+      "magic_def": 0.799,
+      "hp": 0.799,
+      "speed": 0.799
+    },
+    {
+      "id": 87,
+      "cost": 15245,
+      "phy_atk": 0.813,
+      "magic_atk": 0.813,
+      "phy_def": 0.813,
+      "magic_def": 0.813,
+      "hp": 0.813,
+      "speed": 0.813
+    },
+    {
+      "id": 88,
+      "cost": 15420,
+      "phy_atk": 0.827,
+      "magic_atk": 0.827,
+      "phy_def": 0.827,
+      "magic_def": 0.827,
+      "hp": 0.827,
+      "speed": 0.827
+    },
+    {
+      "id": 89,
+      "cost": 15595,
+      "phy_atk": 0.841,
+      "magic_atk": 0.841,
+      "phy_def": 0.841,
+      "magic_def": 0.841,
+      "hp": 0.841,
+      "speed": 0.841
+    },
+    {
+      "id": 90,
+      "cost": 15770,
+      "phy_atk": 0.855,
+      "magic_atk": 0.855,
+      "phy_def": 0.855,
+      "magic_def": 0.855,
+      "hp": 0.855,
+      "speed": 0.855
+    },
+    {
+      "id": 91,
+      "cost": 15945,
+      "phy_atk": 0.869,
+      "magic_atk": 0.869,
+      "phy_def": 0.869,
+      "magic_def": 0.869,
+      "hp": 0.869,
+      "speed": 0.869
+    },
+    {
+      "id": 92,
+      "cost": 16120,
+      "phy_atk": 0.883,
+      "magic_atk": 0.883,
+      "phy_def": 0.883,
+      "magic_def": 0.883,
+      "hp": 0.883,
+      "speed": 0.883
+    },
+    {
+      "id": 93,
+      "cost": 16295,
+      "phy_atk": 0.897,
+      "magic_atk": 0.897,
+      "phy_def": 0.897,
+      "magic_def": 0.897,
+      "hp": 0.897,
+      "speed": 0.897
+    },
+    {
+      "id": 94,
+      "cost": 16470,
+      "phy_atk": 0.911,
+      "magic_atk": 0.911,
+      "phy_def": 0.911,
+      "magic_def": 0.911,
+      "hp": 0.911,
+      "speed": 0.911
+    },
+    {
+      "id": 95,
+      "cost": 16645,
+      "phy_atk": 0.925,
+      "magic_atk": 0.925,
+      "phy_def": 0.925,
+      "magic_def": 0.925,
+      "hp": 0.925,
+      "speed": 0.925
+    },
+    {
+      "id": 96,
+      "cost": 16820,
+      "phy_atk": 0.939,
+      "magic_atk": 0.939,
+      "phy_def": 0.939,
+      "magic_def": 0.939,
+      "hp": 0.939,
+      "speed": 0.939
+    },
+    {
+      "id": 97,
+      "cost": 16995,
+      "phy_atk": 0.953,
+      "magic_atk": 0.953,
+      "phy_def": 0.953,
+      "magic_def": 0.953,
+      "hp": 0.953,
+      "speed": 0.953
+    },
+    {
+      "id": 98,
+      "cost": 17170,
+      "phy_atk": 0.967,
+      "magic_atk": 0.967,
+      "phy_def": 0.967,
+      "magic_def": 0.967,
+      "hp": 0.967,
+      "speed": 0.967
+    },
+    {
+      "id": 99,
+      "cost": 17345,
+      "phy_atk": 0.981,
+      "magic_atk": 0.981,
+      "phy_def": 0.981,
+      "magic_def": 0.981,
+      "hp": 0.981,
+      "speed": 0.981
+    },
+    {
+      "id": 100,
+      "cost": 17520,
+      "phy_atk": 1.0,
+      "magic_atk": 1.0,
+      "phy_def": 1.0,
+      "magic_def": 1.0,
+      "hp": 1.0,
+      "speed": 1.0
+    }
+  ]
+}

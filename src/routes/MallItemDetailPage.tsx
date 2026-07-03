@@ -61,7 +61,7 @@ export const MallItemDetailPage: React.FC = () => {
       <div>
         <Link
           to="/mall-items"
-          className="flex items-center gap-1 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Mall Items</span>
@@ -69,10 +69,10 @@ export const MallItemDetailPage: React.FC = () => {
       </div>
 
       {/* Main Panel */}
-      <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+      <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-mono text-xs text-zinc-400 font-bold bg-zinc-100 dark:bg-zinc-950 px-2 py-0.5 rounded">
+            <span className="font-mono text-xs text-subtle font-bold bg-bg px-2 py-0.5 rounded">
               ID: {mallItem.id}
             </span>
             <span className="px-2 py-0.5 rounded bg-fuchsia-100 dark:bg-fuchsia-950/40 text-fuchsia-700 dark:text-fuchsia-400 text-xs font-bold uppercase tracking-wider">
@@ -90,7 +90,7 @@ export const MallItemDetailPage: React.FC = () => {
             ) : null}
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-zinc-50 flex items-center gap-2">
+          <h1 className="text-2xl md:text-3xl font-black text-text flex items-center gap-2">
             <ShoppingBag size={28} className="text-fuchsia-500" />
             <span>{mallItem.name || `Shop Item #${mallItem.id}`}</span>
           </h1>
@@ -98,7 +98,7 @@ export const MallItemDetailPage: React.FC = () => {
           {linkedArticle && (
             <div className="p-4 rounded-xl bg-violet-500/5 dark:bg-violet-950/20 border border-violet-100/50 dark:border-violet-950/50 space-y-2">
               <span className="block text-[10px] font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">Delivered Item Specs</span>
-              <div className="flex items-center justify-between text-sm bg-white dark:bg-zinc-950/40 border border-zinc-100 dark:border-zinc-800 p-3 rounded-lg">
+              <div className="flex items-center justify-between text-sm bg-surface border border-border p-3 rounded-lg">
                 <div>
                   <Link
                     to={`/articles/${linkedArticle.id}`}
@@ -107,74 +107,74 @@ export const MallItemDetailPage: React.FC = () => {
                     <span>{linkedArticle.name}</span>
                     <ArrowRight size={14} />
                   </Link>
-                  <p className="text-xs text-zinc-500 mt-1">{linkedArticle.function_desc || 'No functional desc.'}</p>
+                  <p className="text-xs text-muted mt-1">{linkedArticle.function_desc || 'No functional desc.'}</p>
                 </div>
-                <span className="text-xs font-mono text-zinc-400">ID: {linkedArticle.id}</span>
+                <span className="text-xs font-mono text-subtle">ID: {linkedArticle.id}</span>
               </div>
             </div>
           )}
         </div>
 
         {/* Shop parameters */}
-        <div className="w-full md:w-64 border border-zinc-100 dark:border-zinc-800 rounded-xl p-4 bg-zinc-50/50 dark:bg-zinc-950/20 space-y-3 shrink-0">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-200 dark:border-zinc-800 pb-1.5">Shop Properties</h4>
+        <div className="w-full md:w-64 border border-border rounded-xl p-4 bg-bg/50 space-y-3 shrink-0">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-subtle border-b border-border pb-1.5">Shop Properties</h4>
           <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-xs">
             <div>
-              <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Model Category</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-350">Model {mallItem.model}</span>
+              <span className="text-subtle block mb-0.5 font-sans font-semibold">Model Category</span>
+              <span className="font-semibold text-muted">Model {mallItem.model}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Major Category</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-350">{getMajorTypeLabel(mallItem.major_type)}</span>
+              <span className="text-subtle block mb-0.5 font-sans font-semibold">Major Category</span>
+              <span className="font-semibold text-muted">{getMajorTypeLabel(mallItem.major_type)}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Item Category Tag</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-350 font-mono">#{mallItem.type_str ?? 'None'}</span>
+              <span className="text-subtle block mb-0.5 font-sans font-semibold">Item Category Tag</span>
+              <span className="font-semibold text-muted font-mono">#{mallItem.type_str ?? 'None'}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Minimum Level</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-350 font-mono">Lv. {mallItem.level ?? 0}</span>
+              <span className="text-subtle block mb-0.5 font-sans font-semibold">Minimum Level</span>
+              <span className="font-semibold text-muted font-mono">Lv. {mallItem.level ?? 0}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Pricing Analysis */}
-      <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4">
-        <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+      <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+        <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
           <Tag size={18} className="text-fuchsia-500" />
           <span>Pricing Comparison Vector</span>
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-          <div className="p-3 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-lg">
-            <span className="text-xs text-zinc-400 block mb-0.5 font-sans font-semibold">Base Gold Price</span>
-            <span className="font-mono font-bold text-zinc-600 dark:text-zinc-350">{(mallItem.gold ?? 0).toLocaleString()} Gold</span>
+          <div className="p-3 border border-border bg-bg/20 rounded-lg">
+            <span className="text-xs text-subtle block mb-0.5 font-sans font-semibold">Base Gold Price</span>
+            <span className="font-mono font-bold text-muted dark:text-zinc-350">{(mallItem.gold ?? 0).toLocaleString()} Gold</span>
           </div>
-          <div className="p-3 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-lg">
-            <span className="text-xs text-zinc-400 block mb-0.5 font-sans font-semibold">Sale Hot Price</span>
+          <div className="p-3 border border-border bg-bg/20 rounded-lg">
+            <span className="text-xs text-subtle block mb-0.5 font-sans font-semibold">Sale Hot Price</span>
             <span className="font-mono font-black text-amber-600">{(mallItem.hotprice ?? 0).toLocaleString()} Gold</span>
           </div>
-          <div className="p-3 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-lg">
-            <span className="text-xs text-zinc-400 block mb-0.5 font-sans font-semibold">Sale Discount Ratio</span>
+          <div className="p-3 border border-border bg-bg/20 rounded-lg">
+            <span className="text-xs text-subtle block mb-0.5 font-sans font-semibold">Sale Discount Ratio</span>
             <span className="font-mono font-bold text-emerald-600">-{mallItem.discount ?? 0}% Discount</span>
           </div>
-          <div className="p-3 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/20 dark:bg-zinc-950/20 rounded-lg">
-            <span className="text-xs text-zinc-400 block mb-0.5 font-sans font-semibold">Integrative Points</span>
-            <span className="font-mono font-bold text-zinc-600 dark:text-zinc-350">+{mallItem.integration ?? 0} Pts</span>
+          <div className="p-3 border border-border bg-bg/20 rounded-lg">
+            <span className="text-xs text-subtle block mb-0.5 font-sans font-semibold">Integrative Points</span>
+            <span className="font-mono font-bold text-muted dark:text-zinc-350">+{mallItem.integration ?? 0} Pts</span>
           </div>
         </div>
       </div>
 
       {/* Constraints and quotas */}
-      <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4">
-        <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+      <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+        <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
           <ShieldAlert size={18} className="text-amber-500" />
           <span>Purchase Quotas & Requirements</span>
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono">
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Required VIP Rank</span>
-            <span className="font-semibold text-zinc-700 dark:text-zinc-300">
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Required VIP Rank</span>
+            <span className="font-semibold text-muted">
               {mallItem.vip ? (
                 <span className="px-2 py-0.5 bg-violet-100 dark:bg-violet-950/60 text-violet-700 dark:text-violet-400 font-bold rounded">
                   VIP Rank {mallItem.vip}
@@ -185,40 +185,40 @@ export const MallItemDetailPage: React.FC = () => {
             </span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">VIP Exclusive Item?</span>
-            <span className="font-semibold text-zinc-700 dark:text-zinc-300">{mallItem.is_vip ? 'Yes' : 'No'}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">VIP Exclusive Item?</span>
+            <span className="font-semibold text-muted">{mallItem.is_vip ? 'Yes' : 'No'}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Daily Buying Limits</span>
-            <span className="font-semibold text-zinc-700 dark:text-zinc-300">{mallItem.times ? `${mallItem.times} per day` : 'Unlimited'}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Daily Buying Limits</span>
+            <span className="font-semibold text-muted">{mallItem.times ? `${mallItem.times} per day` : 'Unlimited'}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Global Total Limits</span>
-            <span className="font-semibold text-zinc-700 dark:text-zinc-300">{mallItem.total_times ? `${mallItem.total_times} purchases` : 'Unlimited'}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Global Total Limits</span>
+            <span className="font-semibold text-muted">{mallItem.total_times ? `${mallItem.total_times} purchases` : 'Unlimited'}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Delivered Amount</span>
-            <span className="font-semibold text-zinc-700 dark:text-zinc-300">x{mallItem.amount ?? 1}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Delivered Amount</span>
+            <span className="font-semibold text-muted">x{mallItem.amount ?? 1}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Honor Coins Cost</span>
-            <span className="font-semibold text-zinc-700 dark:text-zinc-300">{(mallItem.honour ?? 0).toLocaleString()} Honor</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Honor Coins Cost</span>
+            <span className="font-semibold text-muted">{(mallItem.honour ?? 0).toLocaleString()} Honor</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Is Display Active?</span>
-            <span className="font-semibold text-zinc-700 dark:text-zinc-300">{mallItem.is_display ? 'Active' : 'Disabled'}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Is Display Active?</span>
+            <span className="font-semibold text-muted">{mallItem.is_display ? 'Active' : 'Disabled'}</span>
           </div>
         </div>
       </div>
 
       {/* Items JSON block if any */}
       {mallItem.items_json && (
-        <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4">
-          <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+        <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+          <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
             <Sparkles size={18} className="text-fuchsia-500" />
             <span>Parsed Extra Pack Contents</span>
           </h3>
-          <div className="bg-zinc-50 dark:bg-zinc-950 p-4 rounded-xl border border-zinc-100 dark:border-zinc-800 font-mono text-xs overflow-x-auto">
+          <div className="bg-bg p-4 rounded-xl border border-border font-mono text-xs overflow-x-auto">
             <pre>{JSON.stringify(mallItem.items_json, null, 2)}</pre>
           </div>
         </div>

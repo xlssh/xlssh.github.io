@@ -96,7 +96,7 @@ export function DataTable<TData extends { id: any }>({
           {/* Column Visibility Toggle */}
           <div className="relative">
             <button
-              onClick={() => setShowVisibilityMenu(!showVisibilityMenu)}
+              onClick={() => setShowVisibilityMenu(prev => !prev)}
               aria-haspopup="menu"
               aria-expanded={showVisibilityMenu}
               className="px-4 py-2 border border-border rounded-xl text-sm bg-surface text-muted hover:bg-hover hover:text-text font-medium flex items-center gap-1.5 transition-colors"

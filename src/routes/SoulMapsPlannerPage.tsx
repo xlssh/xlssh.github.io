@@ -172,25 +172,25 @@ export const SoulMapsPlannerPage: React.FC = () => {
       {/* Breadcrumb & Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <Compass className="text-amber-500" size={28} />
             MC Soul Map & Talent Simulator
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Build and optimize talent trees for Vanguard, Assaulter, or Tactician builds for the Main Character.
           </p>
         </div>
       </div>
 
       {/* Build/Profession Selector Toggles */}
-      <div className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div className="p-4 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div className="space-y-1">
-          <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Main Character Build Category</span>
+          <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Main Character Build Category</span>
           <div className="flex flex-wrap gap-2">
             {PROFESSIONS.map((prof) => {
               const Icon = prof.icon;
@@ -202,10 +202,10 @@ export const SoulMapsPlannerPage: React.FC = () => {
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold border transition-all ${
                     isSelected
                       ? 'border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-400'
-                      : 'border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-650 dark:text-zinc-300 hover:border-zinc-250 dark:hover:border-zinc-750'
+                      : 'border-border bg-bg text-muted hover:border-border-strong'
                   }`}
                 >
-                  <Icon size={14} className={isSelected ? 'text-amber-500' : 'text-zinc-450'} />
+                  <Icon size={14} className={isSelected ? 'text-amber-500' : 'text-subtle'} />
                   {prof.name}
                 </button>
               );
@@ -215,7 +215,7 @@ export const SoulMapsPlannerPage: React.FC = () => {
         
         {/* Active Chapter Map Selectors */}
         <div className="space-y-1 w-full md:w-auto">
-          <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Soul Map Chapter</span>
+          <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Soul Map Chapter</span>
           <div className="flex gap-1.5 overflow-x-auto pb-1 md:pb-0">
             {filteredMaps.map((m, idx) => (
               <button
@@ -224,7 +224,7 @@ export const SoulMapsPlannerPage: React.FC = () => {
                 className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-all border ${
                   selectedMapId === m.id
                     ? 'border-amber-500/60 bg-amber-500/5 text-amber-600 dark:text-amber-400'
-                    : 'border-transparent text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800/50'
+                    : 'border-transparent text-muted hover:bg-hover/50'
                 }`}
               >
                 Map {idx + 1}
@@ -239,11 +239,11 @@ export const SoulMapsPlannerPage: React.FC = () => {
         
         {/* Left 2 Columns: Constellation Visual Grid */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <div className="flex justify-between items-center pb-3 border-b border-zinc-100 dark:border-zinc-800/65">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <div className="flex justify-between items-center pb-3 border-b border-border/65">
               <div>
-                <span className="text-[9px] font-mono text-zinc-400 uppercase block">Active Talent Board</span>
-                <h3 className="font-black text-base text-zinc-800 dark:text-zinc-100">
+                <span className="text-[9px] font-mono text-subtle uppercase block">Active Talent Board</span>
+                <h3 className="font-black text-base text-text dark:text-zinc-100">
                   {activeMap?.name}
                 </h3>
               </div>
@@ -253,7 +253,7 @@ export const SoulMapsPlannerPage: React.FC = () => {
             </div>
 
             {/* Interactive SVG Constellation Chart */}
-            <div className="relative aspect-video w-full border border-zinc-150/45 dark:border-zinc-850 bg-zinc-950 rounded-2xl overflow-hidden flex items-center justify-center">
+            <div className="relative aspect-video w-full border border-border bg-bg rounded-2xl overflow-hidden flex items-center justify-center">
               
               {/* Star Background Grid */}
               <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(245,158,11,0.15),rgba(255,255,255,0))]" />
@@ -297,7 +297,7 @@ export const SoulMapsPlannerPage: React.FC = () => {
                         ? 'border-amber-500 bg-amber-500 text-white scale-125 shadow-lg shadow-amber-500/20 z-20'
                         : isActive
                         ? 'border-amber-500 bg-amber-500/20 text-amber-500 z-10'
-                        : 'border-zinc-700 bg-zinc-900 text-zinc-500 hover:border-zinc-500 hover:text-zinc-300'
+                        : 'border-zinc-700 bg-surface text-muted hover:border-zinc-500 hover:text-subtle'
                     }`}
                   >
                     {isSkill ? (
@@ -311,15 +311,15 @@ export const SoulMapsPlannerPage: React.FC = () => {
 
               {/* MC Icon Watermark */}
               <div className="absolute bottom-4 right-4 flex items-center gap-1.5 opacity-40 text-xs">
-                <Compass size={14} className="text-zinc-400" />
-                <span className="text-zinc-400 font-bold uppercase tracking-wider font-mono">Constellation Path</span>
+                <Compass size={14} className="text-subtle" />
+                <span className="text-subtle font-bold uppercase tracking-wider font-mono">Constellation Path</span>
               </div>
             </div>
 
             {/* Slider shortcuts */}
             <div className="space-y-2 pt-2">
               <div className="flex justify-between items-center text-xs">
-                <span className="text-zinc-450 font-semibold">Simulate Point Activation Rank</span>
+                <span className="text-subtle font-semibold">Simulate Point Activation Rank</span>
                 <span className="font-bold text-amber-600 dark:text-amber-400 font-mono">Rank {selectedPointIndex} / {activePoints.length}</span>
               </div>
               <input
@@ -328,24 +328,24 @@ export const SoulMapsPlannerPage: React.FC = () => {
                 max={activePoints.length || 10}
                 value={selectedPointIndex}
                 onChange={(e) => setSelectedPointIndex(parseInt(e.target.value))}
-                className="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+                className="w-full h-1.5 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-amber-500"
               />
             </div>
           </div>
 
           {/* Cumulative Stats Aggregate Card */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Cumulative MC Talent Attributes</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Cumulative MC Talent Attributes</span>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
               {cumulativeData.stats.length > 0 ? (
                 cumulativeData.stats.map((st, idx) => (
-                  <div key={idx} className="p-3 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/15 rounded-xl flex items-center justify-between">
-                    <span className="text-[11px] font-semibold text-zinc-500 dark:text-zinc-400">{st.name}</span>
+                  <div key={idx} className="p-3 border border-border/80 bg-bg/20 dark:bg-bg/15 rounded-xl flex items-center justify-between">
+                    <span className="text-[11px] font-semibold text-muted">{st.name}</span>
                     <span className="text-xs font-black text-amber-600 dark:text-amber-400 font-mono">{st.display}</span>
                   </div>
                 ))
               ) : (
-                <div className="col-span-full py-4 text-center text-xs text-zinc-400 italic">
+                <div className="col-span-full py-4 text-center text-xs text-subtle italic">
                   Activate star points to display stats summary.
                 </div>
               )}
@@ -353,19 +353,19 @@ export const SoulMapsPlannerPage: React.FC = () => {
 
             {/* Skill Unlocks */}
             {cumulativeData.skills.length > 0 && (
-              <div className="pt-3 border-t border-zinc-150/45 dark:border-zinc-800/60 space-y-2">
-                <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Unlocked MC Active Skills</span>
+              <div className="pt-3 border-t border-border/60 space-y-2">
+                <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Unlocked MC Active Skills</span>
                 <div className="space-y-2">
                   {cumulativeData.skills.map((sk) => (
                     <div key={sk.id} className="p-3 border border-amber-500/25 bg-amber-500/5 rounded-xl space-y-1">
                       <div className="flex items-center gap-1.5">
                         <Zap className="text-amber-500" size={14} />
-                        <span className="font-bold text-zinc-800 dark:text-zinc-200 text-xs">{sk.name}</span>
-                        <span className="text-[8px] px-1.5 py-0.5 rounded bg-zinc-150 dark:bg-zinc-800 text-zinc-500 font-bold font-mono">
+                        <span className="font-bold text-text text-xs">{sk.name}</span>
+                        <span className="text-[8px] px-1.5 py-0.5 rounded bg-surface-raised text-muted font-bold font-mono">
                           ID: {sk.id}
                         </span>
                       </div>
-                      <p className="text-[10px] text-zinc-500 leading-relaxed pl-5">
+                      <p className="text-[10px] text-muted leading-relaxed pl-5">
                         {sk.desc}
                       </p>
                     </div>
@@ -380,21 +380,21 @@ export const SoulMapsPlannerPage: React.FC = () => {
         <div className="lg:col-span-1 space-y-6">
           
           {/* Node Inspector */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-5">
-            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Star Node Inspector</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-5">
+            <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Star Node Inspector</span>
             
             {selectedPoint ? (
               <div className="space-y-4">
                 {/* Point Header */}
-                <div className="pb-3 border-b border-zinc-100 dark:border-zinc-800/60 flex items-center justify-between">
+                <div className="pb-3 border-b border-border/60 flex items-center justify-between">
                   <div>
-                    <h4 className="font-black text-sm text-zinc-800 dark:text-zinc-100">
+                    <h4 className="font-black text-sm text-text dark:text-zinc-100">
                       {selectedPoint.name}
                     </h4>
-                    <span className="text-[9px] text-zinc-400 font-mono">Constellation Point Index {selectedPoint.index}</span>
+                    <span className="text-[9px] text-subtle font-mono">Constellation Point Index {selectedPoint.index}</span>
                   </div>
                   <span className={`px-2 py-0.5 rounded-lg text-[9px] font-bold ${
-                    selectedPoint.is_skill ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-500'
+                    selectedPoint.is_skill ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400' : 'bg-surface-raised text-muted'
                   }`}>
                     {selectedPoint.is_skill ? 'Skill Unlock' : 'Stat Node'}
                   </span>
@@ -402,13 +402,13 @@ export const SoulMapsPlannerPage: React.FC = () => {
 
                 {/* Requirements */}
                 <div className="space-y-2">
-                  <span className="text-[9.5px] font-semibold text-zinc-400 uppercase block">Upgrade Price</span>
-                  <div className="p-3 bg-zinc-50/50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-800/50 rounded-xl flex justify-between items-center">
+                  <span className="text-[9.5px] font-semibold text-subtle uppercase block">Upgrade Price</span>
+                  <div className="p-3 bg-bg/50 border border-border/50 rounded-xl flex justify-between items-center">
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-amber-500" />
-                      <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300">Souls Required</span>
+                      <span className="text-xs font-bold text-muted">Souls Required</span>
                     </div>
-                    <span className="font-mono text-xs font-black text-zinc-850 dark:text-zinc-100">
+                    <span className="font-mono text-xs font-black text-text">
                       {selectedPoint.need_fetch.toLocaleString()}
                     </span>
                   </div>
@@ -416,10 +416,10 @@ export const SoulMapsPlannerPage: React.FC = () => {
 
                 {/* Point Effects */}
                 <div className="space-y-2">
-                  <span className="text-[9.5px] font-semibold text-zinc-400 uppercase block">Altars Stat Modifiers</span>
+                  <span className="text-[9.5px] font-semibold text-subtle uppercase block">Altars Stat Modifiers</span>
                   <div className="space-y-1.5">
                     {selectedPoint.desc.split('|').map((mod, idx) => (
-                      <div key={idx} className="p-2.5 bg-zinc-50/30 dark:bg-zinc-950/5 border border-zinc-100 dark:border-zinc-800/40 rounded-lg text-[10.5px] text-zinc-650 dark:text-zinc-305 flex items-center gap-2">
+                      <div key={idx} className="p-2.5 bg-bg/30 dark:bg-bg/5 border border-border/40 rounded-lg text-[10.5px] text-muted flex items-center gap-2">
                         {selectedPoint.is_skill ? (
                           <Zap size={11} className="text-amber-500 shrink-0" />
                         ) : (
@@ -433,32 +433,32 @@ export const SoulMapsPlannerPage: React.FC = () => {
 
               </div>
             ) : (
-              <div className="py-8 text-center text-xs text-zinc-400 italic">
+              <div className="py-8 text-center text-xs text-subtle italic">
                 Select a star point on the chart to inspect.
               </div>
             )}
           </div>
 
           {/* Cost Calculator Card */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Chapter Path Cost Calculator</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Chapter Path Cost Calculator</span>
             
             <div className="space-y-3">
               <div className="flex justify-between items-center text-xs">
-                <span className="text-zinc-500 font-semibold">Cumulative Souls Cost</span>
-                <span className="font-mono font-bold text-zinc-900 dark:text-white">
+                <span className="text-muted font-semibold">Cumulative Souls Cost</span>
+                <span className="font-mono font-bold text-text">
                   {cumulativeData.totalSouls.toLocaleString()} Souls
                 </span>
               </div>
               
               <div className="p-3 bg-amber-500/5 border border-amber-500/25 rounded-xl space-y-2">
                 <div className="flex justify-between items-center text-[10px]">
-                  <span className="text-zinc-600 dark:text-zinc-300 font-bold">Total Stars Lit</span>
+                  <span className="text-muted dark:text-subtle font-bold">Total Stars Lit</span>
                   <span className="font-mono font-black text-amber-700 dark:text-amber-400">
                     {selectedPointIndex} / {activePoints.length}
                   </span>
                 </div>
-                <div className="w-full bg-zinc-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden">
+                <div className="w-full bg-surface-raised h-1.5 rounded-full overflow-hidden">
                   <div 
                     className="bg-amber-500 h-full transition-all duration-300"
                     style={{ width: `${(selectedPointIndex / activePoints.length) * 100}%` }}

@@ -207,16 +207,16 @@ export const CalendarPage: React.FC = () => {
       {/* Header Banner */}
       <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-fuchsia-900 via-purple-950 to-zinc-950 text-white shadow-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div className="space-y-3 max-w-xl">
-          <span className="px-2.5 py-1 text-[10px] font-extrabold uppercase rounded bg-white/15 text-fuchsia-200 tracking-wider">
+          <span className="px-2.5 py-1 text-[10px] font-extrabold uppercase rounded bg-surface/15 text-fuchsia-200 tracking-wider">
             Live Simulator
           </span>
           <h1 className="text-3xl font-extrabold tracking-tight">Campaign & Event Scheduler</h1>
-          <p className="text-zinc-300 text-sm leading-relaxed">
+          <p className="text-subtle text-sm leading-relaxed">
             Simulate promotional activities and quest timings. Pick a server launch date to dynamically overlay server age schedules onto the real calendar layout.
           </p>
         </div>
         {/* Server launch date config */}
-        <div className="p-4 bg-white/5 border border-white/10 rounded-xl space-y-2 w-full md:w-auto text-xs">
+        <div className="p-4 bg-surface/5 border border-white/10 rounded-xl space-y-2 w-full md:w-auto text-xs">
           <label className="flex items-center gap-1.5 font-bold uppercase tracking-wider text-fuchsia-300">
             <Server size={14} />
             <span>Server Launch Date</span>
@@ -225,46 +225,46 @@ export const CalendarPage: React.FC = () => {
             type="date"
             value={serverOpenDateStr}
             onChange={(e) => setServerOpenDateStr(e.target.value)}
-            className="w-full px-3 py-1.5 rounded bg-zinc-900 border border-zinc-700 text-white focus:outline-none focus:ring-1 focus:ring-fuchsia-500 font-mono text-sm cursor-pointer"
+            className="w-full px-3 py-1.5 rounded bg-surface border border-zinc-700 text-white focus:outline-none focus:ring-1 focus:ring-fuchsia-500 font-mono text-sm cursor-pointer"
           />
-          <span className="text-[10px] text-zinc-400 block italic">Updates server age relative calculations</span>
+          <span className="text-[10px] text-subtle block italic">Updates server age relative calculations</span>
         </div>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
         {/* Left Side: Daily Quests & Recurring Routines */}
-        <div className="space-y-6 xl:col-span-1 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm">
-          <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-100 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-3">
+        <div className="space-y-6 xl:col-span-1 border border-border bg-surface p-6 rounded-2xl shadow-sm">
+          <h2 className="text-lg font-bold text-text dark:text-zinc-100 flex items-center gap-2 border-b border-border pb-3">
             <CalendarDays className="text-fuchsia-500" size={20} />
             <span>Daily Routines & Quests</span>
           </h2>
-          <p className="text-xs text-zinc-550 leading-relaxed">
+          <p className="text-xs text-muted leading-relaxed">
             Dailies reset every 24 hours. Points feed into daily progress rewards chests.
           </p>
           <div className="space-y-4 max-h-[600px] overflow-y-auto pr-1">
             {dailies.map((daily) => (
               <div
                 key={daily.id}
-                className="p-4 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/30 dark:bg-zinc-950/20 rounded-xl space-y-3 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all"
+                className="p-4 border border-border bg-bg/30 dark:bg-bg/20 rounded-xl space-y-3 hover:border-border-strong transition-all"
               >
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <h3 className="font-bold text-sm text-zinc-800 dark:text-zinc-200">{daily.task_name || `Daily Quest #${daily.id}`}</h3>
-                    <span className="text-[10px] font-mono text-zinc-400">ID: {daily.id}</span>
+                    <h3 className="font-bold text-sm text-text">{daily.task_name || `Daily Quest #${daily.id}`}</h3>
+                    <span className="text-[10px] font-mono text-subtle">ID: {daily.id}</span>
                   </div>
                   <span className="px-2 py-0.5 rounded bg-fuchsia-100 dark:bg-fuchsia-950/40 text-fuchsia-750 dark:text-fuchsia-400 font-extrabold text-[10px] uppercase">
                     +{daily.point} Points
                   </span>
                 </div>
                 {daily.description && (
-                  <p className="text-xs text-zinc-550 leading-relaxed italic border-l-2 border-fuchsia-500 pl-2">
+                  <p className="text-xs text-muted leading-relaxed italic border-l-2 border-fuchsia-500 pl-2">
                     "{daily.description}"
                   </p>
                 )}
                 {/* Rewards display */}
                 {daily.rewards_json && (
-                  <div className="pt-1.5 border-t border-zinc-100 dark:border-zinc-800/60 space-y-1">
-                    <span className="block text-[9px] font-bold uppercase tracking-wider text-zinc-400">Completion Rewards</span>
+                  <div className="pt-1.5 border-t border-border/60 space-y-1">
+                    <span className="block text-[9px] font-bold uppercase tracking-wider text-subtle">Completion Rewards</span>
                     <RewardList rewardsJson={daily.rewards_json} articles={articles} />
                   </div>
                 )}
@@ -275,25 +275,25 @@ export const CalendarPage: React.FC = () => {
 
         {/* Right Side: Event Calendar Simulator Grid */}
         <div className="xl:col-span-2 space-y-6">
-          <div className="border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm space-y-6">
+          <div className="border border-border bg-surface p-6 rounded-2xl shadow-sm space-y-6">
             {/* Month selector */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <Clock className="text-fuchsia-500" size={20} />
-                <h2 className="text-lg font-bold text-zinc-800 dark:text-zinc-100">
+                <h2 className="text-lg font-bold text-text dark:text-zinc-100">
                   {monthNames[month]} {year}
                 </h2>
               </div>
               <div className="flex items-center gap-2">
                 <button
                   onClick={handlePrevMonth}
-                  className="p-1.5 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-950 rounded-lg cursor-pointer"
+                  className="p-1.5 border border-border hover:bg-hover rounded-lg cursor-pointer"
                 >
                   <ArrowLeft size={16} />
                 </button>
                 <button
                   onClick={handleNextMonth}
-                  className="p-1.5 border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-950 rounded-lg cursor-pointer"
+                  className="p-1.5 border border-border hover:bg-hover rounded-lg cursor-pointer"
                 >
                   <ArrowRight size={16} />
                 </button>
@@ -301,7 +301,7 @@ export const CalendarPage: React.FC = () => {
             </div>
 
             {/* Calendar grid headers */}
-            <div className="grid grid-cols-7 gap-1 text-center font-bold text-xs uppercase tracking-wider text-zinc-400">
+            <div className="grid grid-cols-7 gap-1 text-center font-bold text-xs uppercase tracking-wider text-subtle">
               <div>Mon</div>
               <div>Tue</div>
               <div>Wed</div>
@@ -328,11 +328,11 @@ export const CalendarPage: React.FC = () => {
                     className={`h-24 p-1.5 border rounded-xl flex flex-col justify-between items-start text-left transition-all relative ${
                       isSelected
                         ? 'border-fuchsia-500 ring-2 ring-fuchsia-500/20 bg-fuchsia-500/5'
-                        : 'border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 bg-zinc-50/20 dark:bg-zinc-950/10'
+                        : 'border-border hover:border-border-strong bg-bg/10'
                     } ${!item.isCurrentMonth ? 'opacity-40' : ''} cursor-pointer`}
                   >
                     <div className="flex items-center justify-between w-full">
-                      <span className="font-mono text-sm font-bold text-zinc-700 dark:text-zinc-300">
+                      <span className="font-mono text-sm font-bold text-muted">
                         {item.date.getDate()}
                       </span>
                       {currentServerDay > 0 && (
@@ -353,7 +353,7 @@ export const CalendarPage: React.FC = () => {
                         </span>
                       ))}
                       {dayEvents.length > 2 && (
-                        <span className="block text-[8px] font-bold text-center text-zinc-400 uppercase">
+                        <span className="block text-[8px] font-bold text-center text-subtle uppercase">
                           +{dayEvents.length - 2} more
                         </span>
                       )}
@@ -365,13 +365,13 @@ export const CalendarPage: React.FC = () => {
           </div>
 
           {/* Active events on selected date drawer */}
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800 pb-3">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <div className="flex items-center justify-between border-b border-border pb-3">
               <div className="space-y-1">
-                <h3 className="font-bold text-zinc-800 dark:text-zinc-100">
+                <h3 className="font-bold text-text dark:text-zinc-100">
                   Active Promotions for {selectedDate.toLocaleDateString()}
                 </h3>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-muted">
                   Calculated using Server Open Date: {serverOpenDate.toLocaleDateString()}
                 </p>
               </div>
@@ -381,21 +381,21 @@ export const CalendarPage: React.FC = () => {
             </div>
 
             {activeEventsOnSelectedDate.length === 0 ? (
-              <div className="p-8 text-center text-zinc-400 space-y-2">
-                <HelpCircle size={36} className="mx-auto text-zinc-300" />
+              <div className="p-8 text-center text-subtle space-y-2">
+                <HelpCircle size={36} className="mx-auto text-subtle" />
                 <p className="text-sm font-semibold">No active promotional events simulated on this day.</p>
-                <p className="text-xs text-zinc-400">Recurring weekly cycles or server-relative timelines might start on other dates.</p>
+                <p className="text-xs text-subtle">Recurring weekly cycles or server-relative timelines might start on other dates.</p>
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {activeEventsOnSelectedDate.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-4 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/40 dark:bg-zinc-950/20 rounded-xl space-y-2.5 flex flex-col justify-between"
+                    className="p-4 border border-border bg-bg/40 dark:bg-bg/20 rounded-xl space-y-2.5 flex flex-col justify-between"
                   >
                     <div className="space-y-1.5">
                       <div className="flex items-center justify-between gap-2">
-                        <span className="px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-[9px] font-bold font-mono text-zinc-550">
+                        <span className="px-2 py-0.5 rounded bg-surface-raised text-[9px] font-bold font-mono text-muted">
                           ID: {item.promo.id}
                         </span>
                         <span className="px-2 py-0.5 rounded bg-fuchsia-100 dark:bg-fuchsia-950 text-fuchsia-750 dark:text-fuchsia-400 font-extrabold text-[9px] uppercase">
@@ -404,14 +404,14 @@ export const CalendarPage: React.FC = () => {
                       </div>
                       <Link
                         to={`/promotions/${item.promo.id}`}
-                        className="block font-bold text-sm text-zinc-800 dark:text-zinc-100 hover:text-fuchsia-600 transition-colors"
+                        className="block font-bold text-sm text-text dark:text-zinc-100 hover:text-fuchsia-600 transition-colors"
                       >
                         {item.promo.name || `Promotion #${item.promo.id}`}
                       </Link>
                     </div>
                     
-                    <div className="text-[11px] text-zinc-500 bg-zinc-100/50 dark:bg-zinc-950 p-2 rounded flex items-start gap-1.5 border border-zinc-200/40 dark:border-zinc-900">
-                      <Clock size={12} className="mt-0.5 text-zinc-400 shrink-0" />
+                    <div className="text-[11px] text-muted bg-bg/50 dark:bg-bg p-2 rounded flex items-start gap-1.5 border border-border/40 border-border">
+                      <Clock size={12} className="mt-0.5 text-subtle shrink-0" />
                       <span>{item.scheduleDetails}</span>
                     </div>
                   </div>

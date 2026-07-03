@@ -129,23 +129,23 @@ export const PveEncounterPage: React.FC = () => {
   return (
     <div className="p-4 md:p-6 max-w-7xl mx-auto space-y-6">
       {/* Page Header */}
-      <div className="border-b border-zinc-200 dark:border-zinc-800 pb-5">
-        <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-2">
+      <div className="border-b border-border pb-5">
+        <h1 className="text-2xl font-bold tracking-tight text-text flex items-center gap-2">
           <Swords className="w-6 h-6 text-red-500" /> PVE Campaign Stage Encounter Analyzer
         </h1>
-        <p className="text-zinc-500 dark:text-zinc-400 mt-1">
+        <p className="text-muted mt-1">
           Explore tactical boss positioning layout, check enemy attributes, and audit skill specifications.
         </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Left Column: Encounter Selection */}
-        <div className="lg:col-span-4 bg-white dark:bg-zinc-900 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 space-y-4 h-[700px] flex flex-col">
+        <div className="lg:col-span-4 bg-surface rounded-2xl border border-border p-5 space-y-4 h-[700px] flex flex-col">
           <div className="space-y-1">
-            <h2 className="text-md font-bold flex items-center gap-2 text-zinc-800 dark:text-zinc-200">
+            <h2 className="text-md font-bold flex items-center gap-2 text-text">
               <Search className="w-4 h-4 text-indigo-500" /> Search Encounters
             </h2>
-            <p className="text-xs text-zinc-500">Select any level boss or squad layout to analyze.</p>
+            <p className="text-xs text-muted">Select any level boss or squad layout to analyze.</p>
           </div>
 
           <div className="relative">
@@ -154,9 +154,9 @@ export const PveEncounterPage: React.FC = () => {
               placeholder="Search by name or encounter ID..."
               value={searchQuery}
               onChange={e => setSearchVal(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+              className="w-full pl-10 pr-4 py-2 rounded-xl border border-border bg-bg focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
             />
-            <Search className="absolute left-3.5 top-2.5 w-4 h-4 text-zinc-400" />
+            <Search className="absolute left-3.5 top-2.5 w-4 h-4 text-subtle" />
           </div>
 
           {/* List Scroll */}
@@ -169,12 +169,12 @@ export const PveEncounterPage: React.FC = () => {
                   className={`w-full text-left p-3.5 rounded-xl border transition-all flex items-center justify-between gap-3 ${
                     selectedArmyId === army.id
                       ? 'border-red-500 bg-red-500/5 text-red-600 dark:text-red-400'
-                      : 'border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-950 text-zinc-700 dark:text-zinc-300'
+                      : 'border-border hover:bg-hover text-muted'
                   }`}
                 >
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-zinc-150 dark:bg-zinc-850 text-zinc-450 dark:text-zinc-555">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-surface-raised text-subtle dark:text-subtle">
                         ID {army.id}
                       </span>
                       {army.leader_id > 0 && (
@@ -184,13 +184,13 @@ export const PveEncounterPage: React.FC = () => {
                       )}
                     </div>
                     <div className="font-semibold text-sm line-clamp-1 mt-1">{army.name || "Unnamed Encounter"}</div>
-                    {army.text && <div className="text-xs text-zinc-500 mt-0.5 line-clamp-1 italic">"{army.text}"</div>}
+                    {army.text && <div className="text-xs text-muted mt-0.5 line-clamp-1 italic">"{army.text}"</div>}
                   </div>
-                  <ChevronRight className="w-4 h-4 text-zinc-400 shrink-0" />
+                  <ChevronRight className="w-4 h-4 text-subtle shrink-0" />
                 </button>
               ))
             ) : (
-              <div className="text-center py-10 text-sm text-zinc-500">
+              <div className="text-center py-10 text-sm text-muted">
                 No campaign encounters found.
               </div>
             )}
@@ -200,19 +200,19 @@ export const PveEncounterPage: React.FC = () => {
         {/* Right Columns: Tactical Placement & Inspection */}
         <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-12 gap-6 h-auto lg:h-[700px]">
           {/* Tactical Matrix Column */}
-          <div className="md:col-span-5 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 flex flex-col h-full space-y-4">
+          <div className="md:col-span-5 bg-surface border border-border rounded-2xl p-5 flex flex-col h-full space-y-4">
             <div>
-              <h3 className="text-md font-bold text-zinc-800 dark:text-zinc-200">Staggered Placement Matrix</h3>
-              <p className="text-xs text-zinc-500 mt-0.5">3 Columns x 5 Rows Combat Grid</p>
+              <h3 className="text-md font-bold text-text">Staggered Placement Matrix</h3>
+              <p className="text-xs text-muted mt-0.5">3 Columns x 5 Rows Combat Grid</p>
             </div>
 
             {selectedArmy ? (
-              <div className="flex-1 flex flex-col justify-between border border-zinc-150 dark:border-zinc-8.50 bg-zinc-50/50 dark:bg-zinc-950/20 p-4 rounded-xl">
+              <div className="flex-1 flex flex-col justify-between border border-border bg-bg/50 p-4 rounded-xl">
                 {/* 5x3 Grid Placement representation */}
                 <div className="grid grid-cols-3 gap-3 flex-1 items-center">
                   {/* Column 3: Back (Support) */}
                   <div className="space-y-3">
-                    <div className="text-[10px] font-bold text-center text-zinc-400 uppercase tracking-widest">Back</div>
+                    <div className="text-[10px] font-bold text-center text-subtle uppercase tracking-widest">Back</div>
                     {[0, 1, 2, 3, 4].map(idx => {
                       const eid = selectedArmy.back?.[idx] || 0;
                       const monster = enemiesMap.get(eid);
@@ -223,20 +223,20 @@ export const PveEncounterPage: React.FC = () => {
                           disabled={eid === 0}
                           className={`w-full aspect-square rounded-xl border flex flex-col items-center justify-center p-1 text-center transition-all ${
                             eid === 0
-                              ? 'bg-zinc-100/50 dark:bg-zinc-950/50 border-dashed border-zinc-200 dark:border-zinc-800 opacity-25'
+                              ? 'bg-bg/50 dark:bg-bg/50 border-dashed border-border opacity-25'
                               : selectedEnemyId === eid
                                 ? 'border-red-500 bg-red-500/10 text-red-500 shadow shadow-red-500/10'
-                                : 'border-zinc-200 dark:border-zinc-850 bg-white dark:bg-zinc-900 hover:border-zinc-450 dark:hover:border-zinc-700'
+                                : 'border-border bg-surface hover:border-border-strong'
                           }`}
                         >
                           {monster ? (
                             <>
                               <div className={`w-2.5 h-2.5 rounded-full mb-1 ${monster.is_boss ? 'bg-amber-500' : 'bg-red-400'}`} />
                               <div className="font-bold text-[10px] line-clamp-1 leading-tight">{monster.name}</div>
-                              <div className="text-[8px] text-zinc-500 mt-0.5">Lv.{monster.level}</div>
+                              <div className="text-[8px] text-muted mt-0.5">Lv.{monster.level}</div>
                             </>
                           ) : (
-                            <span className="text-[10px] text-zinc-400 italic">Empty</span>
+                            <span className="text-[10px] text-subtle italic">Empty</span>
                           )}
                         </button>
                       );
@@ -245,7 +245,7 @@ export const PveEncounterPage: React.FC = () => {
 
                   {/* Column 2: Middle (Assaulter) */}
                   <div className="space-y-3">
-                    <div className="text-[10px] font-bold text-center text-zinc-400 uppercase tracking-widest">Middle</div>
+                    <div className="text-[10px] font-bold text-center text-subtle uppercase tracking-widest">Middle</div>
                     {[0, 1, 2, 3, 4].map(idx => {
                       const eid = selectedArmy.middle?.[idx] || 0;
                       const monster = enemiesMap.get(eid);
@@ -256,20 +256,20 @@ export const PveEncounterPage: React.FC = () => {
                           disabled={eid === 0}
                           className={`w-full aspect-square rounded-xl border flex flex-col items-center justify-center p-1 text-center transition-all ${
                             eid === 0
-                              ? 'bg-zinc-100/50 dark:bg-zinc-950/50 border-dashed border-zinc-200 dark:border-zinc-850 opacity-25'
+                              ? 'bg-bg/50 dark:bg-bg/50 border-dashed border-border opacity-25'
                               : selectedEnemyId === eid
                                 ? 'border-red-500 bg-red-500/10 text-red-500 shadow shadow-red-500/10'
-                                : 'border-zinc-200 dark:border-zinc-850 bg-white dark:bg-zinc-900 hover:border-zinc-450 dark:hover:border-zinc-700'
+                                : 'border-border bg-surface hover:border-border-strong'
                           }`}
                         >
                           {monster ? (
                             <>
                               <div className={`w-2.5 h-2.5 rounded-full mb-1 ${monster.is_boss ? 'bg-amber-500' : 'bg-red-400'}`} />
                               <div className="font-bold text-[10px] line-clamp-1 leading-tight">{monster.name}</div>
-                              <div className="text-[8px] text-zinc-500 mt-0.5">Lv.{monster.level}</div>
+                              <div className="text-[8px] text-muted mt-0.5">Lv.{monster.level}</div>
                             </>
                           ) : (
-                            <span className="text-[10px] text-zinc-400 italic">Empty</span>
+                            <span className="text-[10px] text-subtle italic">Empty</span>
                           )}
                         </button>
                       );
@@ -278,7 +278,7 @@ export const PveEncounterPage: React.FC = () => {
 
                   {/* Column 1: Front (Vanguard) */}
                   <div className="space-y-3">
-                    <div className="text-[10px] font-bold text-center text-zinc-400 uppercase tracking-widest">Front</div>
+                    <div className="text-[10px] font-bold text-center text-subtle uppercase tracking-widest">Front</div>
                     {[0, 1, 2, 3, 4].map(idx => {
                       const eid = selectedArmy.front?.[idx] || 0;
                       const monster = enemiesMap.get(eid);
@@ -289,20 +289,20 @@ export const PveEncounterPage: React.FC = () => {
                           disabled={eid === 0}
                           className={`w-full aspect-square rounded-xl border flex flex-col items-center justify-center p-1 text-center transition-all ${
                             eid === 0
-                              ? 'bg-zinc-100/50 dark:bg-zinc-950/50 border-dashed border-zinc-200 dark:border-zinc-850 opacity-25'
+                              ? 'bg-bg/50 dark:bg-bg/50 border-dashed border-border opacity-25'
                               : selectedEnemyId === eid
                                 ? 'border-red-500 bg-red-500/10 text-red-500 shadow shadow-red-500/10'
-                                : 'border-zinc-200 dark:border-zinc-850 bg-white dark:bg-zinc-900 hover:border-zinc-450 dark:hover:border-zinc-700'
+                                : 'border-border bg-surface hover:border-border-strong'
                           }`}
                         >
                           {monster ? (
                             <>
                               <div className={`w-2.5 h-2.5 rounded-full mb-1 ${monster.is_boss ? 'bg-amber-500' : 'bg-red-400'}`} />
                               <div className="font-bold text-[10px] line-clamp-1 leading-tight">{monster.name}</div>
-                              <div className="text-[8px] text-zinc-500 mt-0.5">Lv.{monster.level}</div>
+                              <div className="text-[8px] text-muted mt-0.5">Lv.{monster.level}</div>
                             </>
                           ) : (
-                            <span className="text-[10px] text-zinc-400 italic">Empty</span>
+                            <span className="text-[10px] text-subtle italic">Empty</span>
                           )}
                         </button>
                       );
@@ -311,13 +311,13 @@ export const PveEncounterPage: React.FC = () => {
                 </div>
 
                 {/* Team brief details */}
-                <div className="mt-4 pt-3 border-t border-zinc-200 dark:border-zinc-800 text-xs text-zinc-500 space-y-1">
-                  <div>Leader Target: <span className="font-semibold text-zinc-800 dark:text-zinc-200">{leaderEnemy?.name || 'Unknown'}</span></div>
-                  <div>Drop Loot Award ID: <span className="font-semibold text-zinc-800 dark:text-zinc-200">{selectedArmy.award_id}</span></div>
+                <div className="mt-4 pt-3 border-t border-border text-xs text-muted space-y-1">
+                  <div>Leader Target: <span className="font-semibold text-text">{leaderEnemy?.name || 'Unknown'}</span></div>
+                  <div>Drop Loot Award ID: <span className="font-semibold text-text">{selectedArmy.award_id}</span></div>
                 </div>
               </div>
             ) : (
-              <div className="flex-1 flex flex-col items-center justify-center text-center text-zinc-400">
+              <div className="flex-1 flex flex-col items-center justify-center text-center text-subtle">
                 <HelpCircle className="w-10 h-10 mb-2" />
                 <span>No Encounter Selected</span>
               </div>
@@ -325,76 +325,76 @@ export const PveEncounterPage: React.FC = () => {
           </div>
 
           {/* Monster Inspector Column */}
-          <div className="md:col-span-7 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 flex flex-col h-full overflow-y-auto">
+          <div className="md:col-span-7 bg-surface border border-border rounded-2xl p-5 flex flex-col h-full overflow-y-auto">
             {selectedEnemy ? (
               <div className="space-y-6">
                 {/* Header card */}
-                <div className="flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800 pb-4">
+                <div className="flex items-center justify-between border-b border-border pb-4">
                   <div>
                     <span className="px-2 py-0.5 text-[10px] font-bold rounded bg-red-500/10 text-red-500 uppercase tracking-widest">
                       {selectedEnemy.is_boss ? 'Raid Boss' : 'Standard Squad Unit'}
                     </span>
-                    <h4 className="text-xl font-bold mt-1 text-zinc-900 dark:text-zinc-100">{selectedEnemy.name}</h4>
-                    <p className="text-xs text-zinc-500 mt-0.5">ID: {selectedEnemy.id} • Monster Level: {selectedEnemy.level}</p>
+                    <h4 className="text-xl font-bold mt-1 text-text">{selectedEnemy.name}</h4>
+                    <p className="text-xs text-muted mt-0.5">ID: {selectedEnemy.id} • Monster Level: {selectedEnemy.level}</p>
                   </div>
-                  <div className="w-12 h-12 rounded-xl bg-zinc-100 dark:bg-zinc-850 flex items-center justify-center border border-zinc-200 dark:border-zinc-800">
-                    <User className="w-6 h-6 text-zinc-500" />
+                  <div className="w-12 h-12 rounded-xl bg-surface-raised flex items-center justify-center border border-border">
+                    <User className="w-6 h-6 text-muted" />
                   </div>
                 </div>
 
                 {/* Main Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="p-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-850 rounded-xl space-y-1">
-                    <div className="text-xs text-zinc-500 flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-red-400" /> HP Points</div>
-                    <div className="font-bold text-md text-zinc-800 dark:text-zinc-200">{(selectedEnemy.hp || 0).toLocaleString()}</div>
+                  <div className="p-3 bg-bg border border-border rounded-xl space-y-1">
+                    <div className="text-xs text-muted flex items-center gap-1"><Heart className="w-3.5 h-3.5 text-red-400" /> HP Points</div>
+                    <div className="font-bold text-md text-text">{(selectedEnemy.hp || 0).toLocaleString()}</div>
                   </div>
 
-                  <div className="p-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-850 rounded-xl space-y-1">
-                    <div className="text-xs text-zinc-500 flex items-center gap-1"><Zap className="w-3.5 h-3.5 text-amber-400" /> Speed Tempo</div>
-                    <div className="font-bold text-md text-zinc-800 dark:text-zinc-200">{(selectedEnemy.speed || 0).toLocaleString()}</div>
+                  <div className="p-3 bg-bg border border-border rounded-xl space-y-1">
+                    <div className="text-xs text-muted flex items-center gap-1"><Zap className="w-3.5 h-3.5 text-amber-400" /> Speed Tempo</div>
+                    <div className="font-bold text-md text-text">{(selectedEnemy.speed || 0).toLocaleString()}</div>
                   </div>
 
-                  <div className="p-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-850 rounded-xl space-y-1">
-                    <div className="text-xs text-zinc-500 flex items-center gap-1"><Shield className="w-3.5 h-3.5 text-indigo-400" /> Combat Class</div>
-                    <div className="font-semibold text-sm text-zinc-800 dark:text-zinc-200">{getProfessionLabel(selectedEnemy.profession)}</div>
+                  <div className="p-3 bg-bg border border-border rounded-xl space-y-1">
+                    <div className="text-xs text-muted flex items-center gap-1"><Shield className="w-3.5 h-3.5 text-indigo-400" /> Combat Class</div>
+                    <div className="font-semibold text-sm text-text">{getProfessionLabel(selectedEnemy.profession)}</div>
                   </div>
 
-                  <div className="p-3 bg-zinc-50 dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-850 rounded-xl space-y-1">
-                    <div className="text-xs text-zinc-500 flex items-center gap-1"><Crosshair className="w-3.5 h-3.5 text-emerald-400" /> Element Attribute</div>
-                    <div className="font-semibold text-sm text-zinc-800 dark:text-zinc-200">{getElementLabel(selectedEnemy.type)}</div>
+                  <div className="p-3 bg-bg border border-border rounded-xl space-y-1">
+                    <div className="text-xs text-muted flex items-center gap-1"><Crosshair className="w-3.5 h-3.5 text-emerald-400" /> Element Attribute</div>
+                    <div className="font-semibold text-sm text-text">{getElementLabel(selectedEnemy.type)}</div>
                   </div>
                 </div>
 
                 {/* Skill Deck */}
                 <div className="space-y-4">
-                  <h5 className="text-xs font-bold uppercase tracking-wider text-zinc-400">Monster Skillset Deck</h5>
+                  <h5 className="text-xs font-bold uppercase tracking-wider text-subtle">Monster Skillset Deck</h5>
 
                   <div className="space-y-3">
                     {/* Normal Skill */}
-                    <div className="p-3.5 bg-zinc-50 dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-850 rounded-xl flex gap-3">
-                      <div className="w-10 h-10 shrink-0 rounded-lg bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center font-bold text-xs text-zinc-500">
+                    <div className="p-3.5 bg-bg border border-border rounded-xl flex gap-3">
+                      <div className="w-10 h-10 shrink-0 rounded-lg bg-surface-raised flex items-center justify-center font-bold text-xs text-muted">
                         Norm
                       </div>
                       <div className="space-y-0.5">
-                        <div className="font-bold text-sm text-zinc-800 dark:text-zinc-200">
+                        <div className="font-bold text-sm text-text">
                           {enemySkills.normal ? enemySkills.normal.name : `Basic Attack (ID ${selectedEnemy.normal})`}
                         </div>
-                        <p className="text-xs text-zinc-550 leading-relaxed">
+                        <p className="text-xs text-muted leading-relaxed">
                           {enemySkills.normal ? enemySkills.normal.description : "Executes a standard basic weapon strike dealing physical strike damage."}
                         </p>
                       </div>
                     </div>
 
                     {/* Skill */}
-                    <div className="p-3.5 bg-zinc-50 dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-850 rounded-xl flex gap-3">
+                    <div className="p-3.5 bg-bg border border-border rounded-xl flex gap-3">
                       <div className="w-10 h-10 shrink-0 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center font-bold text-xs">
                         Skill
                       </div>
                       <div className="space-y-0.5">
-                        <div className="font-bold text-sm text-zinc-800 dark:text-zinc-200">
+                        <div className="font-bold text-sm text-text">
                           {enemySkills.skill ? enemySkills.skill.name : `Rage Skill (ID ${selectedEnemy.skill})`}
                         </div>
-                        <p className="text-xs text-zinc-550 leading-relaxed">
+                        <p className="text-xs text-muted leading-relaxed">
                           {enemySkills.skill ? enemySkills.skill.description : "Consumes 100 Anger to launch an ultimate skill, triggering massive class damage."}
                         </p>
                       </div>
@@ -405,8 +405,8 @@ export const PveEncounterPage: React.FC = () => {
                 {/* Advanced Attributes / Rates */}
                 {selectedEnemy.rates && (
                   <div className="space-y-3">
-                    <h5 className="text-xs font-bold uppercase tracking-wider text-zinc-400">Combat Rate Spec</h5>
-                    <div className="grid grid-cols-3 gap-2 text-xs bg-zinc-50 dark:bg-zinc-950 border border-zinc-150 dark:border-zinc-850 p-3 rounded-xl">
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-subtle">Combat Rate Spec</h5>
+                    <div className="grid grid-cols-3 gap-2 text-xs bg-bg border border-border p-3 rounded-xl">
                       <div>Crit Rate: <span className="font-bold">{(selectedEnemy.rates.crit_rate || 0)}%</span></div>
                       <div>Dodge Rate: <span className="font-bold">{(selectedEnemy.rates.dodge_rate || 0)}%</span></div>
                       <div>Hit Rate: <span className="font-bold">{(selectedEnemy.rates.hit_rate || 0)}%</span></div>
@@ -415,7 +415,7 @@ export const PveEncounterPage: React.FC = () => {
                 )}
               </div>
             ) : (
-              <div className="h-full flex flex-col items-center justify-center text-center text-zinc-400 py-10">
+              <div className="h-full flex flex-col items-center justify-center text-center text-subtle py-10">
                 <Shield className="w-10 h-10 mb-2" />
                 <span>Select a monster in the grid layout to inspect its statistics.</span>
               </div>

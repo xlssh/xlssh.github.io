@@ -121,16 +121,16 @@ export const BeastSoulsPlannerPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <BarChart3 className="text-indigo-500" size={28} />
             Beast Souls Upgrade Planner
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Calculate level progression costs, experience curve requirements, and stat scaling for all 6 Beast Soul Altars.
           </p>
         </div>
@@ -140,8 +140,8 @@ export const BeastSoulsPlannerPage: React.FC = () => {
         
         {/* Left Column: Altar Selection Grid */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Select Beast Soul Altar</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Select Beast Soul Altar</span>
             
             <div className="space-y-2">
               {Object.entries(ALTARS_METADATA).map(([idStr, meta]) => {
@@ -155,19 +155,19 @@ export const BeastSoulsPlannerPage: React.FC = () => {
                     className={`w-full flex items-center justify-between p-3.5 border rounded-xl transition-all text-left ${
                       isSelected
                         ? 'border-indigo-500 bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 font-bold shadow-sm shadow-indigo-500/5'
-                        : 'border-zinc-100 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 dark:hover:border-zinc-700 text-zinc-700 dark:text-zinc-300'
+                        : 'border-border bg-bg/50 hover:border-border-strong text-muted'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800/80 ${isSelected ? 'text-indigo-500 bg-indigo-500/10' : 'text-zinc-400'}`}>
+                      <div className={`p-2 rounded-lg bg-surface-raised/80 ${isSelected ? 'text-indigo-500 bg-indigo-500/10' : 'text-subtle'}`}>
                         <Icon size={16} />
                       </div>
                       <div>
                         <span className="text-xs font-bold block">{meta.name}</span>
-                        <span className="text-[9px] text-zinc-450 uppercase">{meta.stat}</span>
+                        <span className="text-[9px] text-subtle uppercase">{meta.stat}</span>
                       </div>
                     </div>
-                    <ChevronRight size={14} className="text-zinc-400" />
+                    <ChevronRight size={14} className="text-subtle" />
                   </button>
                 );
               })}
@@ -177,13 +177,13 @@ export const BeastSoulsPlannerPage: React.FC = () => {
 
         {/* Right Column: Level Simulator & Cost results */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
             
             {/* Overview details */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-zinc-100 dark:border-zinc-800/60 gap-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-border/60 gap-4">
               <div>
-                <span className="text-[9px] font-mono text-zinc-400 uppercase block">Active Altar Spec</span>
-                <h3 className="font-black text-lg text-zinc-850 dark:text-zinc-100">
+                <span className="text-[9px] font-mono text-subtle uppercase block">Active Altar Spec</span>
+                <h3 className="font-black text-lg text-text">
                   {activeMeta?.name}
                 </h3>
               </div>
@@ -193,9 +193,9 @@ export const BeastSoulsPlannerPage: React.FC = () => {
             </div>
 
             {/* Altar Description block */}
-            <div className="p-3 bg-zinc-50/50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-850 rounded-xl space-y-1">
-              <span className="block text-xs font-bold text-zinc-800 dark:text-zinc-200">Altar Buff Description</span>
-              <p className="text-[10px] text-zinc-500 leading-relaxed">
+            <div className="p-3 bg-bg/50 border border-border rounded-xl space-y-1">
+              <span className="block text-xs font-bold text-text">Altar Buff Description</span>
+              <p className="text-[10px] text-muted leading-relaxed">
                 {activeMeta?.desc} Active level range goes up to **Level {maxSimLevel}**.
               </p>
             </div>
@@ -204,11 +204,11 @@ export const BeastSoulsPlannerPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Start Level slider */}
-              <div className="p-4 border border-zinc-100 dark:border-zinc-855 bg-zinc-50/20 dark:bg-zinc-950/10 rounded-xl space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase">Starting Altar Level</span>
+              <div className="p-4 border border-border bg-bg/10 rounded-xl space-y-3">
+                <span className="block text-[10px] font-bold text-subtle uppercase">Starting Altar Level</span>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-zinc-450">Select Level</span>
-                  <span className="font-mono text-xs font-bold text-zinc-700 dark:text-zinc-300">Lv. {startLevel}</span>
+                  <span className="text-xs text-subtle">Select Level</span>
+                  <span className="font-mono text-xs font-bold text-muted">Lv. {startLevel}</span>
                 </div>
                 <input
                   type="range"
@@ -216,15 +216,15 @@ export const BeastSoulsPlannerPage: React.FC = () => {
                   max={maxSimLevel}
                   value={startLevel}
                   onChange={(e) => setStartLevel(parseInt(e.target.value))}
-                  className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  className="w-full h-1 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-indigo-500"
                 />
               </div>
 
               {/* Target Level slider */}
-              <div className="p-4 border border-zinc-100 dark:border-zinc-855 bg-zinc-50/20 dark:bg-zinc-950/10 rounded-xl space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase">Target Altar Level</span>
+              <div className="p-4 border border-border bg-bg/10 rounded-xl space-y-3">
+                <span className="block text-[10px] font-bold text-subtle uppercase">Target Altar Level</span>
                 <div className="flex justify-between items-center">
-                  <span className="text-xs text-zinc-450">Select Level</span>
+                  <span className="text-xs text-subtle">Select Level</span>
                   <span className="font-mono text-xs font-bold text-indigo-600 dark:text-indigo-400">Lv. {endLevel}</span>
                 </div>
                 <input
@@ -233,29 +233,29 @@ export const BeastSoulsPlannerPage: React.FC = () => {
                   max={maxSimLevel}
                   value={endLevel}
                   onChange={(e) => setEndLevel(parseInt(e.target.value))}
-                  className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-500"
+                  className="w-full h-1 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-indigo-500"
                 />
               </div>
 
             </div>
 
             {/* Calculations display */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-border/60">
               
               {/* Stat gain */}
               <div className="space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Stat progression details</span>
-                <div className="p-4 bg-zinc-50/40 dark:bg-zinc-950/15 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-4">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Stat progression details</span>
+                <div className="p-4 bg-bg/20 border border-border rounded-xl space-y-4">
                   <div className="flex justify-between items-center text-xs">
                     <div>
-                      <span className="block text-[8px] text-zinc-400 uppercase font-mono">Current Stat</span>
-                      <span className="font-mono font-bold text-zinc-700 dark:text-zinc-350">
+                      <span className="block text-[8px] text-subtle uppercase font-mono">Current Stat</span>
+                      <span className="font-mono font-bold text-muted">
                         +{simulationResults?.startStat.toLocaleString()}
                       </span>
                     </div>
                     <ChevronRight className="text-zinc-350" size={16} />
                     <div className="text-right">
-                      <span className="block text-[8px] text-zinc-400 uppercase font-mono">Target Stat</span>
+                      <span className="block text-[8px] text-subtle uppercase font-mono">Target Stat</span>
                       <span className="font-mono font-bold text-indigo-600 dark:text-indigo-400">
                         +{simulationResults?.endStat.toLocaleString()}
                       </span>
@@ -263,7 +263,7 @@ export const BeastSoulsPlannerPage: React.FC = () => {
                   </div>
 
                   <div className="p-2.5 bg-indigo-500/5 border border-indigo-500/25 rounded-lg flex items-center justify-between text-xs">
-                    <span className="font-semibold text-zinc-650 dark:text-zinc-300">Total Net Gain</span>
+                    <span className="font-semibold text-muted">Total Net Gain</span>
                     <span className="font-mono font-black text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
                       <TrendingUp size={12} />
                       +{simulationResults?.statDiff.toLocaleString()} {activeMeta?.stat}
@@ -274,20 +274,20 @@ export const BeastSoulsPlannerPage: React.FC = () => {
 
               {/* Exp summary */}
               <div className="space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Exp Costs Summary</span>
-                <div className="p-4 bg-zinc-50/40 dark:bg-zinc-950/15 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-3.5 text-xs">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Exp Costs Summary</span>
+                <div className="p-4 bg-bg/20 border border-border rounded-xl space-y-3.5 text-xs">
                   
-                  <div className="flex justify-between items-center pb-2 border-b border-zinc-100 dark:border-zinc-800/40">
-                    <span className="font-semibold text-zinc-700 dark:text-zinc-300">Total EXP Needed</span>
-                    <span className="font-mono font-bold text-zinc-900 dark:text-white">
+                  <div className="flex justify-between items-center pb-2 border-b border-border/40">
+                    <span className="font-semibold text-muted">Total EXP Needed</span>
+                    <span className="font-mono font-bold text-text">
                       {simulationResults?.totalExp.toLocaleString()} EXP
                     </span>
                   </div>
 
                   <div className="flex justify-between items-center">
                     <div>
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300 block">Beast Soul EXP Pills</span>
-                      <span className="text-[9px] text-zinc-450 italic">Estimated at 100 EXP/pill</span>
+                      <span className="font-semibold text-muted block">Beast Soul EXP Pills</span>
+                      <span className="text-[9px] text-subtle italic">Estimated at 100 EXP/pill</span>
                     </div>
                     <span className="font-mono font-bold text-indigo-600 dark:text-indigo-400">
                       {simulationResults?.expPills.toLocaleString()}x Pills

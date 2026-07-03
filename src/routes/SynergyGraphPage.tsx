@@ -235,15 +235,15 @@ export const SynergyGraphPage: React.FC = () => {
     <div className="space-y-6 pb-10">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-black text-zinc-900 dark:text-zinc-100 tracking-tight">🕸 Synergy Network Graph</h1>
-        <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+        <h1 className="text-2xl font-black text-text tracking-tight">🕸 Synergy Network Graph</h1>
+        <p className="text-sm text-muted mt-1">
           Force-directed graph of <span className="font-mono text-xs">friends[]</span> connections from <span className="font-mono text-xs">recommend_heroes.json</span>
         </p>
       </div>
 
       {/* Controls */}
-      <div className="flex flex-wrap gap-3 items-center p-3 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl shadow-sm">
-        <div className="flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+      <div className="flex flex-wrap gap-3 items-center p-3 bg-surface border border-border rounded-xl shadow-sm">
+        <div className="flex items-center gap-1.5 text-xs text-muted">
           <Filter size={12} aria-hidden="true" /> Filters:
         </div>
         <div className="flex gap-1 flex-wrap">
@@ -254,7 +254,7 @@ export const SynergyGraphPage: React.FC = () => {
               className={`px-2.5 py-1 rounded-lg text-[10px] font-bold border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
                 filterProf === p
                   ? 'border-indigo-600 bg-indigo-50 dark:bg-indigo-950/30 text-indigo-700 dark:text-indigo-300'
-                  : 'border-zinc-205 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200'
+                  : 'border-border bg-bg dark:bg-surface text-muted hover:text-text dark:hover:text-zinc-200'
               }`}
             >
               {p === 0 ? 'All' : getProfessionLabel(p)}
@@ -262,22 +262,22 @@ export const SynergyGraphPage: React.FC = () => {
           ))}
         </div>
         <button
-          onClick={() => setFilterRecommended(!filterRecommended)}
+          onClick={() => setFilterRecommended(prev => !prev)}
           className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-bold border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
             filterRecommended
               ? 'border-amber-600 bg-amber-50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300'
-              : 'border-zinc-205 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-200'
+              : 'border-border bg-bg dark:bg-surface text-muted hover:text-text dark:hover:text-zinc-200'
           }`}
         >
           <Star size={10} fill={filterRecommended ? 'currentColor' : 'none'} aria-hidden="true" /> Game Picks Only
         </button>
-        <span className="text-[10px] text-zinc-500 dark:text-zinc-400 ml-auto">{visibleNodes.length} nodes · {visibleEdges.length} edges</span>
+        <span className="text-[10px] text-muted ml-auto">{visibleNodes.length} nodes · {visibleEdges.length} edges</span>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
         {/* SVG Graph */}
         <div className="xl:col-span-3">
-          <div className="bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-sm">
+          <div className="bg-bg border border-border rounded-2xl overflow-hidden shadow-sm">
             <svg viewBox="0 0 800 600" className="w-full" style={{ minHeight: '400px' }}>
               {/* Edges */}
               {visibleEdges.map((edge, i) => {
@@ -350,14 +350,14 @@ export const SynergyGraphPage: React.FC = () => {
             {[1, 2, 3, 4, 5].map(p => (
               <div key={p} className="flex items-center gap-1">
                 <div className="w-2 h-2 rounded-full" style={{ background: PROF_COLOR_HEX[p] }} />
-                <span className="text-zinc-500 dark:text-zinc-400">{getProfessionLabel(p)}</span>
+                <span className="text-muted">{getProfessionLabel(p)}</span>
               </div>
             ))}
             <div className="flex items-center gap-1 ml-2">
-              <div className="w-3 h-3 rounded-full border border-zinc-300 dark:border-zinc-700 flex items-center justify-center">
-                <span className="text-[6px] text-zinc-500 dark:text-zinc-400">★</span>
+              <div className="w-3 h-3 rounded-full border border-border-strong flex items-center justify-center">
+                <span className="text-[6px] text-muted">★</span>
               </div>
-              <span className="text-zinc-500 dark:text-zinc-400">Game pick</span>
+              <span className="text-muted">Game pick</span>
             </div>
           </div>
         </div>
@@ -365,43 +365,43 @@ export const SynergyGraphPage: React.FC = () => {
         {/* Sidebar: Hover Details */}
         <div className="space-y-4">
           {hoveredHero ? (
-            <div className="p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl space-y-3 shadow-sm">
+            <div className="p-4 bg-surface border border-border rounded-2xl space-y-3 shadow-sm">
               <div className="space-y-1">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-black text-zinc-900 dark:text-white">{hoveredHero.name}</span>
+                  <span className="text-sm font-black text-text">{hoveredHero.name}</span>
                   {hoveredHero.isRecommended && (
                     <Star size={12} className="text-amber-500" fill="currentColor" aria-hidden="true" />
                   )}
                 </div>
-                <div className={`text-xs font-bold ${PROF_LABEL_COLOR[hoveredHero.profession ?? 0] ?? 'text-zinc-500'}`}>
+                <div className={`text-xs font-bold ${PROF_LABEL_COLOR[hoveredHero.profession ?? 0] ?? 'text-muted'}`}>
                   {getProfessionLabel(hoveredHero.profession)} · {hoveredHero.role ?? '?'}
                 </div>
               </div>
 
               {hoveredHeroData?.ability && (
                 <div>
-                  <span className="text-[9px] font-bold text-zinc-500 dark:text-zinc-400 uppercase">Type</span>
-                  <div className="text-xs text-zinc-800 dark:text-zinc-300 font-semibold">{hoveredHeroData.ability}</div>
+                  <span className="text-[9px] font-bold text-muted uppercase">Type</span>
+                  <div className="text-xs text-text dark:text-subtle font-semibold">{hoveredHeroData.ability}</div>
                 </div>
               )}
 
               {hoveredHeroData?.get_rode && (
                 <div>
-                  <span className="text-[9px] font-bold text-zinc-500 dark:text-zinc-400 uppercase">Source</span>
-                  <div className="text-xs text-zinc-800 dark:text-zinc-300 font-semibold">{hoveredHeroData.get_rode}</div>
+                  <span className="text-[9px] font-bold text-muted uppercase">Source</span>
+                  <div className="text-xs text-text dark:text-subtle font-semibold">{hoveredHeroData.get_rode}</div>
                 </div>
               )}
 
               <div>
-                <span className="text-[9px] font-bold text-zinc-500 dark:text-zinc-400 uppercase">Synergy Partners ({hoveredConnections.size})</span>
+                <span className="text-[9px] font-bold text-muted uppercase">Synergy Partners ({hoveredConnections.size})</span>
                 <div className="space-y-1 mt-1">
                   {[...hoveredConnections].map(cid => {
                     const cn = layoutNodes.find(n => n.id === cid);
                     if (!cn) return null;
                     return (
                       <div key={cid} className="flex items-center justify-between">
-                        <span className="text-xs text-zinc-850 dark:text-zinc-350">{cn.name}</span>
-                        <span className={`text-[9px] font-bold ${PROF_LABEL_COLOR[cn.profession ?? 0] ?? 'text-zinc-555'}`}>
+                        <span className="text-xs text-text">{cn.name}</span>
+                        <span className={`text-[9px] font-bold ${PROF_LABEL_COLOR[cn.profession ?? 0] ?? 'text-subtle'}`}>
                           {getProfessionLabel(cn.profession)}
                         </span>
                       </div>
@@ -416,15 +416,15 @@ export const SynergyGraphPage: React.FC = () => {
               </Link>
             </div>
           ) : (
-            <div className="p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl text-center text-xs text-zinc-500 dark:text-zinc-400 shadow-sm">
-              <Network size={24} className="mx-auto mb-2 text-zinc-400 dark:text-zinc-600" aria-hidden="true" />
+            <div className="p-4 bg-surface border border-border rounded-2xl text-center text-xs text-muted shadow-sm">
+              <Network size={24} className="mx-auto mb-2 text-subtle dark:text-muted" aria-hidden="true" />
               Hover a node to see synergy details
             </div>
           )}
 
           {/* All nodes list */}
-          <div className="p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl space-y-2 max-h-64 overflow-y-auto shadow-sm">
-            <span className="text-[9px] font-bold text-zinc-500 dark:text-zinc-400 uppercase">All Nodes ({visibleNodes.length})</span>
+          <div className="p-4 bg-surface border border-border rounded-2xl space-y-2 max-h-64 overflow-y-auto shadow-sm">
+            <span className="text-[9px] font-bold text-muted uppercase">All Nodes ({visibleNodes.length})</span>
             {visibleNodes
               .sort((a, b) => tierValue(b.role) - tierValue(a.role))
               .map(n => (
@@ -432,15 +432,15 @@ export const SynergyGraphPage: React.FC = () => {
                   onMouseEnter={() => setHoveredId(n.id)}
                   onMouseLeave={() => setHoveredId(null)}
                   className={`flex items-center justify-between cursor-pointer py-1 px-2 rounded-lg transition-colors ${
-                    hoveredId === n.id ? 'bg-zinc-100 dark:bg-zinc-800' : 'hover:bg-zinc-50 dark:hover:bg-zinc-800/50'
+                    hoveredId === n.id ? 'bg-surface-raised' : 'hover:bg-bg dark:hover:bg-surface/50'
                   }`}>
                   <div className="flex items-center gap-1.5">
                     <div className="w-2 h-2 rounded-full shrink-0"
                       style={{ background: PROF_COLOR_HEX[n.profession ?? 0] ?? '#71717a' }} />
-                    <span className="text-xs text-zinc-850 dark:text-zinc-300 truncate">{n.name}</span>
+                    <span className="text-xs text-text dark:text-subtle truncate">{n.name}</span>
                     {n.isRecommended && <Star size={8} className="text-amber-500 shrink-0" fill="currentColor" aria-hidden="true" />}
                   </div>
-                  <span className="text-[9px] text-zinc-500 dark:text-zinc-500 shrink-0">{n.role ?? '?'}</span>
+                  <span className="text-[9px] text-muted shrink-0">{n.role ?? '?'}</span>
                 </div>
               ))}
           </div>

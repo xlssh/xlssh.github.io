@@ -94,7 +94,7 @@ export const StatCurveAnalyticsPage: React.FC = () => {
       <div>
         <Link
           to="/heroes"
-          className="flex items-center gap-1 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Heroes</span>
@@ -102,27 +102,27 @@ export const StatCurveAnalyticsPage: React.FC = () => {
       </div>
 
       {/* Header Banner */}
-      <div className="p-6 md:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm space-y-4">
+      <div className="p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="p-2.5 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 rounded-xl">
               <BarChart3 size={28} />
             </div>
             <div>
-              <h1 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-zinc-50">Class Stat Curve Analytics</h1>
-              <p className="text-xs text-zinc-550 font-semibold">Group character statistics by Profession or Faction and simulate growth coefficients at scale.</p>
+              <h1 className="text-2xl md:text-3xl font-black text-text">Class Stat Curve Analytics</h1>
+              <p className="text-xs text-muted font-semibold">Group character statistics by Profession or Faction and simulate growth coefficients at scale.</p>
             </div>
           </div>
 
           {/* Group and Level selectors */}
           <div className="flex flex-wrap items-center gap-3 text-xs">
-            <div className="flex items-center gap-1 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 p-1 rounded-xl">
+            <div className="flex items-center gap-1 border border-border bg-bg p-1 rounded-xl">
               <button
                 onClick={() => setGroupBy('profession')}
                 className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                   groupBy === 'profession'
                     ? 'bg-fuchsia-600 text-white shadow-xs'
-                    : 'text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-250'
+                    : 'text-muted hover:text-text dark:hover:text-zinc-250'
                 }`}
               >
                 By Class
@@ -132,7 +132,7 @@ export const StatCurveAnalyticsPage: React.FC = () => {
                 className={`px-3 py-1 rounded-lg font-bold transition-all cursor-pointer ${
                   groupBy === 'faction'
                     ? 'bg-fuchsia-600 text-white shadow-xs'
-                    : 'text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-250'
+                    : 'text-muted hover:text-text dark:hover:text-zinc-250'
                 }`}
               >
                 By Faction
@@ -140,14 +140,14 @@ export const StatCurveAnalyticsPage: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-2">
-              <label className="font-bold text-zinc-450 uppercase whitespace-nowrap">Sim Target Level:</label>
+              <label className="font-bold text-subtle uppercase whitespace-nowrap">Sim Target Level:</label>
               <input
                 type="number"
                 min="1"
                 max="150"
                 value={simLevel}
                 onChange={(e) => setSimLevel(Math.max(1, Math.min(150, parseInt(e.target.value) || 1)))}
-                className="w-16 px-2 py-1.5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-center font-mono font-bold rounded-xl text-zinc-800 dark:text-zinc-200"
+                className="w-16 px-2 py-1.5 border border-border bg-bg text-center font-mono font-bold rounded-xl text-text"
               />
             </div>
           </div>
@@ -167,13 +167,13 @@ export const StatCurveAnalyticsPage: React.FC = () => {
           return (
             <div
               key={group.label}
-              className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-5"
+              className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-5"
             >
               {/* Header Title */}
-              <div className="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-2.5">
+              <div className="flex justify-between items-center border-b border-border pb-2.5">
                 <div>
-                  <h3 className="text-base font-extrabold text-zinc-850 dark:text-zinc-100">{group.label}</h3>
-                  <span className="text-[10px] text-zinc-400 font-semibold">{group.count} heroes categorized in this group</span>
+                  <h3 className="text-base font-extrabold text-text">{group.label}</h3>
+                  <span className="text-[10px] text-subtle font-semibold">{group.count} heroes categorized in this group</span>
                 </div>
                 <span className="px-2 py-0.5 rounded bg-fuchsia-100 dark:bg-fuchsia-950 text-fuchsia-800 dark:text-fuchsia-400 text-[10px] font-black uppercase">
                   Average Stats
@@ -183,90 +183,90 @@ export const StatCurveAnalyticsPage: React.FC = () => {
               {/* Group stats comparison grid */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {/* 1. Base levels */}
-                <div className="p-4 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/15 rounded-xl space-y-3">
-                  <h4 className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1">
+                <div className="p-4 border border-border/80 bg-bg/20 dark:bg-bg/15 rounded-xl space-y-3">
+                  <h4 className="text-[10px] font-bold text-subtle uppercase tracking-wider flex items-center gap-1">
                     <Swords size={13} className="text-indigo-500" />
                     <span>Average Base Stats (Lv. 1)</span>
                   </h4>
-                  <div className="space-y-1.5 text-xs font-mono font-bold text-zinc-700 dark:text-zinc-300">
+                  <div className="space-y-1.5 text-xs font-mono font-bold text-muted">
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Power (STR)</span>
+                      <span className="text-subtle font-sans">Power (STR)</span>
                       <span>{group.avgPower.toFixed(1)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Agile (AGI)</span>
+                      <span className="text-subtle font-sans">Agile (AGI)</span>
                       <span>{group.avgAgile.toFixed(1)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Intelligence (INT)</span>
+                      <span className="text-subtle font-sans">Intelligence (INT)</span>
                       <span>{group.avgIntel.toFixed(1)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Life (HP)</span>
+                      <span className="text-subtle font-sans">Life (HP)</span>
                       <span>{group.avgLife.toFixed(1)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Speed (SPD)</span>
+                      <span className="text-subtle font-sans">Speed (SPD)</span>
                       <span>{group.avgSpeed.toFixed(1)}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* 2. Growth coefficients */}
-                <div className="p-4 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/15 rounded-xl space-y-3">
-                  <h4 className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider flex items-center gap-1">
+                <div className="p-4 border border-border/80 bg-bg/20 dark:bg-bg/15 rounded-xl space-y-3">
+                  <h4 className="text-[10px] font-bold text-subtle uppercase tracking-wider flex items-center gap-1">
                     <TrendingUp size={13} className="text-emerald-500" />
                     <span>Average Growth Multipliers</span>
                   </h4>
-                  <div className="space-y-1.5 text-xs font-mono font-bold text-zinc-700 dark:text-zinc-300">
+                  <div className="space-y-1.5 text-xs font-mono font-bold text-muted">
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Power Grow</span>
+                      <span className="text-subtle font-sans">Power Grow</span>
                       <span className="text-emerald-600">+{group.avgPowerGrow.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Agile Grow</span>
+                      <span className="text-subtle font-sans">Agile Grow</span>
                       <span className="text-emerald-600">+{group.avgAgileGrow.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Intelligence Grow</span>
+                      <span className="text-subtle font-sans">Intelligence Grow</span>
                       <span className="text-emerald-600">+{group.avgIntelGrow.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Life Grow</span>
+                      <span className="text-subtle font-sans">Life Grow</span>
                       <span className="text-emerald-600">+{group.avgLifeGrow.toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Speed Grow</span>
+                      <span className="text-subtle font-sans">Speed Grow</span>
                       <span className="text-emerald-600">+{group.avgSpeedGrow.toFixed(2)}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* 3. Simulated scaling levels */}
-                <div className="p-4 border border-zinc-100 dark:border-zinc-800/80 bg-fuchsia-500/5 rounded-xl space-y-3">
-                  <h4 className="text-[10px] font-bold text-zinc-450 uppercase tracking-wider flex items-center gap-1">
+                <div className="p-4 border border-border/80 bg-fuchsia-500/5 rounded-xl space-y-3">
+                  <h4 className="text-[10px] font-bold text-subtle uppercase tracking-wider flex items-center gap-1">
                     <Cpu size={13} className="text-fuchsia-500" />
                     <span>Simulated Scaling (Lv. {simLevel})</span>
                   </h4>
                   <div className="space-y-1.5 text-xs font-mono font-bold text-fuchsia-700 dark:text-fuchsia-400">
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Power (STR)</span>
+                      <span className="text-subtle font-sans">Power (STR)</span>
                       <span>{simPower.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Agile (AGI)</span>
+                      <span className="text-subtle font-sans">Agile (AGI)</span>
                       <span>{simAgile.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Intelligence (INT)</span>
+                      <span className="text-subtle font-sans">Intelligence (INT)</span>
                       <span>{simIntel.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Life (HP)</span>
+                      <span className="text-subtle font-sans">Life (HP)</span>
                       <span>{simLife.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-zinc-450 font-sans">Speed (SPD)</span>
+                      <span className="text-subtle font-sans">Speed (SPD)</span>
                       <span>{simSpeed.toLocaleString()}</span>
                     </div>
                   </div>

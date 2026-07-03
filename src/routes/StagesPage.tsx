@@ -52,13 +52,13 @@ export const StagesPage: React.FC = () => {
     {
       accessorKey: 'id',
       header: 'Stage ID',
-      cell: (info) => <span className="font-mono text-zinc-500 font-semibold">{info.getValue() as number}</span>,
+      cell: (info) => <span className="font-mono text-muted font-semibold">{info.getValue() as number}</span>,
     },
     {
       accessorKey: 'name',
       header: 'Stage Name',
       cell: (info) => (
-        <span className="font-bold text-zinc-800 dark:text-zinc-200 hover:text-violet-600 transition-colors">
+        <span className="font-bold text-text hover:text-violet-600 transition-colors">
           {info.getValue() as string}
         </span>
       ),
@@ -88,12 +88,12 @@ export const StagesPage: React.FC = () => {
     {
       accessorKey: 'start_id',
       header: 'Start Node ID',
-      cell: (info) => <span className="font-mono text-xs text-zinc-400">{info.getValue() as number || 0}</span>,
+      cell: (info) => <span className="font-mono text-xs text-subtle">{info.getValue() as number || 0}</span>,
     },
     {
       accessorKey: 'end_id',
       header: 'End Node ID',
-      cell: (info) => <span className="font-mono text-xs text-zinc-400">{info.getValue() as number || 0}</span>,
+      cell: (info) => <span className="font-mono text-xs text-subtle">{info.getValue() as number || 0}</span>,
     },
     {
       accessorKey: 'desc',
@@ -101,7 +101,7 @@ export const StagesPage: React.FC = () => {
       cell: (info) => {
         const desc = info.getValue() as string | null;
         return (
-          <p className="max-w-md truncate text-xs text-zinc-500 italic font-medium" title={desc || ''}>
+          <p className="max-w-md truncate text-xs text-muted italic font-medium" title={desc || ''}>
             {desc || 'No description available.'}
           </p>
         );
@@ -118,26 +118,26 @@ export const StagesPage: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-border pb-4">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-violet-100 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400 rounded-xl">
             <Swords size={24} />
           </div>
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">Battle Stages</h1>
-            <p className="text-sm text-zinc-500">Inspect instances, clear drops, unlock parameters, and progression level requirements.</p>
+            <h1 className="text-2xl font-bold tracking-tight text-text dark:text-zinc-100">Battle Stages</h1>
+            <p className="text-sm text-muted">Inspect instances, clear drops, unlock parameters, and progression level requirements.</p>
           </div>
         </div>
       </div>
 
       {/* Filters */}
-      <div className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="p-4 border border-border bg-surface rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-2 gap-3">
         <div>
-          <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1.5">Difficulty</label>
+          <label className="block text-xs font-semibold text-subtle uppercase tracking-wider mb-1.5">Difficulty</label>
           <select
             value={selectedHard}
             onChange={(e) => setSelectedHard(e.target.value)}
-            className="block w-full py-1.5 px-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
+            className="block w-full py-1.5 px-2 border border-border rounded-lg text-sm bg-bg focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
           >
             <option value="all">All Difficulties</option>
             {uniqueHardness.map(h => (
@@ -147,11 +147,11 @@ export const StagesPage: React.FC = () => {
         </div>
 
         <div>
-          <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1.5">Target Level</label>
+          <label className="block text-xs font-semibold text-subtle uppercase tracking-wider mb-1.5">Target Level</label>
           <select
             value={selectedLevel}
             onChange={(e) => setSelectedLevel(e.target.value)}
-            className="block w-full py-1.5 px-2 border border-zinc-200 dark:border-zinc-800 rounded-lg text-sm bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
+            className="block w-full py-1.5 px-2 border border-border rounded-lg text-sm bg-bg focus:outline-none focus:ring-1.5 focus:ring-violet-500 cursor-pointer"
           >
             <option value="all">All Levels</option>
             {uniqueLevels.sort((a,b)=>a-b).map(l => (

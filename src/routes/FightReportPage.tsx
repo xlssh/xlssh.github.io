@@ -807,14 +807,14 @@ export const FightReportPage: React.FC = () => {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Header Banner */}
-      <div className="p-6 md:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div className="p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div className="space-y-2">
           <div className="flex items-center gap-2 text-violet-600 dark:text-violet-400">
             <Swords size={24} />
             <span className="text-xs font-bold uppercase tracking-wider bg-violet-100 dark:bg-violet-950/40 px-2.5 py-0.5 rounded">PVP Oracle</span>
           </div>
-          <h1 className="text-3xl font-black text-zinc-900 dark:text-zinc-50">Combat Fight Report Analyzer</h1>
-          <p className="text-xs text-zinc-550 max-w-xl">
+          <h1 className="text-3xl font-black text-text">Combat Fight Report Analyzer</h1>
+          <p className="text-xs text-muted max-w-xl">
             Input a fight report URL or upload a downloaded fight report binary to reveal round-by-round combat replays, dealt DPS logs, and damage charts.
           </p>
         </div>
@@ -823,12 +823,12 @@ export const FightReportPage: React.FC = () => {
       {/* Input panel: URL pasted and Drag-Drop Uploader */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Fetch URL Card */}
-        <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-          <h3 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-150 flex items-center gap-2">
+        <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+          <h3 className="font-extrabold text-sm text-text flex items-center gap-2">
             <Search size={16} className="text-violet-500" />
             <span>Analyze via Fight Report URL</span>
           </h3>
-          <p className="text-xs text-zinc-500">
+          <p className="text-xs text-muted">
             Paste the full in-game fight report web link. The tool will parse the Report ID (`rid`) and download the combat stream automatically.
           </p>
           <div className="space-y-3">
@@ -837,7 +837,7 @@ export const FightReportPage: React.FC = () => {
               placeholder="https://game.shinigamiworld.com/fightreport/?rid=287713052178748..."
               value={inputUrl}
               onChange={(e) => setInputUrl(e.target.value)}
-              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-250 focus:outline-none focus:ring-1.5 focus:ring-violet-500 placeholder-zinc-400 font-medium"
+              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-border bg-bg text-text dark:text-zinc-250 focus:outline-none focus:ring-1.5 focus:ring-violet-500 placeholder-zinc-400 font-medium"
             />
             <div className="flex flex-wrap items-center justify-between gap-3">
               <button
@@ -885,7 +885,7 @@ export const FightReportPage: React.FC = () => {
           }}
           className={`p-6 border-2 border-dashed rounded-2xl shadow-sm flex flex-col items-center justify-center gap-3 cursor-pointer group transition-all ${isDragging
             ? 'border-violet-500 bg-violet-50/10 dark:bg-violet-950/10 scale-[1.02]'
-            : 'border-zinc-300 dark:border-zinc-800 hover:border-violet-500 dark:hover:border-violet-500/50 bg-white dark:bg-zinc-900'
+            : 'border-border-strong dark:border-border hover:border-violet-500 dark:hover:border-violet-500/50 bg-surface'
             }`}
         >
           <input
@@ -895,12 +895,12 @@ export const FightReportPage: React.FC = () => {
             accept=".bin,.php"
             className="hidden"
           />
-          <div className="p-3 bg-zinc-50 dark:bg-zinc-950 rounded-full group-hover:scale-105 transition-all text-zinc-400 group-hover:text-violet-500">
+          <div className="p-3 bg-bg rounded-full group-hover:scale-105 transition-all text-subtle group-hover:text-violet-500">
             <UploadCloud size={28} />
           </div>
           <div className="text-center space-y-1">
-            <span className="text-xs font-bold text-zinc-700 dark:text-zinc-300 block">Drag & drop your report binary file here</span>
-            <span className="text-[10px] text-zinc-450 block">Supports `.bin` and `data.php` formats</span>
+            <span className="text-xs font-bold text-muted block">Drag & drop your report binary file here</span>
+            <span className="text-[10px] text-subtle block">Supports `.bin` and `data.php` formats</span>
           </div>
         </div>
       </div>
@@ -919,23 +919,23 @@ export const FightReportPage: React.FC = () => {
       {report && battleStats && (
         <div className="space-y-6">
           {/* Winner Banner */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="px-4 py-2 bg-gradient-to-br from-violet-600 to-indigo-600 text-white rounded-xl text-center font-black shadow-md shadow-violet-600/10">
                 <span className="text-[10px] block font-mono leading-none mb-0.5">VERSION</span>
                 <span className="text-sm font-mono leading-none">{report.version.toFixed(1)}</span>
               </div>
               <div>
-                <h3 className="font-extrabold text-base text-zinc-800 dark:text-zinc-150">
+                <h3 className="font-extrabold text-base text-text">
                   {resolveRoleName(report.team1.roles[0])} vs {resolveRoleName(report.team2.roles[0])}
                 </h3>
-                <span className="text-xs text-zinc-450">
-                  Arena Match concluded in <span className="font-bold text-zinc-700 dark:text-zinc-300">{report.totalTurns} Turns</span>
+                <span className="text-xs text-subtle">
+                  Arena Match concluded in <span className="font-bold text-muted">{report.totalTurns} Turns</span>
                 </span>
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xs text-zinc-400 font-bold uppercase">Victor:</span>
+              <span className="text-xs text-subtle font-bold uppercase">Victor:</span>
               <span className="px-4 py-1.5 rounded-full text-xs font-black uppercase bg-emerald-100 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-400 shadow-sm border border-emerald-300/20">
                 {battleStats.winnerCamp === 0 ? 'Team 1 (Attacker)' : 'Team 2 (Defender)'}
               </span>
@@ -943,12 +943,12 @@ export const FightReportPage: React.FC = () => {
           </div>
 
           {/* Statistics Navigation Tabs */}
-          <div className="border-b border-zinc-200 dark:border-zinc-800 flex gap-4 text-xs md:text-sm font-semibold">
+          <div className="border-b border-border flex gap-4 text-xs md:text-sm font-semibold">
             <button
               onClick={() => setActiveTab('analytics')}
               className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'analytics'
                 ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
+                : 'border-transparent text-subtle hover:text-text dark:hover:text-zinc-200'
                 }`}
             >
               Battle Analytics
@@ -957,7 +957,7 @@ export const FightReportPage: React.FC = () => {
               onClick={() => setActiveTab('fighters')}
               className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'fighters'
                 ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
+                : 'border-transparent text-subtle hover:text-text dark:hover:text-zinc-200'
                 }`}
             >
               Fighters Stats Matrix
@@ -966,7 +966,7 @@ export const FightReportPage: React.FC = () => {
               onClick={() => setActiveTab('log')}
               className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'log'
                 ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                : 'border-transparent text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200'
+                : 'border-transparent text-subtle hover:text-text dark:hover:text-zinc-200'
                 }`}
             >
               Combat Replay Log
@@ -974,10 +974,10 @@ export const FightReportPage: React.FC = () => {
           </div>
 
           {/* Caveat callout */}
-          <div className="p-3.5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 rounded-xl text-[11px] text-zinc-500 flex items-start gap-2">
+          <div className="p-3.5 border border-border bg-bg rounded-xl text-[11px] text-muted flex items-start gap-2">
             <Info size={16} className="text-violet-500 shrink-0 mt-0.5" />
             <p>
-              <span className="font-bold text-zinc-700 dark:text-zinc-300">Analyzer Caveat:</span> Damage and effects are server-resolved values from the binary report. The report does not include full formula inputs such as final Defense, Pierce, or damage modifiers, so this analyzer reconstructs replay outcomes instead of recalculating the original formula. Team totals may include system/pet/field actions that are not listed as normal fighters.
+              <span className="font-bold text-muted">Analyzer Caveat:</span> Damage and effects are server-resolved values from the binary report. The report does not include full formula inputs such as final Defense, Pierce, or damage modifiers, so this analyzer reconstructs replay outcomes instead of recalculating the original formula. Team totals may include system/pet/field actions that are not listed as normal fighters.
             </p>
           </div>
 
@@ -985,19 +985,19 @@ export const FightReportPage: React.FC = () => {
           {activeTab === 'analytics' && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Damage Charts */}
-              <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-                <div className="flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+              <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+                <div className="flex items-center gap-2 border-b border-border pb-2">
                   <TrendingUp size={16} className="text-red-500" />
-                  <span className="font-bold text-xs uppercase text-zinc-450 tracking-wider">Total Damage Dealt</span>
+                  <span className="font-bold text-xs uppercase text-subtle tracking-wider">Total Damage Dealt</span>
                 </div>
                 <div className="space-y-4 py-2">
                   {/* Team 1 bar */}
                   <div className="space-y-1">
                     <div className="flex justify-between text-xs">
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300">Team 1 (Attacker)</span>
+                      <span className="font-semibold text-muted">Team 1 (Attacker)</span>
                       <span className="font-mono font-bold text-red-500">{battleStats.totalDmgTeam1.toLocaleString()} HP</span>
                     </div>
-                    <div className="w-full h-3.5 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                    <div className="w-full h-3.5 bg-bg rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-red-500 to-rose-600 transition-all duration-500 rounded-full"
                         style={{ width: `${Math.max(5, (battleStats.totalDmgTeam1 / (battleStats.totalDmgTeam1 + battleStats.totalDmgTeam2 || 1)) * 100)}%` }}
@@ -1008,10 +1008,10 @@ export const FightReportPage: React.FC = () => {
                   {/* Team 2 bar */}
                   <div className="space-y-1">
                     <div className="flex justify-between text-xs">
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300">Team 2 (Defender)</span>
+                      <span className="font-semibold text-muted">Team 2 (Defender)</span>
                       <span className="font-mono font-bold text-red-500">{battleStats.totalDmgTeam2.toLocaleString()} HP</span>
                     </div>
-                    <div className="w-full h-3.5 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                    <div className="w-full h-3.5 bg-bg rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-rose-600 to-indigo-600 transition-all duration-500 rounded-full"
                         style={{ width: `${Math.max(5, (battleStats.totalDmgTeam2 / (battleStats.totalDmgTeam1 + battleStats.totalDmgTeam2 || 1)) * 100)}%` }}
@@ -1022,19 +1022,19 @@ export const FightReportPage: React.FC = () => {
               </div>
 
               {/* Healing Charts */}
-              <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-                <div className="flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+              <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+                <div className="flex items-center gap-2 border-b border-border pb-2">
                   <Heart size={16} className="text-emerald-500" />
-                  <span className="font-bold text-xs uppercase text-zinc-450 tracking-wider">Total Healing Done</span>
+                  <span className="font-bold text-xs uppercase text-subtle tracking-wider">Total Healing Done</span>
                 </div>
                 <div className="space-y-4 py-2">
                   {/* Team 1 bar */}
                   <div className="space-y-1">
                     <div className="flex justify-between text-xs">
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300">Team 1 (Attacker)</span>
+                      <span className="font-semibold text-muted">Team 1 (Attacker)</span>
                       <span className="font-mono font-bold text-emerald-500">{battleStats.totalHealTeam1.toLocaleString()} HP</span>
                     </div>
-                    <div className="w-full h-3.5 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                    <div className="w-full h-3.5 bg-bg rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-emerald-500 to-teal-600 transition-all duration-500 rounded-full"
                         style={{ width: `${Math.max(5, (battleStats.totalHealTeam1 / (battleStats.totalHealTeam1 + battleStats.totalHealTeam2 || 1)) * 100)}%` }}
@@ -1045,10 +1045,10 @@ export const FightReportPage: React.FC = () => {
                   {/* Team 2 bar */}
                   <div className="space-y-1">
                     <div className="flex justify-between text-xs">
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300">Team 2 (Defender)</span>
+                      <span className="font-semibold text-muted">Team 2 (Defender)</span>
                       <span className="font-mono font-bold text-emerald-500">{battleStats.totalHealTeam2.toLocaleString()} HP</span>
                     </div>
-                    <div className="w-full h-3.5 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                    <div className="w-full h-3.5 bg-bg rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-teal-600 to-cyan-500 transition-all duration-500 rounded-full"
                         style={{ width: `${Math.max(5, (battleStats.totalHealTeam2 / (battleStats.totalHealTeam1 + battleStats.totalHealTeam2 || 1)) * 100)}%` }}
@@ -1065,7 +1065,7 @@ export const FightReportPage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {/* Team 1 List */}
               <div className="space-y-4">
-                <h3 className="font-bold text-xs uppercase text-zinc-450 tracking-wider px-1">Team 1 (Attacker)</h3>
+                <h3 className="font-bold text-xs uppercase text-subtle tracking-wider px-1">Team 1 (Attacker)</h3>
                 <div className="space-y-3">
                   {report.team1.roles.map((r, idx) => {
                     const fighterState = battleStats.finalState.get(`0_${r.pos}`);
@@ -1083,13 +1083,13 @@ export const FightReportPage: React.FC = () => {
                     const isDead = fighterState?.dead || false;
 
                     return (
-                      <div key={idx} className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-3 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all">
-                        <div className="flex justify-between items-start border-b border-zinc-100 dark:border-zinc-800 pb-2">
+                      <div key={idx} className="p-4 border border-border bg-surface rounded-2xl shadow-sm space-y-3 hover:border-border-strong transition-all">
+                        <div className="flex justify-between items-start border-b border-border pb-2">
                           <div className="flex items-center gap-2">
-                            <span className="px-2 py-0.5 bg-zinc-50 dark:bg-zinc-950 rounded border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono text-zinc-500">
+                            <span className="px-2 py-0.5 bg-bg rounded border border-border text-[10px] font-mono text-muted">
                               Pos {r.pos}
                             </span>
-                            <span className="font-bold text-sm text-zinc-800 dark:text-zinc-200">{resolveRoleName(r)}</span>
+                            <span className="font-bold text-sm text-text">{resolveRoleName(r)}</span>
                             {isDead ? (
                               <span className="px-1.5 py-0.5 bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-400 rounded text-[9px] font-bold uppercase tracking-wider">
                                 Fallen
@@ -1100,28 +1100,28 @@ export const FightReportPage: React.FC = () => {
                               </span>
                             )}
                           </div>
-                          <div className="flex items-center gap-1.5 text-[10px] text-zinc-450 font-mono">
+                          <div className="flex items-center gap-1.5 text-[10px] text-subtle font-mono">
                             {r.rebirthNum ? <span>R{r.rebirthNum}</span> : null}
                             <span>Lv. {r.level}</span>
                           </div>
                         </div>
 
                         {/* HP & Shield & Anger status summary */}
-                        <div className="grid grid-cols-3 gap-2 py-1.5 text-[10px] border-b border-dashed border-zinc-100 dark:border-zinc-800/80">
+                        <div className="grid grid-cols-3 gap-2 py-1.5 text-[10px] border-b border-dashed border-border/80">
                           <div className="space-y-0.5">
-                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Health</span>
-                            <span className="font-semibold text-zinc-700 dark:text-zinc-300 block font-mono">
+                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Health</span>
+                            <span className="font-semibold text-muted block font-mono">
                               {finalHp.toLocaleString()} / {maxHp.toLocaleString()}
                             </span>
                           </div>
                           <div className="space-y-0.5">
-                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Shield (Final / Applied)</span>
+                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Shield (Final / Applied)</span>
                             <span className="font-semibold text-blue-500 block font-mono">
                               {finalShield.toLocaleString()} / {shieldApplied.toLocaleString()}
                             </span>
                           </div>
                           <div className="space-y-0.5">
-                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Anger</span>
+                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Anger</span>
                             <span className="font-semibold text-amber-500 block font-mono">
                               {finalAnger}
                             </span>
@@ -1133,12 +1133,12 @@ export const FightReportPage: React.FC = () => {
                           {/* Damage done */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Damage Dealt (Raw / HP Dmg)</span>
+                              <span className="text-subtle">Damage Dealt (Raw / HP Dmg)</span>
                               <span className="font-mono font-bold text-red-500">
-                                {dmgRaw.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {dmgHp.toLocaleString()}</span> HP
+                                {dmgRaw.toLocaleString()} <span className="text-subtle text-[10px]">/ {dmgHp.toLocaleString()}</span> HP
                               </span>
                             </div>
-                            <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-red-500 rounded-full"
                                 style={{ width: `${(dmgRaw / battleStats.maxDamageDoneRaw) * 100}%` }}
@@ -1149,12 +1149,12 @@ export const FightReportPage: React.FC = () => {
                           {/* Damage taken */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Damage Taken (Raw / HP Dmg)</span>
+                              <span className="text-subtle">Damage Taken (Raw / HP Dmg)</span>
                               <span className="font-mono font-bold text-orange-500">
-                                {takenRaw.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {takenHp.toLocaleString()}</span> HP
+                                {takenRaw.toLocaleString()} <span className="text-subtle text-[10px]">/ {takenHp.toLocaleString()}</span> HP
                               </span>
                             </div>
-                            <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-orange-500 rounded-full"
                                 style={{ width: `${(takenRaw / battleStats.maxDamageTakenRaw) * 100}%` }}
@@ -1165,12 +1165,12 @@ export const FightReportPage: React.FC = () => {
                           {/* Healing done */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Healing (Done / Received)</span>
+                              <span className="text-subtle">Healing (Done / Received)</span>
                               <span className="font-mono font-bold text-emerald-500">
-                                {healsDone.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {healsRec.toLocaleString()}</span> HP
+                                {healsDone.toLocaleString()} <span className="text-subtle text-[10px]">/ {healsRec.toLocaleString()}</span> HP
                               </span>
                             </div>
-                            <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-emerald-500 rounded-full"
                                 style={{ width: `${(healsDone / battleStats.maxHealing) * 100}%` }}
@@ -1186,7 +1186,7 @@ export const FightReportPage: React.FC = () => {
 
               {/* Team 2 List */}
               <div className="space-y-4">
-                <h3 className="font-bold text-xs uppercase text-zinc-450 tracking-wider px-1">Team 2 (Defender)</h3>
+                <h3 className="font-bold text-xs uppercase text-subtle tracking-wider px-1">Team 2 (Defender)</h3>
                 <div className="space-y-3">
                   {report.team2.roles.map((r, idx) => {
                     const fighterState = battleStats.finalState.get(`1_${r.pos}`);
@@ -1204,13 +1204,13 @@ export const FightReportPage: React.FC = () => {
                     const isDead = fighterState?.dead || false;
 
                     return (
-                      <div key={idx} className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-3 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all">
-                        <div className="flex justify-between items-start border-b border-zinc-100 dark:border-zinc-800 pb-2">
+                      <div key={idx} className="p-4 border border-border bg-surface rounded-2xl shadow-sm space-y-3 hover:border-border-strong transition-all">
+                        <div className="flex justify-between items-start border-b border-border pb-2">
                           <div className="flex items-center gap-2">
-                            <span className="px-2 py-0.5 bg-zinc-50 dark:bg-zinc-950 rounded border border-zinc-200 dark:border-zinc-800 text-[10px] font-mono text-zinc-500">
+                            <span className="px-2 py-0.5 bg-bg rounded border border-border text-[10px] font-mono text-muted">
                               Pos {r.pos}
                             </span>
-                            <span className="font-bold text-sm text-zinc-800 dark:text-zinc-200">{resolveRoleName(r)}</span>
+                            <span className="font-bold text-sm text-text">{resolveRoleName(r)}</span>
                             {isDead ? (
                               <span className="px-1.5 py-0.5 bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-400 rounded text-[9px] font-bold uppercase tracking-wider">
                                 Fallen
@@ -1221,28 +1221,28 @@ export const FightReportPage: React.FC = () => {
                               </span>
                             )}
                           </div>
-                          <div className="flex items-center gap-1.5 text-[10px] text-zinc-450 font-mono">
+                          <div className="flex items-center gap-1.5 text-[10px] text-subtle font-mono">
                             {r.rebirthNum ? <span>R{r.rebirthNum}</span> : null}
                             <span>Lv. {r.level}</span>
                           </div>
                         </div>
 
                         {/* HP & Shield & Anger status summary */}
-                        <div className="grid grid-cols-3 gap-2 py-1.5 text-[10px] border-b border-dashed border-zinc-100 dark:border-zinc-800/80">
+                        <div className="grid grid-cols-3 gap-2 py-1.5 text-[10px] border-b border-dashed border-border/80">
                           <div className="space-y-0.5">
-                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Health</span>
-                            <span className="font-semibold text-zinc-700 dark:text-zinc-300 block font-mono">
+                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Health</span>
+                            <span className="font-semibold text-muted block font-mono">
                               {finalHp.toLocaleString()} / {maxHp.toLocaleString()}
                             </span>
                           </div>
                           <div className="space-y-0.5">
-                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Shield (Final / Applied)</span>
+                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Shield (Final / Applied)</span>
                             <span className="font-semibold text-blue-500 block font-mono">
                               {finalShield.toLocaleString()} / {shieldApplied.toLocaleString()}
                             </span>
                           </div>
                           <div className="space-y-0.5">
-                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Anger</span>
+                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Anger</span>
                             <span className="font-semibold text-amber-500 block font-mono">
                               {finalAnger}
                             </span>
@@ -1254,12 +1254,12 @@ export const FightReportPage: React.FC = () => {
                           {/* Damage done */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Damage Dealt (Raw / HP Dmg)</span>
+                              <span className="text-subtle">Damage Dealt (Raw / HP Dmg)</span>
                               <span className="font-mono font-bold text-red-500">
-                                {dmgRaw.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {dmgHp.toLocaleString()}</span> HP
+                                {dmgRaw.toLocaleString()} <span className="text-subtle text-[10px]">/ {dmgHp.toLocaleString()}</span> HP
                               </span>
                             </div>
-                            <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-red-500 rounded-full"
                                 style={{ width: `${(dmgRaw / battleStats.maxDamageDoneRaw) * 100}%` }}
@@ -1270,12 +1270,12 @@ export const FightReportPage: React.FC = () => {
                           {/* Damage taken */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Damage Taken (Raw / HP Dmg)</span>
+                              <span className="text-subtle">Damage Taken (Raw / HP Dmg)</span>
                               <span className="font-mono font-bold text-orange-500">
-                                {takenRaw.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {takenHp.toLocaleString()}</span> HP
+                                {takenRaw.toLocaleString()} <span className="text-subtle text-[10px]">/ {takenHp.toLocaleString()}</span> HP
                               </span>
                             </div>
-                            <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-orange-500 rounded-full"
                                 style={{ width: `${(takenRaw / battleStats.maxDamageTakenRaw) * 100}%` }}
@@ -1286,12 +1286,12 @@ export const FightReportPage: React.FC = () => {
                           {/* Healing done */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Healing (Done / Received)</span>
+                              <span className="text-subtle">Healing (Done / Received)</span>
                               <span className="font-mono font-bold text-emerald-500">
-                                {healsDone.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {healsRec.toLocaleString()}</span> HP
+                                {healsDone.toLocaleString()} <span className="text-subtle text-[10px]">/ {healsRec.toLocaleString()}</span> HP
                               </span>
                             </div>
-                            <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-emerald-500 rounded-full"
                                 style={{ width: `${(healsDone / battleStats.maxHealing) * 100}%` }}
@@ -1311,8 +1311,8 @@ export const FightReportPage: React.FC = () => {
           {activeTab === 'log' && (
             <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
               {/* Left Column: Round selectors */}
-              <div className="xl:col-span-1 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 rounded-2xl shadow-sm space-y-4">
-                <h3 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-150 border-b border-zinc-100 dark:border-zinc-800 pb-2.5">
+              <div className="xl:col-span-1 border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4">
+                <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5">
                   Fight Rounds
                 </h3>
                 <div className="flex flex-row xl:flex-col gap-2 overflow-x-auto">
@@ -1322,7 +1322,7 @@ export const FightReportPage: React.FC = () => {
                       onClick={() => setSelectedRoundTab(t.curTurn)}
                       className={`py-2.5 px-4 rounded-xl border text-xs font-bold text-left transition-all shrink-0 cursor-pointer ${selectedRoundTab === t.curTurn
                         ? 'border-violet-500 bg-violet-500/5 text-violet-900 dark:text-violet-400'
-                        : 'border-zinc-100 dark:border-zinc-800 text-zinc-650 hover:bg-zinc-50 dark:hover:bg-zinc-950'
+                        : 'border-border text-muted hover:bg-hover'
                         }`}
                     >
                       Round {t.curTurn} Replay
@@ -1332,8 +1332,8 @@ export const FightReportPage: React.FC = () => {
               </div>
 
               {/* Right Column: Events sequence */}
-              <div className="xl:col-span-3 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 rounded-2xl shadow-sm space-y-4">
-                <h3 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-150 border-b border-zinc-100 dark:border-zinc-800 pb-2.5 flex items-center gap-2">
+              <div className="xl:col-span-3 border border-border bg-surface p-6 rounded-2xl shadow-sm space-y-4">
+                <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5 flex items-center gap-2">
                   <ListOrdered size={16} className="text-violet-500" />
                   <span>Action Sequences (Round {selectedRoundTab})</span>
                 </h3>
@@ -1368,7 +1368,7 @@ export const FightReportPage: React.FC = () => {
                     return (
                       <div key={actIdx} className={`pt-4 ${actIdx === 0 ? 'pt-0' : ''} space-y-2`}>
                         <div className="flex items-center justify-between">
-                          <span className="text-[11px] font-bold text-zinc-450 uppercase">ACTION #{actIdx + 1}</span>
+                          <span className="text-[11px] font-bold text-subtle uppercase">ACTION #{actIdx + 1}</span>
                           <span className={`text-[10px] px-2 py-0.5 rounded font-black uppercase ${attackerCamp === 0
                             ? 'bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-400'
                             : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-400'
@@ -1377,11 +1377,11 @@ export const FightReportPage: React.FC = () => {
                           </span>
                         </div>
 
-                        <p className="text-xs font-semibold text-zinc-800 dark:text-zinc-200">
+                        <p className="text-xs font-semibold text-text">
                           <span className="font-bold text-violet-600 dark:text-violet-400">{attackerName}</span> {actionLabel}:
                         </p>
 
-                        <div className="pl-4 space-y-1 border-l-2 border-zinc-100 dark:border-zinc-800/80">
+                        <div className="pl-4 space-y-1 border-l-2 border-border/80">
                           {act.targets.map((tgt, tgtIdx) => {
                             const tCamp = tgt.camp;
                             const tPos = tgt.pos;
@@ -1391,7 +1391,7 @@ export const FightReportPage: React.FC = () => {
                             const hurtHp = tgt.result.hurtHp || 0;
 
                             let logText = "";
-                            let logClass = "text-zinc-500 dark:text-zinc-400";
+                            let logClass = "text-muted";
 
                             const getBuffName = (bId: number): string => {
                               if (bId === 4294967295) return "Generic Buff";
@@ -1419,7 +1419,7 @@ export const FightReportPage: React.FC = () => {
                                 } else {
                                   logText = `Targets ${tName} (Pos ${tPos}) with no HP change${flags.length ? ` (${flags.join(", ")})` : ""}.`;
                                 }
-                                logClass = "text-zinc-500 dark:text-zinc-400";
+                                logClass = "text-muted";
                               }
                             } else if (tgt.cmd === CMD.SHIELD) {
                               const sId = tgt.result.buffId || 0;
@@ -1457,13 +1457,13 @@ export const FightReportPage: React.FC = () => {
                               logText = flags.length
                                 ? `Updates combat status for ${tName} (Pos ${tPos}): ${flags.join(", ")}.`
                                 : `Updates combat status for ${tName} (Pos ${tPos}).`;
-                              logClass = "text-zinc-500 dark:text-zinc-400";
+                              logClass = "text-muted";
                             } else if (tgt.cmd === CMD.NONE) {
                               logText = `Triggers script action / combat visual on ${tName} (Pos ${tPos}).`;
-                              logClass = "text-zinc-450 dark:text-zinc-550";
+                              logClass = "text-subtle dark:text-muted";
                             } else {
                               logText = `Performs CMD action #${tgt.cmd} on ${tName} (Pos ${tPos}).`;
-                              logClass = "text-zinc-450 dark:text-zinc-550";
+                              logClass = "text-subtle dark:text-muted";
                             }
 
                             return (

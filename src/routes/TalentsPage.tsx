@@ -82,14 +82,14 @@ export const TalentsPage: React.FC = () => {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* Header Banner */}
-      <div className="p-6 md:p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div className="p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div className="space-y-2">
           <div className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
             <Wand2 size={24} />
             <span className="text-xs font-bold uppercase tracking-wider bg-indigo-100 dark:bg-indigo-950/40 px-2.5 py-0.5 rounded">Character Customization</span>
           </div>
-          <h1 className="text-3xl font-black text-zinc-900 dark:text-zinc-50">Hero Talent Planner & Simulator</h1>
-          <p className="text-xs text-zinc-550 max-w-xl">
+          <h1 className="text-3xl font-black text-text">Hero Talent Planner & Simulator</h1>
+          <p className="text-xs text-muted max-w-xl">
             Simulate talent points distribution, calculate customized stats growths, and inspect unique passive talent effects for Gotei 13 characters.
           </p>
         </div>
@@ -97,8 +97,8 @@ export const TalentsPage: React.FC = () => {
 
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
         {/* Left Column: Heroes Selector */}
-        <div className="xl:col-span-1 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-5 rounded-2xl shadow-sm space-y-4 flex flex-col max-h-[750px]">
-          <h3 className="font-extrabold text-sm text-zinc-850 dark:text-zinc-150 border-b border-zinc-100 dark:border-zinc-800 pb-2.5">
+        <div className="xl:col-span-1 border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4 flex flex-col max-h-[750px]">
+          <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5">
             Select Shinigami / Espada
           </h3>
           <div className="relative">
@@ -107,9 +107,9 @@ export const TalentsPage: React.FC = () => {
               placeholder="Search hero name..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 focus:outline-none focus:ring-1.5 focus:ring-indigo-500 placeholder-zinc-400 text-zinc-850 dark:text-zinc-200"
+              className="w-full pl-9 pr-4 py-2.5 text-xs rounded-xl border border-border bg-bg focus:outline-none focus:ring-1.5 focus:ring-indigo-500 placeholder-zinc-400 text-text"
             />
-            <Search size={14} className="absolute left-3.5 top-3.5 text-zinc-400" />
+            <Search size={14} className="absolute left-3.5 top-3.5 text-subtle" />
           </div>
 
           <div className="space-y-1.5 overflow-y-auto pr-1 flex-1">
@@ -120,14 +120,14 @@ export const TalentsPage: React.FC = () => {
                 className={`w-full p-3 text-left border rounded-xl text-xs transition-all flex items-center justify-between cursor-pointer ${
                   selectedHeroId === h.id
                     ? 'border-indigo-500 bg-indigo-500/5 text-indigo-800 dark:text-indigo-400 font-bold'
-                    : 'border-zinc-100 dark:border-zinc-800 hover:border-zinc-200 dark:hover:border-zinc-700 hover:bg-zinc-50/50 dark:hover:bg-zinc-950/20 text-zinc-700 dark:text-zinc-300'
+                    : 'border-border hover:border-border-strong hover:bg-hover/50 text-muted'
                 }`}
               >
                 <div className="truncate pr-2">
                   <span className="font-semibold block truncate">{h.name}</span>
-                  <span className="text-[10px] text-zinc-400">Profession Code: {h.profession}</span>
+                  <span className="text-[10px] text-subtle">Profession Code: {h.profession}</span>
                 </div>
-                <span className="font-mono text-[9px] text-zinc-400 shrink-0">#{h.id}</span>
+                <span className="font-mono text-[9px] text-subtle shrink-0">#{h.id}</span>
               </button>
             ))}
           </div>
@@ -136,15 +136,15 @@ export const TalentsPage: React.FC = () => {
         {/* Right Column: Talent tree visualizer and slider simulator */}
         <div className="xl:col-span-2 space-y-6">
           {selectedHero && (
-            <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-zinc-100 dark:border-zinc-800 pb-3">
+            <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3">
                 <div className="flex items-center gap-2">
                   <div className="p-1.5 bg-indigo-100 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 rounded-lg">
                     <User size={18} />
                   </div>
                   <div>
-                    <h2 className="text-xl font-bold text-zinc-850 dark:text-zinc-50">{selectedHero.name}</h2>
-                    <span className="text-[10px] text-zinc-400 uppercase font-mono">Talent Code: #{selectedHero.talent}</span>
+                    <h2 className="text-xl font-bold text-text">{selectedHero.name}</h2>
+                    <span className="text-[10px] text-subtle uppercase font-mono">Talent Code: #{selectedHero.talent}</span>
                   </div>
                 </div>
                 {heroTalent && (
@@ -155,9 +155,9 @@ export const TalentsPage: React.FC = () => {
               </div>
 
               {/* Slider for Talent Ranks */}
-              <div className="p-5 border border-zinc-150 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/10 rounded-xl space-y-3">
+              <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-3">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs font-bold text-zinc-450 uppercase">Talent Altar Rank Level</label>
+                  <label className="text-xs font-bold text-subtle uppercase">Talent Altar Rank Level</label>
                   <span className="font-mono font-bold text-sm text-indigo-600 dark:text-indigo-400">Rank {talentLevel} / 10</span>
                 </div>
                 <input
@@ -166,80 +166,80 @@ export const TalentsPage: React.FC = () => {
                   max="10"
                   value={talentLevel}
                   onChange={(e) => setTalentLevel(parseInt(e.target.value))}
-                  className="w-full h-1.5 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-indigo-600 dark:accent-indigo-400"
+                  className="w-full h-1.5 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-indigo-600 dark:accent-indigo-400"
                 />
-                <span className="block text-[10px] text-zinc-400 italic">Adjust to calculate stat enhancements from growth multipliers.</span>
+                <span className="block text-[10px] text-subtle italic">Adjust to calculate stat enhancements from growth multipliers.</span>
               </div>
 
               {/* Grid: Stat Multiplier growth calculator */}
               {simulatedStats && (
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-                  <div className="bg-zinc-50 dark:bg-zinc-950 p-3 rounded-lg border border-zinc-150 dark:border-zinc-900 text-center flex flex-col">
-                    <span className="text-[10px] font-bold text-zinc-450 block uppercase mb-1">HP Grow</span>
+                  <div className="bg-bg p-3 rounded-lg border border-border text-center flex flex-col">
+                    <span className="text-[10px] font-bold text-subtle block uppercase mb-1">HP Grow</span>
                     <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">+{simulatedStats.lifeGrowGain}</span>
-                    <span className="text-[9px] text-zinc-400">Base: {selectedHero.life_grow}</span>
+                    <span className="text-[9px] text-subtle">Base: {selectedHero.life_grow}</span>
                   </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-950 p-3 rounded-lg border border-zinc-150 dark:border-zinc-900 text-center flex flex-col">
-                    <span className="text-[10px] font-bold text-zinc-450 block uppercase mb-1">Strength Grow</span>
+                  <div className="bg-bg p-3 rounded-lg border border-border text-center flex flex-col">
+                    <span className="text-[10px] font-bold text-subtle block uppercase mb-1">Strength Grow</span>
                     <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">+{simulatedStats.powerGrowGain}</span>
-                    <span className="text-[9px] text-zinc-400">Base: {selectedHero.power_grow}</span>
+                    <span className="text-[9px] text-subtle">Base: {selectedHero.power_grow}</span>
                   </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-950 p-3 rounded-lg border border-zinc-150 dark:border-zinc-900 text-center flex flex-col">
-                    <span className="text-[10px] font-bold text-zinc-450 block uppercase mb-1">Agility Grow</span>
+                  <div className="bg-bg p-3 rounded-lg border border-border text-center flex flex-col">
+                    <span className="text-[10px] font-bold text-subtle block uppercase mb-1">Agility Grow</span>
                     <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">+{simulatedStats.agileGrowGain}</span>
-                    <span className="text-[9px] text-zinc-400">Base: {selectedHero.agile_grow}</span>
+                    <span className="text-[9px] text-subtle">Base: {selectedHero.agile_grow}</span>
                   </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-950 p-3 rounded-lg border border-zinc-150 dark:border-zinc-900 text-center flex flex-col">
-                    <span className="text-[10px] font-bold text-zinc-450 block uppercase mb-1">Intellect Grow</span>
+                  <div className="bg-bg p-3 rounded-lg border border-border text-center flex flex-col">
+                    <span className="text-[10px] font-bold text-subtle block uppercase mb-1">Intellect Grow</span>
                     <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">+{simulatedStats.intelGrowGain}</span>
-                    <span className="text-[9px] text-zinc-400">Base: {selectedHero.intelligence}</span>
+                    <span className="text-[9px] text-subtle">Base: {selectedHero.intelligence}</span>
                   </div>
-                  <div className="bg-zinc-50 dark:bg-zinc-950 p-3 rounded-lg border border-zinc-150 dark:border-zinc-900 text-center flex flex-col">
-                    <span className="text-[10px] font-bold text-zinc-450 block uppercase mb-1">Speed Grow</span>
+                  <div className="bg-bg p-3 rounded-lg border border-border text-center flex flex-col">
+                    <span className="text-[10px] font-bold text-subtle block uppercase mb-1">Speed Grow</span>
                     <span className="font-mono text-sm font-bold text-emerald-600 dark:text-emerald-400">+{simulatedStats.speedGrowGain}</span>
-                    <span className="text-[9px] text-zinc-400">Base: {selectedHero.speed_grow}</span>
+                    <span className="text-[9px] text-subtle">Base: {selectedHero.speed_grow}</span>
                   </div>
                 </div>
               )}
 
               {/* Talent Tree Diagram representation */}
-              <div className="p-5 border border-zinc-200 dark:border-zinc-800 rounded-2xl space-y-4">
-                <h4 className="font-bold text-xs uppercase text-zinc-400 tracking-wider">Soul Core Talent Path</h4>
+              <div className="p-5 border border-border rounded-2xl space-y-4">
+                <h4 className="font-bold text-xs uppercase text-subtle tracking-wider">Soul Core Talent Path</h4>
                 <div className="flex flex-col items-center gap-6 py-4 relative">
                   {/* Vertical connector line */}
-                  <div className="absolute top-10 bottom-10 w-0.5 bg-zinc-200 dark:bg-zinc-800 z-0"></div>
+                  <div className="absolute top-10 bottom-10 w-0.5 bg-surface-raised z-0"></div>
 
                   {/* Node 1: Stat buff */}
-                  <div className="z-10 bg-white dark:bg-zinc-900 p-3 border-2 border-indigo-400/50 rounded-xl shadow text-center w-64">
+                  <div className="z-10 bg-surface p-3 border-2 border-indigo-400/50 rounded-xl shadow text-center w-64">
                     <span className="text-[9px] uppercase font-bold text-indigo-500 block">Tier 1: Growth Augment</span>
-                    <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">
+                    <span className="text-xs font-semibold text-muted">
                       Proj. Attributes Multiplier: x{(1.0 + (talentLevel * 0.05)).toFixed(2)}
                     </span>
                   </div>
 
                   {/* Node 2: Faction buff */}
-                  <div className="z-10 bg-white dark:bg-zinc-900 p-3 border-2 border-purple-400/50 rounded-xl shadow text-center w-64">
+                  <div className="z-10 bg-surface p-3 border-2 border-purple-400/50 rounded-xl shadow text-center w-64">
                     <span className="text-[9px] uppercase font-bold text-purple-500 block">Tier 2: Spiritual Focus</span>
-                    <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-300">
+                    <span className="text-xs font-semibold text-muted">
                       Combat Pierce: +{(talentLevel * 1.5).toFixed(1)}% | Resist: +{(talentLevel * 1.2).toFixed(1)}%
                     </span>
                   </div>
 
                   {/* Node 3: Skill buff */}
-                  <div className="z-10 bg-white dark:bg-zinc-900 p-4 border-2 border-emerald-500 rounded-xl shadow text-center w-72">
+                  <div className="z-10 bg-surface p-4 border-2 border-emerald-500 rounded-xl shadow text-center w-72">
                     <div className="flex items-center justify-center gap-1 text-emerald-600 dark:text-emerald-400 mb-1">
                       <Sparkles size={14} />
                       <span className="text-[9px] uppercase font-bold">Tier 3: Core Soul Talent</span>
                     </div>
                     {heroTalent ? (
                       <div className="space-y-1">
-                        <span className="text-sm font-bold text-zinc-850 dark:text-zinc-150">{heroTalent.talent_name}</span>
-                        <p className="text-xs text-zinc-500 leading-relaxed">{heroTalent.talent_desc}</p>
+                        <span className="text-sm font-bold text-text">{heroTalent.talent_name}</span>
+                        <p className="text-xs text-muted leading-relaxed">{heroTalent.talent_desc}</p>
                       </div>
                     ) : (
                       <div className="space-y-1">
-                        <span className="text-sm font-bold text-zinc-800 dark:text-zinc-200">Basic Soul Boost</span>
-                        <p className="text-xs text-zinc-500">Unlocks custom weapon effects when character reaches star-up caps.</p>
+                        <span className="text-sm font-bold text-text">Basic Soul Boost</span>
+                        <p className="text-xs text-muted">Unlocks custom weapon effects when character reaches star-up caps.</p>
                       </div>
                     )}
                   </div>

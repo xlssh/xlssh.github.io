@@ -87,7 +87,7 @@ export const BlackMarketPage: React.FC = () => {
 
       // Deal Recommendation
       let rating = 'Standard Value';
-      let ratingColor = 'text-zinc-400 bg-zinc-500/5';
+      let ratingColor = 'text-subtle bg-zinc-500/5';
       if (discountPct >= 50) {
         rating = '🔥 Legendary Deal';
         ratingColor = 'text-red-500 bg-red-500/10 border-red-500/30';
@@ -185,16 +185,16 @@ export const BlackMarketPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <ShoppingBag className="text-emerald-500" size={28} />
             Black Market Ledger & Deals Calculator
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Filter secret shop item prices, calculate discount margins, and track gold/silver savings ROI.
           </p>
         </div>
@@ -204,27 +204,27 @@ export const BlackMarketPage: React.FC = () => {
         
         {/* Left Column: Filter Panel */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-5">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Search & Shop Filters</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-5">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Search & Shop Filters</span>
             
             {/* Search Input */}
             <div className="space-y-1.5">
-              <label className="text-[10px] font-semibold text-zinc-450 dark:text-zinc-400">Search Item Shards</label>
+              <label className="text-[10px] font-semibold text-subtle dark:text-subtle">Search Item Shards</label>
               <div className="relative">
-                <Search className="absolute left-3 top-2.5 text-zinc-400" size={14} />
+                <Search className="absolute left-3 top-2.5 text-subtle" size={14} />
                 <input
                   type="text"
                   placeholder="e.g. Ichigo Mod Soul"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full text-xs pl-9 pr-4 py-2 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 rounded-xl focus:border-emerald-500 outline-none transition-colors"
+                  className="w-full text-xs pl-9 pr-4 py-2 border border-border bg-bg rounded-xl focus:border-emerald-500 outline-none transition-colors"
                 />
               </div>
             </div>
 
             {/* Currency Selector */}
             <div className="space-y-1.5">
-              <label className="text-[10px] font-semibold text-zinc-450 dark:text-zinc-400">Cost Currency</label>
+              <label className="text-[10px] font-semibold text-subtle dark:text-subtle">Cost Currency</label>
               <div className="grid grid-cols-2 gap-1.5">
                 {['all', 'silver', 'gold', 'coupon'].map((cur) => (
                   <button
@@ -233,7 +233,7 @@ export const BlackMarketPage: React.FC = () => {
                     className={`py-1.5 px-1.5 text-center text-[10.5px] font-bold rounded-lg border uppercase transition-all ${
                       selectedCurrency === cur
                         ? 'border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'
-                        : 'border-zinc-100 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-650 dark:text-zinc-300'
+                        : 'border-border bg-bg text-muted'
                     }`}
                   >
                     {cur}
@@ -245,7 +245,7 @@ export const BlackMarketPage: React.FC = () => {
             {/* Min Discount Slider */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-[10px]">
-                <span className="text-zinc-450 font-bold uppercase">Min Discount</span>
+                <span className="text-subtle font-bold uppercase">Min Discount</span>
                 <span className="font-bold text-emerald-600 dark:text-emerald-400 font-mono">-{minDiscount}%</span>
               </div>
               <input
@@ -255,18 +255,18 @@ export const BlackMarketPage: React.FC = () => {
                 step="5"
                 value={minDiscount}
                 onChange={(e) => setMinDiscount(parseInt(e.target.value))}
-                className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                className="w-full h-1 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-emerald-500"
               />
             </div>
 
           </div>
 
           {/* Shopping Cart Drawer */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Purchase Simulator</span>
+              <span className="text-[10px] font-bold text-subtle uppercase tracking-wider">Purchase Simulator</span>
               {Object.keys(cart).length > 0 && (
-                <button onClick={clearCart} className="text-zinc-400 hover:text-red-500 transition-colors">
+                <button onClick={clearCart} className="text-subtle hover:text-red-500 transition-colors">
                   <Trash2 size={12} />
                 </button>
               )}
@@ -275,34 +275,34 @@ export const BlackMarketPage: React.FC = () => {
             <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1">
               {Object.values(cart).length > 0 ? (
                 Object.values(cart).map((entry) => (
-                  <div key={entry.item.id} className="flex justify-between items-center text-xs p-2 border border-zinc-100 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-lg">
+                  <div key={entry.item.id} className="flex justify-between items-center text-xs p-2 border border-border bg-bg/50 rounded-lg">
                     <div className="truncate pr-2">
-                      <span className="font-bold block truncate text-zinc-800 dark:text-zinc-200">
+                      <span className="font-bold block truncate text-text">
                         {articlesMap[entry.item.item_id]?.name || `Item #${entry.item.item_id}`}
                       </span>
-                      <span className="text-[9px] text-zinc-450 font-mono">Qty: {entry.item.number * entry.count}</span>
+                      <span className="text-[9px] text-subtle font-mono">Qty: {entry.item.number * entry.count}</span>
                     </div>
                     <button 
                       onClick={() => removeFromCart(entry.item.id)}
-                      className="text-zinc-450 hover:text-red-500 font-bold"
+                      className="text-subtle hover:text-red-500 font-bold"
                     >
                       ×
                     </button>
                   </div>
                 ))
               ) : (
-                <div className="text-center py-6 text-xs text-zinc-400 italic">
+                <div className="text-center py-6 text-xs text-subtle italic">
                   Click "+" on cards to simulate cart calculations.
                 </div>
               )}
             </div>
 
             {Object.keys(cart).length > 0 && (
-              <div className="pt-3 border-t border-zinc-150/45 dark:border-zinc-800/60 space-y-2">
-                <span className="text-[9.5px] font-semibold text-zinc-450 uppercase block">Total Cost Summary</span>
+              <div className="pt-3 border-t border-border/60 space-y-2">
+                <span className="text-[9.5px] font-semibold text-subtle uppercase block">Total Cost Summary</span>
                 <div className="space-y-1.5 font-mono text-xs">
                   {Object.entries(cartTotals).map(([cur, total]) => (
-                    <div key={cur} className="flex justify-between items-center text-zinc-800 dark:text-zinc-200 font-bold">
+                    <div key={cur} className="flex justify-between items-center text-text font-bold">
                       <span>{cur}:</span>
                       <span>{total.toLocaleString()}</span>
                     </div>
@@ -315,8 +315,8 @@ export const BlackMarketPage: React.FC = () => {
 
         {/* Right 3 Columns: Deals List Grid */}
         <div className="lg:col-span-3 space-y-4">
-          <div className="flex justify-between items-center text-xs text-zinc-450">
-            <span>Showing <span className="font-bold text-zinc-800 dark:text-zinc-200">{filteredItems.length}</span> bargains</span>
+          <div className="flex justify-between items-center text-xs text-subtle">
+            <span>Showing <span className="font-bold text-text">{filteredItems.length}</span> bargains</span>
             <span className="font-mono">Market Capacity: 1,071 active deals</span>
           </div>
 
@@ -324,7 +324,7 @@ export const BlackMarketPage: React.FC = () => {
             {filteredItems.map((deal) => (
               <div 
                 key={deal.id}
-                className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm hover:border-emerald-500/50 hover:shadow-md transition-all relative flex flex-col justify-between gap-4"
+                className="p-5 border border-border bg-surface rounded-2xl shadow-sm hover:border-emerald-500/50 hover:shadow-md transition-all relative flex flex-col justify-between gap-4"
               >
                 {/* Discount Tag */}
                 {deal.discountPct > 0 && (
@@ -341,27 +341,27 @@ export const BlackMarketPage: React.FC = () => {
                   </span>
                   
                   <div>
-                    <h3 className="font-black text-sm text-zinc-850 dark:text-zinc-100 line-clamp-1">
+                    <h3 className="font-black text-sm text-text line-clamp-1">
                       {deal.itemName}
                     </h3>
-                    <p className="text-[10px] text-zinc-450 font-mono mt-0.5">
+                    <p className="text-[10px] text-subtle font-mono mt-0.5">
                       Pack Size: {deal.number}x units
                     </p>
                   </div>
                 </div>
 
                 {/* Pricing Block */}
-                <div className="space-y-3 pt-3 border-t border-zinc-100 dark:border-zinc-800/40">
+                <div className="space-y-3 pt-3 border-t border-border/40">
                   <div className="flex justify-between items-end">
                     <div className="text-xs">
-                      <span className="text-[9px] text-zinc-400 block uppercase font-mono">Original</span>
-                      <span className="line-through text-zinc-450 font-bold font-mono">
+                      <span className="text-[9px] text-subtle block uppercase font-mono">Original</span>
+                      <span className="line-through text-subtle font-bold font-mono">
                         {deal.oldPriceVal.toLocaleString()}
                       </span>
                     </div>
 
                     <div className="text-right">
-                      <span className="text-[9px] text-zinc-450 block uppercase font-mono">Discounted ({deal.currencyName})</span>
+                      <span className="text-[9px] text-subtle block uppercase font-mono">Discounted ({deal.currencyName})</span>
                       <span className="text-sm font-black text-emerald-600 dark:text-emerald-400 font-mono">
                         {deal.priceVal.toLocaleString()}
                       </span>
@@ -371,7 +371,7 @@ export const BlackMarketPage: React.FC = () => {
                   {/* Add to Simulator Button */}
                   <button
                     onClick={() => addToCart(deal)}
-                    className="w-full flex items-center justify-center gap-1.5 py-1.5 border border-zinc-150 dark:border-zinc-800 hover:border-emerald-500 bg-zinc-50 dark:bg-zinc-950 text-xs font-bold rounded-xl text-zinc-700 dark:text-zinc-300 transition-all hover:bg-emerald-500/5"
+                    className="w-full flex items-center justify-center gap-1.5 py-1.5 border border-border hover:border-emerald-500 bg-bg text-xs font-bold rounded-xl text-muted transition-all hover:bg-emerald-500/5"
                   >
                     <Plus size={12} />
                     Simulate Deal
@@ -382,9 +382,9 @@ export const BlackMarketPage: React.FC = () => {
           </div>
 
           {filteredItems.length === 0 && (
-            <div className="py-20 text-center border border-dashed border-zinc-200 dark:border-zinc-800 rounded-2xl">
-              <span className="block text-zinc-400 text-xs font-semibold">No Black Market bargains match your filter conditions.</span>
-              <p className="text-[10px] text-zinc-500 mt-1">Try lowering the minimum discount threshold slider or widening the search keyword.</p>
+            <div className="py-20 text-center border border-dashed border-border rounded-2xl">
+              <span className="block text-subtle text-xs font-semibold">No Black Market bargains match your filter conditions.</span>
+              <p className="text-[10px] text-muted mt-1">Try lowering the minimum discount threshold slider or widening the search keyword.</p>
             </div>
           )}
         </div>

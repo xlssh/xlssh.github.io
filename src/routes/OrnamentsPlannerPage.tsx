@@ -5,8 +5,8 @@ import { Article, OrnamentValue, OrnamentUpgrade } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { 
-  Dumbbell, Shield, Sparkles, Zap, Cpu, TrendingUp, Info, 
-  HelpCircle, ChevronRight, ShoppingBag, Award, ArrowRight, ArrowLeft
+  Sparkles, Cpu, TrendingUp, 
+  ChevronRight, Award, ArrowRight
 } from 'lucide-react';
 
 const SLOTS_METADATA: Record<number, { name: string; stat: string; color: string; desc: string }> = {
@@ -21,7 +21,7 @@ const SLOTS_METADATA: Record<number, { name: string; stat: string; color: string
 };
 
 const TIER_METADATA = [
-  { level: 40, prefix: 'Rock', baseIdStart: 15850001, color: 'text-zinc-400 border-zinc-200/50 dark:border-zinc-800 bg-zinc-500/5' },
+  { level: 40, prefix: 'Rock', baseIdStart: 15850001, color: 'text-subtle border-border/50 dark:border-border bg-zinc-500/5' },
   { level: 60, prefix: 'Flame', baseIdStart: 15850021, color: 'text-amber-500 border-amber-500/30 bg-amber-500/5' },
   { level: 80, prefix: 'Frost', baseIdStart: 15850041, color: 'text-cyan-500 border-cyan-500/30 bg-cyan-500/5' },
   { level: 100, prefix: 'Silver', baseIdStart: 15850061, color: 'text-indigo-400 border-indigo-400/30 bg-indigo-400/5' },
@@ -199,16 +199,16 @@ export const OrnamentsPlannerPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <Award className="text-fuchsia-500" size={28} />
             Spiritual Ornaments & Relics Planner
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Calculate material requirements, stat upgrades, and phase evolutions for character ornament gear.
           </p>
         </div>
@@ -218,8 +218,8 @@ export const OrnamentsPlannerPage: React.FC = () => {
         {/* Left Column: Slot Selection Map */}
         <div className="lg:col-span-1 space-y-6">
           {/* Tiers List */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-3">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Select Ornament Level Tier</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-3">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Select Ornament Level Tier</span>
             <div className="grid grid-cols-3 gap-2">
               {TIER_METADATA.map((tier) => (
                 <button
@@ -228,10 +228,10 @@ export const OrnamentsPlannerPage: React.FC = () => {
                   className={`py-2 px-1 text-center rounded-xl border text-xs font-bold transition-all ${
                     selectedTier === tier.level
                       ? 'border-fuchsia-500 bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-400 shadow-sm'
-                      : 'border-zinc-100 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 dark:hover:border-zinc-700 text-zinc-700 dark:text-zinc-300'
+                      : 'border-border bg-bg/50 hover:border-border-strong text-muted'
                   }`}
                 >
-                  <span className="block text-[10px] text-zinc-400 font-mono">Lv. {tier.level}</span>
+                  <span className="block text-[10px] text-subtle font-mono">Lv. {tier.level}</span>
                   <span className="block truncate">{tier.prefix}</span>
                 </button>
               ))}
@@ -239,19 +239,19 @@ export const OrnamentsPlannerPage: React.FC = () => {
           </div>
 
           {/* Slot Grid Sheet */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Equipped Relics Sheet</span>
+              <span className="text-[10px] font-bold text-subtle uppercase tracking-wider">Equipped Relics Sheet</span>
               <span className="text-[10px] px-2 py-0.5 rounded bg-fuchsia-100 dark:bg-fuchsia-950/50 text-fuchsia-600 dark:text-fuchsia-450 font-bold uppercase font-mono">
                 {currentSlotMeta?.stat}
               </span>
             </div>
             
             {/* Visual Grid representing Character Equipment */}
-            <div className="relative aspect-square w-full max-w-[280px] mx-auto flex items-center justify-center bg-zinc-50/30 dark:bg-zinc-950/10 border border-zinc-100/50 dark:border-zinc-850 rounded-2xl">
+            <div className="relative aspect-square w-full max-w-[280px] mx-auto flex items-center justify-center bg-bg/30 dark:bg-bg/10 border border-border/50 border-border rounded-2xl">
               {/* Silhouette Placeholder in Middle */}
-              <div className="absolute inset-12 border border-dashed border-zinc-200 dark:border-zinc-800 rounded-full flex items-center justify-center opacity-30">
-                <Cpu size={32} className="text-zinc-400" />
+              <div className="absolute inset-12 border border-dashed border-border rounded-full flex items-center justify-center opacity-30">
+                <Cpu size={32} className="text-subtle" />
               </div>
 
               {/* 8 Slot Buttons placed circularly */}
@@ -273,13 +273,13 @@ export const OrnamentsPlannerPage: React.FC = () => {
                     className={`absolute -translate-x-1/2 -translate-y-1/2 w-11 h-11 rounded-xl border flex flex-col items-center justify-center transition-all cursor-pointer ${
                       isSelected
                         ? 'border-fuchsia-500 bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-400 scale-110 shadow-md shadow-fuchsia-500/5'
-                        : 'border-zinc-200 dark:border-zinc-850 bg-white dark:bg-zinc-900 hover:border-zinc-350 dark:hover:border-zinc-700 text-zinc-650 dark:text-zinc-350'
+                        : 'border-border bg-surface hover:border-border-strong text-muted'
                     }`}
                   >
                     <span className="text-[7.5px] font-bold uppercase tracking-tighter truncate w-full px-0.5 text-center">
                       {meta.name}
                     </span>
-                    <span className="text-[6.5px] text-zinc-400 tracking-tighter uppercase font-mono">
+                    <span className="text-[6.5px] text-subtle tracking-tighter uppercase font-mono">
                       {meta.stat.slice(0, 3)}
                     </span>
                   </button>
@@ -288,11 +288,11 @@ export const OrnamentsPlannerPage: React.FC = () => {
             </div>
 
             {/* Selected Slot Specs */}
-            <div className="p-3 bg-zinc-50/50 dark:bg-zinc-950/20 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-1">
-              <span className="block text-xs font-bold text-zinc-800 dark:text-zinc-200">
+            <div className="p-3 bg-bg/50 border border-border rounded-xl space-y-1">
+              <span className="block text-xs font-bold text-text">
                 Slot {selectedSlot}: {currentSlotMeta?.name}
               </span>
-              <p className="text-[10px] text-zinc-500 leading-relaxed">
+              <p className="text-[10px] text-muted leading-relaxed">
                 {currentSlotMeta?.desc}
               </p>
             </div>
@@ -301,18 +301,18 @@ export const OrnamentsPlannerPage: React.FC = () => {
 
         {/* Right Column: Level Simulator & Cost Calculators */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
             
             {/* Overview Row */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-zinc-100 dark:border-zinc-800/60 gap-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-border/60 gap-4">
               <div>
-                <span className="text-[9px] font-mono text-zinc-400 uppercase block">Selected Ornament Relic</span>
-                <h3 className="font-black text-lg text-zinc-850 dark:text-zinc-100">
+                <span className="text-[9px] font-mono text-subtle uppercase block">Selected Ornament Relic</span>
+                <h3 className="font-black text-lg text-text">
                   {startEvolved ? baseItemInfo?.evolvedName : baseItemInfo?.baseName}
                 </h3>
               </div>
               <div className="flex gap-2">
-                <span className="px-2.5 py-1 rounded-xl text-xs font-bold bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-mono">
+                <span className="px-2.5 py-1 rounded-xl text-xs font-bold bg-surface-raised text-muted font-mono">
                   Level {selectedTier} Base
                 </span>
                 <span className="px-2.5 py-1 rounded-xl text-xs font-bold bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-400 font-semibold">
@@ -325,12 +325,12 @@ export const OrnamentsPlannerPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               
               {/* Start State Panel */}
-              <div className="p-4 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/10 rounded-xl space-y-4">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Start State</span>
+              <div className="p-4 border border-border/80 bg-bg/10 rounded-xl space-y-4">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Start State</span>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-zinc-450 font-semibold">Start Level</span>
-                    <span className="font-mono font-bold text-zinc-750 dark:text-zinc-300">Lv. {startLevel}</span>
+                    <span className="text-subtle font-semibold">Start Level</span>
+                    <span className="font-mono font-bold text-text">Lv. {startLevel}</span>
                   </div>
                   <input
                     type="range"
@@ -338,17 +338,17 @@ export const OrnamentsPlannerPage: React.FC = () => {
                     max="100"
                     value={startLevel}
                     onChange={(e) => setStartLevel(parseInt(e.target.value))}
-                    className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-fuchsia-500"
+                    className="w-full h-1 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-fuchsia-500"
                   />
                   
                   <div className="flex justify-between items-center text-xs pt-1">
-                    <span className="text-zinc-450 font-semibold">Evolved Phase</span>
+                    <span className="text-subtle font-semibold">Evolved Phase</span>
                     <button
-                      onClick={() => setStartEvolved(!startEvolved)}
+                      onClick={() => setStartEvolved(prev => !prev)}
                       className={`px-3 py-1 rounded-lg text-[10px] font-bold border transition-all ${
                         startEvolved
                           ? 'border-fuchsia-500 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-450'
-                          : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-400'
+                          : 'border-border bg-surface text-subtle'
                       }`}
                     >
                       {startEvolved ? 'Spirit (Evolved)' : 'Base Form'}
@@ -358,11 +358,11 @@ export const OrnamentsPlannerPage: React.FC = () => {
               </div>
 
               {/* Target State Panel */}
-              <div className="p-4 border border-zinc-100 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/10 rounded-xl space-y-4">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Target State</span>
+              <div className="p-4 border border-border/80 bg-bg/10 rounded-xl space-y-4">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Target State</span>
                 <div className="space-y-3">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-zinc-450 font-semibold">Target Level</span>
+                    <span className="text-subtle font-semibold">Target Level</span>
                     <span className="font-mono font-bold text-fuchsia-600 dark:text-fuchsia-450">Lv. {endLevel}</span>
                   </div>
                   <input
@@ -371,17 +371,17 @@ export const OrnamentsPlannerPage: React.FC = () => {
                     max="100"
                     value={endLevel}
                     onChange={(e) => setEndLevel(parseInt(e.target.value))}
-                    className="w-full h-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-fuchsia-500"
+                    className="w-full h-1 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-fuchsia-500"
                   />
                   
                   <div className="flex justify-between items-center text-xs pt-1">
-                    <span className="text-zinc-450 font-semibold">Evolved Phase</span>
+                    <span className="text-subtle font-semibold">Evolved Phase</span>
                     <button
-                      onClick={() => setEndEvolved(!endEvolved)}
+                      onClick={() => setEndEvolved(prev => !prev)}
                       className={`px-3 py-1 rounded-lg text-[10px] font-bold border transition-all ${
                         endEvolved
                           ? 'border-fuchsia-500 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-450'
-                          : 'border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 text-zinc-400'
+                          : 'border-border bg-surface text-subtle'
                       }`}
                     >
                       {endEvolved ? 'Spirit (Evolved)' : 'Base Form'}
@@ -393,22 +393,22 @@ export const OrnamentsPlannerPage: React.FC = () => {
             </div>
 
             {/* Results Simulator */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-border/60">
               
               {/* Stat Increments */}
               <div className="space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Stat Progression Comparison</span>
-                <div className="p-4 bg-zinc-50/40 dark:bg-zinc-950/15 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-4">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Stat Progression Comparison</span>
+                <div className="p-4 bg-bg/20 border border-border rounded-xl space-y-4">
                   <div className="flex justify-between items-center">
                     <div>
-                      <span className="block text-[9px] text-zinc-400 uppercase font-mono">Current Stat</span>
-                      <span className="text-base font-black text-zinc-700 dark:text-zinc-350">
+                      <span className="block text-[9px] text-subtle uppercase font-mono">Current Stat</span>
+                      <span className="text-base font-black text-muted">
                         +{simulationResults?.startStat} {currentSlotMeta?.stat}
                       </span>
                     </div>
-                    <ArrowRight className="text-zinc-300" size={16} />
+                    <ArrowRight className="text-subtle" size={16} />
                     <div className="text-right">
-                      <span className="block text-[9px] text-zinc-400 uppercase font-mono">Projected Stat</span>
+                      <span className="block text-[9px] text-subtle uppercase font-mono">Projected Stat</span>
                       <span className="text-base font-black text-fuchsia-600 dark:text-fuchsia-400">
                         +{simulationResults?.endStat} {currentSlotMeta?.stat}
                       </span>
@@ -416,7 +416,7 @@ export const OrnamentsPlannerPage: React.FC = () => {
                   </div>
 
                   <div className="p-2.5 bg-fuchsia-500/5 border border-fuchsia-500/25 rounded-lg flex items-center justify-between">
-                    <span className="text-[10px] font-bold text-zinc-650 dark:text-zinc-300">Total Net Gain</span>
+                    <span className="text-[10px] font-bold text-muted">Total Net Gain</span>
                     <span className="font-mono font-black text-xs text-fuchsia-600 dark:text-fuchsia-400 flex items-center gap-1">
                       <TrendingUp size={12} />
                       +{simulationResults?.statDiff} {currentSlotMeta?.stat}
@@ -427,31 +427,31 @@ export const OrnamentsPlannerPage: React.FC = () => {
 
               {/* Required Shopping List */}
               <div className="space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Required Materials List</span>
-                <div className="p-4 bg-zinc-50/40 dark:bg-zinc-950/15 border border-zinc-150/45 dark:border-zinc-850 rounded-xl space-y-2 text-xs">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Required Materials List</span>
+                <div className="p-4 bg-bg/20 border border-border rounded-xl space-y-2 text-xs">
                   
                   {/* Crystal Cores */}
-                  <div className="flex justify-between items-center py-1.5 border-b border-zinc-100 dark:border-zinc-800/40">
+                  <div className="flex justify-between items-center py-1.5 border-b border-border/40">
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-blue-500" />
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300">
+                      <span className="font-semibold text-muted">
                         {articlesMap[14860001]?.name || 'Crystal Core'}
                       </span>
                     </div>
-                    <span className="font-mono font-bold text-zinc-900 dark:text-white">
+                    <span className="font-mono font-bold text-text">
                       {simulationResults?.crystals.toLocaleString()}x
                     </span>
                   </div>
 
                   {/* Bright Stones */}
-                  <div className="flex justify-between items-center py-1.5 border-b border-zinc-100 dark:border-zinc-800/40">
+                  <div className="flex justify-between items-center py-1.5 border-b border-border/40">
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-fuchsia-500" />
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300">
+                      <span className="font-semibold text-muted">
                         {articlesMap[14860010]?.name || 'Bright Stone'}
                       </span>
                     </div>
-                    <span className="font-mono font-bold text-zinc-900 dark:text-white">
+                    <span className="font-mono font-bold text-text">
                       {simulationResults?.evolutionStones.toLocaleString()}x
                     </span>
                   </div>
@@ -460,9 +460,9 @@ export const OrnamentsPlannerPage: React.FC = () => {
                   <div className="flex justify-between items-center py-1.5">
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-yellow-500" />
-                      <span className="font-semibold text-zinc-700 dark:text-zinc-300">Gold Cost Estimate</span>
+                      <span className="font-semibold text-muted">Gold Cost Estimate</span>
                     </div>
-                    <span className="font-mono font-bold text-zinc-900 dark:text-white">
+                    <span className="font-mono font-bold text-text">
                       {/* Simple Gold estimation: 100 gold per crystal core level */}
                       {((simulationResults?.crystals || 0) * 250 + (simulationResults?.evolutionStones || 0) * 2000).toLocaleString()} Gold
                     </span>
@@ -475,20 +475,20 @@ export const OrnamentsPlannerPage: React.FC = () => {
 
             {/* Evolution Flow visualization */}
             {baseItemInfo && (
-              <div className="p-4 bg-zinc-50/30 dark:bg-zinc-950/5 border border-zinc-100 dark:border-zinc-850 rounded-xl space-y-3">
-                <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Evolution & Phasing Path</span>
+              <div className="p-4 bg-bg/30 dark:bg-bg/5 border border-border rounded-xl space-y-3">
+                <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Evolution & Phasing Path</span>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs">
                   
                   {/* Old Item */}
-                  <div className="flex items-center gap-2 p-2 border border-zinc-100 dark:border-zinc-800 rounded-lg bg-white dark:bg-zinc-900 w-full sm:w-auto min-w-[160px] justify-center">
+                  <div className="flex items-center gap-2 p-2 border border-border rounded-lg bg-surface w-full sm:w-auto min-w-[160px] justify-center">
                     <div className="w-2 h-2 rounded-full bg-zinc-300" />
-                    <span className="font-bold text-zinc-750 dark:text-zinc-200">{baseItemInfo.baseName}</span>
+                    <span className="font-bold text-text">{baseItemInfo.baseName}</span>
                   </div>
 
                   {/* Transition Cost Arrow */}
                   <div className="flex flex-col items-center">
                     <ArrowRight className="text-fuchsia-500 rotate-90 sm:rotate-0" size={16} />
-                    <span className="text-[9px] text-zinc-450 font-bold font-mono mt-0.5">
+                    <span className="text-[9px] text-subtle font-bold font-mono mt-0.5">
                       Cost: {baseItemInfo.evolutionCost[0]?.amount || 50}x Bright Stones
                     </span>
                   </div>

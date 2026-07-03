@@ -28,13 +28,13 @@ const PROF_LABEL_COLOR: Record<number, string> = {
 };
 
 function getHeatColor(count: number, max: number): string {
-  if (count === 0) return 'bg-zinc-100 dark:bg-zinc-950 text-zinc-400 dark:text-zinc-700';
+  if (count === 0) return 'bg-bg text-subtle dark:text-text';
   const pct = count / max;
   if (pct >= 0.8) return 'bg-fuchsia-200 dark:bg-fuchsia-950/40 text-fuchsia-950 dark:text-fuchsia-300 border border-fuchsia-300 dark:border-fuchsia-800/40';
   if (pct >= 0.6) return 'bg-violet-200 dark:bg-violet-950/40 text-violet-950 dark:text-violet-300 border border-violet-300 dark:border-violet-800/40';
   if (pct >= 0.4) return 'bg-indigo-200 dark:bg-indigo-950/40 text-indigo-950 dark:text-indigo-300 border border-indigo-300 dark:border-indigo-850/40';
   if (pct >= 0.2) return 'bg-indigo-50 dark:bg-indigo-950/20 text-indigo-800 dark:text-indigo-400 border border-indigo-150 dark:border-indigo-900/30';
-  return 'bg-zinc-100 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800/40';
+  return 'bg-surface-raised text-text dark:text-subtle border border-border/40';
 }
 
 export const TierHeatmapPage: React.FC = () => {
@@ -93,8 +93,8 @@ export const TierHeatmapPage: React.FC = () => {
     <div className="space-y-6 pb-10">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-black text-zinc-900 dark:text-zinc-100 tracking-tight">📊 Tier × Class Heatmap</h1>
-        <p className="text-sm text-zinc-500 dark:text-zinc-405 mt-1">
+        <h1 className="text-2xl font-black text-text tracking-tight">📊 Tier × Class Heatmap</h1>
+        <p className="text-sm text-muted dark:text-subtle mt-1">
           Distribution of {heroes.length} heroes across tier ratings and profession classes. Click a cell to see the roster.
         </p>
       </div>
@@ -106,7 +106,7 @@ export const TierHeatmapPage: React.FC = () => {
             <table className="w-full border-collapse">
               <thead>
                 <tr>
-                  <th className="p-2 text-left text-[10px] font-bold text-zinc-500 dark:text-zinc-400 w-12">Tier</th>
+                  <th className="p-2 text-left text-[10px] font-bold text-muted w-12">Tier</th>
                   {PROFESSIONS.map(p => (
                     <th key={p} className="p-2 text-center">
                       <span className={`text-[10px] font-black ${PROF_LABEL_COLOR[p]}`}>
@@ -114,20 +114,20 @@ export const TierHeatmapPage: React.FC = () => {
                       </span>
                     </th>
                   ))}
-                  <th className="p-2 text-center text-[10px] font-bold text-zinc-500 dark:text-zinc-400">Total</th>
+                  <th className="p-2 text-center text-[10px] font-bold text-muted">Total</th>
                 </tr>
               </thead>
               <tbody>
                 {TIER_ORDER.map(tier => {
                   const rowHeroes = PROFESSIONS.flatMap(p => heatmap[tier]?.[p] ?? []);
                   return (
-                    <tr key={tier} className="border-b border-zinc-200 dark:border-zinc-800/80">
+                    <tr key={tier} className="border-b border-border/80">
                       <td className="p-2">
                         <span className={`text-xs font-black ${
                           tier === 'SS' ? 'text-amber-950 dark:text-amber-400' :
                           tier.startsWith('S') ? 'text-orange-950 dark:text-orange-450' :
                           tier.startsWith('A') ? 'text-rose-900 dark:text-rose-400' :
-                          'text-zinc-650 dark:text-zinc-400'
+                          'text-muted dark:text-subtle'
                         }`}>{tier}</span>
                       </td>
                       {PROFESSIONS.map(prof => {
@@ -138,7 +138,7 @@ export const TierHeatmapPage: React.FC = () => {
                             <button
                               onClick={() => setSelected(isSelected ? null : { tier, prof })}
                               className={`w-full aspect-square rounded-xl flex items-center justify-center text-sm font-black transition-all ${
-                                count === 0 ? 'text-zinc-400 dark:text-zinc-700 cursor-default' : getHeatColor(count, maxCount)
+                                count === 0 ? 'text-subtle dark:text-text cursor-default' : getHeatColor(count, maxCount)
                               } ${isSelected ? 'ring-2 ring-indigo-500 dark:ring-indigo-400 scale-110' : count > 0 ? 'hover:scale-105 cursor-pointer' : ''}`}
                             >
                               {count > 0 ? count : '·'}
@@ -146,33 +146,33 @@ export const TierHeatmapPage: React.FC = () => {
                           </td>
                         );
                       })}
-                      <td className="p-2 text-center text-xs font-bold text-zinc-800 dark:text-zinc-200">
+                      <td className="p-2 text-center text-xs font-bold text-text">
                         {rowHeroes.length}
                       </td>
                     </tr>
                   );
                 })}
                 {/* Column totals */}
-                <tr className="border-t border-zinc-300 dark:border-zinc-700">
-                  <td className="p-2 text-[10px] font-bold text-zinc-500 dark:text-zinc-400">Total</td>
+                <tr className="border-t border-border-strong">
+                  <td className="p-2 text-[10px] font-bold text-muted">Total</td>
                   {PROFESSIONS.map(prof => {
                     const total = TIER_ORDER.reduce((s, t) => s + (heatmap[t]?.[prof] ?? []).length, 0);
                     return (
-                      <td key={prof} className="p-2 text-center text-xs font-bold text-zinc-800 dark:text-zinc-200">{total}</td>
+                      <td key={prof} className="p-2 text-center text-xs font-bold text-text">{total}</td>
                     );
                   })}
-                  <td className="p-2 text-center text-xs font-black text-zinc-950 dark:text-zinc-50">{heroes.length}</td>
+                  <td className="p-2 text-center text-xs font-black text-text">{heroes.length}</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           {/* Color Scale Legend */}
-          <div className="flex items-center gap-3 mt-4 text-[9px] text-zinc-500 dark:text-zinc-400">
+          <div className="flex items-center gap-3 mt-4 text-[9px] text-muted">
             <span>Low</span>
             <div className="flex gap-1">
-              {['bg-zinc-100 dark:bg-zinc-900', 'bg-indigo-55 dark:bg-indigo-950/20', 'bg-indigo-200 dark:bg-indigo-950/40', 'bg-violet-200 dark:bg-violet-950/40', 'bg-fuchsia-200 dark:bg-fuchsia-950/40'].map((c, i) => (
-                <div key={i} className={`w-6 h-3 rounded ${c} border border-zinc-200 dark:border-zinc-800/40`} />
+              {['bg-surface-raised', 'bg-indigo-55 dark:bg-indigo-950/20', 'bg-indigo-200 dark:bg-indigo-950/40', 'bg-violet-200 dark:bg-violet-950/40', 'bg-fuchsia-200 dark:bg-fuchsia-950/40'].map((c, i) => (
+                <div key={i} className={`w-6 h-3 rounded ${c} border border-border/40`} />
               ))}
             </div>
             <span>High</span>
@@ -182,52 +182,52 @@ export const TierHeatmapPage: React.FC = () => {
         {/* Selected Cell */}
         <div className="space-y-4">
           {selected ? (
-            <div className="p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl space-y-3">
+            <div className="p-4 bg-surface border border-border rounded-2xl space-y-3">
               <div>
-                <div className="text-[9px] font-bold text-zinc-500 dark:text-zinc-400 uppercase">Selected Cell</div>
+                <div className="text-[9px] font-bold text-muted uppercase">Selected Cell</div>
                 <div className="flex items-center gap-2 mt-1">
                   <span className={`text-xl font-black ${
                     selected.tier === 'SS' ? 'text-amber-950 dark:text-amber-400' :
                     selected.tier.startsWith('S') ? 'text-orange-950 dark:text-orange-400' :
-                    selected.tier.startsWith('A') ? 'text-rose-900 dark:text-rose-400' : 'text-zinc-800 dark:text-zinc-200'
+                    selected.tier.startsWith('A') ? 'text-rose-900 dark:text-rose-400' : 'text-text'
                   }`}>{selected.tier}</span>
                   <span className={`text-sm font-black ${PROF_LABEL_COLOR[selected.prof]}`}>
                     {getProfessionLabel(selected.prof)}
                   </span>
                 </div>
-                <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">{selectedHeroes.length} heroes</div>
+                <div className="text-xs text-muted mt-1">{selectedHeroes.length} heroes</div>
               </div>
               <div className="space-y-1.5 max-h-96 overflow-y-auto pr-1">
                 {selectedHeroes.map(h => (
                   <Link key={h.id} to={`/heroes/${h.id}`}
-                    className="flex items-center justify-between p-2 rounded-lg bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-800/60 dark:hover:bg-zinc-805 border border-zinc-200 dark:border-zinc-700 hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors">
-                    <span className="text-xs font-bold text-zinc-800 dark:text-zinc-200">{h.name}</span>
+                    className="flex items-center justify-between p-2 rounded-lg bg-bg hover:bg-surface-raised/60 dark:hover:bg-hover border border-border hover:border-border-strong transition-colors">
+                    <span className="text-xs font-bold text-text">{h.name}</span>
                     <span className={`text-[9px] font-black ${getQualityColorClass(h.quality)}`}>{h.role}</span>
                   </Link>
                 ))}
               </div>
             </div>
           ) : (
-            <div className="p-6 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl text-center">
-              <LayoutGrid size={32} className="mx-auto mb-3 text-zinc-400 dark:text-zinc-650" />
-              <div className="text-sm font-bold text-zinc-800 dark:text-zinc-200">Click a cell</div>
-              <div className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">to see the heroes in that tier + class</div>
+            <div className="p-6 bg-surface border border-border rounded-2xl text-center">
+              <LayoutGrid size={32} className="mx-auto mb-3 text-subtle dark:text-muted" />
+              <div className="text-sm font-bold text-text">Click a cell</div>
+              <div className="text-xs text-muted mt-1">to see the heroes in that tier + class</div>
             </div>
           )}
 
           {/* Column totals card */}
-          <div className="p-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl space-y-3">
-            <span className="text-[9px] font-bold text-zinc-500 dark:text-zinc-400 uppercase">Class Totals</span>
+          <div className="p-4 bg-surface border border-border rounded-2xl space-y-3">
+            <span className="text-[9px] font-bold text-muted uppercase">Class Totals</span>
             {PROFESSIONS.map(prof => {
               const total = TIER_ORDER.reduce((s, t) => s + (heatmap[t]?.[prof] ?? []).length, 0);
               return (
                 <div key={prof} className="flex items-center gap-2">
                   <span className={`text-[10px] font-bold w-18 ${PROF_LABEL_COLOR[prof]}`}>{getProfessionLabel(prof)}</span>
-                  <div className="flex-1 h-2 bg-zinc-100 dark:bg-zinc-800 rounded-full overflow-hidden">
+                  <div className="flex-1 h-2 bg-surface-raised rounded-full overflow-hidden">
                     <div className={`h-full rounded-full ${PROF_COLOR_BG[prof]} opacity-70 transition-all`}
                       style={{ width: `${(total / heroes.length) * 100}%` }} />
                   </div>
-                  <span className="text-[10px] font-mono text-zinc-800 dark:text-zinc-200 w-4 text-right">{total}</span>
+                  <span className="text-[10px] font-mono text-text w-4 text-right">{total}</span>
                 </div>
               );
             })}

@@ -967,7 +967,36 @@ def main():
             json.dump({"table": "tsystemlanguage", "rowCount": len(rows), "rows": rows}, f, indent=2, ensure_ascii=False)
         print(f"Extracted tsystemlanguage.json: {len(rows)} rows.")
 
-    print("\nExtraction of all 34 missing database tables is successfully complete!")
+    # 35. ProfessionRefine (16777557)
+    if 16777557 in all_bins:
+        reader = BinReader(all_bins[16777557])
+        reader.read_uint()
+        row_count = reader.read_uint()
+        rows = []
+        for _ in range(row_count):
+            row_id = reader.read_uint()
+            cost = reader.read_int()
+            phy_atk = reader.read_float()
+            magic_atk = reader.read_float()
+            phy_def = reader.read_float()
+            magic_def = reader.read_float()
+            hp = reader.read_float()
+            speed = reader.read_float()
+            rows.append({
+                "id": row_id,
+                "cost": cost,
+                "phy_atk": round(phy_atk, 6),
+                "magic_atk": round(magic_atk, 6),
+                "phy_def": round(phy_def, 6),
+                "magic_def": round(magic_def, 6),
+                "hp": round(hp, 6),
+                "speed": round(speed, 6)
+            })
+        with open(os.path.join(out_dir, "profession_refines.json"), "w", encoding="utf-8") as f:
+            json.dump({"table": "profession_refines", "rowCount": len(rows), "rows": rows}, f, indent=2, ensure_ascii=False)
+        print(f"Extracted profession_refines.json: {len(rows)} rows.")
+
+    print("\nExtraction of all 35 missing database tables is successfully complete!")
 
 if __name__ == "__main__":
     main()

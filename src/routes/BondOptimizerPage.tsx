@@ -151,17 +151,17 @@ export const BondOptimizerPage: React.FC = () => {
 
   // Add a hero to the simulation team (max 5)
   const handleAddHero = (id: number) => {
-    if (teamIds.includes(id)) return;
-    if (teamIds.length >= 5) {
-      // Replace the oldest non-MC hero or simply refuse
-      setTeamIds([...teamIds.slice(1), id]);
-    } else {
-      setTeamIds([...teamIds, id]);
-    }
+    setTeamIds(prev => {
+      if (prev.includes(id)) return prev;
+      if (prev.length >= 5) {
+        return [...prev.slice(1), id];
+      }
+      return [...prev, id];
+    });
   };
 
   const handleRemoveHero = (id: number) => {
-    setTeamIds(teamIds.filter(x => x !== id));
+    setTeamIds(prev => prev.filter(x => x !== id));
   };
 
   const heroPool = useMemo(() => {

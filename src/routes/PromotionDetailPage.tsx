@@ -122,7 +122,7 @@ function getActivityTypeBadgeClass(type: number): string {
     case 22:
       return 'bg-cyan-50 text-cyan-700 dark:bg-cyan-950/40 dark:text-cyan-300 border border-cyan-200/50 dark:border-cyan-900/30';
     default:
-      return 'bg-zinc-50 text-zinc-600 dark:bg-zinc-900/40 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-800/30';
+      return 'bg-bg text-muted dark:bg-surface/40 dark:text-subtle border border-border/50 dark:border-border/30';
   }
 }
 
@@ -136,7 +136,7 @@ function getTimeTypeBadgeClass(type: number): string {
     case 3:
       return 'bg-teal-50 text-teal-700 dark:bg-teal-950/40 dark:text-teal-300 border border-teal-200/50 dark:border-teal-900/30';
     default:
-      return 'bg-zinc-50 text-zinc-650 dark:bg-zinc-900/40 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-800/30';
+      return 'bg-bg text-muted dark:bg-surface/40 dark:text-subtle border border-border/50 dark:border-border/30';
   }
 }
 
@@ -170,38 +170,38 @@ const PyramidCalculator: React.FC<{ details: ActivityDetail; articlesList: Artic
   const reqGold = getOptimalCost(reqSmashes);
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Target size={16} className="text-amber-500" />
         <span>Pyramid Smash Simulator & Cost Estimator</span>
       </h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         {/* Left Column: Smashes to Cost & Points */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Simulate Smashes
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Number of Smashes:</label>
+            <label className="text-subtle font-medium block">Number of Smashes:</label>
             <input
               type="number"
               min={1}
               max={1000}
               value={smashCount}
               onChange={(e) => setSmashCount(Math.max(1, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
             />
           </div>
           <div className="grid grid-cols-2 gap-2 pt-2">
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Cost</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Cost</span>
               <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-sm">
                 {cost.toLocaleString()} Gold
               </span>
             </div>
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Event Chips Earned</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Event Chips Earned</span>
               <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-sm">
                 {estChips.toLocaleString()} Chips
               </span>
@@ -210,30 +210,30 @@ const PyramidCalculator: React.FC<{ details: ActivityDetail; articlesList: Artic
         </div>
 
         {/* Right Column: Target Points to Cost */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Calculate Goal Cost
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Target Event Chips:</label>
+            <label className="text-subtle font-medium block">Target Event Chips:</label>
             <input
               type="number"
               min={1}
               max={10000}
               value={targetChips}
               onChange={(e) => setTargetChips(Math.max(1, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
             />
           </div>
           <div className="grid grid-cols-2 gap-2 pt-2">
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Smashes Required</span>
-              <span className="font-mono font-extrabold text-zinc-800 dark:text-zinc-200 text-sm">
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Smashes Required</span>
+              <span className="font-mono font-extrabold text-text text-sm">
                 {reqSmashes.toLocaleString()} Smashes
               </span>
             </div>
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Gold Cost</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Gold Cost</span>
               <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-sm">
                 {reqGold.toLocaleString()} Gold
               </span>
@@ -267,55 +267,55 @@ const RushInSeireiteiCalculator: React.FC<{ details: ActivityDetail; articlesLis
   const reqGoldSpecials = reqSpecials * specialCost;
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Flame size={16} className="text-red-500" />
         <span>Rush in Seireitei Attack & Store Planner</span>
       </h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         {/* Attack Simulator */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Simulate Attack Runs
           </span>
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1">
-              <label className="text-zinc-400 font-medium block">Normal Attacks:</label>
+              <label className="text-subtle font-medium block">Normal Attacks:</label>
               <input
                 type="number"
                 min={0}
                 value={plannedNormalAttacks}
                 onChange={(e) => setPlannedNormalAttacks(Math.max(0, parseInt(e.target.value) || 0))}
-                className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+                className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
               />
             </div>
             <div className="space-y-1">
-              <label className="text-zinc-400 font-medium block">Special Attacks:</label>
+              <label className="text-subtle font-medium block">Special Attacks:</label>
               <input
                 type="number"
                 min={0}
                 value={plannedSpecialAttacks}
                 onChange={(e) => setPlannedSpecialAttacks(Math.max(0, parseInt(e.target.value) || 0))}
-                className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+                className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
               />
             </div>
           </div>
           <div className="grid grid-cols-3 gap-2 pt-1">
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Gold</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Gold</span>
               <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-xs">
                 {estimatedGold.toLocaleString()} Gold
               </span>
             </div>
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Military Credits</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Military Credits</span>
               <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-xs">
                 +{totalMilitary.toLocaleString()}
               </span>
             </div>
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Total Boss Damage</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Total Boss Damage</span>
               <span className="font-mono font-extrabold text-rose-600 dark:text-rose-400 text-xs">
                 {totalHurt.toLocaleString()} HP
               </span>
@@ -324,30 +324,30 @@ const RushInSeireiteiCalculator: React.FC<{ details: ActivityDetail; articlesLis
         </div>
 
         {/* Store Purchase Planner */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Store Score Goal Estimator
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Target Store Score:</label>
+            <label className="text-subtle font-medium block">Target Store Score:</label>
             <input
               type="number"
               min={1}
               max={50000}
               value={targetScore}
               onChange={(e) => setTargetScore(Math.max(1, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
             />
           </div>
           <div className="grid grid-cols-2 gap-2 pt-2">
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Special Attacks Needed</span>
-              <span className="font-mono font-extrabold text-zinc-800 dark:text-zinc-200 text-xs">
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Special Attacks Needed</span>
+              <span className="font-mono font-extrabold text-text text-xs">
                 {reqSpecials.toLocaleString()} Attacks
               </span>
             </div>
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Gold Cost</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Gold Cost</span>
               <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-xs">
                 {reqGoldSpecials.toLocaleString()} Gold
               </span>
@@ -371,26 +371,26 @@ const KingsGuardCalculator: React.FC<{ details: ActivityDetail; articlesList: Ar
   const totalFlippedCost = includeFlipCost * gameCost;
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Star size={16} className="text-yellow-500" />
         <span>King's Guard Flip & Recruit Estimator</span>
       </h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         {/* Guard selector & flips */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Flipping Cost Estimator
           </span>
           {guards.length > 0 && (
             <div className="space-y-3">
               <div className="space-y-1">
-                <label className="text-zinc-400 font-medium block">Select Target Guard Card:</label>
+                <label className="text-subtle font-medium block">Select Target Guard Card:</label>
                 <select
                   value={targetGuardIdx}
                   onChange={(e) => setTargetGuardIdx(parseInt(e.target.value))}
-                  className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none"
+                  className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none"
                 >
                   {guards.map((g: any, i: number) => (
                     <option key={i} value={i}>
@@ -400,14 +400,14 @@ const KingsGuardCalculator: React.FC<{ details: ActivityDetail; articlesList: Ar
                 </select>
               </div>
               <div className="space-y-1">
-                <label className="text-zinc-400 font-medium block">Planned Paid Flips (Beyond free):</label>
+                <label className="text-subtle font-medium block">Planned Paid Flips (Beyond free):</label>
                 <input
                   type="number"
                   min={0}
                   max={10}
                   value={includeFlipCost}
                   onChange={(e) => setPlannedFlipCount(Math.max(0, parseInt(e.target.value) || 0))}
-                  className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none font-mono font-bold"
+                  className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none font-mono font-bold"
                 />
               </div>
             </div>
@@ -415,25 +415,25 @@ const KingsGuardCalculator: React.FC<{ details: ActivityDetail; articlesList: Ar
         </div>
 
         {/* Calculated flips details */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Cost & Recruitment Analysis
           </span>
           <div className="grid grid-cols-2 gap-2">
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Paid Flips Cost</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Paid Flips Cost</span>
               <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-xs">
                 {totalFlippedCost.toLocaleString()} Gold
               </span>
             </div>
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Instant Win Cost</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Instant Win Cost</span>
               <span className="font-mono font-extrabold text-amber-600 dark:text-amber-400 text-xs">
                 {winCost.toLocaleString()} Gold
               </span>
             </div>
           </div>
-          <p className="text-[10px] text-zinc-500 leading-normal italic pt-1">
+          <p className="text-[10px] text-muted leading-normal italic pt-1">
             Tip: Standard play costs {gameCost} Gold per flip card. The instant win option flips all remaining cards automatically for {winCost} Gold, securing 100% of rewards immediately.
           </p>
         </div>
@@ -454,20 +454,20 @@ const KingsLegendCalculator: React.FC<{ details: ActivityDetail; articlesList: A
   const estSpins = Math.floor(spentGold / (turntableGold || 1));
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Trophy size={16} className="text-violet-500" />
         <span>King's Legend Gold Spend & Spin Progress Estimator</span>
       </h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         {/* Left column: Spent Gold Slider */}
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Simulate Spend Milestones
           </span>
           <div className="space-y-2">
-            <div className="flex justify-between items-center text-xs text-zinc-500">
+            <div className="flex justify-between items-center text-xs text-muted">
               <span>Your Gold Spend:</span>
               <span className="font-bold font-mono text-violet-600 dark:text-violet-400 text-sm">
                 {spentGold.toLocaleString()} Gold
@@ -484,11 +484,11 @@ const KingsLegendCalculator: React.FC<{ details: ActivityDetail; articlesList: A
             />
           </div>
           <div className="space-y-1">
-            <div className="flex justify-between text-[9px] font-bold text-zinc-400 uppercase">
+            <div className="flex justify-between text-[9px] font-bold text-subtle uppercase">
               <span>Spend Milestone Progress:</span>
               <span>{Math.round(progressPercent)}%</span>
             </div>
-            <div className="w-full bg-zinc-100 dark:bg-zinc-950 h-2.5 rounded-full overflow-hidden border border-zinc-200 dark:border-zinc-850">
+            <div className="w-full bg-bg h-2.5 rounded-full overflow-hidden border border-border">
               <div
                 className="bg-violet-600 h-full rounded-full transition-all duration-300"
                 style={{ width: `${progressPercent}%` }}
@@ -498,25 +498,25 @@ const KingsLegendCalculator: React.FC<{ details: ActivityDetail; articlesList: A
         </div>
 
         {/* Right column: Progress stats */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Estimated Activity Outputs
           </span>
           <div className="grid grid-cols-2 gap-2">
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Spins earned</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Spins earned</span>
               <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-xs">
                 {estSpins.toLocaleString()} Spins
               </span>
             </div>
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Recharge Gold Rebate</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Recharge Gold Rebate</span>
               <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-xs">
                 +{rechargeGold.toLocaleString()} Gold
               </span>
             </div>
           </div>
-          <p className="text-[10px] text-zinc-500 leading-normal italic pt-1">
+          <p className="text-[10px] text-muted leading-normal italic pt-1">
             Tip: Spending gold earns turntable spins at {turntableGold} gold per spin, and unlocks spend rebate tiers (target: {costGoldVal.toLocaleString()} gold).
           </p>
         </div>
@@ -535,38 +535,38 @@ const PowerRankPlanner: React.FC<{ details: ActivityDetail; articlesList: Articl
   const nextTarget = targets.find(t => currentPower < t.key);
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Target size={16} className="text-rose-500" />
         <span>Target Battle Power Milestone Planner</span>
       </h4>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         {/* Power Input */}
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Your Battle Power Profile
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Current Battle Power:</label>
+            <label className="text-subtle font-medium block">Current Battle Power:</label>
             <input
               type="number"
               min={0}
               value={currentPower}
               onChange={(e) => setCurrentPower(Math.max(0, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
             />
           </div>
           <div className="grid grid-cols-2 gap-2 pt-1">
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Achieved Milestones</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Achieved Milestones</span>
               <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-xs">
                 {achievedCount} / {targets.length}
               </span>
             </div>
             {nextTarget && (
-              <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-                <span className="text-[9px] text-zinc-400 font-bold uppercase">Next Power Goal</span>
+              <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+                <span className="text-[9px] text-subtle font-bold uppercase">Next Power Goal</span>
                 <span className="font-mono font-extrabold text-rose-600 dark:text-rose-400 text-xs">
                   {nextTarget.key.toLocaleString()} BP
                 </span>
@@ -576,8 +576,8 @@ const PowerRankPlanner: React.FC<{ details: ActivityDetail; articlesList: Articl
         </div>
 
         {/* Milestone milestones results */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 max-h-48 overflow-y-auto">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-48 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Milestones Breakdown
           </span>
           <div className="space-y-2">
@@ -585,10 +585,10 @@ const PowerRankPlanner: React.FC<{ details: ActivityDetail; articlesList: Articl
               const achieved = currentPower >= t.key;
               return (
                 <div key={i} className="flex justify-between items-center text-xs">
-                  <span className={`${achieved ? 'text-zinc-800 dark:text-zinc-200 font-bold' : 'text-zinc-400 dark:text-zinc-500 line-through'} transition-colors`}>
+                  <span className={`${achieved ? 'text-text font-bold' : 'text-muted line-through'} transition-colors`}>
                     {t.prompt || `Goal ${t.key.toLocaleString()}`}
                   </span>
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-zinc-100 text-zinc-400 dark:bg-zinc-950'}`}>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-bg text-subtle dark:bg-bg'}`}>
                     {achieved ? 'ACHIEVED' : 'LOCKED'}
                   </span>
                 </div>
@@ -609,16 +609,16 @@ const IceHerosCalculator: React.FC<{ details: ActivityDetail; articlesList: Arti
   const chipBoxes = details.extra.chip_boxes || [];
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Trophy size={16} className="text-cyan-500" />
         <span>Ice Heroes Score & Milestone Planner</span>
       </h4>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         {/* Left Column: Milestones Progress */}
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 max-h-56 overflow-y-auto">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Recharge / Score Milestones
           </span>
           <div className="space-y-2">
@@ -627,10 +627,10 @@ const IceHerosCalculator: React.FC<{ details: ActivityDetail; articlesList: Arti
               const achieved = targetScore >= condition;
               return (
                 <div key={idx} className="flex justify-between items-center text-xs">
-                  <span className={`${achieved ? 'text-zinc-850 dark:text-zinc-200 font-bold' : 'text-zinc-400 dark:text-zinc-500 line-through'}`}>
+                  <span className={`${achieved ? 'text-text font-bold' : 'text-muted line-through'}`}>
                     Score {condition.toLocaleString()}: Limit {aw.limit}
                   </span>
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-zinc-100 text-zinc-400 dark:bg-zinc-950'}`}>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-bg text-subtle dark:bg-bg'}`}>
                     {achieved ? 'ACHIEVED' : 'LOCKED'}
                   </span>
                 </div>
@@ -640,23 +640,23 @@ const IceHerosCalculator: React.FC<{ details: ActivityDetail; articlesList: Arti
         </div>
 
         {/* Right Column: Goal setup & Box calculation */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Simulate Your Target Score
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Current / Target Score:</label>
+            <label className="text-subtle font-medium block">Current / Target Score:</label>
             <input
               type="number"
               min={0}
               value={targetScore}
               onChange={(e) => setTargetScore(Math.max(0, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
             />
           </div>
           {chipBoxes.length > 0 && (
-            <div className="p-3 bg-zinc-50 dark:bg-zinc-950/30 rounded border border-zinc-100 dark:border-zinc-850 text-[11px] leading-relaxed">
-              <span className="font-bold text-zinc-700 dark:text-zinc-300 block mb-1">Available Event Chests:</span>
+            <div className="p-3 bg-bg/30 rounded border border-border text-[11px] leading-relaxed">
+              <span className="font-bold text-muted block mb-1">Available Event Chests:</span>
               <div className="space-y-1">
                 {chipBoxes.map((box: any, i: number) => (
                   <div key={i} className="flex justify-between font-mono">
@@ -679,29 +679,29 @@ const RechargePlanner: React.FC<{ details: ActivityDetail; articlesList: Article
   const milestones = details.awards || [];
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Coins size={16} className="text-amber-500" />
         <span>Unified Recharge & Rebate Planner</span>
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Recharge Target
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Planned Recharge (Gold):</label>
+            <label className="text-subtle font-medium block">Planned Recharge (Gold):</label>
             <input
               type="number"
               min={0}
               value={plannedRecharge}
               onChange={(e) => setPlannedRecharge(Math.max(0, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
             />
           </div>
         </div>
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 max-h-48 overflow-y-auto">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-48 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Milestones Progress
           </span>
           <div className="space-y-2">
@@ -709,10 +709,10 @@ const RechargePlanner: React.FC<{ details: ActivityDetail; articlesList: Article
               const achieved = plannedRecharge >= t.key;
               return (
                 <div key={i} className="flex justify-between items-center text-xs">
-                  <span className={`${achieved ? 'text-zinc-800 dark:text-zinc-200 font-bold' : 'text-zinc-400 dark:text-zinc-500 line-through'} transition-colors`}>
+                  <span className={`${achieved ? 'text-text font-bold' : 'text-muted line-through'} transition-colors`}>
                     {t.prompt || `${t.key.toLocaleString()} Gold`}
                   </span>
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-zinc-100 text-zinc-400 dark:bg-zinc-950'}`}>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-bg text-subtle dark:bg-bg'}`}>
                     {achieved ? 'ACHIEVED' : 'LOCKED'}
                   </span>
                 </div>
@@ -731,29 +731,29 @@ const SpendPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[];
   const milestones = details.awards || [];
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Sparkles size={16} className="text-violet-500" />
         <span>Unified Spend Planner & Rebate Optimizer</span>
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Spending Target
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Planned Gold Spend:</label>
+            <label className="text-subtle font-medium block">Planned Gold Spend:</label>
             <input
               type="number"
               min={0}
               value={plannedSpend}
               onChange={(e) => setPlannedSpend(Math.max(0, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
             />
           </div>
         </div>
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 max-h-48 overflow-y-auto">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-48 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Milestones Progress
           </span>
           <div className="space-y-2">
@@ -761,10 +761,10 @@ const SpendPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[];
               const achieved = plannedSpend >= t.key;
               return (
                 <div key={i} className="flex justify-between items-center text-xs">
-                  <span className={`${achieved ? 'text-zinc-800 dark:text-zinc-200 font-bold' : 'text-zinc-400 dark:text-zinc-500 line-through'} transition-colors`}>
+                  <span className={`${achieved ? 'text-text font-bold' : 'text-muted line-through'} transition-colors`}>
                     {t.prompt || `Spend ${t.key.toLocaleString()} Gold`}
                   </span>
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-zinc-100 text-zinc-400 dark:bg-zinc-950'}`}>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-bg text-subtle dark:bg-bg'}`}>
                     {achieved ? 'ACHIEVED' : 'LOCKED'}
                   </span>
                 </div>
@@ -785,25 +785,25 @@ const FundPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; 
   const bagsNormal = details.extra.bags_normal || [];
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Compass size={16} className="text-emerald-500" />
         <span>Growth Fund Yield & Investment Return Planner</span>
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Investment Option
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Current Level:</label>
+            <label className="text-subtle font-medium block">Current Level:</label>
             <input
               type="number"
               min={1}
               max={100}
               value={currentLv}
               onChange={(e) => setCurrentLv(Math.max(1, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
             />
           </div>
           <div className="flex items-center gap-2 pt-1">
@@ -814,13 +814,13 @@ const FundPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; 
               onChange={(e) => setPremiumActive(e.target.checked)}
               className="accent-emerald-500 cursor-pointer"
             />
-            <label htmlFor="premium_fund" className="text-zinc-600 dark:text-zinc-300 font-semibold cursor-pointer select-none">
+            <label htmlFor="premium_fund" className="text-muted dark:text-subtle font-semibold cursor-pointer select-none">
               Include Premium Fund Tier
             </label>
           </div>
         </div>
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 max-h-48 overflow-y-auto">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-48 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Yield Breakdown
           </span>
           <div className="space-y-2">
@@ -829,10 +829,10 @@ const FundPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; 
               const achieved = currentLv >= reqLv;
               return (
                 <div key={idx} className="flex justify-between items-center text-xs">
-                  <span className={`${achieved ? 'text-zinc-800 dark:text-zinc-200 font-bold' : 'text-zinc-400 dark:text-zinc-500 line-through'}`}>
+                  <span className={`${achieved ? 'text-text font-bold' : 'text-muted line-through'}`}>
                     Lv. {reqLv}: Normal reward achieved
                   </span>
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-zinc-100 text-zinc-400 dark:bg-zinc-950'}`}>
+                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${achieved ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300' : 'bg-bg text-subtle dark:bg-bg'}`}>
                     {achieved ? 'CLAIMABLE' : 'LOCKED'}
                   </span>
                 </div>
@@ -852,35 +852,35 @@ const SuperTreasurePlanner: React.FC<{ details: ActivityDetail; articlesList: Ar
   const totalCost = plannedRolls * costPerRoll;
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Shield size={16} className="text-violet-500" />
         <span>Super Treasure Board Game Roll Planner</span>
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Configure Rolls
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Planned Roll Count:</label>
+            <label className="text-subtle font-medium block">Planned Roll Count:</label>
             <input
               type="number"
               min={1}
               value={plannedRolls}
               onChange={(e) => setPlannedRolls(Math.max(1, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
             />
           </div>
         </div>
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 flex flex-col justify-center">
-          <div className="p-3 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-1">
-            <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Gold Cost</span>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border flex flex-col justify-center">
+          <div className="p-3 bg-bg/50 rounded border border-border flex flex-col gap-1">
+            <span className="text-[9px] text-subtle font-bold uppercase">Estimated Gold Cost</span>
             <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-base">
               {totalCost.toLocaleString()} Gold
             </span>
           </div>
-          <p className="text-[9.5px] text-zinc-500 leading-normal italic pt-2">
+          <p className="text-[9.5px] text-muted leading-normal italic pt-2">
             Tip: Super Treasure board game consists of Page A, B, and C with variable milestones. Averaging 3.5 steps per roll is expected on standard dice options.
           </p>
         </div>
@@ -897,35 +897,35 @@ const GamblingCalculator: React.FC<{ details: ActivityDetail; articlesList: Arti
   const totalCost = rollsCount * (startCost + smallCost);
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Target size={16} className="text-yellow-500" />
         <span>Dice Gambling Cost Simulator</span>
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Simulate Play Runs
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Planned Play Count:</label>
+            <label className="text-subtle font-medium block">Planned Play Count:</label>
             <input
               type="number"
               min={1}
               value={rollsCount}
               onChange={(e) => setRollsCount(Math.max(1, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
             />
           </div>
         </div>
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 flex flex-col justify-center">
-          <div className="p-3 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-1">
-            <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Gold Cost</span>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border flex flex-col justify-center">
+          <div className="p-3 bg-bg/50 rounded border border-border flex flex-col gap-1">
+            <span className="text-[9px] text-subtle font-bold uppercase">Estimated Gold Cost</span>
             <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-base">
               {totalCost.toLocaleString()} Gold
             </span>
           </div>
-          <p className="text-[9.5px] text-zinc-500 leading-normal italic pt-2">
+          <p className="text-[9.5px] text-muted leading-normal italic pt-2">
             Tip: Standard play starts at {startCost} Gold per roll. Guessing big/small cost adds {smallCost} Gold.
           </p>
         </div>
@@ -941,21 +941,21 @@ const ExchangeChipCalculator: React.FC<{ details: ActivityDetail; articlesList: 
   const selectedBox = buyBoxes[selectedBoxIdx] || null;
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Gift size={16} className="text-violet-500" />
         <span>Equipment Shop Box Pricing Analyzer</span>
       </h4>
       {buyBoxes.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-          <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-            <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+          <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+            <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
               Select Shop Box
             </span>
             <select
               value={selectedBoxIdx}
               onChange={(e) => setSelectedBoxIdx(parseInt(e.target.value))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none"
             >
               {buyBoxes.map((b: any, i: number) => (
                 <option key={i} value={i}>
@@ -965,8 +965,8 @@ const ExchangeChipCalculator: React.FC<{ details: ActivityDetail; articlesList: 
             </select>
           </div>
           {selectedBox && (
-            <div className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex flex-col justify-center">
-              <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-850 pb-1 mb-2">Box Pricing Detail</span>
+            <div className="p-4 rounded-xl border border-border bg-surface flex flex-col justify-center">
+              <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1 mb-2">Box Pricing Detail</span>
               <div className="font-mono text-xs">
                 <div>Price: <span className="font-bold text-violet-600 dark:text-violet-400">{selectedBox.need} Gold</span></div>
                 <div className="mt-1">Rewards Award ID: <span className="font-bold">#{selectedBox.awards?.[0]}</span></div>
@@ -988,31 +988,31 @@ const TeamBuyCalculator: React.FC<{ details: ActivityDetail; articlesList: Artic
   const currentDiscount = matchedRateObj ? matchedRateObj.off : 100; 
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Trophy size={16} className="text-amber-500" />
         <span>Group Buy Server Discount Estimator</span>
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Simulate Server Signups
           </span>
           <div className="space-y-1">
-            <label className="text-zinc-400 font-medium block">Server Signups Count:</label>
+            <label className="text-subtle font-medium block">Server Signups Count:</label>
             <input
               type="number"
               min={0}
               max={1000}
               value={serverSignups}
               onChange={(e) => setServerSignups(Math.max(0, parseInt(e.target.value) || 0))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
             />
           </div>
         </div>
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 flex flex-col justify-center">
-          <div className="p-3 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-1">
-            <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Discount Price</span>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border flex flex-col justify-center">
+          <div className="p-3 bg-bg/50 rounded border border-border flex flex-col gap-1">
+            <span className="text-[9px] text-subtle font-bold uppercase">Estimated Discount Price</span>
             <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-base">
               {currentDiscount}% of Original Price
             </span>
@@ -1030,21 +1030,21 @@ const LimitBuyCalculator: React.FC<{ details: ActivityDetail; articlesList: Arti
   const selectedItem = items[selectedItemIdx] || null;
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <ShieldAlert size={16} className="text-rose-500" />
         <span>Limit Buy Store Item Analyzer</span>
       </h4>
       {items.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-          <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-            <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 block mb-1 font-sans">
+          <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+            <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border block mb-1 font-sans">
               Select Store Item
             </span>
             <select
               value={selectedItemIdx}
               onChange={(e) => setSelectedItemIdx(parseInt(e.target.value))}
-              className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none font-bold"
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none font-bold"
             >
               {items.map((it: any, i: number) => (
                 <option key={i} value={i}>
@@ -1054,8 +1054,8 @@ const LimitBuyCalculator: React.FC<{ details: ActivityDetail; articlesList: Arti
             </select>
           </div>
           {selectedItem && (
-            <div className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 flex flex-col justify-center font-mono">
-              <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-850 pb-1 mb-2 font-sans">Item Details</span>
+            <div className="p-4 rounded-xl border border-border bg-surface flex flex-col justify-center font-mono">
+              <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1 mb-2 font-sans">Item Details</span>
               <div>Price: <span className="font-bold text-violet-600 dark:text-violet-400">{selectedItem.cost} Gold</span></div>
               <div className="mt-1">Player Purchase Limit: <span className="font-bold">{selectedItem.limit}x</span></div>
               <div className="mt-1">Server Purchase Limit: <span className="font-bold">{selectedItem.serverLimit}x</span></div>
@@ -1087,50 +1087,50 @@ const HuecoMundoCandyPlanner: React.FC<{ details: ActivityDetail; articlesList: 
   const totalCandies = freeCandies + rechargeCandies;
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <Sparkles size={16} className="text-yellow-500" />
         <span>Hueco Mundo Candy & Shop Yield Planner</span>
       </h4>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
         {/* Left Column: Candy Earnings Simulator */}
-        <div className="space-y-4 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1">
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
             Candy Accumulator Simulator
           </span>
           <div className="grid grid-cols-2 gap-3">
             <div className="space-y-1">
-              <label className="text-zinc-400 font-medium block">Days Logged In (max 10):</label>
+              <label className="text-subtle font-medium block">Days Logged In (max 10):</label>
               <input
                 type="number"
                 min={0}
                 max={10}
                 value={loginDays}
                 onChange={(e) => setLoginDays(Math.min(10, Math.max(0, parseInt(e.target.value) || 0)))}
-                className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+                className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
               />
             </div>
             <div className="space-y-1">
-              <label className="text-zinc-400 font-medium block">Accumulative Top-up (Gold):</label>
+              <label className="text-subtle font-medium block">Accumulative Top-up (Gold):</label>
               <input
                 type="number"
                 min={0}
                 value={accumRecharge}
                 onChange={(e) => setAccumRecharge(Math.max(0, parseInt(e.target.value) || 0))}
-                className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+                className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
               />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2 pt-1">
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Free Candies</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Free Candies</span>
               <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-xs">
                 +{freeCandies} Candies
               </span>
             </div>
-            <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-              <span className="text-[9px] text-zinc-400 font-bold uppercase">Total Candies Yield</span>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Total Candies Yield</span>
               <span className="font-mono font-extrabold text-amber-600 dark:text-amber-400 text-xs">
                 {totalCandies} Candies
               </span>
@@ -1139,19 +1139,19 @@ const HuecoMundoCandyPlanner: React.FC<{ details: ActivityDetail; articlesList: 
         </div>
 
         {/* Right Column: Gikongan Candy Shop list */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 max-h-56 overflow-y-auto">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1 mb-2">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1 mb-2">
             Gikongan Candy Shop (Can afford)
           </span>
           <div className="space-y-1">
             {scoreMall.map((box: any, i: number) => {
               const canAfford = totalCandies >= box.cost;
               return (
-                <div key={i} className="flex justify-between items-center text-xs pb-1 border-b border-zinc-50 dark:border-zinc-950">
-                  <span className={`${canAfford ? 'text-zinc-800 dark:text-zinc-200 font-bold' : 'text-zinc-400 dark:text-zinc-500'}`}>
+                <div key={i} className="flex justify-between items-center text-xs pb-1 border-b border-border">
+                  <span className={`${canAfford ? 'text-text font-bold' : 'text-muted'}`}>
                     Award ID #{box.awardid}
                   </span>
-                  <span className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-zinc-400'}`}>
+                  <span className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>
                     Cost: {box.cost} Candies
                   </span>
                 </div>
@@ -1169,31 +1169,31 @@ const SeireiteiFarewellPlanner: React.FC<{ details: ActivityDetail; articlesList
   const chapters = details.extra.items || [];
 
   return (
-    <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/20 rounded-xl space-y-4">
-      <h4 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2">
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
         <BookOpen size={16} className="text-violet-500" />
         <span>Seireitei Farewell Story Chapters Auditor</span>
       </h4>
       
       <div className="grid grid-cols-1 gap-6 text-xs">
         {/* Chapters requirements list */}
-        <div className="space-y-3 bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 max-h-64 overflow-y-auto">
-          <span className="font-bold uppercase tracking-wider text-[10px] text-zinc-400 block border-b border-zinc-100 dark:border-zinc-800 pb-1 mb-2">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-64 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1 mb-2">
             Chapter Required Partners List
           </span>
           <div className="space-y-3">
             {chapters.map((ch: any, i: number) => (
-              <div key={i} className="p-3 bg-zinc-50 dark:bg-zinc-950/50 border border-zinc-150 dark:border-zinc-850 rounded-xl space-y-2">
-                <div className="flex justify-between items-center text-xs font-bold border-b border-zinc-100 dark:border-zinc-800 pb-1">
+              <div key={i} className="p-3 bg-bg/50 border border-border rounded-xl space-y-2">
+                <div className="flex justify-between items-center text-xs font-bold border-b border-border pb-1">
                   <span className="text-violet-600 dark:text-violet-400 font-extrabold">{ch.Title}</span>
-                  <span className="text-[10px] font-mono font-bold text-zinc-400">Award: #{ch.awardid}</span>
+                  <span className="text-[10px] font-mono font-bold text-subtle">Award: #{ch.awardid}</span>
                 </div>
                 {ch.hero && ch.hero.length > 0 && (
                   <div>
-                    <span className="text-[9px] font-bold text-zinc-400 uppercase block mb-1">Required Partner IDs:</span>
+                    <span className="text-[9px] font-bold text-subtle uppercase block mb-1">Required Partner IDs:</span>
                     <div className="flex flex-wrap gap-1">
                       {ch.hero.map((heroId: number) => (
-                        <span key={heroId} className="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold bg-zinc-100 dark:bg-zinc-950 text-zinc-500">
+                        <span key={heroId} className="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold bg-bg text-muted">
                           Hero #{heroId}
                         </span>
                       ))}
@@ -1202,10 +1202,10 @@ const SeireiteiFarewellPlanner: React.FC<{ details: ActivityDetail; articlesList
                 )}
                 {ch.knife && ch.knife.length > 0 && (
                   <div className="pt-1">
-                    <span className="text-[9px] font-bold text-zinc-400 uppercase block mb-1">Required Zanpakuto IDs:</span>
+                    <span className="text-[9px] font-bold text-subtle uppercase block mb-1">Required Zanpakuto IDs:</span>
                     <div className="flex flex-wrap gap-1">
                       {ch.knife.map((knifeId: number) => (
-                        <span key={knifeId} className="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold bg-zinc-100 dark:bg-zinc-950 text-zinc-500">
+                        <span key={knifeId} className="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold bg-bg text-muted">
                           Zanpakuto #{knifeId}
                         </span>
                       ))}
@@ -1346,7 +1346,7 @@ export const PromotionDetailPage: React.FC = () => {
       <div>
         <Link
           to="/promotions"
-          className="flex items-center gap-1.5 text-sm font-semibold text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+          className="flex items-center gap-1.5 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
         >
           <ArrowLeft size={16} />
           <span>Back to Promotions List</span>
@@ -1354,10 +1354,10 @@ export const PromotionDetailPage: React.FC = () => {
       </div>
 
       {/* Main Panel */}
-      <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
+      <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-5 w-full">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-mono text-xs text-zinc-400 font-bold bg-zinc-100 dark:bg-zinc-950 px-2.5 py-0.5 rounded">
+            <span className="font-mono text-xs text-subtle font-bold bg-bg px-2.5 py-0.5 rounded">
               ID: {promo.id}
             </span>
             <span className={`px-2.5 py-0.5 rounded text-xs font-bold uppercase tracking-wider ${getActivityTypeBadgeClass(promo.act_type ?? 0)}`}>
@@ -1368,22 +1368,22 @@ export const PromotionDetailPage: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-zinc-50 flex items-center gap-2">
+          <h1 className="text-2xl md:text-3xl font-black text-text flex items-center gap-2">
             <Flame size={28} className="text-red-500 animate-pulse" />
             <span>{promo.name || `Promotion #${promo.id}`}</span>
           </h1>
 
           {/* Schedule Summary */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/10 rounded-xl space-y-4">
-            <h3 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+          <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+            <h3 className="font-bold text-sm text-text flex items-center gap-2 border-b border-border pb-2">
               <Calendar size={16} className="text-red-500" />
               <span>Parsed Campaign Duration</span>
             </h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs md:text-sm">
-              <div className="bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/60 flex flex-col gap-1">
-                <span className="text-zinc-400 font-bold uppercase text-[10px]">Readable Timing Format</span>
-                <span className="font-bold text-zinc-800 dark:text-zinc-100">
+              <div className="bg-surface p-4 rounded-xl border border-border flex flex-col gap-1">
+                <span className="text-subtle font-bold uppercase text-[10px]">Readable Timing Format</span>
+                <span className="font-bold text-text dark:text-zinc-100">
                   {formatSchedule(promo.time_type, promo.start_time, promo.end_time)}
                 </span>
               </div>
@@ -1393,53 +1393,53 @@ export const PromotionDetailPage: React.FC = () => {
         </div>
 
         {/* Technical specs */}
-        <div className="w-full md:w-64 border border-zinc-100 dark:border-zinc-800 rounded-xl p-4 bg-zinc-50/50 dark:bg-zinc-950/20 space-y-3 shrink-0">
-          <h4 className="text-xs font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-200 dark:border-zinc-800 pb-1.5">Event Properties</h4>
+        <div className="w-full md:w-64 border border-border rounded-xl p-4 bg-bg/50 space-y-3 shrink-0">
+          <h4 className="text-xs font-bold uppercase tracking-wider text-subtle border-b border-border pb-1.5">Event Properties</h4>
           <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-xs">
             <div>
-              <span className="text-zinc-400 block mb-0.5">Activity ID</span>
-              <span className="font-mono font-bold text-zinc-700 dark:text-zinc-350">#{promo.act_id}</span>
+              <span className="text-subtle block mb-0.5">Activity ID</span>
+              <span className="font-mono font-bold text-muted">#{promo.act_id}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5">Activity Type</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-350">Type {promo.act_type}</span>
+              <span className="text-subtle block mb-0.5">Activity Type</span>
+              <span className="font-semibold text-muted">Type {promo.act_type}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5">Time Category</span>
-              <span className="font-semibold text-zinc-700 dark:text-zinc-350">Type {promo.time_type}</span>
+              <span className="text-subtle block mb-0.5">Time Category</span>
+              <span className="font-semibold text-muted">Type {promo.time_type}</span>
             </div>
             <div>
-              <span className="text-zinc-400 block mb-0.5">Trigger Icon</span>
-              <span className="font-mono text-zinc-700 dark:text-zinc-350">Icon #{promo.act_icon ?? 0}</span>
+              <span className="text-subtle block mb-0.5">Trigger Icon</span>
+              <span className="font-mono text-muted">Icon #{promo.act_icon ?? 0}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Dynamic Date Simulator widget inside detail page */}
-      <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-        <h3 className="font-bold text-sm text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+      <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+        <h3 className="font-bold text-sm text-text flex items-center gap-2 border-b border-border pb-2">
           <Calendar size={16} className="text-violet-500" />
           <span>Real-World Date Simulator for your Server</span>
         </h3>
 
-        <p className="text-xs text-zinc-500">
+        <p className="text-xs text-muted">
           This promotion uses a relative launch timer. Type in your server's start date to reveal the exact calendar date windows when the deal will display.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
           <div className="md:col-span-1">
-            <label className="block text-[10px] font-bold uppercase text-zinc-450 mb-1">Your Server Launch Date</label>
+            <label className="block text-[10px] font-bold uppercase text-subtle mb-1">Your Server Launch Date</label>
             <input
               type="date"
               value={launchDate}
               onChange={(e) => setLaunchDate(e.target.value)}
-              className="w-full px-3 py-2 border border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50 dark:bg-zinc-950 text-xs font-semibold text-zinc-800 dark:text-zinc-200 focus:ring-1.5 focus:ring-violet-500 focus:outline-none cursor-pointer"
+              className="w-full px-3 py-2 border border-border rounded-xl bg-bg text-xs font-semibold text-text focus:ring-1.5 focus:ring-violet-500 focus:outline-none cursor-pointer"
             />
           </div>
 
-          <div className="md:col-span-2 p-3 bg-zinc-50 dark:bg-zinc-950 rounded-xl border border-zinc-100 dark:border-zinc-900 text-xs flex flex-col gap-1">
-            <span className="text-[10px] font-extrabold uppercase text-zinc-400">Simulated Real-World Schedule</span>
+          <div className="md:col-span-2 p-3 bg-bg rounded-xl border border-border border-border text-xs flex flex-col gap-1">
+            <span className="text-[10px] font-extrabold uppercase text-subtle">Simulated Real-World Schedule</span>
             <span className="font-mono text-sm font-bold text-violet-600 dark:text-violet-400">
               {simulatedWindow}
             </span>
@@ -1450,13 +1450,13 @@ export const PromotionDetailPage: React.FC = () => {
       {/* Datamined Activity Details & Rewards */}
       {details && (
         <div className="space-y-6 animate-fade-in">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-5">
-            <div className="flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-3">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-5">
+            <div className="flex items-center gap-2 border-b border-border pb-3">
               <Gift size={22} className="text-emerald-500" />
-              <h2 className="text-lg font-bold text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-lg font-bold text-text">
                 Datamined Campaign Rules & Rewards
               </h2>
-              <span className="ml-auto px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-zinc-100 dark:bg-zinc-950 text-zinc-450 border border-zinc-200/50 dark:border-zinc-800/50">
+              <span className="ml-auto px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-bg text-subtle border border-border/50">
                 Class: {details.class}
               </span>
             </div>
@@ -1469,7 +1469,7 @@ export const PromotionDetailPage: React.FC = () => {
                 </div>
               )}
               {details.description && (
-                <p className="text-xs md:text-sm text-zinc-600 dark:text-zinc-350 leading-relaxed bg-zinc-50 dark:bg-zinc-950/20 p-4 rounded-xl border border-zinc-100 dark:border-zinc-800/50">
+                <p className="text-xs md:text-sm text-muted dark:text-zinc-350 leading-relaxed bg-bg/20 p-4 rounded-xl border border-border/50">
                   {details.description}
                 </p>
               )}
@@ -1478,19 +1478,19 @@ export const PromotionDetailPage: React.FC = () => {
             {/* Targets / Thresholds & Milestone lists */}
             {details.targets && details.targets.length > 0 && (
               <div className="space-y-3 pt-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-subtle flex items-center gap-1">
                   <Target size={14} className="text-rose-500" />
                   <span>Target Milestones</span>
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {details.targets.map((target, idx) => (
-                    <div key={idx} className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/5 space-y-3">
-                      <div className="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-2">
+                    <div key={idx} className="p-4 rounded-xl border border-border/80 bg-bg/20 dark:bg-bg/5 space-y-3">
+                      <div className="flex justify-between items-center border-b border-border pb-2">
                         <span className="text-xs font-extrabold text-rose-600 dark:text-rose-400 flex items-center gap-1">
                           <Target size={12} />
                           {target.prompt || `Goal ${target.key}`}
                         </span>
-                        <span className="font-mono text-[10px] font-bold text-zinc-400 bg-zinc-100 dark:bg-zinc-950 px-2 py-0.5 rounded">
+                        <span className="font-mono text-[10px] font-bold text-subtle bg-bg px-2 py-0.5 rounded">
                           Value: {target.key.toLocaleString()}
                         </span>
                       </div>
@@ -1502,7 +1502,7 @@ export const PromotionDetailPage: React.FC = () => {
                         ] : [];
                         return (
                           <div key={awardId} className="space-y-1">
-                            <span className="text-[10px] font-bold text-zinc-400 block">Milestone Rewards (ID #{awardId}):</span>
+                            <span className="text-[10px] font-bold text-subtle block">Milestone Rewards (ID #{awardId}):</span>
                             <RewardList rewardsJson={mergedRewards} articles={articlesList} />
                           </div>
                         );
@@ -1516,19 +1516,19 @@ export const PromotionDetailPage: React.FC = () => {
             {/* Tiers / Placement Reward Lists */}
             {details.awards && details.awards.length > 0 && (
               <div className="space-y-3 pt-2">
-                <h3 className="text-xs font-bold uppercase tracking-wider text-zinc-400 flex items-center gap-1">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-subtle flex items-center gap-1">
                   <Trophy size={14} className="text-amber-500" />
                   <span>Tier Placement / Recharge Brackets</span>
                 </h3>
                 <div className="space-y-4">
                   {details.awards.map((awardTier, idx) => (
-                    <div key={idx} className="p-4 rounded-xl border border-zinc-200 dark:border-zinc-800/80 bg-zinc-50/20 dark:bg-zinc-950/5 space-y-3">
-                      <div className="flex justify-between items-center border-b border-zinc-100 dark:border-zinc-800 pb-2">
-                        <span className="text-xs font-extrabold text-zinc-800 dark:text-zinc-200 flex items-center gap-1">
+                    <div key={idx} className="p-4 rounded-xl border border-border/80 bg-bg/20 dark:bg-bg/5 space-y-3">
+                      <div className="flex justify-between items-center border-b border-border pb-2">
+                        <span className="text-xs font-extrabold text-text flex items-center gap-1">
                           <Trophy size={13} className="text-amber-500" />
                           {awardTier.prompt || `Tier ${awardTier.key}`}
                         </span>
-                        <span className="font-mono text-[10px] font-bold text-zinc-400 bg-zinc-100 dark:bg-zinc-950 px-2 py-0.5 rounded">
+                        <span className="font-mono text-[10px] font-bold text-subtle bg-bg px-2 py-0.5 rounded">
                           Requirement: {awardTier.key.toLocaleString()}
                         </span>
                       </div>
@@ -1540,7 +1540,7 @@ export const PromotionDetailPage: React.FC = () => {
                         ] : [];
                         return (
                           <div key={awardId} className="space-y-1">
-                            <span className="text-[10px] font-bold text-zinc-400 block">Tier Rewards (ID #{awardId}):</span>
+                            <span className="text-[10px] font-bold text-subtle block">Tier Rewards (ID #{awardId}):</span>
                             <RewardList rewardsJson={mergedRewards} articles={articlesList} />
                           </div>
                         );
@@ -1560,8 +1560,8 @@ export const PromotionDetailPage: React.FC = () => {
               ["THDGrowFundLv", "THDFundLv", "THDFundShop", "THDFundInvestment"].includes(details.class) ||
               details.class === "THDSuperTreasure"
             ) && (
-              <div className="pt-4 border-t border-zinc-100 dark:border-zinc-800 space-y-4">
-                <span className="text-[10px] font-bold text-zinc-400 block uppercase tracking-wider">
+              <div className="pt-4 border-t border-border space-y-4">
+                <span className="text-[10px] font-bold text-subtle block uppercase tracking-wider">
                   Interactive System Tools & Calculators
                 </span>
                 {details.class === "THDPyramid" && (
@@ -1620,31 +1620,31 @@ export const PromotionDetailPage: React.FC = () => {
       )}
 
       {/* Constraints and requirements */}
-      <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-xl shadow-sm space-y-4">
-        <h3 className="font-bold text-zinc-800 dark:text-zinc-200 flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+      <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+        <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
           <ShieldAlert size={18} className="text-amber-500" />
           <span>Participation Constraints & Visual Layouts</span>
         </h3>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-xs font-mono">
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Required Level</span>
-            <span className="font-bold text-zinc-700 dark:text-zinc-300">Lv. {promo.player_lv || 1}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Required Level</span>
+            <span className="font-bold text-muted">Lv. {promo.player_lv || 1}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Required VIP Rank</span>
-            <span className="font-bold text-zinc-700 dark:text-zinc-300">VIP Rank {promo.vip_lv || 0}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Required VIP Rank</span>
+            <span className="font-bold text-muted">VIP Rank {promo.vip_lv || 0}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Dashboard Index</span>
-            <span className="font-bold text-zinc-700 dark:text-zinc-300">Position #{promo.position ?? 0}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Dashboard Index</span>
+            <span className="font-bold text-muted">Position #{promo.position ?? 0}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Active Screen Row</span>
-            <span className="font-bold text-zinc-700 dark:text-zinc-300">Row #{promo.act_position ?? 0}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Active Screen Row</span>
+            <span className="font-bold text-muted">Row #{promo.act_position ?? 0}</span>
           </div>
           <div>
-            <span className="text-zinc-400 block mb-0.5 font-sans font-semibold">Display Option</span>
-            <span className="font-bold text-zinc-700 dark:text-zinc-300">Type #{promo.start_time_show ?? 0}</span>
+            <span className="text-subtle block mb-0.5 font-sans font-semibold">Display Option</span>
+            <span className="font-bold text-muted">Type #{promo.start_time_show ?? 0}</span>
           </div>
         </div>
       </div>

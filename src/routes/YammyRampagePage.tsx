@@ -108,24 +108,24 @@ export const YammyRampagePage: React.FC = () => {
     <div className="space-y-6 max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
       {/* Header */}
       <div>
-        <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-          <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+        <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+          <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
           <ChevronRight size={12} />
-          <span className="text-zinc-500 dark:text-zinc-400">PVE Systems</span>
+          <span className="text-muted">PVE Systems</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
           <Swords className="text-red-500 animate-pulse" size={28} />
           Yammy's Rampage Challenger & Reward Auditor
         </h1>
-        <p className="text-xs text-zinc-500 mt-1">
+        <p className="text-xs text-muted mt-1">
           Yammy's Rampage is available after reaching level 90. Fight the Espada Boss to claim daily Silver, Evil Shards, and weekly rankings!
         </p>
       </div>
 
       {/* Rules dynamically retrieved from translation file */}
-      <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-950/10 rounded-2xl space-y-2">
-        <h3 className="font-bold text-xs uppercase tracking-wider text-zinc-400">System Dynamic Rules (ID #70970091)</h3>
-        <p className="text-xs md:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed font-semibold">
+      <div className="p-5 border border-border bg-bg/50 rounded-2xl space-y-2">
+        <h3 className="font-bold text-xs uppercase tracking-wider text-subtle">System Dynamic Rules (ID #70970091)</h3>
+        <p className="text-xs md:text-sm text-muted dark:text-subtle leading-relaxed font-semibold">
           {eventRulesText}
         </p>
       </div>
@@ -134,40 +134,40 @@ export const YammyRampagePage: React.FC = () => {
         
         {/* Daily challenges simulator */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <div className="flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <div className="flex items-center gap-2 border-b border-border pb-2">
               <Sparkles size={16} className="text-yellow-500" />
-              <h3 className="font-bold text-sm text-zinc-800 dark:text-zinc-200">
+              <h3 className="font-bold text-sm text-text">
                 Daily Attempts Simulator
               </h3>
             </div>
 
             <div className="space-y-3 text-xs">
               <div className="space-y-1">
-                <label className="text-zinc-400 font-medium block">Planned Challenge Attempts (Daily):</label>
+                <label className="text-subtle font-medium block">Planned Challenge Attempts (Daily):</label>
                 <input
                   type="number"
                   min={1}
                   max={13}
                   value={dailyAttempts}
                   onChange={(e) => setDailyAttempts(Math.min(13, Math.max(1, parseInt(e.target.value) || 0)))}
-                  className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
+                  className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
                 />
               </div>
 
-              <div className="p-3 bg-zinc-50 dark:bg-zinc-950/40 rounded-xl border border-zinc-100 dark:border-zinc-800 text-[11px] leading-relaxed italic text-zinc-500">
+              <div className="p-3 bg-bg/40 rounded-xl border border-border text-[11px] leading-relaxed italic text-muted">
                 Tip: You have 3 free challenge attempts daily. Up to 10 additional attempts can be purchased with gold.
               </div>
 
               <div className="grid grid-cols-2 gap-2 pt-2">
-                <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-                  <span className="text-[9px] text-zinc-400 font-bold uppercase">Estimated Daily Silver</span>
+                <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+                  <span className="text-[9px] text-subtle font-bold uppercase">Estimated Daily Silver</span>
                   <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-xs">
                     {calculations.silverSum.toLocaleString()}
                   </span>
                 </div>
-                <div className="p-2 bg-zinc-50 dark:bg-zinc-950/50 rounded border border-zinc-100 dark:border-zinc-800 flex flex-col gap-0.5">
-                  <span className="text-[9px] text-zinc-400 font-bold uppercase">Expected Evil Shards</span>
+                <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+                  <span className="text-[9px] text-subtle font-bold uppercase">Expected Evil Shards</span>
                   <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-xs">
                     {calculations.shardsRange}
                   </span>
@@ -177,27 +177,27 @@ export const YammyRampagePage: React.FC = () => {
           </div>
 
           {/* Ranking damage estimator */}
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <div className="flex items-center gap-2 border-b border-zinc-100 dark:border-zinc-800 pb-2">
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <div className="flex items-center gap-2 border-b border-border pb-2">
               <Target size={16} className="text-rose-500" />
-              <h3 className="font-bold text-sm text-zinc-800 dark:text-zinc-200">
+              <h3 className="font-bold text-sm text-text">
                 Damage & Rank Estimator
               </h3>
             </div>
 
             <div className="space-y-3 text-xs">
               <div className="space-y-1">
-                <label className="text-zinc-400 font-medium block">Your Squad Combat Power:</label>
+                <label className="text-subtle font-medium block">Your Squad Combat Power:</label>
                 <input
                   type="number"
                   min={0}
                   value={combatPower}
                   onChange={(e) => setCombatPower(Math.max(0, parseInt(e.target.value) || 0))}
-                  className="w-full px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
+                  className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
                 />
               </div>
 
-              <div className="p-3 bg-zinc-50 dark:bg-zinc-950/40 rounded-xl border border-zinc-100 dark:border-zinc-800 text-[11px] leading-relaxed">
+              <div className="p-3 bg-bg/40 rounded-xl border border-border text-[11px] leading-relaxed">
                 <div>Yammy has <span className="font-bold font-mono">20B HP</span> and battle ends after 5 rounds.</div>
                 <div className="mt-1">Projected Weekly Bracket: <span className="font-bold text-rose-500">{projectedRank}</span></div>
               </div>
@@ -207,13 +207,13 @@ export const YammyRampagePage: React.FC = () => {
 
         {/* Weekly Ranking rewards table */}
         <div className="lg:col-span-2 space-y-6">
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Weekly damage Ranking Rewards</span>
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Weekly damage Ranking Rewards</span>
             
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse text-xs">
                 <thead>
-                  <tr className="border-b border-zinc-100 dark:border-zinc-800 text-zinc-400 font-bold uppercase text-[10px]">
+                  <tr className="border-b border-border text-subtle font-bold uppercase text-[10px]">
                     <th className="py-2.5">Rank Bracket</th>
                     <th className="py-2.5">Evil Shards</th>
                     <th className="py-2.5">Coupons</th>
@@ -222,7 +222,7 @@ export const YammyRampagePage: React.FC = () => {
                 </thead>
                 <tbody className="divide-y divide-zinc-50 dark:divide-zinc-950">
                   {weeklyRankRewards.map((row, idx) => (
-                    <tr key={idx} className="font-mono text-zinc-600 dark:text-zinc-350">
+                    <tr key={idx} className="font-mono text-muted dark:text-zinc-350">
                       <td className="py-2.5 font-sans font-bold">NO. {row.rank}</td>
                       <td className="py-2.5 font-bold text-emerald-600 dark:text-emerald-400">{row.shards}</td>
                       <td className="py-2.5 font-bold text-violet-600 dark:text-violet-400">{row.coupons}</td>

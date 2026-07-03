@@ -119,16 +119,16 @@ export const ForgePlannerPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-semibold mb-1">
-            <Link to="/" className="hover:text-zinc-300 transition-colors">Dashboard</Link>
+          <div className="flex items-center gap-2 text-muted text-xs font-semibold mb-1">
+            <Link to="/" className="hover:text-subtle transition-colors">Dashboard</Link>
             <ChevronRight size={12} />
-            <span className="text-zinc-500 dark:text-zinc-400">Tools</span>
+            <span className="text-muted">Tools</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white flex items-center gap-2.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-text flex items-center gap-2.5">
             <Wand2 className="text-amber-500" size={28} />
             Advanced Equipment Forging & Star Planner
           </h1>
-          <p className="text-xs text-zinc-500 mt-1">
+          <p className="text-xs text-muted mt-1">
             Simulate Cyclone to Aquaria/Firelord upgrades, calculate forging crystals, and check gear stat boosts.
           </p>
         </div>
@@ -138,8 +138,8 @@ export const ForgePlannerPage: React.FC = () => {
         
         {/* Left Column: Equipment selection list */}
         <div className="lg:col-span-1 space-y-6">
-          <div className="p-5 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-4">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Select Base Equipment</span>
+          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Select Base Equipment</span>
             
             <div className="space-y-1.5 max-h-[380px] overflow-y-auto pr-1">
               {baseItemsList.map((item) => {
@@ -151,11 +151,11 @@ export const ForgePlannerPage: React.FC = () => {
                     className={`w-full flex items-center justify-between p-3 rounded-xl border text-xs font-bold transition-all ${
                       isSelected
                         ? 'border-amber-500 bg-amber-500/10 text-amber-700 dark:text-amber-400 shadow-sm'
-                        : 'border-zinc-50 dark:border-zinc-955 bg-zinc-50/50 dark:bg-zinc-950/20 hover:border-zinc-200 text-zinc-655 dark:text-zinc-305'
+                        : 'border-border bg-bg/50 hover:border-border text-muted'
                     }`}
                   >
                     <span className="truncate pr-2">{item.name}</span>
-                    <span className="font-mono text-[9px] text-zinc-400 whitespace-nowrap">Lv. {item.level}</span>
+                    <span className="font-mono text-[9px] text-subtle whitespace-nowrap">Lv. {item.level}</span>
                   </button>
                 );
               })}
@@ -166,8 +166,8 @@ export const ForgePlannerPage: React.FC = () => {
         {/* Right Column: Upgrading Path details */}
         <div className="lg:col-span-2 space-y-6">
           
-          <div className="p-6 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-6">
-            <span className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider">Upgrade Progression Path</span>
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-6">
+            <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Upgrade Progression Path</span>
             
             {upgradeChain ? (
               <div className="space-y-6">
@@ -176,20 +176,20 @@ export const ForgePlannerPage: React.FC = () => {
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-xs pt-2">
                   
                   {/* Step 1: Base Cyclone Gear */}
-                  <div className="p-4 border border-zinc-150 dark:border-zinc-800 bg-zinc-50/25 dark:bg-zinc-950/10 rounded-xl w-full md:w-1/3 text-center space-y-2">
-                    <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 uppercase font-mono">
+                  <div className="p-4 border border-border bg-bg/25 dark:bg-bg/10 rounded-xl w-full md:w-1/3 text-center space-y-2">
+                    <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-surface-raised text-muted uppercase font-mono">
                       Tier 1: Base
                     </span>
-                    <span className="font-bold text-zinc-800 dark:text-zinc-250 block line-clamp-1">
+                    <span className="font-bold text-text dark:text-zinc-250 block line-clamp-1">
                       {upgradeChain.baseName}
                     </span>
-                    <span className="text-[10px] text-zinc-450 block font-mono">Lv. {upgradeChain.baseLevel}</span>
+                    <span className="text-[10px] text-subtle block font-mono">Lv. {upgradeChain.baseLevel}</span>
                   </div>
 
                   {/* Transition 1 Arrow */}
                   <div className="flex flex-col items-center">
                     <ArrowRight className="text-amber-500 rotate-90 md:rotate-0" size={16} />
-                    <span className="text-[8px] text-zinc-450 font-bold font-mono mt-0.5">
+                    <span className="text-[8px] text-subtle font-bold font-mono mt-0.5">
                       Cost: {upgradeChain.forgeCost}x Crystals
                     </span>
                   </div>
@@ -202,14 +202,14 @@ export const ForgePlannerPage: React.FC = () => {
                     <span className="font-bold text-amber-700 dark:text-amber-400 block line-clamp-1">
                       {upgradeChain.forgedName}
                     </span>
-                    <span className="text-[10px] text-zinc-450 block font-mono">Lv. {upgradeChain.forgedLevel}</span>
+                    <span className="text-[10px] text-subtle block font-mono">Lv. {upgradeChain.forgedLevel}</span>
                   </div>
 
                   {/* Transition 2 Arrow */}
                   {upgradeChain.advancedId > 0 && (
                     <div className="flex flex-col items-center">
                       <ArrowRight className="text-fuchsia-500 rotate-90 md:rotate-0" size={16} />
-                      <span className="text-[8px] text-zinc-450 font-bold font-mono mt-0.5">
+                      <span className="text-[8px] text-subtle font-bold font-mono mt-0.5">
                         Cost: {upgradeChain.advanceCost}x Stones
                       </span>
                     </div>
@@ -224,26 +224,26 @@ export const ForgePlannerPage: React.FC = () => {
                       <span className="font-bold text-fuchsia-700 dark:text-fuchsia-450 block line-clamp-1">
                         {upgradeChain.advancedName}
                       </span>
-                      <span className="text-[10px] text-zinc-450 block font-mono">Lv. {upgradeChain.advancedLevel}</span>
+                      <span className="text-[10px] text-subtle block font-mono">Lv. {upgradeChain.advancedLevel}</span>
                     </div>
                   )}
 
                 </div>
 
                 {/* Stat gains detail cards */}
-                <div className="space-y-4 pt-4 border-t border-zinc-100 dark:border-zinc-800/60">
-                  <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider block">Equipment Attribute Details</span>
+                <div className="space-y-4 pt-4 border-t border-border/60">
+                  <span className="text-[10px] font-bold text-subtle uppercase tracking-wider block">Equipment Attribute Details</span>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
                     
                     {/* Forged step attributes */}
-                    <div className="p-4 bg-zinc-50/50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-850 rounded-xl space-y-2">
-                      <span className="font-bold text-zinc-750 dark:text-zinc-200 block border-b border-zinc-100 dark:border-zinc-800 pb-1.5">
+                    <div className="p-4 bg-bg/50 border border-border rounded-xl space-y-2">
+                      <span className="font-bold text-text block border-b border-border pb-1.5">
                         Refining Stage (Tier 1 ➔ Tier 2)
                       </span>
                       <div className="space-y-1">
-                        <span className="text-[9px] text-zinc-450 uppercase block font-mono">Refined Stats addition</span>
-                        <p className="text-[10.5px] text-zinc-650 dark:text-zinc-305 italic">
+                        <span className="text-[9px] text-subtle uppercase block font-mono">Refined Stats addition</span>
+                        <p className="text-[10.5px] text-muted italic">
                           {cleanHtml(upgradeChain.forgedDesc)}
                         </p>
                       </div>
@@ -251,13 +251,13 @@ export const ForgePlannerPage: React.FC = () => {
 
                     {/* Advanced step attributes */}
                     {upgradeChain.advancedId > 0 && (
-                      <div className="p-4 bg-zinc-50/50 dark:bg-zinc-950/20 border border-zinc-100 dark:border-zinc-850 rounded-xl space-y-2">
-                        <span className="font-bold text-zinc-750 dark:text-zinc-200 block border-b border-zinc-100 dark:border-zinc-800 pb-1.5">
+                      <div className="p-4 bg-bg/50 border border-border rounded-xl space-y-2">
+                        <span className="font-bold text-text block border-b border-border pb-1.5">
                           Ultimate Stage (Tier 2 ➔ Tier 3)
                         </span>
                         <div className="space-y-1">
-                          <span className="text-[9px] text-zinc-450 uppercase block font-mono">Ultimate Stats addition</span>
-                          <p className="text-[10.5px] text-zinc-650 dark:text-zinc-305 italic">
+                          <span className="text-[9px] text-subtle uppercase block font-mono">Ultimate Stats addition</span>
+                          <p className="text-[10.5px] text-muted italic">
                             {cleanHtml(upgradeChain.advancedDesc)}
                           </p>
                         </div>
@@ -269,7 +269,7 @@ export const ForgePlannerPage: React.FC = () => {
 
               </div>
             ) : (
-              <div className="py-8 text-center text-xs text-zinc-400 italic">
+              <div className="py-8 text-center text-xs text-subtle italic">
                 Select an equipment item to display its upgrade chain.
               </div>
             )}
