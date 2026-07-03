@@ -30,6 +30,7 @@ export const CombatSimulatorPage: React.FC = () => {
   // Simulation Status
   const [isRunning, setIsRunning] = useState(false);
   const [combatLog, setCombatLog] = useState<string[]>([]);
+  const [_combatWinner, setCombatWinner] = useState<'player' | 'enemy' | null>(null);
   const [playerTeamState, setPlayerTeamState] = useState<Combatant[]>([]);
   const [enemyTeamState, setEnemyTeamState] = useState<Combatant[]>([]);
 
