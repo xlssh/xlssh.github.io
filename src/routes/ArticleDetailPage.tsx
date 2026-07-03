@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { loadArticles, loadMallItems, loadDailyQuests, loadStoryQuests, loadStages } from '../data/loaders';
-import { Article, MallItem, DailyQuest, StoryQuest, Stage } from '../types/db';
-import { getMallItemsSellingArticle, getQuestsAwardingArticle, getStagesAwardingArticle, getMajorTypeLabel, getMinorTypeLabel } from '../data/relationships';
+import { loadArticles, loadMallItems, loadDailyQuests, loadStoryQuests, loadStages, loadAwards, loadActivityDetails, loadPromotionalActivities } from '../data/loaders';
+import type { MallItem, DailyQuest, StoryQuest, Stage, Award, ActivityDetailsJson, PromotionalActivity } from '../types/db';
+import { getMallItemsSellingArticle, getQuestsAwardingArticle, getStagesAwardingArticle, getActivitiesAwardingArticle, getMajorTypeLabel, getMinorTypeLabel } from '../data/relationships';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { JsonViewer } from '../components/JsonViewer';
 import { getQualityColorClass, getQualityLabel } from './HeroesPage';
-import { ArrowLeft, ShoppingCart, Award, AlertCircle, Swords } from 'lucide-react';
+import { ArrowLeft, ShoppingCart, AlertCircle, Swords, Activity, AwardIcon } from 'lucide-react';
 
 export const ArticleDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,6 +18,9 @@ export const ArticleDetailPage: React.FC = () => {
   const [sellers, setSellers] = useState<MallItem[]>([]);
   const [awardingQuests, setQuests] = useState<{ story: StoryQuest[]; daily: DailyQuest[] }>({ story: [], daily: [] });
   const [awardingStages, setStages] = useState<Stage[]>([]);
+  const [awardsList, setAwardsList] = useState<Award[]>([]);
+  const [activityDetails, setActivityDetails] = useState<ActivityDetailsJson>({});
+  const [promos, setPromos] = useState<PromotionalActivity[]>([]);
 
   const fetchArticleDetails = useCallback(async () => {
     try {
@@ -25,12 +28,15 @@ export const ArticleDetailPage: React.FC = () => {
       setError(null);
       const articleId = parseInt(id || '');
 
-      const [articlesRes, mallRes, dailyRes, storyRes, stagesRes] = await Promise.all([
+      const [articlesRes, mallRes, dailyRes, storyRes, stagesRes, awardsRes, actDetailsRes, promosRes] = await Promise.all([
         loadArticles(),
         loadMallItems(),
         loadDailyQuests(),
         loadStoryQuests(),
-        loadStages()
+        loadStages(),
+        loadAwards(),
+        loadActivityDetails(),
+        loadPromotionalActivities()
       ]);
 
       const match = articlesRes.rows.find(a => a.id === articleId);
@@ -39,6 +45,9 @@ export const ArticleDetailPage: React.FC = () => {
         setSellers(getMallItemsSellingArticle(mallRes.rows, articleId));
         setQuests(getQuestsAwardingArticle(storyRes.rows, dailyRes.rows, articleId));
         setStages(getStagesAwardingArticle(stagesRes.rows, articleId));
+        setAwardsList(awardsRes.rows);
+        setActivityDetails(actDetailsRes);
+        setPromos(promosRes.rows);
       } else {
         setError(`Article/Item with ID ${id} not found in the catalog.`);
       }
@@ -212,7 +221,7 @@ export const ArticleDetailPage: React.FC = () => {
         {/* Quest/Drop Sourcing */}
         <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
           <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
-            <Award size={18} className="text-indigo-500" />
+            <AwardIcon size={18} className="text-indigo-500" />
             <span>Awarded by Quests</span>
           </h3>
 
@@ -293,6 +302,47 @@ export const ArticleDetailPage: React.FC = () => {
           )}
         </div>
       </div>
+
+      {/* Event & Activity Obtain Sources */}
+      {(() => {
+        const sources = getActivitiesAwardingArticle(awardsList, activityDetails, article.id, promos);
+        if (sources.length === 0) return null;
+        return (
+          <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+            <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
+              <Activity size={18} className="text-emerald-500" />
+              <span>Event & Activity Obtain Sources</span>
+            </h3>
+            <div className="space-y-2 max-h-80 overflow-y-auto pr-1">
+              {sources.map((src, i) => {
+                const content = (
+                  <div className="p-3 border border-border rounded-lg flex items-center justify-between text-sm">
+                    <div>
+                      <span className="font-bold text-text">
+                        {src.activityDisplayName || src.activityName}
+                      </span>
+                      <span className="block text-[11px] text-subtle">
+                        {src.mechanism} · {src.className}
+                        {src.limitLabel && ` · ${src.limitLabel}`}
+                      </span>
+                    </div>
+                    <span className="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold font-mono">
+                      {src.costLabel}
+                    </span>
+                  </div>
+                );
+                return src.promoId ? (
+                  <Link key={i} to={`/promotions/${src.promoId}`} className="block hover:border-emerald-500 hover:shadow-sm transition-all rounded-lg">
+                    {content}
+                  </Link>
+                ) : (
+                  <div key={i}>{content}</div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Raw entry */}
       <JsonViewer data={article} title={`Raw JSON Database Entry: Item/Article #${article.id}`} />

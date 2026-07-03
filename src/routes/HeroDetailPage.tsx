@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { loadHeroes, loadRecommendHeroes, loadRelatedPartners, loadRelatedPartnerTypes, loadRelatedConditions, loadRelatedPartnerPoints, loadPartnerChanges, loadHeroChangeAttrs, loadArticles, loadBaseStones, loadSkills, loadHeroTalents } from '../data/loaders';
-import { Hero, RecommendHero, RelatedPartner, RelatedPartnerType, RelatedCondition, RelatedPartnerPoint, PartnerChange, HeroChangeAttr, Article, BaseStone, Skill, HeroTalent } from '../types/db';
+import { loadHeroes, loadRecommendHeroes, loadRelatedPartners, loadRelatedPartnerTypes, loadRelatedConditions, loadRelatedPartnerPoints, loadPartnerChanges, loadHeroChangeAttrs, loadArticles, loadBaseStones, loadSkills, loadHeroTalents, loadAwards, loadActivityDetails, loadPromotionalActivities } from '../data/loaders';
+import { Hero, RecommendHero, RelatedPartner, RelatedPartnerType, RelatedCondition, RelatedPartnerPoint, PartnerChange, HeroChangeAttr, Article, BaseStone, Skill, HeroTalent, Award as AwardType, ActivityDetailsJson, PromotionalActivity } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { JsonViewer } from '../components/JsonViewer';
 import { getQualityLabel, getQualityColorClass } from './HeroesPage';
-import { getFactionLabel, getProfessionLabel, getAttributeName } from '../data/relationships';
-import { ArrowLeft, Swords, Sparkles, TrendingUp, ShieldAlert, Share2, Check, Scale, Cpu, Lock, HeartHandshake, HelpCircle, Activity, Star } from 'lucide-react';
+import { getFactionLabel, getProfessionLabel, getAttributeName, getActivationArticleForHero, getActivitiesAwardingArticle } from '../data/relationships';
+import { ArrowLeft, Swords, Sparkles, TrendingUp, ShieldAlert, Share2, Check, Scale, Cpu, Lock, HeartHandshake, HelpCircle, Activity, Star, AlertCircle } from 'lucide-react';
 
 export const HeroDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -31,6 +31,9 @@ export const HeroDetailPage: React.FC = () => {
   const [simulatedStars, setSimulatedStars] = useState<number>(1);
   const [baseStones, setBaseStones] = useState<BaseStone[]>([]);
   const [simulatedJadeLevels, setSimulatedJadeLevels] = useState<Record<number, number>>({ 0: 10, 1: 10, 2: 10 }); // default to level 10 suggest
+  const [awardsList, setAwardsList] = useState<AwardType[]>([]);
+  const [activityDetails, setActivityDetails] = useState<ActivityDetailsJson>({});
+  const [promos, setPromos] = useState<PromotionalActivity[]>([]);
 
 
   const [loading, setLoading] = useState(true);
@@ -86,7 +89,10 @@ export const HeroDetailPage: React.FC = () => {
         artRes,
         stonesRes,
         skillsRes,
-        talentsRes
+        talentsRes,
+        awardsRes,
+        actDetailsRes,
+        promosRes
       ] = await Promise.all([
         loadHeroes(),
         loadRecommendHeroes(),
@@ -99,7 +105,10 @@ export const HeroDetailPage: React.FC = () => {
         loadArticles(),
         loadBaseStones(),
         loadSkills(),
-        loadHeroTalents()
+        loadHeroTalents(),
+        loadAwards(),
+        loadActivityDetails(),
+        loadPromotionalActivities()
       ]);
       const match = heroesRes.rows.find(h => h.id === parseInt(id || ''));
       setAllHeroes(heroesRes.rows);
@@ -114,6 +123,9 @@ export const HeroDetailPage: React.FC = () => {
       setBaseStones(stonesRes.rows);
       setSkills(skillsRes.rows);
       setHeroTalents(talentsRes.rows);
+      setAwardsList(awardsRes.rows);
+      setActivityDetails(actDetailsRes);
+      setPromos(promosRes.rows);
       if (match) {
         setHero(match);
       } else {
@@ -284,6 +296,16 @@ export const HeroDetailPage: React.FC = () => {
     if (!hero || !heroTalents.length) return null;
     return heroTalents.find(t => t.id === hero.talent);
   }, [hero, heroTalents]);
+
+  const activationArticle = useMemo(() => {
+    if (!hero) return null;
+    return getActivationArticleForHero(articles, hero.id) || null;
+  }, [hero, articles]);
+
+  const heroObtainSources = useMemo(() => {
+    if (!activationArticle) return [];
+    return getActivitiesAwardingArticle(awardsList, activityDetails, activationArticle.id, promos);
+  }, [activationArticle, awardsList, activityDetails, promos]);
 
   const getItemName = (code: number) => {
     const art = articles.find(a => a.id === code);
@@ -603,6 +625,58 @@ export const HeroDetailPage: React.FC = () => {
             </div>
           )}
         </div>
+      </div>
+
+      {/* How to Obtain */}
+      <div className="p-5 border border-border bg-surface rounded-xl shadow-sm space-y-4">
+        <h3 className="font-bold text-text flex items-center gap-2 border-b border-border pb-2">
+          <Activity size={18} className="text-emerald-500" />
+          <span>How to Obtain</span>
+        </h3>
+
+        {activationArticle && (
+          <div className="p-3 bg-bg/50 rounded-lg border border-border text-xs">
+            <span className="text-subtle block mb-1 font-semibold">Activation Item:</span>
+            <Link to={`/articles/${activationArticle.id}`} className="font-bold text-violet-600 dark:text-violet-400 hover:underline">
+              {activationArticle.name} (ID: {activationArticle.id})
+            </Link>
+          </div>
+        )}
+
+        {heroObtainSources.length > 0 ? (
+          <div className="space-y-2 max-h-60 overflow-y-auto pr-1">
+            {heroObtainSources.map((src, i) => {
+              const content = (
+                <div className="p-3 border border-border rounded-lg flex items-center justify-between text-sm">
+                  <div>
+                    <span className="font-bold text-text">
+                      {src.activityDisplayName || src.activityName}
+                    </span>
+                    <span className="block text-[11px] text-subtle">
+                      {src.mechanism} · {src.className}
+                      {src.limitLabel && ` · ${src.limitLabel}`}
+                    </span>
+                  </div>
+                  <span className="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold font-mono">
+                    {src.costLabel}
+                  </span>
+                </div>
+              );
+              return src.promoId ? (
+                <Link key={i} to={`/promotions/${src.promoId}`} className="block hover:border-emerald-500 hover:shadow-sm transition-all rounded-lg">
+                  {content}
+                </Link>
+              ) : (
+                <div key={i}>{content}</div>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="text-sm text-subtle italic py-2 flex items-center gap-1.5">
+            <AlertCircle size={14} />
+            <span>No event/activity obtain sources found for this hero.</span>
+          </div>
+        )}
       </div>
 
       {/* Skills and Talent */}

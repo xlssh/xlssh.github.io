@@ -332,6 +332,20 @@
     "targets": null,
     "extra": {}
   },
+  "2069561487": {
+    "act_id": 2069561487,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDRecruitPartner",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 741620258,
+    "image_id": 1970234146,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
   "50001": {
     "act_id": 50001,
     "class": "THDActivityBase",
@@ -346,6 +360,20 @@
     "targets": null,
     "extra": {}
   },
+  "2069561795": {
+    "act_id": 2069561795,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDKillHero",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 808529971,
+    "image_id": 573321776,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
   "60001": {
     "act_id": 60001,
     "class": "THDActivityBase",
@@ -356,6 +384,20 @@
     "tip": "5",
     "price": 0,
     "image_id": 60001,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "2069561496": {
+    "act_id": 2069561496,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDCampBattle",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 808464434,
+    "image_id": 573321776,
     "awards": null,
     "targets": null,
     "extra": {}
@@ -621,6 +663,69 @@
         "key": 50000,
         "value": [
           21401365
+        ],
+        "prompt": "50000 Gold"
+      }
+    ],
+    "targets": null,
+    "extra": {}
+  },
+  "70005": {
+    "act_id": 70005,
+    "class": "THDSinglePay",
+    "res_name": "RESOURCEID_HDSinglePay",
+    "name": "Single Top-up ",
+    "tname": "Single Top-up Super Value Reward",
+    "description": "During the event period, Single Top-up reaches corresponding amount and immediately receive super value rewards!",
+    "tip": "1",
+    "price": 0,
+    "image_id": 70001,
+    "awards": [
+      {
+        "type": 3,
+        "key": 500,
+        "value": [
+          21401366
+        ],
+        "prompt": "500 Gold"
+      },
+      {
+        "type": 3,
+        "key": 1000,
+        "value": [
+          21401367
+        ],
+        "prompt": "1000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 5000,
+        "value": [
+          21401368
+        ],
+        "prompt": "5000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 10000,
+        "value": [
+          21401369
+        ],
+        "prompt": "10000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 20000,
+        "value": [
+          21401370
+        ],
+        "prompt": "20000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 50000,
+        "value": [
+          21401371
         ],
         "prompt": "50000 Gold"
       }
@@ -975,6 +1080,77 @@
     "targets": null,
     "extra": {}
   },
+  "80005": {
+    "act_id": 80005,
+    "class": "THDTotalPay",
+    "res_name": "RESOURCEID_HDTotalPay",
+    "name": "Accumulate Top-up ",
+    "tname": "Accumulate Top-up, Receive Great Treasure",
+    "description": "During the event period, accumulate top-up to corresponding amount to received great value gifts",
+    "tip": "1",
+    "price": 0,
+    "image_id": 80001,
+    "awards": [
+      {
+        "type": 3,
+        "key": 1000,
+        "value": [
+          21401386
+        ],
+        "prompt": "1000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 5000,
+        "value": [
+          21401387
+        ],
+        "prompt": "5000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 10000,
+        "value": [
+          21401388
+        ],
+        "prompt": "10000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 20000,
+        "value": [
+          21401389
+        ],
+        "prompt": "20000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 50000,
+        "value": [
+          21401390
+        ],
+        "prompt": "50000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 100000,
+        "value": [
+          21401391
+        ],
+        "prompt": "100000 Gold"
+      },
+      {
+        "type": 3,
+        "key": 200000,
+        "value": [
+          21401392
+        ],
+        "prompt": "200000 Gold"
+      }
+    ],
+    "targets": null,
+    "extra": {}
+  },
   "80006": {
     "act_id": 80006,
     "class": "THDTotalPay",
@@ -1137,6 +1313,20 @@
         "prompt": "5000 more"
       }
     ],
+    "targets": null,
+    "extra": {}
+  },
+  "2069561649": {
+    "act_id": 2069561649,
+    "class": "THDTotalCost",
+    "res_name": "RESOURCEID_HDTotalCost",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1868767788,
+    "image_id": 975332708,
+    "awards": "",
     "targets": null,
     "extra": {}
   },
@@ -1308,6 +1498,255 @@
           21401047
         ],
         "originalPrice": 0,
+        "prompt": "VIP Level 10"
+      }
+    ],
+    "targets": null,
+    "extra": {}
+  },
+  "120002": {
+    "act_id": 120002,
+    "class": "THDVipBox",
+    "res_name": "RESOURCEID_HDVipBox",
+    "name": "Valentine's gift",
+    "tname": "Valentine's gift",
+    "description": "Become a VIP during the event period and receive corresponding abundant VIP Gifts",
+    "tip": "",
+    "price": 0,
+    "image_id": 120002,
+    "awards": [
+      {
+        "index": 0,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 1,
+        "award": [
+          21401400
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 1"
+      },
+      {
+        "index": 1,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 2,
+        "award": [
+          21401401
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 2"
+      },
+      {
+        "index": 2,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 3,
+        "award": [
+          21401402
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 3"
+      },
+      {
+        "index": 3,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 4,
+        "award": [
+          21401403
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 4"
+      },
+      {
+        "index": 4,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 5,
+        "award": [
+          21401404
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 5"
+      },
+      {
+        "index": 5,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 6,
+        "award": [
+          21401405
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 6"
+      },
+      {
+        "index": 6,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 7,
+        "award": [
+          21401406
+        ],
+        "originalPrice": 0,
+        "prompt": "VVIP Level 7"
+      },
+      {
+        "index": 7,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 8,
+        "award": [
+          21401407
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 8"
+      },
+      {
+        "index": 8,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 9,
+        "award": [
+          21401408
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 9"
+      },
+      {
+        "index": 9,
+        "indexType": 0,
+        "getType": 1,
+        "limit": 1,
+        "cost": 0,
+        "condition": 10,
+        "award": [
+          21401409
+        ],
+        "originalPrice": 0,
+        "prompt": "VIP Level 10"
+      },
+      {
+        "index": 10,
+        "indexType": 3,
+        "getType": 2,
+        "limit": 5,
+        "cost": 200,
+        "condition": 3,
+        "award": [
+          21401410
+        ],
+        "originalPrice": 300,
+        "prompt": "VIP Level 3"
+      },
+      {
+        "index": 11,
+        "indexType": 3,
+        "getType": 2,
+        "limit": 5,
+        "cost": 400,
+        "condition": 4,
+        "award": [
+          21401411
+        ],
+        "originalPrice": 500,
+        "prompt": "VIP Level 4"
+      },
+      {
+        "index": 12,
+        "indexType": 3,
+        "getType": 2,
+        "limit": 5,
+        "cost": 700,
+        "condition": 5,
+        "award": [
+          21401412
+        ],
+        "originalPrice": 900,
+        "prompt": "VIP Level 5"
+      },
+      {
+        "index": 13,
+        "indexType": 3,
+        "getType": 2,
+        "limit": 5,
+        "cost": 900,
+        "condition": 6,
+        "award": [
+          21401413
+        ],
+        "originalPrice": 1100,
+        "prompt": "VIP Level 6"
+      },
+      {
+        "index": 14,
+        "indexType": 3,
+        "getType": 2,
+        "limit": 5,
+        "cost": 1800,
+        "condition": 7,
+        "award": [
+          21401414
+        ],
+        "originalPrice": 2200,
+        "prompt": "VIP Level 7"
+      },
+      {
+        "index": 15,
+        "indexType": 3,
+        "getType": 2,
+        "limit": 5,
+        "cost": 2500,
+        "condition": 8,
+        "award": [
+          21401415
+        ],
+        "originalPrice": 3000,
+        "prompt": "VIP Level 8"
+      },
+      {
+        "index": 16,
+        "indexType": 3,
+        "getType": 2,
+        "limit": 5,
+        "cost": 3000,
+        "condition": 9,
+        "award": [
+          21401416
+        ],
+        "originalPrice": 3600,
+        "prompt": "VIP Level 9"
+      },
+      {
+        "index": 17,
+        "indexType": 3,
+        "getType": 2,
+        "limit": 5,
+        "cost": 3500,
+        "condition": 10,
+        "award": [
+          21401417
+        ],
+        "originalPrice": 4500,
         "prompt": "VIP Level 10"
       }
     ],
@@ -1672,6 +2111,20 @@
     "targets": null,
     "extra": {}
   },
+  "2069561575": {
+    "act_id": 2069561575,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDMilitary",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 808464432,
+    "image_id": 1629629495,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
   "210001": {
     "act_id": 210001,
     "class": "THDActivityBase",
@@ -1682,6 +2135,20 @@
     "tip": "3",
     "price": 0,
     "image_id": 210001,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "2069561689": {
+    "act_id": 2069561689,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDStone",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 808464432,
+    "image_id": 1663183926,
     "awards": null,
     "targets": null,
     "extra": {}
@@ -1700,6 +2167,20 @@
     "targets": null,
     "extra": {}
   },
+  "2069561899": {
+    "act_id": 2069561899,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDEquipCollection",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 975335023,
+    "image_id": 1763867483,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
   "230001": {
     "act_id": 230001,
     "class": "THDActivityBase",
@@ -1710,6 +2191,20 @@
     "tip": "3",
     "price": 0,
     "image_id": 230001,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "2069561701": {
+    "act_id": 2069561701,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDTreasure",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 808464436,
+    "image_id": 1814178869,
     "awards": null,
     "targets": null,
     "extra": {}
@@ -2218,6 +2713,20 @@
     "targets": null,
     "extra": {}
   },
+  "844824586": {
+    "act_id": 844824586,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDCityDefence",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 270002,
+    "image_id": 1917845521,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
   "250001": {
     "act_id": 250001,
     "class": "THDActivityBase",
@@ -2228,6 +2737,20 @@
     "tip": "3",
     "price": 0,
     "image_id": 250001,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "2069561486": {
+    "act_id": 2069561486,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDGroupLv",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1635131936,
+    "image_id": 577074540,
     "awards": null,
     "targets": null,
     "extra": {}
@@ -2270,6 +2793,104 @@
     "tip": "1",
     "price": 0,
     "image_id": 360001,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "2069561597": {
+    "act_id": 2069561597,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDPay",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1814178867,
+    "image_id": 577465961,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "1952981562": {
+    "act_id": 1952981562,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDPay",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1634152035,
+    "image_id": 1999529325,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "1868720485": {
+    "act_id": 1868720485,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDPay",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 2037657459,
+    "image_id": 1932354928,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "1768121712": {
+    "act_id": 1768121712,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDPay",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 578497661,
+    "image_id": 1852139361,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "842670708": {
+    "act_id": 842670708,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDPay",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1953785890,
+    "image_id": 791624304,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "779581303": {
+    "act_id": 779581303,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDPay",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1701601839,
+    "image_id": 795370337,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "1819112552": {
+    "act_id": 1819112552,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDPay",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1769367924,
+    "image_id": 1936025972,
     "awards": null,
     "targets": null,
     "extra": {}
@@ -5260,6 +5881,20 @@
     "targets": null,
     "extra": {}
   },
+  "2069562854": {
+    "act_id": 2069562854,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDChineseYearLukia",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1763847216,
+    "image_id": 2019910766,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
   "420001": {
     "act_id": 420001,
     "class": "THDActivityBase",
@@ -5842,6 +6477,20 @@
     "targets": null,
     "extra": {}
   },
+  "1": {
+    "act_id": 1,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDBigTurnTable",
+    "name": "{\"index\":0,\"indexType\":3,\"getType\":4,\"value\":100,\"des\":\"Lucky Value\"}",
+    "tname": "[{\"index\":1,\"indexType\":3,\"getType\":1,\"condition\":[{\"type\":2,\"value\":3600}],\"getChip\":[{\"index\":0,\"value\":10},{\"index\":98,\"value\":2}],\"award\":[21401486],\"des\":\"Lucky points %0 and points %1 can be obtained through the lottery.\",\"flag\":[1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0]}]",
+    "description": "[{\"index\":100,\"getType\":1,\"costChip\":[{\"index\":0,\"value\":100}],\"award\":[21401487],\"des\":\"Consume %0 lucky points to draw once\",\"flag\":[1,0,0,0,0,0]}]",
+    "tip": "{\"index\":2,\"indexType\":3,\"getType\":4,\"value\":150,\"des\":\"Gold Value\"}",
+    "price": 2069562157,
+    "image_id": 1684957474,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
   "490001": {
     "act_id": 490001,
     "class": "THDTeamBuy",
@@ -5980,6 +6629,20 @@
     "targets": null,
     "extra": {}
   },
+  "2069561860": {
+    "act_id": 2069561860,
+    "class": "THDActivityBase",
+    "res_name": "RESOURCEID_HDServerPay",
+    "name": "",
+    "tname": "",
+    "description": "",
+    "tip": "",
+    "price": 1818326562,
+    "image_id": 975332725,
+    "awards": null,
+    "targets": null,
+    "extra": {}
+  },
   "510001": {
     "act_id": 510001,
     "class": "THDActivityBase",
@@ -6010,7 +6673,7 @@
   },
   "520001": {
     "act_id": 520001,
-    "class": "THDActivityBase",
+    "class": "THDTreasureHuntShop",
     "res_name": "RESOURCEID_HDTreasureShop",
     "name": "Urahara Shop",
     "tname": "Urahara Shop Super Value Discount (Can only purchase once)",
@@ -6020,7 +6683,17 @@
     "image_id": 520001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "dark_index": 2069561754,
+      "light_index": 1819240226,
+      "dark_item_index": 825893476,
+      "light_item_index": 573321272,
+      "items": "",
+      "shop": "",
+      "big_award": "",
+      "cost": 975332720,
+      "texts": ""
+    }
   },
   "540001": {
     "act_id": 540001,
@@ -6178,7 +6851,7 @@
   },
   "650001": {
     "act_id": 650001,
-    "class": "THDActivityBase",
+    "class": "THDHalloweenShop",
     "res_name": "RESOURCEID_HalloweenShop",
     "name": "Halloween Event 4",
     "tname": "Halloween Event 4",
@@ -6188,7 +6861,19 @@
     "image_id": 650001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "refresh_index": 1532690668,
+      "total_score_index": 808726834,
+      "buy_index": 943077681,
+      "buy_cost_gold": 875639340,
+      "refresh_cost_gold": 909717808,
+      "all_buy_index": 825371705,
+      "items": "",
+      "mall": "",
+      "bag": "",
+      "cur_items_index": "",
+      "mask_name": ""
+    }
   },
   "660001": {
     "act_id": 660001,
@@ -8126,7 +8811,7 @@
   },
   "960001": {
     "act_id": 960001,
-    "class": "THDActivityBase",
+    "class": "THDKnifeHeroCollect",
     "res_name": "RESOURCEID_KnifeHeroCollect",
     "name": "Blade Gallery",
     "tname": "Blade Gallery",
@@ -8136,11 +8821,839 @@
     "image_id": 960001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "consume_gold": [
+        {
+          "index": 1,
+          "condition": 0
+        },
+        {
+          "index": 2,
+          "condition": 100
+        },
+        {
+          "index": 3,
+          "condition": 200
+        },
+        {
+          "index": 4,
+          "condition": 1000
+        }
+      ],
+      "knife_condition": [
+        {
+          "key": 1000,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100043,
+              "useID": 11100101
+            },
+            {
+              "type": 1,
+              "code": 14100044,
+              "useID": 11100102
+            },
+            {
+              "type": 1,
+              "code": 14100084,
+              "useID": 1000001
+            }
+          ]
+        },
+        {
+          "key": 1001,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100651,
+              "useID": 11110011
+            },
+            {
+              "type": 1,
+              "code": 14100645,
+              "useID": 11110005
+            },
+            {
+              "type": 1,
+              "code": 14100087,
+              "useID": 1000002
+            }
+          ]
+        },
+        {
+          "key": 1002,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100642,
+              "useID": 11110002
+            },
+            {
+              "type": 1,
+              "code": 14100643,
+              "useID": 11110003
+            },
+            {
+              "type": 1,
+              "code": 14100091,
+              "useID": 1000003
+            }
+          ]
+        },
+        {
+          "key": 2000,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100045,
+              "useID": 11120001
+            },
+            {
+              "type": 1,
+              "code": 14100196,
+              "useID": 11120002
+            },
+            {
+              "type": 1,
+              "code": 14100092,
+              "useID": 1000004
+            }
+          ]
+        },
+        {
+          "key": 2001,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100652,
+              "useID": 11110012
+            },
+            {
+              "type": 1,
+              "code": 14100668,
+              "useID": 11110028
+            },
+            {
+              "type": 1,
+              "code": 14100083,
+              "useID": 1000005
+            }
+          ]
+        },
+        {
+          "key": 2002,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100653,
+              "useID": 11110013
+            },
+            {
+              "type": 1,
+              "code": 14100667,
+              "useID": 11110027
+            },
+            {
+              "type": 1,
+              "code": 14100086,
+              "useID": 1000006
+            }
+          ]
+        },
+        {
+          "key": 3000,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100659,
+              "useID": 11110019
+            },
+            {
+              "type": 1,
+              "code": 14100669,
+              "useID": 11110029
+            },
+            {
+              "type": 1,
+              "code": 14100665,
+              "useID": 11110025
+            },
+            {
+              "type": 1,
+              "code": 14100088,
+              "useID": 1000007
+            }
+          ]
+        },
+        {
+          "key": 3001,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100658,
+              "useID": 11110018
+            },
+            {
+              "type": 1,
+              "code": 14100669,
+              "useID": 11110029
+            },
+            {
+              "type": 1,
+              "code": 14100667,
+              "useID": 11110027
+            },
+            {
+              "type": 1,
+              "code": 14100090,
+              "useID": 1000008
+            }
+          ]
+        },
+        {
+          "key": 3002,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100643,
+              "useID": 11110003
+            },
+            {
+              "type": 1,
+              "code": 14100642,
+              "useID": 11110002
+            },
+            {
+              "type": 1,
+              "code": 14100641,
+              "useID": 11110001
+            },
+            {
+              "type": 1,
+              "code": 14100094,
+              "useID": 1000009
+            }
+          ]
+        },
+        {
+          "key": 4000,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100648,
+              "useID": 11110008
+            },
+            {
+              "type": 1,
+              "code": 14100646,
+              "useID": 11110006
+            },
+            {
+              "type": 1,
+              "code": 14100647,
+              "useID": 11110007
+            },
+            {
+              "type": 1,
+              "code": 14100093,
+              "useID": 1000010
+            }
+          ]
+        },
+        {
+          "key": 4001,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100650,
+              "useID": 11110010
+            },
+            {
+              "type": 1,
+              "code": 14100687,
+              "useID": 11130001
+            },
+            {
+              "type": 1,
+              "code": 14100649,
+              "useID": 11110009
+            },
+            {
+              "type": 1,
+              "code": 14100082,
+              "useID": 1000013
+            }
+          ]
+        },
+        {
+          "key": 4002,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100309,
+              "useID": 11120007
+            },
+            {
+              "type": 1,
+              "code": 14100045,
+              "useID": 11120001
+            },
+            {
+              "type": 1,
+              "code": 14100649,
+              "useID": 11110009
+            },
+            {
+              "type": 1,
+              "code": 14100093,
+              "useID": 1000010
+            }
+          ]
+        }
+      ],
+      "knife_award": [
+        {
+          "key": 1000,
+          "value": {
+            "awardID": 21403500,
+            "showID": 21403500,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 1001,
+          "value": {
+            "awardID": 21403501,
+            "showID": 21403501,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 1002,
+          "value": {
+            "awardID": 21403502,
+            "showID": 21403502,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 2000,
+          "value": {
+            "awardID": 21403503,
+            "showID": 21403503,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 2001,
+          "value": {
+            "awardID": 21403504,
+            "showID": 21403504,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 2002,
+          "value": {
+            "awardID": 21403505,
+            "showID": 21403505,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 3000,
+          "value": {
+            "awardID": 21403506,
+            "showID": 21403506,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 3001,
+          "value": {
+            "awardID": 21403507,
+            "showID": 21403507,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 3002,
+          "value": {
+            "awardID": 21403508,
+            "showID": 21403508,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 4000,
+          "value": {
+            "awardID": 21403509,
+            "showID": 21403509,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 4001,
+          "value": {
+            "awardID": 21403510,
+            "showID": 21403510,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 4002,
+          "value": {
+            "awardID": 21403511,
+            "showID": 2000144,
+            "showType": 1,
+            "fightReportAddr": ""
+          }
+        }
+      ],
+      "recharge_gold": [
+        {
+          "index": 11,
+          "condition": 0
+        },
+        {
+          "index": 12,
+          "condition": 200
+        },
+        {
+          "index": 13,
+          "condition": 400
+        },
+        {
+          "index": 14,
+          "condition": 1000
+        }
+      ],
+      "hero_condition": [
+        {
+          "key": 1000,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100644,
+              "useID": 11110004
+            },
+            {
+              "type": 1,
+              "code": 14100647,
+              "useID": 11110007
+            },
+            {
+              "type": 1,
+              "code": 14100645,
+              "useID": 11110005
+            }
+          ]
+        },
+        {
+          "key": 1001,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100044,
+              "useID": 11100102
+            },
+            {
+              "type": 1,
+              "code": 14100043,
+              "useID": 11100101
+            },
+            {
+              "type": 1,
+              "code": 14100641,
+              "useID": 11110001
+            }
+          ]
+        },
+        {
+          "key": 1002,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100642,
+              "useID": 11110002
+            },
+            {
+              "type": 1,
+              "code": 14100643,
+              "useID": 11110003
+            },
+            {
+              "type": 1,
+              "code": 14100646,
+              "useID": 11110006
+            }
+          ]
+        },
+        {
+          "key": 2000,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100646,
+              "useID": 11110006
+            },
+            {
+              "type": 1,
+              "code": 14100649,
+              "useID": 11110009
+            },
+            {
+              "type": 1,
+              "code": 14100647,
+              "useID": 11110007
+            }
+          ]
+        },
+        {
+          "key": 2001,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100650,
+              "useID": 11110010
+            },
+            {
+              "type": 1,
+              "code": 14100196,
+              "useID": 11120002
+            },
+            {
+              "type": 1,
+              "code": 14100651,
+              "useID": 11110011
+            }
+          ]
+        },
+        {
+          "key": 2002,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100651,
+              "useID": 11110011
+            },
+            {
+              "type": 1,
+              "code": 14100645,
+              "useID": 11110005
+            },
+            {
+              "type": 1,
+              "code": 14100045,
+              "useID": 11120001
+            }
+          ]
+        },
+        {
+          "key": 3000,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100654,
+              "useID": 11110014
+            },
+            {
+              "type": 1,
+              "code": 14100671,
+              "useID": 11110031
+            },
+            {
+              "type": 1,
+              "code": 14100666,
+              "useID": 11110026
+            },
+            {
+              "type": 1,
+              "code": 14100656,
+              "useID": 11110016
+            }
+          ]
+        },
+        {
+          "key": 3001,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100655,
+              "useID": 11110015
+            },
+            {
+              "type": 1,
+              "code": 14100664,
+              "useID": 11110024
+            },
+            {
+              "type": 1,
+              "code": 14100652,
+              "useID": 11110012
+            },
+            {
+              "type": 1,
+              "code": 14100670,
+              "useID": 11110030
+            }
+          ]
+        },
+        {
+          "key": 3002,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100670,
+              "useID": 11110030
+            },
+            {
+              "type": 1,
+              "code": 14100660,
+              "useID": 11110020
+            },
+            {
+              "type": 1,
+              "code": 14100657,
+              "useID": 11110017
+            },
+            {
+              "type": 1,
+              "code": 14100661,
+              "useID": 11110021
+            }
+          ]
+        },
+        {
+          "key": 4000,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100294,
+              "useID": 11140004
+            },
+            {
+              "type": 1,
+              "code": 14100678,
+              "useID": 11160006
+            },
+            {
+              "type": 1,
+              "code": 14100684,
+              "useID": 11160012
+            },
+            {
+              "type": 1,
+              "code": 14100682,
+              "useID": 11160010
+            },
+            {
+              "type": 1,
+              "code": 14100676,
+              "useID": 11160004
+            }
+          ]
+        },
+        {
+          "key": 4001,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100688,
+              "useID": 11130002
+            },
+            {
+              "type": 1,
+              "code": 14100296,
+              "useID": 11140006
+            },
+            {
+              "type": 1,
+              "code": 14100295,
+              "useID": 11140005
+            },
+            {
+              "type": 1,
+              "code": 14100660,
+              "useID": 11110020
+            },
+            {
+              "type": 1,
+              "code": 14100682,
+              "useID": 11160010
+            }
+          ]
+        },
+        {
+          "key": 4002,
+          "value": [
+            {
+              "type": 1,
+              "code": 14100674,
+              "useID": 11160002
+            },
+            {
+              "type": 1,
+              "code": 14100680,
+              "useID": 11160008
+            },
+            {
+              "type": 1,
+              "code": 14100663,
+              "useID": 11110023
+            },
+            {
+              "type": 1,
+              "code": 14100689,
+              "useID": 11130003
+            },
+            {
+              "type": 1,
+              "code": 14100427,
+              "useID": 11150002
+            }
+          ]
+        }
+      ],
+      "hero_award": [
+        {
+          "key": 1000,
+          "value": {
+            "awardID": 21403512,
+            "showID": 21403512,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 1001,
+          "value": {
+            "awardID": 21403513,
+            "showID": 21403513,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 1002,
+          "value": {
+            "awardID": 21403514,
+            "showID": 21403514,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 2000,
+          "value": {
+            "awardID": 21403515,
+            "showID": 21403515,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 2001,
+          "value": {
+            "awardID": 21403516,
+            "showID": 21403516,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 2002,
+          "value": {
+            "awardID": 21403517,
+            "showID": 21403517,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 3000,
+          "value": {
+            "awardID": 21403518,
+            "showID": 21403518,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 3001,
+          "value": {
+            "awardID": 21403519,
+            "showID": 21403519,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 3002,
+          "value": {
+            "awardID": 21403520,
+            "showID": 21403520,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 4000,
+          "value": {
+            "awardID": 21403521,
+            "showID": 21403521,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 4001,
+          "value": {
+            "awardID": 21403522,
+            "showID": 21403522,
+            "showType": 2,
+            "fightReportAddr": ""
+          }
+        },
+        {
+          "key": 4002,
+          "value": {
+            "awardID": 21403523,
+            "showID": 11150003,
+            "showType": 0,
+            "fightReportAddr": ""
+          }
+        }
+      ],
+      "consume_gold_index": 20,
+      "recharge_gold_index": 21,
+      "language": {
+        "condition": [
+          "Accumulative Cost %0 gold",
+          "Accumulative top-up %0 gold"
+        ],
+        "total": [
+          "Currently your accumulative cost:",
+          "Currently your accumulative top-up:"
+        ]
+      }
+    }
   },
   "970001": {
     "act_id": 970001,
-    "class": "THDActivityBase",
+    "class": "THDCoolSummer",
     "res_name": "RESOURCEID_CoolSummer",
     "name": "Cool Summer",
     "tname": "Cool Summer",
@@ -8150,7 +9663,412 @@
     "image_id": 970001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "repository": [
+        {
+          "awardId": 21406090,
+          "rate": 0,
+          "gold": 6400
+        },
+        {
+          "awardId": 21406091,
+          "rate": 0,
+          "gold": 6400
+        },
+        {
+          "awardId": 21406092,
+          "rate": 0,
+          "gold": 6400
+        },
+        {
+          "awardId": 21406093,
+          "rate": 0,
+          "gold": 6400
+        },
+        {
+          "awardId": 21406094,
+          "rate": 0,
+          "gold": 6000
+        },
+        {
+          "awardId": 21406095,
+          "rate": 0,
+          "gold": 1600
+        },
+        {
+          "awardId": 21406096,
+          "rate": 0,
+          "gold": 1600
+        },
+        {
+          "awardId": 21406097,
+          "rate": 0,
+          "gold": 1600
+        },
+        {
+          "awardId": 21406098,
+          "rate": 0,
+          "gold": 1600
+        },
+        {
+          "awardId": 21406099,
+          "rate": 0,
+          "gold": 400
+        },
+        {
+          "awardId": 21406100,
+          "rate": 0,
+          "gold": 400
+        },
+        {
+          "awardId": 21406101,
+          "rate": 0,
+          "gold": 400
+        },
+        {
+          "awardId": 21406102,
+          "rate": 0,
+          "gold": 400
+        },
+        {
+          "awardId": 21406103,
+          "rate": 100,
+          "gold": 200
+        },
+        {
+          "awardId": 21406104,
+          "rate": 100,
+          "gold": 200
+        },
+        {
+          "awardId": 21406105,
+          "rate": 100,
+          "gold": 100
+        },
+        {
+          "awardId": 21406106,
+          "rate": 100,
+          "gold": 100
+        },
+        {
+          "awardId": 21406107,
+          "rate": 100,
+          "gold": 100
+        },
+        {
+          "awardId": 21406108,
+          "rate": 100,
+          "gold": 100
+        },
+        {
+          "awardId": 21406109,
+          "rate": 100,
+          "gold": 100
+        },
+        {
+          "awardId": 21406110,
+          "rate": 100,
+          "gold": 100
+        },
+        {
+          "awardId": 21406111,
+          "rate": 1000,
+          "gold": 100
+        },
+        {
+          "awardId": 21406112,
+          "rate": 500,
+          "gold": 100
+        },
+        {
+          "awardId": 21406113,
+          "rate": 0,
+          "gold": 1000
+        },
+        {
+          "awardId": 21406114,
+          "rate": 3500,
+          "gold": 25
+        },
+        {
+          "awardId": 21406115,
+          "rate": 1000,
+          "gold": 25
+        },
+        {
+          "awardId": 21406116,
+          "rate": 1000,
+          "gold": 25
+        },
+        {
+          "awardId": 21406117,
+          "rate": 1000,
+          "gold": 25
+        },
+        {
+          "awardId": 21406118,
+          "rate": 1000,
+          "gold": 25
+        },
+        {
+          "awardId": 21406119,
+          "rate": 2000,
+          "gold": 20
+        },
+        {
+          "awardId": 21406120,
+          "rate": 2000,
+          "gold": 20
+        },
+        {
+          "awardId": 21406121,
+          "rate": 6200,
+          "gold": 13
+        },
+        {
+          "awardId": 21406122,
+          "rate": 3500,
+          "gold": 13
+        },
+        {
+          "awardId": 21406123,
+          "rate": 3500,
+          "gold": 13
+        },
+        {
+          "awardId": 21406124,
+          "rate": 3500,
+          "gold": 13
+        },
+        {
+          "awardId": 21406125,
+          "rate": 3500,
+          "gold": 13
+        },
+        {
+          "awardId": 21406126,
+          "rate": 11000,
+          "gold": 10
+        },
+        {
+          "awardId": 21406127,
+          "rate": 11000,
+          "gold": 10
+        },
+        {
+          "awardId": 21406128,
+          "rate": 11000,
+          "gold": 10
+        },
+        {
+          "awardId": 21406129,
+          "rate": 11000,
+          "gold": 10
+        },
+        {
+          "awardId": 21406130,
+          "rate": 11000,
+          "gold": 10
+        },
+        {
+          "awardId": 21406131,
+          "rate": 11000,
+          "gold": 10
+        }
+      ],
+      "shell_index": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "open_once": {
+        "index": 16,
+        "freeCount": 5,
+        "gold": 10
+      },
+      "open_all": {
+        "index": 17,
+        "discount": 90
+      },
+      "refresh": {
+        "index": 18,
+        "gold": 10
+      },
+      "choose": 19,
+      "score": 20,
+      "score_shop": [
+        {
+          "index": 21,
+          "awardId": 21405023,
+          "score": 30000,
+          "count": 1
+        },
+        {
+          "index": 22,
+          "awardId": 21405024,
+          "score": 20000,
+          "count": 1
+        },
+        {
+          "index": 23,
+          "awardId": 21405025,
+          "score": 4000,
+          "count": 1
+        },
+        {
+          "index": 24,
+          "awardId": 21405026,
+          "score": 4000,
+          "count": 1
+        },
+        {
+          "index": 25,
+          "awardId": 21405027,
+          "score": 4000,
+          "count": 1
+        },
+        {
+          "index": 26,
+          "awardId": 21405028,
+          "score": 4000,
+          "count": 1
+        },
+        {
+          "index": 27,
+          "awardId": 21405029,
+          "score": 12000,
+          "count": 1
+        },
+        {
+          "index": 28,
+          "awardId": 21405030,
+          "score": 16000,
+          "count": 1
+        },
+        {
+          "index": 29,
+          "awardId": 21405031,
+          "score": 8000,
+          "count": 1
+        },
+        {
+          "index": 30,
+          "awardId": 21405032,
+          "score": 8000,
+          "count": 1
+        },
+        {
+          "index": 31,
+          "awardId": 21405033,
+          "score": 4000,
+          "count": 1
+        },
+        {
+          "index": 32,
+          "awardId": 21405034,
+          "score": 6000,
+          "count": 1
+        },
+        {
+          "index": 33,
+          "awardId": 21405035,
+          "score": 8000,
+          "count": 1
+        },
+        {
+          "index": 34,
+          "awardId": 21405036,
+          "score": 8000,
+          "count": 1
+        },
+        {
+          "index": 35,
+          "awardId": 21405037,
+          "score": 8000,
+          "count": 1
+        },
+        {
+          "index": 36,
+          "awardId": 21405038,
+          "score": 14000,
+          "count": 1
+        },
+        {
+          "index": 37,
+          "awardId": 21405039,
+          "score": 50,
+          "count": 0
+        },
+        {
+          "index": 38,
+          "awardId": 21405040,
+          "score": 7000,
+          "count": 0
+        },
+        {
+          "index": 39,
+          "awardId": 21405041,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 40,
+          "awardId": 21405042,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 41,
+          "awardId": 21405043,
+          "score": 20,
+          "count": 0
+        },
+        {
+          "index": 42,
+          "awardId": 21405044,
+          "score": 20,
+          "count": 0
+        },
+        {
+          "index": 43,
+          "awardId": 21405045,
+          "score": 20,
+          "count": 0
+        },
+        {
+          "index": 44,
+          "awardId": 21405046,
+          "score": 50,
+          "count": 0
+        }
+      ],
+      "main_award": {
+        "index": 61,
+        "score": 40000,
+        "awardID": 21405022,
+        "showID": 11150060,
+        "showType": 0,
+        "fightReportAddr": ""
+      },
+      "language": {
+        "scoreLess": "Not enough Points!",
+        "refreshSuccess": "Refresh successful!",
+        "lock": "Selection confirmed!"
+      }
+    }
   },
   "980001": {
     "act_id": 980001,
@@ -8163,6 +10081,23 @@
     "price": 0,
     "image_id": 980001,
     "awards": null,
+    "targets": null,
+    "extra": {}
+  },
+  "1020001": {
+    "act_id": 1020001,
+    "class": "THDFirstPay",
+    "res_name": "RESOURCEID_FirstPayBag",
+    "name": "First Top-Up Gift",
+    "tname": "First Top-Up Gift",
+    "description": "1. Top up any amount to receive a reward (first top up only).\n2. When you have cumulated certain amount of top-up, you can claim corresponding giftpack.\n3. All rewards can be claimed only once.",
+    "tip": "5",
+    "price": 0,
+    "image_id": 1020001,
+    "awards": {
+      "index": 1,
+      "awardId": 21403301
+    },
     "targets": null,
     "extra": {}
   },
@@ -8238,7 +10173,7 @@
   },
   "1080001": {
     "act_id": 1080001,
-    "class": "THDActivityBase",
+    "class": "THDThankYou",
     "res_name": "RESOURCEID_ThankYou",
     "name": "Thank You",
     "tname": "Thank You",
@@ -8248,11 +10183,15 @@
     "image_id": 1080001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "recharge_index": 578486999,
+      "daily_recharge_index": 1701080681,
+      "daily_gift": ""
+    }
   },
   "1090001": {
     "act_id": 1090001,
-    "class": "THDActivityBase",
+    "class": "THDThanksFeast",
     "res_name": "RESOURCEID_ThanksFeast",
     "name": "Thanksgiving Feast",
     "tname": "Thanksgiving Feast",
@@ -8262,7 +10201,171 @@
     "image_id": 1090001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "puzzle": {
+        "index": 0,
+        "award": [
+          {
+            "awardID": 21403552,
+            "condition": 200
+          },
+          {
+            "awardID": 21403553,
+            "condition": 400
+          },
+          {
+            "awardID": 21403554,
+            "condition": 600
+          },
+          {
+            "awardID": 21403555,
+            "condition": 800
+          },
+          {
+            "awardID": 21403556,
+            "condition": 1000
+          },
+          {
+            "awardID": 21403557,
+            "condition": 2000
+          },
+          {
+            "awardID": 21403558,
+            "condition": 3000
+          },
+          {
+            "awardID": 21403559,
+            "condition": 5000
+          },
+          {
+            "awardID": 21403560,
+            "condition": 8000
+          }
+        ]
+      },
+      "pet": {
+        "index": 1,
+        "petID": 1207,
+        "modelID": 13200022
+      },
+      "recharge_index": 2,
+      "daily_recharge_index": 3,
+      "daily_gift": {
+        "index": 4,
+        "award": [
+          [
+            {
+              "awardID": 21403561,
+              "condition": 200
+            },
+            {
+              "awardID": 21403562,
+              "condition": 400
+            },
+            {
+              "awardID": 21403563,
+              "condition": 600
+            },
+            {
+              "awardID": 21403564,
+              "condition": 1000
+            },
+            {
+              "awardID": 21403565,
+              "condition": 2000
+            }
+          ],
+          [
+            {
+              "awardID": 21403561,
+              "condition": 200
+            },
+            {
+              "awardID": 21403562,
+              "condition": 400
+            },
+            {
+              "awardID": 21403563,
+              "condition": 600
+            },
+            {
+              "awardID": 21403564,
+              "condition": 1000
+            },
+            {
+              "awardID": 21403565,
+              "condition": 2000
+            }
+          ],
+          [
+            {
+              "awardID": 21403561,
+              "condition": 200
+            },
+            {
+              "awardID": 21403562,
+              "condition": 400
+            },
+            {
+              "awardID": 21403563,
+              "condition": 600
+            },
+            {
+              "awardID": 21403564,
+              "condition": 1000
+            },
+            {
+              "awardID": 21403565,
+              "condition": 2000
+            }
+          ],
+          [
+            {
+              "awardID": 21403561,
+              "condition": 200
+            },
+            {
+              "awardID": 21403562,
+              "condition": 400
+            },
+            {
+              "awardID": 21403563,
+              "condition": 600
+            },
+            {
+              "awardID": 21403564,
+              "condition": 1000
+            },
+            {
+              "awardID": 21403565,
+              "condition": 2000
+            }
+          ],
+          [
+            {
+              "awardID": 21403561,
+              "condition": 200
+            },
+            {
+              "awardID": 21403562,
+              "condition": 400
+            },
+            {
+              "awardID": 21403563,
+              "condition": 600
+            },
+            {
+              "awardID": 21403564,
+              "condition": 1000
+            },
+            {
+              "awardID": 21403565,
+              "condition": 2000
+            }
+          ]
+        ]
+      }
+    }
   },
   "1100001": {
     "act_id": 1100001,
@@ -8322,7 +10425,7 @@
   },
   "1140001": {
     "act_id": 1140001,
-    "class": "THDActivityBase",
+    "class": "THDSled",
     "res_name": "RESOURCEID_Sled",
     "name": "Sled",
     "tname": "Sled",
@@ -8332,7 +10435,289 @@
     "image_id": 1140001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "robbery": {
+        "index": 0,
+        "cout": 2
+      },
+      "transport": {
+        "index": 1,
+        "cout": 2
+      },
+      "christmas_cards_index": 2,
+      "refresh_quality": {
+        "index": 3,
+        "gold": 10
+      },
+      "one_key_red": {
+        "index": 4,
+        "gold": 1000
+      },
+      "begin_transport": {
+        "index": 5,
+        "gold": [
+          50,
+          200,
+          1000,
+          3000
+        ]
+      },
+      "sled_infos": {
+        "index": 6,
+        "infos": [
+          {
+            "type": 0,
+            "rate": 40,
+            "cards": 10,
+            "awardId": 21407301,
+            "name": "White Sledge"
+          },
+          {
+            "type": 1,
+            "rate": 50,
+            "cards": 50,
+            "awardId": 21407302,
+            "name": "Purple Sledge"
+          },
+          {
+            "type": 2,
+            "rate": 10,
+            "cards": 250,
+            "awardId": 21407303,
+            "name": "Golden Sledge"
+          },
+          {
+            "type": 3,
+            "rate": 0,
+            "cards": 1000,
+            "awardId": 21407304,
+            "name": "Red Sledge"
+          }
+        ]
+      },
+      "robbery_interface_index": 7,
+      "onekey_arrival": {
+        "index": 8,
+        "gold": 100
+      },
+      "receive_award_index": 9,
+      "big_gift": {
+        "index": 10,
+        "awardId": 21407271,
+        "showID": 11150059,
+        "showType": 0,
+        "fightReportAddr": "",
+        "gold": 60000
+      },
+      "max_size": 15,
+      "transport_time": 300,
+      "transport_protect": 30,
+      "robbery_person_index": 11,
+      "robbery_index": {
+        "index": 12,
+        "rate": 50
+      },
+      "shop": [
+        {
+          "index": 20,
+          "awardId": 21407271,
+          "cost": 60000,
+          "count": 1
+        },
+        {
+          "index": 21,
+          "awardId": 21407272,
+          "cost": 50000,
+          "count": 1
+        },
+        {
+          "index": 22,
+          "awardId": 21407273,
+          "cost": 50000,
+          "count": 1
+        },
+        {
+          "index": 23,
+          "awardId": 21407274,
+          "cost": 50000,
+          "count": 1
+        },
+        {
+          "index": 24,
+          "awardId": 21407275,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 25,
+          "awardId": 21407276,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 26,
+          "awardId": 21407277,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 27,
+          "awardId": 21407278,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 28,
+          "awardId": 21407279,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 29,
+          "awardId": 21407280,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 30,
+          "awardId": 21407281,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 31,
+          "awardId": 21407282,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 32,
+          "awardId": 21407283,
+          "cost": 40000,
+          "count": 1
+        },
+        {
+          "index": 33,
+          "awardId": 21407284,
+          "cost": 30000,
+          "count": 1
+        },
+        {
+          "index": 34,
+          "awardId": 21407285,
+          "cost": 30000,
+          "count": 1
+        },
+        {
+          "index": 35,
+          "awardId": 21407286,
+          "cost": 30000,
+          "count": 1
+        },
+        {
+          "index": 36,
+          "awardId": 21407287,
+          "cost": 30000,
+          "count": 1
+        },
+        {
+          "index": 37,
+          "awardId": 21407288,
+          "cost": 6000,
+          "count": -1
+        },
+        {
+          "index": 38,
+          "awardId": 21407289,
+          "cost": 20,
+          "count": -1
+        },
+        {
+          "index": 39,
+          "awardId": 21407290,
+          "cost": 20,
+          "count": -1
+        },
+        {
+          "index": 40,
+          "awardId": 21407291,
+          "cost": 100,
+          "count": -1
+        },
+        {
+          "index": 41,
+          "awardId": 21407292,
+          "cost": 100,
+          "count": -1
+        },
+        {
+          "index": 42,
+          "awardId": 21407293,
+          "cost": 50,
+          "count": -1
+        },
+        {
+          "index": 43,
+          "awardId": 21407294,
+          "cost": 50,
+          "count": -1
+        },
+        {
+          "index": 44,
+          "awardId": 21407295,
+          "cost": 50,
+          "count": -1
+        },
+        {
+          "index": 45,
+          "awardId": 21407296,
+          "cost": 50,
+          "count": -1
+        },
+        {
+          "index": 46,
+          "awardId": 21407297,
+          "cost": 30000,
+          "count": 1
+        },
+        {
+          "index": 47,
+          "awardId": 21407298,
+          "cost": 5,
+          "count": -1
+        },
+        {
+          "index": 48,
+          "awardId": 21407299,
+          "cost": 5,
+          "count": -1
+        },
+        {
+          "index": 49,
+          "awardId": 21407300,
+          "cost": 100,
+          "count": -1
+        }
+      ],
+      "gold_cards": [
+        1,
+        1
+      ],
+      "language": {
+        "superTime": "Currently you are invincible",
+        "scoreLess": "Not enough Xmas cards",
+        "snatchTimesLess": "Today remaining rob chances used up",
+        "curWheelSnatched": "Have robbed this round, can not rob again",
+        "snatchState": [
+          "Rob successfully",
+          "Rob failed",
+          "This sledge has robbed by others"
+        ],
+        "log1": "%0 robbed you,%1 Xmas card was stolen.",
+        "log2": "You robbed sledge of %0,get %1 Xmas card",
+        "getCards": "Xmas card*%0"
+      }
+    }
   },
   "1150001": {
     "act_id": 1150001,
@@ -8448,7 +10833,7 @@
   },
   "1230001": {
     "act_id": 1230001,
-    "class": "THDActivityBase",
+    "class": "THDGhostKingForg",
     "res_name": "RESOURCEID_GhostKingForg",
     "name": "Personal Top-Up",
     "tname": "Cool Summer",
@@ -8458,7 +10843,107 @@
     "image_id": 970001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "recharge_index": 0,
+      "forging": {
+        "index": 1,
+        "cost": 1000
+      },
+      "forging_max": 100000,
+      "forging_award": {
+        "index": 2,
+        "award": [
+          {
+            "score": 4000,
+            "awardId": 21404047,
+            "discount": 10
+          },
+          {
+            "score": 8000,
+            "awardId": 21404048,
+            "discount": 20
+          },
+          {
+            "score": 20000,
+            "awardId": 21404049,
+            "discount": 30
+          },
+          {
+            "score": 40000,
+            "awardId": 21404050,
+            "discount": 50
+          },
+          {
+            "score": 100000,
+            "awardId": 21404051,
+            "discount": 100
+          }
+        ]
+      },
+      "score_index": 3,
+      "additional_award": {
+        "index": 4,
+        "gold": 2000
+      },
+      "additional_items": [
+        21406000,
+        21406001,
+        21406002,
+        21406003,
+        21406004,
+        21406005
+      ],
+      "big_award": {
+        "index": 5,
+        "awardId": 21406025,
+        "gold": 35000,
+        "showID": 2000212,
+        "showType": 1,
+        "fightReportAddr": ""
+      },
+      "score_shop": [
+        {
+          "index": 21,
+          "awardId": 21406011,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 22,
+          "awardId": 21406012,
+          "score": 200,
+          "count": 0
+        },
+        {
+          "index": 23,
+          "awardId": 21406013,
+          "score": 500,
+          "count": 0
+        },
+        {
+          "index": 24,
+          "awardId": 21406014,
+          "score": 1000,
+          "count": 0
+        },
+        {
+          "index": 25,
+          "awardId": 21406015,
+          "score": 3000,
+          "count": 0
+        },
+        {
+          "index": 26,
+          "awardId": 21406016,
+          "score": 10000,
+          "count": 0
+        }
+      ],
+      "language": {
+        "forgNeed": "Requires %0 Reio Power",
+        "powerLack": "Reio Power not enough"
+      }
+    }
   },
   "1240001": {
     "act_id": 1240001,
@@ -8490,7 +10975,7 @@
   },
   "1260001": {
     "act_id": 1260001,
-    "class": "THDActivityBase",
+    "class": "THDLaborConsume",
     "res_name": "RESOURCEID_LaborConsume",
     "name": "Labor Day Spending",
     "tname": "Labor Day Spending",
@@ -8500,7 +10985,637 @@
     "image_id": 1150001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "banner": [
+        {
+          "seq": 1,
+          "award": 21404101,
+          "weight": 20,
+          "condition": [
+            1,
+            2,
+            5
+          ]
+        },
+        {
+          "seq": 2,
+          "award": 21404102,
+          "weight": 20,
+          "condition": [
+            1,
+            3,
+            5,
+            16
+          ]
+        },
+        {
+          "seq": 3,
+          "award": 21404103,
+          "weight": 20,
+          "condition": [
+            2,
+            4,
+            10,
+            17
+          ]
+        },
+        {
+          "seq": 4,
+          "award": 21404104,
+          "weight": 20,
+          "condition": [
+            2,
+            20,
+            12,
+            17
+          ]
+        },
+        {
+          "seq": 5,
+          "award": 21404105,
+          "weight": 20,
+          "condition": [
+            2,
+            20,
+            13,
+            17
+          ]
+        },
+        {
+          "seq": 6,
+          "award": 21404106,
+          "weight": 20,
+          "condition": [
+            21,
+            20,
+            6
+          ]
+        },
+        {
+          "seq": 7,
+          "award": 21404107,
+          "weight": 20,
+          "condition": [
+            21,
+            22,
+            6
+          ]
+        },
+        {
+          "seq": 8,
+          "award": 21404108,
+          "weight": 20,
+          "condition": [
+            23,
+            22,
+            6
+          ]
+        },
+        {
+          "seq": 9,
+          "award": 21404109,
+          "weight": 20,
+          "condition": [
+            25,
+            1,
+            6,
+            3
+          ]
+        },
+        {
+          "seq": 10,
+          "award": 21404110,
+          "weight": 20,
+          "condition": [
+            26,
+            2,
+            8,
+            17
+          ]
+        },
+        {
+          "seq": 11,
+          "award": 21404111,
+          "weight": 20,
+          "condition": [
+            23,
+            21,
+            8,
+            16
+          ]
+        },
+        {
+          "seq": 12,
+          "award": 21404112,
+          "weight": 20,
+          "condition": [
+            23,
+            21,
+            7,
+            16
+          ]
+        },
+        {
+          "seq": 13,
+          "award": 21404113,
+          "weight": 20,
+          "condition": [
+            21,
+            22,
+            5
+          ]
+        },
+        {
+          "seq": 14,
+          "award": 21404114,
+          "weight": 20,
+          "condition": [
+            2,
+            21,
+            8,
+            16
+          ]
+        },
+        {
+          "seq": 15,
+          "award": 21404115,
+          "weight": 20,
+          "condition": [
+            2,
+            21,
+            8,
+            16
+          ]
+        },
+        {
+          "seq": 16,
+          "award": 21404116,
+          "weight": 20,
+          "condition": [
+            2,
+            3,
+            10,
+            21
+          ]
+        },
+        {
+          "seq": 17,
+          "award": 21404117,
+          "weight": 20,
+          "condition": [
+            2,
+            3,
+            14
+          ]
+        },
+        {
+          "seq": 18,
+          "award": 21404118,
+          "weight": 20,
+          "condition": [
+            22,
+            21,
+            8,
+            27
+          ]
+        },
+        {
+          "seq": 19,
+          "award": 21404119,
+          "weight": 20,
+          "condition": [
+            22,
+            15,
+            20
+          ]
+        },
+        {
+          "seq": 20,
+          "award": 21404120,
+          "weight": 20,
+          "condition": [
+            24,
+            19,
+            3,
+            11
+          ]
+        },
+        {
+          "seq": 21,
+          "award": 21404121,
+          "weight": 20,
+          "condition": [
+            2,
+            14
+          ]
+        },
+        {
+          "seq": 22,
+          "award": 21404122,
+          "weight": 20,
+          "condition": [
+            18,
+            21,
+            7,
+            17
+          ]
+        },
+        {
+          "seq": 23,
+          "award": 21404123,
+          "weight": 20,
+          "condition": [
+            2,
+            21,
+            8,
+            16
+          ]
+        },
+        {
+          "seq": 24,
+          "award": 21404124,
+          "weight": 20,
+          "condition": [
+            2,
+            21,
+            8,
+            16
+          ]
+        },
+        {
+          "seq": 25,
+          "award": 21404125,
+          "weight": 20,
+          "condition": [
+            24,
+            19,
+            17,
+            13
+          ]
+        }
+      ],
+      "condition": [
+        {
+          "id": 1,
+          "type": 0,
+          "code": 0,
+          "amount": 100000,
+          "gold": 5
+        },
+        {
+          "id": 2,
+          "type": 0,
+          "code": 0,
+          "amount": 200000,
+          "gold": 10
+        },
+        {
+          "id": 3,
+          "type": 3,
+          "code": 0,
+          "amount": 50,
+          "gold": 50
+        },
+        {
+          "id": 4,
+          "type": 3,
+          "code": 0,
+          "amount": 100,
+          "gold": 100
+        },
+        {
+          "id": 5,
+          "type": 0,
+          "code": 1,
+          "amount": 500,
+          "gold": 500
+        },
+        {
+          "id": 6,
+          "type": 0,
+          "code": 1,
+          "amount": 1000,
+          "gold": 1000
+        },
+        {
+          "id": 7,
+          "type": 0,
+          "code": 1,
+          "amount": 1200,
+          "gold": 1200
+        },
+        {
+          "id": 8,
+          "type": 0,
+          "code": 1,
+          "amount": 1500,
+          "gold": 1500
+        },
+        {
+          "id": 9,
+          "type": 0,
+          "code": 1,
+          "amount": 3000,
+          "gold": 3000
+        },
+        {
+          "id": 10,
+          "type": 0,
+          "code": 1,
+          "amount": 4000,
+          "gold": 4000
+        },
+        {
+          "id": 11,
+          "type": 0,
+          "code": 1,
+          "amount": 5000,
+          "gold": 5000
+        },
+        {
+          "id": 12,
+          "type": 0,
+          "code": 1,
+          "amount": 8000,
+          "gold": 8000
+        },
+        {
+          "id": 13,
+          "type": 0,
+          "code": 1,
+          "amount": 10000,
+          "gold": 10000
+        },
+        {
+          "id": 14,
+          "type": 0,
+          "code": 2,
+          "amount": 10,
+          "gold": 10
+        },
+        {
+          "id": 15,
+          "type": 0,
+          "code": 2,
+          "amount": 20,
+          "gold": 20
+        },
+        {
+          "id": 16,
+          "type": 0,
+          "code": 2,
+          "amount": 100,
+          "gold": 100
+        },
+        {
+          "id": 17,
+          "type": 0,
+          "code": 2,
+          "amount": 200,
+          "gold": 200
+        },
+        {
+          "id": 18,
+          "type": 1,
+          "code": 14120003,
+          "amount": 1,
+          "gold": 100
+        },
+        {
+          "id": 19,
+          "type": 1,
+          "code": 14120003,
+          "amount": 5,
+          "gold": 500
+        },
+        {
+          "id": 20,
+          "type": 1,
+          "code": 14100074,
+          "amount": 100,
+          "gold": 10
+        },
+        {
+          "id": 21,
+          "type": 1,
+          "code": 14100005,
+          "amount": 10,
+          "gold": 50
+        },
+        {
+          "id": 22,
+          "type": 1,
+          "code": 14100130,
+          "amount": 100,
+          "gold": 10
+        },
+        {
+          "id": 23,
+          "type": 1,
+          "code": 14100019,
+          "amount": 1,
+          "gold": 100
+        },
+        {
+          "id": 24,
+          "type": 1,
+          "code": 14100019,
+          "amount": 5,
+          "gold": 500
+        },
+        {
+          "id": 25,
+          "type": 1,
+          "code": 14320098,
+          "amount": 1,
+          "gold": 200
+        },
+        {
+          "id": 26,
+          "type": 1,
+          "code": 14100104,
+          "amount": 1,
+          "gold": 100
+        },
+        {
+          "id": 27,
+          "type": 1,
+          "code": 14100020,
+          "amount": 1,
+          "gold": 100
+        }
+      ],
+      "score": 0,
+      "refresh": 1,
+      "free_times": 2,
+      "refresh_cost": 10,
+      "banner_index": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "mall": [
+        {
+          "index": 21,
+          "awardId": 21404126,
+          "score": 60000,
+          "count": 1
+        },
+        {
+          "index": 22,
+          "awardId": 21404127,
+          "score": 60000,
+          "count": 1
+        },
+        {
+          "index": 23,
+          "awardId": 21404128,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 24,
+          "awardId": 21404129,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 25,
+          "awardId": 21404130,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 26,
+          "awardId": 21404131,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 27,
+          "awardId": 21404132,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 28,
+          "awardId": 21404133,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 29,
+          "awardId": 21404134,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 30,
+          "awardId": 21404135,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 31,
+          "awardId": 21404136,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 32,
+          "awardId": 21404137,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 33,
+          "awardId": 21404138,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 34,
+          "awardId": 21404139,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 35,
+          "awardId": 21404140,
+          "score": 8000,
+          "count": 0
+        },
+        {
+          "index": 36,
+          "awardId": 21404141,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 37,
+          "awardId": 21404142,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 38,
+          "awardId": 21404143,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 39,
+          "awardId": 21404144,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 40,
+          "awardId": 21404145,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 41,
+          "awardId": 21404146,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 42,
+          "awardId": 21404147,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 43,
+          "awardId": 21404148,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 44,
+          "awardId": 21404149,
+          "score": 100,
+          "count": 0
+        }
+      ],
+      "bag": {
+        "index": 10,
+        "awardId": 21404173,
+        "gold": 60000,
+        "showID": 11150059,
+        "showType": 0,
+        "fightReportAddr": ""
+      },
+      "language": {
+        "scoreLack": "Not enough points",
+        "reached": "Requirement met",
+        "costTip": "Are you sure to spend %0 gold?"
+      }
+    }
   },
   "1270001": {
     "act_id": 1270001,
@@ -9006,7 +12121,7 @@
   },
   "1300001": {
     "act_id": 1300001,
-    "class": "THDActivityBase",
+    "class": "THDTreasureHuntShop",
     "res_name": "RESOURCEID_TreasureShop",
     "name": "Hueco Mundo Treasure Hunt",
     "tname": "Hueco Mundo Treasure Hunt",
@@ -9016,7 +12131,208 @@
     "image_id": 1150001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "dark_index": 0,
+      "light_index": 1,
+      "dark_item_index": 2,
+      "light_item_index": 3,
+      "items": [
+        {
+          "awardId": 21405560,
+          "rate": 15,
+          "type": 0
+        },
+        {
+          "awardId": 21405561,
+          "rate": 15,
+          "type": 0
+        },
+        {
+          "awardId": 21405562,
+          "rate": 10,
+          "type": 0
+        },
+        {
+          "awardId": 21405563,
+          "rate": 20,
+          "type": 0
+        },
+        {
+          "awardId": 21405564,
+          "rate": 20,
+          "type": 0
+        },
+        {
+          "awardId": 21405565,
+          "rate": 20,
+          "type": 0
+        },
+        {
+          "awardId": 21405566,
+          "rate": 15,
+          "type": 1
+        },
+        {
+          "awardId": 21405567,
+          "rate": 15,
+          "type": 1
+        },
+        {
+          "awardId": 21405568,
+          "rate": 10,
+          "type": 1
+        },
+        {
+          "awardId": 21405569,
+          "rate": 20,
+          "type": 1
+        },
+        {
+          "awardId": 21405570,
+          "rate": 20,
+          "type": 1
+        },
+        {
+          "awardId": 21405571,
+          "rate": 20,
+          "type": 1
+        }
+      ],
+      "shop": [
+        {
+          "index": 10,
+          "awardId": 21405572,
+          "num": 0,
+          "cost": 1,
+          "type": 0
+        },
+        {
+          "index": 11,
+          "awardId": 21405573,
+          "num": 0,
+          "cost": 50,
+          "type": 0
+        },
+        {
+          "index": 12,
+          "awardId": 21405574,
+          "num": 0,
+          "cost": 80,
+          "type": 0
+        },
+        {
+          "index": 13,
+          "awardId": 21405575,
+          "num": 0,
+          "cost": 100,
+          "type": 0
+        },
+        {
+          "index": 14,
+          "awardId": 21405576,
+          "num": 0,
+          "cost": 50,
+          "type": 0
+        },
+        {
+          "index": 15,
+          "awardId": 21405577,
+          "num": 0,
+          "cost": 2,
+          "type": 0
+        },
+        {
+          "index": 16,
+          "awardId": 21406727,
+          "num": 1,
+          "cost": 400,
+          "type": 1
+        },
+        {
+          "index": 17,
+          "awardId": 21406726,
+          "num": 1,
+          "cost": 400,
+          "type": 1
+        },
+        {
+          "index": 18,
+          "awardId": 21406725,
+          "num": 1,
+          "cost": 400,
+          "type": 1
+        },
+        {
+          "index": 19,
+          "awardId": 21406724,
+          "num": 1,
+          "cost": 400,
+          "type": 1
+        },
+        {
+          "index": 20,
+          "awardId": 21405980,
+          "num": 1,
+          "cost": 400,
+          "type": 1
+        },
+        {
+          "index": 21,
+          "awardId": 21405063,
+          "num": 1,
+          "cost": 280,
+          "type": 1
+        },
+        {
+          "index": 22,
+          "awardId": 21405061,
+          "num": 1,
+          "cost": 280,
+          "type": 1
+        },
+        {
+          "index": 23,
+          "awardId": 21405062,
+          "num": 1,
+          "cost": 260,
+          "type": 1
+        },
+        {
+          "index": 24,
+          "awardId": 21405065,
+          "num": 1,
+          "cost": 260,
+          "type": 1
+        },
+        {
+          "index": 25,
+          "awardId": 21405582,
+          "num": 0,
+          "cost": 5,
+          "type": 1
+        },
+        {
+          "index": 26,
+          "awardId": 21405583,
+          "num": 0,
+          "cost": 10,
+          "type": 1
+        }
+      ],
+      "big_award": {
+        "index": 50,
+        "awardId": 21405584,
+        "cost": 260,
+        "showType": "0",
+        "showId": 11150044,
+        "fightReportAddr": ""
+      },
+      "cost": 100,
+      "texts": [
+        "Talisman de Lumiere",
+        "Talisman Sombre"
+      ]
+    }
   },
   "1310001": {
     "act_id": 1310001,
@@ -9076,7 +12392,7 @@
   },
   "1350001": {
     "act_id": 1350001,
-    "class": "THDActivityBase",
+    "class": "THDKnifeChessBuy",
     "res_name": "RESOURCEID_KnifeChessBuy",
     "name": "Zanpakuto 2-in-1",
     "tname": "Zanpakuto 2-in-1",
@@ -9086,11 +12402,186 @@
     "image_id": 1350001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "recharge": 100,
+      "step_gold": 100,
+      "step_index": 0,
+      "cur_step": 1,
+      "stage_index": 2,
+      "open_stage_index": 3,
+      "oper_index": 4,
+      "onekey_index": 100,
+      "normal_award": 21405049,
+      "stage_award": [
+        21405050,
+        21405051,
+        21405052,
+        21405053
+      ],
+      "stage_gold": [
+        250,
+        500,
+        1000,
+        2500
+      ],
+      "stage_score": [
+        9,
+        14,
+        19,
+        24
+      ],
+      "stage_score_id": 14100575,
+      "mall": [
+        {
+          "index": 21,
+          "score": 1250,
+          "award": 21405054,
+          "limit": 1
+        },
+        {
+          "index": 22,
+          "score": 1200,
+          "award": 21405055,
+          "limit": 1
+        },
+        {
+          "index": 23,
+          "score": 500,
+          "award": 21405056,
+          "limit": 1
+        },
+        {
+          "index": 24,
+          "score": 300,
+          "award": 21405057,
+          "limit": 1
+        },
+        {
+          "index": 25,
+          "score": 300,
+          "award": 21405058,
+          "limit": 1
+        },
+        {
+          "index": 26,
+          "score": 300,
+          "award": 21405059,
+          "limit": 1
+        },
+        {
+          "index": 27,
+          "score": 350,
+          "award": 21405060,
+          "limit": 1
+        },
+        {
+          "index": 28,
+          "score": 400,
+          "award": 21405061,
+          "limit": 1
+        },
+        {
+          "index": 29,
+          "score": 400,
+          "award": 21405062,
+          "limit": 1
+        },
+        {
+          "index": 30,
+          "score": 400,
+          "award": 21405063,
+          "limit": 1
+        },
+        {
+          "index": 31,
+          "score": 400,
+          "award": 21405064,
+          "limit": 1
+        },
+        {
+          "index": 32,
+          "score": 400,
+          "award": 21405065,
+          "limit": 1
+        },
+        {
+          "index": 33,
+          "score": 400,
+          "award": 21405066,
+          "limit": 1
+        },
+        {
+          "index": 34,
+          "score": 350,
+          "award": 21405067,
+          "limit": 1
+        },
+        {
+          "index": 35,
+          "score": 350,
+          "award": 21405068,
+          "limit": 1
+        },
+        {
+          "index": 36,
+          "score": 350,
+          "award": 21405069,
+          "limit": 1
+        },
+        {
+          "index": 37,
+          "score": 400,
+          "award": 21405070,
+          "limit": 1
+        },
+        {
+          "index": 38,
+          "score": 300,
+          "award": 21405071,
+          "limit": 1
+        },
+        {
+          "index": 39,
+          "score": 300,
+          "award": 21405072,
+          "limit": 1
+        },
+        {
+          "index": 40,
+          "score": 350,
+          "award": 21405073,
+          "limit": 1
+        },
+        {
+          "index": 41,
+          "score": 2,
+          "award": 21405074,
+          "limit": 0
+        },
+        {
+          "index": 42,
+          "score": 2,
+          "award": 21405075,
+          "limit": 0
+        },
+        {
+          "index": 43,
+          "score": 2,
+          "award": 21405076,
+          "limit": 0
+        },
+        {
+          "index": 44,
+          "score": 2,
+          "award": 21405077,
+          "limit": 0
+        }
+      ]
+    }
   },
   "1360001": {
     "act_id": 1360001,
-    "class": "THDActivityBase",
+    "class": "THDNationalDayOne",
     "res_name": "RESOURCEID_NationalDayOne",
     "name": "Everyone Is Looting 1",
     "tname": "Everyone Is Looting 1",
@@ -9104,7 +12595,7 @@
   },
   "1370001": {
     "act_id": 1370001,
-    "class": "THDActivityBase",
+    "class": "THDNationalDayTwo",
     "res_name": "RESOURCEID_NationalDayTwo",
     "name": "Everyone Is Looting 2",
     "tname": "Everyone Is Looting 2",
@@ -9114,7 +12605,250 @@
     "image_id": 1370001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "free_index": 99,
+      "discount": 5,
+      "score_index": 98,
+      "discount_index": 97,
+      "refresh_index": 96,
+      "refresh_cost": 50,
+      "items": [
+        {
+          "index": 1,
+          "gold": 6400,
+          "award": 21405390,
+          "weight": 1
+        },
+        {
+          "index": 2,
+          "gold": 6400,
+          "award": 21405391,
+          "weight": 5
+        },
+        {
+          "index": 3,
+          "gold": 3200,
+          "award": 21405392,
+          "weight": 10
+        },
+        {
+          "index": 4,
+          "gold": 1600,
+          "award": 21405393,
+          "weight": 15
+        },
+        {
+          "index": 5,
+          "gold": 2000,
+          "award": 21405394,
+          "weight": 15
+        },
+        {
+          "index": 6,
+          "gold": 6000,
+          "award": 21405395,
+          "weight": 10
+        },
+        {
+          "index": 7,
+          "gold": 2000,
+          "award": 21405396,
+          "weight": 15
+        },
+        {
+          "index": 8,
+          "gold": 2000,
+          "award": 21405397,
+          "weight": 15
+        },
+        {
+          "index": 9,
+          "gold": 3000,
+          "award": 21405398,
+          "weight": 15
+        },
+        {
+          "index": 10,
+          "gold": 6000,
+          "award": 21405399,
+          "weight": 2
+        },
+        {
+          "index": 11,
+          "gold": 5000,
+          "award": 21405400,
+          "weight": 10
+        },
+        {
+          "index": 12,
+          "gold": 2000,
+          "award": 21405401,
+          "weight": 15
+        },
+        {
+          "index": 13,
+          "gold": 1600,
+          "award": 21405402,
+          "weight": 15
+        },
+        {
+          "index": 14,
+          "gold": 3000,
+          "award": 21405403,
+          "weight": 15
+        },
+        {
+          "index": 15,
+          "gold": 2000,
+          "award": 21405404,
+          "weight": 20
+        },
+        {
+          "index": 16,
+          "gold": 2000,
+          "award": 21405405,
+          "weight": 20
+        },
+        {
+          "index": 17,
+          "gold": 6000,
+          "award": 21405406,
+          "weight": 15
+        },
+        {
+          "index": 18,
+          "gold": 3000,
+          "award": 21405407,
+          "weight": 15
+        }
+      ],
+      "mall": [
+        {
+          "index": 51,
+          "score": 35,
+          "award": 21405410,
+          "limit": 1
+        },
+        {
+          "index": 52,
+          "score": 30,
+          "award": 21405411,
+          "limit": 1
+        },
+        {
+          "index": 53,
+          "score": 40,
+          "award": 21404127,
+          "limit": 1
+        },
+        {
+          "index": 54,
+          "score": 30,
+          "award": 21404131,
+          "limit": 1
+        },
+        {
+          "index": 55,
+          "score": 40,
+          "award": 21404128,
+          "limit": 1
+        },
+        {
+          "index": 56,
+          "score": 40,
+          "award": 21404126,
+          "limit": 1
+        },
+        {
+          "index": 57,
+          "score": 30,
+          "award": 21405416,
+          "limit": 1
+        },
+        {
+          "index": 58,
+          "score": 30,
+          "award": 21405417,
+          "limit": 1
+        },
+        {
+          "index": 59,
+          "score": 30,
+          "award": 21405418,
+          "limit": 1
+        },
+        {
+          "index": 60,
+          "score": 30,
+          "award": 21405419,
+          "limit": 1
+        },
+        {
+          "index": 61,
+          "score": 30,
+          "award": 21405420,
+          "limit": 1
+        },
+        {
+          "index": 62,
+          "score": 30,
+          "award": 21405421,
+          "limit": 1
+        },
+        {
+          "index": 63,
+          "score": 1,
+          "award": 21405422,
+          "limit": 0
+        },
+        {
+          "index": 64,
+          "score": 8,
+          "award": 21405423,
+          "limit": 0
+        },
+        {
+          "index": 65,
+          "score": 1,
+          "award": 21405424,
+          "limit": 0
+        },
+        {
+          "index": 66,
+          "score": 1,
+          "award": 21405425,
+          "limit": 0
+        },
+        {
+          "index": 67,
+          "score": 1,
+          "award": 21405426,
+          "limit": 0
+        },
+        {
+          "index": 68,
+          "score": 1,
+          "award": 21405427,
+          "limit": 0
+        }
+      ],
+      "bag": {
+        "index": 95,
+        "awardId": 21405410,
+        "gold": 40000,
+        "showID": 2000212,
+        "showType": 1,
+        "fightReportAddr": ""
+      },
+      "cur_pool_index": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85
+      ]
+    }
   },
   "1380001": {
     "act_id": 1380001,
@@ -9230,7 +12964,7 @@
   },
   "1460001": {
     "act_id": 1460001,
-    "class": "THDActivityBase",
+    "class": "THDFoolsDayRecharge",
     "res_name": "RESOURCEID_FoolsDayRecharge",
     "name": "April Fools' Day 1",
     "tname": "Jester Box",
@@ -9240,11 +12974,50 @@
     "image_id": 1460001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "recharge_index": 20,
+      "day_award": [
+        {
+          "index": 1,
+          "awardid": 21404749,
+          "cond": 400
+        }
+      ],
+      "total_award": {
+        "index": 2,
+        "awardId": 21404750,
+        "gold": 40000,
+        "showID": 11150059,
+        "showType": 0,
+        "fightReportAddr": ""
+      },
+      "progress_award": [
+        {
+          "index": 10,
+          "awardid": 21404751
+        },
+        {
+          "index": 11,
+          "awardid": 21404752
+        },
+        {
+          "index": 12,
+          "awardid": 21404753
+        },
+        {
+          "index": 13,
+          "awardid": 21404754
+        },
+        {
+          "index": 14,
+          "awardid": 21404755
+        }
+      ]
+    }
   },
   "1470001": {
     "act_id": 1470001,
-    "class": "THDActivityBase",
+    "class": "THDFoolsDayShop",
     "res_name": "RESOURCEID_FoolsDayShop",
     "name": "April Fools' Day 2",
     "tname": "Fools' Event",
@@ -9254,7 +13027,175 @@
     "image_id": 1470001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "play_once_index": 1,
+      "play_five_index": 2,
+      "score_index": 3,
+      "re_item_index": 4,
+      "re_price_index": 5,
+      "cur_price_index": 6,
+      "re_start": 7,
+      "luck_index": 8,
+      "play_cost": 100,
+      "re_item_cost": 5,
+      "re_price_cost": 5,
+      "cur_items": [
+        80,
+        81,
+        82
+      ],
+      "cur_items_index": [
+        9,
+        10,
+        11
+      ],
+      "score_shop": [
+        {
+          "index": 56,
+          "cost": 2000,
+          "awardid": 21404769,
+          "numLimit": 1
+        },
+        {
+          "index": 57,
+          "cost": 2000,
+          "awardid": 21404770,
+          "numLimit": 1
+        },
+        {
+          "index": 58,
+          "cost": 2000,
+          "awardid": 21404771,
+          "numLimit": 1
+        },
+        {
+          "index": 59,
+          "cost": 2000,
+          "awardid": 21404772,
+          "numLimit": 1
+        },
+        {
+          "index": 60,
+          "cost": 1600,
+          "awardid": 21404773,
+          "numLimit": 1
+        },
+        {
+          "index": 61,
+          "cost": 1600,
+          "awardid": 21404774,
+          "numLimit": 1
+        },
+        {
+          "index": 62,
+          "cost": 1600,
+          "awardid": 21404775,
+          "numLimit": 1
+        },
+        {
+          "index": 63,
+          "cost": 1600,
+          "awardid": 21404776,
+          "numLimit": 1
+        },
+        {
+          "index": 64,
+          "cost": 1600,
+          "awardid": 21404777,
+          "numLimit": 1
+        },
+        {
+          "index": 65,
+          "cost": 1600,
+          "awardid": 21404778,
+          "numLimit": 1
+        },
+        {
+          "index": 66,
+          "cost": 1600,
+          "awardid": 21404779,
+          "numLimit": 1
+        },
+        {
+          "index": 67,
+          "cost": 1600,
+          "awardid": 21404780,
+          "numLimit": 1
+        },
+        {
+          "index": 68,
+          "cost": 800,
+          "awardid": 21404781,
+          "numLimit": 1
+        },
+        {
+          "index": 69,
+          "cost": 800,
+          "awardid": 21404782,
+          "numLimit": 1
+        },
+        {
+          "index": 70,
+          "cost": 300,
+          "awardid": 21404783,
+          "numLimit": 0
+        },
+        {
+          "index": 71,
+          "cost": 1,
+          "awardid": 21404784,
+          "numLimit": 0
+        },
+        {
+          "index": 72,
+          "cost": 1,
+          "awardid": 21404785,
+          "numLimit": 0
+        },
+        {
+          "index": 73,
+          "cost": 4,
+          "awardid": 21404786,
+          "numLimit": 0
+        },
+        {
+          "index": 74,
+          "cost": 4,
+          "awardid": 21404787,
+          "numLimit": 0
+        },
+        {
+          "index": 75,
+          "cost": 1,
+          "awardid": 21404788,
+          "numLimit": 0
+        },
+        {
+          "index": 76,
+          "cost": 20,
+          "awardid": 21404789,
+          "numLimit": 0
+        },
+        {
+          "index": 77,
+          "cost": 20,
+          "awardid": 21404790,
+          "numLimit": 0
+        },
+        {
+          "index": 78,
+          "cost": 4,
+          "awardid": 21404791,
+          "numLimit": 0
+        },
+        {
+          "index": 79,
+          "cost": 2,
+          "awardid": 21404792,
+          "numLimit": 0
+        }
+      ]
+    }
   },
   "1480001": {
     "act_id": 1480001,
@@ -9696,7 +13637,7 @@
   },
   "1540001": {
     "act_id": 1540001,
-    "class": "THDActivityBase",
+    "class": "THDNationalDayOne",
     "res_name": "RESOURCEID_NationalDayOne2017",
     "name": "National Day 1",
     "tname": "National Day Sign-In",
@@ -9710,7 +13651,7 @@
   },
   "1550001": {
     "act_id": 1550001,
-    "class": "THDActivityBase",
+    "class": "THDNationalDayTwo",
     "res_name": "RESOURCEID_NationalDayTwo2017",
     "name": "National Day 2",
     "tname": "Welcome National Day",
@@ -9720,7 +13661,18 @@
     "image_id": 1550001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "free_index": 1,
+      "discount": 2,
+      "score_index": 2069561516,
+      "discount_index": 1684957474,
+      "refresh_index": 975337573,
+      "refresh_cost": 1663183923,
+      "items": "",
+      "mall": "",
+      "bag": "",
+      "cur_pool_index": ""
+    }
   },
   "1560001": {
     "act_id": 1560001,

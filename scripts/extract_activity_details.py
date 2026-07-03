@@ -211,6 +211,7 @@ def main():
         elif "KingGuard" in res_name: class_name = "THDKingGuard"
         elif "Pyramid" in res_name: class_name = "THDPyramid"
         elif "RushInSeireitei" in res_name: class_name = "THDRushInSeireitei"
+        elif "KnifeHeroCollect" in res_name: class_name = "THDKnifeHeroCollect"
         elif "IceHeros" in res_name: class_name = "THDIceHeros"
         elif "ExchangeChip" in res_name: class_name = "THDExchangeChip"
         elif "TeamBuy" in res_name: class_name = "THDTeamBuy"
@@ -222,6 +223,19 @@ def main():
         elif "ChildrenDayCollect" in res_name: class_name = "THDChildrenDayCollect"
         elif "DuanwujiePet" in res_name: class_name = "THDDuanwujiePet"
         elif "DuanwujieBoat" in res_name: class_name = "THDDuanwujieBoat"
+        elif "LaborConsume" in res_name: class_name = "THDLaborConsume"
+        elif "NationalDayTwo" in res_name: class_name = "THDNationalDayTwo"
+        elif "NationalDayOne" in res_name: class_name = "THDNationalDayOne"
+        elif "CoolSummer" in res_name: class_name = "THDCoolSummer"
+        elif "FoolsDayShop" in res_name: class_name = "THDFoolsDayShop"
+        elif "FoolsDayRecharge" in res_name: class_name = "THDFoolsDayRecharge"
+        elif "HalloweenShop" in res_name: class_name = "THDHalloweenShop"
+        elif "KnifeChessBuy" in res_name: class_name = "THDKnifeChessBuy"
+        elif "GhostKingForg" in res_name: class_name = "THDGhostKingForg"
+        elif "Sled" in res_name: class_name = "THDSled"
+        elif "ThanksFeast" in res_name: class_name = "THDThanksFeast"
+        elif "ThankYou" in res_name: class_name = "THDThankYou"
+        elif "TreasureHuntShop" in res_name or "TreasureShop" in res_name: class_name = "THDTreasureHuntShop"
         
         # Read all rows inside this activity's bin table
         for _ in range(row_count):
@@ -405,6 +419,17 @@ def main():
                     row_details["extra"]["pet_id_info"] = try_json_load(pet_id_str)
                     row_details["extra"]["messages"] = try_json_load(messages_str)
 
+                elif class_name == "THDKnifeHeroCollect":
+                    row_details["extra"]["consume_gold"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["knife_condition"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["knife_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["recharge_gold"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["hero_condition"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["hero_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["consume_gold_index"] = reader.read_int()
+                    row_details["extra"]["recharge_gold_index"] = reader.read_int()
+                    row_details["extra"]["language"] = try_json_load(reader.read_utf())
+
                 elif class_name == "THDIceHeros":
                     rank_list_str = reader.read_utf()
                     awards_str = reader.read_utf()
@@ -576,7 +601,150 @@ def main():
                     row_details["extra"]["npc_speed"] = npc_speed_val
                     row_details["extra"]["block_length"] = block_length_val
                     row_details["extra"]["texts"] = try_json_load(texts_str)
-                    
+
+                elif class_name == "THDLaborConsume":
+                    row_details["extra"]["banner"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["condition"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["score"] = reader.read_uint()
+                    row_details["extra"]["refresh"] = reader.read_uint()
+                    row_details["extra"]["free_times"] = reader.read_uint()
+                    row_details["extra"]["refresh_cost"] = reader.read_uint()
+                    row_details["extra"]["banner_index"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["mall"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["bag"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["language"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDNationalDayTwo":
+                    row_details["extra"]["free_index"] = reader.read_uint()
+                    row_details["extra"]["discount"] = reader.read_uint()
+                    row_details["extra"]["score_index"] = reader.read_uint()
+                    row_details["extra"]["discount_index"] = reader.read_uint()
+                    row_details["extra"]["refresh_index"] = reader.read_uint()
+                    row_details["extra"]["refresh_cost"] = reader.read_uint()
+                    row_details["extra"]["items"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["mall"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["bag"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["cur_pool_index"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDCoolSummer":
+                    row_details["extra"]["repository"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["shell_index"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["open_once"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["open_all"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["refresh"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["choose"] = reader.read_uint()
+                    row_details["extra"]["score"] = reader.read_uint()
+                    row_details["extra"]["score_shop"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["main_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["language"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDFoolsDayShop":
+                    row_details["extra"]["play_once_index"] = reader.read_uint()
+                    row_details["extra"]["play_five_index"] = reader.read_uint()
+                    row_details["extra"]["score_index"] = reader.read_uint()
+                    row_details["extra"]["re_item_index"] = reader.read_uint()
+                    row_details["extra"]["re_price_index"] = reader.read_uint()
+                    row_details["extra"]["cur_price_index"] = reader.read_uint()
+                    row_details["extra"]["re_start"] = reader.read_uint()
+                    row_details["extra"]["luck_index"] = reader.read_uint()
+                    row_details["extra"]["play_cost"] = reader.read_uint()
+                    row_details["extra"]["re_item_cost"] = reader.read_uint()
+                    row_details["extra"]["re_price_cost"] = reader.read_uint()
+                    row_details["extra"]["cur_items"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["cur_items_index"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["score_shop"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDFoolsDayRecharge":
+                    row_details["extra"]["recharge_index"] = reader.read_uint()
+                    row_details["extra"]["day_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["total_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["progress_award"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDHalloweenShop":
+                    row_details["extra"]["refresh_index"] = reader.read_uint()
+                    row_details["extra"]["total_score_index"] = reader.read_uint()
+                    row_details["extra"]["buy_index"] = reader.read_uint()
+                    row_details["extra"]["buy_cost_gold"] = reader.read_uint()
+                    row_details["extra"]["refresh_cost_gold"] = reader.read_uint()
+                    row_details["extra"]["all_buy_index"] = reader.read_uint()
+                    row_details["extra"]["items"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["mall"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["bag"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["cur_items_index"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["mask_name"] = reader.read_utf()
+
+                elif class_name == "THDKnifeChessBuy":
+                    row_details["extra"]["recharge"] = reader.read_uint()
+                    row_details["extra"]["step_gold"] = reader.read_uint()
+                    row_details["extra"]["step_index"] = reader.read_uint()
+                    row_details["extra"]["cur_step"] = reader.read_uint()
+                    row_details["extra"]["stage_index"] = reader.read_uint()
+                    row_details["extra"]["open_stage_index"] = reader.read_uint()
+                    row_details["extra"]["oper_index"] = reader.read_uint()
+                    row_details["extra"]["onekey_index"] = reader.read_uint()
+                    row_details["extra"]["normal_award"] = reader.read_uint()
+                    row_details["extra"]["stage_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["stage_gold"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["stage_score"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["stage_score_id"] = reader.read_uint()
+                    row_details["extra"]["mall"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDGhostKingForg":
+                    row_details["extra"]["recharge_index"] = reader.read_uint()
+                    row_details["extra"]["forging"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["forging_max"] = reader.read_uint()
+                    row_details["extra"]["forging_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["score_index"] = reader.read_uint()
+                    row_details["extra"]["additional_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["additional_items"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["big_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["score_shop"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["language"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDSled":
+                    row_details["extra"]["robbery"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["transport"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["christmas_cards_index"] = reader.read_uint()
+                    row_details["extra"]["refresh_quality"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["one_key_red"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["begin_transport"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["sled_infos"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["robbery_interface_index"] = reader.read_uint()
+                    row_details["extra"]["onekey_arrival"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["receive_award_index"] = reader.read_uint()
+                    row_details["extra"]["big_gift"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["max_size"] = reader.read_uint()
+                    row_details["extra"]["transport_time"] = reader.read_uint()
+                    row_details["extra"]["transport_protect"] = reader.read_uint()
+                    row_details["extra"]["robbery_person_index"] = reader.read_uint()
+                    row_details["extra"]["robbery_index"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["shop"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["gold_cards"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["language"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDThanksFeast":
+                    row_details["extra"]["puzzle"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["pet"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["recharge_index"] = reader.read_uint()
+                    row_details["extra"]["daily_recharge_index"] = reader.read_uint()
+                    row_details["extra"]["daily_gift"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDThankYou":
+                    row_details["extra"]["recharge_index"] = reader.read_uint()
+                    row_details["extra"]["daily_recharge_index"] = reader.read_uint()
+                    row_details["extra"]["daily_gift"] = try_json_load(reader.read_utf())
+
+                elif class_name == "THDTreasureHuntShop":
+                    row_details["extra"]["dark_index"] = reader.read_uint()
+                    row_details["extra"]["light_index"] = reader.read_uint()
+                    row_details["extra"]["dark_item_index"] = reader.read_uint()
+                    row_details["extra"]["light_item_index"] = reader.read_uint()
+                    row_details["extra"]["items"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["shop"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["big_award"] = try_json_load(reader.read_utf())
+                    row_details["extra"]["cost"] = reader.read_uint()
+                    row_details["extra"]["texts"] = try_json_load(reader.read_utf())
+
                 elif class_name in [
                     "THDSinglePay", "THDTotalPay", "THDDailyPay", "THDTotalCost", "THDDailyCost", 
                     "THDDailyTotalPay", "THDDailyTotalCost", "THDFirstPay", "THDYellowDiamonGiftBag", 
@@ -593,16 +761,15 @@ def main():
             except Exception as e:
                 print(f"Exception parsing fields for act_id {act_id} of type {class_name}: {e}")
 
-            # Store the row details, but only if this is an active act_id in our campaign
-            if act_id in active_act_ids:
-                extracted_details[act_id] = row_details
+            # Store all parsed activities (including inactive ones for CFYOW data)
+            extracted_details[act_id] = row_details
 
     # Write output to public/data/activity_details.json
     out_path = "public/data/activity_details.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(extracted_details, f, indent=2, ensure_ascii=False)
 
-    print(f"\nCompleted! Datamined details for {len(extracted_details)} active promo activities.")
+    print(f"\nCompleted! Datamined details for {len(extracted_details)} activities (all classes).")
     print(f"Saved database to: {out_path}")
 
 if __name__ == "__main__":

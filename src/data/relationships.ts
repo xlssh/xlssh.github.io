@@ -1,4 +1,4 @@
-import { Article, Hero, City, Stage, DailyQuest, StoryQuest, MallItem } from '../types/db';
+import type { Article, Hero, City, Stage, DailyQuest, StoryQuest, MallItem, Award, ActivityDetailsJson, PromotionalActivity } from '../types/db';
 
 export interface RewardItem {
   type: number;
@@ -355,5 +355,110 @@ export function getAttributeName(param1: number): string {
     case 914: return 'HP';
     default: return `Attribute #${param1}`;
   }
+}
+
+export interface ObtainSource {
+  activityId: number;
+  activityName: string;
+  activityDisplayName: string;
+  className: string;
+  mechanism: string;
+  costLabel: string;
+  limitLabel: string;
+  awardId: number;
+  promoId: number | null;
+}
+
+export function getActivationArticleForHero(articles: Article[], heroId: number): Article | undefined {
+  return articles.find(a => a.item_function === 9 && a.function_value === heroId);
+}
+
+export function getActivitiesAwardingArticle(
+  awards: Award[],
+  activityDetails: ActivityDetailsJson,
+  articleId: number,
+  promotionalActivities?: PromotionalActivity[]
+): ObtainSource[] {
+  const results: ObtainSource[] = [];
+
+  const matchingAwardIds = new Set<number>();
+  for (const award of awards) {
+    const allEntries = [
+      ...(award.fixed || []),
+      ...(award.rewards || []).flatMap((r: any) => r.value || [])
+    ];
+    for (const entry of allEntries) {
+      if (entry.code === articleId) {
+        matchingAwardIds.add(award.id);
+      }
+    }
+  }
+
+  if (matchingAwardIds.size === 0) return results;
+
+  // Build act_id -> promo.id lookup
+  const actIdToPromoId = new Map<number, number>();
+  if (promotionalActivities) {
+    for (const p of promotionalActivities) {
+      if (p.act_id && !actIdToPromoId.has(p.act_id)) {
+        actIdToPromoId.set(p.act_id, p.id);
+      }
+    }
+  }
+
+  for (const [actIdStr, detail] of Object.entries(activityDetails)) {
+    const actId = parseInt(actIdStr);
+    const extra = detail.extra || {};
+    const promoId = actIdToPromoId.get(actId) ?? null;
+
+    const searchArrays = (arr: any[], mechanism: string) => {
+      if (!Array.isArray(arr)) return;
+      for (const item of arr) {
+        const aid = item.awardId || item.awardid || item.award || item.awardID;
+        if (aid && matchingAwardIds.has(aid)) {
+          const score = item.score || item.cost || item.costScore || item.gold || 0;
+          const count = item.count || item.limit || item.numLimit || 0;
+          results.push({
+            activityId: actId,
+            activityName: detail.name,
+            activityDisplayName: detail.tname,
+            className: detail.class,
+            mechanism,
+            costLabel: score ? `${score.toLocaleString()} pts` : 'Free / Unknown',
+            limitLabel: count > 0 ? `Limit: ${count}` : '',
+            awardId: aid,
+            promoId,
+          });
+        }
+      }
+    };
+
+    searchArrays(extra.mall || [], 'Mall');
+    searchArrays(extra.shop || [], 'Shop');
+    searchArrays(extra.score_shop || [], 'Score Shop');
+
+    for (const [key, mechanism] of [['bag', 'Bag'], ['big_award', 'Big Award'], ['main_award', 'Main Award'], ['big_gift', 'Big Gift']] as const) {
+      const obj = extra[key];
+      if (obj && typeof obj === 'object') {
+        const aid = obj.awardId || obj.awardid || obj.award || obj.awardID;
+        if (aid && matchingAwardIds.has(aid)) {
+          const cost = obj.score || obj.cost || obj.gold || 0;
+          results.push({
+            activityId: actId,
+            activityName: detail.name,
+            activityDisplayName: detail.tname,
+            className: detail.class,
+            mechanism,
+            costLabel: cost ? `${cost.toLocaleString()} pts` : 'Free / Unknown',
+            limitLabel: '',
+            awardId: aid,
+            promoId,
+          });
+        }
+      }
+    }
+  }
+
+  return results;
 }
 

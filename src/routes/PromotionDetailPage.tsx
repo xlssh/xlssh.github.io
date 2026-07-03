@@ -1509,6 +1509,635 @@ const DragonBoatRaceCalculator: React.FC<{ details: ActivityDetail; articlesList
   );
 };
 
+const KnifeHeroCollectPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const {
+    consume_gold = [],
+    knife_condition = [],
+    knife_award = [],
+    recharge_gold = [],
+    hero_condition = [],
+    hero_award = [],
+  } = details.extra;
+
+  const getRewardsForGroup = (groupIndex: number, awardArr: any[]) => {
+    const startKey = (groupIndex + 1) * 1000;
+    const endKey = startKey + 1000;
+    return awardArr.filter(a => a.key >= startKey && a.key < endKey);
+  };
+  
+  const getConditionsForGroup = (groupIndex: number, condArr: any[]) => {
+    const startKey = (groupIndex + 1) * 1000;
+    const endKey = startKey + 1000;
+    return condArr.filter(c => c.key >= startKey && c.key < endKey);
+  };
+
+  const renderMilestoneGroup = (title: string, milestones: any[], conditions: any[], awards: any[]) => (
+    <div className="space-y-4">
+      <h4 className="font-bold text-base text-text flex items-center gap-2">
+        <Trophy size={18} className="text-amber-500" />
+        <span>{title}</span>
+      </h4>
+      <div className="space-y-3">
+        {milestones.map((milestone, index) => {
+          const milestoneRewards = getRewardsForGroup(index, awards);
+          const milestoneConditions = getConditionsForGroup(index, conditions);
+          return (
+            <div key={index} className="p-4 bg-surface rounded-xl border border-border">
+              <h5 className="font-bold text-sm text-violet-500 mb-2">
+                Milestone: {milestone.condition.toLocaleString()} Gold
+              </h5>
+              {milestoneConditions.map((condGroup: any, cgIdx: number) => (
+                <div key={cgIdx} className="mb-3">
+                  <p className="text-xs font-semibold text-subtle mb-1">Required Items:</p>
+                   <div className="p-2 bg-bg/50 rounded-md border border-border/70">
+                    <RewardList rewardsJson={condGroup.value.map((v:any) => ({...v, type: v.type === 1 ? 77 : 300}))} articles={articlesList} />
+                  </div>
+                </div>
+              ))}
+              {milestoneRewards.map((rewardGroup: any, rgIdx: number) => (
+                 <div key={rgIdx} className="mb-3">
+                  <p className="text-xs font-semibold text-subtle mb-1">Rewards:</p>
+                   <div className="p-2 bg-bg/50 rounded-md border border-border/70">
+                    <RewardList rewardsJson={rewardGroup.value} articles={articlesList} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-6">
+      {renderMilestoneGroup("Zanpakutō Collection (Consume Gold)", consume_gold, knife_condition, knife_award)}
+      {renderMilestoneGroup("Hero Collection (Recharge Gold)", recharge_gold, hero_condition, hero_award)}
+    </div>
+  );
+};
+
+// 19. Labor Day Spending Exchange Planner
+const LaborConsumePlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetScore, setTargetScore] = useState(50000);
+  const mall = details.extra.mall || [];
+  const bag = details.extra.bag || {};
+  const banner = details.extra.banner || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Gift size={16} className="text-amber-500" />
+        <span>Labor Day Spending — Point Exchange Shop</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Your Accumulated Points
+          </span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Points:</label>
+            <input type="number" min={0} value={targetScore} onChange={(e) => setTargetScore(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+          {bag.awardId && (
+            <div className="p-2 bg-bg/50 rounded border border-border">
+              <span className="text-[9px] text-subtle font-bold uppercase block mb-1">Grand Prize (Bag)</span>
+              <div className="font-mono text-[10px]">Cost: <span className="font-bold text-violet-600 dark:text-violet-400">{bag.score?.toLocaleString() || bag.gold?.toLocaleString() || '?'} pts</span></div>
+              <RewardList rewardsJson={awardsList.find(a => a.id === bag.awardId) ? [...(awardsList.find(a => a.id === bag.awardId)!.fixed || []), ...(awardsList.find(a => a.id === bag.awardId)!.rewards || [])] : []} articles={articlesList} />
+            </div>
+          )}
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Exchange Shop Items
+          </span>
+          <div className="space-y-2">
+            {mall.map((item: any, i: number) => {
+              const canAfford = targetScore >= (item.score || 0);
+              const award = awardsList.find(a => a.id === item.awardId);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0">
+                    <RewardList rewardsJson={rewards} articles={articlesList} />
+                  </div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>
+                      {item.score?.toLocaleString()} pts
+                    </div>
+                    {item.count > 0 && <div className="text-[9px] text-muted">Limit: {item.count}</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 20. Everyone Is Looting 2 Planner
+const NationalDayTwoPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetCredits, setTargetCredits] = useState(40);
+  const mall = details.extra.mall || [];
+  const bag = details.extra.bag || {};
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Coins size={16} className="text-amber-500" />
+        <span>Everyone Is Looting 2 — Credit Exchange</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Your Credits
+          </span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Credits:</label>
+            <input type="number" min={0} value={targetCredits} onChange={(e) => setTargetCredits(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Score Exchange Shop
+          </span>
+          <div className="space-y-2">
+            {mall.map((item: any, i: number) => {
+              const canAfford = targetCredits >= (item.score || 0);
+              const award = awardsList.find(a => a.id === item.award);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>{item.score} credits</div>
+                    {item.limit > 0 && <div className="text-[9px] text-muted">Limit: {item.limit}</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 21. Cool Summer Shell Game Planner
+const CoolSummerPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetScore, setTargetScore] = useState(40000);
+  const mainAward = details.extra.main_award || {};
+  const scoreShop = details.extra.score_shop || [];
+  const repository = details.extra.repository || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Sparkles size={16} className="text-cyan-500" />
+        <span>Cool Summer — Shell Game & Score Shop</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Main Award (Big Prize)
+          </span>
+          {mainAward.awardID && (
+            <div className="p-3 bg-bg/50 rounded border border-border">
+              <div className="font-mono text-[10px] mb-1">Requires: <span className="font-bold text-violet-600 dark:text-violet-400">{mainAward.score?.toLocaleString()} pts</span></div>
+              <RewardList rewardsJson={awardsList.find(a => a.id === mainAward.awardID) ? [...(awardsList.find(a => a.id === mainAward.awardID)!.fixed || []), ...(awardsList.find(a => a.id === mainAward.awardID)!.rewards || [])] : []} articles={articlesList} />
+            </div>
+          )}
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Points:</label>
+            <input type="number" min={0} value={targetScore} onChange={(e) => setTargetScore(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Score Shop
+          </span>
+          <div className="space-y-2">
+            {scoreShop.map((item: any, i: number) => {
+              const canAfford = targetScore >= (item.score || 0);
+              const award = awardsList.find(a => a.id === item.awardId);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>{item.score?.toLocaleString()} pts</div>
+                    {item.count > 0 && <div className="text-[9px] text-muted">Limit: {item.count}</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 22. Fools Day Shop Score Exchange Planner
+const FoolsDayShopPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetScore, setTargetScore] = useState(2000);
+  const scoreShop = details.extra.score_shop || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Gift size={16} className="text-violet-500" />
+        <span>April Fools' Day 2 — Score Exchange Shop</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Your Score</span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Score:</label>
+            <input type="number" min={0} value={targetScore} onChange={(e) => setTargetScore(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Shop Items</span>
+          <div className="space-y-2">
+            {scoreShop.map((item: any, i: number) => {
+              const canAfford = targetScore >= (item.cost || 0);
+              const award = awardsList.find(a => a.id === item.awardid);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>{item.cost} score</div>
+                    {item.numLimit > 0 && <div className="text-[9px] text-muted">Limit: {item.numLimit}</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 23. Fools Day Recharge Planner
+const FoolsDayRechargePlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const totalAward = details.extra.total_award || {};
+  const dayAward = details.extra.day_award || [];
+  const progressAward = details.extra.progress_award || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Coins size={16} className="text-amber-500" />
+        <span>April Fools' Day 1 — Jester Box Recharge</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Total Recharge Award</span>
+          {totalAward.awardId && (
+            <div className="p-3 bg-bg/50 rounded border border-border">
+              <div className="font-mono text-[10px] mb-1">Threshold: <span className="font-bold text-violet-600 dark:text-violet-400">{totalAward.gold?.toLocaleString()} gold</span></div>
+              <RewardList rewardsJson={awardsList.find(a => a.id === totalAward.awardId) ? [...(awardsList.find(a => a.id === totalAward.awardId)!.fixed || []), ...(awardsList.find(a => a.id === totalAward.awardId)!.rewards || [])] : []} articles={articlesList} />
+            </div>
+          )}
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Daily / Progress Awards</span>
+          <div className="space-y-2">
+            {dayAward.map((item: any, i: number) => {
+              const award = awardsList.find(a => a.id === item.awardid);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className="font-mono text-[10px] text-subtle">Day {item.cond || i + 1}</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 24. Halloween Shop Mask Exchange
+const HalloweenShopPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetScore, setTargetScore] = useState(1000);
+  const mall = details.extra.mall || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Shield size={16} className="text-orange-500" />
+        <span>Ghost Mask — Halloween Exchange Shop</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Your Score</span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Score:</label>
+            <input type="number" min={0} value={targetScore} onChange={(e) => setTargetScore(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+          {details.extra.buy_cost_gold && (
+            <div className="p-2 bg-bg/50 rounded border border-border text-[10px]">
+              Buy Cost: <span className="font-bold text-violet-600 dark:text-violet-400">{details.extra.buy_cost_gold} gold</span>
+              {details.extra.refresh_cost_gold && <>, Refresh: <span className="font-bold text-violet-600 dark:text-violet-400">{details.extra.refresh_cost_gold} gold</span></>}
+            </div>
+          )}
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Mask Shop</span>
+          <div className="space-y-2">
+            {mall.map((item: any, i: number) => {
+              const canAfford = targetScore >= (item.costScore || 0);
+              const award = awardsList.find(a => a.id === item.award);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>{item.costScore} score</div>
+                    {item.numLimit > 0 && <div className="text-[9px] text-muted">Limit: {item.numLimit}</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 25. Zanpakuto 2-in-1 Board Shop
+const KnifeChessBuyPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetScore, setTargetScore] = useState(1250);
+  const mall = details.extra.mall || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Star size={16} className="text-yellow-500" />
+        <span>Zanpakuto 2-in-1 — Board Shop</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Your Points</span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Points:</label>
+            <input type="number" min={0} value={targetScore} onChange={(e) => setTargetScore(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+          <div className="p-2 bg-bg/50 rounded border border-border text-[10px]">
+            Step Gold: <span className="font-bold text-violet-600 dark:text-violet-400">{details.extra.step_gold || '?'} gold per step</span>
+          </div>
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Board Shop</span>
+          <div className="space-y-2">
+            {mall.map((item: any, i: number) => {
+              const canAfford = targetScore >= (item.score || 0);
+              const award = awardsList.find(a => a.id === item.award);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>{item.score} pts</div>
+                    {item.limit > 0 && <div className="text-[9px] text-muted">Limit: {item.limit}</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 26. Ghost King Forging Planner
+const GhostKingForgPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetScore, setTargetScore] = useState(35000);
+  const bigAward = details.extra.big_award || {};
+  const scoreShop = details.extra.score_shop || [];
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Flame size={16} className="text-red-500" />
+        <span>Personal Top-Up — Ghost King Forging</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Big Award & Points</span>
+          {bigAward.awardId && (
+            <div className="p-3 bg-bg/50 rounded border border-border">
+              <div className="font-mono text-[10px] mb-1">Requires: <span className="font-bold text-violet-600 dark:text-violet-400">{bigAward.gold?.toLocaleString()} gold</span></div>
+              <RewardList rewardsJson={awardsList.find(a => a.id === bigAward.awardId) ? [...(awardsList.find(a => a.id === bigAward.awardId)!.fixed || []), ...(awardsList.find(a => a.id === bigAward.awardId)!.rewards || [])] : []} articles={articlesList} />
+            </div>
+          )}
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Score:</label>
+            <input type="number" min={0} value={targetScore} onChange={(e) => setTargetScore(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Score Shop</span>
+          <div className="space-y-2">
+            {scoreShop.map((item: any, i: number) => {
+              const canAfford = targetScore >= (item.score || 0);
+              const award = awardsList.find(a => a.id === item.awardId);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>{item.score?.toLocaleString()} pts</div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 27. Sled Transport & Shop
+const SledPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetCost, setTargetCost] = useState(50000);
+  const shop = details.extra.shop || [];
+  const bigGift = details.extra.big_gift || {};
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Compass size={16} className="text-cyan-500" />
+        <span>Sled — Transport & Shop</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Big Gift</span>
+          {bigGift.awardId && (
+            <div className="p-3 bg-bg/50 rounded border border-border">
+              <div className="font-mono text-[10px] mb-1">Cost: <span className="font-bold text-violet-600 dark:text-violet-400">{bigGift.gold?.toLocaleString()} gold</span></div>
+              <RewardList rewardsJson={awardsList.find(a => a.id === bigGift.awardId) ? [...(awardsList.find(a => a.id === bigGift.awardId)!.fixed || []), ...(awardsList.find(a => a.id === bigGift.awardId)!.rewards || [])] : []} articles={articlesList} />
+            </div>
+          )}
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Your Currency:</label>
+            <input type="number" min={0} value={targetCost} onChange={(e) => setTargetCost(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Sled Shop</span>
+          <div className="space-y-2">
+            {shop.map((item: any, i: number) => {
+              const canAfford = targetCost >= (item.cost || 0);
+              const award = awardsList.find(a => a.id === item.awardId);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>{item.cost?.toLocaleString()} currency</div>
+                    {item.count > 0 && <div className="text-[9px] text-muted">Limit: {item.count}</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 28. Thanksgiving Feast Planner
+const ThanksFeastPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const dailyGift = details.extra.daily_gift || [];
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Trophy size={16} className="text-amber-500" />
+        <span>Thanksgiving Feast — Daily Gift</span>
+      </h4>
+      <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+        <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Daily Gift Pool</span>
+        <div className="space-y-2">
+          {(Array.isArray(dailyGift) ? dailyGift : []).map((item: any, i: number) => {
+            const awardId = item.awardId || item.awardid || item.award;
+            const award = awardsList.find(a => a.id === awardId);
+            const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+            return (
+              <div key={i} className="p-2 bg-bg/30 rounded border border-border">
+                <RewardList rewardsJson={rewards} articles={articlesList} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 29. Thank You Daily Gift Planner
+const ThankYouPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const dailyGift = details.extra.daily_gift || [];
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Gift size={16} className="text-emerald-500" />
+        <span>Thank You — Daily Login Gift</span>
+      </h4>
+      <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+        <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Gift Pool</span>
+        <div className="space-y-2">
+          {(Array.isArray(dailyGift) ? dailyGift : []).map((item: any, i: number) => {
+            const awardId = item.awardId || item.awardid || item.award;
+            const award = awardsList.find(a => a.id === awardId);
+            const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+            return (
+              <div key={i} className="p-2 bg-bg/30 rounded border border-border">
+                <RewardList rewardsJson={rewards} articles={articlesList} />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 30. Hueco Mundo Treasure Hunt Shop
+const TreasureHuntShopPlanner: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [targetCurrency, setTargetCurrency] = useState(400);
+  const shop = details.extra.shop || [];
+  const bigAward = details.extra.big_award || {};
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Sparkles size={16} className="text-violet-500" />
+        <span>Hueco Mundo Treasure Hunt — Shop</span>
+      </h4>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Your Currency</span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Currency:</label>
+            <input type="number" min={0} value={targetCurrency} onChange={(e) => setTargetCurrency(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold" />
+          </div>
+          {bigAward.awardId && (
+            <div className="p-2 bg-bg/50 rounded border border-border text-[10px]">
+              Big Award Cost: <span className="font-bold text-violet-600 dark:text-violet-400">{bigAward.cost?.toLocaleString() || '?'}</span>
+            </div>
+          )}
+          <div className="p-2 bg-bg/50 rounded border border-border text-[10px]">
+            Draw Cost: <span className="font-bold text-violet-600 dark:text-violet-400">{details.extra.cost || '?'} per draw</span>
+          </div>
+        </div>
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">Exchange Shop</span>
+          <div className="space-y-2">
+            {shop.map((item: any, i: number) => {
+              const canAfford = targetCurrency >= (item.cost || 0);
+              const award = awardsList.find(a => a.id === item.awardId);
+              const rewards = award ? [...(award.fixed || []), ...(award.rewards || [])] : [];
+              return (
+                <div key={i} className="p-2 bg-bg/30 rounded border border-border flex justify-between items-center gap-2">
+                  <div className="flex-1 min-w-0"><RewardList rewardsJson={rewards} articles={articlesList} /></div>
+                  <div className="text-right shrink-0">
+                    <div className={`font-mono text-[10px] font-bold ${canAfford ? 'text-emerald-600 dark:text-emerald-400' : 'text-subtle'}`}>{item.cost} currency</div>
+                    {item.num > 0 && <div className="text-[9px] text-muted">Limit: {item.num}</div>}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const PromotionDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [loading, setLoading] = useState(true);
@@ -1848,7 +2477,11 @@ export const PromotionDetailPage: React.FC = () => {
               ["THDGrowFundLv", "THDFundLv", "THDFundShop", "THDFundInvestment"].includes(details.class) ||
               details.class === "THDSuperTreasure" ||
               details.tname === "Visored Revenge" ||
-              details.tname === "Dragon Boat Race"
+              details.tname === "Dragon Boat Race" ||
+              details.class === "THDLaborConsume" || details.class === "THDNationalDayTwo" || details.class === "THDCoolSummer" ||
+              details.class === "THDFoolsDayShop" || details.class === "THDFoolsDayRecharge" || details.class === "THDHalloweenShop" ||
+              details.class === "THDKnifeChessBuy" || details.class === "THDGhostKingForg" || details.class === "THDSled" ||
+              details.class === "THDThanksFeast" || details.class === "THDThankYou" || details.class === "THDTreasureHuntShop"
             ) && (
               <div className="pt-4 border-t border-border space-y-4">
                 <span className="text-[10px] font-bold text-subtle block uppercase tracking-wider">
@@ -1911,6 +2544,45 @@ export const PromotionDetailPage: React.FC = () => {
                 )}
                 {details.tname === "Dragon Boat Race" && (
                   <DragonBoatRaceCalculator details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDKnifeHeroCollect" && (
+                  <KnifeHeroCollectPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDLaborConsume" && (
+                  <LaborConsumePlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDNationalDayTwo" && (
+                  <NationalDayTwoPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDCoolSummer" && (
+                  <CoolSummerPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDFoolsDayShop" && (
+                  <FoolsDayShopPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDFoolsDayRecharge" && (
+                  <FoolsDayRechargePlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDHalloweenShop" && (
+                  <HalloweenShopPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDKnifeChessBuy" && (
+                  <KnifeChessBuyPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDGhostKingForg" && (
+                  <GhostKingForgPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDSled" && (
+                  <SledPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDThanksFeast" && (
+                  <ThanksFeastPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDThankYou" && (
+                  <ThankYouPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.class === "THDTreasureHuntShop" && (
+                  <TreasureHuntShopPlanner details={details} articlesList={articlesList} awardsList={awardsList} />
                 )}
               </div>
             )}
