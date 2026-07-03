@@ -253,7 +253,7 @@ export const CombatSimulatorPage: React.FC = () => {
               <input
                 type="range"
                 min={1}
-                max={130}
+                max={159}
                 value={simLevel}
                 onChange={(e) => setSimLevel(parseInt(e.target.value))}
                 className="w-full accent-brand cursor-pointer"

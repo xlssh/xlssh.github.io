@@ -486,9 +486,9 @@ export const HeroDetailPage: React.FC = () => {
                 <input
                   type="number"
                   min="1"
-                  max="130"
+                  max="159"
                   value={targetLevel}
-                  onChange={(e) => setTargetLevel(Math.max(1, Math.min(130, parseInt(e.target.value) || 1)))}
+                  onChange={(e) => setTargetLevel(Math.max(1, Math.min(159, parseInt(e.target.value) || 1)))}
                   className="w-16 px-2 py-1 border border-border rounded bg-bg text-text font-mono font-bold text-center"
                 />
               </div>
@@ -499,7 +499,7 @@ export const HeroDetailPage: React.FC = () => {
               <input
                 type="range"
                 min="1"
-                max="130"
+                max="159"
                 value={targetLevel}
                 onChange={(e) => setTargetLevel(parseInt(e.target.value))}
                 className="w-full h-1.5 bg-surface-raised rounded-lg appearance-none cursor-pointer accent-fuchsia-600"

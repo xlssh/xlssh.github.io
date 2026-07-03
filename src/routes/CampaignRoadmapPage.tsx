@@ -112,7 +112,7 @@ export const CampaignRoadmapPage: React.FC = () => {
           <input
             type="range"
             min={1}
-            max={130}
+            max={159}
             value={playerLevel}
             onChange={(e) => setPlayerLevel(parseInt(e.target.value))}
             className="flex-1 accent-brand cursor-pointer"
@@ -156,8 +156,8 @@ export const CampaignRoadmapPage: React.FC = () => {
                     key={q.id}
                     onClick={() => toggleQuestCompleted(q.id)}
                     className={`p-4 border rounded-xl cursor-pointer transition-all flex items-start gap-3.5 ${isDone
-                        ? 'border-border bg-bg/5 opacity-60'
-                        : 'border-border bg-bg/40 hover:border-border-strong'
+                      ? 'border-border bg-bg/5 opacity-60'
+                      : 'border-border bg-bg/40 hover:border-border-strong'
                       }`}
                   >
                     <button className="mt-0.5 shrink-0 text-muted">
