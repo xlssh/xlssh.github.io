@@ -1221,6 +1221,247 @@ const SeireiteiFarewellPlanner: React.FC<{ details: ActivityDetail; articlesList
   );
 };
 
+// 17. Visored Revenge Calculator Component (Legion + Hollow King)
+const VisoredRevengeCalculator: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [spentPoints, setSpentPoints] = useState(8000);
+
+  // Visor Legion Daily Coupon Rebates (award IDs 21406043 - 21406051)
+  const legionTiers = useMemo(() => {
+    const milestones = [
+      { id: 21406043, key: 40 },
+      { id: 21406044, key: 120 },
+      { id: 21406045, key: 200 },
+      { id: 21406046, key: 400 },
+      { id: 21406047, key: 800 },
+      { id: 21406048, key: 1200 },
+      { id: 21406049, key: 2000 },
+      { id: 21406050, key: 4000 },
+      { id: 21406051, key: 8000 }
+    ];
+
+    return milestones.map(m => {
+      const award = awardsList.find(a => a.id === m.id);
+      const couponAmount = award && award.fixed?.[0]?.code === 2 ? award.fixed[0].amount : 0;
+      return {
+        key: m.key,
+        rebate: couponAmount,
+        awardId: m.id
+      };
+    });
+  }, [awardsList]);
+
+  // Hollow King milestones (award IDs 21406052 - 21406061)
+  const hollowKingTiers = useMemo(() => {
+    const milestones = [
+      { id: 21406052, key: 200 },
+      { id: 21406053, key: 400 },
+      { id: 21406054, key: 800 },
+      { id: 21406055, key: 1200 },
+      { id: 21406056, key: 2000 },
+      { id: 21406057, key: 3000 },
+      { id: 21406058, key: 5000 },
+      { id: 21406059, key: 8000 },
+      { id: 21406060, key: 11000 },
+      { id: 21406061, key: 15000 }
+    ];
+
+    return milestones.map(m => {
+      const award = awardsList.find(a => a.id === m.id);
+      const mergedRewards = award ? [
+        ...(award.fixed || []),
+        ...(award.rewards || [])
+      ] : [];
+      return {
+        key: m.key,
+        awardId: m.id,
+        rewardsJson: mergedRewards
+      };
+    });
+  }, [awardsList]);
+
+  const legionRebate = useMemo(() => {
+    let total = 0;
+    legionTiers.forEach(t => {
+      if (spentPoints >= t.key) {
+        total += t.rebate;
+      }
+    });
+    return total;
+  }, [spentPoints, legionTiers]);
+
+  const netCost = Math.max(0, spentPoints - legionRebate);
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Sparkles size={16} className="text-violet-500" />
+        <span>Visored Revenge Spending & Coupon Rebate Planner</span>
+      </h4>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        {/* Spent Input & Legion daily rebate */}
+        <div className="space-y-4 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Simulate Daily Spend (Visor Legion)
+          </span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Coupons/Gold Spent:</label>
+            <input
+              type="number"
+              min={0}
+              value={spentPoints}
+              onChange={(e) => setSpentPoints(Math.max(0, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold text-sm"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-2 pt-1">
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Daily Coupon Rebate</span>
+              <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-xs">
+                +{legionRebate.toLocaleString()} Coupons
+              </span>
+            </div>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Net Event Cost</span>
+              <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-xs">
+                {netCost.toLocaleString()} Gold
+              </span>
+            </div>
+          </div>
+          <p className="text-[9.5px] text-muted leading-normal italic">
+            Tip: Reiryoku points reset daily. Spend 8,000 coupons/gold to secure the maximum 2,175 total coupons daily return!
+          </p>
+        </div>
+
+        {/* Hollow King milestones (non-resetting) */}
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border max-h-56 overflow-y-auto pr-1 custom-scrollbar">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1 mb-2">
+            Hollow King Milestone Rewards (Accumulative)
+          </span>
+          <div className="space-y-2">
+            {hollowKingTiers.map((m) => {
+              const achieved = spentPoints >= m.key;
+              return (
+                <div key={m.key} className="p-2.5 rounded-lg bg-bg/30 border border-border flex flex-col gap-1 text-[11px]">
+                  <div className="flex justify-between items-center border-b border-zinc-900 pb-0.5 mb-1">
+                    <span className={`font-bold ${achieved ? 'text-violet-600 dark:text-violet-400' : 'text-subtle line-through'}`}>
+                      {m.key.toLocaleString()} Kasō-ryoku
+                    </span>
+                    <span className={`text-[9px] font-extrabold px-1.5 py-0.2 rounded ${achieved ? 'bg-emerald-500/10 text-emerald-500' : 'bg-bg text-subtle'}`}>
+                      {achieved ? 'ACHIEVED' : 'LOCKED'}
+                    </span>
+                  </div>
+                  <RewardList rewardsJson={m.rewardsJson} articles={articlesList} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 18. Dragon Boat Race Component
+const DragonBoatRaceCalculator: React.FC<{ details: ActivityDetail; articlesList: Article[]; awardsList: Award[] }> = ({ details, articlesList, awardsList }) => {
+  const [raceCount, setRaceCount] = useState(1);
+  const [targetCoins, setTargetCoins] = useState(4110);
+
+  const pointsPerMaxCheerRun = 4110;
+  const costPerMaxCheerRun = 3310;
+
+  const totalCost = raceCount * costPerMaxCheerRun;
+  const totalPoints = raceCount * pointsPerMaxCheerRun;
+
+  const reqRuns = Math.ceil(targetCoins / pointsPerMaxCheerRun);
+  const reqGold = reqRuns * costPerMaxCheerRun;
+
+  return (
+    <div className="p-5 border border-border bg-bg/50 rounded-xl space-y-4">
+      <h4 className="font-bold text-sm text-text flex items-center gap-2">
+        <Sparkles size={16} className="text-yellow-500" />
+        <span>Dragon Boat Race Run & Coin Yield Calculator</span>
+      </h4>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+        {/* Run Simulator */}
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Simulate Race Runs (Max Cheer Package)
+          </span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Number of Races:</label>
+            <input
+              type="number"
+              min={1}
+              max={100}
+              value={raceCount}
+              onChange={(e) => setRaceCount(Math.max(1, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-2 pt-1">
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Estimated Gold spent</span>
+              <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-xs">
+                {totalCost.toLocaleString()} Gold
+              </span>
+            </div>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Dragon Boat Coins earned</span>
+              <span className="font-mono font-extrabold text-emerald-600 dark:text-emerald-400 text-xs">
+                {totalPoints.toLocaleString()} Coins
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Target Points Planner */}
+        <div className="space-y-3 bg-surface p-4 rounded-xl border border-border">
+          <span className="font-bold uppercase tracking-wider text-[10px] text-subtle block border-b border-border pb-1">
+            Shop Coins Target Optimizer
+          </span>
+          <div className="space-y-1">
+            <label className="text-subtle font-medium block">Target Shop Coins:</label>
+            <input
+              type="number"
+              min={1}
+              max={100000}
+              value={targetCoins}
+              onChange={(e) => setTargetCoins(Math.max(1, parseInt(e.target.value) || 0))}
+              className="w-full px-3 py-1.5 border border-border rounded bg-bg text-text focus:outline-none focus:ring-1 focus:ring-violet-500 font-mono font-bold"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-2 pt-1">
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Max Cheer runs required</span>
+              <span className="font-mono font-extrabold text-text text-xs">
+                {reqRuns.toLocaleString()} Races
+              </span>
+            </div>
+            <div className="p-2 bg-bg/50 rounded border border-border flex flex-col gap-0.5">
+              <span className="text-[9px] text-subtle font-bold uppercase">Total Gold required</span>
+              <span className="font-mono font-extrabold text-violet-600 dark:text-violet-400 text-xs">
+                {reqGold.toLocaleString()} Gold
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Embedded Event Guide Checklist */}
+      <div className="p-3 bg-zinc-500/5 rounded-xl border border-border text-[11px] leading-relaxed space-y-1">
+        <span className="font-bold text-muted block">Race Efficiency Quick Facts:</span>
+        <ul className="list-disc pl-4 space-y-0.5 text-muted">
+          <li>1 gold spent = 1 point/coin. Maxing the cheer bar (160 points) takes 3,200 gold and grants 800 bonus points (4,000 total).</li>
+          <li>Purchasing an extra racing chance costs 100 gold, and skip animation costs 10 gold.</li>
+          <li>Optimized strategy: 1 race with Max Cheer + Purchase Chance + Skip = **4,110 Coins** for **3,310 Gold**.</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 export const PromotionDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [loading, setLoading] = useState(true);
@@ -1558,7 +1799,9 @@ export const PromotionDetailPage: React.FC = () => {
               ["THDSinglePay", "THDTotalPay", "THDDailyPay", "THDDailyTotalPay", "THDFirstPay", "THDPayReturn"].includes(details.class) ||
               ["THDTotalCost", "THDDailyCost", "THDDailyTotalCost"].includes(details.class) ||
               ["THDGrowFundLv", "THDFundLv", "THDFundShop", "THDFundInvestment"].includes(details.class) ||
-              details.class === "THDSuperTreasure"
+              details.class === "THDSuperTreasure" ||
+              details.tname === "Visored Revenge" ||
+              details.tname === "Dragon Boat Race"
             ) && (
               <div className="pt-4 border-t border-border space-y-4">
                 <span className="text-[10px] font-bold text-subtle block uppercase tracking-wider">
@@ -1611,6 +1854,12 @@ export const PromotionDetailPage: React.FC = () => {
                 )}
                 {details.class === "THDSuperTreasure" && (
                   <SuperTreasurePlanner details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {(details.tname === "Visored Revenge" || details.name.includes("Visor")) && (
+                  <VisoredRevengeCalculator details={details} articlesList={articlesList} awardsList={awardsList} />
+                )}
+                {details.tname === "Dragon Boat Race" && (
+                  <DragonBoatRaceCalculator details={details} articlesList={articlesList} awardsList={awardsList} />
                 )}
               </div>
             )}

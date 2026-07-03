@@ -220,6 +220,8 @@ def main():
         elif "ChildrenDayShop" in res_name: class_name = "THDChildrenDayShop"
         elif "ChildrenDayHero" in res_name: class_name = "THDChildrenDayHero"
         elif "ChildrenDayCollect" in res_name: class_name = "THDChildrenDayCollect"
+        elif "DuanwujiePet" in res_name: class_name = "THDDuanwujiePet"
+        elif "DuanwujieBoat" in res_name: class_name = "THDDuanwujieBoat"
         
         # Read all rows inside this activity's bin table
         for _ in range(row_count):
@@ -520,6 +522,60 @@ def main():
                 elif class_name == "THDChildrenDayCollect":
                     items_str = reader.read_utf()
                     row_details["extra"]["items"] = try_json_load(items_str)
+
+                elif class_name == "THDDuanwujiePet":
+                    fund_str = reader.read_utf()
+                    fund_gift_str = reader.read_utf()
+                    zongzi_id = reader.read_uint()
+                    server_zongzi_id = reader.read_uint()
+                    pet_str = reader.read_utf()
+                    zongzi_gift_str = reader.read_utf()
+                    mall_str = reader.read_utf()
+                    text_str = reader.read_utf()
+                    
+                    row_details["extra"]["fund"] = try_json_load(fund_str)
+                    row_details["extra"]["fund_gift"] = try_json_load(fund_gift_str)
+                    row_details["extra"]["zongzi_id"] = zongzi_id
+                    row_details["extra"]["server_zongzi_id"] = server_zongzi_id
+                    row_details["extra"]["pet_info"] = try_json_load(pet_str)
+                    row_details["extra"]["zongzi_gift"] = try_json_load(zongzi_gift_str)
+                    row_details["extra"]["mall"] = try_json_load(mall_str)
+                    row_details["extra"]["text"] = text_str
+
+                elif class_name == "THDDuanwujieBoat":
+                    game_count_str = reader.read_utf()
+                    cheer_str = reader.read_utf()
+                    start_val = reader.read_uint()
+                    over_str = reader.read_utf()
+                    evaluation_str = reader.read_utf()
+                    score_val = reader.read_uint()
+                    mall_str = reader.read_utf()
+                    big_award_str = reader.read_utf()
+                    morale_str = reader.read_utf()
+                    cheer_awards_str = reader.read_utf()
+                    events_str = reader.read_utf()
+                    length_val = reader.read_uint()
+                    speed_val = reader.read_uint()
+                    npc_speed_val = reader.read_uint()
+                    block_length_val = reader.read_uint()
+                    texts_str = reader.read_utf()
+
+                    row_details["extra"]["game_count"] = try_json_load(game_count_str)
+                    row_details["extra"]["cheer"] = try_json_load(cheer_str)
+                    row_details["extra"]["start"] = start_val
+                    row_details["extra"]["over"] = try_json_load(over_str)
+                    row_details["extra"]["evaluation"] = try_json_load(evaluation_str)
+                    row_details["extra"]["score"] = score_val
+                    row_details["extra"]["mall"] = try_json_load(mall_str)
+                    row_details["extra"]["big_award"] = try_json_load(big_award_str)
+                    row_details["extra"]["morale"] = try_json_load(morale_str)
+                    row_details["extra"]["cheer_awards"] = try_json_load(cheer_awards_str)
+                    row_details["extra"]["events"] = try_json_load(events_str)
+                    row_details["extra"]["length"] = length_val
+                    row_details["extra"]["speed"] = speed_val
+                    row_details["extra"]["npc_speed"] = npc_speed_val
+                    row_details["extra"]["block_length"] = block_length_val
+                    row_details["extra"]["texts"] = try_json_load(texts_str)
                     
                 elif class_name in [
                     "THDSinglePay", "THDTotalPay", "THDDailyPay", "THDTotalCost", "THDDailyCost", 

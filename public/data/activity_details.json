@@ -8504,7 +8504,7 @@
   },
   "1270001": {
     "act_id": 1270001,
-    "class": "THDActivityBase",
+    "class": "THDDuanwujiePet",
     "res_name": "RESOURCEID_DuanwujiePet",
     "name": "Labor Day Spending",
     "tname": "Rice Dumpling Feast",
@@ -8514,11 +8514,145 @@
     "image_id": 1150001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "fund": [
+        {
+          "index": 0,
+          "awardId": 21405890,
+          "gold": 200
+        },
+        {
+          "index": 1,
+          "awardId": 21405891,
+          "gold": 800
+        },
+        {
+          "index": 2,
+          "awardId": 21405892,
+          "gold": 2000
+        },
+        {
+          "index": 3,
+          "awardId": 21405893,
+          "gold": 4000
+        }
+      ],
+      "fund_gift": {
+        "index": 4,
+        "days": 5,
+        "awardId": 21405894
+      },
+      "zongzi_id": 5,
+      "server_zongzi_id": 6,
+      "pet_info": {
+        "index": 7,
+        "zongZi": 8000,
+        "petId": 1222,
+        "showId": 1222001
+      },
+      "zongzi_gift": {
+        "index": 8,
+        "zongZi": [
+          5000,
+          10000,
+          20000,
+          30000,
+          50000,
+          80000,
+          120000,
+          200000
+        ],
+        "awardIds": [
+          21405895,
+          21405896,
+          21405897,
+          21405898,
+          21405899,
+          21405900,
+          21405901,
+          21405902
+        ]
+      },
+      "mall": [
+        {
+          "index": 30,
+          "awardId": 21407305,
+          "score": 400,
+          "count": 0
+        },
+        {
+          "index": 31,
+          "awardId": 21407306,
+          "score": 400,
+          "count": 0
+        },
+        {
+          "index": 32,
+          "awardId": 21407307,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 33,
+          "awardId": 21407308,
+          "score": 80,
+          "count": 0
+        },
+        {
+          "index": 34,
+          "awardId": 21407309,
+          "score": 600,
+          "count": 0
+        },
+        {
+          "index": 35,
+          "awardId": 21407310,
+          "score": 600,
+          "count": 0
+        },
+        {
+          "index": 36,
+          "awardId": 21407311,
+          "score": 300,
+          "count": 0
+        },
+        {
+          "index": 37,
+          "awardId": 21407312,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 38,
+          "awardId": 21407313,
+          "score": 400,
+          "count": 0
+        },
+        {
+          "index": 39,
+          "awardId": 21407314,
+          "score": 500,
+          "count": 0
+        },
+        {
+          "index": 40,
+          "awardId": 21407315,
+          "score": 6000,
+          "count": 0
+        },
+        {
+          "index": 41,
+          "awardId": 21407316,
+          "score": 10000,
+          "count": 0
+        }
+      ],
+      "text": "\"Not enough Dumplings\""
+    }
   },
   "1280001": {
     "act_id": 1280001,
-    "class": "THDActivityBase",
+    "class": "THDDuanwujieBoat",
     "res_name": "RESOURCEID_DuanwujieBoat",
     "name": "Labor Day Spending",
     "tname": "Dragon Boat Race",
@@ -8528,7 +8662,333 @@
     "image_id": 1150001,
     "awards": null,
     "targets": null,
-    "extra": {}
+    "extra": {
+      "game_count": {
+        "index": 0,
+        "count": 1,
+        "gold": 100
+      },
+      "cheer": {
+        "index": 1,
+        "gold": 20,
+        "morale": 1
+      },
+      "start": 2,
+      "over": {
+        "index": 3,
+        "gold": 10
+      },
+      "evaluation": {
+        "index": 4,
+        "evaluation": [
+          50,
+          80,
+          100,
+          200,
+          99999
+        ],
+        "awardIds": [
+          21405930,
+          21405931,
+          21405932,
+          21405933,
+          21405934
+        ]
+      },
+      "score": 5,
+      "mall": [
+        {
+          "index": 30,
+          "awardId": 21405935,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 31,
+          "awardId": 21405936,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 32,
+          "awardId": 21405937,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 33,
+          "awardId": 21405938,
+          "score": 50000,
+          "count": 1
+        },
+        {
+          "index": 34,
+          "awardId": 21405939,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 35,
+          "awardId": 21405940,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 36,
+          "awardId": 21405941,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 37,
+          "awardId": 21405942,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 38,
+          "awardId": 21405943,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 39,
+          "awardId": 21405944,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 40,
+          "awardId": 21405945,
+          "score": 40000,
+          "count": 1
+        },
+        {
+          "index": 41,
+          "awardId": 21405946,
+          "score": 30000,
+          "count": 1
+        },
+        {
+          "index": 42,
+          "awardId": 21405947,
+          "score": 30000,
+          "count": 1
+        },
+        {
+          "index": 43,
+          "awardId": 21405948,
+          "score": 30000,
+          "count": 1
+        },
+        {
+          "index": 44,
+          "awardId": 21405949,
+          "score": 30000,
+          "count": 1
+        },
+        {
+          "index": 45,
+          "awardId": 21405950,
+          "score": 8000,
+          "count": 0
+        },
+        {
+          "index": 46,
+          "awardId": 21405951,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 47,
+          "awardId": 21405952,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 48,
+          "awardId": 21405953,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 49,
+          "awardId": 21405954,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 50,
+          "awardId": 21405955,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 51,
+          "awardId": 21405956,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 52,
+          "awardId": 21405957,
+          "score": 100,
+          "count": 0
+        },
+        {
+          "index": 53,
+          "awardId": 21405958,
+          "score": 100,
+          "count": 0
+        }
+      ],
+      "big_award": {
+        "index": 6,
+        "awardId": 21405980,
+        "gold": 40000,
+        "showID": 11150060,
+        "showType": 0,
+        "fightReportAddr": ""
+      },
+      "morale": {
+        "index": 7,
+        "nums": [
+          10,
+          20,
+          40,
+          70,
+          100,
+          160
+        ],
+        "speeds": 1,
+        "score": [
+          20,
+          40,
+          80,
+          140,
+          200,
+          320
+        ]
+      },
+      "cheer_awards": [
+        {
+          "awardId": 21405981,
+          "rate": 0
+        },
+        {
+          "awardId": 21405982,
+          "rate": 1
+        },
+        {
+          "awardId": 21405983,
+          "rate": 3
+        },
+        {
+          "awardId": 21405984,
+          "rate": 3
+        },
+        {
+          "awardId": 21405985,
+          "rate": 3
+        },
+        {
+          "awardId": 21405986,
+          "rate": 5
+        },
+        {
+          "awardId": 21405987,
+          "rate": 8
+        },
+        {
+          "awardId": 21405988,
+          "rate": 8
+        },
+        {
+          "awardId": 21405989,
+          "rate": 8
+        },
+        {
+          "awardId": 21405990,
+          "rate": 15
+        },
+        {
+          "awardId": 21405991,
+          "rate": 15
+        },
+        {
+          "awardId": 21405992,
+          "rate": 15
+        },
+        {
+          "awardId": 21405993,
+          "rate": 15
+        }
+      ],
+      "events": [
+        {
+          "id": 1,
+          "type": 0,
+          "value": 200,
+          "rate": 1
+        },
+        {
+          "id": 2,
+          "type": 0,
+          "value": 100,
+          "rate": 3
+        },
+        {
+          "id": 3,
+          "type": 0,
+          "value": 50,
+          "rate": 10
+        },
+        {
+          "id": 4,
+          "type": 0,
+          "value": 10,
+          "rate": 20
+        },
+        {
+          "id": 5,
+          "type": 0,
+          "value": 0,
+          "rate": 21
+        },
+        {
+          "id": 6,
+          "type": 1,
+          "value": 39,
+          "rate": 1
+        },
+        {
+          "id": 7,
+          "type": 1,
+          "value": 30,
+          "rate": 3
+        },
+        {
+          "id": 8,
+          "type": 1,
+          "value": 20,
+          "rate": 20
+        },
+        {
+          "id": 9,
+          "type": 1,
+          "value": 10,
+          "rate": 21
+        }
+      ],
+      "length": 10000,
+      "speed": 40,
+      "npc_speed": 100,
+      "block_length": 2000,
+      "texts": [
+        "Not enough Boat Coins",
+        "Boat Coins"
+      ]
+    }
   },
   "1290001": {
     "act_id": 1290001,
