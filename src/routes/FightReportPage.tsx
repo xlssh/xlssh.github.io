@@ -8,19 +8,17 @@ import {
   Search,
   FileCode,
   UploadCloud,
-  HelpCircle,
   Play,
   TrendingUp,
   ShieldAlert,
   Heart,
-  User,
   Info,
   ListOrdered
 } from 'lucide-react';
 
 // --- Binary parser helper class ---
 class FightReportParser {
-  private view: DataView;
+  public view: DataView;
   public pos: number = 0;
   public version: number = 2.0;
 
@@ -28,46 +26,60 @@ class FightReportParser {
     this.view = new DataView(buffer);
   }
 
+  ensureAvailable(bytes: number): void {
+    if (this.pos + bytes > this.view.byteLength) {
+      throw new Error(
+        `Unexpected end of fight report at offset ${this.pos}. Needed ${bytes} bytes, only ${this.view.byteLength - this.pos} remain.`
+      );
+    }
+  }
+
   readByte(): number {
+    this.ensureAvailable(1);
     const val = this.view.getInt8(this.pos);
     this.pos += 1;
     return val;
   }
 
   readUByte(): number {
+    this.ensureAvailable(1);
     const val = this.view.getUint8(this.pos);
     this.pos += 1;
     return val;
   }
 
   readShort(): number {
+    this.ensureAvailable(2);
     const val = this.view.getInt16(this.pos, false); // false = big-endian
     this.pos += 2;
     return val;
   }
 
   readUShort(): number {
+    this.ensureAvailable(2);
     const val = this.view.getUint16(this.pos, false);
     this.pos += 2;
     return val;
   }
 
   readInt(): number {
+    this.ensureAvailable(4);
     const val = this.view.getInt32(this.pos, false);
     this.pos += 4;
     return val;
   }
 
   readUInt(): number {
+    this.ensureAvailable(4);
     const val = this.view.getUint32(this.pos, false);
     this.pos += 4;
     return val;
   }
 
   readUTF(): string {
-    if (this.pos + 2 > this.view.byteLength) return "";
+    this.ensureAvailable(2);
     const len = this.readUShort();
-    if (this.pos + len > this.view.byteLength) return "";
+    this.ensureAvailable(len);
 
     const bytes = new Uint8Array(this.view.buffer, this.view.byteOffset + this.pos, len);
     this.pos += len;
@@ -76,16 +88,119 @@ class FightReportParser {
 
   readHealth(): number {
     if (this.version >= 3.1) {
+      this.ensureAvailable(8);
       const high = this.readUInt();
       const low = this.readUInt();
       return high * 4294967296 + low;
     }
+    this.ensureAvailable(4);
     return this.readUInt();
   }
 
   hasMoreBytes(): boolean {
     return this.pos < this.view.byteLength;
   }
+}
+
+// --- Confirmed Command Constants ---
+const CMD = {
+  NONE: 0,
+  ATTACK: 1,
+  ATTRBUFF: 2,
+  HURTBUFF: 3,
+  CONTROLBUFF: 4,
+  POSITION: 5,
+  STATUS: 6,
+  ATTACKEX: 7,
+  SHIELD: 8,
+  FLOAT: 9,
+} as const;
+
+// --- Confirmed Fight Active Type Constants ---
+const ACTIVE_TYPE = {
+  NORMAL_ATTACK: 1,
+  SKILL_ATTACK: 2,
+  BLOCK: 3,
+  PASSIVE_SKILL: 4,
+  DIED_SKILL: 5,
+  NORMAL_ATTACK_EX: 7,
+  ROUND_SKILL: 10,
+} as const;
+
+// --- Full Confirmed Status Flags ---
+const STATUS_FLAGS: Record<number, string> = {
+  1: "No Normal Attack",
+  2: "Daze / Stun",
+  4: "Control Immune",
+  8: "Anger Reduction Immune",
+  16: "No Anger Gain",
+  32: "No Skill",
+  64: "No Healing",
+  128: "Petrified",
+  256: "Nothingness / Void",
+  512: "Super Dodge / All Miss",
+  1024: "Confusion",
+
+  2048: "Immune to No Anger",
+  4096: "Immune to No Skill",
+  8192: "Immune to No Healing",
+  16384: "Immune to Petrify",
+  32768: "Immune to Void",
+  65536: "Immune to No Normal Attack",
+  131072: "Immune to Confusion",
+  262144: "Immune to Super Dodge",
+  524288: "Immune to Mutilate",
+
+  1048576: "Frozen",
+  2097152: "Invincible",
+  4194304: "Beat Back",
+
+  33554432: "Hit",
+  67108864: "Crit",
+  134217728: "Block",
+  268435456: "Help / Rescue",
+  536870912: "Combo / Joint Attack",
+  1073741824: "Died",
+  2147483648: "Chain Target Effect",
+};
+
+// --- Special Text Type Mapping for CMD_FLOAT ---
+const SPECIAL_TEXT_TYPES: Record<number, string> = {
+  1: "Shield Cleared",
+  2: "Triple Damage",
+  3: "Ignore Damage",
+  4: "Defense Failure",
+  5: "Full HP",
+  6: "Instant Kill",
+  7: "Ignore Instant Kill",
+};
+
+// --- Helper Functions ---
+function decodeStatusFlags(statusNum: number): string[] {
+  const flags: string[] = [];
+
+  for (const [bitStr, label] of Object.entries(STATUS_FLAGS)) {
+    const bit = Number(bitStr);
+
+    if (bit === 2147483648) {
+      if (statusNum >= 2147483648) flags.push(label);
+    } else if ((statusNum & bit) !== 0) {
+      flags.push(label);
+    }
+  }
+
+  return flags;
+}
+
+function getSpecialFloatText(buffId: number): string {
+  return SPECIAL_TEXT_TYPES[buffId] || `Special Text #${buffId}`;
+}
+
+function hasStatusFlag(status: number, flag: number): boolean {
+  if (flag === 2147483648) {
+    return status >= 2147483648;
+  }
+  return (status & flag) !== 0;
 }
 
 // --- Data structures ---
@@ -144,6 +259,212 @@ interface FightReportData {
   turns: FightTurn[];
 }
 
+interface ParseDebugInfo {
+  byteLength: number;
+  finalOffset: number;
+  remainingBytes: number;
+  versionString: string;
+  version: number;
+  roleCounts: [number, number];
+  totalTurns: number;
+}
+
+interface FighterRuntimeState {
+  hp: number;
+  maxHp: number;
+  shield: number;
+  anger: number;
+  dead: boolean;
+  damageDealtRaw: number;
+  damageTakenRaw: number;
+  hpDamageDealt: number;
+  hpDamageTaken: number;
+  shieldAbsorbed: number;
+  shieldApplied: number;
+  healingDone: number;
+  healingReceived: number;
+}
+
+interface SimulationResult {
+  state: Map<string, FighterRuntimeState>;
+  teamTotals: {
+    rawDamageDealt: [number, number];
+    hpDamageDealt: [number, number];
+    healingDone: [number, number];
+  };
+}
+
+// --- HP / Shield Simulation helper ---
+function buildInitialRuntimeState(report: FightReportData): Map<string, FighterRuntimeState> {
+  const state = new Map<string, FighterRuntimeState>();
+
+  const addRole = (camp: number, role: FightRole) => {
+    state.set(`${camp}_${role.pos}`, {
+      hp: role.curHealth,
+      maxHp: role.totleHealth,
+      shield: 0,
+      anger: role.curAnger,
+      dead: role.curHealth <= 0,
+      damageDealtRaw: 0,
+      damageTakenRaw: 0,
+      hpDamageDealt: 0,
+      hpDamageTaken: 0,
+      shieldAbsorbed: 0,
+      shieldApplied: 0,
+      healingDone: 0,
+      healingReceived: 0,
+    });
+  };
+
+  report.team1.roles.forEach(role => addRole(0, role));
+  report.team2.roles.forEach(role => addRole(1, role));
+
+  return state;
+}
+
+function simulateReportState(report: FightReportData): SimulationResult {
+  const state = buildInitialRuntimeState(report);
+  const teamTotals: {
+    rawDamageDealt: [number, number];
+    hpDamageDealt: [number, number];
+    healingDone: [number, number];
+  } = {
+    rawDamageDealt: [0, 0],
+    hpDamageDealt: [0, 0],
+    healingDone: [0, 0],
+  };
+
+  const getKey = (camp: number, pos: number) => `${camp}_${pos}`;
+
+  for (const turn of report.turns) {
+    for (const active of turn.actives) {
+      const attKey = getKey(active.camp, active.pos);
+      const attacker = state.get(attKey);
+
+      // Reorder targets to match the AS3 MakeCommandList grouping priorities
+      const shieldTargets = active.targets.filter(t => t.cmd === CMD.SHIELD);
+      const hurtBuffTargets = active.targets.filter(t => t.cmd === CMD.HURTBUFF);
+      const statusTargets = active.targets.filter(t => t.cmd === CMD.STATUS);
+      const attackTargets = active.targets.filter(t => t.cmd === CMD.ATTACK || t.cmd === CMD.ATTACKEX || t.cmd === CMD.NONE);
+      const floatTargets = active.targets.filter(t => t.cmd === CMD.FLOAT);
+      const attrBuffTargets = active.targets.filter(t => t.cmd === CMD.ATTRBUFF);
+      const controlBuffTargets = active.targets.filter(t => t.cmd === CMD.CONTROLBUFF);
+      const positionTargets = active.targets.filter(t => t.cmd === CMD.POSITION);
+
+      const otherTargets = active.targets.filter(t =>
+        t.cmd !== CMD.SHIELD &&
+        t.cmd !== CMD.HURTBUFF &&
+        t.cmd !== CMD.STATUS &&
+        t.cmd !== CMD.ATTACK &&
+        t.cmd !== CMD.ATTACKEX &&
+        t.cmd !== CMD.NONE &&
+        t.cmd !== CMD.FLOAT &&
+        t.cmd !== CMD.ATTRBUFF &&
+        t.cmd !== CMD.CONTROLBUFF &&
+        t.cmd !== CMD.POSITION
+      );
+
+      const orderedTargets = [
+        ...shieldTargets,
+        ...hurtBuffTargets,
+        ...statusTargets,
+        ...attackTargets,
+        ...floatTargets,
+        ...attrBuffTargets,
+        ...controlBuffTargets,
+        ...positionTargets,
+        ...otherTargets,
+      ];
+
+
+      if (otherTargets.length > 0) {
+        console.warn("Unknown fight target commands encountered:", otherTargets);
+      }
+
+
+      for (const target of orderedTargets) {
+        const tarKey = getKey(target.camp, target.pos);
+        const fighter = state.get(tarKey);
+
+        if (!fighter) continue;
+
+        // Shield command: buffTurn is shield HP.
+        if (target.cmd === CMD.SHIELD) {
+          const shieldHp = target.result.buffTurn || 0;
+          fighter.shield = shieldHp;
+          fighter.shieldApplied += shieldHp;
+          continue;
+        }
+
+        // HP damage/healing.
+        const hurtHp = target.result.hurtHp || 0;
+
+        if (hurtHp !== 0) {
+          if (hurtHp < 0) {
+            // healing
+            const healVal = -hurtHp;
+            if (!fighter.dead) {
+              fighter.hp = Math.min(fighter.maxHp, fighter.hp + healVal);
+            }
+
+            fighter.healingReceived += healVal;
+            if (attacker) {
+              attacker.healingDone += healVal;
+            }
+            // Count in team totals regardless of whether attacker role exists
+            if (active.camp === 0 || active.camp === 1) {
+              teamTotals.healingDone[active.camp] += healVal;
+            }
+          } else {
+            // damage, shield first
+            const shieldBefore = fighter.shield;
+            const rawDamage = hurtHp;
+            const absorbed = Math.min(shieldBefore, rawDamage);
+            const hpDamage = rawDamage - absorbed;
+
+            fighter.shield -= absorbed;
+            fighter.hp = Math.max(0, fighter.hp - hpDamage);
+
+            // Stats accumulation
+            fighter.damageTakenRaw += rawDamage;
+            fighter.hpDamageTaken += hpDamage;
+            fighter.shieldAbsorbed += absorbed;
+
+            // Only count enemy damage in totals (no self or friendly fire)
+            const isEnemyTarget = active.camp !== target.camp;
+            if (isEnemyTarget) {
+              if (attacker) {
+                attacker.damageDealtRaw += rawDamage;
+                attacker.hpDamageDealt += hpDamage;
+              }
+              // Count in team totals regardless of whether attacker role exists (e.g. system attacker)
+              if (active.camp === 0 || active.camp === 1) {
+                teamTotals.rawDamageDealt[active.camp] += rawDamage;
+                teamTotals.hpDamageDealt[active.camp] += hpDamage;
+              }
+            }
+          }
+        }
+
+        // Anger logic from AS3: CurAnger -= HurtAnger
+        if (target.result.hurtAnger !== undefined && target.result.hurtAnger !== 0) {
+          fighter.anger -= target.result.hurtAnger;
+
+          if (fighter.anger < 0) fighter.anger = 0;
+          if (fighter.anger > 500) fighter.anger = 500;
+        }
+
+        if (hasStatusFlag(target.status, 1073741824)) { // bit 1073741824 = Died
+          fighter.dead = true;
+          fighter.hp = 0;
+        }
+      }
+    }
+  }
+
+  return { state, teamTotals };
+}
+
 export const FightReportPage: React.FC = () => {
   const [heroes, setHeroes] = useState<Hero[]>([]);
   const [skills, setSkills] = useState<Skill[]>([]);
@@ -158,10 +479,14 @@ export const FightReportPage: React.FC = () => {
 
   // Decoded Fight Report
   const [report, setReport] = useState<FightReportData | null>(null);
+  const [debugInfo, setDebugInfo] = useState<ParseDebugInfo | null>(null);
 
   // Tab states
   const [activeTab, setActiveTab] = useState<'analytics' | 'fighters' | 'log'>('analytics');
   const [selectedRoundTab, setSelectedRoundTab] = useState<number>(1);
+
+  // Drag-and-drop state
+  const [isDragging, setIsDragging] = useState(false);
 
   // File Drag-Drop Ref
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -210,7 +535,7 @@ export const FightReportPage: React.FC = () => {
   }, [buffs]);
 
   // Decode binary data helper
-  const decodeReportBinary = (arrayBuffer: ArrayBuffer): FightReportData => {
+  const decodeReportBinary = (arrayBuffer: ArrayBuffer): { report: FightReportData; debug: ParseDebugInfo } => {
     const parser = new FightReportParser(arrayBuffer);
     const versionStr = parser.readUTF();
     parser.version = parseFloat(versionStr) || 2.0;
@@ -271,17 +596,17 @@ export const FightReportPage: React.FC = () => {
           const status = parser.readUInt();
 
           const result: any = {};
-          if (cmd === 1 || cmd === 7) { // CMD_ATTACK, CMD_ATTACKEX
+          if (cmd === CMD.ATTACK || cmd === CMD.ATTACKEX) { // CMD_ATTACK, CMD_ATTACKEX
             result.hurtHp = parser.readInt();
             result.hurtAnger = parser.readInt();
-          } else if (cmd === 3) { // CMD_HURTBUFF
+          } else if (cmd === CMD.HURTBUFF) { // CMD_HURTBUFF
             result.hurtHp = parser.readInt();
             result.hurtAnger = parser.readInt();
             result.buffId = parser.readUInt();
-          } else if (cmd === 4 || cmd === 2 || cmd === 8) { // CMD_CONTROLBUFF, CMD_ATTRBUFF, CMD_SHIELD
+          } else if (cmd === CMD.CONTROLBUFF || cmd === CMD.ATTRBUFF || cmd === CMD.SHIELD) { // CMD_CONTROLBUFF, CMD_ATTRBUFF, CMD_SHIELD
             result.buffId = parser.readUInt();
             result.buffTurn = parser.readUInt();
-          } else if (cmd === 5 || cmd === 9) { // CMD_POSITION, CMD_FLOAT
+          } else if (cmd === CMD.POSITION || cmd === CMD.FLOAT) { // CMD_POSITION, CMD_FLOAT
             result.buffId = parser.readUInt();
             result.buffTurn = parser.readUInt();
           }
@@ -295,12 +620,32 @@ export const FightReportPage: React.FC = () => {
       turns.push({ curTurn, actives });
     }
 
-    return {
+    const finalOffset = parser.pos;
+    const remainingBytes = arrayBuffer.byteLength - finalOffset;
+
+    if (remainingBytes > 0) {
+      console.warn(`Fight report parsed with ${remainingBytes} trailing bytes.`);
+    }
+
+    const debug: ParseDebugInfo = {
+      byteLength: arrayBuffer.byteLength,
+      finalOffset,
+      remainingBytes,
+      versionString: versionStr,
       version: parser.version,
-      team1,
-      team2,
-      totalTurns,
-      turns
+      roleCounts: [team1.roles.length, team2.roles.length],
+      totalTurns
+    };
+
+    return {
+      report: {
+        version: parser.version,
+        team1,
+        team2,
+        totalTurns,
+        turns
+      },
+      debug
     };
   };
 
@@ -309,6 +654,7 @@ export const FightReportPage: React.FC = () => {
     setParseLoading(true);
     setParseError(null);
     setReport(null);
+    setDebugInfo(null);
 
     try {
       // Extract rid
@@ -331,7 +677,17 @@ export const FightReportPage: React.FC = () => {
         throw new Error("Unable to extract Fight Report ID (rid). Please check your URL format.");
       }
 
-      const targetUrl = `https://game.shinigamiworld.com/fightreport/data.php?rid=${rid}&aid=${aid}&version=2026021215&versiondir=en_Eu&cacheKey=frv=1779820963&isCombin=0&agent=${aid}&server=0&lang=${lang}`;
+      const targetUrl =
+        `https://game.shinigamiworld.com/fightreport/data.php` +
+        `?rid=${encodeURIComponent(rid)}` +
+        `&aid=${encodeURIComponent(aid)}` +
+        `&version=2026021215` +
+        `&versiondir=en_Eu` +
+        `&cacheKey=frv=1779820963` +
+        `&isCombin=0` +
+        `&agent=${encodeURIComponent(aid)}` +
+        `&server=0` +
+        `&lang=${encodeURIComponent(lang)}`;
 
       // Fetch via CORS Proxy
       const proxyUrl = `https://cors-proxy.shinigamiworld-fightreport.workers.dev/?url=${encodeURIComponent(targetUrl)}`;
@@ -345,8 +701,9 @@ export const FightReportPage: React.FC = () => {
         throw new Error("Fight report data is empty or invalid. Check that the Report ID exists.");
       }
 
-      const decoded = decodeReportBinary(arrayBuffer);
-      setReport(decoded);
+      const { report: decodedReport, debug: decodedDebug } = decodeReportBinary(arrayBuffer);
+      setReport(decodedReport);
+      setDebugInfo(decodedDebug);
       setSelectedRoundTab(1);
     } catch (err: any) {
       console.error(err);
@@ -366,6 +723,7 @@ export const FightReportPage: React.FC = () => {
     setParseLoading(true);
     setParseError(null);
     setReport(null);
+    setDebugInfo(null);
 
     const reader = new FileReader();
     reader.onload = (event) => {
@@ -374,8 +732,9 @@ export const FightReportPage: React.FC = () => {
         if (!buffer || buffer.byteLength < 10) {
           throw new Error("Uploaded file is empty or corrupted.");
         }
-        const decoded = decodeReportBinary(buffer);
-        setReport(decoded);
+        const { report: decodedReport, debug: decodedDebug } = decodeReportBinary(buffer);
+        setReport(decodedReport);
+        setDebugInfo(decodedDebug);
         setSelectedRoundTab(1);
       } catch (err: any) {
         console.error(err);
@@ -398,92 +757,46 @@ export const FightReportPage: React.FC = () => {
   const battleStats = useMemo(() => {
     if (!report) return null;
 
-    // Initialize stats tracking
-    const damageDealt = new Map<string, number>(); // key: camp_pos
-    const damageTaken = new Map<string, number>();
-    const healingDone = new Map<string, number>();
+    const { state: finalState, teamTotals } = simulateReportState(report);
 
-    let totalDmgTeam1 = 0;
-    let totalDmgTeam2 = 0;
-    let totalHealTeam1 = 0;
-    let totalHealTeam2 = 0;
+    const totalDmgTeam1 = teamTotals.rawDamageDealt[0];
+    const totalDmgTeam2 = teamTotals.rawDamageDealt[1];
+    const totalHealTeam1 = teamTotals.healingDone[0];
+    const totalHealTeam2 = teamTotals.healingDone[1];
 
-    report.turns.forEach(t => {
-      t.actives.forEach(act => {
-        const attCamp = act.camp;
-        const attPos = act.pos;
-        const attKey = `${attCamp}_${attPos}`;
+    let team1Hp = 0;
+    let team2Hp = 0;
 
-        act.targets.forEach(tgt => {
-          const tarCamp = tgt.camp;
-          const tarPos = tgt.pos;
-          const tarKey = `${tarCamp}_${tarPos}`;
-          const cmd = tgt.cmd;
-          const hurtHp = tgt.result.hurtHp || 0;
+    for (const [key, fighter] of finalState.entries()) {
+      if (key.startsWith("0_")) {
+        team1Hp += fighter.hp;
+      } else {
+        team2Hp += fighter.hp;
+      }
+    }
 
-          if (hurtHp > 0) {
-            if (tarCamp !== attCamp) {
-              // Opponent Damage Dealt
-              damageDealt.set(attKey, (damageDealt.get(attKey) || 0) + hurtHp);
-              damageTaken.set(tarKey, (damageTaken.get(tarKey) || 0) + hurtHp);
+    const winnerCamp = team1Hp > team2Hp ? 0 : 1;
 
-              if (attCamp === 0) totalDmgTeam1 += hurtHp;
-              else totalDmgTeam2 += hurtHp;
-            }
-          } else if (hurtHp < 0) {
-            // Negative hurt HP is healing!
-            const healVal = -hurtHp;
-            healingDone.set(attKey, (healingDone.get(attKey) || 0) + healVal);
+    const allRawDmgValues = Array.from(finalState.values()).map(f => f.damageDealtRaw);
+    const maxDamageDoneRaw = Math.max(1, ...allRawDmgValues);
 
-            if (attCamp === 0) totalHealTeam1 += healVal;
-            else totalHealTeam2 += healVal;
-          }
-        });
-      });
-    });
+    const allRawTakenValues = Array.from(finalState.values()).map(f => f.damageTakenRaw);
+    const maxDamageTakenRaw = Math.max(1, ...allRawTakenValues);
 
-    // Determine Winner: check who has remaining health or check last turn statuses
-    let team1AliveHp = 0;
-    let team2AliveHp = 0;
-
-    report.team1.roles.forEach(r => {
-      const taken = damageTaken.get(`0_${r.pos}`) || 0;
-      const heals = healingDone.get(`0_${r.pos}`) || 0; // wait, healing is healing done, not necessarily received. But let's check remaining HP simply:
-      // The fight reports roles curHealth represents their START health in battle.
-      // So remaining HP is Start HP - taken + heals (approximate or just simple survivor check)
-      const remaining = Math.max(0, r.curHealth - taken);
-      team1AliveHp += remaining;
-    });
-
-    report.team2.roles.forEach(r => {
-      const taken = damageTaken.get(`1_${r.pos}`) || 0;
-      const remaining = Math.max(0, r.curHealth - taken);
-      team2AliveHp += remaining;
-    });
-
-    const winnerCamp = team1AliveHp > team2AliveHp ? 0 : 1;
-
-    // Find highest damage done for relative comparison bars
-    const allDmgValues = Array.from(damageDealt.values());
-    const maxDamageDone = allDmgValues.length > 0 ? Math.max(...allDmgValues) : 1;
-
-    const allTakenValues = Array.from(damageTaken.values());
-    const maxDamageTaken = allTakenValues.length > 0 ? Math.max(...allTakenValues) : 1;
-
-    const allHealValues = Array.from(healingDone.values());
-    const maxHealing = allHealValues.length > 0 ? Math.max(...allHealValues) : 1;
+    const allHealValues = Array.from(finalState.values()).map(f => f.healingDone);
+    const maxHealing = Math.max(1, ...allHealValues);
 
     return {
-      damageDealt,
-      damageTaken,
-      healingDone,
+      finalState,
       totalDmgTeam1,
       totalDmgTeam2,
       totalHealTeam1,
       totalHealTeam2,
       winnerCamp,
-      maxDamageDone,
-      maxDamageTaken,
+      team1Hp,
+      team2Hp,
+      maxDamageDoneRaw,
+      maxDamageTakenRaw,
       maxHealing
     };
   }, [report]);
@@ -548,7 +861,32 @@ export const FightReportPage: React.FC = () => {
         {/* Drag-Drop Card */}
         <div
           onClick={() => fileInputRef.current?.click()}
-          className="p-6 border-2 border-dashed border-zinc-300 dark:border-zinc-800 hover:border-violet-500 dark:hover:border-violet-500/50 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm flex flex-col items-center justify-center gap-3 cursor-pointer group transition-all"
+          onDragOver={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          onDragEnter={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsDragging(true);
+          }}
+          onDragLeave={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsDragging(false);
+          }}
+          onDrop={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsDragging(false);
+
+            const file = e.dataTransfer.files?.[0];
+            if (file) processUploadedFile(file);
+          }}
+          className={`p-6 border-2 border-dashed rounded-2xl shadow-sm flex flex-col items-center justify-center gap-3 cursor-pointer group transition-all ${isDragging
+            ? 'border-violet-500 bg-violet-50/10 dark:bg-violet-950/10 scale-[1.02]'
+            : 'border-zinc-300 dark:border-zinc-800 hover:border-violet-500 dark:hover:border-violet-500/50 bg-white dark:bg-zinc-900'
+            }`}
         >
           <input
             type="file"
@@ -633,6 +971,14 @@ export const FightReportPage: React.FC = () => {
             >
               Combat Replay Log
             </button>
+          </div>
+
+          {/* Caveat callout */}
+          <div className="p-3.5 border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 rounded-xl text-[11px] text-zinc-500 flex items-start gap-2">
+            <Info size={16} className="text-violet-500 shrink-0 mt-0.5" />
+            <p>
+              <span className="font-bold text-zinc-700 dark:text-zinc-300">Analyzer Caveat:</span> Damage and effects are server-resolved values from the binary report. The report does not include full formula inputs such as final Defense, Pierce, or damage modifiers, so this analyzer reconstructs replay outcomes instead of recalculating the original formula. Team totals may include system/pet/field actions that are not listed as normal fighters.
+            </p>
           </div>
 
           {/* Tab 1: General comparison bar charts */}
@@ -722,9 +1068,19 @@ export const FightReportPage: React.FC = () => {
                 <h3 className="font-bold text-xs uppercase text-zinc-450 tracking-wider px-1">Team 1 (Attacker)</h3>
                 <div className="space-y-3">
                   {report.team1.roles.map((r, idx) => {
-                    const dmg = battleStats.damageDealt.get(`0_${r.pos}`) || 0;
-                    const taken = battleStats.damageTaken.get(`0_${r.pos}`) || 0;
-                    const heals = battleStats.healingDone.get(`0_${r.pos}`) || 0;
+                    const fighterState = battleStats.finalState.get(`0_${r.pos}`);
+                    const dmgRaw = fighterState?.damageDealtRaw || 0;
+                    const dmgHp = fighterState?.hpDamageDealt || 0;
+                    const takenRaw = fighterState?.damageTakenRaw || 0;
+                    const takenHp = fighterState?.hpDamageTaken || 0;
+                    const healsDone = fighterState?.healingDone || 0;
+                    const healsRec = fighterState?.healingReceived || 0;
+                    const finalHp = fighterState?.hp || 0;
+                    const maxHp = fighterState?.maxHp || r.totleHealth;
+                    const finalShield = fighterState?.shield || 0;
+                    const shieldApplied = fighterState?.shieldApplied || 0;
+                    const finalAnger = fighterState?.anger || 0;
+                    const isDead = fighterState?.dead || false;
 
                     return (
                       <div key={idx} className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-3 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all">
@@ -734,22 +1090,58 @@ export const FightReportPage: React.FC = () => {
                               Pos {r.pos}
                             </span>
                             <span className="font-bold text-sm text-zinc-800 dark:text-zinc-200">{resolveRoleName(r)}</span>
+                            {isDead ? (
+                              <span className="px-1.5 py-0.5 bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-400 rounded text-[9px] font-bold uppercase tracking-wider">
+                                Fallen
+                              </span>
+                            ) : (
+                              <span className="px-1.5 py-0.5 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-400 rounded text-[9px] font-bold uppercase tracking-wider">
+                                Surviving
+                              </span>
+                            )}
                           </div>
-                          <span className="text-[10px] text-zinc-450 font-mono">Lv. {r.level}</span>
+                          <div className="flex items-center gap-1.5 text-[10px] text-zinc-450 font-mono">
+                            {r.rebirthNum ? <span>R{r.rebirthNum}</span> : null}
+                            <span>Lv. {r.level}</span>
+                          </div>
+                        </div>
+
+                        {/* HP & Shield & Anger status summary */}
+                        <div className="grid grid-cols-3 gap-2 py-1.5 text-[10px] border-b border-dashed border-zinc-100 dark:border-zinc-800/80">
+                          <div className="space-y-0.5">
+                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Health</span>
+                            <span className="font-semibold text-zinc-700 dark:text-zinc-300 block font-mono">
+                              {finalHp.toLocaleString()} / {maxHp.toLocaleString()}
+                            </span>
+                          </div>
+                          <div className="space-y-0.5">
+                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Shield (Final / Applied)</span>
+                            <span className="font-semibold text-blue-500 block font-mono">
+                              {finalShield.toLocaleString()} / {shieldApplied.toLocaleString()}
+                            </span>
+                          </div>
+                          <div className="space-y-0.5">
+                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Anger</span>
+                            <span className="font-semibold text-amber-500 block font-mono">
+                              {finalAnger}
+                            </span>
+                          </div>
                         </div>
 
                         {/* Attribute progress bars */}
-                        <div className="space-y-2 text-xs">
+                        <div className="space-y-2 text-xs pt-1">
                           {/* Damage done */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Damage Dealt</span>
-                              <span className="font-mono font-bold text-red-500">{dmg.toLocaleString()} HP</span>
+                              <span className="text-zinc-400">Damage Dealt (Raw / HP Dmg)</span>
+                              <span className="font-mono font-bold text-red-500">
+                                {dmgRaw.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {dmgHp.toLocaleString()}</span> HP
+                              </span>
                             </div>
                             <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-red-500 rounded-full"
-                                style={{ width: `${(dmg / battleStats.maxDamageDone) * 100}%` }}
+                                style={{ width: `${(dmgRaw / battleStats.maxDamageDoneRaw) * 100}%` }}
                               ></div>
                             </div>
                           </div>
@@ -757,32 +1149,34 @@ export const FightReportPage: React.FC = () => {
                           {/* Damage taken */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Damage Taken</span>
-                              <span className="font-mono font-bold text-orange-500">{taken.toLocaleString()} HP</span>
+                              <span className="text-zinc-400">Damage Taken (Raw / HP Dmg)</span>
+                              <span className="font-mono font-bold text-orange-500">
+                                {takenRaw.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {takenHp.toLocaleString()}</span> HP
+                              </span>
                             </div>
                             <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-orange-500 rounded-full"
-                                style={{ width: `${(taken / battleStats.maxDamageTaken) * 100}%` }}
+                                style={{ width: `${(takenRaw / battleStats.maxDamageTakenRaw) * 100}%` }}
                               ></div>
                             </div>
                           </div>
 
                           {/* Healing done */}
-                          {heals > 0 && (
-                            <div className="space-y-1">
-                              <div className="flex justify-between text-[11px]">
-                                <span className="text-zinc-400">Healing Done</span>
-                                <span className="font-mono font-bold text-emerald-500">{heals.toLocaleString()} HP</span>
-                              </div>
-                              <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                                <div
-                                  className="h-full bg-emerald-500 rounded-full"
-                                  style={{ width: `${(heals / battleStats.maxHealing) * 100}%` }}
-                                ></div>
-                              </div>
+                          <div className="space-y-1">
+                            <div className="flex justify-between text-[11px]">
+                              <span className="text-zinc-400">Healing (Done / Received)</span>
+                              <span className="font-mono font-bold text-emerald-500">
+                                {healsDone.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {healsRec.toLocaleString()}</span> HP
+                              </span>
                             </div>
-                          )}
+                            <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                              <div
+                                className="h-full bg-emerald-500 rounded-full"
+                                style={{ width: `${(healsDone / battleStats.maxHealing) * 100}%` }}
+                              ></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     );
@@ -795,9 +1189,19 @@ export const FightReportPage: React.FC = () => {
                 <h3 className="font-bold text-xs uppercase text-zinc-450 tracking-wider px-1">Team 2 (Defender)</h3>
                 <div className="space-y-3">
                   {report.team2.roles.map((r, idx) => {
-                    const dmg = battleStats.damageDealt.get(`1_${r.pos}`) || 0;
-                    const taken = battleStats.damageTaken.get(`1_${r.pos}`) || 0;
-                    const heals = battleStats.healingDone.get(`1_${r.pos}`) || 0;
+                    const fighterState = battleStats.finalState.get(`1_${r.pos}`);
+                    const dmgRaw = fighterState?.damageDealtRaw || 0;
+                    const dmgHp = fighterState?.hpDamageDealt || 0;
+                    const takenRaw = fighterState?.damageTakenRaw || 0;
+                    const takenHp = fighterState?.hpDamageTaken || 0;
+                    const healsDone = fighterState?.healingDone || 0;
+                    const healsRec = fighterState?.healingReceived || 0;
+                    const finalHp = fighterState?.hp || 0;
+                    const maxHp = fighterState?.maxHp || r.totleHealth;
+                    const finalShield = fighterState?.shield || 0;
+                    const shieldApplied = fighterState?.shieldApplied || 0;
+                    const finalAnger = fighterState?.anger || 0;
+                    const isDead = fighterState?.dead || false;
 
                     return (
                       <div key={idx} className="p-4 border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 rounded-2xl shadow-sm space-y-3 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all">
@@ -807,22 +1211,58 @@ export const FightReportPage: React.FC = () => {
                               Pos {r.pos}
                             </span>
                             <span className="font-bold text-sm text-zinc-800 dark:text-zinc-200">{resolveRoleName(r)}</span>
+                            {isDead ? (
+                              <span className="px-1.5 py-0.5 bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-400 rounded text-[9px] font-bold uppercase tracking-wider">
+                                Fallen
+                              </span>
+                            ) : (
+                              <span className="px-1.5 py-0.5 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-400 rounded text-[9px] font-bold uppercase tracking-wider">
+                                Surviving
+                              </span>
+                            )}
                           </div>
-                          <span className="text-[10px] text-zinc-450 font-mono">Lv. {r.level}</span>
+                          <div className="flex items-center gap-1.5 text-[10px] text-zinc-450 font-mono">
+                            {r.rebirthNum ? <span>R{r.rebirthNum}</span> : null}
+                            <span>Lv. {r.level}</span>
+                          </div>
+                        </div>
+
+                        {/* HP & Shield & Anger status summary */}
+                        <div className="grid grid-cols-3 gap-2 py-1.5 text-[10px] border-b border-dashed border-zinc-100 dark:border-zinc-800/80">
+                          <div className="space-y-0.5">
+                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Health</span>
+                            <span className="font-semibold text-zinc-700 dark:text-zinc-300 block font-mono">
+                              {finalHp.toLocaleString()} / {maxHp.toLocaleString()}
+                            </span>
+                          </div>
+                          <div className="space-y-0.5">
+                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Shield (Final / Applied)</span>
+                            <span className="font-semibold text-blue-500 block font-mono">
+                              {finalShield.toLocaleString()} / {shieldApplied.toLocaleString()}
+                            </span>
+                          </div>
+                          <div className="space-y-0.5">
+                            <span className="text-zinc-400 block font-medium uppercase tracking-wider text-[8px]">Anger</span>
+                            <span className="font-semibold text-amber-500 block font-mono">
+                              {finalAnger}
+                            </span>
+                          </div>
                         </div>
 
                         {/* Attribute progress bars */}
-                        <div className="space-y-2 text-xs">
+                        <div className="space-y-2 text-xs pt-1">
                           {/* Damage done */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Damage Dealt</span>
-                              <span className="font-mono font-bold text-red-500">{dmg.toLocaleString()} HP</span>
+                              <span className="text-zinc-400">Damage Dealt (Raw / HP Dmg)</span>
+                              <span className="font-mono font-bold text-red-500">
+                                {dmgRaw.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {dmgHp.toLocaleString()}</span> HP
+                              </span>
                             </div>
                             <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-red-500 rounded-full"
-                                style={{ width: `${(dmg / battleStats.maxDamageDone) * 100}%` }}
+                                style={{ width: `${(dmgRaw / battleStats.maxDamageDoneRaw) * 100}%` }}
                               ></div>
                             </div>
                           </div>
@@ -830,32 +1270,34 @@ export const FightReportPage: React.FC = () => {
                           {/* Damage taken */}
                           <div className="space-y-1">
                             <div className="flex justify-between text-[11px]">
-                              <span className="text-zinc-400">Damage Taken</span>
-                              <span className="font-mono font-bold text-orange-500">{taken.toLocaleString()} HP</span>
+                              <span className="text-zinc-400">Damage Taken (Raw / HP Dmg)</span>
+                              <span className="font-mono font-bold text-orange-500">
+                                {takenRaw.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {takenHp.toLocaleString()}</span> HP
+                              </span>
                             </div>
                             <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
                               <div
                                 className="h-full bg-orange-500 rounded-full"
-                                style={{ width: `${(taken / battleStats.maxDamageTaken) * 100}%` }}
+                                style={{ width: `${(takenRaw / battleStats.maxDamageTakenRaw) * 100}%` }}
                               ></div>
                             </div>
                           </div>
 
                           {/* Healing done */}
-                          {heals > 0 && (
-                            <div className="space-y-1">
-                              <div className="flex justify-between text-[11px]">
-                                <span className="text-zinc-400">Healing Done</span>
-                                <span className="font-mono font-bold text-emerald-500">{heals.toLocaleString()} HP</span>
-                              </div>
-                              <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
-                                <div
-                                  className="h-full bg-emerald-500 rounded-full"
-                                  style={{ width: `${(heals / battleStats.maxHealing) * 100}%` }}
-                                ></div>
-                              </div>
+                          <div className="space-y-1">
+                            <div className="flex justify-between text-[11px]">
+                              <span className="text-zinc-400">Healing (Done / Received)</span>
+                              <span className="font-mono font-bold text-emerald-500">
+                                {healsDone.toLocaleString()} <span className="text-zinc-450 text-[10px]">/ {healsRec.toLocaleString()}</span> HP
+                              </span>
                             </div>
-                          )}
+                            <div className="w-full h-2 bg-zinc-100 dark:bg-zinc-950 rounded-full overflow-hidden">
+                              <div
+                                className="h-full bg-emerald-500 rounded-full"
+                                style={{ width: `${(healsDone / battleStats.maxHealing) * 100}%` }}
+                              ></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     );
@@ -906,13 +1348,21 @@ export const FightReportPage: React.FC = () => {
 
                     // Determine Action label
                     let actionLabel = "attacks";
-                    if (act.activeType === 2) {
+                    if (act.activeType === ACTIVE_TYPE.SKILL_ATTACK) {
                       const skillName = skillsMap.get(act.skillEffectId) || `Skill #${act.skillEffectId}`;
                       actionLabel = `casts Skill [${skillName}]`;
-                    } else if (act.activeType === 1 || act.activeType === 7) {
-                      actionLabel = "attacks with Normal Strike";
-                    } else if (act.activeType === 4) {
+                    } else if (act.activeType === ACTIVE_TYPE.NORMAL_ATTACK || act.activeType === ACTIVE_TYPE.NORMAL_ATTACK_EX) {
+                      actionLabel = act.activeType === ACTIVE_TYPE.NORMAL_ATTACK_EX ? "attacks with Normal Strike EX" : "attacks with Normal Strike";
+                    } else if (act.activeType === ACTIVE_TYPE.BLOCK) {
+                      actionLabel = "blocks / counterattacks";
+                    } else if (act.activeType === ACTIVE_TYPE.PASSIVE_SKILL) {
                       actionLabel = "procs Passive Skill";
+                    } else if (act.activeType === ACTIVE_TYPE.DIED_SKILL) {
+                      actionLabel = "triggers Death Skill";
+                    } else if (act.activeType === ACTIVE_TYPE.ROUND_SKILL) {
+                      actionLabel = "triggers Round Skill";
+                    } else {
+                      actionLabel = `performs Action Type #${act.activeType}`;
                     }
 
                     return (
@@ -949,74 +1399,71 @@ export const FightReportPage: React.FC = () => {
                               return buffsMap.get(bId) || `Buff #${bId}`;
                             };
 
-                            const decodeStatusFlags = (statusNum: number): string[] => {
-                              const flags: string[] = [];
-                              if (statusNum & 1) flags.push("No Attack");
-                              if (statusNum & 2) flags.push("Stunned");
-                              if (statusNum & 4) flags.push("Control Immune");
-                              if (statusNum & 8) flags.push("Calm Immune");
-                              if (statusNum & 16) flags.push("Fury Locked");
-                              if (statusNum & 32) flags.push("Silence");
-                              if (statusNum & 64) flags.push("Anti-Heal");
-                              if (statusNum & 128) flags.push("Petrified");
-                              if (statusNum & 256) flags.push("Void");
-                              if (statusNum & 512) flags.push("Blind");
-                              if (statusNum & 1024) flags.push("Confused");
-                              if (statusNum & 1048576) flags.push("Frozen");
-                              if (statusNum & 2097152) flags.push("Invincible");
-                              if (statusNum & 33554432) flags.push("Hit");
-                              if (statusNum & 67108864) flags.push("Crit");
-                              if (statusNum & 134217728) flags.push("Block");
-                              if (statusNum & 1073741824) flags.push("Defeated");
-                              return flags;
-                            };
-
-                            if (tgt.cmd === 1 || tgt.cmd === 7 || tgt.cmd === 3) {
+                            if (tgt.cmd === CMD.ATTACK || tgt.cmd === CMD.ATTACKEX || tgt.cmd === CMD.HURTBUFF) {
                               if (hurtHp > 0) {
-                                logText = `Hits ${tName} (Pos ${tPos}) dealing ${hurtHp.toLocaleString()} Damage.`;
+                                const flags = decodeStatusFlags(tgt.status);
+                                const suffix = flags.length ? ` (${flags.join(", ")})` : "";
+                                logText = `Hits ${tName} (Pos ${tPos}) dealing ${hurtHp.toLocaleString()} damage${suffix}.`;
                                 logClass = "text-red-600 dark:text-red-400 font-medium";
                               } else if (hurtHp < 0) {
-                                logText = `Heals ${tName} (Pos ${tPos}) for ${(-hurtHp).toLocaleString()} Health points.`;
+                                logText = `Heals ${tName} (Pos ${tPos}) for ${(-hurtHp).toLocaleString()} HP.`;
                                 logClass = "text-emerald-600 dark:text-emerald-450 font-medium";
                               } else {
-                                logText = `Hits ${tName} (Pos ${tPos}) but does no Damage (Shielded/Evaded).`;
+                                const flags = decodeStatusFlags(tgt.status);
+                                if (flags.includes("Super Dodge / All Miss")) {
+                                  logText = `${tName} (Pos ${tPos}) dodges / all-misses the effect.`;
+                                } else if (flags.includes("Invincible")) {
+                                  logText = `${tName} (Pos ${tPos}) takes no damage due to Invincible.`;
+                                } else if (flags.includes("Block")) {
+                                  logText = `${tName} (Pos ${tPos}) blocks the hit with no HP loss.`;
+                                } else {
+                                  logText = `Targets ${tName} (Pos ${tPos}) with no HP change${flags.length ? ` (${flags.join(", ")})` : ""}.`;
+                                }
+                                logClass = "text-zinc-500 dark:text-zinc-400";
                               }
-                            } else if (tgt.cmd === 8) {
+                            } else if (tgt.cmd === CMD.SHIELD) {
                               const sId = tgt.result.buffId || 0;
-                              const turns = tgt.result.buffTurn || 0;
-                              if (turns === 0) {
-                                logText = `Cleanses/Removes Shield [${getBuffName(sId)}] from ${tName}.`;
+                              const shieldHp = tgt.result.buffTurn || 0;
+                              if (shieldHp === 0) {
+                                logText = `Removes Shield [${getBuffName(sId)}] from ${tName} (Pos ${tPos}).`;
                               } else {
-                                logText = `Applies Shield [${getBuffName(sId)}] on ${tName} for ${turns} rounds.`;
+                                logText = `Applies Shield [${getBuffName(sId)}] on ${tName} (Pos ${tPos}) with ${shieldHp.toLocaleString()} shield HP.`;
                               }
-                              logClass = "text-blue-600 dark:text-blue-400";
-                            } else if (tgt.cmd === 2 || tgt.cmd === 4) {
+                              logClass = "text-blue-600 dark:text-blue-400 font-medium";
+                            } else if (tgt.cmd === CMD.ATTRBUFF || tgt.cmd === CMD.CONTROLBUFF) {
                               const bId = tgt.result.buffId || 0;
-                              const turns = tgt.result.buffTurn || 0;
-                              if (turns === 0) {
-                                if (bId === 0) {
-                                  logText = `Cleanses/Clears temporary buffs/debuffs from ${tName}.`;
-                                } else {
-                                  logText = `Cleanses/Removes Buff [${getBuffName(bId)}] from ${tName}.`;
-                                }
+                              const turnOrType = tgt.result.buffTurn || 0;
+                              if (bId > 0 && turnOrType > 0) {
+                                logText = `Applies Buff [${getBuffName(bId)}] on ${tName} (Pos ${tPos}) for ${turnOrType} rounds.`;
+                              } else if (turnOrType > 0) {
+                                logText = `Removes/clears buff type #${turnOrType} from ${tName} (Pos ${tPos}).`;
+                              } else if (bId > 0) {
+                                logText = `Removes/clears Buff [${getBuffName(bId)}] from ${tName} (Pos ${tPos}).`;
                               } else {
-                                if (bId === 4294967295) {
-                                  logText = `Applies generic combat buff/debuff (System ID: -1) on ${tName} for ${turns} rounds.`;
-                                } else {
-                                  logText = `Applies Buff [${getBuffName(bId)}] on ${tName} for ${turns} rounds.`;
-                                }
+                                logText = `Cleanses/clears temporary buffs/debuffs from ${tName} (Pos ${tPos}).`;
                               }
                               logClass = "text-purple-600 dark:text-purple-400";
-                            } else if (tgt.cmd === 5 || tgt.cmd === 9) {
-                              logText = `Knocks back / Displaces ${tName} to position ${tPos}.`;
-                            } else if (tgt.cmd === 6) {
-                              const activeFlags = decodeStatusFlags(tgt.status);
-                              const flagsStr = activeFlags.length > 0 ? ` (${activeFlags.join(", ")})` : "";
-                              logText = `Updates combat status for ${tName}${flagsStr}.`;
-                            } else if (tgt.cmd === 0) {
-                              logText = `Triggers script action / combat visual on ${tName}.`;
+                            } else if (tgt.cmd === CMD.POSITION) {
+                              const newPos = tgt.result.buffTurn || tPos;
+                              logText = `Moves ${tName} from position ${tPos} to position ${newPos}.`;
+                              logClass = "text-amber-600 dark:text-amber-400";
+                            } else if (tgt.cmd === CMD.FLOAT) {
+                              const effectType = tgt.result.buffId || 0;
+                              const effectParam = tgt.result.buffTurn || 0;
+                              logText = `Shows special combat effect [${getSpecialFloatText(effectType)}] on ${tName} (Pos ${tPos})${effectParam ? `, parameter ${effectParam}` : ""}.`;
+                              logClass = "text-teal-600 dark:text-teal-400";
+                            } else if (tgt.cmd === CMD.STATUS) {
+                              const flags = decodeStatusFlags(tgt.status);
+                              logText = flags.length
+                                ? `Updates combat status for ${tName} (Pos ${tPos}): ${flags.join(", ")}.`
+                                : `Updates combat status for ${tName} (Pos ${tPos}).`;
+                              logClass = "text-zinc-500 dark:text-zinc-400";
+                            } else if (tgt.cmd === CMD.NONE) {
+                              logText = `Triggers script action / combat visual on ${tName} (Pos ${tPos}).`;
+                              logClass = "text-zinc-450 dark:text-zinc-550";
                             } else {
-                              logText = `Performs CMD action #${tgt.cmd} on ${tName}.`;
+                              logText = `Performs CMD action #${tgt.cmd} on ${tName} (Pos ${tPos}).`;
+                              logClass = "text-zinc-450 dark:text-zinc-550";
                             }
 
                             return (
