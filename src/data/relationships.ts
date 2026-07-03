@@ -96,7 +96,12 @@ export function getProfessionLabel(val: number | null): string {
 
 export function getFactionLabel(val: number | null): string {
   if (val === null || val === 0) return 'None';
-  return `Faction ${val}`;
+  switch (val) {
+    case 1: return 'Shinigami';
+    case 2: return 'Quincy';
+    case 3: return 'Arrancar';
+    default: return `Faction ${val}`;
+  }
 }
 
 export function getMajorTypeLabel(val: number | null): string {
@@ -111,12 +116,51 @@ export function getMajorTypeLabel(val: number | null): string {
     case 12: return 'Title Card';
     case 13: return 'Soul Weapon';
     case 20: return 'Soul Jade';
+    case 21: return 'Mod Soul Fragment';
+    case 22: return 'Gikongan';
+    case 23: return 'Mod Soul Pill';
     default: return `Type ${val}`;
   }
 }
 
 export function getMinorTypeLabel(major: number | null, minor: number | null): string {
   if (minor === null) return 'Unknown';
+  if (major === 1) {
+    switch (minor) {
+      case 1: return 'Hollowfied Fragment';
+      case 55: return 'Growth Fruit';
+      case 70: return 'Inventory Expansion';
+      case 71: return 'Cultivation Pill';
+      case 72: return 'Soul Talisman';
+      case 73: return 'Hōgu Enhance Talisman';
+      case 74: return 'Hōgu Covert Talisman';
+      case 75: return 'Spirit Soul';
+      case 76: return 'Skill Scroll';
+      case 77: return 'Zanpakuto Book';
+      case 78: return 'Enchant Stone';
+      case 79: return 'Real Estate Deed';
+      case 80: return 'Silver Card';
+      case 81: return 'Comrade Contract';
+      case 82: return 'Elite Contract';
+      case 83: return 'Shinigami Token';
+      case 84: return 'Challenge Stone';
+      case 90: return 'EXP Scroll';
+      case 95: return 'Gift Pack';
+      case 96: return 'Bond Fragment';
+      case 97: return 'Resource Chest';
+      case 98: return 'Level Gift Pack';
+      case 99: return 'Name-changing Card';
+      case 100: return 'Currency Card';
+      case 101: return 'Refining Crystal';
+      case 110: return 'Mod Soul Fragment';
+      case 111: return 'Mod Soul Exp Card';
+      case 200: return 'Seal / Tears';
+      case 300: return 'Hero Card';
+      case 400: return 'Maniacs Pack';
+      case 500: return 'Reishi Material';
+      case 999: return 'Partner Expansion / Top-up';
+    }
+  }
   if (major === 2) {
     switch (minor) {
       case 1: return 'Weapon';
@@ -127,12 +171,33 @@ export function getMinorTypeLabel(major: number | null, minor: number | null): s
       case 6: return 'Belt';
     }
   }
+  if (major === 3) {
+    switch (minor) {
+      case 1: return 'Strength Spirit Stone';
+      case 2: return 'Agility Spirit Stone';
+      case 3: return 'Wisdom Spirit Stone';
+      case 4: return 'Stamina Spirit Stone';
+      case 22: return 'Hit Spirit Stone';
+      case 23: return 'Dodge Spirit Stone';
+      case 24: return 'Crit Spirit Stone';
+      case 25: return 'Block Spirit Stone';
+      case 30: return 'Break Defense Spirit Stone';
+      case 31: return 'Counter Spirit Stone';
+      case 104: return 'Fury Spirit Stone';
+    }
+  }
   if (major === 4) {
     switch (minor) {
       case 7: return 'Treasure (Power)';
       case 8: return 'Treasure (Intellect)';
       case 9: return 'Treasure (Agility)';
       case 10: return 'Treasure (Life)';
+    }
+  }
+  if (major === 5) {
+    switch (minor) {
+      case 1: return 'Forge Material';
+      case 2: return 'Spirit Water';
     }
   }
   if (major === 6) {
@@ -147,7 +212,42 @@ export function getMinorTypeLabel(major: number | null, minor: number | null): s
       case 18: return 'Anklet';
     }
   }
-  // Under consumable / material / general
+  if (major === 12) {
+    switch (minor) {
+      case 22: return 'Title Card';
+    }
+  }
+  if (major === 13) {
+    switch (minor) {
+      case 1: return 'Soul Weapon';
+      case 2: return 'Soul Weapon Fragment';
+      case 3: return 'Hollowfied Weapon';
+      case 4: return 'Hollowfied Spirit Stone';
+      case 5: return 'Hollowfied Set';
+    }
+  }
+  if (major === 20) {
+    switch (minor) {
+      case 1: return 'Hōgyoku';
+    }
+  }
+  if (major === 21) {
+    switch (minor) {
+      case 100: return 'Mod Soul Fragment';
+    }
+  }
+  if (major === 22) {
+    switch (minor) {
+      case 100: return 'Gikongan Fragment';
+      case 101: return 'Gikongan';
+    }
+  }
+  if (major === 23) {
+    switch (minor) {
+      case 100: return 'Mod Soul Pill';
+    }
+  }
+  // Fallback switch
   switch (minor) {
     case 1: return 'Forge Material';
     case 2: return 'Sprite Water';
@@ -232,10 +332,13 @@ export function getAttributeName(param1: number): string {
     case 102: return 'Current HP';
     case 103: return 'Max Fury';
     case 104: return 'Current Fury';
+    case 105: return 'Status / Control Immunity';
+    case 199: return 'Partner Speed Boost';
     case 200: return 'Starting Skill';
     case 201: return 'Passive Skill';
     case 202: return 'Skill after Death';
     case 203: return 'Halo';
+    case 204: return 'Round End Buff';
     case 901: return 'Hit';
     case 902: return 'Dodge';
     case 903: return 'Crit Hit';
