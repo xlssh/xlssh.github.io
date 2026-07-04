@@ -1,14 +1,14 @@
 {
   "table": "tsystemlanguage",
-  "rowCount": 2025,
+  "rowCount": 2034,
   "rows": [
     {
       "id": 70100000,
-      "desc": "[\"No Limit\", \"Spirit Blade\", \"Manic Blade\", \"Kidō\", \"Ghost Blade\", \"Mage\", \"Beast Spirit\", \"Guardian\", \"Ryoka\"]"
+      "desc": "[\"No Limit\", \"Spirit Blade\", \"Manic Blade\", \"Kid\u014d\", \"Ghost Blade\", \"Mage\", \"Beast Spirit\", \"Guardian\", \"Ryoka\"]"
     },
     {
       "id": 70100001,
-      "desc": "[\"Strength\", \"Agility\", \"Wisdom\", \"Stamina\", \"Speed\", \"Strength Growth Rate\", \"Agility Growth Rate\", \"Wisdom Growth Rate\", \"Stamina Growth Rate\", \"Physical Attack\", \"Physical Defense\", \"Character Range Attack\", \"Character Range Defense\", \"Kidō Attack\", \"Kidō Defense\", \"Hit Rate\", \"Dodge Rate\", \"Crit Rate\", \"Block Rate\", \"Combo Rate\", \"Aid Rate\", \"Damage Rate\", \"Immune Rate\", \"Break Defense Rate\", \"Counter Rate\", \"Attack Rate\", \"Defense Rate\", \"Recovery Rate\", \"Weakn enemy Attack\", \"Weaken enemy Defense\", \"Chance of silencing enemy\", \"Chance of immune from enemy silence\", \"Control chance growth\", \"Control resistance growth\", \"Deduct Fury effect growth\", \"Deduct Fury resistance growth\", \"HP\"]"
+      "desc": "[\"Strength\", \"Agility\", \"Wisdom\", \"Stamina\", \"Speed\", \"Strength Growth Rate\", \"Agility Growth Rate\", \"Wisdom Growth Rate\", \"Stamina Growth Rate\", \"Physical Attack\", \"Physical Defense\", \"Character Range Attack\", \"Character Range Defense\", \"Kid\u014d Attack\", \"Kid\u014d Defense\", \"Hit Rate\", \"Dodge Rate\", \"Crit Rate\", \"Block Rate\", \"Combo Rate\", \"Aid Rate\", \"Damage Rate\", \"Immune Rate\", \"Break Defense Rate\", \"Counter Rate\", \"Attack Rate\", \"Defense Rate\", \"Recovery Rate\", \"Weakn enemy Attack\", \"Weaken enemy Defense\", \"Chance of silencing enemy\", \"Chance of immune from enemy silence\", \"Control chance growth\", \"Control resistance growth\", \"Deduct Fury effect growth\", \"Deduct Fury resistance growth\", \"HP\"]"
     },
     {
       "id": 70100002,
@@ -36,7 +36,7 @@
     },
     {
       "id": 70100008,
-      "desc": "[\"Espada #4 Spirit Star\", \"Espada #3 Spirit Star\", \"Espada #2 Spirit Star\", \"Espada #1 Spirit Star\", \"Tōsen Spirit Star\", \"Gin Spirit Star\", \"Aizen Spirit Star\"]"
+      "desc": "[\"Espada #4 Spirit Star\", \"Espada #3 Spirit Star\", \"Espada #2 Spirit Star\", \"Espada #1 Spirit Star\", \"T\u014dsen Spirit Star\", \"Gin Spirit Star\", \"Aizen Spirit Star\"]"
     },
     {
       "id": 70100009,
@@ -108,15 +108,15 @@
     },
     {
       "id": 70100026,
-      "desc": "[\"Espada #4\", \"Espada #3\", \"Espada #2\", \"Espada #1\", \"Tōsen\", \"Gin\", \"Aizen\"]"
+      "desc": "[\"Espada #4\", \"Espada #3\", \"Espada #2\", \"Espada #1\", \"T\u014dsen\", \"Gin\", \"Aizen\"]"
     },
     {
       "id": 70100027,
-      "desc": "[\"Espada #4 Hollow Spirit\", \"Espada #3 Hollow Spirit\", \"Espada #2 Hollow Spirit\", \"Espada #1 Hollow Spirit\", \"Tōsen Hollow Spirit\", \"Gin Hollow Spirit\", \"Aizen Hollow Spirit\"]"
+      "desc": "[\"Espada #4 Hollow Spirit\", \"Espada #3 Hollow Spirit\", \"Espada #2 Hollow Spirit\", \"Espada #1 Hollow Spirit\", \"T\u014dsen Hollow Spirit\", \"Gin Hollow Spirit\", \"Aizen Hollow Spirit\"]"
     },
     {
       "id": 70100028,
-      "desc": "[\"Physical Attack\", \"Kidō Attack\", \"Physical Defense\", \"Kidō Defense\", \"HP\", \"Speed\"]"
+      "desc": "[\"Physical Attack\", \"Kid\u014d Attack\", \"Physical Defense\", \"Kid\u014d Defense\", \"HP\", \"Speed\"]"
     },
     {
       "id": 70100029,
@@ -176,7 +176,7 @@
     },
     {
       "id": 70100043,
-      "desc": "Hōgyoku Hollow Spirit"
+      "desc": "H\u014dgyoku Hollow Spirit"
     },
     {
       "id": 70100044,
@@ -196,7 +196,7 @@
     },
     {
       "id": 70100048,
-      "desc": "Tōsen Hollow Spirit"
+      "desc": "T\u014dsen Hollow Spirit"
     },
     {
       "id": 70100049,
@@ -216,11 +216,11 @@
     },
     {
       "id": 70100053,
-      "desc": "Hōgu Quality: %0"
+      "desc": "H\u014dgu Quality: %0"
     },
     {
       "id": 70100054,
-      "desc": "Hōgu Type: %0"
+      "desc": "H\u014dgu Type: %0"
     },
     {
       "id": 70100055,
@@ -228,7 +228,7 @@
     },
     {
       "id": 70100056,
-      "desc": "Hōgu Description: %0"
+      "desc": "H\u014dgu Description: %0"
     },
     {
       "id": 70100057,
@@ -368,7 +368,7 @@
     },
     {
       "id": 70100091,
-      "desc": "<font face=\"Arial\" size=\"12\" color=\"#ffffff\" letterspacing=\"0\" kerning=\"0\">　%0 </font>%1"
+      "desc": "<font face=\"Arial\" size=\"12\" color=\"#ffffff\" letterspacing=\"0\" kerning=\"0\">\u3000%0 </font>%1"
     },
     {
       "id": 70100092,
@@ -452,7 +452,7 @@
     },
     {
       "id": 70100112,
-      "desc": "Currently initializing player data…"
+      "desc": "Currently initializing player data\u2026"
     },
     {
       "id": 70100113,
@@ -472,7 +472,7 @@
     },
     {
       "id": 70100117,
-      "desc": "Use Top-up Card Successfully!"
+      "desc": "Use\u00a0Top-up\u00a0Card\u00a0Successfully!"
     },
     {
       "id": 70158001,
@@ -648,7 +648,7 @@
     },
     {
       "id": 70147023,
-      "desc": "[\"Normal Refine, after refine randomly generates Attributes Type and random Attributes value! \", \"Designated Refine, after Refine Attributes Type do not change, and randomly generate Attributes value!\", \"SkillRefine, Refine后生成随机的WeaponSkill! \"]"
+      "desc": "[\"Normal Refine, after refine randomly generates Attributes Type and random Attributes value! \", \"Designated Refine, after Refine Attributes Type do not change, and randomly generate Attributes value!\", \"SkillRefine, Refine\u540e\u751f\u6210\u968f\u673a\u7684WeaponSkill! \"]"
     },
     {
       "id": 70147024,
@@ -908,7 +908,7 @@
     },
     {
       "id": 70103012,
-      "desc": "Please remove partner's Hōgu "
+      "desc": "Please remove partner's H\u014dgu "
     },
     {
       "id": 70103013,
@@ -940,7 +940,7 @@
     },
     {
       "id": 70103020,
-      "desc": "Kidō Attack: basic value for dealing damage on enemy, base on Wisdom"
+      "desc": "Kid\u014d Attack: basic value for dealing damage on enemy, base on Wisdom"
     },
     {
       "id": 70103021,
@@ -948,7 +948,7 @@
     },
     {
       "id": 70103022,
-      "desc": "Kidō Defense: basic value for defense against Kidō Attack damage, affected by Wisdom"
+      "desc": "Kid\u014d Defense: basic value for defense against Kid\u014d Attack damage, affected by Wisdom"
     },
     {
       "id": 70103023,
@@ -968,7 +968,7 @@
     },
     {
       "id": 70103027,
-      "desc": "Partners quality did not reach Hōgu's quality requirement, cannot exchange! "
+      "desc": "Partners quality did not reach H\u014dgu's quality requirement, cannot exchange! "
     },
     {
       "id": 70103028,
@@ -980,7 +980,7 @@
     },
     {
       "id": 70103030,
-      "desc": "Through one-click exchange, you can exchange two Partners' Equipment, Hōgu and Hollow Spirit Map. When partners are from different class, the Weapons will not be exchanged! "
+      "desc": "Through one-click exchange, you can exchange two Partners' Equipment, H\u014dgu and Hollow Spirit Map. When partners are from different class, the Weapons will not be exchanged! "
     },
     {
       "id": 70103031,
@@ -1096,7 +1096,7 @@
     },
     {
       "id": 70144008,
-      "desc": "Kidō : Kidō Attack type Partners "
+      "desc": "Kid\u014d : Kid\u014d Attack type Partners "
     },
     {
       "id": 70144009,
@@ -1104,7 +1104,7 @@
     },
     {
       "id": 70144010,
-      "desc": "Mage: Kidō Attack type Partners "
+      "desc": "Mage: Kid\u014d Attack type Partners "
     },
     {
       "id": 70105001,
@@ -1120,7 +1120,7 @@
     },
     {
       "id": 70105004,
-      "desc": "You Obtained：Sliver +%0"
+      "desc": "You Obtained\uff1aSliver +%0"
     },
     {
       "id": 70105005,
@@ -1176,7 +1176,7 @@
     },
     {
       "id": 70105018,
-      "desc": "Selling List include Spirit Stones, Equipment or Hōgu, you sure to sell?"
+      "desc": "Selling List include Spirit Stones, Equipment or H\u014dgu, you sure to sell?"
     },
     {
       "id": 70105019,
@@ -1196,7 +1196,7 @@
     },
     {
       "id": 70106000,
-      "desc": "占位"
+      "desc": "\u5360\u4f4d"
     },
     {
       "id": 70106001,
@@ -1376,7 +1376,7 @@
     },
     {
       "id": 70149017,
-      "desc": "<p align=\"left\"><font face=\"宋体\" size=\"12\" color=\"#00cc00\" letterspacing=\"0\" kerning=\"0\">%0(+%1)</font></p>"
+      "desc": "<p align=\"left\"><font face=\"\u5b8b\u4f53\" size=\"12\" color=\"#00cc00\" letterspacing=\"0\" kerning=\"0\">%0(+%1)</font></p>"
     },
     {
       "id": 70108001,
@@ -1424,11 +1424,11 @@
     },
     {
       "id": 70109003,
-      "desc": "Upgrade Success! You have a more powerful Hōgu Now!"
+      "desc": "Upgrade Success! You have a more powerful H\u014dgu Now!"
     },
     {
       "id": 70109004,
-      "desc": "This Hōgu can't be upgraded"
+      "desc": "This H\u014dgu can't be upgraded"
     },
     {
       "id": 70109005,
@@ -1440,27 +1440,27 @@
     },
     {
       "id": 70109007,
-      "desc": "Character quality need to be upgraded to equip this Hōgu! Click Soul Map to upgrade!"
+      "desc": "Character quality need to be upgraded to equip this H\u014dgu! Click Soul Map to upgrade!"
     },
     {
       "id": 70109008,
-      "desc": "Hōgu equipped now can't be upgraded"
+      "desc": "H\u014dgu equipped now can't be upgraded"
     },
     {
       "id": 70109009,
-      "desc": "Hōgu Quality 3 and above can be upgraded"
+      "desc": "H\u014dgu Quality 3 and above can be upgraded"
     },
     {
       "id": 70109010,
-      "desc": "Your Hōgu Quality is Maxed!"
+      "desc": "Your H\u014dgu Quality is Maxed!"
     },
     {
       "id": 70109011,
-      "desc": "Hōgu equipped on character can't be converted"
+      "desc": "H\u014dgu equipped on character can't be converted"
     },
     {
       "id": 70109012,
-      "desc": "Hōgu quality higher than 0 can't be converted"
+      "desc": "H\u014dgu quality higher than 0 can't be converted"
     },
     {
       "id": 70109013,
@@ -1468,11 +1468,11 @@
     },
     {
       "id": 70109014,
-      "desc": "Hōgu Level: "
+      "desc": "H\u014dgu Level: "
     },
     {
       "id": 70109015,
-      "desc": "Hōgu Quality: "
+      "desc": "H\u014dgu Quality: "
     },
     {
       "id": 70109016,
@@ -1488,11 +1488,11 @@
     },
     {
       "id": 70109019,
-      "desc": "The system will consume Hōgu of the same type. When not enough Hōgu, then will consume Hōgu Enhance Talisman to replace Hōgu, if not enough, then will consume Gold to upgrade Hōgu."
+      "desc": "The system will consume H\u014dgu of the same type. When not enough H\u014dgu, then will consume H\u014dgu Enhance Talisman to replace H\u014dgu, if not enough, then will consume Gold to upgrade H\u014dgu."
     },
     {
       "id": 70109020,
-      "desc": "Hōgu Convert Talisman"
+      "desc": "H\u014dgu Convert Talisman"
     },
     {
       "id": 70109021,
@@ -1504,7 +1504,7 @@
     },
     {
       "id": 70109023,
-      "desc": "[\"Quality\", \"Hōgu Quality1\", \"Hōgu Quality2\", \"Hōgu Quality3\", \"Hōgu Quality4\", \"Hōgu Quality5\"]"
+      "desc": "[\"Quality\", \"H\u014dgu Quality1\", \"H\u014dgu Quality2\", \"H\u014dgu Quality3\", \"H\u014dgu Quality4\", \"H\u014dgu Quality5\"]"
     },
     {
       "id": 70109024,
@@ -1512,11 +1512,11 @@
     },
     {
       "id": 70109025,
-      "desc": "Hōgu Enhance Talisman"
+      "desc": "H\u014dgu Enhance Talisman"
     },
     {
       "id": 70109026,
-      "desc": "Hōgu Convert Talisman"
+      "desc": "H\u014dgu Convert Talisman"
     },
     {
       "id": 70109027,
@@ -1568,7 +1568,7 @@
     },
     {
       "id": 70109039,
-      "desc": "[\"All\",\"Hogu Quality 8\",\"Hogu Quality 9\",\"Hogu Quality 10\",\"Hogu Quality 11\",\"Hogu Quality  12\",\"Hogu Quality 13\",\"Hogu Enhance Talisman\",\"Hōgu Covert Talisman\"]"
+      "desc": "[\"All\",\"Hogu Quality 8\",\"Hogu Quality 9\",\"Hogu Quality 10\",\"Hogu Quality 11\",\"Hogu Quality  12\",\"Hogu Quality 13\",\"Hogu Enhance Talisman\",\"H\u014dgu Covert Talisman\"]"
     },
     {
       "id": 70109040,
@@ -1672,7 +1672,7 @@
     },
     {
       "id": 70130005,
-      "desc": "Team Member is part of your strength, Pritice in Nindo Budokan to improve! Defete three chosen Ninjas by Ninjutsu can obtain Victory Certificate. Collect certain amount of certificate can recruit Ninja to your team!（Note：Ninja from same clan use only 90% of certificate to recruit.）When you reach higher level you may challenge for better rewards."
+      "desc": "Team Member is part of your strength, Pritice in Nindo Budokan to improve! Defete three chosen Ninjas by Ninjutsu can obtain Victory Certificate. Collect certain amount of certificate can recruit Ninja to your team!\uff08Note\uff1aNinja from same clan use only 90% of certificate to recruit.\uff09When you reach higher level you may challenge for better rewards."
     },
     {
       "id": 70130006,
@@ -1784,7 +1784,7 @@
     },
     {
       "id": 70154004,
-      "desc": "Player doesn’t exist "
+      "desc": "Player doesn\u2019t exist "
     },
     {
       "id": 70154005,
@@ -1836,27 +1836,27 @@
     },
     {
       "id": 70150000,
-      "desc": "您今天游戏累计时间已满1小时"
+      "desc": "\u60a8\u4eca\u5929\u6e38\u620f\u7d2f\u8ba1\u65f6\u95f4\u5df2\u6ee11\u5c0f\u65f6"
     },
     {
       "id": 70150001,
-      "desc": "您今天游戏累计时间已满2小时"
+      "desc": "\u60a8\u4eca\u5929\u6e38\u620f\u7d2f\u8ba1\u65f6\u95f4\u5df2\u6ee12\u5c0f\u65f6"
     },
     {
       "id": 70150002,
-      "desc": "您今天游戏累计时间已满3小时, 物品 reward已经自动减半, 请下线休息, 健康生活! "
+      "desc": "\u60a8\u4eca\u5929\u6e38\u620f\u7d2f\u8ba1\u65f6\u95f4\u5df2\u6ee13\u5c0f\u65f6, \u7269\u54c1 reward\u5df2\u7ecf\u81ea\u52a8\u51cf\u534a, \u8bf7\u4e0b\u7ebf\u4f11\u606f, \u5065\u5eb7\u751f\u6d3b! "
     },
     {
       "id": 70150003,
-      "desc": "您今天游戏累计时间达到3小时50分, 再过10分钟会进入防沉迷模式, 请保持健康游戏时间"
+      "desc": "\u60a8\u4eca\u5929\u6e38\u620f\u7d2f\u8ba1\u65f6\u95f4\u8fbe\u52303\u5c0f\u65f650\u5206, \u518d\u8fc710\u5206\u949f\u4f1a\u8fdb\u5165\u9632\u6c89\u8ff7\u6a21\u5f0f, \u8bf7\u4fdd\u6301\u5065\u5eb7\u6e38\u620f\u65f6\u95f4"
     },
     {
       "id": 70150004,
-      "desc": "您今天游戏累计时间达到3小时59分, 再过1分钟会进入防沉迷模式, 请保持健康游戏时间"
+      "desc": "\u60a8\u4eca\u5929\u6e38\u620f\u7d2f\u8ba1\u65f6\u95f4\u8fbe\u52303\u5c0f\u65f659\u5206, \u518d\u8fc71\u5206\u949f\u4f1a\u8fdb\u5165\u9632\u6c89\u8ff7\u6a21\u5f0f, \u8bf7\u4fdd\u6301\u5065\u5eb7\u6e38\u620f\u65f6\u95f4"
     },
     {
       "id": 70150005,
-      "desc": "您今天累计在线时间已满4小时, 建议您下线休息, 做适当身体活动! "
+      "desc": "\u60a8\u4eca\u5929\u7d2f\u8ba1\u5728\u7ebf\u65f6\u95f4\u5df2\u6ee14\u5c0f\u65f6, \u5efa\u8bae\u60a8\u4e0b\u7ebf\u4f11\u606f, \u505a\u9002\u5f53\u8eab\u4f53\u6d3b\u52a8! "
     },
     {
       "id": 70150006,
@@ -1872,7 +1872,7 @@
     },
     {
       "id": 70160003,
-      "desc": "Tips: Spirit Blade and Ghost Sword deals Physical Damages while Kidō deals Strategy Damage."
+      "desc": "Tips: Spirit Blade and Ghost Sword deals Physical Damages while Kid\u014d deals Strategy Damage."
     },
     {
       "id": 70160004,
@@ -1900,7 +1900,7 @@
     },
     {
       "id": 70160010,
-      "desc": "Trial Tower will drop Hōgu! "
+      "desc": "Trial Tower will drop H\u014dgu! "
     },
     {
       "id": 70180001,
@@ -1912,7 +1912,7 @@
     },
     {
       "id": 70180003,
-      "desc": "Protect Seireitei：%n1. Everyday from 9:00 - 9:30 %n 2. This events give out four reawards in total, according to A, B, C, D in order %n 3.If defending side wins, the defending side Guild get A reward, the Top Three offense guilds get B, C, D %n 4. If offense side wins, the Top 3 Guilds in offense gets A, B, C, Defending side get D award %n 5. Higher level of Protect Seireitei means higher buff for all members who attend the event"
+      "desc": "Protect Seireitei\uff1a%n1. Everyday from 9:00 - 9:30 %n 2. This events give out four reawards in total, according to A, B, C, D in order %n 3.If defending side wins, the defending side Guild get A reward, the Top Three offense guilds get B, C, D %n 4. If offense side wins, the Top 3 Guilds in offense gets A, B, C, Defending side get D award %n 5. Higher level of Protect Seireitei means higher buff for all members who attend the event"
     },
     {
       "id": 70180004,
@@ -2192,7 +2192,7 @@
     },
     {
       "id": 70180073,
-      "desc": "[\"Guild Camp\", \"Protect Seireitei\", \"Evil Spirit Attacks\", \"Guild War\", \"Shinigami Evil Spirits\", \"灭却 Evil Spirits\", \"Arrancar Evil Spirits\", \"Ryoka Attack\"]"
+      "desc": "[\"Guild Camp\", \"Protect Seireitei\", \"Evil Spirit Attacks\", \"Guild War\", \"Shinigami Evil Spirits\", \"\u706d\u5374 Evil Spirits\", \"Arrancar Evil Spirits\", \"Ryoka Attack\"]"
     },
     {
       "id": 70180074,
@@ -2208,31 +2208,31 @@
     },
     {
       "id": 70170001,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'>As soon as you enter the game you’ll see this function.<br/>*You can check on the <FONT COLOR='#33FF66'>Partners’ Attributes</FONT> of the partners you already recruited.<br/>*You can <FONT COLOR='#33FF66'> equip with Equipments </FONT> and <FONT COLOR='#33FF66'>use Items</FONT> on the partners<br/>*Check each Partner’s <FONT COLOR='#33FF66'>Battle Power</FONT></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'>As soon as you enter the game you\u2019ll see this function.<br/>*You can check on the <FONT COLOR='#33FF66'>Partners\u2019 Attributes</FONT> of the partners you already recruited.<br/>*You can <FONT COLOR='#33FF66'> equip with Equipments </FONT> and <FONT COLOR='#33FF66'>use Items</FONT> on the partners<br/>*Check each Partner\u2019s <FONT COLOR='#33FF66'>Battle Power</FONT></FONT></P>"
     },
     {
       "id": 70170002,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'> As soon as you enter the game you’ll see this function where you can store Items. The Backpack is split to 6 sections: <br/>*<FONT COLOR='#66FF66'>Items</FONT>: In this tab, you can see the <FONT COLOR='#66FF66'>General Items, Treasure Chests</FONT> and other things<br/>*<FONT COLOR='#66FF66'>Equipment</FONT>: In this tab, you can see all the <FONT COLOR='#66FF66'>Equipments</FONT><br/>*<FONT COLOR='#66FF66'>Material</FONT>: In this tab, you can see the <FONT COLOR='#66FF66'>Equipment forging material</FONT><br/>*<FONT COLOR='#66FF66'>Spirit Stones</FONT>: In this tab, you can see the <FONT COLOR='#66FF66'>Spirit Stones</FONT><br/>*<FONT COLOR='#66FF66'>Hōgu</FONT>: After you get a <FONT COLOR='#66FF66'>Hōgu, it will be stored in this tab</FONT><br/>*<FONT COLOR='#66FF66'>Temporary Bag</FONT>: <FONT COLOR='#66FF66'>After your backpack is full</FONT>, all the items you own will go into this tab.<FONT COLOR='#66FF66'>If you don’t move the Items in this tab to other tabs within set amount of time, it will disappear</FONT>! </FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'> As soon as you enter the game you\u2019ll see this function where you can store Items. The Backpack is split to 6 sections: <br/>*<FONT COLOR='#66FF66'>Items</FONT>: In this tab, you can see the <FONT COLOR='#66FF66'>General Items, Treasure Chests</FONT> and other things<br/>*<FONT COLOR='#66FF66'>Equipment</FONT>: In this tab, you can see all the <FONT COLOR='#66FF66'>Equipments</FONT><br/>*<FONT COLOR='#66FF66'>Material</FONT>: In this tab, you can see the <FONT COLOR='#66FF66'>Equipment forging material</FONT><br/>*<FONT COLOR='#66FF66'>Spirit Stones</FONT>: In this tab, you can see the <FONT COLOR='#66FF66'>Spirit Stones</FONT><br/>*<FONT COLOR='#66FF66'>H\u014dgu</FONT>: After you get a <FONT COLOR='#66FF66'>H\u014dgu, it will be stored in this tab</FONT><br/>*<FONT COLOR='#66FF66'>Temporary Bag</FONT>: <FONT COLOR='#66FF66'>After your backpack is full</FONT>, all the items you own will go into this tab.<FONT COLOR='#66FF66'>If you don\u2019t move the Items in this tab to other tabs within set amount of time, it will disappear</FONT>! </FONT></P>"
     },
     {
       "id": 70170003,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>After player complete </B><FONT COLOR='#66FF66'><B>Level 7 Task, will activate </B></FONT><B>Soul Map. In the Soul Map, </B><FONT COLOR='#66FF66'><B>the Soul Points </B></FONT><B> need to </B><FONT COLOR='#66FF66'><B>consume Souls</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>Activate</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>After activating </B></FONT><B>Soul Points</B><FONT COLOR='#66FF66'><B> can gain increase in Attributes</B></FONT><B></FONT><B> and new </B><FONT COLOR='#66FF66'><B>Skills</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>activating</B></FONT><B> one soul map, </B><FONT COLOR='#66FF66'><B> can upgrade main character’s Quality</B></FONT><B> therefore </B><FONT COLOR='#66FF66'><B>greatly increase main character’s Attributes</B></FONT><B>.How to get</B><FONT COLOR='#66FF66'><B> Soul Points</B></FONT><B>: <br/>*Receive </B><FONT COLOR='#66FF66'><B>Rank Salary</B></FONT><B><br/>*First time </B><FONT COLOR='#66FF66'><B>passes stages</B></FONT><B><br/>*In the Guild’s </B><FONT COLOR='#66FF66'><B>Evil Spirit Attacks</B></FONT><B><br/>*In Ryoka Attack, </B><FONT COLOR='#66FF66'><B>Damage Ranking reward</B></FONT><B><br/>*In Ryoka Attack, </B><FONT COLOR='#66FF66'><B>kill Ryoka to obtain</B>*In</B><FONT COLOR='#66FF66'><B>Skill Interface</B></FONT><B>, you can </B><FONT COLOR='#66FF66'><B>Exchange Skills</B></FONT></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>After player complete </B><FONT COLOR='#66FF66'><B>Level 7 Task, will activate </B></FONT><B>Soul Map. In the Soul Map, </B><FONT COLOR='#66FF66'><B>the Soul Points </B></FONT><B> need to </B><FONT COLOR='#66FF66'><B>consume Souls</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>Activate</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>After activating </B></FONT><B>Soul Points</B><FONT COLOR='#66FF66'><B> can gain increase in Attributes</B></FONT><B></FONT><B> and new </B><FONT COLOR='#66FF66'><B>Skills</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>activating</B></FONT><B> one soul map, </B><FONT COLOR='#66FF66'><B> can upgrade main character\u2019s Quality</B></FONT><B> therefore </B><FONT COLOR='#66FF66'><B>greatly increase main character\u2019s Attributes</B></FONT><B>.How to get</B><FONT COLOR='#66FF66'><B> Soul Points</B></FONT><B>: <br/>*Receive </B><FONT COLOR='#66FF66'><B>Rank Salary</B></FONT><B><br/>*First time </B><FONT COLOR='#66FF66'><B>passes stages</B></FONT><B><br/>*In the Guild\u2019s </B><FONT COLOR='#66FF66'><B>Evil Spirit Attacks</B></FONT><B><br/>*In Ryoka Attack, </B><FONT COLOR='#66FF66'><B>Damage Ranking reward</B></FONT><B><br/>*In Ryoka Attack, </B><FONT COLOR='#66FF66'><B>kill Ryoka to obtain</B>*In</B><FONT COLOR='#66FF66'><B>Skill Interface</B></FONT><B>, you can </B><FONT COLOR='#66FF66'><B>Exchange Skills</B></FONT></FONT></P>"
     },
     {
       "id": 70170004,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>After you completed </B><FONT COLOR='#66FF66'><B>Level 4 Main Task</B></FONT><B> will activate this.<br/>*After </B><FONT COLOR='#66FF66'><B>dragging</B></FONT><B> partners, </B><FONT COLOR='#66FF66'><B> can place into Formation</B></FONT><B>.<br/>*In the interface’s </B><FONT COLOR='#66FF66'><B>upper left-hand corner, you can check </B></FONT><B>Total </B><FONT COLOR='#66FF66'><B>Battle Power</B></FONT><B>.<br/>*Below the </B><FONT COLOR='#66FF66'><B>Formation Placement</B></FONT><B>, you can </B><FONT COLOR='#66FF66'><B>check </B></FONT><B>Zanpakutō’s </B><FONT COLOR='#66FF66'><B> bonus on Formation </B></FONT><B>.<br/>*You can check on </B><FONT COLOR='#66FF66'><B>Battling</B></FONT><B> Partners’ </B><FONT COLOR='#66FF66'><B>population</B></FONT><B>.<br/></FONT><B>.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>After you completed </B><FONT COLOR='#66FF66'><B>Level 4 Main Task</B></FONT><B> will activate this.<br/>*After </B><FONT COLOR='#66FF66'><B>dragging</B></FONT><B> partners, </B><FONT COLOR='#66FF66'><B> can place into Formation</B></FONT><B>.<br/>*In the interface\u2019s </B><FONT COLOR='#66FF66'><B>upper left-hand corner, you can check </B></FONT><B>Total </B><FONT COLOR='#66FF66'><B>Battle Power</B></FONT><B>.<br/>*Below the </B><FONT COLOR='#66FF66'><B>Formation Placement</B></FONT><B>, you can </B><FONT COLOR='#66FF66'><B>check </B></FONT><B>Zanpakut\u014d\u2019s </B><FONT COLOR='#66FF66'><B> bonus on Formation </B></FONT><B>.<br/>*You can check on </B><FONT COLOR='#66FF66'><B>Battling</B></FONT><B> Partners\u2019 </B><FONT COLOR='#66FF66'><B>population</B></FONT><B>.<br/></FONT><B>.</B></FONT></P>"
     },
     {
       "id": 70170005,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> You can complete </B><FONT COLOR='#66FF66'><B>Level 29 Main Task</B></FONT><B> to activate this Function. In this function, you can </B><FONT COLOR='#66FF66'><B> operate on Hōgu</B></FONT><B>.<br/>*In the interface, click on </B><FONT COLOR='#66FF66'><B>the tabs on top</B></FONT><B> to </B><FONT COLOR='#66FF66'><B> change between functions</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>Equip Hōgu </B></FONT><B>: </B><FONT COLOR='#66FF66'><B>Click on the </B></FONT><B>Hōgu in Item Tab</B><FONT COLOR='#66FF66'><B> to equip</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>click on any of the equipped Hōgu </B></FONT><B> to </B><FONT COLOR='#66FF66'><B>remove</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>Hōgu Upgrade </B></FONT><B>: Left click any one Hōgu, </B><FONT COLOR='#66FF66'><B>will consume the same Hōgu </B></FONT><B> to </B><FONT COLOR='#66FF66'><B>Upgrade </B></FONT><B>, you can also use </B><FONT COLOR='#66FF66'><B>Gold to upgrade directly </B></FONT><B>, after </B><FONT COLOR='#66FF66'><B>Upgrading</B></FONT><B>, will greatly </B><FONT COLOR='#66FF66'><B>increase</B></FONT><B> this </B><FONT COLOR='#66FF66'><B>Hōgu’s Attributes</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>Hōgu Convert</B></FONT><B>: Left click to select one Hōgu, will consume </B><FONT COLOR='#66FF66'><B>Hōgu Convert Talisman</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>convert to one of the 3 different types of Hōgu of the same quality</B><FONT COLOR='#FFFFCC' KERNING='1'><B>.</B></FONT></FONT><B><br/>*Hōgu </B><FONT COLOR='#66FF66'><B> has no Level requirements</B></FONT><B>, but </B><FONT COLOR='#66FF66'><B>high quality Hōgu cannot be equipped on low quality Partners </B></FONT><B>. For example, Gold Hōgu cannot be equipped on Purple Partners.<br/>*（</B><FONT COLOR='#66FF66'><B>Note: Equipped and Upgraded Hōgu cannot convert or upgrade quality<\n/B></FONT><B>）</B></FONT></P>\n"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> You can complete </B><FONT COLOR='#66FF66'><B>Level 29 Main Task</B></FONT><B> to activate this Function. In this function, you can </B><FONT COLOR='#66FF66'><B> operate on H\u014dgu</B></FONT><B>.<br/>*In the interface, click on </B><FONT COLOR='#66FF66'><B>the tabs on top</B></FONT><B> to </B><FONT COLOR='#66FF66'><B> change between functions</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>Equip H\u014dgu </B></FONT><B>: </B><FONT COLOR='#66FF66'><B>Click on the </B></FONT><B>H\u014dgu in Item Tab</B><FONT COLOR='#66FF66'><B> to equip</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>click on any of the equipped H\u014dgu </B></FONT><B> to </B><FONT COLOR='#66FF66'><B>remove</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>H\u014dgu Upgrade </B></FONT><B>: Left click any one H\u014dgu, </B><FONT COLOR='#66FF66'><B>will consume the same H\u014dgu </B></FONT><B> to </B><FONT COLOR='#66FF66'><B>Upgrade </B></FONT><B>, you can also use </B><FONT COLOR='#66FF66'><B>Gold to upgrade directly </B></FONT><B>, after </B><FONT COLOR='#66FF66'><B>Upgrading</B></FONT><B>, will greatly </B><FONT COLOR='#66FF66'><B>increase</B></FONT><B> this </B><FONT COLOR='#66FF66'><B>H\u014dgu\u2019s Attributes</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>H\u014dgu Convert</B></FONT><B>: Left click to select one H\u014dgu, will consume </B><FONT COLOR='#66FF66'><B>H\u014dgu Convert Talisman</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>convert to one of the 3 different types of H\u014dgu of the same quality</B><FONT COLOR='#FFFFCC' KERNING='1'><B>.</B></FONT></FONT><B><br/>*H\u014dgu </B><FONT COLOR='#66FF66'><B> has no Level requirements</B></FONT><B>, but </B><FONT COLOR='#66FF66'><B>high quality H\u014dgu cannot be equipped on low quality Partners </B></FONT><B>. For example, Gold H\u014dgu cannot be equipped on Purple Partners.<br/>*\uff08</B><FONT COLOR='#66FF66'><B>Note: Equipped and Upgraded H\u014dgu cannot convert or upgrade quality<\n/B></FONT><B>\uff09</B></FONT></P>\n"
     },
     {
       "id": 70170006,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Players completing </B><FONT COLOR='#66FF66'><B>Level 21 Main Task</B></FONT><B> can obtain Reiatsu <br/>*After cultivating Reiatsu to </B><FONT COLOR='#66FF66'><B>certain level, </B></FONT><B> in Formation, </B><FONT COLOR='#66FF66'><B> can materialize Zanpakutō</B></FONT><B>.<br/>*Reiatsu can provide Attributes bonuses in </B><FONT COLOR='#66FF66'><B>Arena, Guild War, Challenging BOSS, </B></FONT><B> to Partners </B><FONT COLOR='#66FF66'><B>in battle</B></FONT><B>.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Players completing </B><FONT COLOR='#66FF66'><B>Level 21 Main Task</B></FONT><B> can obtain Reiatsu <br/>*After cultivating Reiatsu to </B><FONT COLOR='#66FF66'><B>certain level, </B></FONT><B> in Formation, </B><FONT COLOR='#66FF66'><B> can materialize Zanpakut\u014d</B></FONT><B>.<br/>*Reiatsu can provide Attributes bonuses in </B><FONT COLOR='#66FF66'><B>Arena, Guild War, Challenging BOSS, </B></FONT><B> to Partners </B><FONT COLOR='#66FF66'><B>in battle</B></FONT><B>.</B></FONT></P>"
     },
     {
       "id": 70170007,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#66FF66' LETTERSPACING='0' KERNING='0'><B>You can reach Level 14 to activate</B><FONT COLOR='#FFFFCC'><B> this Function.<br/>*</B></FONT><B>Fortify </B><FONT COLOR='#FFFFCC'><B>: can </B></FONT><B>increase</B><FONT COLOR='#FFFFCC'><B>Equipment’s </B></FONT><B>Attributes value</B><FONT COLOR='#FFFFCC'><B>; Fortify Level</B></FONT><B> cannot surpass Main Character’s Level</B><FONT COLOR='#FFFFCC'><B>.<br/>*</B></FONT><B>Inherit</B><FONT COLOR='#FFFFCC'><B>: can transfer the original Equipment’s </B></FONT><B>Fortify Level to the new Equipment</B><FONT COLOR='#FFFFCC'><B>, but </B></FONT><B>decrease a few Fortify Level</B><FONT COLOR='#FFFFCC'><B>. Spirit Stones </B></FONT><B>embedded on the Equipment</B><FONT COLOR='#FFFFCC'><B> will also </B></FONT><B> be Inherited to the new Equipment </B><FONT COLOR='#FFFFCC'><B>.<br/>*</B></FONT><B>Refine</B><FONT COLOR='#FFFFCC'><B>: can make Equipment obtain </B></FONT><B>extra Attributes Bonus </B><FONT COLOR='#FFFFCC'><B>, refine is split to </B></FONT><B>Normal Refine, Designated Refine</B><FONT COLOR='#FFFFCC'><B>; </B></FONT><B>Normal Refine</B><FONT COLOR='#FFFFCC'><B> requires </B></FONT><B>Silver</B><FONT COLOR='#FFFFCC'><B> to </B></FONT><B>randomly get Attributes value</B><FONT COLOR='#FFFFCC'><B>, </B></FONT><B>Designated Refine</B><FONT COLOR='#FFFFCC'><B> within</B></FONT><B>designated Attributes value</B><FONT COLOR='#FFFFCC'><B>中</B></FONT><B>randomly changes</B><FONT COLOR='#FFFFCC'><B>.</B></FONT><B></FONT></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#66FF66' LETTERSPACING='0' KERNING='0'><B>You can reach Level 14 to activate</B><FONT COLOR='#FFFFCC'><B> this Function.<br/>*</B></FONT><B>Fortify </B><FONT COLOR='#FFFFCC'><B>: can </B></FONT><B>increase</B><FONT COLOR='#FFFFCC'><B>Equipment\u2019s </B></FONT><B>Attributes value</B><FONT COLOR='#FFFFCC'><B>; Fortify Level</B></FONT><B> cannot surpass Main Character\u2019s Level</B><FONT COLOR='#FFFFCC'><B>.<br/>*</B></FONT><B>Inherit</B><FONT COLOR='#FFFFCC'><B>: can transfer the original Equipment\u2019s </B></FONT><B>Fortify Level to the new Equipment</B><FONT COLOR='#FFFFCC'><B>, but </B></FONT><B>decrease a few Fortify Level</B><FONT COLOR='#FFFFCC'><B>. Spirit Stones </B></FONT><B>embedded on the Equipment</B><FONT COLOR='#FFFFCC'><B> will also </B></FONT><B> be Inherited to the new Equipment </B><FONT COLOR='#FFFFCC'><B>.<br/>*</B></FONT><B>Refine</B><FONT COLOR='#FFFFCC'><B>: can make Equipment obtain </B></FONT><B>extra Attributes Bonus </B><FONT COLOR='#FFFFCC'><B>, refine is split to </B></FONT><B>Normal Refine, Designated Refine</B><FONT COLOR='#FFFFCC'><B>; </B></FONT><B>Normal Refine</B><FONT COLOR='#FFFFCC'><B> requires </B></FONT><B>Silver</B><FONT COLOR='#FFFFCC'><B> to </B></FONT><B>randomly get Attributes value</B><FONT COLOR='#FFFFCC'><B>, </B></FONT><B>Designated Refine</B><FONT COLOR='#FFFFCC'><B> within</B></FONT><B>designated Attributes value</B><FONT COLOR='#FFFFCC'><B>\u4e2d</B></FONT><B>randomly changes</B><FONT COLOR='#FFFFCC'><B>.</B></FONT><B></FONT></FONT></P>"
     },
     {
       "id": 70170008,
@@ -2240,19 +2240,19 @@
     },
     {
       "id": 70170009,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Can check on Player’s </B><FONT COLOR='#66FF66'><B>personal information</B></FONT><B> and </B><FONT COLOR='#66FF66'><B>Partners in formation</B></FONT><B>.<br/> *</B><FONT COLOR='#66FF66'><B>Rank List</B></FONT><B>: Click to enter Rank List, check on </B><FONT COLOR='#66FF66'><B> current rank and next rank’s</B></FONT><B> situation.<br/>*</B><FONT COLOR='#66FF66'><B>Receive Salary</B></FONT><B>: After you upgrade the current Rank, </B><FONT COLOR='#66FF66'><B>can receive corresponding salary</B></FONT><B>. Within today, </B><FONT COLOR='#66FF66'><B>each time you upgrade Rank you can receive Salary once</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>when you didn’t upgrade you can only receive Salary once</B></FONT><B>, Every at </B><FONT COLOR='#66FF66'><B>Midnight, will reset </B></FONT><B>receive Salary chances.（</B><FONT COLOR='#66FF66'><B>If your rank dropped, and you upgrade to the current rank again, you’ll not be able to receive salary again.</B></FONT><B>）</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Can check on Player\u2019s </B><FONT COLOR='#66FF66'><B>personal information</B></FONT><B> and </B><FONT COLOR='#66FF66'><B>Partners in formation</B></FONT><B>.<br/> *</B><FONT COLOR='#66FF66'><B>Rank List</B></FONT><B>: Click to enter Rank List, check on </B><FONT COLOR='#66FF66'><B> current rank and next rank\u2019s</B></FONT><B> situation.<br/>*</B><FONT COLOR='#66FF66'><B>Receive Salary</B></FONT><B>: After you upgrade the current Rank, </B><FONT COLOR='#66FF66'><B>can receive corresponding salary</B></FONT><B>. Within today, </B><FONT COLOR='#66FF66'><B>each time you upgrade Rank you can receive Salary once</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>when you didn\u2019t upgrade you can only receive Salary once</B></FONT><B>, Every at </B><FONT COLOR='#66FF66'><B>Midnight, will reset </B></FONT><B>receive Salary chances.\uff08</B><FONT COLOR='#66FF66'><B>If your rank dropped, and you upgrade to the current rank again, you\u2019ll not be able to receive salary again.</B></FONT><B>\uff09</B></FONT></P>"
     },
     {
       "id": 70170010,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Chakra Practice </B><FONT COLOR='#66FF66'><B> unlocks at lv.30</B></FONT><B>.<br/>*There are 2 buttons, one is </B><FONT COLOR='#66FF66'><B>Adv Practice</B></FONT><B>. another one is </B><FONT COLOR='#66FF66'><B>50 Practice</B></FONT><B>. Every click will cost </B><FONT COLOR='#66FF66'><B>100000 silver</B></FONT><B>. there are 3 </B><FONT COLOR='#66FF66'><B>free practice everyday</B></FONT><B>; 50 Practice will cost </B><FONT COLOR='#66FF66'><B>5 million silver</B></FONT><B>.<br/>*Correspond: </B><FONT COLOR='#66FF66'><B>Fire attribute-physical attack, Lightning—physical defense, Metal-strategy attack, Water-strategy defense, Wind-speed, Earth-HP, Wood-avoid injury rate</B></FONT><B>.<br/>*Practice Chakra, increase stats </B><FONT COLOR='#66FF66'><B> can power up the whole team's strength</B></FONT><B>. Attribute increase will </B><FONT COLOR='#66FF66'><B>stack on every combatants directly</B></FONT><B>. Chakra practice </B><FONT COLOR='#66FF66'><B> level cap is related to S Ability Scroll</B></FONT><B>. </B></FONT></P>;"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Chakra Practice </B><FONT COLOR='#66FF66'><B> unlocks at lv.30</B></FONT><B>.<br/>*There are 2 buttons, one is </B><FONT COLOR='#66FF66'><B>Adv Practice</B></FONT><B>. another one is </B><FONT COLOR='#66FF66'><B>50 Practice</B></FONT><B>. Every click will cost </B><FONT COLOR='#66FF66'><B>100000 silver</B></FONT><B>. there are 3 </B><FONT COLOR='#66FF66'><B>free practice everyday</B></FONT><B>; 50 Practice will cost </B><FONT COLOR='#66FF66'><B>5 million silver</B></FONT><B>.<br/>*Correspond: </B><FONT COLOR='#66FF66'><B>Fire attribute-physical attack, Lightning\u2014physical defense, Metal-strategy attack, Water-strategy defense, Wind-speed, Earth-HP, Wood-avoid injury rate</B></FONT><B>.<br/>*Practice Chakra, increase stats </B><FONT COLOR='#66FF66'><B> can power up the whole team's strength</B></FONT><B>. Attribute increase will </B><FONT COLOR='#66FF66'><B>stack on every combatants directly</B></FONT><B>. Chakra practice </B><FONT COLOR='#66FF66'><B> level cap is related to S Ability Scroll</B></FONT><B>. </B></FONT></P>;"
     },
     {
       "id": 70170011,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>When your level reaches </B><FONT COLOR='#66FF66'><B>24, Arena will be activated</B></FONT><B>, player can challenge each other here. Every day, </B><FONT COLOR='#66FF66'><B>in accordance to player’s </B></FONT><B>Arena’s </B><FONT COLOR='#66FF66'><B>Ranking</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>send out </B></FONT><B>corresponding </B><FONT COLOR='#66FF66'><B> reward</B></FONT><B>.<br/>*Daily </B><FONT COLOR='#66FF66'><B>Challenge Chances</B></FONT><B>Maximum is </B><FONT COLOR='#66FF66'><B>100 chances</B></FONT><B><br/>*Each time </B><FONT COLOR='#66FF66'><B>you challenge someone</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>no matter win or lose, </B></FONT><B>there will be </B><FONT COLOR='#66FF66'><B>5 minutes</B></FONT><B> of challenge </B><FONT COLOR='#66FF66'><B>CD Time </B></FONT><B>, until CD Time is over,</B><FONT COLOR='#66FF66'><B> then can challenge again. </B></FONT><B>.<br/>*CD Time </B><FONT COLOR='#66FF66'><B>can be cleared using Gold</B></FONT><B>.<br/>*Player can challenge players who are within 10 places higher than self. In accordance to players ranking in Arena, the 10 possible challengers’ gaps are different.</B><FONT COLOR='#66FF66'><B>When player is within #1 – 100, the gap is 1 between the 10 challengers; when player is within # 101 – 200, the gap between the 10 players is 2; when player is lower than 200th place, the gap is 3.</B></FONT><B><br/>*Player A and Player B challenge each other in Arena. A’s rank is lower than B.</B><FONT COLOR='#66FF66'><B>After A defeats B</B></FONT><B>, A’s </B><FONT COLOR='#66FF66'><B> current ranking</B></FONT><B> will </B><FONT COLOR='#66FF66'><B>become</B></FONT><B></B><FONT COLOR='#66FF66'><B> B’s previous ranking</B></FONT><B>, </B><FONT COLOR='#66FF66'><B> B’s current ranking will move back 1</B></FONT><B>. All players ranked </B><FONT COLOR='#66FF66'><B>between A and B will also move back one</B></FONT><B>.<br/>*Arena reward: single challenge, no matter win or lose, </B><FONT COLOR='#66FF66'><B>after challenge ends will obtain Prestige and Silver reward</B></FONT><B>, challenge </B><FONT COLOR='#66FF66'><B>winning reward will be more than challenge failed reward</B></FONT><B>.</B><FONT KERNING='1'><B><br/>*</B></FONT><B> Every day evening at </B><FONT COLOR='#66FF66'><B>7:30 PM</B></FONT><B>’s Arena </B><FONT COLOR='#66FF66'><B>Ranking</B></FONT><B> as basis, </B><FONT COLOR='#66FF66'><B>will send out the Arena Ranking Treasure Chest reward the next day</B></FONT><B>.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>When your level reaches </B><FONT COLOR='#66FF66'><B>24, Arena will be activated</B></FONT><B>, player can challenge each other here. Every day, </B><FONT COLOR='#66FF66'><B>in accordance to player\u2019s </B></FONT><B>Arena\u2019s </B><FONT COLOR='#66FF66'><B>Ranking</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>send out </B></FONT><B>corresponding </B><FONT COLOR='#66FF66'><B> reward</B></FONT><B>.<br/>*Daily </B><FONT COLOR='#66FF66'><B>Challenge Chances</B></FONT><B>Maximum is </B><FONT COLOR='#66FF66'><B>100 chances</B></FONT><B><br/>*Each time </B><FONT COLOR='#66FF66'><B>you challenge someone</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>no matter win or lose, </B></FONT><B>there will be </B><FONT COLOR='#66FF66'><B>5 minutes</B></FONT><B> of challenge </B><FONT COLOR='#66FF66'><B>CD Time </B></FONT><B>, until CD Time is over,</B><FONT COLOR='#66FF66'><B> then can challenge again. </B></FONT><B>.<br/>*CD Time </B><FONT COLOR='#66FF66'><B>can be cleared using Gold</B></FONT><B>.<br/>*Player can challenge players who are within 10 places higher than self. In accordance to players ranking in Arena, the 10 possible challengers\u2019 gaps are different.</B><FONT COLOR='#66FF66'><B>When player is within #1 \u2013 100, the gap is 1 between the 10 challengers; when player is within # 101 \u2013 200, the gap between the 10 players is 2; when player is lower than 200th place, the gap is 3.</B></FONT><B><br/>*Player A and Player B challenge each other in Arena. A\u2019s rank is lower than B.</B><FONT COLOR='#66FF66'><B>After A defeats B</B></FONT><B>, A\u2019s </B><FONT COLOR='#66FF66'><B> current ranking</B></FONT><B> will </B><FONT COLOR='#66FF66'><B>become</B></FONT><B></B><FONT COLOR='#66FF66'><B> B\u2019s previous ranking</B></FONT><B>, </B><FONT COLOR='#66FF66'><B> B\u2019s current ranking will move back 1</B></FONT><B>. All players ranked </B><FONT COLOR='#66FF66'><B>between A and B will also move back one</B></FONT><B>.<br/>*Arena reward: single challenge, no matter win or lose, </B><FONT COLOR='#66FF66'><B>after challenge ends will obtain Prestige and Silver reward</B></FONT><B>, challenge </B><FONT COLOR='#66FF66'><B>winning reward will be more than challenge failed reward</B></FONT><B>.</B><FONT KERNING='1'><B><br/>*</B></FONT><B> Every day evening at </B><FONT COLOR='#66FF66'><B>7:30 PM</B></FONT><B>\u2019s Arena </B><FONT COLOR='#66FF66'><B>Ranking</B></FONT><B> as basis, </B><FONT COLOR='#66FF66'><B>will send out the Arena Ranking Treasure Chest reward the next day</B></FONT><B>.</B></FONT></P>"
     },
     {
       "id": 70170012,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>After you completed </B><FONT COLOR='#66FF66'><B>Level 30 Main Task</B></FONT><B>, will activate Trial.<br/>*Trial is split up according to </B><FONT COLOR='#66FF66'><B>Level to different phases</B></FONT><B>, each Phase</B><FONT COLOR='#66FF66'><B> has 5 stages</B></FONT><B>. Player needs to </B><FONT COLOR='#66FF66'><B>challenge pass the previous stage </B></FONT><B>, then can </B><FONT COLOR='#66FF66'><B>challenge the next stage</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>After defeating the </B></FONT><B> Partners in the stages, </B><FONT COLOR='#66FF66'><B>you can get Hōgu</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>Hōgu can be equipped</B></FONT><B> within the Hōgu Interface, therefore </B><FONT COLOR='#66FF66'><B>increasing Partners’ Attributes</B></FONT><B>. Hōgu’s Type are split to: </B><FONT COLOR='#66FF66'><B>Strength, Agility, Wisdom, HP</B></FONT><B>.<br/>*Hōgu </B><FONT COLOR='#66FF66'><B>does not have level requirements</B></FONT><B>, but high </B><FONT COLOR='#66FF66'><B>quality Hōgu cannot be equipped on low quality Partners </B></FONT><B>, for example Gold Hōgu cannot be equipped on Purple Partners.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>After you completed </B><FONT COLOR='#66FF66'><B>Level 30 Main Task</B></FONT><B>, will activate Trial.<br/>*Trial is split up according to </B><FONT COLOR='#66FF66'><B>Level to different phases</B></FONT><B>, each Phase</B><FONT COLOR='#66FF66'><B> has 5 stages</B></FONT><B>. Player needs to </B><FONT COLOR='#66FF66'><B>challenge pass the previous stage </B></FONT><B>, then can </B><FONT COLOR='#66FF66'><B>challenge the next stage</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>After defeating the </B></FONT><B> Partners in the stages, </B><FONT COLOR='#66FF66'><B>you can get H\u014dgu</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>H\u014dgu can be equipped</B></FONT><B> within the H\u014dgu Interface, therefore </B><FONT COLOR='#66FF66'><B>increasing Partners\u2019 Attributes</B></FONT><B>. H\u014dgu\u2019s Type are split to: </B><FONT COLOR='#66FF66'><B>Strength, Agility, Wisdom, HP</B></FONT><B>.<br/>*H\u014dgu </B><FONT COLOR='#66FF66'><B>does not have level requirements</B></FONT><B>, but high </B><FONT COLOR='#66FF66'><B>quality H\u014dgu cannot be equipped on low quality Partners </B></FONT><B>, for example Gold H\u014dgu cannot be equipped on Purple Partners.</B></FONT></P>"
     },
     {
       "id": 70170013,
@@ -2260,31 +2260,31 @@
     },
     {
       "id": 70170014,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Task has many types, including the following type: <br/>*</B><FONT COLOR='#66FF66'><B>Conversation</B></FONT><B>: talk with NPC then can submit task.<br/>*</B><FONT COLOR='#66FF66'><B>Killing NPC</B></FONT><B>: need to defeat the corresponding NPC to submit task.<br/>*</B><FONT COLOR='#66FF66'><B>Current Task</B></FONT><B>: Task List and detail information regarding the task you are currently doing .<br/>*</B><FONT COLOR='#66FF66'><B>Acceptable Task</B></FONT><B>: The Task Lists and details that you can accept.</B><FONT KERNING='1'><B><br/>*</B><FONT COLOR='#66FF66' KERNING='0'><B>Task tracking</B></FONT></FONT><B>: player’s current task completion situation, usually visible on the main interface.<br/>*</B><FONT COLOR='#66FF66'><B>Auto-Pathfinding</B></FONT><B>: Click on the underlined words within task shortcut tab to start auto-pathfinding.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Task has many types, including the following type: <br/>*</B><FONT COLOR='#66FF66'><B>Conversation</B></FONT><B>: talk with NPC then can submit task.<br/>*</B><FONT COLOR='#66FF66'><B>Killing NPC</B></FONT><B>: need to defeat the corresponding NPC to submit task.<br/>*</B><FONT COLOR='#66FF66'><B>Current Task</B></FONT><B>: Task List and detail information regarding the task you are currently doing .<br/>*</B><FONT COLOR='#66FF66'><B>Acceptable Task</B></FONT><B>: The Task Lists and details that you can accept.</B><FONT KERNING='1'><B><br/>*</B><FONT COLOR='#66FF66' KERNING='0'><B>Task tracking</B></FONT></FONT><B>: player\u2019s current task completion situation, usually visible on the main interface.<br/>*</B><FONT COLOR='#66FF66'><B>Auto-Pathfinding</B></FONT><B>: Click on the underlined words within task shortcut tab to start auto-pathfinding.</B></FONT></P>"
     },
     {
       "id": 70170015,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Click to open the Friends Interface<br/>*Friends Interface will display</B><FONT COLOR='#66FF66'><B> current friend’s amount and friend’s information</B></FONT><B>.<br/>*Click on </B><FONT COLOR='#66FF66'><B>friend’s character name</B></FONT><B> can </B><FONT COLOR='#66FF66'><B> check on information and PM with friend</B></FONT><B>.<br/>*Click on the </B><FONT COLOR='#66FF66'><B>Find Friends</B></FONT><B> and input Character name then can </B><FONT COLOR='#66FF66'><B>add player as Friends</B></FONT><B>.<br/>*Click on </B><FONT COLOR='#66FF66'><B>the operation buttons after the friends</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>perform the corresponding operation</B></FONT><B>.<br/>*After adding player to </B><FONT COLOR='#66FF66'><B>Black List</B></FONT><B>, then </B><FONT COLOR='#66FF66'><B>cannot receive this player’s chat</B></FONT><B>.<br/>*Click on </B><FONT COLOR='#66FF66'><B>Recommended friends</B></FONT><B>, the system will </B><FONT COLOR='#66FF66'><B>randomly recommended a group of friends</B></FONT><B>.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Click to open the Friends Interface<br/>*Friends Interface will display</B><FONT COLOR='#66FF66'><B> current friend\u2019s amount and friend\u2019s information</B></FONT><B>.<br/>*Click on </B><FONT COLOR='#66FF66'><B>friend\u2019s character name</B></FONT><B> can </B><FONT COLOR='#66FF66'><B> check on information and PM with friend</B></FONT><B>.<br/>*Click on the </B><FONT COLOR='#66FF66'><B>Find Friends</B></FONT><B> and input Character name then can </B><FONT COLOR='#66FF66'><B>add player as Friends</B></FONT><B>.<br/>*Click on </B><FONT COLOR='#66FF66'><B>the operation buttons after the friends</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>perform the corresponding operation</B></FONT><B>.<br/>*After adding player to </B><FONT COLOR='#66FF66'><B>Black List</B></FONT><B>, then </B><FONT COLOR='#66FF66'><B>cannot receive this player\u2019s chat</B></FONT><B>.<br/>*Click on </B><FONT COLOR='#66FF66'><B>Recommended friends</B></FONT><B>, the system will </B><FONT COLOR='#66FF66'><B>randomly recommended a group of friends</B></FONT><B>.</B></FONT></P>"
     },
     {
       "id": 70170016,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Click on NPC and click on Tavern to enter the Tavern. Within the Tavern are many famous partners within Bleach waiting for you to recruit.<br/>*Players enter into Tavern and see</B><FONT COLOR='#66FF66'><B>Partners List</B></FONT><B> which is the </B><FONT COLOR='#66FF66'><B>currently available</B></FONT><B>Partners according to level.<br/>*As player’s </B><FONT COLOR='#66FF66'><B>Level increases</B></FONT><B>, there will be more </B><FONT COLOR='#66FF66'><B>higher quality Partners </B></FONT><B> for players to recruit.<br/>*Recruit Partners require</B><FONT COLOR='#66FF66'><B> Reishi</B></FONT><B>, players</B><FONT COLOR='#66FF66'><B>janken against partners and win to get Reishi</B></FONT><B>, according to the Partners Quality, players can select </B><FONT COLOR='#66FF66'><B>Blue Spirit Janken, Purple Spirit Janken or Gold Spirit Janken</B></FONT><B>.</B><FONT COLOR='#66FF66'><B>VIP Level 1, 3, 6</B></FONT><B> and above players can select </B><FONT COLOR='#66FF66'><B> one-click Advanced Janken</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>Bulk janken</B></FONT><B>.<br/>*Janken with </B><FONT COLOR='#66FF66'><B>different quality Partners</B></FONT><B> will </B><FONT COLOR='#66FF66'><B> obtain different color Reishi</B></FONT><B>, Reishi can be used to recruit Partners and also </B><FONT COLOR='#66FF66'><B>used to purchase EXP scroll</B></FONT><B>. EXP scroll </B><FONT COLOR='#66FF66'><B>can quickly upgrade Partners’ Level</B></FONT><B>, and can only be used on </B><FONT COLOR='#66FF66'><B> recruited Partners</B></FONT><B>, not on the Main Character.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Click on NPC and click on Tavern to enter the Tavern. Within the Tavern are many famous partners within Bleach waiting for you to recruit.<br/>*Players enter into Tavern and see</B><FONT COLOR='#66FF66'><B>Partners List</B></FONT><B> which is the </B><FONT COLOR='#66FF66'><B>currently available</B></FONT><B>Partners according to level.<br/>*As player\u2019s </B><FONT COLOR='#66FF66'><B>Level increases</B></FONT><B>, there will be more </B><FONT COLOR='#66FF66'><B>higher quality Partners </B></FONT><B> for players to recruit.<br/>*Recruit Partners require</B><FONT COLOR='#66FF66'><B> Reishi</B></FONT><B>, players</B><FONT COLOR='#66FF66'><B>janken against partners and win to get Reishi</B></FONT><B>, according to the Partners Quality, players can select </B><FONT COLOR='#66FF66'><B>Blue Spirit Janken, Purple Spirit Janken or Gold Spirit Janken</B></FONT><B>.</B><FONT COLOR='#66FF66'><B>VIP Level 1, 3, 6</B></FONT><B> and above players can select </B><FONT COLOR='#66FF66'><B> one-click Advanced Janken</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>Bulk janken</B></FONT><B>.<br/>*Janken with </B><FONT COLOR='#66FF66'><B>different quality Partners</B></FONT><B> will </B><FONT COLOR='#66FF66'><B> obtain different color Reishi</B></FONT><B>, Reishi can be used to recruit Partners and also </B><FONT COLOR='#66FF66'><B>used to purchase EXP scroll</B></FONT><B>. EXP scroll </B><FONT COLOR='#66FF66'><B>can quickly upgrade Partners\u2019 Level</B></FONT><B>, and can only be used on </B><FONT COLOR='#66FF66'><B> recruited Partners</B></FONT><B>, not on the Main Character.</B></FONT></P>"
     },
     {
       "id": 70170017,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Forging is <FONT COLOR='#66FF66'><B>one of the main ways</B></FONT> for players</B><FONT COLOR='#66FF66'><B>High Level Equipment </B></FONT><B>, Forging</B><FONT COLOR='#66FF66'><B> different equipment</B></FONT><B> requires </B><FONT COLOR='#66FF66'><B> different types of material</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>Different Forging Material can be obtained in corresponding level’s trial</B></FONT><B>.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Forging is <FONT COLOR='#66FF66'><B>one of the main ways</B></FONT> for players</B><FONT COLOR='#66FF66'><B>High Level Equipment </B></FONT><B>, Forging</B><FONT COLOR='#66FF66'><B> different equipment</B></FONT><B> requires </B><FONT COLOR='#66FF66'><B> different types of material</B></FONT><B>.<br/>*</B><FONT COLOR='#66FF66'><B>Different Forging Material can be obtained in corresponding level\u2019s trial</B></FONT><B>.</B></FONT></P>"
     },
     {
       "id": 70170018,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Spirit Stones</B> are used to <FONT COLOR='#66FF66'><B>increase </B></FONT><B>Partners </B><FONT COLOR='#66FF66'><B>Battle Power</B></FONT><B>, if you </B><FONT COLOR='#66FF66'><B>embed the Spirit Stones on the Equipment </B></FONT><B>, you will discover it can </B><FONT COLOR='#66FF66'><B>increase Partners’ Strength, Agility, Wisdom, HP and other Attributes</B></FONT><B>, therefore greatly increasing your partners battle capability<br/>*Players who have activated Spirit Stones Styem can find </B><FONT COLOR='#66FF66'><B>Main City’s Nemu Kurotsuchi</B></FONT><B> to enter Spirit Stones Interface, </B><FONT COLOR='#66FF66'><B> select the equipment that you want to embed Spirit Stones, then click on the Spirit Stones and can be embedded successfully</B></FONT><B>. After embedding successfully, if this equipment has empty holes then can continue to embed.</B><FONT COLOR='#66FF66'><B>The same type of Spirit Stones cannot be embed within the same Equipment</B></FONT><B>. If players don’t want to use the original Spirit Stones, you can </B><FONT COLOR='#66FF66'><B>select the equipment</B></FONT><B>, then </B><FONT COLOR='#66FF66'><B>click on the Spirit Stone you wan to remove</B></FONT><B> to remove it.<br/>*</B><FONT COLOR='#66FF66'><B>2 low level Spirit Stones</B></FONT><B> can be </B><FONT COLOR='#66FF66'><B>synthesized to a higher level Spirit Stones</B></FONT><B>, Spirit Stones embed</B><FONT COLOR='#66FF66'><B> is not limited to any particular equipment</B></FONT><B>, System will recommend which type of Spirit Stones is suitable for which Partners.</B><FONT COLOR='#66FF66'><B>Blue Equipment </B></FONT><B> can </B><FONT COLOR='#66FF66'><B>embed 4 Spirit Stones</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>Purple Equipment</B></FONT><B> can </B><FONT COLOR='#66FF66'><B>embed 6 Spirit Stones</B></FONT><B>, but</B><FONT COLOR='#66FF66'><B>the same equipment cannot be embedded with the same Attribute’s Spirit Stones</B></FONT><B>.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>Spirit Stones</B> are used to <FONT COLOR='#66FF66'><B>increase </B></FONT><B>Partners </B><FONT COLOR='#66FF66'><B>Battle Power</B></FONT><B>, if you </B><FONT COLOR='#66FF66'><B>embed the Spirit Stones on the Equipment </B></FONT><B>, you will discover it can </B><FONT COLOR='#66FF66'><B>increase Partners\u2019 Strength, Agility, Wisdom, HP and other Attributes</B></FONT><B>, therefore greatly increasing your partners battle capability<br/>*Players who have activated Spirit Stones Styem can find </B><FONT COLOR='#66FF66'><B>Main City\u2019s Nemu Kurotsuchi</B></FONT><B> to enter Spirit Stones Interface, </B><FONT COLOR='#66FF66'><B> select the equipment that you want to embed Spirit Stones, then click on the Spirit Stones and can be embedded successfully</B></FONT><B>. After embedding successfully, if this equipment has empty holes then can continue to embed.</B><FONT COLOR='#66FF66'><B>The same type of Spirit Stones cannot be embed within the same Equipment</B></FONT><B>. If players don\u2019t want to use the original Spirit Stones, you can </B><FONT COLOR='#66FF66'><B>select the equipment</B></FONT><B>, then </B><FONT COLOR='#66FF66'><B>click on the Spirit Stone you wan to remove</B></FONT><B> to remove it.<br/>*</B><FONT COLOR='#66FF66'><B>2 low level Spirit Stones</B></FONT><B> can be </B><FONT COLOR='#66FF66'><B>synthesized to a higher level Spirit Stones</B></FONT><B>, Spirit Stones embed</B><FONT COLOR='#66FF66'><B> is not limited to any particular equipment</B></FONT><B>, System will recommend which type of Spirit Stones is suitable for which Partners.</B><FONT COLOR='#66FF66'><B>Blue Equipment </B></FONT><B> can </B><FONT COLOR='#66FF66'><B>embed 4 Spirit Stones</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>Purple Equipment</B></FONT><B> can </B><FONT COLOR='#66FF66'><B>embed 6 Spirit Stones</B></FONT><B>, but</B><FONT COLOR='#66FF66'><B>the same equipment cannot be embedded with the same Attribute\u2019s Spirit Stones</B></FONT><B>.</B></FONT></P>"
     },
     {
       "id": 70170019,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'>*Use </B><FONT COLOR='#66FF66'><B>the mouse to click on corresponding icon</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>move to target stronghold</B></FONT><B>.<br/>*At this time, will pop out the stronghold’s </B><FONT COLOR='#66FF66'><B>Select Stages Interface</B></FONT><B>. Within the stages, </B><FONT COLOR='#66FF66'><B>battling will consume Vitality points</B></FONT><B>, </B><FONT COLOR='#66FF66'><B> when Vitality points are not enough, you cannot enter into stages</B></FONT><B>.<br/>*After entering into stages, you can see the NPC moving within the scene, </B><FONT COLOR='#66FF66'><B>click on the NPC to enter battle</B></FONT><B>.<br/>*After all the </B><FONT COLOR='#66FF66'><B>NPC in the stage are defeated</B></FONT><B>, then </B><FONT COLOR='#66FF66'><B>system notice you have passed</B></FONT><B>, and </B><FONT COLOR='#66FF66'><B>obtain evaluation and reward</B></FONT><B>.<br/>*If you pass the BOSS stages, the reward </B><FONT COLOR='#66FF66'><B>has a chance of dropping Coupons, Vitality points, silver</B></FONT><B> and other abundant reward.<br/>*</B><FONT COLOR='#66FF66'><B>Higher Evaluation means better Treasure Chest reward; you get higher evaluation when you defeat NPC with more remaining HP and use less rounds</B></FONT><B>.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'>*Use </B><FONT COLOR='#66FF66'><B>the mouse to click on corresponding icon</B></FONT><B> to </B><FONT COLOR='#66FF66'><B>move to target stronghold</B></FONT><B>.<br/>*At this time, will pop out the stronghold\u2019s </B><FONT COLOR='#66FF66'><B>Select Stages Interface</B></FONT><B>. Within the stages, </B><FONT COLOR='#66FF66'><B>battling will consume Vitality points</B></FONT><B>, </B><FONT COLOR='#66FF66'><B> when Vitality points are not enough, you cannot enter into stages</B></FONT><B>.<br/>*After entering into stages, you can see the NPC moving within the scene, </B><FONT COLOR='#66FF66'><B>click on the NPC to enter battle</B></FONT><B>.<br/>*After all the </B><FONT COLOR='#66FF66'><B>NPC in the stage are defeated</B></FONT><B>, then </B><FONT COLOR='#66FF66'><B>system notice you have passed</B></FONT><B>, and </B><FONT COLOR='#66FF66'><B>obtain evaluation and reward</B></FONT><B>.<br/>*If you pass the BOSS stages, the reward </B><FONT COLOR='#66FF66'><B>has a chance of dropping Coupons, Vitality points, silver</B></FONT><B> and other abundant reward.<br/>*</B><FONT COLOR='#66FF66'><B>Higher Evaluation means better Treasure Chest reward; you get higher evaluation when you defeat NPC with more remaining HP and use less rounds</B></FONT><B>.</B></FONT></P>"
     },
     {
       "id": 70170020,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>This game includes different background</B><FONT COLOR='#66FF66'><B> and stages for different Instances</B></FONT><B>, click to enter Instances Interface.<br/>*Instances include </B><FONT COLOR='#66FF66'><B>“Normal” and “Hard”</B></FONT><B> levels, </B><FONT COLOR='#66FF66'><B>after defeating Normal then can challenge Hard level</B></FONT><B>.<br/>*Instance</B><FONT COLOR='#66FF66'><B> has limited chances per day</B></FONT><B>, everyday </B><FONT COLOR='#66FF66'><B>you have one free chance</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>spend Gold can reset Instances</B></FONT><B>, increasing </B><FONT COLOR='#66FF66'><B>VIP Level can increase reset chances</B></FONT><B> maximum limit.<br/>*The Instances </B><FONT COLOR='#66FF66'><B>drops Forging Equipment</B></FONT><B> required </B><FONT COLOR='#66FF66'><B>Material</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>Higher level will</B></FONT><B> drop </B><FONT COLOR='#66FF66'><B>better Material</B></FONT><B>.</B></FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B>This game includes different background</B><FONT COLOR='#66FF66'><B> and stages for different Instances</B></FONT><B>, click to enter Instances Interface.<br/>*Instances include </B><FONT COLOR='#66FF66'><B>\u201cNormal\u201d and \u201cHard\u201d</B></FONT><B> levels, </B><FONT COLOR='#66FF66'><B>after defeating Normal then can challenge Hard level</B></FONT><B>.<br/>*Instance</B><FONT COLOR='#66FF66'><B> has limited chances per day</B></FONT><B>, everyday </B><FONT COLOR='#66FF66'><B>you have one free chance</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>spend Gold can reset Instances</B></FONT><B>, increasing </B><FONT COLOR='#66FF66'><B>VIP Level can increase reset chances</B></FONT><B> maximum limit.<br/>*The Instances </B><FONT COLOR='#66FF66'><B>drops Forging Equipment</B></FONT><B> required </B><FONT COLOR='#66FF66'><B>Material</B></FONT><B>, </B><FONT COLOR='#66FF66'><B>Higher level will</B></FONT><B> drop </B><FONT COLOR='#66FF66'><B>better Material</B></FONT><B>.</B></FONT></P>"
     },
     {
       "id": 70170021,
@@ -2312,11 +2312,11 @@
     },
     {
       "id": 70170027,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'>Soul Hunt</FONT></B><BR />1. This Function will be activated when player level reaches Level 31.<BR />2.Every day, each player has <FONT COLOR='#66FF66'>5 chances for hunting and 4 chances of being robbed.</FONT><BR />3. During each hunt, player has <FONT COLOR='#66FF66'>5 chances of Silver Refresh and 10 chances of Gold Refresh</FONT>, use these chances to get higher quality hunting target and start hunting. VIP 6 and above players spend set amount of Gold can directly open Espada Soul Hunt.<BR /><FONT COLOR='#66FF66'>Each hunting, you might be robbed at most twice.</FONT><BR />5.According to Soul Hunt quality, you’ll get different final reward. Each Soul Hunt has complete list of possible items, and each time you have a chance of getting one of the reward.<BR />6.<FONT COLOR='#66FF66'>Soul Hunt is the main source for Cultivate Zanpakutō material.</FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'>Soul Hunt</FONT></B><BR />1. This Function will be activated when player level reaches Level 31.<BR />2.Every day, each player has <FONT COLOR='#66FF66'>5 chances for hunting and 4 chances of being robbed.</FONT><BR />3. During each hunt, player has <FONT COLOR='#66FF66'>5 chances of Silver Refresh and 10 chances of Gold Refresh</FONT>, use these chances to get higher quality hunting target and start hunting. VIP 6 and above players spend set amount of Gold can directly open Espada Soul Hunt.<BR /><FONT COLOR='#66FF66'>Each hunting, you might be robbed at most twice.</FONT><BR />5.According to Soul Hunt quality, you\u2019ll get different final reward. Each Soul Hunt has complete list of possible items, and each time you have a chance of getting one of the reward.<BR />6.<FONT COLOR='#66FF66'>Soul Hunt is the main source for Cultivate Zanpakut\u014d material.</FONT></P>"
     },
     {
       "id": 70170028,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'> Ninja Club </FONT></B><BR /> 1. This feature unlocks at Lv.20.<BR />2. Players can recruit the powerful ninjas in the Ninja Club. <BR />3.Recruiting or upgrading ninjas need some materials and Ninja Souls. </B><FONT COLOR='#66FF66'><B>Materials are mainly from the treasure hunt in the treasure map and Ninja Souls from Janken in Tavern.</B></FONT><B><BR />4.Daily quest may get you Hokage Proof, which is the common material in Ninja Club. </B><FONT COLOR='#66FF66'><B>1 Hokage Proof can replace the material that is required to recruit or upgrade 1 ninja in Ninja Club. </B></FONT><B><BR />5. </B><FONT COLOR='#66FF66'><B> The level of Ninja </B></FONT><B> equals </B><FONT COLOR='#66FF66'><B> the Recruit Level </B></FONT><B>. </B><FONT COLOR='#66FF66'><B> Level after upgrade </B></FONT><B> equals the </B><FONT COLOR='#66FF66'><B>Upgrade level</B></FONT><B>.</P> 6. </B><FONT COLOR='#66FF66'><B>If you dismiss a ninja from the Ninja Club (after recruitment or upgrade), you won’t get back the materials you spend on recruitment or upgrade.</B></FONT></P>;"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'> Ninja Club </FONT></B><BR /> 1. This feature unlocks at Lv.20.<BR />2. Players can recruit the powerful ninjas in the Ninja Club. <BR />3.Recruiting or upgrading ninjas need some materials and Ninja Souls. </B><FONT COLOR='#66FF66'><B>Materials are mainly from the treasure hunt in the treasure map and Ninja Souls from Janken in Tavern.</B></FONT><B><BR />4.Daily quest may get you Hokage Proof, which is the common material in Ninja Club. </B><FONT COLOR='#66FF66'><B>1 Hokage Proof can replace the material that is required to recruit or upgrade 1 ninja in Ninja Club. </B></FONT><B><BR />5. </B><FONT COLOR='#66FF66'><B> The level of Ninja </B></FONT><B> equals </B><FONT COLOR='#66FF66'><B> the Recruit Level </B></FONT><B>. </B><FONT COLOR='#66FF66'><B> Level after upgrade </B></FONT><B> equals the </B><FONT COLOR='#66FF66'><B>Upgrade level</B></FONT><B>.</P> 6. </B><FONT COLOR='#66FF66'><B>If you dismiss a ninja from the Ninja Club (after recruitment or upgrade), you won\u2019t get back the materials you spend on recruitment or upgrade.</B></FONT></P>;"
     },
     {
       "id": 70170029,
@@ -2332,43 +2332,43 @@
     },
     {
       "id": 70170032,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> </B><FONT COLOR='#66FF66'><B> Master/Slave Contract </B></FONT><B><BR />1. The feature unlocks at Lv. </B><FONT COLOR='#66FF66'><B>24<BR />2. If you are a free man, you have </B><FONT COLOR='#66FF66'><B>8 captures, 3 rescues, and 6 interactions every day </B></FONT><B>. Players can rescue the guild members who are slaves but if you are captured by other players, you turn to others’ slave.<BR />3. If you are a master, you have </B><FONT COLOR='#66FF66'><B>10 captures, 3 rescues and 6 interactions every day </B></FONT><B>. EXP got from slaves increase with your level. <BR />4.If you are a slave, you have </B><FONT COLOR='#66FF66'><B>3 rescues, 3 resists, and 6 interactions every day</B></FONT><B>. If you are a slave, you cannot rescue others or capture slaves.<BR />5. Slaves can produce EXP every minute for masters and work up to </B><FONT COLOR='#66FF66'><B>24 hours</B></FONT><B>. After 24 hours, EXP will automatically be calculated and given to the masters. Slaves gain freedom<BR />6. When you win the battle in slave capture, you will enslave one of the losing player’s slaves if he/she is a slave owner.</B></FONT></P>;"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> </B><FONT COLOR='#66FF66'><B> Master/Slave Contract </B></FONT><B><BR />1. The feature unlocks at Lv. </B><FONT COLOR='#66FF66'><B>24<BR />2. If you are a free man, you have </B><FONT COLOR='#66FF66'><B>8 captures, 3 rescues, and 6 interactions every day </B></FONT><B>. Players can rescue the guild members who are slaves but if you are captured by other players, you turn to others\u2019 slave.<BR />3. If you are a master, you have </B><FONT COLOR='#66FF66'><B>10 captures, 3 rescues and 6 interactions every day </B></FONT><B>. EXP got from slaves increase with your level. <BR />4.If you are a slave, you have </B><FONT COLOR='#66FF66'><B>3 rescues, 3 resists, and 6 interactions every day</B></FONT><B>. If you are a slave, you cannot rescue others or capture slaves.<BR />5. Slaves can produce EXP every minute for masters and work up to </B><FONT COLOR='#66FF66'><B>24 hours</B></FONT><B>. After 24 hours, EXP will automatically be calculated and given to the masters. Slaves gain freedom<BR />6. When you win the battle in slave capture, you will enslave one of the losing player\u2019s slaves if he/she is a slave owner.</B></FONT></P>;"
     },
     {
       "id": 70170033,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'>Jigokuchō</FONT></B><BR />1. This Function will be available when player reaches Level 18.<BR />2. In accordance to Player’s VIP Level, every day player has set amount of summoning chances to exchange for Silver.<BR />3.<FONT COLOR='#66FF66'>Higher Level means you get more silver per summoning.</FONT></P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'>Jigokuch\u014d</FONT></B><BR />1. This Function will be available when player reaches Level 18.<BR />2. In accordance to Player\u2019s VIP Level, every day player has set amount of summoning chances to exchange for Silver.<BR />3.<FONT COLOR='#66FF66'>Higher Level means you get more silver per summoning.</FONT></P>"
     },
     {
       "id": 70170034,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> </B><FONT COLOR='#66FF66'><B>Guild</B></FONT><B><BR />1. This feature unlocks at Lv.26.<BR />2.Players can create or join a guild and adventure with guild members after joining a clan and the guild is unlocked.<BR />3. Guild members can donate Silver or Gold every day. </B><FONT COLOR='#66FF66'><B>The daily silver donation quota goes higher with the guild member level</B></FONT><B>. <BR />4.Donation can upgrade guilds. Once the guild is upgraded, the guild’s skill level can increase as well. Guild members can spend some Feats to raise their own skill levels. Guild Skill becomes ineffective when a guild member exits the guild and is effective again after joining next guild.<BR />5. Guild leader can transfer his/her authorization or appoint vice guild leader. For details, please view authorization. If the guild leader fails to login for </B><FONT COLOR='#66FF66'><B>3 days</B></FONT><B>. the guild leader’s authorization will be transferred to the guild member with the highest Feats. <BR />6. Guild Donation can also be used to upgrade events and boost guild members’ statuses <BR />7. Guilds can get Guild Chests that will be stored in the guild warehouse based on the war result when attending daily events. The Guild Chest will be assigned to guild members by guild leader. <BR />8.If all members in the guild not log in for 3 days, the guild will be dismissed. </P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> </B><FONT COLOR='#66FF66'><B>Guild</B></FONT><B><BR />1. This feature unlocks at Lv.26.<BR />2.Players can create or join a guild and adventure with guild members after joining a clan and the guild is unlocked.<BR />3. Guild members can donate Silver or Gold every day. </B><FONT COLOR='#66FF66'><B>The daily silver donation quota goes higher with the guild member level</B></FONT><B>. <BR />4.Donation can upgrade guilds. Once the guild is upgraded, the guild\u2019s skill level can increase as well. Guild members can spend some Feats to raise their own skill levels. Guild Skill becomes ineffective when a guild member exits the guild and is effective again after joining next guild.<BR />5. Guild leader can transfer his/her authorization or appoint vice guild leader. For details, please view authorization. If the guild leader fails to login for </B><FONT COLOR='#66FF66'><B>3 days</B></FONT><B>. the guild leader\u2019s authorization will be transferred to the guild member with the highest Feats. <BR />6. Guild Donation can also be used to upgrade events and boost guild members\u2019 statuses <BR />7. Guilds can get Guild Chests that will be stored in the guild warehouse based on the war result when attending daily events. The Guild Chest will be assigned to guild members by guild leader. <BR />8.If all members in the guild not log in for 3 days, the guild will be dismissed. </P>"
     },
     {
       "id": 70170035,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'> King of Hollow Souls Function Introduction</FONT></B><BR />1. This Function<FONT COLOR='#66FF66'> is available at Level 70</FONT>.<BR />2. Player can challenge the Hollow King and subordinates to get Hollow Spirit, different Hollow King corresponds to different Hollow Spirit.<BR />3. Challenge process includes <FONT COLOR='#66FF66'>individual challenges and team challenges</FONT>. Player select one of the Partners to single challenge enemies; after winning or losing, will enter into group challenge.<FONT COLOR='#66FF66'>Single challenge win or lose will affect the group challenge’s initial Fury value</FONT>.<BR />4. After you win the group fight, you’ll get the Hollow Spirit and able to challenge the next opponent. If you failed in the group fight, you have to start with the single challenge again.<BR />5.After you defeat a Hollow King, then you can challenge the next Hollow King and subordinates.<FONT COLOR='#66FF66'>At the same time, Hollow Spirit Map will activate the corresponding Spirit Star.</FONT>.<BR />6. After you group challenge win against a Hollow King, every day you can swallow the Hollow King to get corresponding Hollow Spirit.<BR />7. Single challenges are immune from decrease Fury. Most of the opponents in group challenge are <FONT COLOR='#66FF66'>immune from decrease Fury; all shadows are immune from decrease Fury and at the same time immune from control.</FONT>.</P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'> King of Hollow Souls Function Introduction</FONT></B><BR />1. This Function<FONT COLOR='#66FF66'> is available at Level 70</FONT>.<BR />2. Player can challenge the Hollow King and subordinates to get Hollow Spirit, different Hollow King corresponds to different Hollow Spirit.<BR />3. Challenge process includes <FONT COLOR='#66FF66'>individual challenges and team challenges</FONT>. Player select one of the Partners to single challenge enemies; after winning or losing, will enter into group challenge.<FONT COLOR='#66FF66'>Single challenge win or lose will affect the group challenge\u2019s initial Fury value</FONT>.<BR />4. After you win the group fight, you\u2019ll get the Hollow Spirit and able to challenge the next opponent. If you failed in the group fight, you have to start with the single challenge again.<BR />5.After you defeat a Hollow King, then you can challenge the next Hollow King and subordinates.<FONT COLOR='#66FF66'>At the same time, Hollow Spirit Map will activate the corresponding Spirit Star.</FONT>.<BR />6. After you group challenge win against a Hollow King, every day you can swallow the Hollow King to get corresponding Hollow Spirit.<BR />7. Single challenges are immune from decrease Fury. Most of the opponents in group challenge are <FONT COLOR='#66FF66'>immune from decrease Fury; all shadows are immune from decrease Fury and at the same time immune from control.</FONT>.</P>"
     },
     {
       "id": 70170036,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'> Hollow Spirit Map Function Introduction</FONT></B><BR />1. This function is <FONT COLOR='#66FF66'>available at Level 70</FONT>.<BR />2. Each recruited Partners has own Hollow Spirit Map.<BR />3.You can consume corresponding Hollow Spirit points to activate Spirit Star and get corresponding Attributes Bonus .<FONT COLOR='#66FF66'>This Attributes are affective in all battlefields</FONT>.<BR />4. Through Spirit Star exchange function, can exchange the Hollow Spirit Map between two Partners, <FONT COLOR='#66FF66'>This exchange does not consume anything</FONT>.<BR />5. In King of Hollow Souls, <FONT COLOR='#66FF66'> each time you successfully defeat one Hollow King</FONT>, all Partners will activate corresponding Spirit Star.<BR />6.<FONT COLOR='#66FF66'>When you fire Partners</FONT>, this Partners’ Hollow Spirit Map related Spirit Star consumed Hollow Spirit will be<FONT COLOR='#66FF66'>returned fully</FONT>.</P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Verdana' SIZE='13' COLOR='#EBEBD1' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'> Hollow Spirit Map Function Introduction</FONT></B><BR />1. This function is <FONT COLOR='#66FF66'>available at Level 70</FONT>.<BR />2. Each recruited Partners has own Hollow Spirit Map.<BR />3.You can consume corresponding Hollow Spirit points to activate Spirit Star and get corresponding Attributes Bonus .<FONT COLOR='#66FF66'>This Attributes are affective in all battlefields</FONT>.<BR />4. Through Spirit Star exchange function, can exchange the Hollow Spirit Map between two Partners, <FONT COLOR='#66FF66'>This exchange does not consume anything</FONT>.<BR />5. In King of Hollow Souls, <FONT COLOR='#66FF66'> each time you successfully defeat one Hollow King</FONT>, all Partners will activate corresponding Spirit Star.<BR />6.<FONT COLOR='#66FF66'>When you fire Partners</FONT>, this Partners\u2019 Hollow Spirit Map related Spirit Star consumed Hollow Spirit will be<FONT COLOR='#66FF66'>returned fully</FONT>.</P>"
     },
     {
       "id": 70170037,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> </B><FONT COLOR='#66FF66'><B> Tsunade's Dice </B></FONT><B><BR />There are 3 free chances to guess and for mistakes per day. The free chances will be reset at 24:00 everyday<BR />Buy guess chances costs 10 Gold while mistake time costs 100 Gold a time.<BR />When win streaks meet the requirement, players can claim the Win Streak Chest<BR />Gameplay: <BR />1. Players guess if their points are bigger than Tsunade’s and click Big or Small<BR />2.Win Streak+1 and enter the next round of guess if players win<BR />3. Players can use mistake times to keep the current win streaks and challenge Tsunade again after this guess time is deducted if they fail<BR />4. If players give up this win streak, they have to claim the chests they already have before the next guess<BR />5. Players shall claim all claimable chests when reaching 100 Win streaks to proceed with next challenge<BR />"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> </B><FONT COLOR='#66FF66'><B> Tsunade's Dice </B></FONT><B><BR />There are 3 free chances to guess and for mistakes per day. The free chances will be reset at 24:00 everyday<BR />Buy guess chances costs 10 Gold while mistake time costs 100 Gold a time.<BR />When win streaks meet the requirement, players can claim the Win Streak Chest<BR />Gameplay: <BR />1. Players guess if their points are bigger than Tsunade\u2019s and click Big or Small<BR />2.Win Streak+1 and enter the next round of guess if players win<BR />3. Players can use mistake times to keep the current win streaks and challenge Tsunade again after this guess time is deducted if they fail<BR />4. If players give up this win streak, they have to claim the chests they already have before the next guess<BR />5. Players shall claim all claimable chests when reaching 100 Win streaks to proceed with next challenge<BR />"
     },
     {
       "id": 70170038,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'>Elite Match</FONT></B><BR />1.Increase player’s ninja level to Lv. </B><FONT COLOR='#66FF66'><B>72</B></FONT><B>can join Elite Match.<BR />2.Register during </B><FONT COLOR='#66FF66'><B>5:30-24:00</B></FONT><B>every day and you can join the Elite Match that is available at </B><FONT COLOR='#66FF66'><B>12:00-22:00</B></FONT><B>next day.<BR />3. </B><FONT COLOR='#66FF66'><B>Vip8</B></FONT><B>and higher players can automatically register for the Elite Match, but if you </B><FONT COLOR='#66FF66'><B>fail to start the challenge within 3 days, you will be disqualified.</B></FONT><B><BR />4.In the Elite Match, defeat the opponent can get Points while losing the battle can also get you some points.<BR />5.Every day, players can freely challenge </B><FONT COLOR='#66FF66'><B>18 times</B></FONT><B>.The challenge cap is </B><FONT COLOR='#66FF66'><B>30 times</B></FONT><B>.<BR />6. </B><FONT COLOR='#66FF66'><B>Defeat all opponents in a group can get a Challenge Order</B></FONT><B>.and is able to challenge next group.<BR />7. </B><FONT COLOR='#66FF66'><B>Use super challenge feature can challenge advanced ninjas.</B></FONT><B>.Win it and you can get massive Points.<BR />8. </B><FONT COLOR='#66FF66'><B>On the first day of the match（must register manually),</B></FONT><B>players will be divided into </B><FONT COLOR='#66FF66'><B>7 groups </B></FONT><B>based on players’ PVP combat power: Top, Kage, ANBU, Jounin, Chunin, Genin and Student.<BR />9. </B><FONT COLOR='#66FF66'><B>From the next on</B></FONT><B>players will be ranked based on </B><FONT COLOR='#66FF66'><B>players’ elite match points</B></FONT><B>.If players don’t sign up on the first day, the initial points will be 0.<BR />10. </B><FONT COLOR='#66FF66'><B>The higher the group, the more challenge order can be obtained every day.</B></FONT><B>.ANBU or higher group can get Cross-Server War Title.<BR />11. </B><FONT COLOR='#66FF66'><B>Elite Match lasts 1 month</B></FONT><B>.Colorfull souls will be sent based on players’ point ranking every day .<BR />12.After the season， </B><FONT COLOR='#66FF66'><B>Colorful Soul and Challenge Order will be sent according to the player's rank</B></FONT><B>.<BR />13.Top Stone redeemed from the Challenge Order can recruit </B><FONT COLOR='#66FF66'><B>SSSRare Ninja</B></FONT><B>!Challenge Order and Top Stone can be redeemed after the season and be counted into the next season.</P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'>Elite Match</FONT></B><BR />1.Increase player\u2019s ninja level to Lv. </B><FONT COLOR='#66FF66'><B>72</B></FONT><B>can join Elite Match.<BR />2.Register during </B><FONT COLOR='#66FF66'><B>5:30-24:00</B></FONT><B>every day and you can join the Elite Match that is available at </B><FONT COLOR='#66FF66'><B>12:00-22:00</B></FONT><B>next day.<BR />3. </B><FONT COLOR='#66FF66'><B>Vip8</B></FONT><B>and higher players can automatically register for the Elite Match, but if you </B><FONT COLOR='#66FF66'><B>fail to start the challenge within 3 days, you will be disqualified.</B></FONT><B><BR />4.In the Elite Match, defeat the opponent can get Points while losing the battle can also get you some points.<BR />5.Every day, players can freely challenge </B><FONT COLOR='#66FF66'><B>18 times</B></FONT><B>.The challenge cap is </B><FONT COLOR='#66FF66'><B>30 times</B></FONT><B>.<BR />6. </B><FONT COLOR='#66FF66'><B>Defeat all opponents in a group can get a Challenge Order</B></FONT><B>.and is able to challenge next group.<BR />7. </B><FONT COLOR='#66FF66'><B>Use super challenge feature can challenge advanced ninjas.</B></FONT><B>.Win it and you can get massive Points.<BR />8. </B><FONT COLOR='#66FF66'><B>On the first day of the match\uff08must register manually),</B></FONT><B>players will be divided into </B><FONT COLOR='#66FF66'><B>7 groups </B></FONT><B>based on players\u2019 PVP combat power: Top, Kage, ANBU, Jounin, Chunin, Genin and Student.<BR />9. </B><FONT COLOR='#66FF66'><B>From the next on</B></FONT><B>players will be ranked based on </B><FONT COLOR='#66FF66'><B>players\u2019 elite match points</B></FONT><B>.If players don\u2019t sign up on the first day, the initial points will be 0.<BR />10. </B><FONT COLOR='#66FF66'><B>The higher the group, the more challenge order can be obtained every day.</B></FONT><B>.ANBU or higher group can get Cross-Server War Title.<BR />11. </B><FONT COLOR='#66FF66'><B>Elite Match lasts 1 month</B></FONT><B>.Colorfull souls will be sent based on players\u2019 point ranking every day .<BR />12.After the season\uff0c </B><FONT COLOR='#66FF66'><B>Colorful Soul and Challenge Order will be sent according to the player's rank</B></FONT><B>.<BR />13.Top Stone redeemed from the Challenge Order can recruit </B><FONT COLOR='#66FF66'><B>SSSRare Ninja</B></FONT><B>!Challenge Order and Top Stone can be redeemed after the season and be counted into the next season.</P>"
     },
     {
       "id": 70170039,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> </B><FONT COLOR='#66FF66'><B> Redeem Challenge Order </B></FONT><B><BR />1. In the Elite Match, </B><FONT COLOR='#66FF66'><B>defeat all opponents in a group can get Challenge Order. </B></FONT><B>.<BR />2. </B><FONT COLOR='#66FF66'><B>The higher the group rank, </B></FONT><B>. the more Challenge Orders you can get every day.<BR />3. </B><FONT COLOR='#66FF66'><B> Challenge Order </B></FONT><B> and reward packs <BR /> will be sent based on players’ </B><FONT COLOR='#66FF66'><B> point rank in the group </B></FONT><B> </B><FONT COLOR='#66FF66'><B>at the end of each season. </B></FONT><B>4. </B><FONT COLOR='#66FF66'><B> Top Stone </B></FONT><B> redeemed from the Challenge Order can be used to recruit </B><FONT COLOR='#66FF66'><B>SSS rare ninjas </B></FONT><B> and </B><FONT COLOR='#66FF66'><B>rare equipment </B></FONT><B>!</P>"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B> </B><FONT COLOR='#66FF66'><B> Redeem Challenge Order </B></FONT><B><BR />1. In the Elite Match, </B><FONT COLOR='#66FF66'><B>defeat all opponents in a group can get Challenge Order. </B></FONT><B>.<BR />2. </B><FONT COLOR='#66FF66'><B>The higher the group rank, </B></FONT><B>. the more Challenge Orders you can get every day.<BR />3. </B><FONT COLOR='#66FF66'><B> Challenge Order </B></FONT><B> and reward packs <BR /> will be sent based on players\u2019 </B><FONT COLOR='#66FF66'><B> point rank in the group </B></FONT><B> </B><FONT COLOR='#66FF66'><B>at the end of each season. </B></FONT><B>4. </B><FONT COLOR='#66FF66'><B> Top Stone </B></FONT><B> redeemed from the Challenge Order can be used to recruit </B><FONT COLOR='#66FF66'><B>SSS rare ninjas </B></FONT><B> and </B><FONT COLOR='#66FF66'><B>rare equipment </B></FONT><B>!</P>"
     },
     {
       "id": 70170040,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'>Redeem Top Stone</FONT></B><BR />1.Spending a certain </B><FONT COLOR='#66FF66'><B>Top Stones</B></FONT><B>can recruit </B><FONT COLOR='#66FF66'><B>SSS rare ninjas</B></FONT><B>and </B><FONT COLOR='#66FF66'><B>rare equipment</B></FONT><B>！<BR />2.Challenge Order which come from challening opponents </B><FONT COLOR='#66FF66'><B>can be redeemed for the Top Stone</B></FONT><B>.<BR />3.Daily </B><FONT COLOR='#66FF66'><B>[Brewed Liquor] toast</B></FONT><B>can net you extra </B><FONT COLOR='#66FF66'><B>30 Top Stones</B></FONT><B>.</P>\n"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'><B><FONT COLOR='#66FF66'>Redeem Top Stone</FONT></B><BR />1.Spending a certain </B><FONT COLOR='#66FF66'><B>Top Stones</B></FONT><B>can recruit </B><FONT COLOR='#66FF66'><B>SSS rare ninjas</B></FONT><B>and </B><FONT COLOR='#66FF66'><B>rare equipment</B></FONT><B>\uff01<BR />2.Challenge Order which come from challening opponents </B><FONT COLOR='#66FF66'><B>can be redeemed for the Top Stone</B></FONT><B>.<BR />3.Daily </B><FONT COLOR='#66FF66'><B>[Brewed Liquor] toast</B></FONT><B>can net you extra </B><FONT COLOR='#66FF66'><B>30 Top Stones</B></FONT><B>.</P>\n"
     },
     {
       "id": 70170041,
-      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'>1. Partners of Gold quality and above can use Inherit function.<BR />2. Partners must at least reach phase 3 modification to use Inherit function.<BR />3. There are different rebates for different inherits.<BR />4. Before conducting Inherit, please make sure your Exclusive Skill and Reincarnation level is above Lv.1.<BR />5. By conducting Inherit you'll get Reincarnation Stones and Epic EXP Scrolls in return.<BR />6. Returned items will be directly sent to your backpack, please check them out after inheriting.<BR />"
+      "desc": "<P ALIGN='LEFT'><FONT FACE='Times New Roman' SIZE='12' COLOR='#FFFFCC' LETTERSPACING='0' KERNING='0'>1. Partners of any quality can use Inherit function.<BR />2. Partners must at least reach phase 3 modification to use Inherit function.<BR />3. There are different rebates for different inherits.<BR />4. Before conducting Inherit, please make sure your Exclusive Skill and Reincarnation level is above Lv.1.<BR />5. By conducting Inherit you'll get Reincarnation Stones and Epic EXP Scrolls in return.<BR />6. Returned items will be directly sent to your backpack, please check them out after inheriting.<BR />"
     },
     {
       "id": 70190001,
@@ -2576,11 +2576,11 @@
     },
     {
       "id": 70210005,
-      "desc": "Class: Kidō \nPersonality: Distant\nFeatures: Cool exterior yet very wise, and uses wisdom as strength in battle! "
+      "desc": "Class: Kid\u014d \nPersonality: Distant\nFeatures: Cool exterior yet very wise, and uses wisdom as strength in battle! "
     },
     {
       "id": 70210006,
-      "desc": "Class: Kidō \nPersonality: Innocent\nFeatures: Extremely smart, uses own wisdom to control enemies within her palm!"
+      "desc": "Class: Kid\u014d \nPersonality: Innocent\nFeatures: Extremely smart, uses own wisdom to control enemies within her palm!"
     },
     {
       "id": 70220001,
@@ -2652,7 +2652,7 @@
     },
     {
       "id": 70220018,
-      "desc": "[\"Partners\", \"Soul Map\", \"Formation\", \"Backpack\", \"Hōgu\", \"Zanpakutō\", \"Fortify\", \"Accessory\", \"Mail\", \"Guild\", \" Hollow Spirit Map\", \"Nemu's Class\", \"Return\"]"
+      "desc": "[\"Partners\", \"Soul Map\", \"Formation\", \"Backpack\", \"H\u014dgu\", \"Zanpakut\u014d\", \"Fortify\", \"Accessory\", \"Mail\", \"Guild\", \" Hollow Spirit Map\", \"Nemu's Class\", \"Return\"]"
     },
     {
       "id": 70220019,
@@ -2676,7 +2676,7 @@
     },
     {
       "id": 70220024,
-      "desc": "[\"Partners\", \"Soul Map\", \"Formation\", \"Backpack\", \"Hōgu\", \"Zanpakutō\", \"Fortify\", \"Accessory\", \"Mail\", \"Guild\", \" Hollow Spirit Map\", \"Nemu's Class\"]"
+      "desc": "[\"Partners\", \"Soul Map\", \"Formation\", \"Backpack\", \"H\u014dgu\", \"Zanpakut\u014d\", \"Fortify\", \"Accessory\", \"Mail\", \"Guild\", \" Hollow Spirit Map\", \"Nemu's Class\"]"
     },
     {
       "id": 70220025,
@@ -2688,11 +2688,11 @@
     },
     {
       "id": 70220027,
-      "desc": "[\"Jigokuchō\", \"Konsō\", \"Master & Slave\", \"Throw Dice\", \"Lucky Cat\", \"Girlfriend\"]"
+      "desc": "[\"Jigokuch\u014d\", \"Kons\u014d\", \"Master & Slave\", \"Throw Dice\", \"Lucky Cat\", \"Girlfriend\"]"
     },
     {
       "id": 70220028,
-      "desc": "[\"Bug Fix\", \"Arena\", \"Alliance War\", \"Trial\", \" King of Hollow Souls\", \"Transform\", \"Soul Hunt\", \"名忍会馆\", \"Shop\", \"Daily Task\", \"Daily Activities\", \"Sign-in\", \"Achievements\"]"
+      "desc": "[\"Bug Fix\", \"Arena\", \"Alliance War\", \"Trial\", \" King of Hollow Souls\", \"Transform\", \"Soul Hunt\", \"\u540d\u5fcd\u4f1a\u9986\", \"Shop\", \"Daily Task\", \"Daily Activities\", \"Sign-in\", \"Achievements\"]"
     },
     {
       "id": 70220029,
@@ -2700,7 +2700,7 @@
     },
     {
       "id": 70220030,
-      "desc": "[\"Fortify \", \"Arena\", \"Jigokuchō\"]"
+      "desc": "[\"Fortify \", \"Arena\", \"Jigokuch\u014d\"]"
     },
     {
       "id": 70220031,
@@ -2748,7 +2748,7 @@
     },
     {
       "id": 70220042,
-      "desc": "[\"<font color='#%0' SIZE='12'><u><a href='event: %1'>Fortify Equipment</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>Fortify Available</a></u></font>\\n\", \"<font color='#FF0000' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event: %1'>Arena Challenge</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>Challenge Available</a></u></font>\\n\", \"<font color='#FFFFFF' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event: %1'>Jigokuchō</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>Enter Jigokuchō</a></u></font>\\n\", \"<font color='#FFFFFF' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event: %1'>%2</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#FFFFFF' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event: %1'>Beauty Game</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>Enter Game</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event:%1'>Partner's Exclusive<a></u></font>\\n\",\"<font color='#FF00' SIZE='12'><u><a href='event:%0'>Enter Exclusive</a></u></font>\\n\",\"<font color='#%0' SIZE='12'><u><a href='event:%1'>Soul Cultivation</a></u></font>\\n\",\"<font color='#FF00' SIZE='12'><u><a href='event:%0'>Enter Soul Cultivation</a></u></font>\\n\",\"<font color='#FF0000' SIZE='12'><u><a href='event:%0'>%1</a></u></font>\\n\",\"\"]"
+      "desc": "[\"<font color='#%0' SIZE='12'><u><a href='event: %1'>Fortify Equipment</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>Fortify Available</a></u></font>\\n\", \"<font color='#FF0000' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event: %1'>Arena Challenge</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>Challenge Available</a></u></font>\\n\", \"<font color='#FFFFFF' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event: %1'>Jigokuch\u014d</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>Enter Jigokuch\u014d</a></u></font>\\n\", \"<font color='#FFFFFF' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event: %1'>%2</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#FFFFFF' SIZE='12'><u><a href='event: %0'>%1</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event: %1'>Beauty Game</a></u></font>\\n\", \"<font color='#FF00' SIZE='12'><u><a href='event: %0'>Enter Game</a></u></font>\\n\", \"<font color='#%0' SIZE='12'><u><a href='event:%1'>Partner's Exclusive<a></u></font>\\n\",\"<font color='#FF00' SIZE='12'><u><a href='event:%0'>Enter Exclusive</a></u></font>\\n\",\"<font color='#%0' SIZE='12'><u><a href='event:%1'>Soul Cultivation</a></u></font>\\n\",\"<font color='#FF00' SIZE='12'><u><a href='event:%0'>Enter Soul Cultivation</a></u></font>\\n\",\"<font color='#FF0000' SIZE='12'><u><a href='event:%0'>%1</a></u></font>\\n\",\"\"]"
     },
     {
       "id": 70220044,
@@ -2760,7 +2760,7 @@
     },
     {
       "id": 70310002,
-      "desc": "Kill Konsō can obtain upgrade girlfriend item, Konsō Level is same as player level, Konsō quality is same as Home quality. Higher the qulity is, more the rewards are.Konsō refresh every 8 hours."
+      "desc": "Kill Kons\u014d can obtain upgrade girlfriend item, Kons\u014d Level is same as player level, Kons\u014d quality is same as Home quality. Higher the qulity is, more the rewards are.Kons\u014d refresh every 8 hours."
     },
     {
       "id": 70310003,
@@ -2804,7 +2804,7 @@
     },
     {
       "id": 70310013,
-      "desc": "Based on the maximum chances left, choose my Home\nor friend's home Konsō. Kill to obtain rewards"
+      "desc": "Based on the maximum chances left, choose my Home\nor friend's home Kons\u014d. Kill to obtain rewards"
     },
     {
       "id": 70310014,
@@ -2812,11 +2812,11 @@
     },
     {
       "id": 70310015,
-      "desc": "Daily chances of killing my Home Konsō, chances will increase when Home level is increased."
+      "desc": "Daily chances of killing my Home Kons\u014d, chances will increase when Home level is increased."
     },
     {
       "id": 70310016,
-      "desc": "Daily chances of killing friend's Home Konsō, chances increase with Home level"
+      "desc": "Daily chances of killing friend's Home Kons\u014d, chances increase with Home level"
     },
     {
       "id": 70310017,
@@ -2860,19 +2860,19 @@
     },
     {
       "id": 70310027,
-      "desc": "Daily Konsō chances not enough"
+      "desc": "Daily Kons\u014d chances not enough"
     },
     {
       "id": 70310028,
-      "desc": "Konsō chances not enough"
+      "desc": "Kons\u014d chances not enough"
     },
     {
       "id": 70310029,
-      "desc": "Konsō chances: %0"
+      "desc": "Kons\u014d chances: %0"
     },
     {
       "id": 70310030,
-      "desc": "Current Konsō chances %0, spend %1Gold"
+      "desc": "Current Kons\u014d chances %0, spend %1Gold"
     },
     {
       "id": 70310031,
@@ -2900,7 +2900,7 @@
     },
     {
       "id": 70310037,
-      "desc": "spend %0 Gold to conduct One-click Konsō?"
+      "desc": "spend %0 Gold to conduct One-click Kons\u014d?"
     },
     {
       "id": 70310038,
@@ -3160,7 +3160,7 @@
     },
     {
       "id": 70113002,
-      "desc": "[\"Equipment Fortify \", \"Hōgu Upgrade \", \"Cultivate Reiatsu \", \"Tavern Recuitment\", \"Inlay Spirit Stones\", \"Jigokuchō\", \"Arena Chest\", \"Storyline\", \"Instance\", \"Trial Tower\", \"Soul Hunt\"]"
+      "desc": "[\"Equipment Fortify \", \"H\u014dgu Upgrade \", \"Cultivate Reiatsu \", \"Tavern Recuitment\", \"Inlay Spirit Stones\", \"Jigokuch\u014d\", \"Arena Chest\", \"Storyline\", \"Instance\", \"Trial Tower\", \"Soul Hunt\"]"
     },
     {
       "id": 70114001,
@@ -3252,7 +3252,7 @@
     },
     {
       "id": 70115017,
-      "desc": "Get daily rewards for 30 days!"
+      "desc": "Get\u00a0daily\u00a0rewards\u00a0for\u00a030\u00a0days!"
     },
     {
       "id": 70116001,
@@ -3404,7 +3404,7 @@
     },
     {
       "id": 70118030,
-      "desc": "Hunting in progress…! "
+      "desc": "Hunting in progress\u2026! "
     },
     {
       "id": 70118031,
@@ -3412,7 +3412,7 @@
     },
     {
       "id": 70118032,
-      "desc": "<font color='%colorwho1%'>%who1%</font>successfully robs <font color='%colorwhere%'>%where%</font>的<font color='%colorwho2%'>%who2%</font>, got<font color='#00ff66'>%what%</font>."
+      "desc": "<font color='%colorwho1%'>%who1%</font>successfully robs <font color='%colorwhere%'>%where%</font>\u7684<font color='%colorwho2%'>%who2%</font>, got<font color='#00ff66'>%what%</font>."
     },
     {
       "id": 70118033,
@@ -3600,7 +3600,7 @@
     },
     {
       "id": 70122012,
-      "desc": "Feed successfully! Obtain silver %0, Jigokuchō obtain EXP%1"
+      "desc": "Feed successfully! Obtain silver %0, Jigokuch\u014d obtain EXP%1"
     },
     {
       "id": 70122013,
@@ -3608,11 +3608,11 @@
     },
     {
       "id": 70122014,
-      "desc": "Feed %0 friends Jigokuchō successfully, obtain %1 silver"
+      "desc": "Feed %0 friends Jigokuch\u014d successfully, obtain %1 silver"
     },
     {
       "id": 70122015,
-      "desc": "Feed %0 friends Jigokuchō successfully, didn't get silver"
+      "desc": "Feed %0 friends Jigokuch\u014d successfully, didn't get silver"
     },
     {
       "id": 70122016,
@@ -3636,11 +3636,11 @@
     },
     {
       "id": 70122021,
-      "desc": "Jigokuchō level cannot exceed player's Level! "
+      "desc": "Jigokuch\u014d level cannot exceed player's Level! "
     },
     {
       "id": 70122022,
-      "desc": "One-click feed: Feed all selected friends' Jigokuchō, but you can only claim top 30 players' rewards"
+      "desc": "One-click feed: Feed all selected friends' Jigokuch\u014d, but you can only claim top 30 players' rewards"
     },
     {
       "id": 70122023,
@@ -3652,15 +3652,15 @@
     },
     {
       "id": 70122025,
-      "desc": "You can feed friend's Jigokuchō once each day"
+      "desc": "You can feed friend's Jigokuch\u014d once each day"
     },
     {
       "id": 70122026,
-      "desc": "Upgrade Jigokuchō can obtain one Jigokuchō Powder reward! \nEach level can claim once, you can claim cumulatively! "
+      "desc": "Upgrade Jigokuch\u014d can obtain one Jigokuch\u014d Powder reward! \nEach level can claim once, you can claim cumulatively! "
     },
     {
       "id": 70122027,
-      "desc": "%0's Jigokuchō"
+      "desc": "%0's Jigokuch\u014d"
     },
     {
       "id": 70123001,
@@ -3788,7 +3788,7 @@
     },
     {
       "id": 70125001,
-      "desc": "Click to start Konsō"
+      "desc": "Click to start Kons\u014d"
     },
     {
       "id": 70125002,
@@ -3796,7 +3796,7 @@
     },
     {
       "id": 70125003,
-      "desc": "Konsō Introduction: "
+      "desc": "Kons\u014d Introduction: "
     },
     {
       "id": 70125004,
@@ -4160,7 +4160,7 @@
     },
     {
       "id": 70151030,
-      "desc": "Upgrade Requirement: \nHome Level: %0;\nBikini: %1个;"
+      "desc": "Upgrade Requirement: \nHome Level: %0;\nBikini: %1\u4e2a;"
     },
     {
       "id": 70151031,
@@ -4196,7 +4196,7 @@
     },
     {
       "id": 70146007,
-      "desc": "(Main City）"
+      "desc": "(Main City\uff09"
     },
     {
       "id": 70146008,
@@ -4228,7 +4228,7 @@
     },
     {
       "id": 70143000,
-      "desc": "Successfully activate Zanpakutō [%0]"
+      "desc": "Successfully activate Zanpakut\u014d [%0]"
     },
     {
       "id": 70143001,
@@ -4240,7 +4240,7 @@
     },
     {
       "id": 70143003,
-      "desc": "['Original', 'Shikai', 'Bankai', 'Hōgyoku-kai']"
+      "desc": "['Original', 'Shikai', 'Bankai', 'H\u014dgyoku-kai']"
     },
     {
       "id": 70143004,
@@ -4284,7 +4284,7 @@
     },
     {
       "id": 70143014,
-      "desc": "Missing [%0] Picture Book to activate Zanpakutō"
+      "desc": "Missing [%0] Picture Book to activate Zanpakut\u014d"
     },
     {
       "id": 70143015,
@@ -4308,7 +4308,7 @@
     },
     {
       "id": 70143020,
-      "desc": "[\"Higher Attack means this Zanpakutō's Attack Attributes are higher, suitable for Attack-type Formation\", \"Higher Defense means Zanpakutō's Defense is higher, suitable for Defense and Counter type Formation\", \"Higher Recovery means this Zanpakutō is better at recovering HP, suitable for Continuous Consumption type Formation\", \"Higher Resistance means this Zanpakutō has strong resistance, suitable for Break Defense Control type Formation\", \"Higher Speed means this Zanpakutō's Speed bonus is higher, suitable for Speed Attack Formation\"]"
+      "desc": "[\"Higher Attack means this Zanpakut\u014d's Attack Attributes are higher, suitable for Attack-type Formation\", \"Higher Defense means Zanpakut\u014d's Defense is higher, suitable for Defense and Counter type Formation\", \"Higher Recovery means this Zanpakut\u014d is better at recovering HP, suitable for Continuous Consumption type Formation\", \"Higher Resistance means this Zanpakut\u014d has strong resistance, suitable for Break Defense Control type Formation\", \"Higher Speed means this Zanpakut\u014d's Speed bonus is higher, suitable for Speed Attack Formation\"]"
     },
     {
       "id": 70143021,
@@ -4348,7 +4348,7 @@
     },
     {
       "id": 70143030,
-      "desc": "Close requires you to Materialize Zanpakutō"
+      "desc": "Close requires you to Materialize Zanpakut\u014d"
     },
     {
       "id": 70143031,
@@ -4468,7 +4468,7 @@
     },
     {
       "id": 70129001,
-      "desc": "[\"Suitable for Spirit Blade Class\", \"Suitable for Ghost Sword Class\", \"Suitable for Kidō Class\"]"
+      "desc": "[\"Suitable for Spirit Blade Class\", \"Suitable for Ghost Sword Class\", \"Suitable for Kid\u014d Class\"]"
     },
     {
       "id": 70129002,
@@ -4500,7 +4500,7 @@
     },
     {
       "id": 70131007,
-      "desc": "You can get Zanpakutō: %0"
+      "desc": "You can get Zanpakut\u014d: %0"
     },
     {
       "id": 70131008,
@@ -4815,6 +4815,18 @@
       "desc": "Miss"
     },
     {
+      "id": 70133076,
+      "desc": "Requires Shinigami Agent."
+    },
+    {
+      "id": 70133077,
+      "desc": "Auto Sweep will consume all remaining reward attempts for you and every team member."
+    },
+    {
+      "id": 70133078,
+      "desc": "No reward attempts remain."
+    },
+    {
       "id": 70134001,
       "desc": "Auto Join will consume 50 Gold\nor Coupons.This will be deducted\n10 minutes prior to event start.\nIf you don't have enough gold,\nthen will be canceled.You cannot\nclick this 10 minute prior to\nstart of event until end of event.\nThis Ryoka Attack auto join will\nobtain %0 Silver and %1 EXP"
     },
@@ -4948,7 +4960,7 @@
     },
     {
       "id": 70137002,
-      "desc": "Challenge failed. Please come back when you are more powerful! \\n Increase BP: 1. Fortify Equipment, 2. Upgrade Hōgu, 3.Embed Spirit Stones, 4. Recruit Powerful Partners"
+      "desc": "Challenge failed. Please come back when you are more powerful! \\n Increase BP: 1. Fortify Equipment, 2. Upgrade H\u014dgu, 3.Embed Spirit Stones, 4. Recruit Powerful Partners"
     },
     {
       "id": 70137003,
@@ -4968,11 +4980,11 @@
     },
     {
       "id": 70137007,
-      "desc": "not yet equipped with Zanpakutō"
+      "desc": "not yet equipped with Zanpakut\u014d"
     },
     {
       "id": 70137008,
-      "desc": "Zanpakutō bonus: %0%"
+      "desc": "Zanpakut\u014d bonus: %0%"
     },
     {
       "id": 70137009,
@@ -4984,7 +4996,7 @@
     },
     {
       "id": 70137011,
-      "desc": "['None', 'Original', 'Shikai', 'Bankai', 'Hōgyoku-kai']"
+      "desc": "['None', 'Original', 'Shikai', 'Bankai', 'H\u014dgyoku-kai']"
     },
     {
       "id": 70137012,
@@ -4996,7 +5008,7 @@
     },
     {
       "id": 70137014,
-      "desc": "额外加血%0%"
+      "desc": "\u989d\u5916\u52a0\u8840%0%"
     },
     {
       "id": 70137015,
@@ -5084,11 +5096,11 @@
     },
     {
       "id": 70138020,
-      "desc": "Kasō-ryoku"
+      "desc": "Kas\u014d-ryoku"
     },
     {
       "id": 70138021,
-      "desc": "Need to reach %0 Kasō-ryoku"
+      "desc": "Need to reach %0 Kas\u014d-ryoku"
     },
     {
       "id": 70138022,
@@ -5372,7 +5384,7 @@
     },
     {
       "id": 70159001,
-      "desc": "您当前为Level %0 黄钻用户"
+      "desc": "\u60a8\u5f53\u524d\u4e3aLevel %0 \u9ec4\u94bb\u7528\u6237"
     },
     {
       "id": 70153001,
@@ -5396,7 +5408,7 @@
     },
     {
       "id": 70153006,
-      "desc": "Available after complete quest【%0】"
+      "desc": "Available after complete quest\u3010%0\u3011"
     },
     {
       "id": 70153007,
@@ -5428,7 +5440,7 @@
     },
     {
       "id": 70300007,
-      "desc": "[\"Weapon Spirit Water·Ukitake#Headband Spirit Water·Ukitake#Armor Spirit Water·Ukitake#Cape Spirit Water·Ukitake#Belt Spirit Water·Ukitake#Boots Spirit Water·Ukitake#13th Division Spirit Water\", \"Weapon Spirit Water·Kurotsuchi#Headband Spirit Water·Kurotsuchi#Armor Spirit Water·Kurotsuchi#Cape Spirit Water·Kurotsuchi#Belt Spirit Water·Kurotsuchi#Boots Spirit Water·Kurotsuchi#12th Division Spirit Water\", \"Weapon Spirit Water·Kenpachi#Headband Spirit Water·Kenpachi#Armor Spirit Water·Kenpachi#Cape Spirit Water·Kenpachi#Belt Spirit Water·Kenpachi#Boots Spirit Water·Kenpachi#11th Division Spirit Water\", \"Weapon Spirit Water·Tōshirō#Headband Spirit Water·Tōshirō#Armor Spirit Water·Tōshirō#Cape Spirit Water·Tōshirō#Belt Spirit Water·Tōshirō#Boots Spirit Water·Tōshirō#10th Division Spirit Water\", \"Weapon Spirit Water·Tōsen#Headband Spirit Water·Tōsen#Armor Spirit Water·Tōsen#Cape Spirit Water·Tōsen#Belt Spirit Water·Tōsen#Boots Spirit Water·Tōsen#9th Division Spirit Water\", \"Weapon Spirit Water·Kyōraku#Headband Spirit Water·Kyōraku#Armor Spirit Water·Kyōraku#Cape Spirit Water·Kyōraku#Belt Spirit Water·Kyōraku#Boots Spirit Water·Kyōraku#8th Division Spirit Water\", \"Weapon Spirit Water·Komamura#Headband Spirit Water·Komamura#Armor Spirit Water·Komamura#Cape Spirit Water·Komamura#Belt Spirit Water·Komamura#Boots Spirit Water·Komamura#7th Division Spirit Water\", \"Weapon Spirit Water·Kuchiki#Headband Spirit Water·Kuchiki#Armor Spirit Water·Kuchiki#Cape Spirit Water·Kuchiki#Belt Spirit Water·Kuchiki#Boots Spirit Water·Kuchiki#6th Division Spirit Water\", \"Weapon Spirit Water·Aizen#Headband Spirit Water·Aizen#Armor Spirit Water·Aizen#Cape Spirit Water·Aizen#Belt Spirit Water·Aizen#Boots Spirit Water·Aizen#5th Divsion Spirit Water\", \"Weapon Spirit Water·Unohana#Headband Spirit Water·Unohana#Armor Spirit Water·Unohana#Cape Spirit Water·Unohana#Belt Spirit Water·Unohana#Boots Spirit Water·Unohana#4th Division Spirit Water\", \"Weapon Spirit Water·Gin#Headband Spirit Water·Gin#Armor Spirit Water·Gin#Cape Spirit Water·Gin#Belt Spirit Water·Gin#Boots Spirit Water·Gin#3rd Division Spirit Water\", \"Weapon Spirit Water·Feng#Headband Spirit Water·Feng#Armor Spirit Water·Feng#Cape Spirit Water·Feng#Belt Spirit Water·Feng#Boots Spirit Water·Feng#2nd Division Spirit Water\", \"Weapon Spirit Water·Yamamoto#Headband Spirit Water·Yamamoto#Armor Spirit Water·Yamamoto#Cape Spirit Water·Yamamoto#Belt Spirit Water·Yamamoto#Boots Spirit Water·Yamamoto#1st Division Spirit Water\"]"
+      "desc": "[\"Weapon Spirit Water\u00b7Ukitake#Headband Spirit Water\u00b7Ukitake#Armor Spirit Water\u00b7Ukitake#Cape Spirit Water\u00b7Ukitake#Belt Spirit Water\u00b7Ukitake#Boots Spirit Water\u00b7Ukitake#13th Division Spirit Water\", \"Weapon Spirit Water\u00b7Kurotsuchi#Headband Spirit Water\u00b7Kurotsuchi#Armor Spirit Water\u00b7Kurotsuchi#Cape Spirit Water\u00b7Kurotsuchi#Belt Spirit Water\u00b7Kurotsuchi#Boots Spirit Water\u00b7Kurotsuchi#12th Division Spirit Water\", \"Weapon Spirit Water\u00b7Kenpachi#Headband Spirit Water\u00b7Kenpachi#Armor Spirit Water\u00b7Kenpachi#Cape Spirit Water\u00b7Kenpachi#Belt Spirit Water\u00b7Kenpachi#Boots Spirit Water\u00b7Kenpachi#11th Division Spirit Water\", \"Weapon Spirit Water\u00b7T\u014dshir\u014d#Headband Spirit Water\u00b7T\u014dshir\u014d#Armor Spirit Water\u00b7T\u014dshir\u014d#Cape Spirit Water\u00b7T\u014dshir\u014d#Belt Spirit Water\u00b7T\u014dshir\u014d#Boots Spirit Water\u00b7T\u014dshir\u014d#10th Division Spirit Water\", \"Weapon Spirit Water\u00b7T\u014dsen#Headband Spirit Water\u00b7T\u014dsen#Armor Spirit Water\u00b7T\u014dsen#Cape Spirit Water\u00b7T\u014dsen#Belt Spirit Water\u00b7T\u014dsen#Boots Spirit Water\u00b7T\u014dsen#9th Division Spirit Water\", \"Weapon Spirit Water\u00b7Ky\u014draku#Headband Spirit Water\u00b7Ky\u014draku#Armor Spirit Water\u00b7Ky\u014draku#Cape Spirit Water\u00b7Ky\u014draku#Belt Spirit Water\u00b7Ky\u014draku#Boots Spirit Water\u00b7Ky\u014draku#8th Division Spirit Water\", \"Weapon Spirit Water\u00b7Komamura#Headband Spirit Water\u00b7Komamura#Armor Spirit Water\u00b7Komamura#Cape Spirit Water\u00b7Komamura#Belt Spirit Water\u00b7Komamura#Boots Spirit Water\u00b7Komamura#7th Division Spirit Water\", \"Weapon Spirit Water\u00b7Kuchiki#Headband Spirit Water\u00b7Kuchiki#Armor Spirit Water\u00b7Kuchiki#Cape Spirit Water\u00b7Kuchiki#Belt Spirit Water\u00b7Kuchiki#Boots Spirit Water\u00b7Kuchiki#6th Division Spirit Water\", \"Weapon Spirit Water\u00b7Aizen#Headband Spirit Water\u00b7Aizen#Armor Spirit Water\u00b7Aizen#Cape Spirit Water\u00b7Aizen#Belt Spirit Water\u00b7Aizen#Boots Spirit Water\u00b7Aizen#5th Divsion Spirit Water\", \"Weapon Spirit Water\u00b7Unohana#Headband Spirit Water\u00b7Unohana#Armor Spirit Water\u00b7Unohana#Cape Spirit Water\u00b7Unohana#Belt Spirit Water\u00b7Unohana#Boots Spirit Water\u00b7Unohana#4th Division Spirit Water\", \"Weapon Spirit Water\u00b7Gin#Headband Spirit Water\u00b7Gin#Armor Spirit Water\u00b7Gin#Cape Spirit Water\u00b7Gin#Belt Spirit Water\u00b7Gin#Boots Spirit Water\u00b7Gin#3rd Division Spirit Water\", \"Weapon Spirit Water\u00b7Feng#Headband Spirit Water\u00b7Feng#Armor Spirit Water\u00b7Feng#Cape Spirit Water\u00b7Feng#Belt Spirit Water\u00b7Feng#Boots Spirit Water\u00b7Feng#2nd Division Spirit Water\", \"Weapon Spirit Water\u00b7Yamamoto#Headband Spirit Water\u00b7Yamamoto#Armor Spirit Water\u00b7Yamamoto#Cape Spirit Water\u00b7Yamamoto#Belt Spirit Water\u00b7Yamamoto#Boots Spirit Water\u00b7Yamamoto#1st Division Spirit Water\"]"
     },
     {
       "id": 70300008,
@@ -5744,11 +5756,11 @@
     },
     {
       "id": 70340005,
-      "desc": "Equip Hōgyoku"
+      "desc": "Equip H\u014dgyoku"
     },
     {
       "id": 70340006,
-      "desc": "Remove Hōgyoku"
+      "desc": "Remove H\u014dgyoku"
     },
     {
       "id": 70340007,
@@ -5756,11 +5768,11 @@
     },
     {
       "id": 70340008,
-      "desc": "You sure to spend %0 Gold to activate one slot in Hōgyoku Backpack?"
+      "desc": "You sure to spend %0 Gold to activate one slot in H\u014dgyoku Backpack?"
     },
     {
       "id": 70340009,
-      "desc": "<font color='%0'>%1</font>  Hōgyoku Power: %2"
+      "desc": "<font color='%0'>%1</font>  H\u014dgyoku Power: %2"
     },
     {
       "id": 70340010,
@@ -5768,7 +5780,7 @@
     },
     {
       "id": 70340011,
-      "desc": "Hōgyoku Power: %0"
+      "desc": "H\u014dgyoku Power: %0"
     },
     {
       "id": 70340012,
@@ -5776,7 +5788,7 @@
     },
     {
       "id": 70340013,
-      "desc": "Target's Hōgyoku already reached highest level."
+      "desc": "Target's H\u014dgyoku already reached highest level."
     },
     {
       "id": 70340014,
@@ -5796,15 +5808,15 @@
     },
     {
       "id": 70340018,
-      "desc": "<font color='%0' SIZE='12'>%1</font>activated Tier %2 Hōgyoku, obtained <font color='%3' SIZE='12'>%4</font>"
+      "desc": "<font color='%0' SIZE='12'>%1</font>activated Tier %2 H\u014dgyoku, obtained <font color='%3' SIZE='12'>%4</font>"
     },
     {
       "id": 70340019,
-      "desc": "[\"All Hōgyoku\", \"Green Quality\", \"Blue Quality\", \"Purple Quality\", \"Gold Quality\"]"
+      "desc": "[\"All H\u014dgyoku\", \"Green Quality\", \"Blue Quality\", \"Purple Quality\", \"Gold Quality\"]"
     },
     {
       "id": 70340020,
-      "desc": "Swallow Hōgyoku includes Partner equipped Hōgyoku,\nyou sure to continue?"
+      "desc": "Swallow H\u014dgyoku includes Partner equipped H\u014dgyoku,\nyou sure to continue?"
     },
     {
       "id": 70340021,
@@ -5812,7 +5824,7 @@
     },
     {
       "id": 70340022,
-      "desc": "Cannot equip with same type of Hōgyoku"
+      "desc": "Cannot equip with same type of H\u014dgyoku"
     },
     {
       "id": 70340023,
@@ -5840,39 +5852,39 @@
     },
     {
       "id": 70340029,
-      "desc": "One-click sell all Hōgyoku Fragments"
+      "desc": "One-click sell all H\u014dgyoku Fragments"
     },
     {
       "id": 70340030,
-      "desc": "One-click loot all Hōgyoku"
+      "desc": "One-click loot all H\u014dgyoku"
     },
     {
       "id": 70340031,
-      "desc": "*Daily produce jade remaining chances will be reset at Midnight and reset to 200 times!!!!!!!\n*Higher produce jade tier means higher chance of obtaining high quality Hōgyoku."
+      "desc": "*Daily produce jade remaining chances will be reset at Midnight and reset to 200 times!!!!!!!\n*Higher produce jade tier means higher chance of obtaining high quality H\u014dgyoku."
     },
     {
       "id": 70340032,
-      "desc": "Obtained Hōgyoku Pill fragments!"
+      "desc": "Obtained H\u014dgyoku Pill fragments!"
     },
     {
       "id": 70340033,
-      "desc": "%0 Hōgyoku Pill Fragments can synthesize 1 Hōgyoku Pill!"
+      "desc": "%0 H\u014dgyoku Pill Fragments can synthesize 1 H\u014dgyoku Pill!"
     },
     {
       "id": 70340034,
-      "desc": "Hōgyoku level reaches Level %0 can swallow Hōgyoku Pill to upgrade!"
+      "desc": "H\u014dgyoku level reaches Level %0 can swallow H\u014dgyoku Pill to upgrade!"
     },
     {
       "id": 70340035,
-      "desc": "Select any one Hōgyoku, then click on Swallow!"
+      "desc": "Select any one H\u014dgyoku, then click on Swallow!"
     },
     {
       "id": 70340036,
-      "desc": "Hōgyoku space is full!"
+      "desc": "H\u014dgyoku space is full!"
     },
     {
       "id": 70340037,
-      "desc": "Low Quality Hōgyoku cannot swallow High Quality Hōgyoku!"
+      "desc": "Low Quality H\u014dgyoku cannot swallow High Quality H\u014dgyoku!"
     },
     {
       "id": 70340038,
@@ -6044,7 +6056,7 @@
     },
     {
       "id": 70350032,
-      "desc": "Available period: %0 - %1"
+      "desc": "Available period:\u00a0%0\u00a0-\u00a0%1"
     },
     {
       "id": 70350033,
@@ -6072,19 +6084,19 @@
     },
     {
       "id": 70350039,
-      "desc": "本次传承可返还 %0 %1个"
+      "desc": "\u672c\u6b21\u4f20\u627f\u53ef\u8fd4\u8fd8 %0 %1\u4e2a"
     },
     {
       "id": 70350040,
-      "desc": "本次传承返还 %0 %1个，是否传承？"
+      "desc": "\u672c\u6b21\u4f20\u627f\u8fd4\u8fd8 %0 %1\u4e2a\uff0c\u662f\u5426\u4f20\u627f\uff1f"
     },
     {
       "id": 70350041,
-      "desc": "获得 %0 %1个"
+      "desc": "\u83b7\u5f97 %0 %1\u4e2a"
     },
     {
       "id": 70350042,
-      "desc": "本次传承无法获得碎片，传承无效"
+      "desc": "\u672c\u6b21\u4f20\u627f\u65e0\u6cd5\u83b7\u5f97\u788e\u7247\uff0c\u4f20\u627f\u65e0\u6548"
     },
     {
       "id": 70350043,
@@ -6124,7 +6136,7 @@
     },
     {
       "id": 70360008,
-      "desc": "“OpenMacket”"
+      "desc": "\u201cOpenMacket\u201d"
     },
     {
       "id": 70370001,
@@ -6368,11 +6380,11 @@
     },
     {
       "id": 70370061,
-      "desc": "没有装备副宠"
+      "desc": "\u6ca1\u6709\u88c5\u5907\u526f\u5ba0"
     },
     {
       "id": 70380001,
-      "desc": "1. Players will receive 1 chest after clearing each stage.\n2. If the battle lasted for more than 20 rounds, both side will win.\n3. If failed the current battle, only main character will join the next battle.\n4. Killed partners will not join the next battle.\n5. After each battle, HP will be recovered by certain percentage.\n6. The main character won’t be killed and will maintain least HP each battle.\n7. Players under VIP7 can join once each day, players of and above VIP7 can join twice each day.\n8. Players can exchange rewards with Hueco Mundo coins.\n"
+      "desc": "1. Players will receive 1 chest after clearing each stage.\n2. If the battle lasted for more than 20 rounds, both side will win.\n3. If failed the current battle, only main character will join the next battle.\n4. Killed partners will not join the next battle.\n5. After each battle, HP will be recovered by certain percentage.\n6. The main character won\u2019t be killed and will maintain least HP each battle.\n7. Players under VIP7 can join once each day, players of and above VIP7 can join twice each day.\n8. Players can exchange rewards with Hueco Mundo coins.\n"
     },
     {
       "id": 70380002,
@@ -6416,7 +6428,7 @@
     },
     {
       "id": 70380012,
-      "desc": "Can reset %0 times"
+      "desc": "Can\u00a0reset\u00a0%0\u00a0times"
     },
     {
       "id": 70380013,
@@ -6440,7 +6452,7 @@
     },
     {
       "id": 70380018,
-      "desc": "Today’s reset chances used up!"
+      "desc": "Today\u2019s reset chances used up!"
     },
     {
       "id": 70380019,
@@ -6996,7 +7008,7 @@
     },
     {
       "id": 70610001,
-      "desc": "Welfare Introduction:\n1. Sign up for 3 missing days for free!\n2. Refresh for daily task for free 10 times each day!\n3. Immediately complete daily task for free 10 times each day!\n4. Obtain 10% extra EXP!\n5. Add 3 free Hogyouku chances each day!\n6. Add 2 daily chances for Modifying Dojo!\n7. Mystery Shop in Black Market will be permanently available!\n8. Add 3 reward chances for Alliance Battle and Alliance Blood War!\n9. Add 2 free unlocking chances for Soul Hunt each day!\n10. Add 1 free reset chance for Hueco Mundo Attack each day!\n11. In Bond system, you can use gold training for free twice each day!\n12. You can mop each chapter of Conquest of Might up 3 times each day!\n13. Add 1 free Vitality purchasing chance each day!\n14. Add 2 free Jigokuchō summon chances each day!\n15. Remove the CD on Lucky Cat!\n16. Double rewards for monthly card pet reward!\n17. Auto clear on Hueco Mundo Attack to skip manual battles and finish the challenge faster!\n18. Auto Enter on Evil Spirit and Ryoka Attack so your character joins automatically while online when the event starts!\n19. Auto clear on Conquest of Might to skip manual clearing and complete chapters faster!\n\nNotices:\n1. The reward will subject to what was displayed.\n2. We'll add different rewards and they will subject to what was displayed.\n3. Please top up before the validity expires.\n"
+      "desc": "Welfare Introduction:\n1. Sign up for 3 missing days for free!\n2. Refresh for daily task for free 10 times each day!\n3. Immediately complete daily task for free 10 times each day!\n4. Obtain 10% extra EXP!\n5. Add 3 free Hogyouku chances each day!\n6. Add 2 daily chances for Modifying Dojo!\n7. Mystery Shop in Black Market will be permanently available!\n8. Add 3 reward chances for Alliance Battle and Alliance Blood War!\n9. Add 2 free unlocking chances for Soul Hunt each day!\n10. Add 1 free reset chance for Hueco Mundo Attack each day!\n11. In Bond system, you can use gold training for free twice each day!\n12. You can mop each chapter of Conquest of Might up 3 times each day!\n13. Add 1 free Vitality purchasing chance each day!\n14. Add 2 free Jigokuch\u014d summon chances each day!\n15. Remove the CD on Lucky Cat!\n16. Double rewards for monthly card pet reward!\n17. Auto clear on Hueco Mundo Attack to skip manual battles and finish the challenge faster!\n18. Auto Enter on Evil Spirit and Ryoka Attack so your character joins automatically while online when the event starts!\n19. Auto clear on Conquest of Might to skip manual clearing and complete chapters faster!\n\nNotices:\n1. The reward will subject to what was displayed.\n2. We'll add different rewards and they will subject to what was displayed.\n3. Please top up before the validity expires.\n"
     },
     {
       "id": 70610002,
@@ -7033,6 +7045,30 @@
     {
       "id": 70710003,
       "desc": "Add %0 epic coupons"
+    },
+    {
+      "id": 70710004,
+      "desc": "Extra attempt"
+    },
+    {
+      "id": 70710005,
+      "desc": "Paid attempts grant 50% EXP"
+    },
+    {
+      "id": 70710006,
+      "desc": "Buy extra attempt for %0?"
+    },
+    {
+      "id": 70710007,
+      "desc": "Can activate when reaches %0RI"
+    },
+    {
+      "id": 70710008,
+      "desc": "Paid EXP: %0"
+    },
+    {
+      "id": 70710009,
+      "desc": "Used after free attempts"
     },
     {
       "id": 70810001,
@@ -8102,5 +8138,6 @@
       "id": 70970091,
       "desc": "<font color='#ffcc00'>1) Yammy's Rampage is open every day from 06:00 to 23:00.<br/>2) You have 3 free challenge attempts per day.<br/>3) Yammy has unlimited HP and cannot be defeated; only your damage is counted.<br/>4) Only currently available recommended heroes can be used.<br/>5) Daily rewards, including Evil Shards and other items, can be earned every day.<br/>6) Weekly bonus rewards are sent according to your weekly ranking.<br/>7) The weekly ranking runs from Monday 06:00 to the following Monday 06:00; battles count until Sunday 23:00.</font>"
     }
-  ]
+  ],
+  "generatedAt": "2026-07-04T17:54:43.119117Z"
 }

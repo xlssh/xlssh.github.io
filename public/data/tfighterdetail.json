@@ -5,7 +5,7 @@
     {
       "id": 11160001,
       "desc": "",
-      "name": "真·蛇尾恋次",
+      "name": "\u771f\u00b7\u86c7\u5c3e\u604b\u6b21",
       "ask_need": {
         "type": 7,
         "code": 4,
@@ -19,13 +19,13 @@
       "up_hero_id": 11160002,
       "stype": 1,
       "vip_limit": 0,
-      "main_hero_level": 55,
+      "main_hero_level": 30,
       "fight_report_addr": "http://bleachjf.gametrees.com/fightreport/?rid=844424935926866236&aid=54&t=1&lang=en_US"
     },
     {
       "id": 11160003,
       "desc": "",
-      "name": "真·葛力姆乔",
+      "name": "\u771f\u00b7\u845b\u529b\u59c6\u4e54",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -39,13 +39,13 @@
       "up_hero_id": 11160004,
       "stype": 1,
       "vip_limit": 0,
-      "main_hero_level": 65,
+      "main_hero_level": 50,
       "fight_report_addr": "http://bleachjf.gametrees.com/fightreport/?rid=844424944516800850&aid=54&t=1&lang=en_US"
     },
     {
       "id": 11160005,
       "desc": "",
-      "name": "真·日番谷冬狮郎",
+      "name": "\u771f\u00b7\u65e5\u756a\u8c37\u51ac\u72ee\u90ce",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -65,7 +65,7 @@
     {
       "id": 11160007,
       "desc": "",
-      "name": "真·妮莉艾露",
+      "name": "\u771f\u00b7\u59ae\u8389\u827e\u9732",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -79,13 +79,13 @@
       "up_hero_id": 11160008,
       "stype": 1,
       "vip_limit": 0,
-      "main_hero_level": 75,
+      "main_hero_level": 70,
       "fight_report_addr": "http://bleachjf.gametrees.com/fightreport/?rid=844424953106735482&aid=54&t=1&lang=en_US"
     },
     {
       "id": 11160009,
       "desc": "",
-      "name": "真·乌尔奇奥拉",
+      "name": "\u771f\u00b7\u4e4c\u5c14\u5947\u5965\u62c9",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -105,7 +105,7 @@
     {
       "id": 11160011,
       "desc": "",
-      "name": "真·修罗剑八",
+      "name": "\u771f\u00b7\u4fee\u7f57\u5251\u516b",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -125,7 +125,7 @@
     {
       "id": 11160013,
       "desc": "",
-      "name": "真·镜花蓝染",
+      "name": "\u771f\u00b7\u955c\u82b1\u84dd\u67d3",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -145,7 +145,7 @@
     {
       "id": 11160002,
       "desc": "",
-      "name": "双王恋次",
+      "name": "\u53cc\u738b\u604b\u6b21",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -159,13 +159,13 @@
       "up_hero_id": 11160001,
       "stype": 2,
       "vip_limit": 0,
-      "main_hero_level": 95,
+      "main_hero_level": 50,
       "fight_report_addr": "http://bleachjf.gametrees.com/fightreport/?rid=844424970286604714&aid=54&t=1&lang=en_US"
     },
     {
       "id": 11160004,
       "desc": "",
-      "name": "豹王葛力姆乔",
+      "name": "\u8c79\u738b\u845b\u529b\u59c6\u4e54",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -179,13 +179,13 @@
       "up_hero_id": 11160003,
       "stype": 2,
       "vip_limit": 1,
-      "main_hero_level": 100,
+      "main_hero_level": 70,
       "fight_report_addr": "http://bleachjf.gametrees.com/fightreport/?rid=844424974581572017&aid=54&t=1&lang=en_US"
     },
     {
       "id": 11160006,
       "desc": "",
-      "name": "大红莲冬狮郎",
+      "name": "\u5927\u7ea2\u83b2\u51ac\u72ee\u90ce",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -199,13 +199,13 @@
       "up_hero_id": 11160005,
       "stype": 2,
       "vip_limit": 1,
-      "main_hero_level": 105,
+      "main_hero_level": 90,
       "fight_report_addr": "http://bleachjf.gametrees.com/fightreport/?rid=844424983171506617&aid=54&t=1&lang=en_US"
     },
     {
       "id": 11160008,
       "desc": "",
-      "name": "羚骑士妮露",
+      "name": "\u7f9a\u9a91\u58eb\u59ae\u9732",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -219,13 +219,13 @@
       "up_hero_id": 11160007,
       "stype": 2,
       "vip_limit": 2,
-      "main_hero_level": 110,
+      "main_hero_level": 100,
       "fight_report_addr": "http://bleachjf.gametrees.com/fightreport/?rid=844424987466473920&aid=54&t=1&lang=en_US"
     },
     {
       "id": 11160010,
       "desc": "",
-      "name": "归刃乌尔奇奥拉",
+      "name": "\u5f52\u5203\u4e4c\u5c14\u5947\u5965\u62c9",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -245,7 +245,7 @@
     {
       "id": 11160012,
       "desc": "",
-      "name": "野晒剑八",
+      "name": "\u91ce\u6652\u5251\u516b",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -265,7 +265,7 @@
     {
       "id": 11160014,
       "desc": "",
-      "name": "究极蓝染",
+      "name": "\u7a76\u6781\u84dd\u67d3",
       "ask_need": {
         "type": 7,
         "code": 5,
@@ -282,5 +282,6 @@
       "main_hero_level": 125,
       "fight_report_addr": "http://bleachjf.gametrees.com/fightreport/?rid=844425000351375834&aid=54&t=1&lang=en_US"
     }
-  ]
+  ],
+  "generatedAt": "2026-07-04T17:54:43.119117Z"
 }

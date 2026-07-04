@@ -1,113 +1,41 @@
 {
-  "generatedAt": "2026-07-02T15:54:23.570919Z",
+  "generatedAt": "2026-07-04T17:54:43.119117Z",
   "tables": {
-    "articles": {
-      "path": "/data/articles.json",
-      "rowCount": 5060
-    },
-    "cities": {
-      "path": "/data/cities.json",
-      "rowCount": 236
-    },
-    "daily_quests": {
-      "path": "/data/daily_quests.json",
-      "rowCount": 29
-    },
-    "heroes": {
-      "path": "/data/heroes.json",
-      "rowCount": 150
-    },
-    "mall_items": {
-      "path": "/data/mall_items.json",
-      "rowCount": 164
-    },
-    "promotional_activities": {
-      "path": "/data/promotional_activities.json",
-      "rowCount": 7523
-    },
-    "stages": {
-      "path": "/data/stages.json",
-      "rowCount": 22
-    },
-    "story_quests": {
-      "path": "/data/story_quests.json",
-      "rowCount": 591
-    },
-    "knives": {
-      "path": "/data/knives.json",
-      "rowCount": 24
-    },
-    "recommend_heroes": {
-      "path": "/data/recommend_heroes.json",
-      "rowCount": 19
-    },
-    "related_partners": {
-      "path": "/data/related_partners.json",
-      "rowCount": 1151
-    },
-    "related_partner_types": {
-      "path": "/data/related_partner_types.json",
-      "rowCount": 7590
-    },
-    "related_conditions": {
-      "path": "/data/related_conditions.json",
-      "rowCount": 51
-    },
-    "related_partner_points": {
-      "path": "/data/related_partner_points.json",
-      "rowCount": 9
-    },
-    "knife_strengthens": {
-      "path": "/data/knife_strengthens.json",
-      "rowCount": 72
-    },
-    "skills": {
-      "path": "/data/skills.json",
-      "rowCount": 8048
-    },
-    "partner_changes": {
-      "path": "/data/partner_changes.json",
-      "rowCount": 931
-    },
-    "hero_change_attrs": {
-      "path": "/data/hero_change_attrs.json",
-      "rowCount": 133
-    },
-    "knife_expands": {
-      "path": "/data/knife_expands.json",
-      "rowCount": 96
-    },
-    "base_stones": {
-      "path": "/data/base_stones.json",
-      "rowCount": 132
-    },
-    "home_girl_friends": {
-      "path": "/data/home_girl_friends.json",
-      "rowCount": 10
-    },
-    "home_girl_awards": {
-      "path": "/data/home_girl_awards.json",
-      "rowCount": 24
-    },
-    "home_girl_interacts": {
-      "path": "/data/home_girl_interacts.json",
-      "rowCount": 8
-    },
-    "home_girl_moods": {
-      "path": "/data/home_girl_moods.json",
-      "rowCount": 5
+    "awards": {
+      "path": "/data/awards.json",
+      "rowCount": 10066
     },
     "base_equips": {
       "path": "/data/base_equips.json",
       "rowCount": 800
     },
-    "suits": {
-      "path": "/data/suits.json",
-      "rowCount": 158
+    "base_stones": {
+      "path": "/data/base_stones.json",
+      "rowCount": 132
     },
-    "equip_upgrades": {
-      "path": "/data/equip_upgrades.json",
-      "rowCount": 88
+    "buff_effects": {
+      "path": "/data/buff_effects.json",
+      "rowCount": 93
+    },
+    "build_consumes": {
+      "path": "/data/build_consumes.json",
+      "rowCount": 1400
+    },
+    "build_values": {
+      "path": "/data/build_values.json",
+      "rowCount": 8400
+    },
+    "config_values": {
+      "path": "/data/config_values.json",
+      "rowCount": 666
+    },
+    "enemies": {
+      "path": "/data/enemies.json",
+      "rowCount": 19900
+    },
+    "enemy_armies": {
+      "path": "/data/enemy_armies.json",
+      "rowCount": 4191
     },
     "equip_additionals": {
       "path": "/data/equip_additionals.json",
@@ -117,53 +45,53 @@
       "path": "/data/equip_generates.json",
       "rowCount": 180
     },
-    "wake_ups": {
-      "path": "/data/wake_ups.json",
-      "rowCount": 147
+    "equip_upgrades": {
+      "path": "/data/equip_upgrades.json",
+      "rowCount": 88
     },
-    "leader_wake_ups": {
-      "path": "/data/leader_wake_ups.json",
-      "rowCount": 104
+    "hero_talents": {
+      "path": "/data/hero_talents.json",
+      "rowCount": 206
     },
-    "wake_up_equips": {
-      "path": "/data/wake_up_equips.json",
-      "rowCount": 160
+    "military": {
+      "path": "/data/military.json",
+      "rowCount": 36
     },
-    "pet_level_ups": {
-      "path": "/data/pet_level_ups.json",
-      "rowCount": 4655
+    "temple_plies": {
+      "path": "/data/temple_plies.json",
+      "rowCount": 12
     },
-    "vice_pet_makes": {
-      "path": "/data/vice_pet_makes.json",
-      "rowCount": 21
+    "org_additions": {
+      "path": "/data/org_additions.json",
+      "rowCount": 52
     },
-    "vice_pet_rank_ups": {
-      "path": "/data/vice_pet_rank_ups.json",
-      "rowCount": 105
+    "org_base": {
+      "path": "/data/org_base.json",
+      "rowCount": 51
     },
-    "vice_pet_trains": {
-      "path": "/data/vice_pet_trains.json",
-      "rowCount": 3
+    "org_devotions": {
+      "path": "/data/org_devotions.json",
+      "rowCount": 159
     },
-    "main_pet_rank_ups": {
-      "path": "/data/main_pet_rank_ups.json",
+    "skills": {
+      "path": "/data/skills.json",
+      "rowCount": 8048
+    },
+    "star_maps": {
+      "path": "/data/star_maps.json",
       "rowCount": 15
     },
-    "achievements": {
-      "path": "/data/achievements.json",
-      "rowCount": 164
+    "star_points": {
+      "path": "/data/star_points.json",
+      "rowCount": 225
     },
-    "achievement_titles": {
-      "path": "/data/achievement_titles.json",
-      "rowCount": 78
+    "suits": {
+      "path": "/data/suits.json",
+      "rowCount": 158
     },
-    "achievement_groups": {
-      "path": "/data/achievement_groups.json",
-      "rowCount": 30
-    },
-    "achievement_classes": {
-      "path": "/data/achievement_classes.json",
-      "rowCount": 6
+    "tsystemlanguage": {
+      "path": "/data/tsystemlanguage.json",
+      "rowCount": 2034
     },
     "tavern_grades": {
       "path": "/data/tavern_grades.json",
@@ -185,13 +113,25 @@
       "path": "/data/treasure_upgrades.json",
       "rowCount": 924
     },
-    "spirit_schools": {
-      "path": "/data/spirit_schools.json",
-      "rowCount": 6
+    "vip_configs": {
+      "path": "/data/vip_configs.json",
+      "rowCount": 11
     },
-    "spirit_school_exps": {
-      "path": "/data/spirit_school_exps.json",
-      "rowCount": 3018
+    "weapon_skills": {
+      "path": "/data/weapon_skills.json",
+      "rowCount": 80
+    },
+    "knives": {
+      "path": "/data/knives.json",
+      "rowCount": 24
+    },
+    "knife_expands": {
+      "path": "/data/knife_expands.json",
+      "rowCount": 96
+    },
+    "recommend_heroes": {
+      "path": "/data/recommend_heroes.json",
+      "rowCount": 19
     },
     "butterflies": {
       "path": "/data/butterflies.json",
@@ -201,41 +141,57 @@
       "path": "/data/butterfly_feedings.json",
       "rowCount": 1749
     },
-    "black_market_items": {
-      "path": "/data/black_market_items.json",
-      "rowCount": 1071
+    "home_girl_friends": {
+      "path": "/data/home_girl_friends.json",
+      "rowCount": 10
     },
-    "enemy_armies": {
-      "path": "/data/enemy_armies.json",
-      "rowCount": 4187
+    "home_girl_awards": {
+      "path": "/data/home_girl_awards.json",
+      "rowCount": 24
     },
-    "enemies": {
-      "path": "/data/enemies.json",
-      "rowCount": 18382
+    "home_girl_interacts": {
+      "path": "/data/home_girl_interacts.json",
+      "rowCount": 8
     },
-    "awards": {
-      "path": "/data/awards.json",
-      "rowCount": 10066
+    "home_girl_moods": {
+      "path": "/data/home_girl_moods.json",
+      "rowCount": 5
     },
-    "config_values": {
-      "path": "/data/config_values.json",
-      "rowCount": 665
+    "seven_hero_little_stars": {
+      "path": "/data/seven_hero_little_stars.json",
+      "rowCount": 42
     },
-    "org_base": {
-      "path": "/data/org_base.json",
-      "rowCount": 51
+    "seven_hero_stars": {
+      "path": "/data/seven_hero_stars.json",
+      "rowCount": 7
     },
-    "org_additions": {
-      "path": "/data/org_additions.json",
-      "rowCount": 52
+    "seven_hero_armies": {
+      "path": "/data/seven_hero_armies.json",
+      "rowCount": 21
     },
-    "org_devotions": {
-      "path": "/data/org_devotions.json",
-      "rowCount": 159
+    "seven_hero_daily_awards": {
+      "path": "/data/seven_hero_daily_awards.json",
+      "rowCount": 7
     },
-    "vip_configs": {
-      "path": "/data/vip_configs.json",
-      "rowCount": 11
+    "seven_hero_souls": {
+      "path": "/data/seven_hero_souls.json",
+      "rowCount": 8
+    },
+    "achievements": {
+      "path": "/data/achievements.json",
+      "rowCount": 164
+    },
+    "achievement_groups": {
+      "path": "/data/achievement_groups.json",
+      "rowCount": 30
+    },
+    "achievement_classes": {
+      "path": "/data/achievement_classes.json",
+      "rowCount": 6
+    },
+    "achievement_titles": {
+      "path": "/data/achievement_titles.json",
+      "rowCount": 78
     },
     "ornament_values": {
       "path": "/data/ornament_values.json",
@@ -245,49 +201,125 @@
       "path": "/data/ornament_upgrades.json",
       "rowCount": 48
     },
-    "star_maps": {
-      "path": "/data/star_maps.json",
-      "rowCount": 15
+    "beauty": {
+      "path": "/data/beauty.json",
+      "rowCount": 5
     },
-    "star_points": {
-      "path": "/data/star_points.json",
-      "rowCount": 225
+    "beautiful_clothes": {
+      "path": "/data/beautiful_clothes.json",
+      "rowCount": 25
     },
     "temple_points": {
       "path": "/data/temple_points.json",
       "rowCount": 360
     },
-    "temple_values": {
-      "path": "/data/temple_values.json",
-      "rowCount": 1320
-    },
     "temple_pvps": {
       "path": "/data/temple_pvps.json",
       "rowCount": 39
     },
-    "temple_plies": {
-      "path": "/data/temple_plies.json",
-      "rowCount": 12
+    "temple_values": {
+      "path": "/data/temple_values.json",
+      "rowCount": 1320
     },
-    "military": {
-      "path": "/data/military.json",
-      "rowCount": 36
+    "tgspvpdailyaward": {
+      "path": "/data/tgspvpdailyaward.json",
+      "rowCount": 3
     },
-    "culling_magics": {
-      "path": "/data/culling_magics.json",
-      "rowCount": 1204
+    "tgspvp_reward": {
+      "path": "/data/tgspvp_reward.json",
+      "rowCount": 110
     },
-    "culling_stages": {
-      "path": "/data/culling_stages.json",
-      "rowCount": 42
+    "hd_jigsaws": {
+      "path": "/data/hd_jigsaws.json",
+      "rowCount": 1
     },
-    "equip_forging": {
-      "path": "/data/equip_forging.json",
-      "rowCount": 40
+    "hd_big_turntables": {
+      "path": "/data/hd_big_turntables.json",
+      "rowCount": 2
     },
-    "equip_advancement": {
-      "path": "/data/equip_advancement.json",
-      "rowCount": 112
+    "spirit_schools": {
+      "path": "/data/spirit_schools.json",
+      "rowCount": 6
+    },
+    "spirit_school_exps": {
+      "path": "/data/spirit_school_exps.json",
+      "rowCount": 3018
+    },
+    "bleach_jigsaws": {
+      "path": "/data/bleach_jigsaws.json",
+      "rowCount": 1
+    },
+    "partner_changes": {
+      "path": "/data/partner_changes.json",
+      "rowCount": 931
+    },
+    "black_market_items": {
+      "path": "/data/black_market_items.json",
+      "rowCount": 1071
+    },
+    "hero_change_attrs": {
+      "path": "/data/hero_change_attrs.json",
+      "rowCount": 133
+    },
+    "main_pet_rank_ups": {
+      "path": "/data/main_pet_rank_ups.json",
+      "rowCount": 15
+    },
+    "pet_level_ups": {
+      "path": "/data/pet_level_ups.json",
+      "rowCount": 4655
+    },
+    "vice_pet_makes": {
+      "path": "/data/vice_pet_makes.json",
+      "rowCount": 21
+    },
+    "vice_pet_rank_ups": {
+      "path": "/data/vice_pet_rank_ups.json",
+      "rowCount": 105
+    },
+    "vice_pet_trains": {
+      "path": "/data/vice_pet_trains.json",
+      "rowCount": 3
+    },
+    "tfighterdetail": {
+      "path": "/data/tfighterdetail.json",
+      "rowCount": 14
+    },
+    "ttimehero": {
+      "path": "/data/ttimehero.json",
+      "rowCount": 39
+    },
+    "org_point_infos": {
+      "path": "/data/org_point_infos.json",
+      "rowCount": 180
+    },
+    "wake_up_equips": {
+      "path": "/data/wake_up_equips.json",
+      "rowCount": 160
+    },
+    "wake_ups": {
+      "path": "/data/wake_ups.json",
+      "rowCount": 147
+    },
+    "org_point_awards": {
+      "path": "/data/org_point_awards.json",
+      "rowCount": 20
+    },
+    "related_partners": {
+      "path": "/data/related_partners.json",
+      "rowCount": 1151
+    },
+    "related_partner_types": {
+      "path": "/data/related_partner_types.json",
+      "rowCount": 7590
+    },
+    "related_conditions": {
+      "path": "/data/related_conditions.json",
+      "rowCount": 51
+    },
+    "related_partner_points": {
+      "path": "/data/related_partner_points.json",
+      "rowCount": 9
     },
     "nightmare_points": {
       "path": "/data/nightmare_points.json",
@@ -297,25 +329,13 @@
       "path": "/data/nightmare_cities.json",
       "rowCount": 12
     },
-    "seven_hero_stars": {
-      "path": "/data/seven_hero_stars.json",
-      "rowCount": 7
+    "knife_strengthens": {
+      "path": "/data/knife_strengthens.json",
+      "rowCount": 72
     },
-    "seven_hero_little_stars": {
-      "path": "/data/seven_hero_little_stars.json",
-      "rowCount": 42
-    },
-    "seven_hero_souls": {
-      "path": "/data/seven_hero_souls.json",
-      "rowCount": 8
-    },
-    "seven_hero_armies": {
-      "path": "/data/seven_hero_armies.json",
-      "rowCount": 21
-    },
-    "seven_hero_daily_awards": {
-      "path": "/data/seven_hero_daily_awards.json",
-      "rowCount": 7
+    "leader_wake_ups": {
+      "path": "/data/leader_wake_ups.json",
+      "rowCount": 104
     },
     "soul_collection_rnds": {
       "path": "/data/soul_collection_rnds.json",
@@ -329,33 +349,33 @@
       "path": "/data/soul_collection_bases.json",
       "rowCount": 3
     },
-    "beautiful_clothes": {
-      "path": "/data/beautiful_clothes.json",
-      "rowCount": 25
+    "equip_forging": {
+      "path": "/data/equip_forging.json",
+      "rowCount": 40
     },
-    "beauty": {
-      "path": "/data/beauty.json",
-      "rowCount": 5
+    "equip_advancement": {
+      "path": "/data/equip_advancement.json",
+      "rowCount": 112
     },
-    "hero_talents": {
-      "path": "/data/hero_talents.json",
-      "rowCount": 206
+    "profession_refines": {
+      "path": "/data/profession_refines.json",
+      "rowCount": 100
     },
-    "hd_big_turntables": {
-      "path": "/data/hd_big_turntables.json",
-      "rowCount": 2
+    "culling_magics": {
+      "path": "/data/culling_magics.json",
+      "rowCount": 1204
     },
-    "hd_jigsaws": {
-      "path": "/data/hd_jigsaws.json",
-      "rowCount": 1
+    "culling_stages": {
+      "path": "/data/culling_stages.json",
+      "rowCount": 42
     },
-    "bleach_jigsaws": {
-      "path": "/data/bleach_jigsaws.json",
-      "rowCount": 1
+    "activity_details": {
+      "path": "/data/activity_details.json",
+      "rowCount": 185
     },
-    "buff_effects": {
-      "path": "/data/buff_effects.json",
-      "rowCount": 93
+    "heroes": {
+      "path": "/data/heroes.json",
+      "rowCount": 150
     }
   }
 }

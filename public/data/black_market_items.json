@@ -7165,15 +7165,15 @@
       "item_id": 14100005,
       "old_price": {
         "type": 0,
-        "code": 1,
-        "amount": 30
+        "code": 0,
+        "amount": 225000
       },
       "price": {
         "type": 0,
-        "code": 1,
-        "amount": 23
+        "code": 0,
+        "amount": 168750
       },
-      "number": 4,
+      "number": 24,
       "total_times": 1
     },
     {
@@ -9290,15 +9290,15 @@
       "item_id": 14100005,
       "old_price": {
         "type": 0,
-        "code": 1,
-        "amount": 30
+        "code": 0,
+        "amount": 270000
       },
       "price": {
         "type": 0,
-        "code": 1,
-        "amount": 23
+        "code": 0,
+        "amount": 202500
       },
-      "number": 4,
+      "number": 30,
       "total_times": 1
     },
     {
@@ -11336,7 +11336,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -11642,7 +11642,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -11659,7 +11659,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12033,7 +12033,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12050,7 +12050,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12407,7 +12407,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12424,7 +12424,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12441,7 +12441,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12798,7 +12798,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12815,7 +12815,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12832,7 +12832,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -12849,7 +12849,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13189,7 +13189,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13206,7 +13206,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13223,7 +13223,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13240,7 +13240,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13257,7 +13257,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13580,7 +13580,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13597,7 +13597,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13614,7 +13614,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13631,7 +13631,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13648,7 +13648,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13665,7 +13665,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -13988,7 +13988,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -14005,7 +14005,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -14022,7 +14022,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -14039,7 +14039,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -14056,7 +14056,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -14073,7 +14073,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -14090,7 +14090,7 @@
       "price": {
         "type": 24,
         "code": 28,
-        "amount": 180
+        "amount": 100
       },
       "number": 5,
       "total_times": 1
@@ -18209,5 +18209,6 @@
       "number": 1,
       "total_times": 1
     }
-  ]
+  ],
+  "generatedAt": "2026-07-04T17:54:43.119117Z"
 }

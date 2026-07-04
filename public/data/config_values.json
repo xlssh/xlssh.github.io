@@ -1,6 +1,6 @@
 {
   "table": "config_values",
-  "rowCount": 665,
+  "rowCount": 666,
   "rows": [
     {
       "id": 60100009,
@@ -5893,6 +5893,11 @@
       "value_type": "int"
     },
     {
+      "id": 61400005,
+      "value": 2,
+      "value_type": "int"
+    },
+    {
       "id": 61500001,
       "value": [
         10,
@@ -5980,7 +5985,7 @@
     },
     {
       "id": 61800008,
-      "value": 5,
+      "value": 1,
       "value_type": "int"
     },
     {
@@ -6578,5 +6583,6 @@
       "value": 15116999,
       "value_type": "int"
     }
-  ]
+  ],
+  "generatedAt": "2026-07-04T17:54:43.119117Z"
 }

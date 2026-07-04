@@ -1,6 +1,6 @@
 {
   "table": "enemy_armies",
-  "rowCount": 4187,
+  "rowCount": 4191,
   "rows": [
     {
       "id": 20101013,
@@ -73751,6 +73751,79 @@
       "leader_id": 12313372,
       "award_id": 22313315,
       "text": ""
+    },
+    {
+      "id": 21100601,
+      "name": "Tenso - Final Aizen",
+      "front": [
+        14100601
+      ],
+      "middle": [
+        14100603,
+        14100604
+      ],
+      "back": [
+        14100602,
+        14100605
+      ],
+      "leader_id": 14100602,
+      "award_id": 23000006,
+      "text": ""
+    },
+    {
+      "id": 21100701,
+      "name": "Tenso - Royal Guard Trial",
+      "front": [
+        14100701
+      ],
+      "middle": [
+        14100704
+      ],
+      "back": [
+        14100702,
+        14100703,
+        14100705
+      ],
+      "leader_id": 14100702,
+      "award_id": 23000006,
+      "text": ""
+    },
+    {
+      "id": 21100801,
+      "name": "Tenso - Royal Guard Trial 2",
+      "front": [
+        14100804
+      ],
+      "middle": [
+        14100801,
+        14100805
+      ],
+      "back": [
+        14100802,
+        14100803
+      ],
+      "leader_id": 14100803,
+      "award_id": 23000006,
+      "text": ""
+    },
+    {
+      "id": 21100901,
+      "name": "Tenso - Royal Guard Trial 3",
+      "front": [
+        14100904
+      ],
+      "middle": [
+        14100901,
+        14100905
+      ],
+      "back": [
+        14100902,
+        14100903
+      ],
+      "leader_id": 14100904,
+      "award_id": 23000006,
+      "text": ""
     }
-  ]
+  ],
+  "generatedAt": "2026-07-04T17:54:43.119117Z"
 }
