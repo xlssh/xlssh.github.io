@@ -1,531 +1,126 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { loadHeroes, loadSkills, loadBuffEffects, loadEnemies } from '../data/loaders';
-import { Hero, Skill, BuffEffect, Enemy } from '../types/db';
+import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import { loadHeroes, loadSkills, loadBuffEffects, loadEnemies, loadKnives } from '../data/loaders';
+import { Hero, Skill, BuffEffect, Enemy, Knife } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
+
 import {
   Swords,
   Search,
   FileCode,
   UploadCloud,
   Play,
-  TrendingUp,
   ShieldAlert,
-  Heart,
-  Info,
-  ListOrdered
+  ListOrdered,
+  Award,
+  Download,
+  Copy,
+  Clock,
+  Trophy,
+  Filter
 } from 'lucide-react';
 
-// --- Binary parser helper class ---
-class FightReportParser {
-  public view: DataView;
-  public pos: number = 0;
-  public version: number = 2.0;
+// Import modular types, utilities and parsers
+import {
+  FightReportParser,
+  CMD,
+  ACTIVE_TYPE,
+  decodeStatusFlags,
+  getSpecialFloatText,
+  hasStatusFlag,
+  FightRole,
+  FightReportData,
+  ParseDebugInfo,
+  FightTurn,
+  FightActive,
+  FightTarget
+} from '../utils/fight-report/parser';
 
-  constructor(buffer: ArrayBuffer) {
-    this.view = new DataView(buffer);
-  }
+import {
+  simulateFightReport,
+  KeyMoment
+} from '../utils/fight-report/simulation';
 
-  ensureAvailable(bytes: number): void {
-    if (this.pos + bytes > this.view.byteLength) {
-      throw new Error(
-        `Unexpected end of fight report at offset ${this.pos}. Needed ${bytes} bytes, only ${this.view.byteLength - this.pos} remain.`
-      );
-    }
-  }
+import {
+  downloadJson,
+  downloadCsv,
+  generateSummaryText
+} from '../utils/fight-report/export';
 
-  readByte(): number {
-    this.ensureAvailable(1);
-    const val = this.view.getInt8(this.pos);
-    this.pos += 1;
-    return val;
-  }
+// Import subcomponents
+import { RoundNavigator, TurnHighlight } from '../components/fight-report/RoundNavigator';
+import { FighterTeamPanel } from '../components/fight-report/FighterTeamPanel';
+import { KeyMomentsPanel } from '../components/fight-report/KeyMomentsPanel';
+import { TimelineTab } from '../components/fight-report/TimelineTab';
+import { SkillsTab } from '../components/fight-report/SkillsTab';
+import { BuffsTab } from '../components/fight-report/BuffsTab';
+import { DeathsTab } from '../components/fight-report/DeathsTab';
 
-  readUByte(): number {
-    this.ensureAvailable(1);
-    const val = this.view.getUint8(this.pos);
-    this.pos += 1;
-    return val;
-  }
-
-  readShort(): number {
-    this.ensureAvailable(2);
-    const val = this.view.getInt16(this.pos, false); // false = big-endian
-    this.pos += 2;
-    return val;
-  }
-
-  readUShort(): number {
-    this.ensureAvailable(2);
-    const val = this.view.getUint16(this.pos, false);
-    this.pos += 2;
-    return val;
-  }
-
-  readInt(): number {
-    this.ensureAvailable(4);
-    const val = this.view.getInt32(this.pos, false);
-    this.pos += 4;
-    return val;
-  }
-
-  readUInt(): number {
-    this.ensureAvailable(4);
-    const val = this.view.getUint32(this.pos, false);
-    this.pos += 4;
-    return val;
-  }
-
-  readUTF(): string {
-    this.ensureAvailable(2);
-    const len = this.readUShort();
-    this.ensureAvailable(len);
-
-    const bytes = new Uint8Array(this.view.buffer, this.view.byteOffset + this.pos, len);
-    this.pos += len;
-    return new TextDecoder("utf-8").decode(bytes);
-  }
-
-  readHealth(): number {
-    if (this.version >= 3.1) {
-      this.ensureAvailable(8);
-      const high = this.readUInt();
-      const low = this.readUInt();
-      return high * 4294967296 + low;
-    }
-    this.ensureAvailable(4);
-    return this.readUInt();
-  }
-
-  hasMoreBytes(): boolean {
-    return this.pos < this.view.byteLength;
-  }
-}
-
-// --- Confirmed Command Constants ---
-const CMD = {
-  NONE: 0,
-  ATTACK: 1,
-  ATTRBUFF: 2,
-  HURTBUFF: 3,
-  CONTROLBUFF: 4,
-  POSITION: 5,
-  STATUS: 6,
-  ATTACKEX: 7,
-  SHIELD: 8,
-  FLOAT: 9,
-} as const;
-
-// --- Confirmed Fight Active Type Constants ---
-const ACTIVE_TYPE = {
-  NORMAL_ATTACK: 1,
-  SKILL_ATTACK: 2,
-  BLOCK: 3,
-  PASSIVE_SKILL: 4,
-  DIED_SKILL: 5,
-  NORMAL_ATTACK_EX: 7,
-  ROUND_SKILL: 10,
-} as const;
-
-// --- Full Confirmed Status Flags ---
-const STATUS_FLAGS: Record<number, string> = {
-  1: "No Normal Attack",
-  2: "Daze / Stun",
-  4: "Control Immune",
-  8: "Anger Reduction Immune",
-  16: "No Anger Gain",
-  32: "No Skill",
-  64: "No Healing",
-  128: "Petrified",
-  256: "Nothingness / Void",
-  512: "Super Dodge / All Miss",
-  1024: "Confusion",
-
-  2048: "Immune to No Anger",
-  4096: "Immune to No Skill",
-  8192: "Immune to No Healing",
-  16384: "Immune to Petrify",
-  32768: "Immune to Void",
-  65536: "Immune to No Normal Attack",
-  131072: "Immune to Confusion",
-  262144: "Immune to Super Dodge",
-  524288: "Immune to Mutilate",
-
-  1048576: "Frozen",
-  2097152: "Invincible",
-  4194304: "Beat Back",
-
-  33554432: "Hit",
-  67108864: "Crit",
-  134217728: "Block",
-  268435456: "Help / Rescue",
-  536870912: "Combo / Joint Attack",
-  1073741824: "Died",
-  2147483648: "Chain Target Effect",
-};
-
-// --- Special Text Type Mapping for CMD_FLOAT ---
-const SPECIAL_TEXT_TYPES: Record<number, string> = {
-  1: "Shield Cleared",
-  2: "Triple Damage",
-  3: "Ignore Damage",
-  4: "Defense Failure",
-  5: "Full HP",
-  6: "Instant Kill",
-  7: "Ignore Instant Kill",
-};
-
-// --- Helper Functions ---
-function decodeStatusFlags(statusNum: number): string[] {
-  const flags: string[] = [];
-
-  for (const [bitStr, label] of Object.entries(STATUS_FLAGS)) {
-    const bit = Number(bitStr);
-
-    if (bit === 2147483648) {
-      if (statusNum >= 2147483648) flags.push(label);
-    } else if ((statusNum & bit) !== 0) {
-      flags.push(label);
-    }
-  }
-
-  return flags;
-}
-
-function getSpecialFloatText(buffId: number): string {
-  return SPECIAL_TEXT_TYPES[buffId] || `Special Text #${buffId}`;
-}
-
-function hasStatusFlag(status: number, flag: number): boolean {
-  if (flag === 2147483648) {
-    return status >= 2147483648;
-  }
-  return (status & flag) !== 0;
-}
-
-// --- Data structures ---
-interface FightRole {
-  pos: number;
-  roleId: number;
-  quality: number;
-  level: number;
-  curHealth: number;
-  totleHealth: number;
-  curAnger: number;
-  skillId: number;
-  name: string;
-  rebirthNum?: number;
-}
-
-interface FightGroup {
-  camp: number;
-  knifeOfKillSoulId: number;
-  knifeSoulId: number;
-  bloodAddRate: number;
-  roles: FightRole[];
-}
-
-interface FightTarget {
-  cmd: number;
-  camp: number;
-  pos: number;
-  status: number;
-  result: {
-    hurtHp?: number;
-    hurtAnger?: number;
-    buffId?: number;
-    buffTurn?: number;
-  };
-  hpBefore?: number;
-  hpAfter?: number;
-  shieldBefore?: number;
-  shieldAfter?: number;
-  maxHp?: number;
-}
-
-interface FightActive {
-  camp: number;
-  pos: number;
-  skillEffectId: number;
-  activeType: number;
-  targets: FightTarget[];
-}
-
-interface FightTurn {
-  curTurn: number;
-  actives: FightActive[];
-}
-
-interface FightReportData {
-  version: number;
-  team1: FightGroup;
-  team2: FightGroup;
-  totalTurns: number;
-  turns: FightTurn[];
-}
-
-interface ParseDebugInfo {
-  byteLength: number;
-  finalOffset: number;
-  remainingBytes: number;
-  versionString: string;
-  version: number;
-  roleCounts: [number, number];
-  totalTurns: number;
-}
-
-interface FighterRuntimeState {
-  hp: number;
-  maxHp: number;
-  shield: number;
-  anger: number;
-  dead: boolean;
-  damageDealtRaw: number;
-  damageTakenRaw: number;
-  hpDamageDealt: number;
-  hpDamageTaken: number;
-  shieldAbsorbed: number;
-  shieldApplied: number;
-  healingDone: number;
-  healingReceived: number;
-}
-
-interface SimulationResult {
-  state: Map<string, FighterRuntimeState>;
-  teamTotals: {
-    rawDamageDealt: [number, number];
-    hpDamageDealt: [number, number];
-    healingDone: [number, number];
-  };
-}
-
-// --- HP / Shield Simulation helper ---
-function buildInitialRuntimeState(report: FightReportData): Map<string, FighterRuntimeState> {
-  const state = new Map<string, FighterRuntimeState>();
-
-  const addRole = (camp: number, role: FightRole) => {
-    state.set(`${camp}_${role.pos}`, {
-      hp: role.curHealth,
-      maxHp: role.totleHealth,
-      shield: 0,
-      anger: role.curAnger,
-      dead: role.curHealth <= 0,
-      damageDealtRaw: 0,
-      damageTakenRaw: 0,
-      hpDamageDealt: 0,
-      hpDamageTaken: 0,
-      shieldAbsorbed: 0,
-      shieldApplied: 0,
-      healingDone: 0,
-      healingReceived: 0,
-    });
-  };
-
-  report.team1.roles.forEach(role => addRole(0, role));
-  report.team2.roles.forEach(role => addRole(1, role));
-
-  return state;
-}
-
-function simulateReportState(report: FightReportData): SimulationResult {
-  const state = buildInitialRuntimeState(report);
-  const teamTotals: {
-    rawDamageDealt: [number, number];
-    hpDamageDealt: [number, number];
-    healingDone: [number, number];
-  } = {
-    rawDamageDealt: [0, 0],
-    hpDamageDealt: [0, 0],
-    healingDone: [0, 0],
-  };
-
-  const getKey = (camp: number, pos: number) => `${camp}_${pos}`;
-
-  for (const turn of report.turns) {
-    for (const active of turn.actives) {
-      const attKey = getKey(active.camp, active.pos);
-      const attacker = state.get(attKey);
-
-      // Reorder targets to match the AS3 MakeCommandList grouping priorities
-      const shieldTargets = active.targets.filter(t => t.cmd === CMD.SHIELD);
-      const hurtBuffTargets = active.targets.filter(t => t.cmd === CMD.HURTBUFF);
-      const statusTargets = active.targets.filter(t => t.cmd === CMD.STATUS);
-      const attackTargets = active.targets.filter(t => t.cmd === CMD.ATTACK || t.cmd === CMD.ATTACKEX || t.cmd === CMD.NONE);
-      const floatTargets = active.targets.filter(t => t.cmd === CMD.FLOAT);
-      const attrBuffTargets = active.targets.filter(t => t.cmd === CMD.ATTRBUFF);
-      const controlBuffTargets = active.targets.filter(t => t.cmd === CMD.CONTROLBUFF);
-      const positionTargets = active.targets.filter(t => t.cmd === CMD.POSITION);
-
-      const otherTargets = active.targets.filter(t =>
-        t.cmd !== CMD.SHIELD &&
-        t.cmd !== CMD.HURTBUFF &&
-        t.cmd !== CMD.STATUS &&
-        t.cmd !== CMD.ATTACK &&
-        t.cmd !== CMD.ATTACKEX &&
-        t.cmd !== CMD.NONE &&
-        t.cmd !== CMD.FLOAT &&
-        t.cmd !== CMD.ATTRBUFF &&
-        t.cmd !== CMD.CONTROLBUFF &&
-        t.cmd !== CMD.POSITION
-      );
-
-      const orderedTargets = [
-        ...shieldTargets,
-        ...hurtBuffTargets,
-        ...statusTargets,
-        ...attackTargets,
-        ...floatTargets,
-        ...attrBuffTargets,
-        ...controlBuffTargets,
-        ...positionTargets,
-        ...otherTargets,
-      ];
-
-
-      if (otherTargets.length > 0) {
-        console.warn("Unknown fight target commands encountered:", otherTargets);
-      }
-
-
-      for (const target of orderedTargets) {
-        const tarKey = getKey(target.camp, target.pos);
-        const fighter = state.get(tarKey);
-
-        if (!fighter) continue;
-
-        // Save pre-action state snapshots
-        target.hpBefore = fighter.hp;
-        target.shieldBefore = fighter.shield;
-        target.maxHp = fighter.maxHp;
-
-        // Shield command: buffTurn is shield HP.
-        if (target.cmd === CMD.SHIELD) {
-          const shieldHp = target.result.buffTurn || 0;
-          fighter.shield = shieldHp;
-          fighter.shieldApplied += shieldHp;
-          target.hpAfter = fighter.hp;
-          target.shieldAfter = fighter.shield;
-          continue;
-        }
-
-        // HP damage/healing.
-        const hurtHp = target.result.hurtHp || 0;
-
-        if (hurtHp !== 0) {
-          if (hurtHp < 0) {
-            // healing
-            const healVal = -hurtHp;
-            if (!fighter.dead) {
-              fighter.hp = Math.min(fighter.maxHp, fighter.hp + healVal);
-            }
-
-            fighter.healingReceived += healVal;
-            if (attacker) {
-              attacker.healingDone += healVal;
-            }
-            // Count in team totals regardless of whether attacker role exists
-            if (active.camp === 0 || active.camp === 1) {
-              teamTotals.healingDone[active.camp] += healVal;
-            }
-          } else {
-            // damage, shield first
-            const shieldBefore = fighter.shield;
-            const rawDamage = hurtHp;
-            const absorbed = Math.min(shieldBefore, rawDamage);
-            const hpDamage = rawDamage - absorbed;
-
-            fighter.shield -= absorbed;
-            fighter.hp = Math.max(0, fighter.hp - hpDamage);
-
-            // Stats accumulation
-            fighter.damageTakenRaw += rawDamage;
-            fighter.hpDamageTaken += hpDamage;
-            fighter.shieldAbsorbed += absorbed;
-
-            // Only count enemy damage in totals (no self or friendly fire)
-            const isEnemyTarget = active.camp !== target.camp;
-            if (isEnemyTarget) {
-              if (attacker) {
-                attacker.damageDealtRaw += rawDamage;
-                attacker.hpDamageDealt += hpDamage;
-              }
-              // Count in team totals regardless of whether attacker role exists (e.g. system attacker)
-              if (active.camp === 0 || active.camp === 1) {
-                teamTotals.rawDamageDealt[active.camp] += rawDamage;
-                teamTotals.hpDamageDealt[active.camp] += hpDamage;
-              }
-            }
-          }
-        }
-
-        // Anger logic from AS3: CurAnger -= HurtAnger
-        if (target.result.hurtAnger !== undefined && target.result.hurtAnger !== 0) {
-          fighter.anger -= target.result.hurtAnger;
-
-          if (fighter.anger < 0) fighter.anger = 0;
-          if (fighter.anger > 500) fighter.anger = 500;
-        }
-
-        if (hasStatusFlag(target.status, 1073741824)) { // bit 1073741824 = Died
-          fighter.dead = true;
-          fighter.hp = 0;
-        }
-
-        // Save post-action state snapshots
-        target.hpAfter = fighter.hp;
-        target.shieldAfter = fighter.shield;
-      }
-    }
-  }
-
-  return { state, teamTotals };
+interface RecentReport {
+  rid: string;
+  aid: string;
+  lang: string;
+  timestamp: number;
 }
 
 export const FightReportPage: React.FC = () => {
+  // Database loader states
   const [heroes, setHeroes] = useState<Hero[]>([]);
   const [skills, setSkills] = useState<Skill[]>([]);
   const [buffs, setBuffs] = useState<BuffEffect[]>([]);
   const [enemies, setEnemies] = useState<Enemy[]>([]);
+  const [knives, setKnives] = useState<Knife[]>([]);
   const [dbLoading, setDbLoading] = useState(true);
   const [dbError, setDbError] = useState<string | null>(null);
 
-  // User input URL / File states
+  // User interface state controllers
   const [inputUrl, setInputUrl] = useState('');
-  const [parseLoading, setParseLoading] = useState(false);
+  const [parseStage, setParseStage] = useState<'idle' | 'validating' | 'fetching' | 'parsing' | 'simulating' | 'finalizing' | 'done' | 'error'>('idle');
   const [parseError, setParseError] = useState<string | null>(null);
 
-  // Decoded Fight Report
+  // Core model state
   const [report, setReport] = useState<FightReportData | null>(null);
   const [debugInfo, setDebugInfo] = useState<ParseDebugInfo | null>(null);
 
-  // Tab states
-  const [activeTab, setActiveTab] = useState<'analytics' | 'fighters' | 'log'>('analytics');
+  // Navigation tab states
+  const [activeTab, setActiveTab] = useState<'overview' | 'fighters' | 'timeline' | 'skills' | 'buffs' | 'deaths' | 'log'>('overview');
   const [selectedRoundTab, setSelectedRoundTab] = useState<number>(1);
+  const [highlightedMomentId, setHighlightedMomentId] = useState<string | null>(null);
 
-  // Drag-and-drop state
+  // Clipboard copy feedback toast
+  const [copiedText, setCopiedText] = useState(false);
+
+  // Log filter controls
+  const [logSearch, setLogSearch] = useState('');
+  const [logFilter, setLogFilter] = useState<'all' | 'damage' | 'heal' | 'death' | 'buff' | 'shield' | 'crit'>('all');
+
+  // Local Storage trigger to re-render history
+  const [historyTrigger, setHistoryTrigger] = useState(0);
+
+  // Drag and Drop uploader state
   const [isDragging, setIsDragging] = useState(false);
-
-  // File Drag-Drop Ref
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Load database entities for mapping
+  // Load Mapping Databases
   const loadDb = async () => {
     try {
       setDbLoading(true);
       setDbError(null);
-      const [heroesRes, skillsRes, buffsRes, enemiesRes] = await Promise.all([
+      const [heroesRes, skillsRes, buffsRes, enemiesRes, knivesRes] = await Promise.all([
         loadHeroes(),
         loadSkills(),
         loadBuffEffects(),
-        loadEnemies()
+        loadEnemies(),
+        loadKnives()
       ]);
       setHeroes(heroesRes.rows);
       setSkills(skillsRes.rows);
       setBuffs(buffsRes.rows);
       setEnemies(enemiesRes.rows);
+      setKnives(knivesRes.rows);
     } catch (err: any) {
       console.error(err);
-      setDbError("Failed to load heroes, skills, status buffs, or enemies mapping templates.");
+      setDbError("Failed to map combat components: could not fetch game metadata templates.");
     } finally {
       setDbLoading(false);
     }
@@ -535,6 +130,7 @@ export const FightReportPage: React.FC = () => {
     loadDb();
   }, []);
 
+  // Map converters
   const heroesMap = useMemo(() => {
     const map = new Map<number, Hero>();
     heroes.forEach(h => map.set(h.id, h));
@@ -559,7 +155,61 @@ export const FightReportPage: React.FC = () => {
     return map;
   }, [buffs]);
 
-  // Decode binary data helper
+  const knivesMap = useMemo(() => {
+    const map = new Map<number, Knife>();
+    knives.forEach(k => map.set(k.id, k));
+    return map;
+  }, [knives]);
+
+  // Translate role name
+  const resolveRoleName = (role: FightRole): string => {
+    if (role.name && role.name.trim()) return role.name;
+    const match = heroesMap.get(role.roleId);
+    if (match && match.name) return match.name;
+    const enemyMatch = enemiesMap.get(role.roleId);
+    if (enemyMatch && enemyMatch.name) return enemyMatch.name;
+    return `Mercenary #${role.roleId}`;
+  };
+
+  // Translate attacker name, resolving pos 100 as the team's Zanpakuto (Knife)
+  const resolveAttackerName = useCallback((camp: number, pos: number, role?: FightRole): string => {
+    if (pos === 100) {
+      const group = camp === 0 ? report?.team1 : report?.team2;
+      const knifeId = group?.knifeOfKillSoulId || 0;
+      if (knifeId > 0) {
+        const match = knivesMap.get(knifeId);
+        if (match && match.name) return match.name;
+      }
+      return "Zanpakuto (Knife)";
+    }
+    if (role) return resolveRoleName(role);
+    return `Fighter Pos ${pos}`;
+  }, [report, knivesMap, resolveRoleName]);
+
+  // Inline URL validators
+  const urlValidation = useMemo(() => {
+    if (!inputUrl.trim()) return { valid: false, message: "" };
+
+    if (inputUrl.includes('rid=')) {
+      try {
+        const queryStr = inputUrl.split('?')[1] || '';
+        const params = new URLSearchParams(queryStr);
+        const rid = params.get('rid');
+        if (!rid) return { valid: false, message: "URL lacks report ID (?rid=)." };
+        return { valid: true, rid };
+      } catch {
+        return { valid: false, message: "Invalid URL string format." };
+      }
+    } else {
+      // Must be purely numeric string
+      if (/^\d+$/.test(inputUrl.trim())) {
+        return { valid: true, rid: inputUrl.trim() };
+      }
+      return { valid: false, message: "Enter a valid URL or numeric Report ID." };
+    }
+  }, [inputUrl]);
+
+  // Decode binary buffer
   const decodeReportBinary = (arrayBuffer: ArrayBuffer): { report: FightReportData; debug: ParseDebugInfo } => {
     const parser = new FightReportParser(arrayBuffer);
     const versionStr = parser.readUTF();
@@ -582,7 +232,7 @@ export const FightReportPage: React.FC = () => {
       return { pos, roleId, quality, level, curHealth, totleHealth, curAnger, skillId, name, rebirthNum };
     };
 
-    const parseGroup = (camp: number): FightGroup => {
+    const parseGroup = (camp: number): any => {
       const knifeOfKillSoulId = parser.readInt();
       const knifeSoulId = parser.readInt();
       const bloodAddRate = parser.readInt();
@@ -621,17 +271,17 @@ export const FightReportPage: React.FC = () => {
           const status = parser.readUInt();
 
           const result: any = {};
-          if (cmd === CMD.ATTACK || cmd === CMD.ATTACKEX) { // CMD_ATTACK, CMD_ATTACKEX
+          if (cmd === CMD.ATTACK || cmd === CMD.ATTACKEX) {
             result.hurtHp = parser.readInt();
             result.hurtAnger = parser.readInt();
-          } else if (cmd === CMD.HURTBUFF) { // CMD_HURTBUFF
+          } else if (cmd === CMD.HURTBUFF) {
             result.hurtHp = parser.readInt();
             result.hurtAnger = parser.readInt();
             result.buffId = parser.readUInt();
-          } else if (cmd === CMD.CONTROLBUFF || cmd === CMD.ATTRBUFF || cmd === CMD.SHIELD) { // CMD_CONTROLBUFF, CMD_ATTRBUFF, CMD_SHIELD
+          } else if (cmd === CMD.CONTROLBUFF || cmd === CMD.ATTRBUFF || cmd === CMD.SHIELD) {
             result.buffId = parser.readUInt();
             result.buffTurn = parser.readUInt();
-          } else if (cmd === CMD.POSITION || cmd === CMD.FLOAT) { // CMD_POSITION, CMD_FLOAT
+          } else if (cmd === CMD.POSITION || cmd === CMD.FLOAT) {
             result.buffId = parser.readUInt();
             result.buffTurn = parser.readUInt();
           }
@@ -647,10 +297,6 @@ export const FightReportPage: React.FC = () => {
 
     const finalOffset = parser.pos;
     const remainingBytes = arrayBuffer.byteLength - finalOffset;
-
-    if (remainingBytes > 0) {
-      console.warn(`Fight report parsed with ${remainingBytes} trailing bytes.`);
-    }
 
     const debug: ParseDebugInfo = {
       byteLength: arrayBuffer.byteLength,
@@ -674,34 +320,36 @@ export const FightReportPage: React.FC = () => {
     };
   };
 
-  const handleFetchReport = async () => {
-    if (!inputUrl.trim()) return;
-    setParseLoading(true);
+  // Load and execute remote link fetch
+  const handleFetchReport = async (overrideUrl?: string) => {
+    const targetQuery = overrideUrl || inputUrl;
+    if (!targetQuery.trim()) return;
+
+    setParseStage('validating');
     setParseError(null);
     setReport(null);
     setDebugInfo(null);
 
     try {
-      // Extract rid
       let rid = "";
       let aid = "86";
       let lang = "en_US";
 
-      if (inputUrl.includes('rid=')) {
-        const queryStr = inputUrl.split('?')[1] || '';
-        const urlParams = new URLSearchParams(queryStr);
-        rid = urlParams.get('rid') || "";
-        aid = urlParams.get('aid') || "86";
-        lang = urlParams.get('lang') || "en_US";
+      if (targetQuery.includes('rid=')) {
+        const queryStr = targetQuery.split('?')[1] || '';
+        const params = new URLSearchParams(queryStr);
+        rid = params.get('rid') || "";
+        aid = params.get('aid') || "86";
+        lang = params.get('lang') || "en_US";
       } else {
-        // Assume raw numeric rid
-        rid = inputUrl.trim();
+        rid = targetQuery.trim();
       }
 
       if (!rid) {
-        throw new Error("Unable to extract Fight Report ID (rid). Please check your URL format.");
+        throw new Error("Could not parse fight Report ID (rid). Validate query string matches standard formats.");
       }
 
+      setParseStage('fetching');
       const targetUrl =
         `https://game.shinigamiworld.com/fightreport/data.php` +
         `?rid=${encodeURIComponent(rid)}` +
@@ -714,29 +362,65 @@ export const FightReportPage: React.FC = () => {
         `&server=0` +
         `&lang=${encodeURIComponent(lang)}`;
 
-      // Fetch via CORS Proxy
       const proxyUrl = `https://cors-proxy.shinigamiworld-fightreport.workers.dev/?url=${encodeURIComponent(targetUrl)}`;
       const response = await fetch(proxyUrl);
       if (!response.ok) {
-        throw new Error(`Proxy request failed: ${response.statusText}`);
+        throw new Error(`Proxy worker rejected combat packets request: ${response.statusText}`);
       }
 
       const arrayBuffer = await response.arrayBuffer();
       if (arrayBuffer.byteLength < 10) {
-        throw new Error("Fight report data is empty or invalid. Check that the Report ID exists.");
+        throw new Error("Combat packet binary is empty or truncated. Ensure fight ID remains unexpired.");
       }
 
+      setParseStage('parsing');
       const { report: decodedReport, debug: decodedDebug } = decodeReportBinary(arrayBuffer);
+
+      setParseStage('simulating');
+      // Triggers state flow simulation automatically via useMemo on battleStats
       setReport(decodedReport);
       setDebugInfo(decodedDebug);
       setSelectedRoundTab(1);
+
+      // Save to local storage history
+      saveRecentReport(rid, aid, lang);
+
+      // Update Query String parameters
+      const url = new URL(window.location.href);
+      url.searchParams.set('rid', rid);
+      url.searchParams.set('aid', aid);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState(null, '', url.toString());
+
+      setParseStage('done');
     } catch (err: any) {
       console.error(err);
-      setParseError(err.message || "Failed to load fight report. Please try uploading the file directly.");
-    } finally {
-      setParseLoading(false);
+      setParseError(err.message || "Decoding failure during remote link parsing. Use drag and drop upload fallback.");
+      setParseStage('error');
     }
   };
+
+  // Local Storage Save History
+  const saveRecentReport = (rid: string, aid: string, lang: string) => {
+    try {
+      const currentList: RecentReport[] = JSON.parse(localStorage.getItem('recent_fight_reports:v1') || '[]');
+      const filtered = currentList.filter(r => r.rid !== rid);
+      filtered.unshift({ rid, aid, lang, timestamp: Date.now() });
+      localStorage.setItem('recent_fight_reports:v1', JSON.stringify(filtered.slice(0, 8)));
+      setHistoryTrigger(prev => prev + 1);
+    } catch (e) {
+      console.warn("Local storage capacity limit exceeded: history tracking is disabled.", e);
+    }
+  };
+
+  // Read History List
+  const recentReports = useMemo(() => {
+    try {
+      return JSON.parse(localStorage.getItem('recent_fight_reports:v1') || '[]') as RecentReport[];
+    } catch {
+      return [] as RecentReport[];
+    }
+  }, [historyTrigger]);
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -745,7 +429,7 @@ export const FightReportPage: React.FC = () => {
   };
 
   const processUploadedFile = (file: File) => {
-    setParseLoading(true);
+    setParseStage('parsing');
     setParseError(null);
     setReport(null);
     setDebugInfo(null);
@@ -755,138 +439,278 @@ export const FightReportPage: React.FC = () => {
       try {
         const buffer = event.target?.result as ArrayBuffer;
         if (!buffer || buffer.byteLength < 10) {
-          throw new Error("Uploaded file is empty or corrupted.");
+          throw new Error("Uploaded binary buffer is truncated or corrupted.");
         }
         const { report: decodedReport, debug: decodedDebug } = decodeReportBinary(buffer);
+        setParseStage('simulating');
         setReport(decodedReport);
         setDebugInfo(decodedDebug);
         setSelectedRoundTab(1);
+        setParseStage('done');
       } catch (err: any) {
         console.error(err);
-        setParseError(err.message || "Failed to parse fight report binary file.");
-      } finally {
-        setParseLoading(false);
+        setParseError(err.message || "Binary parsing failure: invalid file structure.");
+        setParseStage('error');
       }
     };
     reader.readAsArrayBuffer(file);
   };
 
-  // Helper: Get localized name
-  const resolveRoleName = (role: FightRole): string => {
-    if (role.name && role.name.trim()) return role.name;
-    const match = heroesMap.get(role.roleId);
-    if (match && match.name) return match.name;
-    const enemyMatch = enemiesMap.get(role.roleId);
-    if (enemyMatch && enemyMatch.name) return enemyMatch.name;
-    return `Mercenary #${role.roleId}`;
-  };
+  // Auto load rid from query parameters on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const rid = params.get('rid');
+    const aid = params.get('aid') || '86';
+    const lang = params.get('lang') || 'en_US';
 
-  // Calculated Battle Statistics
+    if (rid) {
+      const simulatedUrl = `rid=${rid}&aid=${aid}&lang=${lang}`;
+      setInputUrl(simulatedUrl);
+      handleFetchReport(simulatedUrl);
+    }
+  }, []);
+
+  // Compute Battle Statistics and Snapshots via Simulation Engine
   const battleStats = useMemo(() => {
     if (!report) return null;
 
-    const { state: finalState, teamTotals } = simulateReportState(report);
+    return simulateFightReport(
+      report,
+      resolveAttackerName,
+      skillsMap,
+      buffsMap
+    );
+  }, [report, knivesMap, heroesMap, enemiesMap, skillsMap, buffsMap, resolveAttackerName]);
 
-    const totalDmgTeam1 = teamTotals.rawDamageDealt[0];
-    const totalDmgTeam2 = teamTotals.rawDamageDealt[1];
-    const totalHealTeam1 = teamTotals.healingDone[0];
-    const totalHealTeam2 = teamTotals.healingDone[1];
+  // Round highlights Map for the round selector
+  const roundHighlights = useMemo(() => {
+    const map = new Map<number, TurnHighlight>();
+    if (!report) return map;
 
-    let team1Hp = 0;
-    let team2Hp = 0;
+    for (const turn of report.turns) {
+      let hasDeath = false;
+      let hasCrit = false;
+      let hasShield = false;
 
-    for (const [key, fighter] of finalState.entries()) {
-      if (key.startsWith("0_")) {
-        team1Hp += fighter.hp;
-      } else {
-        team2Hp += fighter.hp;
+      for (const active of turn.actives) {
+        for (const target of active.targets) {
+          if (hasStatusFlag(target.status, 1073741824)) hasDeath = true;
+          if (hasStatusFlag(target.status, 67108864)) hasCrit = true;
+          if (target.cmd === CMD.SHIELD) hasShield = true;
+        }
       }
+      map.set(turn.curTurn, { hasDeath, hasCrit, hasShield });
     }
-
-    const winnerCamp = team1Hp > team2Hp ? 0 : 1;
-
-    const allRawDmgValues = Array.from(finalState.values()).map(f => f.damageDealtRaw);
-    const maxDamageDoneRaw = Math.max(1, ...allRawDmgValues);
-
-    const allRawTakenValues = Array.from(finalState.values()).map(f => f.damageTakenRaw);
-    const maxDamageTakenRaw = Math.max(1, ...allRawTakenValues);
-
-    const allHealValues = Array.from(finalState.values()).map(f => f.healingDone);
-    const maxHealing = Math.max(1, ...allHealValues);
-
-    return {
-      finalState,
-      totalDmgTeam1,
-      totalDmgTeam2,
-      totalHealTeam1,
-      totalHealTeam2,
-      winnerCamp,
-      team1Hp,
-      team2Hp,
-      maxDamageDoneRaw,
-      maxDamageTakenRaw,
-      maxHealing
-    };
+    return map;
   }, [report]);
 
-  if (dbLoading) return <LoadingState message="Mapping fighter database assets and configuring packet decoders..." />;
+  // Fighter names Map for timeline select filter
+  const fighterNames = useMemo(() => {
+    const map = new Map<string, string>();
+    if (!report) return map;
+
+    report.team1.roles.forEach(r => map.set(`0_${r.pos}`, resolveRoleName(r)));
+    report.team2.roles.forEach(r => map.set(`1_${r.pos}`, resolveRoleName(r)));
+    return map;
+  }, [report, heroesMap, enemiesMap]);
+
+  // Jump to specific key moment handler
+  const handleJumpToMoment = (moment: KeyMoment) => {
+    setActiveTab('log');
+    setSelectedRoundTab(moment.round);
+    setHighlightedMomentId(`${moment.round}-${moment.activeIndex}`);
+  };
+
+  // Format Anger Change Helper
+  const formatAngerChange = (hurtAnger: number): string => {
+    const actualChange = -hurtAnger;
+    return actualChange > 0 ? `+${actualChange}` : `${actualChange}`;
+  };
+
+  // Copy structured summary to clipboard
+  const handleCopySummary = () => {
+    if (!report || !battleStats) return;
+    const text = generateSummaryText(report, battleStats);
+    navigator.clipboard.writeText(text).then(() => {
+      setCopiedText(true);
+      setTimeout(() => setCopiedText(false), 2000);
+    });
+  };
+
+  // Loading text helpers
+  const getLoadingStageText = () => {
+    switch (parseStage) {
+      case 'validating': return 'Validating URL address structure...';
+      case 'fetching': return 'Downloading combat binary trace...';
+      case 'parsing': return 'Parsing packet streams & structures...';
+      case 'simulating': return 'Simulating HP & Shield ticks...';
+      case 'finalizing': return 'Compiling database analytics...';
+      default: return 'Synthesizing dashboard...';
+    }
+  };
+
+  // Combat Log Filtering and Searching
+  const filteredActives = useMemo(() => {
+    if (!report) return [];
+    const activeRound = report.turns.find(t => t.curTurn === selectedRoundTab);
+    if (!activeRound) return [];
+
+    return activeRound.actives.map((act, actIdx) => {
+      const attackerCamp = act.camp;
+      const attackerPos = act.pos;
+      const attackerGroup = attackerCamp === 0 ? report.team1 : report.team2;
+      const attackerRole = attackerGroup.roles.find(r => r.pos === attackerPos);
+      const attackerName = attackerRole ? resolveRoleName(attackerRole) : `Fighter Pos ${attackerPos}`;
+
+      let actionLabel = "attacks";
+      if (act.activeType === ACTIVE_TYPE.SKILL_ATTACK) {
+        const skillName = skillsMap.get(act.skillEffectId) || `Skill #${act.skillEffectId}`;
+        actionLabel = `casts Skill [${skillName}]`;
+      } else if (act.activeType === ACTIVE_TYPE.NORMAL_ATTACK || act.activeType === ACTIVE_TYPE.NORMAL_ATTACK_EX) {
+        actionLabel = act.activeType === ACTIVE_TYPE.NORMAL_ATTACK_EX ? "attacks with Normal Strike EX" : "attacks with Normal Strike";
+      } else if (act.activeType === ACTIVE_TYPE.BLOCK) {
+        actionLabel = "blocks / counterattacks";
+      } else if (act.activeType === ACTIVE_TYPE.PASSIVE_SKILL) {
+        actionLabel = "procs Passive Skill";
+      } else if (act.activeType === ACTIVE_TYPE.DIED_SKILL) {
+        actionLabel = "triggers Death Skill";
+      } else if (act.activeType === ACTIVE_TYPE.ROUND_SKILL) {
+        actionLabel = "triggers Round Skill";
+      }
+
+      // Filter targets list
+      const matchedTargets = act.targets.filter((tgt) => {
+        const tGroup = tgt.camp === 0 ? report.team1 : report.team2;
+        const tRole = tGroup.roles.find(r => r.pos === tgt.pos);
+        const tName = tRole ? resolveRoleName(tRole) : `Target Pos ${tgt.pos}`;
+        const hurtHp = tgt.result.hurtHp || 0;
+
+        // Search text matching
+        if (logSearch.trim()) {
+          const query = logSearch.toLowerCase();
+          const flags = decodeStatusFlags(tgt.status);
+          const textMatch =
+            attackerName.toLowerCase().includes(query) ||
+            tName.toLowerCase().includes(query) ||
+            actionLabel.toLowerCase().includes(query) ||
+            tgt.pos.toString() === query ||
+            flags.some(f => f.toLowerCase().includes(query));
+
+          if (!textMatch) return false;
+        }
+
+        // Action Tab filtering
+        if (logFilter === 'damage') {
+          return (tgt.cmd === CMD.ATTACK || tgt.cmd === CMD.ATTACKEX) && hurtHp > 0;
+        }
+        if (logFilter === 'heal') {
+          return hurtHp < 0;
+        }
+        if (logFilter === 'death') {
+          return hasStatusFlag(tgt.status, 1073741824);
+        }
+        if (logFilter === 'shield') {
+          return tgt.cmd === CMD.SHIELD;
+        }
+        if (logFilter === 'buff') {
+          return tgt.cmd === CMD.ATTRBUFF || tgt.cmd === CMD.CONTROLBUFF;
+        }
+        if (logFilter === 'crit') {
+          return hasStatusFlag(tgt.status, 67108864);
+        }
+
+        return true;
+      });
+
+      return {
+        active: act,
+        idx: actIdx,
+        attackerName,
+        attackerCamp,
+        actionLabel,
+        matchedTargets
+      };
+    }).filter(act => act.matchedTargets.length > 0 || !logSearch.trim()); // Only keep active skills if they matched searches
+  }, [report, selectedRoundTab, logSearch, logFilter, heroesMap, enemiesMap, skillsMap]);
+
+  if (dbLoading) return <LoadingState message="Connecting combat dictionary loaders and packing structures..." />;
   if (dbError) return <ErrorState message={dbError} onRetry={loadDb} />;
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Header Banner */}
+    <div className="space-y-6 animate-fade-in max-w-7xl mx-auto pb-12">
+      {/* Page Title Block */}
       <div className="p-6 md:p-8 rounded-2xl border border-border bg-surface shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div className="space-y-2">
           <div className="flex items-center gap-2 text-violet-600 dark:text-violet-400">
-            <Swords size={24} />
-            <span className="text-xs font-bold uppercase tracking-wider bg-violet-100 dark:bg-violet-950/40 px-2.5 py-0.5 rounded">PVP Oracle</span>
+            <Swords size={24} className="animate-pulse" />
+            <span className="text-xs font-black uppercase tracking-wider bg-violet-100 dark:bg-violet-950/40 px-2.5 py-0.5 rounded-lg border border-violet-500/10">
+              Oracle Tactical Analyzer
+            </span>
           </div>
-          <h1 className="text-3xl font-black text-text">Combat Fight Report Analyzer</h1>
-          <p className="text-xs text-muted max-w-xl">
-            Input a fight report URL or upload a downloaded fight report binary to reveal round-by-round combat replays, dealt DPS logs, and damage charts.
+          <h1 className="text-3xl font-black text-text tracking-tight">Fight Intelligence Dashboard</h1>
+          <p className="text-xs text-muted max-w-2xl leading-relaxed">
+            Analyze binary fight reports using our round simulation core. Unlock health charts, detailed casualties timelines, exact overkill margins, and full Excel/CSV matrices.
           </p>
         </div>
       </div>
 
-      {/* Input panel: URL pasted and Drag-Drop Uploader */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Fetch URL Card */}
-        <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
+      {/* Fetch / Upload controls panel */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Fetch Link Module */}
+        <div className="lg:col-span-2 p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
           <h3 className="font-extrabold text-sm text-text flex items-center gap-2">
             <Search size={16} className="text-violet-500" />
-            <span>Analyze via Fight Report URL</span>
+            <span>Parse Remote Report URL</span>
           </h3>
           <p className="text-xs text-muted">
-            Paste the full in-game fight report web link. The tool will parse the Report ID (`rid`) and download the combat stream automatically.
+            Paste the full in-game battle link or a specific numeric Report ID (`rid`) below.
           </p>
           <div className="space-y-3">
-            <input
-              type="text"
-              placeholder="https://game.shinigamiworld.com/fightreport/?rid=287713052178748..."
-              value={inputUrl}
-              onChange={(e) => setInputUrl(e.target.value)}
-              className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-border bg-bg text-text dark:text-zinc-250 focus:outline-none focus:ring-1.5 focus:ring-violet-500 placeholder-zinc-400 font-medium"
-            />
-            <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Paste game battle report URL or Report ID (e.g. 287713052178748)"
+                value={inputUrl}
+                onChange={(e) => setInputUrl(e.target.value)}
+                className={`w-full px-3.5 py-2.5 text-xs rounded-xl border border-border bg-bg text-text focus:outline-none focus:ring-1.5 focus:ring-violet-500 placeholder-zinc-400 font-bold ${inputUrl.trim() && !urlValidation.valid ? 'border-rose-400 focus:ring-rose-500' : ''
+                  }`}
+              />
+              {/* Inline URL warnings */}
+              {inputUrl.trim() && !urlValidation.valid && (
+                <span className="text-[10px] text-rose-500 font-bold block mt-1.5 pl-1 select-none">
+                  ⚠️ {urlValidation.message}
+                </span>
+              )}
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-4">
               <button
-                onClick={() => setInputUrl('https://game.shinigamiworld.com/fightreport/?rid=287713052178748&aid=86&t=1&lang=en_US')}
-                className="text-[10px] text-violet-600 dark:text-violet-400 font-bold hover:underline cursor-pointer"
+                onClick={() => {
+                  const sample = 'https://game.shinigamiworld.com/fightreport/?rid=287713052178748&aid=86&t=1&lang=en_US';
+                  setInputUrl(sample);
+                  handleFetchReport(sample);
+                }}
+                className="text-[10px] text-violet-600 dark:text-violet-400 font-bold hover:underline cursor-pointer select-none"
               >
-                Click to load sample URL
+                Click to parse a sample battle URL
               </button>
               <button
-                onClick={handleFetchReport}
-                disabled={parseLoading || !inputUrl.trim()}
-                className="px-5 py-2 bg-violet-600 hover:bg-violet-500 disabled:opacity-50 text-white font-bold rounded-xl text-xs flex items-center gap-1.5 cursor-pointer shadow-md shadow-violet-500/10"
+                onClick={() => handleFetchReport()}
+                disabled={(parseStage !== 'idle' && parseStage !== 'done' && parseStage !== 'error') || !urlValidation.valid}
+                className="px-5 py-2 bg-violet-600 hover:bg-violet-500 disabled:opacity-40 text-white font-bold rounded-xl text-xs flex items-center gap-1.5 cursor-pointer shadow-md shadow-violet-500/10"
               >
                 <Play size={12} />
-                <span>{parseLoading ? 'Loading...' : 'Fetch & Decode'}</span>
+                <span>
+                  {parseStage !== 'idle' && parseStage !== 'done' && parseStage !== 'error'
+                    ? 'Loading...'
+                    : 'Fetch & Simulation'}
+                </span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Drag-Drop Card */}
+        {/* Binary Upload Dropzone */}
         <div
           onClick={() => fileInputRef.current?.click()}
           onDragOver={(e) => {
@@ -907,13 +731,12 @@ export const FightReportPage: React.FC = () => {
             e.preventDefault();
             e.stopPropagation();
             setIsDragging(false);
-
             const file = e.dataTransfer.files?.[0];
             if (file) processUploadedFile(file);
           }}
           className={`p-6 border-2 border-dashed rounded-2xl shadow-sm flex flex-col items-center justify-center gap-3 cursor-pointer group transition-all ${isDragging
-            ? 'border-violet-500 bg-violet-50/10 dark:bg-violet-950/10 scale-[1.02]'
-            : 'border-border-strong dark:border-border hover:border-violet-500 dark:hover:border-violet-500/50 bg-surface'
+              ? 'border-violet-500 bg-violet-50/10 dark:bg-violet-950/10 scale-[1.01]'
+              : 'border-border hover:border-violet-500 bg-surface'
             }`}
         >
           <input
@@ -924,657 +747,606 @@ export const FightReportPage: React.FC = () => {
             className="hidden"
           />
           <div className="p-3 bg-bg rounded-full group-hover:scale-105 transition-all text-subtle group-hover:text-violet-500">
-            <UploadCloud size={28} />
+            <UploadCloud size={24} />
           </div>
           <div className="text-center space-y-1">
-            <span className="text-xs font-bold text-muted block">Drag & drop your report binary file here</span>
-            <span className="text-[10px] text-subtle block">Supports `.bin` and `data.php` formats</span>
+            <span className="text-xs font-bold text-muted block">Or drop Report binary file here</span>
+            <span className="text-[10px] text-subtle block font-semibold">Supports `.bin` or `data.php` uploads</span>
           </div>
         </div>
       </div>
 
-      {parseError && (
-        <div className="p-4 border border-rose-200 dark:border-rose-950/60 bg-rose-50/50 dark:bg-rose-950/10 rounded-xl text-xs flex items-start gap-2 text-rose-600 dark:text-rose-455">
-          <ShieldAlert size={16} className="shrink-0 mt-0.5" />
-          <div className="space-y-1">
-            <span className="font-bold">Error Fetching Report</span>
+      {/* History panel */}
+      {recentReports.length > 0 && (
+        <div className="p-4 border border-border bg-surface rounded-2xl shadow-sm space-y-2.5">
+          <span className="text-[10px] font-black uppercase tracking-wider text-subtle flex items-center gap-1 select-none">
+            <Clock size={12} />
+            <span>Recent Decoded Combats</span>
+          </span>
+          <div className="flex flex-wrap gap-1.5">
+            {recentReports.map((item) => (
+              <button
+                key={item.rid}
+                onClick={() => {
+                  const url = `rid=${item.rid}&aid=${item.aid}&lang=${item.lang}`;
+                  setInputUrl(url);
+                  handleFetchReport(url);
+                }}
+                className="px-3 py-1.5 rounded-xl border border-border bg-bg hover:border-violet-500 text-[10px] font-mono font-bold text-muted transition-all cursor-pointer flex items-center gap-1 hover:bg-hover"
+              >
+                <span>#{item.rid}</span>
+                <span className="text-subtle">({item.lang})</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Progress parsing states */}
+      {parseStage !== 'idle' && parseStage !== 'done' && parseStage !== 'error' && (
+        <div className="p-5 border border-violet-100 dark:border-violet-950/60 bg-violet-50/10 dark:bg-violet-950/5 rounded-2xl flex items-center gap-4 animate-pulse">
+          <div className="w-5 h-5 rounded-full border-2 border-violet-600 border-t-transparent animate-spin shrink-0" />
+          <div className="space-y-1 text-xs">
+            <span className="font-extrabold text-violet-700 dark:text-violet-400">Simulation processing active</span>
+            <p className="text-muted font-medium">{getLoadingStageText()}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Error report */}
+      {parseStage === 'error' && parseError && (
+        <div className="p-4 border border-rose-200 dark:border-rose-950/60 bg-rose-50/50 dark:bg-rose-950/10 rounded-2xl text-xs flex items-start gap-2 text-rose-600 dark:text-rose-455">
+          <ShieldAlert size={16} className="shrink-0 mt-0.5 animate-bounce" />
+          <div className="space-y-1 font-semibold">
+            <span className="font-black block">Dashboard Error</span>
             <p>{parseError}</p>
           </div>
         </div>
       )}
 
-      {/* Fight Report Loaded Details */}
+      {/* Dashboard analytics visual outputs */}
       {report && battleStats && (
         <div className="space-y-6">
           {/* Winner Banner */}
-          <div className="p-5 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 relative overflow-hidden">
             <div className="flex items-center gap-3">
-              <div className="px-4 py-2 bg-gradient-to-br from-violet-600 to-indigo-600 text-white rounded-xl text-center font-black shadow-md shadow-violet-600/10">
-                <span className="text-[10px] block font-mono leading-none mb-0.5">VERSION</span>
+              <div className="px-3 py-2 bg-gradient-to-br from-violet-600 to-indigo-600 text-white rounded-xl text-center font-black shadow-md shadow-violet-600/10">
+                <span className="text-[9px] block font-mono leading-none mb-0.5 opacity-80">VERSION</span>
                 <span className="text-sm font-mono leading-none">{report.version.toFixed(1)}</span>
               </div>
               <div>
-                <h3 className="font-extrabold text-base text-text">
+                <h3 className="font-black text-lg text-text">
                   {resolveRoleName(report.team1.roles[0])} vs {resolveRoleName(report.team2.roles[0])}
                 </h3>
-                <span className="text-xs text-subtle">
-                  Arena Match concluded in <span className="font-bold text-muted">{report.totalTurns} Turns</span>
+                <span className="text-xs text-subtle font-semibold block">
+                  Concluded in <span className="font-bold text-muted">{report.totalTurns} Rounds</span>
                 </span>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-subtle font-bold uppercase">Victor:</span>
-              <span className="px-4 py-1.5 rounded-full text-xs font-black uppercase bg-emerald-100 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-400 shadow-sm border border-emerald-300/20">
-                {battleStats.winnerCamp === 0 ? 'Team 1 (Attacker)' : 'Team 2 (Defender)'}
-              </span>
+
+            <div className="flex items-center gap-4 flex-wrap w-full md:w-auto justify-end">
+              <div className="flex items-center gap-2">
+                <Trophy size={16} className="text-amber-500 animate-pulse" />
+                <span className="text-xs text-subtle font-bold uppercase tracking-wider">Victor:</span>
+                <span className="px-4 py-1.5 rounded-full text-xs font-black uppercase bg-emerald-100 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-400 border border-emerald-300/10 shadow-sm">
+                  {battleStats.winnerCamp === 0 ? 'Team 1 (Attacker)' : 'Team 2 (Defender)'}
+                </span>
+              </div>
+
+              {/* Action buttons (JSON / CSV / copy Summary) */}
+              <div className="flex items-center gap-1.5">
+                <button
+                  onClick={handleCopySummary}
+                  className="p-2 border border-border rounded-xl hover:bg-hover text-muted cursor-pointer transition-colors relative"
+                  title="Copy battle text summary to clipboard"
+                >
+                  <Copy size={14} />
+                  {copiedText && (
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 bg-zinc-950 text-white text-[9px] font-bold px-2 py-0.5 rounded-md select-none leading-none z-50">
+                      Copied!
+                    </span>
+                  )}
+                </button>
+                <button
+                  onClick={() => downloadJson(report, `fight-report-${debugInfo?.versionString || 'parsed'}.json`)}
+                  className="p-2 border border-border rounded-xl hover:bg-hover text-muted cursor-pointer transition-colors"
+                  title="Download fully parsed report as JSON"
+                >
+                  <FileCode size={14} />
+                </button>
+                <button
+                  onClick={() => downloadCsv(report, battleStats.state, 'fight-report-matrix.csv')}
+                  className="p-2 border border-border rounded-xl hover:bg-hover text-muted cursor-pointer transition-colors"
+                  title="Export Fighter Stats Matrix as CSV"
+                >
+                  <Download size={14} />
+                </button>
+              </div>
             </div>
           </div>
 
-          {/* Statistics Navigation Tabs */}
-          <div className="border-b border-border flex gap-4 text-xs md:text-sm font-semibold">
+          {/* Navigation Tab selection toolbar */}
+          <div className="border-b border-border flex flex-wrap gap-x-6 gap-y-1.5 text-xs md:text-sm font-extrabold select-none">
             <button
-              onClick={() => setActiveTab('analytics')}
-              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'analytics'
-                ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                : 'border-transparent text-subtle hover:text-text dark:hover:text-zinc-200'
+              onClick={() => setActiveTab('overview')}
+              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'overview'
+                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                  : 'border-transparent text-subtle hover:text-text'
                 }`}
             >
-              Battle Analytics
+              Overview
             </button>
             <button
               onClick={() => setActiveTab('fighters')}
               className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'fighters'
-                ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                : 'border-transparent text-subtle hover:text-text dark:hover:text-zinc-200'
+                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                  : 'border-transparent text-subtle hover:text-text'
                 }`}
             >
-              Fighters Stats Matrix
+              Fighters
+            </button>
+            <button
+              onClick={() => setActiveTab('timeline')}
+              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'timeline'
+                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                  : 'border-transparent text-subtle hover:text-text'
+                }`}
+            >
+              Timeline
+            </button>
+            <button
+              onClick={() => setActiveTab('skills')}
+              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'skills'
+                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                  : 'border-transparent text-subtle hover:text-text'
+                }`}
+            >
+              Skills
+            </button>
+            <button
+              onClick={() => setActiveTab('buffs')}
+              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'buffs'
+                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                  : 'border-transparent text-subtle hover:text-text'
+                }`}
+            >
+              Buffs
+            </button>
+            <button
+              onClick={() => setActiveTab('deaths')}
+              className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'deaths'
+                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                  : 'border-transparent text-subtle hover:text-text'
+                }`}
+            >
+              Deaths
             </button>
             <button
               onClick={() => setActiveTab('log')}
               className={`pb-3 border-b-2 px-1 transition-all cursor-pointer ${activeTab === 'log'
-                ? 'border-violet-500 text-violet-600 dark:text-violet-400'
-                : 'border-transparent text-subtle hover:text-text dark:hover:text-zinc-200'
+                  ? 'border-violet-500 text-violet-600 dark:text-violet-400'
+                  : 'border-transparent text-subtle hover:text-text'
                 }`}
             >
-              Combat Replay Log
+              Replay Log
             </button>
           </div>
 
-          {/* Caveat callout */}
-          <div className="p-3.5 border border-border bg-bg rounded-xl text-[11px] text-muted flex items-start gap-2">
-            <Info size={16} className="text-violet-500 shrink-0 mt-0.5" />
-            <p>
-              <span className="font-bold text-muted">Analyzer Caveat:</span> Damage and effects are server-resolved values from the binary report. The report does not include full formula inputs such as final Defense, Pierce, or damage modifiers, so this analyzer reconstructs replay outcomes instead of recalculating the original formula. Team totals may include system/pet/field actions that are not listed as normal fighters.
-            </p>
-          </div>
+          {/* TAB CONTENTS */}
 
-          {/* Tab 1: General comparison bar charts */}
-          {activeTab === 'analytics' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* Damage Charts */}
+          {/* 1. Overview Tab */}
+          {activeTab === 'overview' && (
+            <div className="space-y-6">
+              {/* Summary KPI grid */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="p-4 border border-border bg-surface rounded-2xl shadow-sm text-center">
+                  <span className="text-[9px] font-black text-subtle uppercase tracking-wider block">
+                    Total Rounds
+                  </span>
+                  <span className="text-xl font-black text-text font-mono mt-0.5 block">
+                    {report.totalTurns}
+                  </span>
+                </div>
+                <div className="p-4 border border-border bg-surface rounded-2xl shadow-sm text-center">
+                  <span className="text-[9px] font-black text-subtle uppercase tracking-wider block">
+                    Attacker Raw Damage
+                  </span>
+                  <span className="text-xl font-black text-red-500 font-mono mt-0.5 block">
+                    {battleStats.totalDmgTeam1.toLocaleString()}
+                  </span>
+                </div>
+                <div className="p-4 border border-border bg-surface rounded-2xl shadow-sm text-center">
+                  <span className="text-[9px] font-black text-subtle uppercase tracking-wider block">
+                    Defender Raw Damage
+                  </span>
+                  <span className="text-xl font-black text-red-500 font-mono mt-0.5 block">
+                    {battleStats.totalDmgTeam2.toLocaleString()}
+                  </span>
+                </div>
+                <div className="p-4 border border-border bg-surface rounded-2xl shadow-sm text-center">
+                  <span className="text-[9px] font-black text-subtle uppercase tracking-wider block">
+                    Total Crits Recorded
+                  </span>
+                  <span className="text-xl font-black text-amber-500 font-mono mt-0.5 block">
+                    {battleStats.turnSummaries.reduce((sum, s) => sum + s.crits, 0)}
+                  </span>
+                </div>
+              </div>
+
+              {/* Award / MVP badges */}
               <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
-                <div className="flex items-center gap-2 border-b border-border pb-2">
-                  <TrendingUp size={16} className="text-red-500" />
-                  <span className="font-bold text-xs uppercase text-subtle tracking-wider">Total Damage Dealt</span>
+                <div className="flex items-center gap-2 border-b border-border pb-2.5">
+                  <Award size={16} className="text-amber-500 animate-pulse" />
+                  <span className="font-extrabold text-xs uppercase text-subtle tracking-wider">
+                    MVP & Combat Awards
+                  </span>
                 </div>
-                <div className="space-y-4 py-2">
-                  {/* Team 1 bar */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-xs">
-                      <span className="font-semibold text-muted">Team 1 (Attacker)</span>
-                      <span className="font-mono font-bold text-red-500">{battleStats.totalDmgTeam1.toLocaleString()} HP</span>
-                    </div>
-                    <div className="w-full h-3.5 bg-bg rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-red-500 to-rose-600 transition-all duration-500 rounded-full"
-                        style={{ width: `${Math.max(5, (battleStats.totalDmgTeam1 / (battleStats.totalDmgTeam1 + battleStats.totalDmgTeam2 || 1)) * 100)}%` }}
-                      ></div>
-                    </div>
-                  </div>
-
-                  {/* Team 2 bar */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-xs">
-                      <span className="font-semibold text-muted">Team 2 (Defender)</span>
-                      <span className="font-mono font-bold text-red-500">{battleStats.totalDmgTeam2.toLocaleString()} HP</span>
-                    </div>
-                    <div className="w-full h-3.5 bg-bg rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-rose-600 to-indigo-600 transition-all duration-500 rounded-full"
-                        style={{ width: `${Math.max(5, (battleStats.totalDmgTeam2 / (battleStats.totalDmgTeam1 + battleStats.totalDmgTeam2 || 1)) * 100)}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Healing Charts */}
-              <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm space-y-4">
-                <div className="flex items-center gap-2 border-b border-border pb-2">
-                  <Heart size={16} className="text-emerald-500" />
-                  <span className="font-bold text-xs uppercase text-subtle tracking-wider">Total Healing Done</span>
-                </div>
-                <div className="space-y-4 py-2">
-                  {/* Team 1 bar */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-xs">
-                      <span className="font-semibold text-muted">Team 1 (Attacker)</span>
-                      <span className="font-mono font-bold text-emerald-500">{battleStats.totalHealTeam1.toLocaleString()} HP</span>
-                    </div>
-                    <div className="w-full h-3.5 bg-bg rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-emerald-500 to-teal-600 transition-all duration-500 rounded-full"
-                        style={{ width: `${Math.max(5, (battleStats.totalHealTeam1 / (battleStats.totalHealTeam1 + battleStats.totalHealTeam2 || 1)) * 100)}%` }}
-                      ></div>
-                    </div>
-                  </div>
-
-                  {/* Team 2 bar */}
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-xs">
-                      <span className="font-semibold text-muted">Team 2 (Defender)</span>
-                      <span className="font-mono font-bold text-emerald-500">{battleStats.totalHealTeam2.toLocaleString()} HP</span>
-                    </div>
-                    <div className="w-full h-3.5 bg-bg rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-teal-600 to-cyan-500 transition-all duration-500 rounded-full"
-                        style={{ width: `${Math.max(5, (battleStats.totalHealTeam2 / (battleStats.totalHealTeam1 + battleStats.totalHealTeam2 || 1)) * 100)}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Tab 2: Detailed Hero grid columns */}
-          {activeTab === 'fighters' && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Team 1 List */}
-              <div className="space-y-4">
-                <h3 className="font-bold text-xs uppercase text-subtle tracking-wider px-1">Team 1 (Attacker)</h3>
-                <div className="space-y-3">
-                  {report.team1.roles.map((r, idx) => {
-                    const fighterState = battleStats.finalState.get(`0_${r.pos}`);
-                    const dmgRaw = fighterState?.damageDealtRaw || 0;
-                    const dmgHp = fighterState?.hpDamageDealt || 0;
-                    const takenRaw = fighterState?.damageTakenRaw || 0;
-                    const takenHp = fighterState?.hpDamageTaken || 0;
-                    const healsDone = fighterState?.healingDone || 0;
-                    const healsRec = fighterState?.healingReceived || 0;
-                    const finalHp = fighterState?.hp || 0;
-                    const maxHp = fighterState?.maxHp || r.totleHealth;
-                    const finalShield = fighterState?.shield || 0;
-                    const shieldApplied = fighterState?.shieldApplied || 0;
-                    const finalAnger = fighterState?.anger || 0;
-                    const isDead = fighterState?.dead || false;
-
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                  {Object.values(battleStats.awards).map((win) => {
+                    if (!win) return null;
                     return (
-                      <div key={idx} className="p-4 border border-border bg-surface rounded-2xl shadow-sm space-y-3 hover:border-border-strong transition-all">
-                        <div className="flex justify-between items-start border-b border-border pb-2">
-                          <div className="flex items-center gap-2">
-                            <span className="px-2 py-0.5 bg-bg rounded border border-border text-[10px] font-mono text-muted">
-                              Pos {r.pos}
-                            </span>
-                            <span className="font-bold text-sm text-text">{resolveRoleName(r)}</span>
-                            {isDead ? (
-                              <span className="px-1.5 py-0.5 bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-400 rounded text-[9px] font-bold uppercase tracking-wider">
-                                Fallen
-                              </span>
-                            ) : (
-                              <span className="px-1.5 py-0.5 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-400 rounded text-[9px] font-bold uppercase tracking-wider">
-                                Surviving
-                              </span>
-                            )}
-                          </div>
-                          <div className="flex items-center gap-1.5 text-[10px] text-subtle font-mono">
-                            {r.rebirthNum ? <span>R{r.rebirthNum}</span> : null}
-                            <span>Lv. {r.level}</span>
-                          </div>
-                        </div>
-
-                        {/* HP & Shield & Anger status summary */}
-                        <div className="grid grid-cols-3 gap-2 py-1.5 text-[10px] border-b border-dashed border-border/80">
-                          <div className="space-y-0.5">
-                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Health</span>
-                            <span className="font-semibold text-muted block font-mono">
-                              {finalHp.toLocaleString()} / {maxHp.toLocaleString()}
-                            </span>
-                          </div>
-                          <div className="space-y-0.5">
-                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Shield (Final / Applied)</span>
-                            <span className="font-semibold text-blue-500 block font-mono">
-                              {finalShield.toLocaleString()} / {shieldApplied.toLocaleString()}
-                            </span>
-                          </div>
-                          <div className="space-y-0.5">
-                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Anger</span>
-                            <span className="font-semibold text-amber-500 block font-mono">
-                              {finalAnger}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Attribute progress bars */}
-                        <div className="space-y-2 text-xs pt-1">
-                          {/* Damage done */}
-                          <div className="space-y-1">
-                            <div className="flex justify-between text-[11px]">
-                              <span className="text-subtle">Damage Dealt (Raw / HP Dmg)</span>
-                              <span className="font-mono font-bold text-red-500">
-                                {dmgRaw.toLocaleString()} <span className="text-subtle text-[10px]">/ {dmgHp.toLocaleString()}</span> HP
-                              </span>
-                            </div>
-                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
-                              <div
-                                className="h-full bg-red-500 rounded-full"
-                                style={{ width: `${(dmgRaw / battleStats.maxDamageDoneRaw) * 100}%` }}
-                              ></div>
-                            </div>
-                          </div>
-
-                          {/* Damage taken */}
-                          <div className="space-y-1">
-                            <div className="flex justify-between text-[11px]">
-                              <span className="text-subtle">Damage Taken (Raw / HP Dmg)</span>
-                              <span className="font-mono font-bold text-orange-500">
-                                {takenRaw.toLocaleString()} <span className="text-subtle text-[10px]">/ {takenHp.toLocaleString()}</span> HP
-                              </span>
-                            </div>
-                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
-                              <div
-                                className="h-full bg-orange-500 rounded-full"
-                                style={{ width: `${(takenRaw / battleStats.maxDamageTakenRaw) * 100}%` }}
-                              ></div>
-                            </div>
-                          </div>
-
-                          {/* Healing done */}
-                          <div className="space-y-1">
-                            <div className="flex justify-between text-[11px]">
-                              <span className="text-subtle">Healing (Done / Received)</span>
-                              <span className="font-mono font-bold text-emerald-500">
-                                {healsDone.toLocaleString()} <span className="text-subtle text-[10px]">/ {healsRec.toLocaleString()}</span> HP
-                              </span>
-                            </div>
-                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
-                              <div
-                                className="h-full bg-emerald-500 rounded-full"
-                                style={{ width: `${(healsDone / battleStats.maxHealing) * 100}%` }}
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Team 2 List */}
-              <div className="space-y-4">
-                <h3 className="font-bold text-xs uppercase text-subtle tracking-wider px-1">Team 2 (Defender)</h3>
-                <div className="space-y-3">
-                  {report.team2.roles.map((r, idx) => {
-                    const fighterState = battleStats.finalState.get(`1_${r.pos}`);
-                    const dmgRaw = fighterState?.damageDealtRaw || 0;
-                    const dmgHp = fighterState?.hpDamageDealt || 0;
-                    const takenRaw = fighterState?.damageTakenRaw || 0;
-                    const takenHp = fighterState?.hpDamageTaken || 0;
-                    const healsDone = fighterState?.healingDone || 0;
-                    const healsRec = fighterState?.healingReceived || 0;
-                    const finalHp = fighterState?.hp || 0;
-                    const maxHp = fighterState?.maxHp || r.totleHealth;
-                    const finalShield = fighterState?.shield || 0;
-                    const shieldApplied = fighterState?.shieldApplied || 0;
-                    const finalAnger = fighterState?.anger || 0;
-                    const isDead = fighterState?.dead || false;
-
-                    return (
-                      <div key={idx} className="p-4 border border-border bg-surface rounded-2xl shadow-sm space-y-3 hover:border-border-strong transition-all">
-                        <div className="flex justify-between items-start border-b border-border pb-2">
-                          <div className="flex items-center gap-2">
-                            <span className="px-2 py-0.5 bg-bg rounded border border-border text-[10px] font-mono text-muted">
-                              Pos {r.pos}
-                            </span>
-                            <span className="font-bold text-sm text-text">{resolveRoleName(r)}</span>
-                            {isDead ? (
-                              <span className="px-1.5 py-0.5 bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-400 rounded text-[9px] font-bold uppercase tracking-wider">
-                                Fallen
-                              </span>
-                            ) : (
-                              <span className="px-1.5 py-0.5 bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-400 rounded text-[9px] font-bold uppercase tracking-wider">
-                                Surviving
-                              </span>
-                            )}
-                          </div>
-                          <div className="flex items-center gap-1.5 text-[10px] text-subtle font-mono">
-                            {r.rebirthNum ? <span>R{r.rebirthNum}</span> : null}
-                            <span>Lv. {r.level}</span>
-                          </div>
-                        </div>
-
-                        {/* HP & Shield & Anger status summary */}
-                        <div className="grid grid-cols-3 gap-2 py-1.5 text-[10px] border-b border-dashed border-border/80">
-                          <div className="space-y-0.5">
-                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Health</span>
-                            <span className="font-semibold text-muted block font-mono">
-                              {finalHp.toLocaleString()} / {maxHp.toLocaleString()}
-                            </span>
-                          </div>
-                          <div className="space-y-0.5">
-                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Shield (Final / Applied)</span>
-                            <span className="font-semibold text-blue-500 block font-mono">
-                              {finalShield.toLocaleString()} / {shieldApplied.toLocaleString()}
-                            </span>
-                          </div>
-                          <div className="space-y-0.5">
-                            <span className="text-subtle block font-medium uppercase tracking-wider text-[8px]">Anger</span>
-                            <span className="font-semibold text-amber-500 block font-mono">
-                              {finalAnger}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Attribute progress bars */}
-                        <div className="space-y-2 text-xs pt-1">
-                          {/* Damage done */}
-                          <div className="space-y-1">
-                            <div className="flex justify-between text-[11px]">
-                              <span className="text-subtle">Damage Dealt (Raw / HP Dmg)</span>
-                              <span className="font-mono font-bold text-red-500">
-                                {dmgRaw.toLocaleString()} <span className="text-subtle text-[10px]">/ {dmgHp.toLocaleString()}</span> HP
-                              </span>
-                            </div>
-                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
-                              <div
-                                className="h-full bg-red-500 rounded-full"
-                                style={{ width: `${(dmgRaw / battleStats.maxDamageDoneRaw) * 100}%` }}
-                              ></div>
-                            </div>
-                          </div>
-
-                          {/* Damage taken */}
-                          <div className="space-y-1">
-                            <div className="flex justify-between text-[11px]">
-                              <span className="text-subtle">Damage Taken (Raw / HP Dmg)</span>
-                              <span className="font-mono font-bold text-orange-500">
-                                {takenRaw.toLocaleString()} <span className="text-subtle text-[10px]">/ {takenHp.toLocaleString()}</span> HP
-                              </span>
-                            </div>
-                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
-                              <div
-                                className="h-full bg-orange-500 rounded-full"
-                                style={{ width: `${(takenRaw / battleStats.maxDamageTakenRaw) * 100}%` }}
-                              ></div>
-                            </div>
-                          </div>
-
-                          {/* Healing done */}
-                          <div className="space-y-1">
-                            <div className="flex justify-between text-[11px]">
-                              <span className="text-subtle">Healing (Done / Received)</span>
-                              <span className="font-mono font-bold text-emerald-500">
-                                {healsDone.toLocaleString()} <span className="text-subtle text-[10px]">/ {healsRec.toLocaleString()}</span> HP
-                              </span>
-                            </div>
-                            <div className="w-full h-2 bg-bg rounded-full overflow-hidden">
-                              <div
-                                className="h-full bg-emerald-500 rounded-full"
-                                style={{ width: `${(healsDone / battleStats.maxHealing) * 100}%` }}
-                              ></div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Tab 3: Detailed Chronological Replay logs grouped by turn round */}
-          {activeTab === 'log' && (
-            <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
-              {/* Left Column: Round selectors */}
-              <div className="xl:col-span-1 border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4">
-                <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5">
-                  Fight Rounds
-                </h3>
-                <div className="flex flex-row xl:flex-col gap-2 overflow-x-auto">
-                  {report.turns.map(t => (
-                    <button
-                      key={t.curTurn}
-                      onClick={() => setSelectedRoundTab(t.curTurn)}
-                      className={`py-2.5 px-4 rounded-xl border text-xs font-bold text-left transition-all shrink-0 cursor-pointer ${selectedRoundTab === t.curTurn
-                        ? 'border-violet-500 bg-violet-500/5 text-violet-900 dark:text-violet-400'
-                        : 'border-border text-muted hover:bg-hover'
-                        }`}
-                    >
-                      Round {t.curTurn} Replay
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Column: Events sequence */}
-              <div className="xl:col-span-3 border border-border bg-surface p-6 rounded-2xl shadow-sm space-y-4">
-                <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5 flex items-center gap-2">
-                  <ListOrdered size={16} className="text-violet-500" />
-                  <span>Action Sequences (Round {selectedRoundTab})</span>
-                </h3>
-
-                <div className="space-y-4 divide-y divide-zinc-100 dark:divide-zinc-800/80">
-                  {report.turns.find(t => t.curTurn === selectedRoundTab)?.actives.map((act, actIdx) => {
-                    const attackerCamp = act.camp;
-                    const attackerPos = act.pos;
-                    const attackerGroup = attackerCamp === 0 ? report.team1 : report.team2;
-                    const attackerRole = attackerGroup.roles.find(r => r.pos === attackerPos);
-                    const attackerName = attackerRole ? resolveRoleName(attackerRole) : `Fighter Pos ${attackerPos}`;
-
-                    // Determine Action label
-                    let actionLabel = "attacks";
-                    if (act.activeType === ACTIVE_TYPE.SKILL_ATTACK) {
-                      const skillName = skillsMap.get(act.skillEffectId) || `Skill #${act.skillEffectId}`;
-                      actionLabel = `casts Skill [${skillName}]`;
-                    } else if (act.activeType === ACTIVE_TYPE.NORMAL_ATTACK || act.activeType === ACTIVE_TYPE.NORMAL_ATTACK_EX) {
-                      actionLabel = act.activeType === ACTIVE_TYPE.NORMAL_ATTACK_EX ? "attacks with Normal Strike EX" : "attacks with Normal Strike";
-                    } else if (act.activeType === ACTIVE_TYPE.BLOCK) {
-                      actionLabel = "blocks / counterattacks";
-                    } else if (act.activeType === ACTIVE_TYPE.PASSIVE_SKILL) {
-                      actionLabel = "procs Passive Skill";
-                    } else if (act.activeType === ACTIVE_TYPE.DIED_SKILL) {
-                      actionLabel = "triggers Death Skill";
-                    } else if (act.activeType === ACTIVE_TYPE.ROUND_SKILL) {
-                      actionLabel = "triggers Round Skill";
-                    } else {
-                      actionLabel = `performs Action Type #${act.activeType}`;
-                    }
-
-                    return (
-                      <div key={actIdx} className={`pt-4 ${actIdx === 0 ? 'pt-0' : ''} space-y-2`}>
-                        <div className="flex items-center justify-between">
-                          <span className="text-[11px] font-bold text-subtle uppercase">ACTION #{actIdx + 1}</span>
-                          <span className={`text-[10px] px-2 py-0.5 rounded font-black uppercase ${attackerCamp === 0
-                            ? 'bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-400'
-                            : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-400'
-                            }`}>
-                            {attackerCamp === 0 ? 'Team 1 (Attacker)' : 'Team 2 (Defender)'}
+                      <div
+                        key={win.key}
+                        className="p-4 border border-border bg-bg/40 rounded-xl space-y-2 relative overflow-hidden"
+                      >
+                        <div className="flex justify-between items-start">
+                          <span className="text-[9px] font-black uppercase tracking-wider bg-violet-100 dark:bg-violet-950/40 text-violet-800 dark:text-violet-400 px-2 py-0.5 rounded-lg border border-violet-500/10">
+                            {win.name}
+                          </span>
+                          <span className="text-[9px] font-mono text-subtle font-bold">
+                            T{win.camp + 1}
                           </span>
                         </div>
+                        <h4 className="font-extrabold text-xs text-text block truncate">{win.heroName}</h4>
+                        <span className="text-sm font-black font-mono text-violet-600 dark:text-violet-400 block pt-1 leading-none">
+                          {win.value.toLocaleString()}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
 
-                        <p className="text-xs font-semibold text-text">
-                          <span className="font-bold text-violet-600 dark:text-violet-400">{attackerName}</span> {actionLabel}:
-                        </p>
+              {/* Key Moments */}
+              <KeyMomentsPanel
+                moments={battleStats.keyMoments}
+                onJumpToMoment={handleJumpToMoment}
+              />
+            </div>
+          )}
 
-                        <div className="pl-4 space-y-1 border-l-2 border-border/80">
-                          {act.targets.map((tgt, tgtIdx) => {
-                            const tCamp = tgt.camp;
-                            const tPos = tgt.pos;
-                            const tGroup = tCamp === 0 ? report.team1 : report.team2;
-                            const tRole = tGroup.roles.find(r => r.pos === tPos);
-                            const tName = tRole ? resolveRoleName(tRole) : `Target Pos ${tPos}`;
-                            const hurtHp = tgt.result.hurtHp || 0;
+          {/* 2. Fighters Tab */}
+          {activeTab === 'fighters' && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <FighterTeamPanel
+                title="Team 1 (Attacker)"
+                camp={0}
+                roles={report.team1.roles}
+                finalState={battleStats.state}
+                maxDamageDone={battleStats.maxDamageDoneRaw}
+                maxDamageTaken={battleStats.maxDamageTakenRaw}
+                maxHealingDone={battleStats.maxHealing}
+                maxShieldApplied={battleStats.teamTotals.shieldApplied[0] || 1}
+              />
+              <FighterTeamPanel
+                title="Team 2 (Defender)"
+                camp={1}
+                roles={report.team2.roles}
+                finalState={battleStats.state}
+                maxDamageDone={battleStats.maxDamageDoneRaw}
+                maxDamageTaken={battleStats.maxDamageTakenRaw}
+                maxHealingDone={battleStats.maxHealing}
+                maxShieldApplied={battleStats.teamTotals.shieldApplied[1] || 1}
+              />
+            </div>
+          )}
 
-                            const flags = decodeStatusFlags(tgt.status);
-                            const isCombo = flags.includes("Combo / Joint Attack");
-                            const isAid = flags.includes("Help / Rescue");
+          {/* 3. Timeline Tab */}
+          {activeTab === 'timeline' && (
+            <TimelineTab
+              turnSummaries={battleStats.turnSummaries}
+              fighterTimeline={battleStats.fighterTimeline}
+              fighterNames={fighterNames}
+            />
+          )}
 
-                            let prefix = "";
-                            if (isCombo) {
-                              prefix = "🔗 [Combo] ";
-                            } else if (isAid) {
-                              prefix = "🛡️ [Aid] ";
-                            }
+          {/* 4. Skills Tab */}
+          {activeTab === 'skills' && <SkillsTab skillsStats={battleStats.skillsStats} />}
 
-                            let logText = "";
-                            let logClass = "text-muted";
+          {/* 5. Buffs Tab */}
+          {activeTab === 'buffs' && <BuffsTab buffsStats={battleStats.buffsStats} />}
 
-                            const getBuffName = (bId: number): string => {
-                              if (bId === 4294967295) return "Generic Buff";
-                              if (bId === 0) return "Null Buff";
-                              return buffsMap.get(bId) || `Buff #${bId}`;
-                            };
+          {/* 6. Deaths Tab */}
+          {activeTab === 'deaths' && <DeathsTab deaths={battleStats.deaths} />}
 
-                            if (tgt.cmd === CMD.ATTACK || tgt.cmd === CMD.ATTACKEX || tgt.cmd === CMD.HURTBUFF) {
-                              if (hurtHp > 0) {
-                                const suffix = flags.length ? ` (${flags.join(", ")})` : "";
-                                logText = `Hits ${tName} (Pos ${tPos}) dealing ${hurtHp.toLocaleString()} damage${suffix}.`;
-                                logClass = "text-red-600 dark:text-red-400 font-medium";
-                              } else if (hurtHp < 0) {
-                                logText = `Heals ${tName} (Pos ${tPos}) for ${(-hurtHp).toLocaleString()} HP.`;
-                                logClass = "text-emerald-600 dark:text-emerald-450 font-medium";
-                              } else {
-                                if (flags.includes("Super Dodge / All Miss")) {
-                                  logText = `${tName} (Pos ${tPos}) dodges / all-misses the effect.`;
-                                  logClass = "text-muted";
-                                } else if (flags.includes("Invincible")) {
-                                  logText = `${tName} (Pos ${tPos}) takes no damage due to Invincible.`;
-                                  logClass = "text-muted";
-                                } else if (flags.includes("Block")) {
-                                  logText = `${tName} (Pos ${tPos}) blocks the hit with no HP loss.`;
-                                  logClass = "text-muted";
+          {/* 7. Replay Log Tab */}
+          {activeTab === 'log' && (
+            <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
+              {/* Left Column: Round navigations */}
+              <div className="xl:col-span-1 border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4">
+                <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5">
+                  Select Round
+                </h3>
+                <RoundNavigator
+                  totalTurns={report.totalTurns}
+                  currentTurn={selectedRoundTab}
+                  onChangeTurn={setSelectedRoundTab}
+                  highlights={roundHighlights}
+                  isReplayTabActive={activeTab === 'log'}
+                />
+              </div>
+
+              {/* Right Column: Interactive log sequences */}
+              <div className="xl:col-span-3 border border-border bg-surface p-6 rounded-2xl shadow-sm space-y-4">
+                {/* Advanced Search Filter Toolbar */}
+                <div className="flex flex-col md:flex-row gap-3 items-center justify-between border-b border-border pb-4">
+                  <h3 className="font-extrabold text-sm text-text flex items-center gap-2">
+                    <ListOrdered size={16} className="text-violet-500" />
+                    <span>Action Sequences (Round {selectedRoundTab})</span>
+                  </h3>
+
+                  <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
+                    {/* Action Filter Selector */}
+                    <div className="relative flex-1 md:flex-none">
+                      <Filter size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-subtle" />
+                      <select
+                        value={logFilter}
+                        onChange={(e) => setLogFilter(e.target.value as any)}
+                        className="w-full md:w-36 pl-8 pr-2.5 py-1.5 text-xs rounded-xl border border-border bg-bg text-text font-bold focus:outline-none"
+                      >
+                        <option value="all">All Actions</option>
+                        <option value="damage">Damage Dealt</option>
+                        <option value="heal">Heals Received</option>
+                        <option value="death">Unit Deaths</option>
+                        <option value="shield">Shields Applied</option>
+                        <option value="buff">Buff Triggers</option>
+                        <option value="crit">Critical Hits</option>
+                      </select>
+                    </div>
+
+                    {/* Log text search */}
+                    <div className="relative flex-1 md:flex-none">
+                      <Search size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-subtle" />
+                      <input
+                        type="text"
+                        placeholder="Search logs..."
+                        value={logSearch}
+                        onChange={(e) => setLogSearch(e.target.value)}
+                        className="w-full md:w-40 pl-8 pr-3 py-1.5 text-xs rounded-xl border border-border bg-bg text-text focus:outline-none font-bold placeholder-zinc-400"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Log list */}
+                <div className="space-y-5 divide-y divide-border/60">
+                  {filteredActives.length === 0 ? (
+                    <div className="p-8 border border-dashed border-border rounded-2xl text-center text-xs text-subtle font-bold">
+                      No actions in Round {selectedRoundTab} matched your active search filters.
+                    </div>
+                  ) : (
+                    filteredActives.map(({ idx: actIdx, attackerName, attackerCamp, actionLabel, matchedTargets }) => {
+                      const highlighted = highlightedMomentId === `${selectedRoundTab}-${actIdx}`;
+
+                      return (
+                        <div
+                          key={actIdx}
+                          className={`pt-4 ${actIdx === 0 ? 'pt-0' : ''} space-y-2.5 transition-all duration-300 ${highlighted
+                              ? 'bg-violet-500/5 dark:bg-violet-500/5 border border-violet-500/15 p-3 rounded-2xl'
+                              : ''
+                            }`}
+                        >
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] font-black text-subtle uppercase">
+                              ACTION #{actIdx + 1}
+                            </span>
+                            <span
+                              className={`text-[9px] px-2 py-0.5 rounded font-black uppercase ${attackerCamp === 0
+                                  ? 'bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-400 border border-violet-500/10'
+                                  : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-400 border border-indigo-500/10'
+                                }`}
+                            >
+                              {attackerCamp === 0 ? 'Team 1 (Attacker)' : 'Team 2 (Defender)'}
+                            </span>
+                          </div>
+
+                          <p className="text-xs font-semibold text-text">
+                            <span className="font-extrabold text-violet-600 dark:text-violet-400">
+                              {attackerName}
+                            </span>{' '}
+                            {actionLabel}:
+                          </p>
+
+                          <div className="pl-4 space-y-1.5 border-l-2 border-border/80">
+                            {matchedTargets.map((tgt, tgtIdx) => {
+                              const tCamp = tgt.camp;
+                              const tPos = tgt.pos;
+                              const tGroup = tCamp === 0 ? report.team1 : report.team2;
+                              const tRole = tGroup.roles.find((r) => r.pos === tPos);
+                              const tName = tRole ? resolveRoleName(tRole) : `Target Pos ${tPos}`;
+                              const hurtHp = tgt.result.hurtHp || 0;
+
+                              const flags = decodeStatusFlags(tgt.status);
+                              const isCombo = flags.includes('Combo / Joint Attack');
+                              const isAid = flags.includes('Help / Rescue');
+
+                              let prefix = '';
+                              if (isCombo) {
+                                prefix = '🔗 [Combo] ';
+                              } else if (isAid) {
+                                prefix = '🛡️ [Aid] ';
+                              }
+
+                              let logText = '';
+                              let logClass = 'text-muted';
+
+                              const getBuffName = (bId: number): string => {
+                                if (bId === 4294967295) return 'Generic Buff';
+                                if (bId === 0) return 'Null Buff';
+                                return buffsMap.get(bId) || `Buff #${bId}`;
+                              };
+
+                              if (tgt.cmd === CMD.ATTACK || tgt.cmd === CMD.ATTACKEX || tgt.cmd === CMD.HURTBUFF) {
+                                if (hurtHp > 0) {
+                                  const suffix = flags.length ? ` (${flags.join(', ')})` : '';
+                                  logText = `Hits ${tName} (Pos ${tPos}) dealing ${hurtHp.toLocaleString()} damage${suffix}.`;
+                                  logClass = 'text-red-600 dark:text-red-400 font-medium';
+                                } else if (hurtHp < 0) {
+                                  logText = `Heals ${tName} (Pos ${tPos}) for ${(-hurtHp).toLocaleString()} HP.`;
+                                  logClass = 'text-emerald-600 dark:text-emerald-450 font-medium';
                                 } else {
-                                  logText = `Targets ${tName} (Pos ${tPos}) with no HP change${flags.length ? ` (${flags.join(", ")})` : ""}.`;
-                                  if (isCombo) {
-                                    logClass = "text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg";
-                                  } else if (isAid) {
-                                    logClass = "text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg";
+                                  if (flags.includes('Super Dodge / All Miss')) {
+                                    logText = `${tName} (Pos ${tPos}) dodges / all-misses the effect.`;
+                                    logClass = 'text-muted';
+                                  } else if (flags.includes('Invincible')) {
+                                    logText = `${tName} (Pos ${tPos}) takes no damage due to Invincible.`;
+                                    logClass = 'text-muted';
+                                  } else if (flags.includes('Block')) {
+                                    logText = `${tName} (Pos ${tPos}) blocks the hit with no HP loss.`;
+                                    logClass = 'text-muted';
                                   } else {
-                                    logClass = "text-muted";
+                                    logText = `Targets ${tName} (Pos ${tPos}) with no HP change${flags.length ? ` (${flags.join(', ')})` : ''
+                                      }.`;
+                                    if (isCombo) {
+                                      logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg';
+                                    } else if (isAid) {
+                                      logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg';
+                                    } else {
+                                      logClass = 'text-muted';
+                                    }
                                   }
                                 }
-                              }
-                            } else if (tgt.cmd === CMD.SHIELD) {
-                              const sId = tgt.result.buffId || 0;
-                              const shieldHp = tgt.result.buffTurn || 0;
-                              if (shieldHp === 0) {
-                                logText = `Removes Shield [${getBuffName(sId)}] from ${tName} (Pos ${tPos}).`;
-                              } else {
-                                logText = `Applies Shield [${getBuffName(sId)}] on ${tName} (Pos ${tPos}) with ${shieldHp.toLocaleString()} shield HP.`;
-                              }
-                              logClass = "text-blue-600 dark:text-blue-400 font-medium";
-                            } else if (tgt.cmd === CMD.ATTRBUFF || tgt.cmd === CMD.CONTROLBUFF) {
-                              const bId = tgt.result.buffId || 0;
-                              const turnOrType = tgt.result.buffTurn || 0;
-                              if (bId > 0 && turnOrType > 0) {
-                                logText = `Applies Buff [${getBuffName(bId)}] on ${tName} (Pos ${tPos}) for ${turnOrType} rounds.`;
-                              } else if (turnOrType > 0) {
-                                logText = `Removes/clears buff type #${turnOrType} from ${tName} (Pos ${tPos}).`;
-                              } else if (bId > 0) {
-                                logText = `Removes/clears Buff [${getBuffName(bId)}] from ${tName} (Pos ${tPos}).`;
-                              } else {
-                                logText = `Cleanses/clears temporary buffs/debuffs from ${tName} (Pos ${tPos}).`;
-                              }
-                              logClass = "text-purple-600 dark:text-purple-400";
-                            } else if (tgt.cmd === CMD.POSITION) {
-                              const newPos = tgt.result.buffTurn || tPos;
-                              logText = `Moves ${tName} from position ${tPos} to position ${newPos}.`;
-                              logClass = "text-amber-600 dark:text-amber-400";
-                            } else if (tgt.cmd === CMD.FLOAT) {
-                              const effectType = tgt.result.buffId || 0;
-                              const effectParam = tgt.result.buffTurn || 0;
-                              logText = `Shows special combat effect [${getSpecialFloatText(effectType)}] on ${tName} (Pos ${tPos})${effectParam ? `, parameter ${effectParam}` : ""}.`;
-                              logClass = "text-teal-600 dark:text-teal-400";
-                            } else if (tgt.cmd === CMD.STATUS) {
-                              logText = flags.length
-                                ? `Updates combat status for ${tName} (Pos ${tPos}): ${flags.join(", ")}.`
-                                : `Updates combat status for ${tName} (Pos ${tPos}).`;
-                              
-                              if (isCombo) {
-                                logClass = "text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg";
-                              } else if (isAid) {
-                                logClass = "text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg";
-                              } else {
-                                logClass = "text-muted";
-                              }
-                            } else if (tgt.cmd === CMD.NONE) {
-                              logText = `Triggers script action / combat visual on ${tName} (Pos ${tPos}).`;
-                              if (isCombo) {
-                                logClass = "text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg";
-                              } else if (isAid) {
-                                logClass = "text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg";
-                              } else {
-                                logClass = "text-subtle dark:text-muted";
-                              }
-                            } else {
-                              logText = `Performs CMD action #${tgt.cmd} on ${tName} (Pos ${tPos}).`;
-                              logClass = "text-subtle dark:text-muted";
-                            }
+                              } else if (tgt.cmd === CMD.SHIELD) {
+                                const sId = tgt.result.buffId || 0;
+                                const shieldHp = tgt.result.buffTurn || 0;
+                                if (shieldHp === 0) {
+                                  logText = `Removes Shield [${getBuffName(sId)}] from ${tName} (Pos ${tPos}).`;
+                                } else {
+                                  logText = `Applies Shield [${getBuffName(sId)}] on ${tName} (Pos ${tPos}) with ${shieldHp.toLocaleString()} shield HP.`;
+                                }
+                                logClass = 'text-blue-600 dark:text-blue-400 font-medium';
+                              } else if (tgt.cmd === CMD.ATTRBUFF || tgt.cmd === CMD.CONTROLBUFF) {
+                                const bId = tgt.result.buffId || 0;
+                                const turnOrType = tgt.result.buffTurn || 0;
+                                if (bId > 0 && turnOrType > 0) {
+                                  logText = `Applies Buff [${getBuffName(bId)}] on ${tName} (Pos ${tPos}) for ${turnOrType} rounds.`;
+                                } else if (turnOrType > 0) {
+                                  logText = `Removes/clears buff type #${turnOrType} from ${tName} (Pos ${tPos}).`;
+                                } else if (bId > 0) {
+                                  logText = `Removes/clears Buff [${getBuffName(bId)}] from ${tName} (Pos ${tPos}).`;
+                                } else {
+                                  logText = `Cleanses/clears temporary buffs/debuffs from ${tName} (Pos ${tPos}).`;
+                                }
+                                logClass = 'text-purple-600 dark:text-purple-400';
+                              } else if (tgt.cmd === CMD.POSITION) {
+                                const newPos = tgt.result.buffTurn || tPos;
+                                logText = `Moves ${tName} from position ${tPos} to position ${newPos}.`;
+                                logClass = 'text-amber-600 dark:text-amber-400';
+                              } else if (tgt.cmd === CMD.FLOAT) {
+                                const effectType = tgt.result.buffId || 0;
+                                const effectParam = tgt.result.buffTurn || 0;
+                                logText = `Shows special combat effect [${getSpecialFloatText(effectType)}] on ${tName} (Pos ${tPos})${effectParam ? `, parameter ${effectParam}` : ''
+                                  }.`;
+                                logClass = 'text-teal-600 dark:text-teal-400';
+                              } else if (tgt.cmd === CMD.STATUS) {
+                                logText = flags.length
+                                  ? `Updates combat status for ${tName} (Pos ${tPos}): ${flags.join(', ')}.`
+                                  : `Updates combat status for ${tName} (Pos ${tPos}).`;
 
-                            return (
-                              <div key={tgtIdx} className={`text-xs flex items-center justify-between gap-4 py-1 hover:bg-hover px-2 rounded-xl transition-all ${logClass}`}>
-                                <div className="flex items-center gap-2 flex-wrap">
-                                  <span>↳ {prefix}{logText}</span>
-                                  {tgt.hpBefore !== undefined && tgt.hpAfter !== undefined && (
-                                    <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-lg text-[10px] bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700/50 text-subtle cursor-help group relative font-mono transition-colors hover:text-text hover:bg-zinc-200 dark:hover:bg-zinc-700 select-none">
-                                      <span>HP: {Math.round(tgt.hpAfter / 1000)}k</span>
-                                      {/* Tooltip on hover */}
-                                      <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 hidden group-hover:flex flex-col items-center z-50 pointer-events-none">
-                                        <span className="bg-zinc-950 text-white text-[10px] rounded-xl p-3 shadow-2xl border border-zinc-800 space-y-1.5 w-52 font-sans text-left">
-                                          <span className="font-extrabold block text-zinc-300 text-xs border-b border-zinc-800 pb-1">{tName} HP Change</span>
-                                          <span className="flex justify-between font-mono text-zinc-400 pt-0.5">
-                                            <span>Before:</span>
-                                            <span>{tgt.hpBefore.toLocaleString()}</span>
-                                          </span>
-                                          <span className="flex justify-between font-mono text-zinc-200 font-bold border-t border-zinc-900 pt-1">
-                                            <span>After:</span>
-                                            <span>{tgt.hpAfter.toLocaleString()}</span>
-                                          </span>
-                                          <span className={`flex justify-between font-mono font-bold text-[9px] ${tgt.hpAfter < tgt.hpBefore ? 'text-red-400' : tgt.hpAfter > tgt.hpBefore ? 'text-emerald-400' : 'text-zinc-400'}`}>
-                                            <span>Difference:</span>
-                                            <span>{(tgt.hpAfter - tgt.hpBefore) > 0 ? `+${(tgt.hpAfter - tgt.hpBefore).toLocaleString()}` : (tgt.hpAfter - tgt.hpBefore).toLocaleString()}</span>
-                                          </span>
-                                          {tgt.shieldAfter !== undefined && tgt.shieldAfter > 0 && (
-                                            <span className="flex justify-between font-mono text-blue-400 text-[9px] border-t border-zinc-900 pt-1">
-                                              <span>Active Shield:</span>
-                                              <span>{tgt.shieldAfter.toLocaleString()}</span>
+                                if (isCombo) {
+                                  logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg';
+                                } else if (isAid) {
+                                  logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg';
+                                } else {
+                                  logClass = 'text-muted';
+                                }
+                              } else if (tgt.cmd === CMD.NONE) {
+                                logText = `Triggers script action / combat visual on ${tName} (Pos ${tPos}).`;
+                                if (isCombo) {
+                                  logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg';
+                                } else if (isAid) {
+                                  logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg';
+                                } else {
+                                  logClass = 'text-subtle dark:text-muted';
+                                }
+                              }
+
+                              return (
+                                <div
+                                  key={tgtIdx}
+                                  className={`text-xs flex items-center justify-between gap-4 py-1 hover:bg-hover px-2 rounded-xl transition-all ${logClass}`}
+                                >
+                                  <div className="flex items-center gap-2 flex-wrap">
+                                    <span>
+                                      ↳ {prefix}
+                                      {logText}
+                                    </span>
+                                    {tgt.hpBefore !== undefined && tgt.hpAfter !== undefined && (
+                                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-lg text-[10px] bg-bg border border-border text-subtle cursor-help group relative font-mono transition-colors hover:text-text hover:bg-hover select-none">
+                                        <span>HP: {Math.round(tgt.hpAfter / 1000)}k</span>
+                                        {/* Tooltip on hover */}
+                                        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 hidden group-hover:flex flex-col items-center z-50 pointer-events-none">
+                                          <span className="bg-zinc-950 text-white text-[10px] rounded-xl p-3 shadow-2xl border border-zinc-800 space-y-1.5 w-52 font-sans text-left">
+                                            <span className="font-extrabold block text-zinc-300 text-xs border-b border-zinc-800 pb-1">
+                                              {tName} HP Ticks
                                             </span>
-                                          )}
-                                          <span className="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden block mt-1.5">
-                                            <span className="h-full bg-gradient-to-r from-red-500 to-emerald-500 block transition-all" style={{ width: `${(tgt.hpAfter / (tgt.maxHp || 1)) * 100}%` }}></span>
+                                            <span className="flex justify-between font-mono text-zinc-400 pt-0.5">
+                                              <span>Before:</span>
+                                              <span>{tgt.hpBefore.toLocaleString()}</span>
+                                            </span>
+                                            <span className="flex justify-between font-mono text-zinc-200 font-bold border-t border-zinc-900 pt-1">
+                                              <span>After:</span>
+                                              <span>{tgt.hpAfter.toLocaleString()}</span>
+                                            </span>
+                                            <span
+                                              className={`flex justify-between font-mono font-bold text-[9px] ${tgt.hpAfter < tgt.hpBefore
+                                                  ? 'text-red-400'
+                                                  : tgt.hpAfter > tgt.hpBefore
+                                                    ? 'text-emerald-400'
+                                                    : 'text-zinc-400'
+                                                }`}
+                                            >
+                                              <span>Difference:</span>
+                                              <span>
+                                                {tgt.hpAfter - tgt.hpBefore > 0
+                                                  ? `+${(tgt.hpAfter - tgt.hpBefore).toLocaleString()}`
+                                                  : (tgt.hpAfter - tgt.hpBefore).toLocaleString()}
+                                              </span>
+                                            </span>
+                                            {tgt.shieldAfter !== undefined && tgt.shieldAfter > 0 && (
+                                              <span className="flex justify-between font-mono text-blue-400 text-[9px] border-t border-zinc-900 pt-1">
+                                                <span>Active Shield:</span>
+                                                <span>{tgt.shieldAfter.toLocaleString()}</span>
+                                              </span>
+                                            )}
+                                            <span className="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden block mt-1.5">
+                                              <span
+                                                className="h-full bg-gradient-to-r from-red-500 to-emerald-500 block transition-all"
+                                                style={{
+                                                  width: `${(tgt.hpAfter / (tgt.maxHp || 1)) * 100}%`,
+                                                }}
+                                              ></span>
+                                            </span>
                                           </span>
+                                          {/* Tooltip triangle */}
+                                          <span className="w-2 h-2 bg-zinc-950 rotate-45 -mt-1 border-r border-b border-zinc-800/80"></span>
                                         </span>
-                                        {/* Tooltip triangle */}
-                                        <span className="w-2 h-2 bg-zinc-950 rotate-45 -mt-1 border-r border-b border-zinc-800/80"></span>
                                       </span>
+                                    )}
+                                  </div>
+                                  {tgt.result.hurtAnger !== undefined && tgt.result.hurtAnger !== 0 && (
+                                    <span className="font-mono text-[10px] text-orange-500 shrink-0 font-bold">
+                                      Anger: {formatAngerChange(tgt.result.hurtAnger)}
                                     </span>
                                   )}
                                 </div>
-                                {tgt.result.hurtAnger !== undefined && tgt.result.hurtAnger !== 0 && (
-                                  <span className="font-mono text-[10px] text-orange-500 shrink-0">
-                                    Anger: {tgt.result.hurtAnger > 0 ? `+${tgt.result.hurtAnger}` : tgt.result.hurtAnger}
-                                  </span>
-                                )}
-                              </div>
-                            );
-                          })}
+                              );
+                            })}
+                          </div>
                         </div>
-                      </div>
-                    );
-                  })}
+                      );
+                    })
+                  )}
                 </div>
               </div>
             </div>
