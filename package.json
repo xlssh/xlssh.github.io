@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "bun x --bun vite",
     "export:data": "python3 scripts/export-sqlite-to-json.py",
-    "build": "python3 scripts/export-sqlite-to-json.py && tsc -b && bun x --bun vite build",
+    "build": "python3 scripts/export-sqlite-to-json.py && tsc -b && bun x --bun vite build && cp dist/index.html dist/404.html",
     "lint": "oxlint",
     "preview": "bun x --bun vite preview",
     "predeploy": "npm run build",

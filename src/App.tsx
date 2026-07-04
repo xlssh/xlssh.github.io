@@ -78,7 +78,7 @@ const SoulKingRefineryPage = React.lazy(() => import('./routes/SoulKingRefineryP
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Layout>
         <React.Suspense fallback={<LoadingState message="Loading page components…" />}>
           <Routes>
