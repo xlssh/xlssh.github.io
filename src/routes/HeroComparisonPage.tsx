@@ -4,7 +4,7 @@ import { loadHeroes } from '../data/loaders';
 import { Hero } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { getProfessionLabel, getFactionLabel } from '../data/relationships';
+import { getProfessionLabel } from '../data/relationships';
 import { getQualityColorClass, getQualityLabel } from './HeroesPage';
 import { ArrowLeft, Swords, Sparkles, Scale, AlertCircle, ChevronDown } from 'lucide-react';
 
@@ -154,9 +154,7 @@ export const HeroComparisonPage: React.FC = () => {
               <span className="px-2 py-0.5 text-[10px] font-bold bg-surface-raised text-muted rounded">
                 {getProfessionLabel(hero1.profession)}
               </span>
-              <span className="px-2 py-0.5 text-[10px] font-bold bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-400 rounded">
-                {getFactionLabel(hero1.country)}
-              </span>
+
             </div>
           )}
         </div>
@@ -185,9 +183,7 @@ export const HeroComparisonPage: React.FC = () => {
               <span className="px-2 py-0.5 text-[10px] font-bold bg-surface-raised text-muted rounded">
                 {getProfessionLabel(hero2.profession)}
               </span>
-              <span className="px-2 py-0.5 text-[10px] font-bold bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-400 rounded">
-                {getFactionLabel(hero2.country)}
-              </span>
+
             </div>
           )}
         </div>

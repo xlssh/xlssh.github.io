@@ -7,7 +7,7 @@ import { ErrorState } from '../components/ErrorState';
 import { DataTable } from '../components/DataTable';
 import { ColumnDef } from '@tanstack/react-table';
 import { Users } from 'lucide-react';
-import { getProfessionLabel, getFactionLabel } from '../data/relationships';
+import { getProfessionLabel } from '../data/relationships';
 
 export const getQualityLabel = (quality: number | null): string => {
   if (quality === null) return 'Unknown';
@@ -44,7 +44,6 @@ export const HeroesPage: React.FC = () => {
 
   // Filters State
   const [selectedQuality, setSelectedQuality] = useState<string>('all');
-  const [selectedCountry, setSelectedCountry] = useState<string>('all');
   const [selectedProfession, setSelectedProfession] = useState<string>('all');
   const [selectedIsMain, setSelectedIsMain] = useState<string>('all');
 
@@ -69,13 +68,11 @@ export const HeroesPage: React.FC = () => {
   }, []);
 
   const uniqueQualities = useMemo(() => Array.from(new Set(heroes.map(h => h.quality).filter((q): q is number => typeof q === 'number'))), [heroes]);
-  const uniqueCountries = useMemo(() => Array.from(new Set(heroes.map(h => h.country).filter((c): c is number => typeof c === 'number'))), [heroes]);
   const uniqueProfessions = useMemo(() => Array.from(new Set(heroes.map(h => h.profession).filter((p): p is number => typeof p === 'number'))), [heroes]);
 
   const filteredHeroes = useMemo(() => {
     return heroes.filter(hero => {
       if (selectedQuality !== 'all' && hero.quality !== parseInt(selectedQuality)) return false;
-      if (selectedCountry !== 'all' && hero.country !== parseInt(selectedCountry)) return false;
       if (selectedProfession !== 'all' && hero.profession !== parseInt(selectedProfession)) return false;
       if (selectedIsMain !== 'all') {
         const isMainBool = selectedIsMain === 'true';
@@ -83,7 +80,7 @@ export const HeroesPage: React.FC = () => {
       }
       return true;
     });
-  }, [heroes, selectedQuality, selectedCountry, selectedProfession, selectedIsMain]);
+  }, [heroes, selectedQuality, selectedProfession, selectedIsMain]);
 
   const columns = useMemo<ColumnDef<Hero>[]>(() => [
     {
@@ -130,14 +127,7 @@ export const HeroesPage: React.FC = () => {
         return <span className="font-medium text-xs text-muted">{getProfessionLabel(val)}</span>;
       },
     },
-    {
-      accessorKey: 'country',
-      header: 'Faction',
-      cell: (info) => {
-        const val = info.getValue() as number | null;
-        return <span className="font-medium text-xs text-muted">{getFactionLabel(val)}</span>;
-      },
-    },
+
     {
       accessorKey: 'level',
       header: 'LV',
@@ -207,19 +197,7 @@ export const HeroesPage: React.FC = () => {
           </select>
         </div>
 
-        <div>
-          <label className="block text-xs font-semibold text-subtle uppercase tracking-wider mb-1.5">Faction</label>
-          <select
-            value={selectedCountry}
-            onChange={(e) => setSelectedCountry(e.target.value)}
-            className="block w-full py-1.5 px-2 border border-border rounded-lg text-sm bg-bg focus:outline-none focus:ring-1.5 focus:ring-brand cursor-pointer"
-          >
-            <option value="all">All Factions</option>
-            {uniqueCountries.sort((a,b)=>a-b).map(c => (
-              <option key={c} value={String(c)}>{getFactionLabel(c)}</option>
-            ))}
-          </select>
-        </div>
+
 
         <div>
           <label className="block text-xs font-semibold text-subtle uppercase tracking-wider mb-1.5">Class / Profession</label>

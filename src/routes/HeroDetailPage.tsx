@@ -6,7 +6,7 @@ import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { JsonViewer } from '../components/JsonViewer';
 import { getQualityLabel, getQualityColorClass } from './HeroesPage';
-import { getFactionLabel, getProfessionLabel, getAttributeName, getActivationArticleForHero, getActivitiesAwardingArticle } from '../data/relationships';
+import { getProfessionLabel, getAttributeName, getActivationArticleForHero, getActivitiesAwardingArticle } from '../data/relationships';
 import { ArrowLeft, Swords, Sparkles, TrendingUp, ShieldAlert, Share2, Check, Scale, Cpu, Lock, HeartHandshake, HelpCircle, Activity, Star, AlertCircle } from 'lucide-react';
 
 export const HeroDetailPage: React.FC = () => {
@@ -40,6 +40,20 @@ export const HeroDetailPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [targetLevel, setTargetLevel] = useState<number>(50);
+
+  const jadeUnlockLevels = useMemo(() => {
+    if (!hero?.crash_jade_open_level) return [];
+    if (Array.isArray(hero.crash_jade_open_level)) return hero.crash_jade_open_level;
+    if (typeof hero.crash_jade_open_level === 'string') {
+        try {
+            const parsed = JSON.parse(hero.crash_jade_open_level);
+            return Array.isArray(parsed) ? parsed : [];
+        } catch (e) {
+            return [];
+        }
+    }
+    return [];
+  }, [hero?.crash_jade_open_level]);
 
   const recommendedJades = useMemo(() => {
     if (!hero) return null;
@@ -431,10 +445,7 @@ export const HeroDetailPage: React.FC = () => {
               <span className="text-subtle block mb-0.5">Gender</span>
               <span className="font-semibold text-muted">{hero.sex === 0 ? 'Female' : hero.sex === 1 ? 'Male' : `Sex ${hero.sex}`}</span>
             </div>
-            <div>
-              <span className="text-subtle block mb-0.5">Faction</span>
-              <span className="font-semibold text-muted">{getFactionLabel(hero.country)}</span>
-            </div>
+
             <div>
               <span className="text-subtle block mb-0.5">Class</span>
               <span className="font-semibold text-muted">{getProfessionLabel(hero.profession)}</span>
@@ -592,14 +603,6 @@ export const HeroDetailPage: React.FC = () => {
               <span className="font-mono font-semibold text-muted">{hero.sound}</span>
             </div>
           )}
-          {hero.attack_effect && (
-            <div className="col-span-2">
-              <span className="text-subtle block mb-0.5">Attack Sfx Asset Key</span>
-              <span className="font-mono text-xs text-muted bg-bg px-2 py-1.5 rounded border border-border inline-block max-w-full overflow-x-auto">
-                {typeof hero.attack_effect === 'object' ? JSON.stringify(hero.attack_effect) : hero.attack_effect}
-              </span>
-            </div>
-          )}
           {hero.head_style && (
             <div className="col-span-2">
               <span className="text-subtle block mb-0.5">UI Sprite Head Style</span>
@@ -724,7 +727,7 @@ export const HeroDetailPage: React.FC = () => {
             <div className="md:col-span-2 space-y-3">
               <span className="block text-[10px] font-bold text-subtle uppercase tracking-wider">Unlock Milestones (Affected by Target Level Simulator)</span>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {Array.isArray(hero.crash_jade_open_level) && hero.crash_jade_open_level.map((lvl: number, idx: number) => {
+                {jadeUnlockLevels.map((lvl: number, idx: number) => {
                   const unlocked = targetLevel >= lvl;
                   return (
                     <div
@@ -762,9 +765,13 @@ export const HeroDetailPage: React.FC = () => {
                     const { stoneType, attrType } = getJadeStoneAndAttrType(jade);
                     const stoneData = getJadeAtLevel(stoneType, lvl);
                     const name = getAttributeName(attrType);
-                    const isPercent = name.toLowerCase().includes('rate') || name.toLowerCase().includes('immunity') || name.toLowerCase().includes('avoidance') || (stoneData && stoneData.add_value < 1);
+
+                    const isDecimal = stoneData && stoneData.add_value > 0 && stoneData.add_value < 1;
+                    const isNamedPercent = name.toLowerCase().includes('rate') || name.toLowerCase().includes('immunity') || name.toLowerCase().includes('avoidance');
+                    const treatAsPercent = isNamedPercent || isDecimal;
+
                     const formattedValue = stoneData
-                      ? (isPercent ? `+${(stoneData.add_value * 100).toFixed(1)}%` : `+${stoneData.add_value}`)
+                      ? (treatAsPercent ? `+${(stoneData.add_value < 1 ? stoneData.add_value * 100 : stoneData.add_value).toFixed(1)}%` : `+${stoneData.add_value.toLocaleString()}`)
                       : 'N/A';
 
                     const baseStonesRequired = Math.pow(2, lvl - 1);
@@ -945,7 +952,30 @@ export const HeroDetailPage: React.FC = () => {
                           <span className="block text-[9px] font-bold text-subtle uppercase">Bonds Active Stat Bonuses</span>
                           <div className="grid grid-cols-2 gap-2">
                             {activeLevelData.properties.map((prop, pIdx) => {
-                              const isPercent = prop.oper === 2 || (prop.oper === 1 && prop.value < 1);
+                              const name = getAttributeName(prop.type);
+
+                              if (name === 'Passive Skill' || name === 'Halo') {
+                                const skill = skills.find(s => s.id === prop.value);
+                                const isGeneric = skill && (skill.name === 'Passive Skill' || skill.name === 'Halo');
+                                return (
+                                  <div
+                                    key={pIdx}
+                                    className="p-3 border border-border bg-surface rounded-xl flex flex-col gap-1 text-xs col-span-2"
+                                  >
+                                    <div className="flex justify-between items-center font-bold text-fuchsia-600 dark:text-fuchsia-400">
+                                      <span className="text-subtle font-semibold">{name}</span>
+                                      <span>{skill && !isGeneric ? skill.name : `ID: ${prop.value}`}</span>
+                                    </div>
+                                    {skill?.description && (
+                                      <p className="text-[10px] text-muted dark:text-zinc-400 italic leading-relaxed pt-1.5 border-t border-border/30 mt-1">
+                                        {skill.description.replace(/<[^>]*>/g, '')}
+                                      </p>
+                                    )}
+                                  </div>
+                                )
+                              }
+
+                              const isPercent = prop.oper === 2 || (prop.oper === 1 && prop.value < 1 && prop.value !== 0);
                               const formattedVal = isPercent
                                 ? `+${(prop.value * 100).toFixed(2)}%`
                                 : `+${prop.value}`;
@@ -954,7 +984,7 @@ export const HeroDetailPage: React.FC = () => {
                                   key={pIdx}
                                   className="p-2 border border-border bg-surface rounded-lg flex items-center justify-between text-xs"
                                 >
-                                  <span className="text-subtle font-semibold">{getAttributeName(prop.type)}</span>
+                                  <span className="text-subtle font-semibold">{name}</span>
                                   <span className="font-mono font-bold text-fuchsia-600 dark:text-fuchsia-400">{formattedVal}</span>
                                 </div>
                               );
@@ -1136,6 +1166,7 @@ export const HeroDetailPage: React.FC = () => {
                   {(() => {
                     const statsSum: Record<number, number> = {};
                     let totalGold = 0;
+                    const totalMaterials: Record<number, number> = {};
                     let totalShards = 0;
 
                     heroModifyStages.slice(0, simulatedStars).forEach((stage, idx) => {
@@ -1145,14 +1176,19 @@ export const HeroDetailPage: React.FC = () => {
                         stage.rewards.forEach(r => {
                           if (r.type === 2) {
                             totalGold += r.amount;
-                          } else if (heroChangeAttr && r.code === heroChangeAttr.chip_id) {
-                            totalShards += r.amount;
+                          } else {
+                            totalMaterials[r.code] = (totalMaterials[r.code] || 0) + r.amount;
                           }
                         });
                       }
                       if (stage.effect) {
                         stage.effect.forEach(eff => {
-                          statsSum[eff.addType] = (statsSum[eff.addType] || 0) + eff.addValue;
+                          const name = getAttributeName(eff.addType);
+                          if (name === 'Passive Skill' || name === 'Halo' || eff.addValue > 1000000) {
+                            statsSum[eff.addType] = eff.addValue; // Keep the latest ID instead of summing
+                          } else {
+                            statsSum[eff.addType] = (statsSum[eff.addType] || 0) + eff.addValue;
+                          }
                         });
                       }
                     });
@@ -1172,8 +1208,38 @@ export const HeroDetailPage: React.FC = () => {
                               {Object.keys(statsSum).length > 0 ? (
                                 Object.entries(statsSum).map(([type, val]) => {
                                   const name = getAttributeName(parseInt(type));
-                                  const isPercent = name.toLowerCase().includes('rate') || val < 1;
-                                  const formatted = isPercent ? `+${(val * 100).toFixed(1)}%` : `+${val}`;
+
+                                  if (name === 'Passive Skill' || name === 'Halo' || val > 1000000) {
+                                    const skill = skills.find(s => s.id === val);
+                                    const isGeneric = skill && (skill.name === 'Passive Skill' || skill.name === 'Halo');
+                                    return (
+                                      <div key={type} className="flex flex-col text-xs font-mono border-b border-border pb-2 pt-1.5 last:border-0 last:pb-0">
+                                        <div className="flex justify-between font-bold text-amber-600 dark:text-amber-400">
+                                          <span className="text-muted">{name}</span>
+                                          <span>{skill && !isGeneric ? skill.name : `ID: ${val}`}</span>
+                                        </div>
+                                        {skill?.description && (
+                                          <p className="text-[10px] text-muted dark:text-zinc-400 italic leading-relaxed mt-1">
+                                            {skill.description.replace(/<[^>]*>/g, '')}
+                                          </p>
+                                        )}
+                                      </div>
+                                    )
+                                  }
+
+                                  const isPercent = name.toLowerCase().includes('rate') || name.toLowerCase().includes('immunity');
+                                  let displayValue: number = val;
+
+                                  if (isPercent && val > 100) { // Scaled percentage e.g. 5000 = 0.5%
+                                    displayValue = val / 10000;
+                                  } else if (!isPercent && val > 50000) { // Scaled raw value e.g. 526344
+                                    displayValue = val; // Display as raw, but formatted
+                                  }
+
+                                  const formatted = isPercent
+                                    ? `+${displayValue.toFixed(2)}%`
+                                    : `+${displayValue.toLocaleString()}`;
+
                                   return (
                                     <div key={type} className="flex justify-between text-xs font-mono border-b border-border pb-1 last:border-0 last:pb-0">
                                       <span className="text-muted">{name}</span>
@@ -1196,11 +1262,17 @@ export const HeroDetailPage: React.FC = () => {
                                 <span className="font-bold text-amber-600">{totalGold.toLocaleString()} Gold</span>
                               </div>
                               {heroChangeAttr && (
-                                <div className="flex justify-between font-mono">
+                                <div className="flex justify-between font-mono border-b border-border pb-1">
                                   <span className="text-muted">{getItemName(heroChangeAttr.chip_id) || 'Hero Shards'}</span>
-                                  <span className="font-bold text-muted">{totalShards} Shards</span>
+                                  <span className="font-bold text-amber-600">{totalShards.toLocaleString()}</span>
                                 </div>
                               )}
+                              {Object.entries(totalMaterials).map(([code, amount]) => (
+                                <div key={code} className="flex justify-between font-mono">
+                                  <span className="text-muted">{getItemName(parseInt(code))}</span>
+                                  <span className="font-bold text-amber-600">{amount.toLocaleString()}</span>
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </div>
