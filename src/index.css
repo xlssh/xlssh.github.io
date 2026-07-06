@@ -61,27 +61,27 @@
 .dark {
   color-scheme: dark;
 
-  --app-bg: #09090b;
-  --app-surface: #18181b;
-  --app-surface-raised: #27272a;
+  --app-bg: #06070a;
+  --app-surface: #0c0e14;
+  --app-surface-raised: #12151e;
 
-  --app-text: #f4f4f5;
-  --app-muted: #a1a1aa;
-  --app-subtle: #d4d4d8;
+  --app-text: #f0f3f6;
+  --app-muted: #8b9bb4;
+  --app-subtle: #525d74;
 
-  --app-border: #3f3f46;
-  --app-border-strong: #52525b;
+  --app-border: #1c212e;
+  --app-border-strong: #2b3348;
 
-  --app-brand: #a5b4fc;
-  --app-brand-hover: #c7d2fe;
-  --app-brand-soft: #312e81;
+  --app-brand: #00f2fe;
+  --app-brand-hover: #00c6d3;
+  --app-brand-soft: rgba(0, 242, 254, 0.08);
 
-  --app-danger: #fb7185;
-  --app-success: #34d399;
-  --app-warning: #fbbf24;
+  --app-danger: #ff2a54;
+  --app-success: #00ff9f;
+  --app-warning: #ffb000;
 
-  --app-hover: #27272a;
-  --app-active: #3f3f46;
+  --app-hover: #12151e;
+  --app-active: #1c212e;
 }
 
 *:focus-visible {

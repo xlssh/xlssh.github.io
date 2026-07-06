@@ -27,6 +27,8 @@ export interface FighterRuntimeState {
   damageDealtByRound: Record<number, number>;
   healingDoneByRound: Record<number, number>;
   damageTakenByRound: Record<number, number>;
+  controlsLanded: number;
+  maxSingleTurnBurst: number;
 }
 
 export interface FighterTurnSnapshot {
@@ -127,6 +129,8 @@ export interface SimulationResult {
     topShieldApplied: AwardWinner | null;
     critKing: AwardWinner | null;
     killingBlows: AwardWinner | null;
+    controlMaster: AwardWinner | null;
+    burstKing: AwardWinner | null;
   };
   totalDmgTeam1: number;
   totalDmgTeam2: number;
@@ -175,6 +179,8 @@ function buildInitialRuntimeState(
       damageDealtByRound: {},
       healingDoneByRound: {},
       damageTakenByRound: {},
+      controlsLanded: 0,
+      maxSingleTurnBurst: 0,
     });
   };
 
@@ -296,30 +302,52 @@ export function simulateFightReport(
       }
 
       // Reorder targets to match grouping priority
-      const shieldTargets = active.targets.filter(t => t.cmd === CMD.SHIELD);
-      const hurtBuffTargets = active.targets.filter(t => t.cmd === CMD.HURTBUFF);
-      const statusTargets = active.targets.filter(t => t.cmd === CMD.STATUS);
-      const attackTargets = active.targets.filter(
-        t => t.cmd === CMD.ATTACK || t.cmd === CMD.ATTACKEX
-      );
-      const floatTargets = active.targets.filter(t => t.cmd === CMD.FLOAT);
-      const attrBuffTargets = active.targets.filter(t => t.cmd === CMD.ATTRBUFF);
-      const controlBuffTargets = active.targets.filter(t => t.cmd === CMD.CONTROLBUFF);
-      const positionTargets = active.targets.filter(t => t.cmd === CMD.POSITION);
-      const noneTargets = active.targets.filter(t => t.cmd === CMD.NONE);
+      const shieldTargets: typeof active.targets = [];
+      const hurtBuffTargets: typeof active.targets = [];
+      const statusTargets: typeof active.targets = [];
+      const attackTargets: typeof active.targets = [];
+      const floatTargets: typeof active.targets = [];
+      const attrBuffTargets: typeof active.targets = [];
+      const controlBuffTargets: typeof active.targets = [];
+      const positionTargets: typeof active.targets = [];
+      const noneTargets: typeof active.targets = [];
+      const otherTargets: typeof active.targets = [];
 
-      const otherTargets = active.targets.filter(t =>
-        t.cmd !== CMD.SHIELD &&
-        t.cmd !== CMD.HURTBUFF &&
-        t.cmd !== CMD.STATUS &&
-        t.cmd !== CMD.ATTACK &&
-        t.cmd !== CMD.ATTACKEX &&
-        t.cmd !== CMD.FLOAT &&
-        t.cmd !== CMD.ATTRBUFF &&
-        t.cmd !== CMD.CONTROLBUFF &&
-        t.cmd !== CMD.POSITION &&
-        t.cmd !== CMD.NONE
-      );
+      for (const t of active.targets) {
+        switch (t.cmd) {
+          case CMD.SHIELD:
+            shieldTargets.push(t);
+            break;
+          case CMD.HURTBUFF:
+            hurtBuffTargets.push(t);
+            break;
+          case CMD.STATUS:
+            statusTargets.push(t);
+            break;
+          case CMD.ATTACK:
+          case CMD.ATTACKEX:
+            attackTargets.push(t);
+            break;
+          case CMD.FLOAT:
+            floatTargets.push(t);
+            break;
+          case CMD.ATTRBUFF:
+            attrBuffTargets.push(t);
+            break;
+          case CMD.CONTROLBUFF:
+            controlBuffTargets.push(t);
+            break;
+          case CMD.POSITION:
+            positionTargets.push(t);
+            break;
+          case CMD.NONE:
+            noneTargets.push(t);
+            break;
+          default:
+            otherTargets.push(t);
+            break;
+        }
+      }
 
       const orderedTargets = [
         ...shieldTargets,
@@ -334,6 +362,7 @@ export function simulateFightReport(
         ...otherTargets,
       ];
 
+      let actionDamageRaw = 0;
       for (const target of orderedTargets) {
         const tarKey = getKey(target.camp, target.pos);
         const fighter = state.get(tarKey);
@@ -343,6 +372,11 @@ export function simulateFightReport(
         const flags = decodeStatusFlags(target.status);
         const isCrit = flags.includes("Crit");
         const isBlock = flags.includes("Block");
+
+        const CONTROL_FLAGS = 2 | 32 | 128 | 256 | 1024 | 1048576;
+        if (attacker && (target.status & CONTROL_FLAGS) !== 0) {
+          attacker.controlsLanded = (attacker.controlsLanded || 0) + 1;
+        }
 
         if (isCrit) {
           roundCrits += 1;
@@ -504,6 +538,7 @@ export function simulateFightReport(
                 attacker.damageDealtRaw += rawDamage;
                 attacker.hpDamageDealt += hpDamage;
                 attacker.damageDealtByRound[turn.curTurn] = (attacker.damageDealtByRound[turn.curTurn] || 0) + rawDamage;
+                actionDamageRaw += rawDamage;
               }
               if (active.camp === 0) roundDmgTeam1 += rawDamage;
               else if (active.camp === 1) roundDmgTeam2 += rawDamage;
@@ -600,6 +635,10 @@ export function simulateFightReport(
         // Save post-action state snapshots
         target.hpAfter = fighter.hp;
         target.shieldAfter = fighter.shield;
+      }
+
+      if (attacker && actionDamageRaw > (attacker.maxSingleTurnBurst || 0)) {
+        attacker.maxSingleTurnBurst = actionDamageRaw;
       }
       } catch (err: any) {
         simulationWarnings.push(
@@ -759,6 +798,8 @@ function computeAwards(state: Map<string, FighterRuntimeState>) {
     topShieldApplied: null as AwardWinner | null,
     critKing: null as AwardWinner | null,
     killingBlows: null as AwardWinner | null,
+    controlMaster: null as AwardWinner | null,
+    burstKing: null as AwardWinner | null,
   };
 
   for (const [key, fighter] of state.entries()) {
@@ -852,6 +893,30 @@ function computeAwards(state: Map<string, FighterRuntimeState>) {
         camp: details.camp,
       };
     }
+
+    // Control Master
+    if (fighter.controlsLanded && (!awards.controlMaster || fighter.controlsLanded > awards.controlMaster.value)) {
+      awards.controlMaster = {
+        key: 'controlMaster',
+        name: 'Control Master',
+        value: fighter.controlsLanded,
+        heroName: details.name,
+        roleId: details.roleId,
+        camp: details.camp,
+      };
+    }
+
+    // Burst King
+    if (fighter.maxSingleTurnBurst && (!awards.burstKing || fighter.maxSingleTurnBurst > awards.burstKing.value)) {
+      awards.burstKing = {
+        key: 'burstKing',
+        name: 'Single Turn Burst King',
+        value: fighter.maxSingleTurnBurst,
+        heroName: details.name,
+        roleId: details.roleId,
+        camp: details.camp,
+      };
+    }
   }
 
   // Reset to null if values are 0
@@ -862,6 +927,8 @@ function computeAwards(state: Map<string, FighterRuntimeState>) {
   if (awards.topShieldApplied && awards.topShieldApplied.value === 0) awards.topShieldApplied = null;
   if (awards.critKing && awards.critKing.value === 0) awards.critKing = null;
   if (awards.killingBlows && awards.killingBlows.value === 0) awards.killingBlows = null;
+  if (awards.controlMaster && awards.controlMaster.value === 0) awards.controlMaster = null;
+  if (awards.burstKing && awards.burstKing.value === 0) awards.burstKing = null;
 
   return awards;
 }
@@ -1010,6 +1077,47 @@ export function computeInsights(
       label: 'Sustain Backbone',
       description: `${topHealer.heroName} carried sustain workloads, healing a cumulative ${topHealer.value.toLocaleString()} HP.`,
       tone: 'emerald',
+    });
+  }
+
+  // 6. Sustain/Healing Performance Suggestions
+  const team1Healing = sim.teamTotals.healingDone[0];
+  const team1DmgTaken = sim.turnSummaries.reduce((sum, r) => sum + r.teamDamageDealt[1], 0);
+  if (team1Healing === 0 || (team1DmgTaken > 0 && team1Healing / team1DmgTaken < 0.12)) {
+    insights.push({
+      id: 'sugg-sustain',
+      icon: '💡',
+      label: 'Sustain Suggestion',
+      description: `Your team's healing sustain is extremely low (${Math.round((team1Healing / Math.max(1, team1DmgTaken)) * 100)}% of damage taken). Consider deploying a dedicated Healer / Support (Intellect class) to improve group survivability.`,
+      tone: 'blue',
+    });
+  }
+
+  // 7. Tactical Control Suggestions
+  let team1Controls = 0;
+  for (const [key, fighter] of sim.state.entries()) {
+    if (key.startsWith('0_')) {
+      team1Controls += fighter.controlsLanded || 0;
+    }
+  }
+  if (team1Controls === 0 && report.totalTurns > 4) {
+    insights.push({
+      id: 'sugg-control',
+      icon: '💡',
+      label: 'Tactical Control Suggestion',
+      description: `No crowd control effects (stun, freeze, void, silence) were landed by your squad. Adding a partner with disabling skills (e.g., Agility or Warlock class) can disrupt high-threat enemy damage dealers.`,
+      tone: 'violet',
+    });
+  }
+
+  // 8. Low Damage / High Rounds Suggestions
+  if (sim.winnerCamp === 1 && report.totalTurns > 8) {
+    insights.push({
+      id: 'sugg-dps',
+      icon: '💡',
+      label: 'Damage Speed Suggestion',
+      description: `This fight dragged on for ${report.totalTurns} rounds and resulted in defeat. Your lineup may be missing high-impact damage dealers. Try swapping in a high-DPS Strength or Agility partner to burst down key targets.`,
+      tone: 'amber',
     });
   }
 

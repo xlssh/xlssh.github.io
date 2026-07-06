@@ -10,6 +10,11 @@ import {
   FileCode,
   UploadCloud,
   Play,
+  Pause,
+  SkipBack,
+  SkipForward,
+  ChevronLeft,
+  ChevronRight,
   ShieldAlert,
   ListOrdered,
   Award,
@@ -107,6 +112,10 @@ function setCachedReport(entry: CachedFightReport): void {
   }
 }
 
+const formatCompact = (val: number) => {
+  return new Intl.NumberFormat(undefined, { notation: 'compact', maximumFractionDigits: 1 }).format(val);
+};
+
 async function computeSha256(buffer: ArrayBuffer): Promise<string> {
   try {
     const digest = await crypto.subtle.digest('SHA-256', buffer);
@@ -155,6 +164,52 @@ export const FightReportPage: React.FC = () => {
   // Log filter controls
   const [logSearch, setLogSearch] = useState('');
   const [logFilter, setLogFilter] = useState<'all' | 'damage' | 'heal' | 'death' | 'buff' | 'shield' | 'crit'>('all');
+
+  // Replay playback states
+  const [activeActionIdx, setActiveActionIdx] = useState<number>(0);
+  const [activeTargetIdx, setActiveTargetIdx] = useState<number>(-1); // -1 means show whole action at once (default)
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [playbackSpeed, setPlaybackSpeed] = useState<number>(1500); // ms per action step
+
+  // Reset active action on round change
+  useEffect(() => {
+    setActiveActionIdx(0);
+    setActiveTargetIdx(-1);
+    setIsPlaying(false);
+  }, [selectedRoundTab]);
+
+  // Handle auto-playback timing loop (micro-stepping through targets and actions)
+  useEffect(() => {
+    if (!isPlaying || !report) return;
+    const activeRound = report.turns.find(t => t.curTurn === selectedRoundTab);
+    if (!activeRound) return;
+
+    const interval = setInterval(() => {
+      const currentAct = activeRound.actives[activeActionIdx];
+      if (!currentAct) {
+        setIsPlaying(false);
+        return;
+      }
+
+      setActiveTargetIdx(prevTgt => {
+        const currentIdx = prevTgt < 0 ? -1 : prevTgt;
+        if (currentIdx < currentAct.targets.length - 1) {
+          return currentIdx + 1;
+        } else {
+          const nextActIdx = activeActionIdx + 1;
+          if (nextActIdx < activeRound.actives.length) {
+            setActiveActionIdx(nextActIdx);
+            return 0; // First target of next action
+          } else {
+            setIsPlaying(false);
+            return prevTgt;
+          }
+        }
+      });
+    }, playbackSpeed);
+
+    return () => clearInterval(interval);
+  }, [isPlaying, playbackSpeed, selectedRoundTab, activeActionIdx, report]);
 
   // Local Storage trigger to re-render history
   const [historyTrigger, setHistoryTrigger] = useState(0);
@@ -209,13 +264,21 @@ export const FightReportPage: React.FC = () => {
 
   const skillsMap = useMemo(() => {
     const map = new Map<number, string>();
-    skills.forEach(s => map.set(s.skill_id, s.name || `Skill #${s.skill_id}`));
+    skills.forEach(s => {
+      if (s.id) {
+        map.set(s.id, s.name || `Skill #${s.id}`);
+      }
+      if (s.skill_id) {
+        map.set(s.skill_id, s.name || `Skill #${s.skill_id}`);
+      }
+    });
     return map;
   }, [skills]);
 
   const buffsMap = useMemo(() => {
     const map = new Map<number, string>();
     buffs.forEach(b => map.set(b.id, b.name || `Buff #${b.id}`));
+    map.set(4294967295, 'Generic Buff');
     return map;
   }, [buffs]);
 
@@ -627,6 +690,77 @@ export const FightReportPage: React.FC = () => {
       buffsMap
     );
   }, [report, knivesMap, heroesMap, enemiesMap, skillsMap, buffsMap, resolveAttackerName]);
+
+  // Compute accumulated real-time stats for the active playback action step
+  const currentStepStates = useMemo(() => {
+    const states = new Map<string, { hp: number; maxHp: number; shield: number; anger: number; dead: boolean }>();
+    if (!report || !battleStats) return states;
+
+    const activeRound = report.turns.find(t => t.curTurn === selectedRoundTab);
+    if (!activeRound) return states;
+
+    // 1. Initialize states from the start of this round (end of selectedRoundTab - 1)
+    for (const [key, timeline] of battleStats.fighterTimeline.entries()) {
+      const preRoundSnap = timeline.find(snap => snap.round === selectedRoundTab - 1);
+      if (preRoundSnap) {
+        states.set(key, {
+          hp: preRoundSnap.hp,
+          maxHp: preRoundSnap.maxHp,
+          shield: preRoundSnap.shield,
+          anger: preRoundSnap.anger,
+          dead: preRoundSnap.dead,
+        });
+      } else {
+        const fighterState = battleStats.state.get(key);
+        states.set(key, {
+          hp: fighterState?.maxHp || 1,
+          maxHp: fighterState?.maxHp || 1,
+          shield: 0,
+          anger: fighterState?.anger || 0,
+          dead: false,
+        });
+      }
+    }
+
+    // 2. Accumulate target modifications up to and including the current action index and target sub-step
+    for (let i = 0; i <= activeActionIdx; i++) {
+      const act = activeRound.actives[i];
+      if (!act) continue;
+
+      const isCurrentAction = i === activeActionIdx;
+      const targetsLimit = (isCurrentAction && activeTargetIdx >= 0)
+        ? activeTargetIdx
+        : act.targets.length - 1;
+
+      for (let j = 0; j <= targetsLimit; j++) {
+        const tgt = act.targets[j];
+        if (!tgt) continue;
+
+        const key = `${tgt.camp}_${tgt.pos}`;
+        const current = states.get(key);
+        if (current) {
+          if (tgt.cmd === CMD.ATTACK || tgt.cmd === CMD.ATTACKEX || tgt.cmd === CMD.HURTBUFF) {
+            const hurtHp = tgt.result.hurtHp || 0;
+            if (hurtHp > 0) {
+              const absorbed = Math.min(current.shield, hurtHp);
+              current.shield -= absorbed;
+              current.hp = Math.max(0, current.hp - (hurtHp - absorbed));
+              if (current.hp <= 0) current.dead = true;
+            } else if (hurtHp < 0) {
+              current.hp = Math.min(current.maxHp, current.hp - hurtHp);
+            }
+          } else if (tgt.cmd === CMD.SHIELD) {
+            current.shield = tgt.result.buffTurn || 0;
+          }
+          if (tgt.result.hurtAnger !== undefined) {
+            current.anger = Math.max(0, Math.min(500, current.anger - tgt.result.hurtAnger));
+          }
+        }
+      }
+    }
+
+    return states;
+  }, [report, battleStats, selectedRoundTab, activeActionIdx, activeTargetIdx]);
 
   // Compute Meta Insights Conclusion array
   const insights = useMemo(() => {
@@ -1357,9 +1491,28 @@ export const FightReportPage: React.FC = () => {
           {activeTab === 'deaths' && <DeathsTab deaths={battleStats.deaths} />}
 
           {/* 7. Replay Log Tab */}
+          {/* 7. Replay Log Tab */}
           {activeTab === 'log' && (
             <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
-              {/* Left Column: Round navigations */}
+              {/* Custom floating combat text animations */}
+              <style>{`
+                @keyframes floatUp {
+                  0% { transform: translate(-50%, 0); opacity: 1; }
+                  100% { transform: translate(-50%, -22px); opacity: 0; }
+                }
+                .animate-float-up {
+                  animation: floatUp 1.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+                }
+                @keyframes pingOnce {
+                  0% { transform: scale(1); opacity: 0.6; }
+                  100% { transform: scale(1.12); opacity: 0; }
+                }
+                .animate-ping-once {
+                  animation: pingOnce 0.7s ease-out forwards;
+                }
+              `}</style>
+
+              {/* Left Column: Round navigations & Replay Controls */}
               <div className="xl:col-span-1 border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4">
                 <h3 className="font-extrabold text-sm text-text border-b border-border pb-2.5">
                   Select Round
@@ -1371,280 +1524,579 @@ export const FightReportPage: React.FC = () => {
                   highlights={roundHighlights}
                   isReplayTabActive={activeTab === 'log'}
                 />
+
+                {/* Replay Controls Panel */}
+                <div className="border-t border-border pt-4 space-y-3">
+                  <span className="text-[10px] font-black uppercase tracking-wider text-subtle block">Replay Controls</span>
+                  <div className="flex items-center justify-between bg-bg/50 border border-border rounded-xl p-2.5">
+                    <button
+                      onClick={() => setActiveActionIdx(prev => Math.max(0, prev - 1))}
+                      disabled={activeActionIdx === 0}
+                      className="p-2 rounded-lg border border-border bg-surface hover:bg-hover disabled:opacity-30 disabled:hover:bg-surface text-text cursor-pointer transition-all"
+                      title="Step Back Action"
+                    >
+                      <SkipBack size={14} />
+                    </button>
+
+                    <button
+                      onClick={() => setIsPlaying(prev => !prev)}
+                      className="p-2.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white cursor-pointer transition-all shadow-md shadow-violet-500/10"
+                      title={isPlaying ? "Pause Playback" : "Start Playback"}
+                    >
+                      {isPlaying ? <Pause size={16} /> : <Play size={16} className="fill-white" />}
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        const activeRound = report.turns.find(t => t.curTurn === selectedRoundTab);
+                        if (activeRound) {
+                          setActiveActionIdx(prev => Math.min(activeRound.actives.length - 1, prev + 1));
+                        }
+                      }}
+                      disabled={(() => {
+                        const activeRound = report.turns.find(t => t.curTurn === selectedRoundTab);
+                        return !activeRound || activeActionIdx === activeRound.actives.length - 1;
+                      })()}
+                      className="p-2 rounded-lg border border-border bg-surface hover:bg-hover disabled:opacity-30 disabled:hover:bg-surface text-text cursor-pointer transition-all"
+                      title="Step Forward Action"
+                    >
+                      <SkipForward size={14} />
+                    </button>
+                  </div>
+
+                  {/* Playback speed selector */}
+                  <div className="flex items-center justify-between gap-1.5 bg-bg/30 border border-border/50 rounded-xl p-2 text-xs">
+                    <span className="text-subtle font-bold">Speed:</span>
+                    <div className="flex gap-1">
+                      {([
+                        [1500, '1x'],
+                        [800, '2x'],
+                        [400, '4x']
+                      ] as const).map(([speedMs, label]) => (
+                        <button
+                          key={speedMs}
+                          onClick={() => setPlaybackSpeed(speedMs)}
+                          className={`px-2 py-1 rounded-md text-[10px] font-black transition-all cursor-pointer ${playbackSpeed === speedMs
+                            ? 'bg-violet-600 text-white shadow-sm'
+                            : 'bg-surface border border-border text-muted hover:text-text'
+                            }`}
+                        >
+                          {label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
 
-              {/* Right Column: Interactive log sequences */}
-              <div className="xl:col-span-3 border border-border bg-surface p-6 rounded-2xl shadow-sm space-y-4">
-                {/* Advanced Search Filter Toolbar */}
-                <div className="flex flex-col md:flex-row gap-3 items-center justify-between border-b border-border pb-4">
-                  <h3 className="font-extrabold text-sm text-text flex items-center gap-2">
-                    <ListOrdered size={16} className="text-violet-500" />
-                    <span>Action Sequences (Round {selectedRoundTab})</span>
-                  </h3>
+              {/* Right Column: Visual Arena & Sequential Logs */}
+              <div className="xl:col-span-3 space-y-6">
+                {/* 1. Visual Tactical Arena Grid Panel */}
+                <div className="border border-border bg-surface p-5 rounded-2xl shadow-sm space-y-4">
+                  <div className="flex items-center justify-between border-b border-border pb-2.5">
+                    <h3 className="font-extrabold text-sm text-text flex items-center gap-2">
+                      <Swords size={16} className="text-violet-500 animate-pulse" />
+                      <span>Replay Tactical Arena</span>
+                    </h3>
+                    <span className="text-[10px] text-subtle font-bold uppercase tracking-wider font-mono">
+                      Round {selectedRoundTab} · Action {activeActionIdx + 1} of {(() => {
+                        const activeRound = report.turns.find(t => t.curTurn === selectedRoundTab);
+                        return activeRound?.actives.length || 0;
+                      })()}
+                    </span>
+                  </div>
 
-                  <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-                    {/* Action Filter Selector */}
-                    <div className="relative flex-1 md:flex-none">
-                      <Filter size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-subtle" />
-                      <select
-                        value={logFilter}
-                        onChange={(e) => setLogFilter(e.target.value as any)}
-                        className="w-full md:w-40 pl-8 pr-2.5 py-1.5 text-xs rounded-xl border border-border bg-bg text-text font-bold focus:outline-none"
-                      >
-                        <option value="all">All Targets ({logFilterCounts.all})</option>
-                        <option value="damage">Damage Hits ({logFilterCounts.damage})</option>
-                        <option value="heal">Heals ({logFilterCounts.heal})</option>
-                        <option value="death">Deaths ({logFilterCounts.death})</option>
-                        <option value="shield">Shields ({logFilterCounts.shield})</option>
-                        <option value="buff">Buffs ({logFilterCounts.buff})</option>
-                        <option value="crit">Crits ({logFilterCounts.crit})</option>
-                      </select>
+                  {/* Side-by-side 5x3 deployment grids */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-bg/30 border border-border/60 rounded-xl relative overflow-hidden">
+                    {/* Grid Camp 0 (Attacker Left Wing) */}
+                    <div className="space-y-2">
+                      <span className="text-[10px] font-extrabold text-violet-500 uppercase tracking-wider text-center block">Team 1 Attacker</span>
+                      <div className="grid grid-rows-5 gap-2.5 max-w-xs mx-auto">
+                        {(() => {
+                          const formationLayout = [
+                            [14, 9, 4],
+                            [12, 7, 2],
+                            [11, 6, 1],
+                            [13, 8, 3],
+                            [15, 10, 5]
+                          ];
+                          const activeRound = report.turns.find(t => t.curTurn === selectedRoundTab);
+                          const activeAct = activeRound?.actives[activeActionIdx];
+
+                          const activeGroup = report.team1;
+                          const fighterAtPos = new Map<number, FightRole>();
+                          activeGroup.roles.forEach(r => fighterAtPos.set(r.pos, r));
+
+                          return formationLayout.map((row, rowIdx) => (
+                            <div key={rowIdx} className="grid grid-cols-3 gap-2">
+                              {row.map(posNum => {
+                                const role = fighterAtPos.get(posNum);
+                                const isOccupied = !!role;
+                                const key = `0_${posNum}`;
+                                const state = currentStepStates.get(key);
+                                const isDead = state?.dead || false;
+                                const hpPct = state ? (state.hp / state.maxHp) * 100 : 0;
+
+                                // Playback highlights
+                                const isAttacker = activeAct?.camp === 0 && activeAct?.pos === posNum;
+                                const targetsToHighlight = (activeAct && activeTargetIdx >= 0)
+                                  ? [activeAct.targets[activeTargetIdx]].filter(Boolean)
+                                  : (activeAct?.targets || []);
+
+                                const isTargetObj = targetsToHighlight.find(tgt => tgt.camp === 0 && tgt.pos === posNum);
+                                const isTarget = !!isTargetObj;
+                                const cmdType = isTargetObj?.cmd;
+                                const hurtHp = isTargetObj?.result.hurtHp || 0;
+                                const shieldChange = isTargetObj?.result.buffTurn || 0;
+
+                                let highlightClass = '';
+                                if (isAttacker) {
+                                  highlightClass = 'border-2 border-violet-500 scale-[1.03] shadow-md shadow-violet-500/20 bg-violet-500/5 animate-pulse';
+                                } else if (isTarget) {
+                                  if (cmdType === CMD.ATTACK || cmdType === CMD.ATTACKEX || cmdType === CMD.HURTBUFF) {
+                                    highlightClass = hurtHp > 0 ? 'border-2 border-red-500 bg-red-500/5 animate-ping-once' : 'border-2 border-emerald-500 bg-emerald-500/5 animate-ping-once';
+                                  } else if (cmdType === CMD.SHIELD) {
+                                    highlightClass = 'border-2 border-blue-500 bg-blue-500/5 animate-ping-once';
+                                  } else {
+                                    highlightClass = 'border-2 border-purple-500 bg-purple-500/5';
+                                  }
+                                } else {
+                                  highlightClass = isOccupied ? (isDead ? 'border border-rose-500/20 bg-rose-500/5 opacity-40' : 'border border-emerald-500/30 bg-emerald-500/5') : 'border border-dashed border-border/10 opacity-25';
+                                }
+
+                                return (
+                                  <div
+                                    key={posNum}
+                                    className={`h-11 rounded-xl flex flex-col items-center justify-center relative p-1 transition-all duration-300 ${highlightClass}`}
+                                  >
+                                    {isOccupied ? (
+                                      <div className="w-full h-full flex flex-col items-center justify-center text-center select-none relative">
+                                        <span className="text-[7px] font-mono leading-none font-black text-subtle/50 uppercase">Pos {posNum}</span>
+                                        <span className="text-[9px] font-black tracking-tight leading-tight block truncate w-full px-0.5 text-text">
+                                          {role.name.slice(0, 6)}
+                                        </span>
+                                        {!isDead && state && (
+                                          <div className="absolute bottom-1 left-1.5 right-1.5 h-0.5 bg-zinc-850 rounded-full overflow-hidden">
+                                            <div className="h-full bg-emerald-500" style={{ width: `${hpPct}%` }}></div>
+                                          </div>
+                                        )}
+                                        {/* Floating Combat Text */}
+                                        {isTarget && isTargetObj && (
+                                          <div className="absolute -top-3 left-1/2 -translate-x-1/2 animate-float-up font-mono font-black text-[9px] z-50 whitespace-nowrap bg-zinc-950/90 px-1.5 py-0.5 rounded border border-zinc-800 shadow-xl">
+                                            {cmdType === CMD.SHIELD ? (
+                                              <span className="text-blue-400">🛡️ +{formatCompact(shieldChange)}</span>
+                                            ) : hurtHp > 0 ? (
+                                              <span className="text-red-500">-{formatCompact(hurtHp)}</span>
+                                            ) : hurtHp < 0 ? (
+                                              <span className="text-emerald-400">💚 +{formatCompact(-hurtHp)}</span>
+                                            ) : (
+                                              <span className="text-subtle">BUFF</span>
+                                            )}
+                                          </div>
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <span className="text-[8px] font-mono font-bold text-subtle/10">{posNum}</span>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          ));
+                        })()}
+                      </div>
                     </div>
 
-                    {/* Log text search */}
-                    <div className="relative flex-1 md:flex-none">
-                      <Search size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-subtle" />
-                      <input
-                        type="text"
-                        placeholder="Search logs..."
-                        value={logSearch}
-                        onChange={(e) => setLogSearch(e.target.value)}
-                        className="w-full md:w-40 pl-8 pr-3 py-1.5 text-xs rounded-xl border border-border bg-bg text-text focus:outline-none font-bold placeholder-zinc-400"
-                      />
+                    {/* Grid Camp 1 (Defender Right Wing) */}
+                    <div className="space-y-2">
+                      <span className="text-[10px] font-extrabold text-indigo-500 uppercase tracking-wider text-center block">Team 2 Defender</span>
+                      <div className="grid grid-rows-5 gap-2.5 max-w-xs mx-auto">
+                        {(() => {
+                          const formationLayout = [
+                            [4, 9, 14],
+                            [2, 7, 12],
+                            [1, 6, 11],
+                            [3, 8, 13],
+                            [5, 10, 15]
+                          ];
+                          const activeRound = report.turns.find(t => t.curTurn === selectedRoundTab);
+                          const activeAct = activeRound?.actives[activeActionIdx];
+
+                          const activeGroup = report.team2;
+                          const fighterAtPos = new Map<number, FightRole>();
+                          activeGroup.roles.forEach(r => fighterAtPos.set(r.pos, r));
+
+                          return formationLayout.map((row, rowIdx) => (
+                            <div key={rowIdx} className="grid grid-cols-3 gap-2">
+                              {row.map(posNum => {
+                                const role = fighterAtPos.get(posNum);
+                                const isOccupied = !!role;
+                                const key = `1_${posNum}`;
+                                const state = currentStepStates.get(key);
+                                const isDead = state?.dead || false;
+                                const hpPct = state ? (state.hp / state.maxHp) * 100 : 0;
+
+                                // Playback highlights
+                                const isAttacker = activeAct?.camp === 1 && activeAct?.pos === posNum;
+                                const targetsToHighlight = (activeAct && activeTargetIdx >= 0)
+                                  ? [activeAct.targets[activeTargetIdx]].filter(Boolean)
+                                  : (activeAct?.targets || []);
+
+                                const isTargetObj = targetsToHighlight.find(tgt => tgt.camp === 1 && tgt.pos === posNum);
+                                const isTarget = !!isTargetObj;
+                                const cmdType = isTargetObj?.cmd;
+                                const hurtHp = isTargetObj?.result.hurtHp || 0;
+                                const shieldChange = isTargetObj?.result.buffTurn || 0;
+
+                                let highlightClass = '';
+                                if (isAttacker) {
+                                  highlightClass = 'border-2 border-indigo-500 scale-[1.03] shadow-md shadow-indigo-500/20 bg-indigo-500/5 animate-pulse';
+                                } else if (isTarget) {
+                                  if (cmdType === CMD.ATTACK || cmdType === CMD.ATTACKEX || cmdType === CMD.HURTBUFF) {
+                                    highlightClass = hurtHp > 0 ? 'border-2 border-red-500 bg-red-500/5 animate-ping-once' : 'border-2 border-emerald-500 bg-emerald-500/5 animate-ping-once';
+                                  } else if (cmdType === CMD.SHIELD) {
+                                    highlightClass = 'border-2 border-blue-500 bg-blue-500/5 animate-ping-once';
+                                  } else {
+                                    highlightClass = 'border-2 border-purple-500 bg-purple-500/5';
+                                  }
+                                } else {
+                                  highlightClass = isOccupied ? (isDead ? 'border border-rose-500/20 bg-rose-500/5 opacity-40' : 'border border-emerald-500/30 bg-emerald-500/5') : 'border border-dashed border-border/10 opacity-25';
+                                }
+
+                                return (
+                                  <div
+                                    key={posNum}
+                                    className={`h-11 rounded-xl flex flex-col items-center justify-center relative p-1 transition-all duration-300 ${highlightClass}`}
+                                  >
+                                    {isOccupied ? (
+                                      <div className="w-full h-full flex flex-col items-center justify-center text-center select-none relative">
+                                        <span className="text-[7px] font-mono leading-none font-black text-subtle/50 uppercase">Pos {posNum}</span>
+                                        <span className="text-[9px] font-black tracking-tight leading-tight block truncate w-full px-0.5 text-text">
+                                          {role.name.slice(0, 6)}
+                                        </span>
+                                        {!isDead && state && (
+                                          <div className="absolute bottom-1 left-1.5 right-1.5 h-0.5 bg-zinc-850 rounded-full overflow-hidden">
+                                            <div className="h-full bg-emerald-500" style={{ width: `${hpPct}%` }}></div>
+                                          </div>
+                                        )}
+                                        {/* Floating Combat Text */}
+                                        {isTarget && isTargetObj && (
+                                          <div className="absolute -top-3 left-1/2 -translate-x-1/2 animate-float-up font-mono font-black text-[9px] z-50 whitespace-nowrap bg-zinc-950/90 px-1.5 py-0.5 rounded border border-zinc-800 shadow-xl">
+                                            {cmdType === CMD.SHIELD ? (
+                                              <span className="text-blue-400">🛡️ +{formatCompact(shieldChange)}</span>
+                                            ) : hurtHp > 0 ? (
+                                              <span className="text-red-500">-{formatCompact(hurtHp)}</span>
+                                            ) : hurtHp < 0 ? (
+                                              <span className="text-emerald-400">💚 +{formatCompact(-hurtHp)}</span>
+                                            ) : (
+                                              <span className="text-subtle">BUFF</span>
+                                            )}
+                                          </div>
+                                        )}
+                                      </div>
+                                    ) : (
+                                      <span className="text-[8px] font-mono font-bold text-subtle/10">{posNum}</span>
+                                    )}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          ));
+                        })()}
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Log list */}
-                <div className="space-y-5 divide-y divide-border/60">
-                  {filteredActives.length === 0 ? (
-                    <div className="p-8 border border-dashed border-border rounded-2xl text-center text-xs text-subtle font-bold">
-                      No actions in Round {selectedRoundTab} matched your active search filters.
-                    </div>
-                  ) : (
-                    filteredActives.map(({ idx: actIdx, attackerName, attackerCamp, actionLabel, matchedTargets }) => {
-                      const highlighted = highlightedMomentId === `${selectedRoundTab}-${actIdx}`;
+                {/* 2. Interactive Log Sequences Panel */}
+                <div className="border border-border bg-surface p-6 rounded-2xl shadow-sm space-y-4">
+                  {/* Advanced Search Filter Toolbar */}
+                  <div className="flex flex-col md:flex-row gap-3 items-center justify-between border-b border-border pb-4">
+                    <h3 className="font-extrabold text-sm text-text flex items-center gap-2">
+                      <ListOrdered size={16} className="text-violet-500" />
+                      <span>Action Sequences (Round {selectedRoundTab})</span>
+                    </h3>
 
-                      return (
-                        <div
-                          id={`action-${selectedRoundTab}-${actIdx}`}
-                          key={actIdx}
-                          className={`pt-4 ${actIdx === 0 ? 'pt-0' : ''} space-y-2.5 transition-all duration-300 ${highlighted
-                            ? 'bg-violet-500/5 dark:bg-violet-500/5 border border-violet-500/15 p-3 rounded-2xl'
-                            : ''
-                            }`}
+                    <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
+                      {/* Action Filter Selector */}
+                      <div className="relative flex-1 md:flex-none">
+                        <Filter size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-subtle" />
+                        <select
+                          value={logFilter}
+                          onChange={(e) => setLogFilter(e.target.value as any)}
+                          className="w-full md:w-40 pl-8 pr-2.5 py-1.5 text-xs rounded-xl border border-border bg-bg text-text font-bold focus:outline-none"
                         >
-                          <div className="flex items-center justify-between">
-                            <span className="text-[10px] font-black text-subtle uppercase">
-                              ACTION #{actIdx + 1}
-                            </span>
-                            <span
-                              className={`text-[9px] px-2 py-0.5 rounded font-black uppercase ${attackerCamp === 0
-                                ? 'bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-400 border border-violet-500/10'
-                                : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-400 border border-indigo-500/10'
-                                }`}
-                            >
-                              {attackerCamp === 0 ? 'Team 1 (Attacker)' : 'Team 2 (Defender)'}
-                            </span>
-                          </div>
+                          <option value="all">All Targets ({logFilterCounts.all})</option>
+                          <option value="damage">Damage Hits ({logFilterCounts.damage})</option>
+                          <option value="heal">Heals ({logFilterCounts.heal})</option>
+                          <option value="death">Deaths ({logFilterCounts.death})</option>
+                          <option value="shield">Shields ({logFilterCounts.shield})</option>
+                          <option value="buff">Buffs ({logFilterCounts.buff})</option>
+                          <option value="crit">Crits ({logFilterCounts.crit})</option>
+                        </select>
+                      </div>
 
-                          <p className="text-xs font-semibold text-text">
-                            <span className="font-extrabold text-violet-600 dark:text-violet-400">
-                              {attackerName}
-                            </span>{' '}
-                            {actionLabel}:
-                          </p>
+                      {/* Log text search */}
+                      <div className="relative flex-1 md:flex-none">
+                        <Search size={12} className="absolute left-3 top-1/2 -translate-y-1/2 text-subtle" />
+                        <input
+                          type="text"
+                          placeholder="Search logs..."
+                          value={logSearch}
+                          onChange={(e) => setLogSearch(e.target.value)}
+                          className="w-full md:w-40 pl-8 pr-3 py-1.5 text-xs rounded-xl border border-border bg-bg text-text focus:outline-none font-bold placeholder-zinc-400"
+                        />
+                      </div>
+                    </div>
+                  </div>
 
-                          <div className="pl-4 space-y-1.5 border-l-2 border-border/80">
-                            {matchedTargets.map((tgt, tgtIdx) => {
-                              const tCamp = tgt.camp;
-                              const tPos = tgt.pos;
-                              const tGroup = tCamp === 0 ? report.team1 : report.team2;
-                              const tRole = tGroup.roles.find((r) => r.pos === tPos);
-                              const tName = resolveAttackerName(tCamp, tPos, tRole);
-                              const hurtHp = tgt.result.hurtHp || 0;
+                  {/* Log list */}
+                  <div className="space-y-5 divide-y divide-border/60">
+                    {filteredActives.length === 0 ? (
+                      <div className="p-8 border border-dashed border-border rounded-2xl text-center text-xs text-subtle font-bold">
+                        No actions in Round {selectedRoundTab} matched your active search filters.
+                      </div>
+                    ) : (
+                      filteredActives.map(({ idx: actIdx, attackerName, attackerCamp, actionLabel, matchedTargets }) => {
+                        const highlighted = highlightedMomentId === `${selectedRoundTab}-${actIdx}` || activeActionIdx === actIdx;
 
-                              const flags = decodeStatusFlags(tgt.status);
-                              const isCombo = flags.includes('Combo / Joint Attack');
-                              const isAid = flags.includes('Help / Rescue');
+                        return (
+                          <div
+                            id={`action-${selectedRoundTab}-${actIdx}`}
+                            key={actIdx}
+                            onClick={() => setActiveActionIdx(actIdx)}
+                            className={`pt-4 ${actIdx === 0 ? 'pt-0' : ''} space-y-2.5 transition-all duration-300 cursor-pointer p-2.5 rounded-2xl ${highlighted
+                              ? 'bg-violet-500/5 dark:bg-violet-500/5 border border-violet-500/15'
+                              : 'hover:bg-hover'
+                              }`}
+                          >
+                            <div className="flex items-center justify-between">
+                              <span className="text-[10px] font-black text-subtle uppercase">
+                                ACTION #{actIdx + 1} {activeActionIdx === actIdx && <span className="text-violet-500 font-bold ml-1.5">(Active Replay Step)</span>}
+                              </span>
+                              <span
+                                className={`text-[9px] px-2 py-0.5 rounded font-black uppercase ${attackerCamp === 0
+                                  ? 'bg-violet-100 dark:bg-violet-950 text-violet-800 dark:text-violet-400 border border-violet-500/10'
+                                  : 'bg-indigo-100 dark:bg-indigo-950 text-indigo-800 dark:text-indigo-400 border border-indigo-500/10'
+                                  }`}
+                              >
+                                {attackerCamp === 0 ? 'Team 1 (Attacker)' : 'Team 2 (Defender)'}
+                              </span>
+                            </div>
 
-                              let prefix = '';
-                              if (isCombo) {
-                                prefix = '🔗 [Combo] ';
-                              } else if (isAid) {
-                                prefix = '🛡️ [Aid] ';
-                              }
+                            <p className="text-xs font-semibold text-text">
+                              <span className="font-extrabold text-violet-600 dark:text-violet-400">
+                                {attackerName}
+                              </span>{' '}
+                              {actionLabel}:
+                            </p>
 
-                              let logText = '';
-                              let logClass = 'text-muted';
+                            <div className="pl-4 space-y-1.5 border-l-2 border-border/80">
+                              {matchedTargets.map((tgt, tgtIdx) => {
+                                const tCamp = tgt.camp;
+                                const tPos = tgt.pos;
+                                const tGroup = tCamp === 0 ? report.team1 : report.team2;
+                                const tRole = tGroup.roles.find((r) => r.pos === tPos);
+                                const tName = resolveAttackerName(tCamp, tPos, tRole);
+                                const hurtHp = tgt.result.hurtHp || 0;
 
-                              const getBuffName = (bId: number): string => {
-                                if (bId === 4294967295) return 'Generic Buff';
-                                if (bId === 0) return 'Null Buff';
-                                return buffsMap.get(bId) || `Buff #${bId}`;
-                              };
+                                const flags = decodeStatusFlags(tgt.status);
+                                const isCombo = flags.includes('Combo / Joint Attack');
+                                const isAid = flags.includes('Help / Rescue');
 
-                              if (tgt.cmd === CMD.ATTACK || tgt.cmd === CMD.ATTACKEX || tgt.cmd === CMD.HURTBUFF) {
-                                if (hurtHp > 0) {
-                                  const suffix = flags.length ? ` (${flags.join(', ')})` : '';
-                                  logText = `Hits ${tName} (Pos ${tPos}) dealing ${hurtHp.toLocaleString()} damage${suffix}.`;
-                                  logClass = 'text-red-600 dark:text-red-400 font-medium';
-                                } else if (hurtHp < 0) {
-                                  logText = `Heals ${tName} (Pos ${tPos}) for ${(-hurtHp).toLocaleString()} HP.`;
-                                  logClass = 'text-emerald-600 dark:text-emerald-450 font-medium';
-                                } else {
-                                  if (flags.includes('Super Dodge / All Miss')) {
-                                    logText = `${tName} (Pos ${tPos}) dodges / all-misses the effect.`;
-                                    logClass = 'text-muted';
-                                  } else if (flags.includes('Invincible')) {
-                                    logText = `${tName} (Pos ${tPos}) takes no damage due to Invincible.`;
-                                    logClass = 'text-muted';
-                                  } else if (flags.includes('Block')) {
-                                    logText = `${tName} (Pos ${tPos}) blocks the hit with no HP loss.`;
-                                    logClass = 'text-muted';
+                                let prefix = '';
+                                if (isCombo) {
+                                  prefix = '🔗 [Combo] ';
+                                } else if (isAid) {
+                                  prefix = '🛡️ [Aid] ';
+                                }
+
+                                let logText = '';
+                                let cardBgClass = 'border-l-2 border-border/40 hover:bg-hover';
+                                let iconLabel = '↳';
+                                let textClass = 'text-muted';
+
+                                const getBuffName = (bId: number): string => {
+                                  if (bId === 4294967295) return 'Generic Buff';
+                                  if (bId === 0) return 'Null Buff';
+                                  return buffsMap.get(bId) || `Buff #${bId}`;
+                                };
+
+                                if (tgt.cmd === CMD.ATTACK || tgt.cmd === CMD.ATTACKEX || tgt.cmd === CMD.HURTBUFF) {
+                                  if (hurtHp > 0) {
+                                    const suffix = flags.length ? ` (${flags.join(', ')})` : '';
+                                    logText = `Hits ${tName} (Pos ${tPos}) dealing ${hurtHp.toLocaleString()} damage${suffix}.`;
+                                    cardBgClass = 'border-l-2 border-red-500/50 hover:bg-red-500/5 bg-red-500/[0.01]';
+                                    iconLabel = '⚔️';
+                                    textClass = 'text-red-600 dark:text-red-400 font-semibold';
+                                  } else if (hurtHp < 0) {
+                                    logText = `Heals ${tName} (Pos ${tPos}) for ${(-hurtHp).toLocaleString()} HP.`;
+                                    cardBgClass = 'border-l-2 border-emerald-500/50 hover:bg-emerald-500/5 bg-emerald-500/[0.01]';
+                                    iconLabel = '💚';
+                                    textClass = 'text-emerald-600 dark:text-emerald-450 font-semibold';
                                   } else {
-                                    logText = `Targets ${tName} (Pos ${tPos}) with no HP change${flags.length ? ` (${flags.join(', ')})` : ''
-                                      }.`;
-                                    if (isCombo) {
-                                      logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg';
-                                    } else if (isAid) {
-                                      logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg';
+                                    if (flags.includes('Super Dodge / All Miss')) {
+                                      logText = `${tName} (Pos ${tPos}) dodges / all-misses the effect.`;
+                                      textClass = 'text-subtle';
+                                    } else if (flags.includes('Invincible')) {
+                                      logText = `${tName} (Pos ${tPos}) takes no damage due to Invincible.`;
+                                      textClass = 'text-subtle';
+                                    } else if (flags.includes('Block')) {
+                                      logText = `${tName} (Pos ${tPos}) blocks the hit with no HP loss.`;
+                                      textClass = 'text-subtle';
                                     } else {
-                                      logClass = 'text-muted';
+                                      logText = `Targets ${tName} (Pos ${tPos}) with no HP change${flags.length ? ` (${flags.join(', ')})` : ''}.`;
+                                      if (isCombo) {
+                                        textClass = 'text-fuchsia-600 dark:text-fuchsia-400 font-bold';
+                                      } else if (isAid) {
+                                        textClass = 'text-sky-600 dark:text-sky-400 font-bold';
+                                      } else {
+                                        textClass = 'text-muted';
+                                      }
                                     }
                                   }
+                                } else if (tgt.cmd === CMD.SHIELD) {
+                                  const sId = tgt.result.buffId || 0;
+                                  const shieldHp = tgt.result.buffTurn || 0;
+                                  if (shieldHp === 0) {
+                                    logText = `Removes Shield [${getBuffName(sId)}] from ${tName} (Pos ${tPos}).`;
+                                  } else {
+                                    logText = `Applies Shield [${getBuffName(sId)}] on ${tName} (Pos ${tPos}) with ${shieldHp.toLocaleString()} shield HP.`;
+                                  }
+                                  cardBgClass = 'border-l-2 border-blue-500/50 hover:bg-blue-500/5 bg-blue-500/[0.01]';
+                                  iconLabel = '🛡️';
+                                  textClass = 'text-blue-600 dark:text-blue-400 font-semibold';
+                                } else if (tgt.cmd === CMD.ATTRBUFF || tgt.cmd === CMD.CONTROLBUFF) {
+                                  const bId = tgt.result.buffId || 0;
+                                  const turnOrType = tgt.result.buffTurn || 0;
+                                  if (bId > 0 && turnOrType > 0) {
+                                    logText = `Applies Buff [${getBuffName(bId)}] on ${tName} (Pos ${tPos}) for ${turnOrType} rounds.`;
+                                  } else if (turnOrType > 0) {
+                                    logText = `Removes/clears buff type #${turnOrType} from ${tName} (Pos ${tPos}).`;
+                                  } else if (bId > 0) {
+                                    logText = `Removes/clears Buff [${getBuffName(bId)}] from ${tName} (Pos ${tPos}).`;
+                                  } else {
+                                    logText = `Cleanses/clears temporary buffs/debuffs from ${tName} (Pos ${tPos}).`;
+                                  }
+                                  cardBgClass = 'border-l-2 border-purple-500/50 hover:bg-purple-500/5 bg-purple-500/[0.01]';
+                                  iconLabel = '✨';
+                                  textClass = 'text-purple-600 dark:text-purple-400 font-semibold';
+                                } else if (tgt.cmd === CMD.POSITION) {
+                                  const newPos = tgt.result.buffTurn || tPos;
+                                  logText = `Moves ${tName} from position ${tPos} to position ${newPos}.`;
+                                  cardBgClass = 'border-l-2 border-amber-500/50 hover:bg-amber-500/5 bg-amber-500/[0.01]';
+                                  iconLabel = '🔄';
+                                  textClass = 'text-amber-600 dark:text-amber-400 font-semibold';
+                                } else if (tgt.cmd === CMD.FLOAT) {
+                                  const effectType = tgt.result.buffId || 0;
+                                  const effectParam = tgt.result.buffTurn || 0;
+                                  logText = `Shows special combat effect [${getSpecialFloatText(effectType)}] on ${tName} (Pos ${tPos})${effectParam ? `, parameter ${effectParam}` : ''}.`;
+                                  cardBgClass = 'border-l-2 border-teal-500/50 hover:bg-teal-500/5 bg-teal-500/[0.01]';
+                                  iconLabel = '💬';
+                                  textClass = 'text-teal-600 dark:text-teal-400 font-semibold';
+                                } else if (tgt.cmd === CMD.STATUS) {
+                                  logText = flags.length
+                                    ? `Updates combat status for ${tName} (Pos ${tPos}): ${flags.join(', ')}.`
+                                    : `Updates combat status for ${tName} (Pos ${tPos}).`;
+                                  cardBgClass = 'border-l-2 border-zinc-500/40 hover:bg-hover';
+                                  iconLabel = '📊';
+                                  textClass = 'text-subtle font-semibold';
+                                } else if (tgt.cmd === CMD.NONE) {
+                                  logText = `Triggers script action on ${tName} (Pos ${tPos}).`;
+                                  cardBgClass = 'border-l-2 border-zinc-500/20 hover:bg-hover';
+                                  iconLabel = '⚙️';
+                                  textClass = 'text-subtle';
                                 }
-                              } else if (tgt.cmd === CMD.SHIELD) {
-                                const sId = tgt.result.buffId || 0;
-                                const shieldHp = tgt.result.buffTurn || 0;
-                                if (shieldHp === 0) {
-                                  logText = `Removes Shield [${getBuffName(sId)}] from ${tName} (Pos ${tPos}).`;
-                                } else {
-                                  logText = `Applies Shield [${getBuffName(sId)}] on ${tName} (Pos ${tPos}) with ${shieldHp.toLocaleString()} shield HP.`;
-                                }
-                                logClass = 'text-blue-600 dark:text-blue-400 font-medium';
-                              } else if (tgt.cmd === CMD.ATTRBUFF || tgt.cmd === CMD.CONTROLBUFF) {
-                                const bId = tgt.result.buffId || 0;
-                                const turnOrType = tgt.result.buffTurn || 0;
-                                if (bId > 0 && turnOrType > 0) {
-                                  logText = `Applies Buff [${getBuffName(bId)}] on ${tName} (Pos ${tPos}) for ${turnOrType} rounds.`;
-                                } else if (turnOrType > 0) {
-                                  logText = `Removes/clears buff type #${turnOrType} from ${tName} (Pos ${tPos}).`;
-                                } else if (bId > 0) {
-                                  logText = `Removes/clears Buff [${getBuffName(bId)}] from ${tName} (Pos ${tPos}).`;
-                                } else {
-                                  logText = `Cleanses/clears temporary buffs/debuffs from ${tName} (Pos ${tPos}).`;
-                                }
-                                logClass = 'text-purple-600 dark:text-purple-400';
-                              } else if (tgt.cmd === CMD.POSITION) {
-                                const newPos = tgt.result.buffTurn || tPos;
-                                logText = `Moves ${tName} from position ${tPos} to position ${newPos}.`;
-                                logClass = 'text-amber-600 dark:text-amber-400';
-                              } else if (tgt.cmd === CMD.FLOAT) {
-                                const effectType = tgt.result.buffId || 0;
-                                const effectParam = tgt.result.buffTurn || 0;
-                                logText = `Shows special combat effect [${getSpecialFloatText(effectType)}] on ${tName} (Pos ${tPos})${effectParam ? `, parameter ${effectParam}` : ''
-                                  }.`;
-                                logClass = 'text-teal-600 dark:text-teal-400';
-                              } else if (tgt.cmd === CMD.STATUS) {
-                                logText = flags.length
-                                  ? `Updates combat status for ${tName} (Pos ${tPos}): ${flags.join(', ')}.`
-                                  : `Updates combat status for ${tName} (Pos ${tPos}).`;
 
-                                if (isCombo) {
-                                  logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg';
-                                } else if (isAid) {
-                                  logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg';
-                                } else {
-                                  logClass = 'text-muted';
+                                // Highlight if active micro-step target in the player
+                                const isStepActive = activeActionIdx === actIdx && activeTargetIdx === tgtIdx;
+                                if (isStepActive) {
+                                  cardBgClass = 'border-l-4 border-violet-500 bg-violet-500/10 dark:bg-violet-950/20 font-bold scale-[1.01] shadow-sm';
                                 }
-                              } else if (tgt.cmd === CMD.NONE) {
-                                logText = `Triggers script action / combat visual on ${tName} (Pos ${tPos}).`;
-                                if (isCombo) {
-                                  logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-fuchsia-500/5 dark:bg-fuchsia-500/5 border border-fuchsia-500/20 px-2 py-0.5 rounded-lg';
-                                } else if (isAid) {
-                                  logClass = 'text-zinc-500 dark:text-zinc-400 font-bold bg-sky-500/5 dark:bg-sky-500/5 border border-sky-500/20 px-2 py-0.5 rounded-lg';
-                                } else {
-                                  logClass = 'text-subtle dark:text-muted';
-                                }
-                              }
 
-                              return (
-                                <div
-                                  key={tgtIdx}
-                                  className={`text-xs flex items-center justify-between gap-4 py-1 hover:bg-hover px-2 rounded-xl transition-all ${logClass}`}
-                                >
-                                  <div className="flex items-center gap-2 flex-wrap">
-                                    <span>
-                                      ↳ {prefix}
-                                      {logText}
-                                    </span>
-                                    {tgt.hpBefore !== undefined && tgt.hpAfter !== undefined && (
-                                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-lg text-[10px] bg-bg border border-border text-subtle cursor-help group relative font-mono transition-colors hover:text-text hover:bg-hover select-none">
-                                        <span>HP: {Math.round(tgt.hpAfter / 1000)}k</span>
-                                        {/* Tooltip on hover */}
-                                        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 hidden group-hover:flex flex-col items-center z-50 pointer-events-none">
-                                          <span className="bg-zinc-950 text-white text-[10px] rounded-xl p-3 shadow-2xl border border-zinc-800 space-y-1.5 w-52 font-sans text-left">
-                                            <span className="font-extrabold block text-zinc-300 text-xs border-b border-zinc-800 pb-1">
-                                              {tName} HP Ticks
-                                            </span>
-                                            <span className="flex justify-between font-mono text-zinc-400 pt-0.5">
-                                              <span>Before:</span>
-                                              <span>{tgt.hpBefore.toLocaleString()}</span>
-                                            </span>
-                                            <span className="flex justify-between font-mono text-zinc-200 font-bold border-t border-zinc-900 pt-1">
-                                              <span>After:</span>
-                                              <span>{tgt.hpAfter.toLocaleString()}</span>
-                                            </span>
-                                            <span
-                                              className={`flex justify-between font-mono font-bold text-[9px] ${tgt.hpAfter < tgt.hpBefore
-                                                ? 'text-red-400'
-                                                : tgt.hpAfter > tgt.hpBefore
-                                                  ? 'text-emerald-400'
-                                                  : 'text-zinc-400'
-                                                }`}
-                                            >
-                                              <span>Difference:</span>
-                                              <span>
-                                                {tgt.hpAfter - tgt.hpBefore > 0
-                                                  ? `+${(tgt.hpAfter - tgt.hpBefore).toLocaleString()}`
-                                                  : (tgt.hpAfter - tgt.hpBefore).toLocaleString()}
+                                return (
+                                  <div
+                                    key={tgtIdx}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setActiveActionIdx(actIdx);
+                                      setActiveTargetIdx(tgtIdx);
+                                    }}
+                                    className={`text-xs flex items-center justify-between gap-4 p-2.5 rounded-xl transition-all cursor-pointer select-none ${cardBgClass} ${textClass}`}
+                                  >
+                                    <div className="flex items-center gap-2 flex-wrap">
+                                      <span className="shrink-0 text-sm select-none">{iconLabel}</span>
+                                      <span>
+                                        {prefix}
+                                        {logText}
+                                      </span>
+                                      {tgt.hpBefore !== undefined && tgt.hpAfter !== undefined && (
+                                        <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-lg text-[10px] bg-bg border border-border text-subtle cursor-help group relative font-mono transition-colors hover:text-text hover:bg-hover select-none">
+                                          <span>HP: {Math.round(tgt.hpAfter / 1000)}k</span>
+                                          {/* Tooltip on hover */}
+                                          <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2.5 hidden group-hover:flex flex-col items-center z-50 pointer-events-none">
+                                            <span className="bg-zinc-950 text-white text-[10px] rounded-xl p-3 shadow-2xl border border-zinc-800 space-y-1.5 w-52 font-sans text-left">
+                                              <span className="font-extrabold block text-zinc-300 text-xs border-b border-zinc-800 pb-1">
+                                                {tName} HP Ticks
                                               </span>
-                                            </span>
-                                            {tgt.shieldAfter !== undefined && tgt.shieldAfter > 0 && (
-                                              <span className="flex justify-between font-mono text-blue-400 text-[9px] border-t border-zinc-900 pt-1">
-                                                <span>Active Shield:</span>
-                                                <span>{tgt.shieldAfter.toLocaleString()}</span>
+                                              <span className="flex justify-between font-mono text-zinc-400 pt-0.5">
+                                                <span>Before:</span>
+                                                <span>{tgt.hpBefore.toLocaleString()}</span>
                                               </span>
-                                            )}
-                                            <span className="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden block mt-1.5">
+                                              <span className="flex justify-between font-mono text-zinc-200 font-bold border-t border-zinc-900 pt-1">
+                                                <span>After:</span>
+                                                <span>{tgt.hpAfter.toLocaleString()}</span>
+                                              </span>
                                               <span
-                                                className="h-full bg-gradient-to-r from-red-500 to-emerald-500 block transition-all"
-                                                style={{
-                                                  width: `${(tgt.hpAfter / (tgt.maxHp || 1)) * 100}%`,
-                                                }}
-                                              ></span>
+                                                className={`flex justify-between font-mono font-bold text-[9px] ${tgt.hpAfter < tgt.hpBefore
+                                                  ? 'text-red-400'
+                                                  : tgt.hpAfter > tgt.hpBefore
+                                                    ? 'text-emerald-400'
+                                                    : 'text-zinc-400'
+                                                  }`}
+                                              >
+                                                <span>Difference:</span>
+                                                <span>
+                                                  {tgt.hpAfter - tgt.hpBefore > 0
+                                                    ? `+${(tgt.hpAfter - tgt.hpBefore).toLocaleString()}`
+                                                    : (tgt.hpAfter - tgt.hpBefore).toLocaleString()}
+                                                </span>
+                                              </span>
+                                              {tgt.shieldAfter !== undefined && tgt.shieldAfter > 0 && (
+                                                <span className="flex justify-between font-mono text-blue-400 text-[9px] border-t border-zinc-900 pt-1">
+                                                  <span>Active Shield:</span>
+                                                  <span>{tgt.shieldAfter.toLocaleString()}</span>
+                                                </span>
+                                              )}
+                                              <span className="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden block mt-1.5">
+                                                <span
+                                                  className="h-full bg-gradient-to-r from-red-500 to-emerald-500 block transition-all"
+                                                  style={{
+                                                    width: `${(tgt.hpAfter / (tgt.maxHp || 1)) * 100}%`,
+                                                  }}
+                                                ></span>
+                                              </span>
                                             </span>
+                                            {/* Tooltip triangle */}
+                                            <span className="w-2 h-2 bg-zinc-950 rotate-45 -mt-1 border-r border-b border-zinc-800/80"></span>
                                           </span>
-                                          {/* Tooltip triangle */}
-                                          <span className="w-2 h-2 bg-zinc-950 rotate-45 -mt-1 border-r border-b border-zinc-800/80"></span>
                                         </span>
+                                      )}
+                                    </div>
+                                    {tgt.result.hurtAnger !== undefined && tgt.result.hurtAnger !== 0 && (
+                                      <span className="font-mono text-[10px] text-orange-500 shrink-0 font-bold bg-orange-500/5 px-1.5 py-0.5 rounded border border-orange-500/10">
+                                        Anger: {formatAngerChange(tgt.result.hurtAnger)}
                                       </span>
                                     )}
                                   </div>
-                                  {tgt.result.hurtAnger !== undefined && tgt.result.hurtAnger !== 0 && (
-                                    <span className="font-mono text-[10px] text-orange-500 shrink-0 font-bold">
-                                      Anger: {formatAngerChange(tgt.result.hurtAnger)}
-                                    </span>
-                                  )}
-                                </div>
-                              );
-                            })}
+                                );
+                              })}
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })
-                  )}
+                        );
+                      })
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

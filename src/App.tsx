@@ -74,6 +74,20 @@ const GuildTacticsPlannerPage = React.lazy(() => import('./routes/GuildTacticsPl
 const YammyRampagePage = React.lazy(() => import('./routes/YammyRampagePage').then(m => ({ default: m.YammyRampagePage })));
 const CrossServerBattlePage = React.lazy(() => import('./routes/CrossServerBattlePage').then(m => ({ default: m.CrossServerBattlePage })));
 const SoulKingRefineryPage = React.lazy(() => import('./routes/SoulKingRefineryPage').then(m => ({ default: m.SoulKingRefineryPage })));
+const BattlePowerPage = React.lazy(() => import('./routes/BattlePowerPage').then(m => ({ default: m.BattlePowerPage })));
+const ItemAcquisitionPage = React.lazy(() => import('./routes/ItemAcquisitionPage').then(m => ({ default: m.ItemAcquisitionPage })));
+const EquipmentOptimizerPage = React.lazy(() => import('./routes/EquipmentOptimizerPage').then(m => ({ default: m.EquipmentOptimizerPage })));
+const AchievementPlannerPage = React.lazy(() => import('./routes/AchievementPlannerPage').then(m => ({ default: m.AchievementPlannerPage })));
+const PetOptimizerPage = React.lazy(() => import('./routes/PetOptimizerPage').then(m => ({ default: m.PetOptimizerPage })));
+const GuildOptimizerPage = React.lazy(() => import('./routes/GuildOptimizerPage').then(m => ({ default: m.GuildOptimizerPage })));
+const TreasureUpgradePage = React.lazy(() => import('./routes/TreasureUpgradePage').then(m => ({ default: m.TreasureUpgradePage })));
+const CullingOptimizerPage = React.lazy(() => import('./routes/CullingOptimizerPage').then(m => ({ default: m.CullingOptimizerPage })));
+const TavernSimulatorPage = React.lazy(() => import('./routes/TavernSimulatorPage').then(m => ({ default: m.TavernSimulatorPage })));
+const SpiritSchoolPage = React.lazy(() => import('./routes/SpiritSchoolPage').then(m => ({ default: m.SpiritSchoolPage })));
+const SoulMapPage = React.lazy(() => import('./routes/SoulMapPage').then(m => ({ default: m.SoulMapPage })));
+const ButterflyGuidePage = React.lazy(() => import('./routes/ButterflyGuidePage').then(m => ({ default: m.ButterflyGuidePage })));
+const WeaponEvolutionPage = React.lazy(() => import('./routes/WeaponEvolutionPage').then(m => ({ default: m.WeaponEvolutionPage })));
+const SoulCollectionPage = React.lazy(() => import('./routes/SoulCollectionPage').then(m => ({ default: m.SoulCollectionPage })));
 
 
 function App() {
@@ -151,6 +165,20 @@ function App() {
             <Route path="/tools/yammy-rampage" element={<YammyRampagePage />} />
             <Route path="/tools/cross-server-battle" element={<CrossServerBattlePage />} />
             <Route path="/tools/refinery" element={<SoulKingRefineryPage />} />
+            <Route path="/tools/battle-power" element={<BattlePowerPage />} />
+            <Route path="/tools/item-acquisition" element={<ItemAcquisitionPage />} />
+            <Route path="/tools/equipment-optimizer" element={<EquipmentOptimizerPage />} />
+            <Route path="/tools/achievement-planner" element={<AchievementPlannerPage />} />
+            <Route path="/tools/pet-optimizer" element={<PetOptimizerPage />} />
+            <Route path="/tools/guild-optimizer" element={<GuildOptimizerPage />} />
+            <Route path="/tools/treasure-upgrade" element={<TreasureUpgradePage />} />
+            <Route path="/tools/culling-optimizer" element={<CullingOptimizerPage />} />
+            <Route path="/tools/tavern-simulator" element={<TavernSimulatorPage />} />
+            <Route path="/tools/spirit-school" element={<SpiritSchoolPage />} />
+            <Route path="/tools/soul-map-visualizer" element={<SoulMapPage />} />
+            <Route path="/tools/butterfly-guide" element={<ButterflyGuidePage />} />
+            <Route path="/tools/weapon-evolution" element={<WeaponEvolutionPage />} />
+            <Route path="/tools/soul-collection" element={<SoulCollectionPage />} />
             {/*<Route path="/tools/guild-tactics" element={<GuildTacticsPlannerPage />} />*/}
           </Routes>
         </React.Suspense>

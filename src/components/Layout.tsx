@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Breadcrumbs } from './Breadcrumbs';
+import { getProfessionLabel } from '../data/relationships';
 import {
   LayoutDashboard,
   Search,
@@ -86,10 +87,13 @@ const sidebarGroups: SidebarGroup[] = [
   {
     label: 'Weapons & Equipment',
     items: [
+      { name: 'Weapon Evolution', to: '/tools/weapon-evolution', icon: Swords },
+      { name: 'Equipment Optimizer', to: '/tools/equipment-optimizer', icon: Swords },
       { name: 'Zanpakuto Evolution', to: '/weapons/evolution', icon: Swords },
       { name: 'Zanpakuto Weapon Skills', to: '/weapons/skills', icon: Sparkles },
       { name: 'Zanpakuto Stats', to: '/weapons/stats', icon: BarChart3 },
       { name: 'Equipment & Suits', to: '/tools/equipment', icon: Swords },
+      { name: 'Treasure Upgrade', to: '/tools/treasure-upgrade', icon: Sparkles },
       { name: 'Spiritual Ornaments', to: '/tools/ornaments', icon: Sparkles },
       { name: 'Beast Souls Planner', to: '/tools/beast-souls', icon: BarChart3 },
       { name: 'Soul King Palace Refinery', to: '/tools/refinery', icon: Sparkles },
@@ -98,6 +102,8 @@ const sidebarGroups: SidebarGroup[] = [
   {
     label: 'Shop & Events',
     items: [
+      { name: 'Tavern Simulator', to: '/tools/tavern-simulator', icon: Coins },
+      { name: 'Item Acquisition', to: '/tools/item-acquisition', icon: Search },
       { name: 'Mall Items', to: '/mall-items', icon: ShoppingBag },
       { name: 'Shop Analytics', to: '/mall/analytics', icon: Coins },
       { name: 'Promotions List', to: '/promotions', icon: Flame },
@@ -107,6 +113,7 @@ const sidebarGroups: SidebarGroup[] = [
   {
     label: 'Team Building',
     items: [
+      { name: 'Fighting Power', to: '/tools/battle-power', icon: Swords },
       { name: 'Formation Builder', to: '/tools/formation', icon: Wand2 },
       { name: 'Counter Triangle', to: '/tools/counters', icon: Shield },
       { name: 'Tier Heatmap', to: '/tools/tier-heatmap', icon: LayoutGrid },
@@ -122,7 +129,9 @@ const sidebarGroups: SidebarGroup[] = [
       { name: 'Campaign Roadmap', to: '/tools/campaign-roadmap', icon: Map },
       { name: 'Home Dating & Intimacy', to: '/tools/dating', icon: HeartHandshake },
       { name: 'Awakening Console', to: '/tools/awakening', icon: Sparkles },
+      { name: 'Pet Optimizer', to: '/tools/pet-optimizer', icon: LayoutGrid },
       { name: 'Pet Sanctuary', to: '/tools/pets', icon: LayoutGrid },
+      { name: 'Guild Optimizer', to: '/tools/guild-optimizer', icon: Trophy },
       { name: 'Guild Devotion & VIP', to: '/tools/guild-vip', icon: Trophy },
     ],
   },
@@ -130,11 +139,17 @@ const sidebarGroups: SidebarGroup[] = [
     label: 'Endgame',
     items: [
       { name: 'Military Ranks', to: '/tools/military', icon: Trophy },
+      { name: 'Culling Tower Optimizer', to: '/tools/culling-optimizer', icon: Swords },
       { name: 'Culling Abyss Tower', to: '/tools/culling-tower', icon: Swords },
       { name: 'Conquest of Might', to: '/tools/nightmare-realms', icon: Globe },
+      { name: 'Butterfly Guide', to: '/tools/butterfly-guide', icon: Sparkles },
+      { name: 'Soul Collection', to: '/tools/soul-collection', icon: Coins },
       { name: 'Seven Souls Altar', to: '/tools/seven-souls', icon: Star },
+      { name: 'Soul Map Visualizer', to: '/tools/soul-map-visualizer', icon: Compass },
       { name: 'MC Soul Maps', to: '/tools/soul-maps', icon: Compass },
+      { name: 'Achievement Planner', to: '/tools/achievement-planner', icon: Trophy },
       { name: 'Achievement & Titles', to: '/tools/achievements', icon: Shield },
+      { name: 'Spirit School', to: '/tools/spirit-school', icon: Sparkles },
       { name: 'Academy & Relics', to: '/tools/academy', icon: BookOpen },
       { name: 'Loot Table Oracle', to: '/tools/loot-oracle', icon: Sparkles },
     ],
@@ -148,6 +163,8 @@ const sidebarGroups: SidebarGroup[] = [
     ],
   },
 ];
+
+const allMenuItems = sidebarGroups.flatMap(g => g.items);
 
 const GROUP_STATE_KEY = 'sidebarGroupsCollapsed';
 
@@ -189,6 +206,50 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [searchVal, setSearchVal] = useState('');
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [heroes, setHeroes] = useState<any[]>([]);
+  const [articles, setArticles] = useState<any[]>([]);
+  const [skills, setSkills] = useState<any[]>([]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (searchVal.trim().length > 1 && !loaded) {
+      Promise.all([
+        import('../data/loaders').then(m => m.loadHeroes()),
+        import('../data/loaders').then(m => m.loadArticles()),
+        import('../data/loaders').then(m => m.loadSkills())
+      ]).then(([hr, ar, sr]) => {
+        setHeroes(hr.rows);
+        setArticles(ar.rows);
+        setSkills(sr.rows);
+        setLoaded(true);
+      }).catch(e => console.error("Failed to load search index", e));
+    }
+  }, [searchVal, loaded]);
+
+  const searchResults = useMemo(() => {
+    const q = searchVal.trim().toLowerCase();
+    if (q.length < 2) return { heroes: [], articles: [], skills: [], totalCount: 0 };
+
+    const filteredHeroes = heroes
+      .filter(h => h.name?.toLowerCase().includes(q))
+      .slice(0, 5);
+
+    const filteredArticles = articles
+      .filter(a => a.name?.toLowerCase().includes(q))
+      .slice(0, 5);
+
+    const filteredSkills = skills
+      .filter(s => s.name?.toLowerCase().includes(q))
+      .slice(0, 5);
+
+    return {
+      heroes: filteredHeroes,
+      articles: filteredArticles,
+      skills: filteredSkills,
+      totalCount: filteredHeroes.length + filteredArticles.length + filteredSkills.length
+    };
+  }, [searchVal, heroes, articles, skills]);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -254,7 +315,6 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
   };
 
   // Flat list for mobile drawer (preserves original behavior)
-  const allMenuItems = sidebarGroups.flatMap(g => g.items);
 
   return (
     <div className="min-h-screen flex flex-col bg-bg text-text transition-colors duration-200">
@@ -289,18 +349,84 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
         </div>
 
         {/* Global Search Bar in Header (Desktop Only) */}
-        <form onSubmit={handleGlobalSearchSubmit} className="hidden md:flex items-center relative w-80">
-          <input
-            id="global-search-input"
-            type="text"
-            placeholder="Search characters, items, skills…"
-            value={searchVal}
-            onChange={(e) => setSearchVal(e.target.value)}
-            className="w-full pl-9 pr-4 py-1.5 text-xs rounded-full border border-border bg-bg focus:outline-none focus:ring-2 focus:ring-brand placeholder-subtle"
-            aria-label="Search everything in database"
-          />
-          <Search size={14} className="absolute left-3 text-muted" aria-hidden={true} />
-        </form>
+        <div className="hidden md:block relative w-80" onMouseLeave={() => setDropdownOpen(false)}>
+          <form onSubmit={handleGlobalSearchSubmit} className="flex items-center relative w-full">
+            <input
+              id="global-search-input"
+              type="text"
+              placeholder="Search characters, items, skills…"
+              value={searchVal}
+              onFocus={() => setDropdownOpen(true)}
+              onChange={(e) => {
+                setSearchVal(e.target.value);
+                setDropdownOpen(true);
+              }}
+              className="w-full pl-9 pr-4 py-1.5 text-xs rounded-full border border-border bg-bg focus:outline-none focus:ring-2 focus:ring-brand placeholder-subtle text-text dark:text-zinc-200"
+              aria-label="Search everything in database"
+            />
+            <Search size={14} className="absolute left-3 text-muted" aria-hidden={true} />
+          </form>
+
+          {dropdownOpen && searchResults.totalCount > 0 && (
+            <div className="absolute top-full left-0 right-0 mt-2 bg-surface border border-border rounded-xl shadow-2xl z-50 overflow-hidden font-sans text-xs">
+              {searchResults.heroes.length > 0 && (
+                <div className="border-b border-border/60">
+                  <div className="px-3 py-1.5 bg-bg/50 text-[10px] font-bold text-brand uppercase tracking-wider">Heroes</div>
+                  {searchResults.heroes.map(h => (
+                    <Link
+                      key={h.id}
+                      to={`/heroes/${h.id}`}
+                      onClick={() => { setSearchVal(''); setDropdownOpen(false); }}
+                      className="flex items-center justify-between px-3 py-2 hover:bg-hover transition-colors font-medium text-text dark:text-zinc-200"
+                    >
+                      <span>{h.name}</span>
+                      <span className="text-[10px] text-muted">{getProfessionLabel(h.profession)}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+              {searchResults.articles.length > 0 && (
+                <div className="border-b border-border/60">
+                  <div className="px-3 py-1.5 bg-bg/50 text-[10px] font-bold text-brand uppercase tracking-wider">Items / Articles</div>
+                  {searchResults.articles.map(a => (
+                    <Link
+                      key={a.id}
+                      to={`/articles/${a.id}`}
+                      onClick={() => { setSearchVal(''); setDropdownOpen(false); }}
+                      className="flex items-center justify-between px-3 py-2 hover:bg-hover transition-colors font-medium text-text dark:text-zinc-200"
+                    >
+                      <span>{a.name}</span>
+                      <span className="text-[10px] text-emerald-600 font-mono font-bold">Item</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+              {searchResults.skills.length > 0 && (
+                <div>
+                  <div className="px-3 py-1.5 bg-bg/50 text-[10px] font-bold text-brand uppercase tracking-wider">Skills</div>
+                  {searchResults.skills.map(s => (
+                    <Link
+                      key={s.id}
+                      to={`/tools/skills?id=${s.id}`}
+                      onClick={() => { setSearchVal(''); setDropdownOpen(false); }}
+                      className="flex items-center justify-between px-3 py-2 hover:bg-hover transition-colors font-medium text-text dark:text-zinc-200"
+                    >
+                      <span className="truncate pr-1">{s.name}</span>
+                      <span className="text-[10px] text-indigo-500 shrink-0 font-bold">Skill</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+              <Link
+                to={`/search?q=${encodeURIComponent(searchVal)}`}
+                onClick={() => { setDropdownOpen(false); }}
+                className="block text-center py-2 bg-bg hover:bg-hover font-bold text-brand border-t border-border"
+              >
+                View all results
+              </Link>
+            </div>
+          )}
+        </div>
 
         <div className="flex items-center gap-3">
 
@@ -433,17 +559,65 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
               </div>
 
               {/* Global Search in Mobile Menu */}
-              <form onSubmit={handleGlobalSearchSubmit} className="relative mb-4">
-                <input
-                  type="text"
-                  placeholder="Search database…"
-                  value={searchVal}
-                  onChange={(e) => setSearchVal(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 text-sm rounded-lg border border-border bg-bg focus:outline-none focus:ring-2 focus:ring-brand placeholder-subtle"
-                  aria-label="Search mobile menu"
-                />
-                <Search size={16} className="absolute left-3 top-3 text-muted" aria-hidden={true} />
-              </form>
+              <div className="relative mb-4">
+                <form onSubmit={handleGlobalSearchSubmit} className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search database…"
+                    value={searchVal}
+                    onFocus={() => setDropdownOpen(true)}
+                    onChange={(e) => {
+                      setSearchVal(e.target.value);
+                      setDropdownOpen(true);
+                    }}
+                    className="w-full pl-9 pr-4 py-2 text-sm rounded-lg border border-border bg-bg focus:outline-none focus:ring-2 focus:ring-brand placeholder-subtle text-text dark:text-zinc-200"
+                    aria-label="Search mobile menu"
+                  />
+                  <Search size={16} className="absolute left-3 top-3 text-muted" aria-hidden={true} />
+                </form>
+
+                {dropdownOpen && searchResults.totalCount > 0 && (
+                  <div className="absolute top-full left-0 right-0 mt-1 bg-surface border border-border rounded-lg shadow-xl z-50 overflow-hidden text-xs">
+                    {searchResults.heroes.length > 0 && (
+                      <div className="border-b border-border/60">
+                        <div className="px-3 py-1 bg-bg text-[9px] font-bold text-brand uppercase">Heroes</div>
+                        {searchResults.heroes.map(h => (
+                          <Link
+                            key={h.id}
+                            to={`/heroes/${h.id}`}
+                            onClick={() => { setSearchVal(''); setMobileMenuOpen(false); setDropdownOpen(false); }}
+                            className="flex items-center justify-between px-3 py-1.5 hover:bg-hover text-text dark:text-zinc-200"
+                          >
+                            <span>{h.name}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                    {searchResults.articles.length > 0 && (
+                      <div className="border-b border-border/60">
+                        <div className="px-3 py-1 bg-bg text-[9px] font-bold text-brand uppercase">Items</div>
+                        {searchResults.articles.map(a => (
+                          <Link
+                            key={a.id}
+                            to={`/articles/${a.id}`}
+                            onClick={() => { setSearchVal(''); setMobileMenuOpen(false); setDropdownOpen(false); }}
+                            className="flex items-center justify-between px-3 py-1.5 hover:bg-hover text-text dark:text-zinc-200"
+                          >
+                            <span>{a.name}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                    <Link
+                      to={`/search?q=${encodeURIComponent(searchVal)}`}
+                      onClick={() => { setMobileMenuOpen(false); setDropdownOpen(false); }}
+                      className="block text-center py-1.5 bg-bg hover:bg-hover font-bold text-brand border-t border-border"
+                    >
+                      View all
+                    </Link>
+                  </div>
+                )}
+              </div>
 
               {/* Mobile: grouped nav */}
               <nav className="space-y-3 overflow-y-auto flex-1">

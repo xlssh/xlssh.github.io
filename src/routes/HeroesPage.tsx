@@ -8,6 +8,7 @@ import { DataTable } from '../components/DataTable';
 import { ColumnDef } from '@tanstack/react-table';
 import { Users } from 'lucide-react';
 import { getProfessionLabel } from '../data/relationships';
+import { calcHeroBP } from '../utils/battlePower';
 
 export const getQualityLabel = (quality: number | null): string => {
   if (quality === null) return 'Unknown';
@@ -169,6 +170,16 @@ export const HeroesPage: React.FC = () => {
       accessorKey: 'speed',
       header: 'Speed',
       cell: (info) => <span className="font-mono text-muted">{info.getValue() as number}</span>,
+    },
+    {
+      id: 'bp',
+      header: 'BP (Lv.1)',
+      cell: (info) => {
+        const hero = info.row.original;
+        const bp = calcHeroBP(hero, 1);
+        return <span className="font-mono font-bold text-brand">{bp.toLocaleString()}</span>;
+      },
+      sortingFn: (rowA, rowB) => calcHeroBP(rowA.original, 1) - calcHeroBP(rowB.original, 1),
     },
   ], []);
 

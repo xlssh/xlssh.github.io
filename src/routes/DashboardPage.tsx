@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { loadManifest } from '../data/loaders';
-import { Manifest } from '../types/db';
+import { loadManifest, loadHeroes } from '../data/loaders';
+import { Manifest, Hero } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
+import { calcHeroBP } from '../utils/battlePower';
 import {
   Users, Package, BookOpen, Calendar, Map, Swords, ShoppingBag, Flame,
   ArrowRight, Database, CalendarDays, ShieldCheck, Search, Clock,
@@ -17,13 +18,15 @@ export const DashboardPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
   const [searchInput, setSearchInput] = useState('');
+  const [heroes, setHeroes] = useState<Hero[]>([]);
 
   const fetchManifestData = async () => {
     try {
       setLoading(true);
       setError(null);
-      const data = await loadManifest();
+      const [data, heroesRes] = await Promise.all([loadManifest(), loadHeroes()]);
       setManifest(data);
+      setHeroes(heroesRes.rows);
     } catch (err: any) {
       console.error(err);
       setError(err.message || "Failed to load manifest.");
@@ -39,15 +42,24 @@ export const DashboardPage: React.FC = () => {
     if (searchInput.trim()) navigate(`/search?q=${encodeURIComponent(searchInput.trim())}`);
   };
 
-  // Compute total row counts from manifest
+  // Compute total row counts from manifest + BP stats
   const stats = useMemo(() => {
     if (!manifest) return null;
     const tables = manifest.tables;
     const totalRows = Object.values(tables).reduce((sum, t) => sum + (t.rowCount || 0), 0);
     const tableCount = Object.keys(tables).length;
     const generatedAt = manifest.generatedAt ? new Date(manifest.generatedAt) : null;
-    return { totalRows, tableCount, generatedAt };
-  }, [manifest]);
+
+    // BP stats
+    const topHeroes = heroes
+      .map(h => ({ name: h.name || `#${h.id}`, bp: calcHeroBP(h, 1), quality: h.quality }))
+      .sort((a, b) => b.bp - a.bp)
+      .slice(0, 5);
+    const avgBP = heroes.length > 0 ? Math.round(heroes.reduce((s, h) => s + calcHeroBP(h, 1), 0) / heroes.length) : 0;
+    const maxBP = topHeroes.length > 0 ? topHeroes[0].bp : 0;
+
+    return { totalRows, tableCount, generatedAt, topHeroes, avgBP, maxBP };
+  }, [manifest, heroes]);
 
   if (loading) return <LoadingState message="Connecting to client database files..." />;
   if (error) return <ErrorState message={error} onRetry={fetchManifestData} />;
@@ -120,6 +132,8 @@ export const DashboardPage: React.FC = () => {
             <span><span className="font-bold text-text font-mono">{stats.tableCount}</span> tables</span>
             <span className="text-border">|</span>
             <span><span className="font-bold text-text font-mono">{stats.totalRows.toLocaleString()}</span> total records</span>
+            <span className="text-border">|</span>
+            <span>Avg BP: <span className="font-bold text-brand font-mono">{stats.avgBP.toLocaleString()}</span></span>
             {stats.generatedAt && (
               <>
                 <span className="text-border">|</span>
@@ -160,6 +174,31 @@ export const DashboardPage: React.FC = () => {
           <ArrowRight size={14} className="text-brand opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
         </Link>
       </section>
+
+      {/* Fighting Power Leaderboard */}
+      {stats && stats.topHeroes.length > 0 && (
+        <section className="p-5 border border-border bg-surface rounded-xl shadow-sm">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-bold text-text flex items-center gap-2">
+              <Swords size={18} className="text-brand" />
+              Fighting Power Leaderboard
+            </h2>
+            <Link to="/tools/battle-power" className="text-xs font-bold text-brand hover:text-brand-hover flex items-center gap-1">
+              Full Calculator <ArrowRight size={12} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+            {stats.topHeroes.map((h, idx) => (
+              <div key={idx} className="p-3 border border-border rounded-xl bg-bg/50 text-center space-y-1">
+                <span className="text-[10px] font-bold text-subtle">#{idx + 1}</span>
+                <div className="text-sm font-bold text-text truncate">{h.name}</div>
+                <div className="text-lg font-black font-mono text-brand">{h.bp.toLocaleString()}</div>
+                <div className="text-[10px] text-muted">Lv.1 Base BP</div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Popular Tools */}
       <section className="space-y-4">

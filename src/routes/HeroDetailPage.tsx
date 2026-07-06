@@ -9,6 +9,7 @@ import { getQualityLabel, getQualityColorClass } from './HeroesPage';
 import { getProfessionLabel, getAttributeName, getActivationArticleForHero, getActivitiesAwardingArticle } from '../data/relationships';
 import { ArrowLeft, Swords, Sparkles, TrendingUp, ShieldAlert, Share2, Check, Scale, Cpu, Lock, HeartHandshake, HelpCircle, Activity, Star, AlertCircle } from 'lucide-react';
 import { RelatedTools } from '../components/RelatedTools';
+import { calcHeroBP, getBPBreakdown } from '../utils/battlePower';
 
 export const HeroDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -441,6 +442,21 @@ export const HeroDetailPage: React.FC = () => {
         {/* Quick Identity Grid */}
         <div className="w-full md:w-64 border border-border rounded-xl p-4 bg-bg/50 space-y-3 shrink-0">
           <h4 className="text-xs font-bold uppercase tracking-wider text-subtle border-b border-border pb-1.5">Entity Meta</h4>
+          {/* Battle Power Display */}
+          <div className="p-3 bg-brand-soft/50 border border-brand-soft rounded-xl text-center space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-brand block">Fighting Power (Lv.1)</span>
+            <span className="text-2xl font-black font-mono text-brand">{calcHeroBP(hero, 1).toLocaleString()}</span>
+            <div className="flex justify-between text-[9px] text-muted mt-1">
+              {(() => { const bp = getBPBreakdown(hero, 1); return (
+                <>
+                  <span>STR:{bp.str}</span>
+                  <span>AGI:{bp.agi}</span>
+                  <span>INT:{bp.int}</span>
+                  <span>HP:{bp.hp}</span>
+                </>
+              ); })()}
+            </div>
+          </div>
           <div className="grid grid-cols-2 gap-y-3 gap-x-2 text-xs">
             <div>
               <span className="text-subtle block mb-0.5">Gender</span>
