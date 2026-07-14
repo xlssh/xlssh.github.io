@@ -1,6 +1,6 @@
 {
   "table": "tavern_warriors",
-  "rowCount": 32,
+  "rowCount": 35,
   "rows": [
     {
       "id": 30150001,
@@ -481,6 +481,52 @@
         "type": 5,
         "value": 6
       }
+    },
+    {
+      "id": 30150035,
+      "grade": 8,
+      "award_id": 11150007,
+      "return_type": 0,
+      "return_value": 60000,
+      "recruit_soul": 5000,
+      "recruit_name": "Ch\u014djir\u014d Sasakibe",
+      "win_dialogue": "I will uphold my duty to the Gotei 13.",
+      "lose_dialogue": "Loyalty is proven through perseverance.",
+      "awardsoul": {
+        "type": 6,
+        "value": 3
+      }
+    },
+    {
+      "id": 30150036,
+      "grade": 8,
+      "award_id": 11111007,
+      "return_type": 0,
+      "return_value": 60000,
+      "recruit_soul": 5000,
+      "recruit_name": "Mashiro Kuna",
+      "win_dialogue": "Mashiro Super Kick!",
+      "lose_dialogue": "A superhero never gives up!",
+      "awardsoul": {
+        "type": 6,
+        "value": 4
+      }
+    },
+    {
+      "id": 30150037,
+      "grade": 8,
+      "award_id": 11150006,
+      "return_type": 0,
+      "return_value": 60000,
+      "recruit_soul": 5000,
+      "recruit_name": "Shinigami Nanao",
+      "win_dialogue": "Maintain formation and follow the plan.",
+      "lose_dialogue": "I will revise the strategy.",
+      "awardsoul": {
+        "type": 6,
+        "value": 6
+      }
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

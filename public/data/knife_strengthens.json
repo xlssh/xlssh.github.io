@@ -1,7 +1,6 @@
 {
   "table": "knife_strengthens",
-  "rowCount": 72,
-  "generatedAt": "2026-07-01",
+  "rowCount": 75,
   "rows": [
     {
       "id": 13500001,
@@ -2041,6 +2040,25 @@
           "oper": 1
         }
       ]
+    },
+    {
+      "id": 13500234,
+      "effect_ids": [],
+      "heros": [],
+      "attributes": []
+    },
+    {
+      "id": 13500235,
+      "effect_ids": [],
+      "heros": [],
+      "attributes": []
+    },
+    {
+      "id": 13500236,
+      "effect_ids": [],
+      "heros": [],
+      "attributes": []
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

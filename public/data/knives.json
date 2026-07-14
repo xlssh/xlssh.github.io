@@ -1,6 +1,6 @@
 {
   "table": "knives",
-  "rowCount": 24,
+  "rowCount": 25,
   "rows": [
     {
       "id": 1000001,
@@ -179,7 +179,7 @@
     },
     {
       "id": 1000006,
-      "name": "Kokujō Tengen Myō'ō",
+      "name": "Kokuj\u014d Tengen My\u014d'\u014d",
       "bind_skill_id": 13110029,
       "type_id": 2,
       "handbook_id": 14100086,
@@ -249,7 +249,7 @@
     },
     {
       "id": 1000008,
-      "name": "Hōzukimaru",
+      "name": "H\u014dzukimaru",
       "bind_skill_id": 13110029,
       "type_id": 2,
       "handbook_id": 14100090,
@@ -284,7 +284,7 @@
     },
     {
       "id": 1000009,
-      "name": "Ashisogi Jizō",
+      "name": "Ashisogi Jiz\u014d",
       "bind_skill_id": 13110029,
       "type_id": 2,
       "handbook_id": 14100094,
@@ -494,7 +494,7 @@
     },
     {
       "id": 1000015,
-      "name": "Hyōrinmaru",
+      "name": "Hy\u014drinmaru",
       "bind_skill_id": 13110029,
       "type_id": 3,
       "handbook_id": 14100089,
@@ -564,7 +564,7 @@
     },
     {
       "id": 1000017,
-      "name": "Sōgyo no Kotowari",
+      "name": "S\u014dgyo no Kotowari",
       "bind_skill_id": 13110029,
       "type_id": 3,
       "handbook_id": 14100261,
@@ -634,7 +634,7 @@
     },
     {
       "id": 1000019,
-      "name": "Katen Kyōkotsu",
+      "name": "Katen Ky\u014dkotsu",
       "bind_skill_id": 13110029,
       "type_id": 3,
       "handbook_id": 14100702,
@@ -669,7 +669,7 @@
     },
     {
       "id": 1000020,
-      "name": "Ryūjin Jakka",
+      "name": "Ry\u016bjin Jakka",
       "bind_skill_id": 13110029,
       "type_id": 3,
       "handbook_id": 14100722,
@@ -739,7 +739,7 @@
     },
     {
       "id": 1000022,
-      "name": "Kyōka Suigetsu",
+      "name": "Ky\u014dka Suigetsu",
       "bind_skill_id": 13110029,
       "type_id": 3,
       "handbook_id": 14100750,
@@ -841,6 +841,42 @@
         13500232,
         13500233
       ]
+    },
+    {
+      "id": 1000025,
+      "name": "Gonryumaru",
+      "bind_skill_id": 13110029,
+      "type_id": 3,
+      "handbook_id": 14100783,
+      "appraise": "SSS",
+      "get_road": "Can be obtained in events!",
+      "attack": 10,
+      "defense": 10,
+      "recovery": 10,
+      "resistance": 10,
+      "speed": 10,
+      "direction": 3,
+      "attribute_type": [
+        16,
+        20,
+        101
+      ],
+      "base_value": [
+        750,
+        750,
+        1250
+      ],
+      "growth_value": [
+        400,
+        400,
+        800
+      ],
+      "active_effects": [
+        13500234,
+        13500235,
+        13500236
+      ]
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

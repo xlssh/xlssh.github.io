@@ -1,6 +1,6 @@
 {
   "table": "related_partners",
-  "rowCount": 1151,
+  "rowCount": 1191,
   "rows": [
     {
       "id": 10000001,
@@ -975,6 +975,15 @@
       "condition_id": 0
     },
     {
+      "id": 10100109,
+      "hero_id": 11100001,
+      "type": 258,
+      "connect_id": 11150062,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
       "id": 10000102,
       "hero_id": 11100002,
       "type": 142,
@@ -1933,6 +1942,15 @@
       "hero_id": 11100002,
       "type": 244,
       "connect_id": 11150061,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100209,
+      "hero_id": 11100002,
+      "type": 258,
+      "connect_id": 11150062,
       "condition_point": 0,
       "condition_star": 0,
       "condition_id": 0
@@ -2910,6 +2928,15 @@
       "condition_id": 0
     },
     {
+      "id": 10100309,
+      "hero_id": 11100003,
+      "type": 258,
+      "connect_id": 11150062,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
       "id": 10000301,
       "hero_id": 11100004,
       "type": 141,
@@ -3877,6 +3904,15 @@
       "hero_id": 11100004,
       "type": 244,
       "connect_id": 11150061,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100409,
+      "hero_id": 11100004,
+      "type": 258,
+      "connect_id": 11150062,
       "condition_point": 0,
       "condition_star": 0,
       "condition_id": 0
@@ -4854,6 +4890,15 @@
       "condition_id": 0
     },
     {
+      "id": 10100509,
+      "hero_id": 11100005,
+      "type": 258,
+      "connect_id": 11150062,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
       "id": 10000501,
       "hero_id": 11100006,
       "type": 141,
@@ -5821,6 +5866,15 @@
       "hero_id": 11100006,
       "type": 244,
       "connect_id": 11150061,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100609,
+      "hero_id": 11100006,
+      "type": 258,
+      "connect_id": 11150062,
       "condition_point": 0,
       "condition_star": 0,
       "condition_id": 0
@@ -9846,7 +9900,7 @@
       "connect_id": 11150044,
       "condition_point": 15950007,
       "condition_star": 3,
-      "condition_id": 10000031
+      "condition_id": 10000032
     },
     {
       "id": 10012204,
@@ -10360,6 +10414,313 @@
       "condition_point": 15950009,
       "condition_star": 3,
       "condition_id": 10000042
+    },
+    {
+      "id": 10013701,
+      "hero_id": 11150062,
+      "type": 254,
+      "connect_id": 11140009,
+      "condition_point": 15950005,
+      "condition_star": 3,
+      "condition_id": 10000025
+    },
+    {
+      "id": 10013702,
+      "hero_id": 11150062,
+      "type": 255,
+      "connect_id": 11110008,
+      "condition_point": 15950006,
+      "condition_star": 3,
+      "condition_id": 10000027
+    },
+    {
+      "id": 10013703,
+      "hero_id": 11150062,
+      "type": 256,
+      "connect_id": 11150028,
+      "condition_point": 15950007,
+      "condition_star": 3,
+      "condition_id": 10000032
+    },
+    {
+      "id": 10013704,
+      "hero_id": 11150062,
+      "type": 257,
+      "connect_id": 11110032,
+      "condition_point": 15950008,
+      "condition_star": 3,
+      "condition_id": 10000035
+    },
+    {
+      "id": 10013801,
+      "hero_id": 11150007,
+      "type": 259,
+      "connect_id": 11111007,
+      "condition_point": 15950005,
+      "condition_star": 3,
+      "condition_id": 10000025
+    },
+    {
+      "id": 10013802,
+      "hero_id": 11150007,
+      "type": 260,
+      "connect_id": 11150006,
+      "condition_point": 15950006,
+      "condition_star": 3,
+      "condition_id": 10000027
+    },
+    {
+      "id": 10013803,
+      "hero_id": 11150007,
+      "type": 261,
+      "connect_id": 11150002,
+      "condition_point": 15950007,
+      "condition_star": 3,
+      "condition_id": 10000032
+    },
+    {
+      "id": 10013804,
+      "hero_id": 11150007,
+      "type": 262,
+      "connect_id": 11110025,
+      "condition_point": 15950008,
+      "condition_star": 3,
+      "condition_id": 10000035
+    },
+    {
+      "id": 10013901,
+      "hero_id": 11111007,
+      "type": 264,
+      "connect_id": 11150007,
+      "condition_point": 15950005,
+      "condition_star": 3,
+      "condition_id": 10000025
+    },
+    {
+      "id": 10013902,
+      "hero_id": 11111007,
+      "type": 265,
+      "connect_id": 11150006,
+      "condition_point": 15950006,
+      "condition_star": 3,
+      "condition_id": 10000027
+    },
+    {
+      "id": 10013903,
+      "hero_id": 11111007,
+      "type": 266,
+      "connect_id": 11110014,
+      "condition_point": 15950007,
+      "condition_star": 3,
+      "condition_id": 10000032
+    },
+    {
+      "id": 10013904,
+      "hero_id": 11111007,
+      "type": 267,
+      "connect_id": 11120006,
+      "condition_point": 15950008,
+      "condition_star": 3,
+      "condition_id": 10000035
+    },
+    {
+      "id": 10014001,
+      "hero_id": 11150006,
+      "type": 269,
+      "connect_id": 11150007,
+      "condition_point": 15950005,
+      "condition_star": 3,
+      "condition_id": 10000025
+    },
+    {
+      "id": 10014002,
+      "hero_id": 11150006,
+      "type": 270,
+      "connect_id": 11111007,
+      "condition_point": 15950006,
+      "condition_star": 3,
+      "condition_id": 10000027
+    },
+    {
+      "id": 10014003,
+      "hero_id": 11150006,
+      "type": 271,
+      "connect_id": 11110020,
+      "condition_point": 15950007,
+      "condition_star": 3,
+      "condition_id": 10000032
+    },
+    {
+      "id": 10014004,
+      "hero_id": 11150006,
+      "type": 272,
+      "connect_id": 11110007,
+      "condition_point": 15950008,
+      "condition_star": 3,
+      "condition_id": 10000035
+    },
+    {
+      "id": 10100110,
+      "hero_id": 11100001,
+      "type": 263,
+      "connect_id": 11150007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100111,
+      "hero_id": 11100001,
+      "type": 268,
+      "connect_id": 11111007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100112,
+      "hero_id": 11100001,
+      "type": 273,
+      "connect_id": 11150006,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100210,
+      "hero_id": 11100002,
+      "type": 263,
+      "connect_id": 11150007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100211,
+      "hero_id": 11100002,
+      "type": 268,
+      "connect_id": 11111007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100212,
+      "hero_id": 11100002,
+      "type": 273,
+      "connect_id": 11150006,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100310,
+      "hero_id": 11100003,
+      "type": 263,
+      "connect_id": 11150007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100311,
+      "hero_id": 11100003,
+      "type": 268,
+      "connect_id": 11111007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100312,
+      "hero_id": 11100003,
+      "type": 273,
+      "connect_id": 11150006,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100410,
+      "hero_id": 11100004,
+      "type": 263,
+      "connect_id": 11150007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100411,
+      "hero_id": 11100004,
+      "type": 268,
+      "connect_id": 11111007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100412,
+      "hero_id": 11100004,
+      "type": 273,
+      "connect_id": 11150006,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100510,
+      "hero_id": 11100005,
+      "type": 263,
+      "connect_id": 11150007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100511,
+      "hero_id": 11100005,
+      "type": 268,
+      "connect_id": 11111007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100512,
+      "hero_id": 11100005,
+      "type": 273,
+      "connect_id": 11150006,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100610,
+      "hero_id": 11100006,
+      "type": 263,
+      "connect_id": 11150007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100611,
+      "hero_id": 11100006,
+      "type": 268,
+      "connect_id": 11111007,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
+    },
+    {
+      "id": 10100612,
+      "hero_id": 11100006,
+      "type": 273,
+      "connect_id": 11150006,
+      "condition_point": 0,
+      "condition_star": 0,
+      "condition_id": 0
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

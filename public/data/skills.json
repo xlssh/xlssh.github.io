@@ -1,6 +1,6 @@
 {
   "table": "skills",
-  "rowCount": 8048,
+  "rowCount": 8085,
   "rows": [
     {
       "id": 13100001,
@@ -64385,7 +64385,303 @@
       "description": "Ultimate Challenge Yammy fourth attack.",
       "icon": 0,
       "sort_id": 0
+    },
+    {
+      "id": 13106931,
+      "skill_id": 13106931,
+      "name": "Ice Cold Treats",
+      "description": "Attack all enemies for 200% damage. Cleanse all removable debuffs from allied Supporters. Increase all allies Block and Evasion by 35% for 2 turns, increase allied Assaulters and Supporters Damage Rate by 70% for 1 turn, and restore all allies 40 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14300199,
+      "skill_id": 14300199,
+      "name": "Exclusive - Ice Cold Treats",
+      "description": "Attack enemy Vanguard for 300% damage. Cast Chaos on the target for 1 turn and Silence enemy Supporters for 1 turn. Grant all allies stat-debuff immunity for 1 turn and restore 35 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14301199,
+      "skill_id": 14301199,
+      "name": "Exclusive - Ice Cold Treats",
+      "description": "Attack enemy Vanguard for 350% damage. Cast Chaos on the target for 2 turns and Silence enemy Supporters for 1 turn. Grant all allies stat-debuff immunity for 1 turn and restore 50 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14302199,
+      "skill_id": 14302199,
+      "name": "Exclusive - Ice Cold Treats",
+      "description": "Attack enemy Vanguard for 400% damage. Cast Chaos on the target for 3 turns and Silence enemy Supporters for 2 turns. Grant all allies stat-debuff immunity for 2 turns and restore 70 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900357,
+      "skill_id": 13900357,
+      "name": "Friends Over for a Party",
+      "description": "When another female character is in formation, increase Swimsuit Rukia and all allied female characters HP by 20%.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900358,
+      "skill_id": 13900358,
+      "name": "Big and Strong Protector",
+      "description": "When attacked, create a shield around self equal to the Attack of the ally with the highest Attack.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900359,
+      "skill_id": 13900359,
+      "name": "Hard to Get",
+      "description": "Reduce all enemies Crit Rate and Hit Rate by 50%. Gain 10% extra HP when a non-Main male enemy is present.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900360,
+      "skill_id": 13900360,
+      "name": "All Night Long",
+      "description": "When attacked, restore all allies HP by 30% of Max HP and increase their Defense by 50% for 2 turns.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900361,
+      "skill_id": 13900361,
+      "name": "Goodbye Kiss",
+      "description": "When defeated, empty all enemies Fury and reduce their Defense by 80% for 1 turn.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900362,
+      "skill_id": 13900362,
+      "name": "Gentle Byakuya Bond",
+      "description": "When attacked, has a 50% chance to Stun the attacker for 1 turn.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13310097,
+      "skill_id": 13310097,
+      "name": "Gonryumaru",
+      "description": "On rounds 1, 3, 5 and 7, attack all enemies with a 21% growth rate based on the total Attack of Gonryumaru's side. Inflict Bleed equal to 20% of that total Attack for 2 turns and reduce all enemies' Fury by 15. Increase all allies' Avoid Injury Rate, Damage Rate and Block Rate by 40% for 2 turns. Additionally, increase allied Vanguards' and Assaulters' Block Rate by 35% and allied Supporters' Combo Rate by 50% for the rest of the battle.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13310098,
+      "skill_id": 13310098,
+      "name": "Gonryumaru",
+      "description": "On rounds 1, 3, 5 and 7, attack all enemies with a 21% growth rate based on the total Attack of Gonryumaru's side. Inflict Bleed equal to 20% of that total Attack for 2 turns and reduce all enemies' Fury by 15. Increase all allies' Avoid Injury Rate, Damage Rate and Block Rate by 40% for 2 turns. Additionally, increase allied Vanguards' and Assaulters' Block Rate by 35% and allied Supporters' Combo Rate by 50% for the rest of the battle.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13310099,
+      "skill_id": 13310099,
+      "name": "Gonryumaru",
+      "description": "On rounds 1, 3, 5 and 7, attack all enemies with a 21% growth rate based on the total Attack of Gonryumaru's side. Inflict Bleed equal to 20% of that total Attack for 2 turns and reduce all enemies' Fury by 15. Increase all allies' Avoid Injury Rate, Damage Rate and Block Rate by 40% for 2 turns. Additionally, increase allied Vanguards' and Assaulters' Block Rate by 35% and allied Supporters' Combo Rate by 50% for the rest of the battle.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13310100,
+      "skill_id": 13310100,
+      "name": "Gonryumaru",
+      "description": "On rounds 1, 3, 5 and 7, attack all enemies with a 21% growth rate based on the total Attack of Gonryumaru's side. Inflict Bleed equal to 20% of that total Attack for 2 turns and reduce all enemies' Fury by 15. Increase all allies' Avoid Injury Rate, Damage Rate and Block Rate by 40% for 2 turns. Additionally, increase allied Vanguards' and Assaulters' Block Rate by 35% and allied Supporters' Combo Rate by 50% for the rest of the battle.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13106932,
+      "skill_id": 13106932,
+      "name": "Pierce Gonry\u014dmaru",
+      "description": "Attack all enemies for 90% damage, inflict 120% Bleed for 2 turns, increase all allies Avoid Injury Rate by 50% for 2 turns, and restore their HP with a 40% growth rate.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13106933,
+      "skill_id": 13106933,
+      "name": "Mashiro Kick",
+      "description": "Attack the enemy with the highest Attack for 340% damage, deal 50% damage to all other enemies, and restore 30 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13106934,
+      "skill_id": 13106934,
+      "name": "S\u014dkatsui",
+      "description": "Attack the enemy with the lowest HP for 120% damage, heal all allies at a 45% growth rate, restore all allies 30 Fury, and restore 100 Fury to self in total.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13106935,
+      "skill_id": 13106935,
+      "name": "Normal Attack",
+      "description": "Strategy Attack",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900363,
+      "skill_id": 13900363,
+      "name": "Bleeding Retaliation",
+      "description": "When attacked, inflict 100% Bleed on the attacker for 2 turns.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900364,
+      "skill_id": 13900364,
+      "name": "Lieutenant Support",
+      "description": "Increase allied Assaulters and Supporters Aid Rate by 40%.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900365,
+      "skill_id": 13900365,
+      "name": "Unwavering Guard",
+      "description": "Once per battle when HP falls below 50%, permanently increase own Block Rate by 30% and restore 40% Max HP.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900366,
+      "skill_id": 13900366,
+      "name": "Protective Formation",
+      "description": "Increase allied Assaulters and Supporters Defense by 25%.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900367,
+      "skill_id": 13900367,
+      "name": "Endless Energy",
+      "description": "At the start of each turn, has a 69% chance to restore 50 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900368,
+      "skill_id": 13900368,
+      "name": "High-Speed Pressure",
+      "description": "Reduce all enemies Speed by 5%.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900369,
+      "skill_id": 13900369,
+      "name": "Superheroine Rally",
+      "description": "Increase all allies Attack by 10% and Critical Hit Damage by 30%, including self.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900370,
+      "skill_id": 13900370,
+      "name": "Protective Kid\u014d",
+      "description": "When attacking or being attacked, generate a shield for the whole team with a 20% growth rate.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900371,
+      "skill_id": 13900371,
+      "name": "Lasting Resolve",
+      "description": "Survive a fatal blow once per battle, remain at 1 HP, then recover all allies, including self, by 50% Max HP and 100 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 13900372,
+      "skill_id": 13900372,
+      "name": "Supporter Preparedness",
+      "description": "At the start of battle, restore 50 Fury to all allied Supporters, including self.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14300200,
+      "skill_id": 14300200,
+      "name": "Exclusive - Pierce Gonry\u014dmaru",
+      "description": "Attack enemy Vanguard for 140% damage, increase own Block and Avoid Injury Rates by 50% for 2 turns, inflict 200% Bleed for 2 turns, and restore 46 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14300201,
+      "skill_id": 14300201,
+      "name": "Exclusive - Mashiro Kick",
+      "description": "Attack all enemies for 200% damage, inflict Chaos on one random enemy for 1 turn, and restore 10 Fury to self and allied Supporters.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14300202,
+      "skill_id": 14300202,
+      "name": "Exclusive - S\u014dkatsui",
+      "description": "Attack one random enemy for 100% damage, increase all allies Critical Hit Damage and Block Rate by 20% for 1 turn, and restore all allies 30 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14301200,
+      "skill_id": 14301200,
+      "name": "Exclusive - Pierce Gonry\u014dmaru",
+      "description": "Attack enemy Vanguard for 160% damage, increase own Block and Avoid Injury Rates by 60% for 2 turns, inflict 250% Bleed for 2 turns, and restore 57 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14301201,
+      "skill_id": 14301201,
+      "name": "Exclusive - Mashiro Kick",
+      "description": "Attack all enemies for 220% damage, inflict Chaos on one random enemy for 1 turn, and restore 15 Fury to self and allied Supporters.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14301202,
+      "skill_id": 14301202,
+      "name": "Exclusive - S\u014dkatsui",
+      "description": "Attack one random enemy for 120% damage, increase all allies Critical Hit Damage and Block Rate by 30% for 1 turn, and restore all allies 50 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14302200,
+      "skill_id": 14302200,
+      "name": "Exclusive - Pierce Gonry\u014dmaru",
+      "description": "Attack enemy Vanguard for 180% damage, increase own Block and Avoid Injury Rates by 70% for 2 turns, inflict 300% Bleed for 2 turns, and restore 68 Fury.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14302201,
+      "skill_id": 14302201,
+      "name": "Exclusive - Mashiro Kick",
+      "description": "Attack all enemies for 240% damage, inflict Chaos on one random enemy for 2 turns, and restore 20 Fury to self and allied Supporters.",
+      "icon": 0,
+      "sort_id": 0
+    },
+    {
+      "id": 14302202,
+      "skill_id": 14302202,
+      "name": "Exclusive - S\u014dkatsui",
+      "description": "Attack one random enemy for 140% damage, increase all allies Critical Hit Damage and Block Rate by 40% for 2 turns, and restore all allies 70 Fury.",
+      "icon": 0,
+      "sort_id": 0
     }
   ],
-  "generatedAt": "2026-07-04T17:54:43.119117Z"
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

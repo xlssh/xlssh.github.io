@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-04T17:54:43.119117Z",
+  "generatedAt": "2026-07-14T17:20:24.413758Z",
   "tables": {
     "awards": {
       "path": "/data/awards.json",
-      "rowCount": 10066
+      "rowCount": 10081
     },
     "base_equips": {
       "path": "/data/base_equips.json",
@@ -15,7 +15,7 @@
     },
     "buff_effects": {
       "path": "/data/buff_effects.json",
-      "rowCount": 93
+      "rowCount": 101
     },
     "build_consumes": {
       "path": "/data/build_consumes.json",
@@ -27,15 +27,15 @@
     },
     "config_values": {
       "path": "/data/config_values.json",
-      "rowCount": 666
+      "rowCount": 667
     },
     "enemies": {
       "path": "/data/enemies.json",
-      "rowCount": 19900
+      "rowCount": 19975
     },
     "enemy_armies": {
       "path": "/data/enemy_armies.json",
-      "rowCount": 4191
+      "rowCount": 4206
     },
     "equip_additionals": {
       "path": "/data/equip_additionals.json",
@@ -51,7 +51,7 @@
     },
     "hero_talents": {
       "path": "/data/hero_talents.json",
-      "rowCount": 206
+      "rowCount": 210
     },
     "military": {
       "path": "/data/military.json",
@@ -75,7 +75,7 @@
     },
     "skills": {
       "path": "/data/skills.json",
-      "rowCount": 8048
+      "rowCount": 8085
     },
     "star_maps": {
       "path": "/data/star_maps.json",
@@ -91,11 +91,11 @@
     },
     "tsystemlanguage": {
       "path": "/data/tsystemlanguage.json",
-      "rowCount": 2034
+      "rowCount": 2054
     },
     "tavern_grades": {
       "path": "/data/tavern_grades.json",
-      "rowCount": 7
+      "rowCount": 8
     },
     "tavern_pay_configs": {
       "path": "/data/tavern_pay_configs.json",
@@ -103,7 +103,7 @@
     },
     "tavern_warriors": {
       "path": "/data/tavern_warriors.json",
-      "rowCount": 32
+      "rowCount": 35
     },
     "treasure_levelups": {
       "path": "/data/treasure_levelups.json",
@@ -123,11 +123,11 @@
     },
     "knives": {
       "path": "/data/knives.json",
-      "rowCount": 24
+      "rowCount": 25
     },
     "knife_expands": {
       "path": "/data/knife_expands.json",
-      "rowCount": 96
+      "rowCount": 100
     },
     "recommend_heroes": {
       "path": "/data/recommend_heroes.json",
@@ -251,7 +251,7 @@
     },
     "partner_changes": {
       "path": "/data/partner_changes.json",
-      "rowCount": 931
+      "rowCount": 959
     },
     "black_market_items": {
       "path": "/data/black_market_items.json",
@@ -259,7 +259,7 @@
     },
     "hero_change_attrs": {
       "path": "/data/hero_change_attrs.json",
-      "rowCount": 133
+      "rowCount": 137
     },
     "main_pet_rank_ups": {
       "path": "/data/main_pet_rank_ups.json",
@@ -299,7 +299,7 @@
     },
     "wake_ups": {
       "path": "/data/wake_ups.json",
-      "rowCount": 147
+      "rowCount": 149
     },
     "org_point_awards": {
       "path": "/data/org_point_awards.json",
@@ -307,11 +307,11 @@
     },
     "related_partners": {
       "path": "/data/related_partners.json",
-      "rowCount": 1151
+      "rowCount": 1191
     },
     "related_partner_types": {
       "path": "/data/related_partner_types.json",
-      "rowCount": 7590
+      "rowCount": 8190
     },
     "related_conditions": {
       "path": "/data/related_conditions.json",
@@ -331,7 +331,7 @@
     },
     "knife_strengthens": {
       "path": "/data/knife_strengthens.json",
-      "rowCount": 72
+      "rowCount": 75
     },
     "leader_wake_ups": {
       "path": "/data/leader_wake_ups.json",
@@ -375,7 +375,7 @@
     },
     "heroes": {
       "path": "/data/heroes.json",
-      "rowCount": 150
+      "rowCount": 154
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "table": "hero_talents",
-  "rowCount": 206,
+  "rowCount": 210,
   "rows": [
     {
       "id": 13200001,
@@ -419,7 +419,7 @@
     },
     {
       "id": 13200084,
-      "talent_name": "Ryūmon Hōzukimaru",
+      "talent_name": "Ry\u016bmon H\u014dzukimaru",
       "talent_desc": "Increase Strength by certain percent."
     },
     {
@@ -489,7 +489,7 @@
     },
     {
       "id": 13200098,
-      "talent_name": "Hōgyoku",
+      "talent_name": "H\u014dgyoku",
       "talent_desc": "Increase agility by a certain percent, and naturally has 7% Avoid Injry Rate and small chance of Combo."
     },
     {
@@ -499,7 +499,7 @@
     },
     {
       "id": 13200100,
-      "talent_name": "Kyōkotsu",
+      "talent_name": "Ky\u014dkotsu",
       "talent_desc": "Increase Wisdom by certain percent, and naturally has 8% Avoid Injry Rate and small chance of Combo."
     },
     {
@@ -514,7 +514,7 @@
     },
     {
       "id": 13200103,
-      "talent_name": "Desgarrón",
+      "talent_name": "Desgarr\u00f3n",
       "talent_desc": "Increase Wisdom by certain percent."
     },
     {
@@ -524,7 +524,7 @@
     },
     {
       "id": 13200105,
-      "talent_name": "Ryūmon",
+      "talent_name": "Ry\u016bmon",
       "talent_desc": "Increase Agility by a higher percent, and naturally has 20% damage rate."
     },
     {
@@ -554,12 +554,12 @@
     },
     {
       "id": 13200111,
-      "talent_name": "Kyōka",
+      "talent_name": "Ky\u014dka",
       "talent_desc": "Increase Agility by a higher percent, and naturally has 10% Avoid Injry Rate and 7% Combo rate."
     },
     {
       "id": 13200112,
-      "talent_name": "Murciélago",
+      "talent_name": "Murci\u00e9lago",
       "talent_desc": "Increase agility by a certain percent, and naturally has 10% Avoid Injry Rate and small chance of Combo."
     },
     {
@@ -585,7 +585,7 @@
     {
       "id": 13200117,
       "talent_name": "Extreme Ice",
-      "talent_desc": "Increase Agility by a higher percent, and naturally has 10% damage rate和10% Avoid Injry Rate."
+      "talent_desc": "Increase Agility by a higher percent, and naturally has 10% damage rate\u548c10% Avoid Injry Rate."
     },
     {
       "id": 13200118,
@@ -614,7 +614,7 @@
     },
     {
       "id": 13200123,
-      "talent_name": "Shinsō",
+      "talent_name": "Shins\u014d",
       "talent_desc": "Increase Agility by a higher percent, and naturally has 7% Combo rate and Avoid Injury rate."
     },
     {
@@ -664,7 +664,7 @@
     },
     {
       "id": 13200133,
-      "talent_name": "Sōō",
+      "talent_name": "S\u014d\u014d",
       "talent_desc": "Increase Strength by a higher percent."
     },
     {
@@ -704,7 +704,7 @@
     },
     {
       "id": 13200141,
-      "talent_name": "Relámpago ",
+      "talent_name": "Rel\u00e1mpago ",
       "talent_desc": "Increase Strength by a higher percent, and naturally has 10% damage rate."
     },
     {
@@ -724,7 +724,7 @@
     },
     {
       "id": 13200145,
-      "talent_name": "Última",
+      "talent_name": "\u00daltima",
       "talent_desc": "Increase certain agility by certain percents, naturally has 10% combo rate and aid rate."
     },
     {
@@ -774,17 +774,17 @@
     },
     {
       "id": 13200155,
-      "talent_name": "Tenshō Issen",
+      "talent_name": "Tensh\u014d Issen",
       "talent_desc": "Increase certain Intelligence and Agility, and naturally has 10% Speed bonus."
     },
     {
       "id": 13200156,
       "talent_name": "Self-Blessing",
-      "talent_desc": "Incease own strength and agility according to the percentage, and have 15% damage rate。"
+      "talent_desc": "Incease own strength and agility according to the percentage, and have 15% damage rate\u3002"
     },
     {
       "id": 13200157,
-      "talent_name": "Kokuō",
+      "talent_name": "Koku\u014d",
       "talent_desc": "Increase Agility and Intelligence by a certain percentage."
     },
     {
@@ -809,7 +809,7 @@
     },
     {
       "id": 13200162,
-      "talent_name": "Semi Kohakū",
+      "talent_name": "Semi Kohak\u016b",
       "talent_desc": "Naturally has 15% defense, 15% HP and 35% Block rate."
     },
     {
@@ -824,7 +824,7 @@
     },
     {
       "id": 13200165,
-      "talent_name": "Kakaku Hō",
+      "talent_name": "Kakaku H\u014d",
       "talent_desc": "Naturally has 20% defense and 30% stamina."
     },
     {
@@ -864,7 +864,7 @@
     },
     {
       "id": 13200173,
-      "talent_name": "Vollständig",
+      "talent_name": "Vollst\u00e4ndig",
       "talent_desc": "Increase aglity and wisdom by a large percentage and naturally has 15% damage rate."
     },
     {
@@ -915,7 +915,7 @@
     {
       "id": 13200183,
       "talent_name": "The Heat",
-      "talent_desc": "Increase wisdom and agility by certain percentage and the partner was born with 15% Avoid Injury rate."
+      "talent_desc": "Increase\u00a0wisdom\u00a0and\u00a0agility\u00a0by\u00a0certain\u00a0percentage\u00a0and\u00a0the\u00a0partner\u00a0was\u00a0born\u00a0with\u00a015%\u00a0Avoid\u00a0Injury\u00a0rate."
     },
     {
       "id": 13200185,
@@ -1014,12 +1014,12 @@
     },
     {
       "id": 13200204,
-      "talent_name": "Tiburón",
+      "talent_name": "Tibur\u00f3n",
       "talent_desc": "Increase Wisdom by 40% and Agility by 40%, Born with 20% Stamina."
     },
     {
       "id": 13200205,
-      "talent_name": "Revólver De Los Lobos",
+      "talent_name": "Rev\u00f3lver De Los Lobos",
       "talent_desc": "Increase Strength and Stamina by 40%. Born with 15% Damage Rate and 15% Avoid Injury Rate."
     },
     {
@@ -1031,6 +1031,27 @@
       "id": 13200207,
       "talent_name": "Piskiel",
       "talent_desc": "Increase Agility by 35% and Strength by 25%. Born with 20% Avoid Injury Rate. Restore 30 Fury at the start of each turn."
+    },
+    {
+      "id": 13200208,
+      "talent_name": "Cool Droplets",
+      "talent_desc": "Increase Agility by 40%. Born with 30% Combo Rate and 20% Stamina."
+    },
+    {
+      "id": 13200209,
+      "talent_name": "Loyalty",
+      "talent_desc": "Increase Strength and Wisdom by 15%. Born with 20% Stamina."
+    },
+    {
+      "id": 13200210,
+      "talent_name": "Superheroine",
+      "talent_desc": "Increase Strength by 20%. Born with 15% Damage Rate."
+    },
+    {
+      "id": 13200211,
+      "talent_name": "Bookworm",
+      "talent_desc": "Increase Agility by 20%. Born with 15% Avoid Injury Rate."
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

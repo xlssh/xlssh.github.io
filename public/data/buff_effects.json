@@ -1,6 +1,6 @@
 {
   "table": "buff_effects",
-  "rowCount": 93,
+  "rowCount": 101,
   "rows": [
     {
       "id": 13500001,
@@ -1406,6 +1406,129 @@
       "name": "Jail",
       "description": "Trap enemy and normal attacks will break the jail.",
       "icon_url": 13509993
+    },
+    {
+      "id": 13500094,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          101
+        ]
+      },
+      "buff_key": 0,
+      "weight": 0,
+      "continued": 0,
+      "name": "Female Party HP",
+      "description": "Increase HP when another female character is in formation.",
+      "icon_url": 13500004
+    },
+    {
+      "id": 13500095,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          101
+        ]
+      },
+      "buff_key": 1,
+      "weight": 0,
+      "continued": 0,
+      "name": "Anti-Male HP",
+      "description": "Increase HP when a non-Main male enemy is in formation.",
+      "icon_url": 13500004
+    },
+    {
+      "id": 13500096,
+      "buff_type": 9,
+      "alter": {
+        "alter": [
+          105
+        ]
+      },
+      "buff_key": 11,
+      "weight": 0,
+      "continued": 0,
+      "name": "Stat Debuff Immunity",
+      "description": "Immune to attribute-reducing status effects.",
+      "icon_url": 13500047
+    },
+    {
+      "id": 13500097,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          27
+        ]
+      },
+      "buff_key": 12,
+      "weight": 0,
+      "continued": 0,
+      "name": "Sasakibe Aid Aura",
+      "description": "Increase allied Assaulters and Supporters Aid Rate.",
+      "icon_url": 13500025
+    },
+    {
+      "id": 13500098,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          17,
+          21
+        ]
+      },
+      "buff_key": 13,
+      "weight": 0,
+      "continued": 0,
+      "name": "Sasakibe Defense Aura",
+      "description": "Increase allied Assaulters and Supporters Defense.",
+      "icon_url": 13500003
+    },
+    {
+      "id": 13500099,
+      "buff_type": 8,
+      "alter": {
+        "alter": [
+          11
+        ]
+      },
+      "buff_key": 14,
+      "weight": 0,
+      "continued": 0,
+      "name": "Mashiro Speed Suppression",
+      "description": "Decrease all enemies Speed.",
+      "icon_url": 13500028
+    },
+    {
+      "id": 13500100,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          16,
+          20
+        ]
+      },
+      "buff_key": 15,
+      "weight": 0,
+      "continued": 0,
+      "name": "Mashiro Team Attack Aura",
+      "description": "Increase all allies Attack.",
+      "icon_url": 13500001
+    },
+    {
+      "id": 13500101,
+      "buff_type": 7,
+      "alter": {
+        "alter": [
+          43
+        ]
+      },
+      "buff_key": 16,
+      "weight": 0,
+      "continued": 0,
+      "name": "Mashiro Team Crit Damage Aura",
+      "description": "Increase all allies Critical Hit Damage.",
+      "icon_url": 13500049
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

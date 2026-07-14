@@ -1,6 +1,6 @@
 {
   "table": "tavern_grades",
-  "rowCount": 7,
+  "rowCount": 8,
   "rows": [
     {
       "id": 30130001,
@@ -162,6 +162,30 @@
       "preview": 0,
       "tips": "When Main Character level reaches 110 can recruit this page's partners",
       "is_tavern": 1
+    },
+    {
+      "id": 30130008,
+      "level": 120,
+      "page": 8,
+      "wine_lvs": [
+        5,
+        0,
+        0,
+        0
+      ],
+      "pay_configs": {
+        "NORMAL": 30140009,
+        "ADVANCED": 30140010
+      },
+      "vips": {
+        "ADVANCED": 0,
+        "AUTO": 0,
+        "AUTO_CHEST": 0
+      },
+      "preview": 0,
+      "tips": "When Main Character level reaches 120 can recruit this page's partners",
+      "is_tavern": 1
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

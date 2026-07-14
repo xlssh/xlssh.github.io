@@ -1,6 +1,6 @@
 {
   "table": "knife_expands",
-  "rowCount": 96,
+  "rowCount": 100,
   "rows": [
     {
       "id": 2000001,
@@ -8177,6 +8177,447 @@
       "normal_exp": 18,
       "gold_exp": 18,
       "need_exp": 15000
+    },
+    {
+      "id": 2000213,
+      "relation_id": 1000025,
+      "level": 1,
+      "skill_id": 13310097,
+      "turns": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "effects": {
+        "13310097": {
+          "target": 1,
+          "ChgBg": {
+            "0": 30411
+          },
+          "appendEffect": {
+            "1": {
+              "target": 4,
+              "effectId": 13630119,
+              "appendEffect": {
+                "4": {
+                  "target": 4,
+                  "effectId": 13630121,
+                  "appendEffect": {
+                    "1": {
+                      "target": 2,
+                      "effectId": 13630120,
+                      "anmyhp": {
+                        "0": 100,
+                        "checkDie": 1
+                      }
+                    },
+                    "4": {
+                      "target": 4,
+                      "effectId": 13630122,
+                      "appendEffect": {
+                        "4": {
+                          "target": 4,
+                          "effectId": 13630123,
+                          "appendEffect": {
+                            "4": {
+                              "target": 0,
+                              "ChgBg": 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "soul_level_need": 0,
+      "quality": 6,
+      "soul_added": 140,
+      "added_front": [
+        {
+          "type": 28,
+          "target": 2,
+          "value": 0.5
+        },
+        {
+          "type": 29,
+          "target": 2,
+          "value": 0.4
+        },
+        {
+          "type": 101,
+          "target": 2,
+          "value": 1.0
+        },
+        {
+          "type": 34,
+          "target": 2,
+          "value": 0.8
+        }
+      ],
+      "added_middle": [
+        {
+          "type": 28,
+          "target": 3,
+          "value": 0.3
+        },
+        {
+          "type": 11,
+          "target": 3,
+          "value": 0.55
+        }
+      ],
+      "added_back": [
+        {
+          "type": 28,
+          "target": 4,
+          "value": 0.3
+        },
+        {
+          "type": 11,
+          "target": 4,
+          "value": 0.55
+        }
+      ],
+      "normal_exp": 11,
+      "gold_exp": 11,
+      "need_exp": 5000
+    },
+    {
+      "id": 2000214,
+      "relation_id": 1000025,
+      "level": 2,
+      "skill_id": 13310098,
+      "turns": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "effects": {
+        "13310098": {
+          "target": 1,
+          "ChgBg": {
+            "0": 30411
+          },
+          "appendEffect": {
+            "1": {
+              "target": 4,
+              "effectId": 13630119,
+              "appendEffect": {
+                "4": {
+                  "target": 4,
+                  "effectId": 13630121,
+                  "appendEffect": {
+                    "1": {
+                      "target": 2,
+                      "effectId": 13630120,
+                      "anmyhp": {
+                        "0": 100,
+                        "checkDie": 1
+                      }
+                    },
+                    "4": {
+                      "target": 4,
+                      "effectId": 13630122,
+                      "appendEffect": {
+                        "4": {
+                          "target": 4,
+                          "effectId": 13630123,
+                          "appendEffect": {
+                            "4": {
+                              "target": 0,
+                              "ChgBg": 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "soul_level_need": 1,
+      "quality": 6,
+      "soul_added": 145,
+      "added_front": [
+        {
+          "type": 28,
+          "target": 2,
+          "value": 0.5
+        },
+        {
+          "type": 29,
+          "target": 2,
+          "value": 0.4
+        },
+        {
+          "type": 101,
+          "target": 2,
+          "value": 1.0
+        },
+        {
+          "type": 34,
+          "target": 2,
+          "value": 0.8
+        }
+      ],
+      "added_middle": [
+        {
+          "type": 28,
+          "target": 3,
+          "value": 0.3
+        },
+        {
+          "type": 11,
+          "target": 3,
+          "value": 0.55
+        }
+      ],
+      "added_back": [
+        {
+          "type": 28,
+          "target": 4,
+          "value": 0.3
+        },
+        {
+          "type": 11,
+          "target": 4,
+          "value": 0.55
+        }
+      ],
+      "normal_exp": 13,
+      "gold_exp": 13,
+      "need_exp": 5000
+    },
+    {
+      "id": 2000215,
+      "relation_id": 1000025,
+      "level": 3,
+      "skill_id": 13310099,
+      "turns": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "effects": {
+        "13310099": {
+          "target": 1,
+          "ChgBg": {
+            "0": 30411
+          },
+          "appendEffect": {
+            "1": {
+              "target": 4,
+              "effectId": 13630119,
+              "appendEffect": {
+                "4": {
+                  "target": 4,
+                  "effectId": 13630121,
+                  "appendEffect": {
+                    "1": {
+                      "target": 2,
+                      "effectId": 13630120,
+                      "anmyhp": {
+                        "0": 100,
+                        "checkDie": 1
+                      }
+                    },
+                    "4": {
+                      "target": 4,
+                      "effectId": 13630122,
+                      "appendEffect": {
+                        "4": {
+                          "target": 4,
+                          "effectId": 13630123,
+                          "appendEffect": {
+                            "4": {
+                              "target": 0,
+                              "ChgBg": 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "soul_level_need": 15,
+      "quality": 6,
+      "soul_added": 147,
+      "added_front": [
+        {
+          "type": 28,
+          "target": 2,
+          "value": 0.5
+        },
+        {
+          "type": 29,
+          "target": 2,
+          "value": 0.4
+        },
+        {
+          "type": 101,
+          "target": 2,
+          "value": 1.0
+        },
+        {
+          "type": 34,
+          "target": 2,
+          "value": 0.8
+        }
+      ],
+      "added_middle": [
+        {
+          "type": 28,
+          "target": 3,
+          "value": 0.3
+        },
+        {
+          "type": 11,
+          "target": 3,
+          "value": 0.55
+        }
+      ],
+      "added_back": [
+        {
+          "type": 28,
+          "target": 4,
+          "value": 0.3
+        },
+        {
+          "type": 11,
+          "target": 4,
+          "value": 0.55
+        }
+      ],
+      "normal_exp": 15,
+      "gold_exp": 15,
+      "need_exp": 10000
+    },
+    {
+      "id": 2000216,
+      "relation_id": 1000025,
+      "level": 4,
+      "skill_id": 13310100,
+      "turns": [
+        1,
+        3,
+        5,
+        7
+      ],
+      "effects": {
+        "13310100": {
+          "target": 1,
+          "ChgBg": {
+            "0": 30411
+          },
+          "appendEffect": {
+            "1": {
+              "target": 4,
+              "effectId": 13630119,
+              "appendEffect": {
+                "4": {
+                  "target": 4,
+                  "effectId": 13630121,
+                  "appendEffect": {
+                    "1": {
+                      "target": 2,
+                      "effectId": 13630120,
+                      "anmyhp": {
+                        "0": 100,
+                        "checkDie": 1
+                      }
+                    },
+                    "4": {
+                      "target": 4,
+                      "effectId": 13630122,
+                      "appendEffect": {
+                        "4": {
+                          "target": 4,
+                          "effectId": 13630123,
+                          "appendEffect": {
+                            "4": {
+                              "target": 0,
+                              "ChgBg": 0
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "soul_level_need": 40,
+      "quality": 6,
+      "soul_added": 150,
+      "added_front": [
+        {
+          "type": 28,
+          "target": 2,
+          "value": 0.5
+        },
+        {
+          "type": 29,
+          "target": 2,
+          "value": 0.4
+        },
+        {
+          "type": 101,
+          "target": 2,
+          "value": 1.0
+        },
+        {
+          "type": 34,
+          "target": 2,
+          "value": 0.8
+        }
+      ],
+      "added_middle": [
+        {
+          "type": 28,
+          "target": 3,
+          "value": 0.3
+        },
+        {
+          "type": 11,
+          "target": 3,
+          "value": 0.55
+        }
+      ],
+      "added_back": [
+        {
+          "type": 28,
+          "target": 4,
+          "value": 0.3
+        },
+        {
+          "type": 11,
+          "target": 4,
+          "value": 0.55
+        }
+      ],
+      "normal_exp": 18,
+      "gold_exp": 18,
+      "need_exp": 15000
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

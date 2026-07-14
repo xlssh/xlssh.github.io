@@ -1,6 +1,6 @@
 {
   "table": "partner_changes",
-  "rowCount": 931,
+  "rowCount": 959,
   "rows": [
     {
       "id": 1011,
@@ -34,7 +34,7 @@
     },
     {
       "id": 1012,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -64,7 +64,7 @@
     },
     {
       "id": 1013,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -94,7 +94,7 @@
     },
     {
       "id": 1014,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -184,7 +184,7 @@
     },
     {
       "id": 1017,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 201,
@@ -214,7 +214,7 @@
     },
     {
       "id": 1021,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -249,7 +249,7 @@
     },
     {
       "id": 1022,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -309,7 +309,7 @@
     },
     {
       "id": 1024,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -459,7 +459,7 @@
     },
     {
       "id": 100012,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -489,7 +489,7 @@
     },
     {
       "id": 100013,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -519,7 +519,7 @@
     },
     {
       "id": 100014,
-      "name": "Sonído",
+      "name": "Son\u00eddo",
       "effect": [
         {
           "addType": 23,
@@ -549,7 +549,7 @@
     },
     {
       "id": 100015,
-      "name": "Ittō Kasō",
+      "name": "Itt\u014d Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -579,7 +579,7 @@
     },
     {
       "id": 100016,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 204,
@@ -609,7 +609,7 @@
     },
     {
       "id": 100017,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 201,
@@ -639,7 +639,7 @@
     },
     {
       "id": 100021,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -674,7 +674,7 @@
     },
     {
       "id": 100022,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -734,7 +734,7 @@
     },
     {
       "id": 100024,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -884,7 +884,7 @@
     },
     {
       "id": 100032,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -919,7 +919,7 @@
     },
     {
       "id": 100033,
-      "name": "Shingurushīrudo",
+      "name": "Shingurush\u012brudo",
       "effect": [
         {
           "addType": 17,
@@ -1039,7 +1039,7 @@
     },
     {
       "id": 100037,
-      "name": "Shijū no Saimon·Fury",
+      "name": "Shij\u016b no Saimon\u00b7Fury",
       "effect": [
         {
           "addType": 201,
@@ -1099,7 +1099,7 @@
     },
     {
       "id": 100042,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -1129,7 +1129,7 @@
     },
     {
       "id": 100043,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -1159,7 +1159,7 @@
     },
     {
       "id": 100044,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -1189,7 +1189,7 @@
     },
     {
       "id": 100045,
-      "name": "Hōrin",
+      "name": "H\u014drin",
       "effect": [
         {
           "addType": 1,
@@ -1249,7 +1249,7 @@
     },
     {
       "id": 100047,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 201,
@@ -1279,7 +1279,7 @@
     },
     {
       "id": 100051,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -1314,7 +1314,7 @@
     },
     {
       "id": 100052,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -1344,7 +1344,7 @@
     },
     {
       "id": 100053,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -1374,7 +1374,7 @@
     },
     {
       "id": 100054,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -1404,7 +1404,7 @@
     },
     {
       "id": 100055,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -1434,7 +1434,7 @@
     },
     {
       "id": 100056,
-      "name": "Shijū no Saimon Taihō",
+      "name": "Shij\u016b no Saimon Taih\u014d",
       "effect": [
         {
           "addType": 203,
@@ -1464,7 +1464,7 @@
     },
     {
       "id": 100057,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -1494,7 +1494,7 @@
     },
     {
       "id": 100061,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -1559,7 +1559,7 @@
     },
     {
       "id": 100063,
-      "name": "Shingurushīrudo",
+      "name": "Shingurush\u012brudo",
       "effect": [
         {
           "addType": 17,
@@ -1589,7 +1589,7 @@
     },
     {
       "id": 100064,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -1619,7 +1619,7 @@
     },
     {
       "id": 100065,
-      "name": "Tozanshō",
+      "name": "Tozansh\u014d",
       "effect": [
         {
           "addType": 27,
@@ -1739,7 +1739,7 @@
     },
     {
       "id": 100072,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -1769,7 +1769,7 @@
     },
     {
       "id": 100073,
-      "name": "Sonído",
+      "name": "Son\u00eddo",
       "effect": [
         {
           "addType": 23,
@@ -1799,7 +1799,7 @@
     },
     {
       "id": 100074,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -1829,7 +1829,7 @@
     },
     {
       "id": 100075,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -1889,7 +1889,7 @@
     },
     {
       "id": 100077,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 201,
@@ -1919,7 +1919,7 @@
     },
     {
       "id": 100081,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -1954,7 +1954,7 @@
     },
     {
       "id": 100082,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -1984,7 +1984,7 @@
     },
     {
       "id": 100083,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -2014,7 +2014,7 @@
     },
     {
       "id": 100084,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -2044,7 +2044,7 @@
     },
     {
       "id": 100085,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -2134,7 +2134,7 @@
     },
     {
       "id": 100091,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -2169,7 +2169,7 @@
     },
     {
       "id": 100092,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -2229,7 +2229,7 @@
     },
     {
       "id": 100094,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -2259,7 +2259,7 @@
     },
     {
       "id": 100095,
-      "name": "Kasō Shibari",
+      "name": "Kas\u014d Shibari",
       "effect": [
         {
           "addType": 202,
@@ -2349,7 +2349,7 @@
     },
     {
       "id": 100101,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -2384,7 +2384,7 @@
     },
     {
       "id": 100102,
-      "name": "Shingurushīrudo",
+      "name": "Shingurush\u012brudo",
       "effect": [
         {
           "addType": 17,
@@ -2414,7 +2414,7 @@
     },
     {
       "id": 100103,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -2534,7 +2534,7 @@
     },
     {
       "id": 100107,
-      "name": "Kasō",
+      "name": "Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -2594,7 +2594,7 @@
     },
     {
       "id": 100112,
-      "name": "Shingurushīrudo",
+      "name": "Shingurush\u012brudo",
       "effect": [
         {
           "addType": 17,
@@ -2684,7 +2684,7 @@
     },
     {
       "id": 100115,
-      "name": "Shijū no Saimon Taihō",
+      "name": "Shij\u016b no Saimon Taih\u014d",
       "effect": [
         {
           "addType": 203,
@@ -2744,7 +2744,7 @@
     },
     {
       "id": 100117,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -2774,7 +2774,7 @@
     },
     {
       "id": 100121,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -2869,7 +2869,7 @@
     },
     {
       "id": 100124,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -3019,7 +3019,7 @@
     },
     {
       "id": 100132,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -3079,7 +3079,7 @@
     },
     {
       "id": 100134,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -3139,7 +3139,7 @@
     },
     {
       "id": 100136,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 204,
@@ -3169,7 +3169,7 @@
     },
     {
       "id": 100137,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 201,
@@ -3199,7 +3199,7 @@
     },
     {
       "id": 100141,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -3264,7 +3264,7 @@
     },
     {
       "id": 100143,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -3294,7 +3294,7 @@
     },
     {
       "id": 100144,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -3354,7 +3354,7 @@
     },
     {
       "id": 100146,
-      "name": "Shijū no Saimon Taihō",
+      "name": "Shij\u016b no Saimon Taih\u014d",
       "effect": [
         {
           "addType": 203,
@@ -3384,7 +3384,7 @@
     },
     {
       "id": 100147,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -3414,7 +3414,7 @@
     },
     {
       "id": 100151,
-      "name": "Shingurushīrudo",
+      "name": "Shingurush\u012brudo",
       "effect": [
         {
           "addType": 17,
@@ -3474,7 +3474,7 @@
     },
     {
       "id": 100153,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -3534,7 +3534,7 @@
     },
     {
       "id": 100155,
-      "name": "Tozanshō",
+      "name": "Tozansh\u014d",
       "effect": [
         {
           "addType": 27,
@@ -3594,7 +3594,7 @@
     },
     {
       "id": 100157,
-      "name": "Shijū no Saimon·Fury",
+      "name": "Shij\u016b no Saimon\u00b7Fury",
       "effect": [
         {
           "addType": 201,
@@ -3624,7 +3624,7 @@
     },
     {
       "id": 100161,
-      "name": "Shingurushīrudo",
+      "name": "Shingurush\u012brudo",
       "effect": [
         {
           "addType": 17,
@@ -3684,7 +3684,7 @@
     },
     {
       "id": 100163,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -3744,7 +3744,7 @@
     },
     {
       "id": 100165,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -3864,7 +3864,7 @@
     },
     {
       "id": 100172,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -3899,7 +3899,7 @@
     },
     {
       "id": 100173,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -3929,7 +3929,7 @@
     },
     {
       "id": 100174,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -4019,7 +4019,7 @@
     },
     {
       "id": 100177,
-      "name": "Kasō",
+      "name": "Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -4049,7 +4049,7 @@
     },
     {
       "id": 100181,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -4114,7 +4114,7 @@
     },
     {
       "id": 100183,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -4144,7 +4144,7 @@
     },
     {
       "id": 100184,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -4264,7 +4264,7 @@
     },
     {
       "id": 100191,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -4329,7 +4329,7 @@
     },
     {
       "id": 100193,
-      "name": "Tentō",
+      "name": "Tent\u014d",
       "effect": [
         {
           "addType": 2,
@@ -4479,7 +4479,7 @@
     },
     {
       "id": 100201,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -4574,7 +4574,7 @@
     },
     {
       "id": 100204,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -4634,7 +4634,7 @@
     },
     {
       "id": 100206,
-      "name": "Shijū no Saimon Shunpo",
+      "name": "Shij\u016b no Saimon Shunpo",
       "effect": [
         {
           "addType": 203,
@@ -4694,7 +4694,7 @@
     },
     {
       "id": 100211,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -4789,7 +4789,7 @@
     },
     {
       "id": 100214,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -4819,7 +4819,7 @@
     },
     {
       "id": 100215,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -4849,7 +4849,7 @@
     },
     {
       "id": 100216,
-      "name": "Shijū no Saimon Taihō",
+      "name": "Shij\u016b no Saimon Taih\u014d",
       "effect": [
         {
           "addType": 203,
@@ -4879,7 +4879,7 @@
     },
     {
       "id": 100217,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -4969,7 +4969,7 @@
     },
     {
       "id": 100223,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -5029,7 +5029,7 @@
     },
     {
       "id": 100225,
-      "name": "Ittō Kasō",
+      "name": "Itt\u014d Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -5119,7 +5119,7 @@
     },
     {
       "id": 100231,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -5214,7 +5214,7 @@
     },
     {
       "id": 100234,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -5304,7 +5304,7 @@
     },
     {
       "id": 100237,
-      "name": "Shijū no Saimon·Fury",
+      "name": "Shij\u016b no Saimon\u00b7Fury",
       "effect": [
         {
           "addType": 201,
@@ -5364,7 +5364,7 @@
     },
     {
       "id": 100242,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -5394,7 +5394,7 @@
     },
     {
       "id": 100243,
-      "name": "Kaidō",
+      "name": "Kaid\u014d",
       "effect": [
         {
           "addType": 34,
@@ -5454,7 +5454,7 @@
     },
     {
       "id": 100245,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -5484,7 +5484,7 @@
     },
     {
       "id": 100246,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 204,
@@ -5544,7 +5544,7 @@
     },
     {
       "id": 100251,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -5639,7 +5639,7 @@
     },
     {
       "id": 100254,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -5669,7 +5669,7 @@
     },
     {
       "id": 100255,
-      "name": "Kasō Recover",
+      "name": "Kas\u014d Recover",
       "effect": [
         {
           "addType": 202,
@@ -5729,7 +5729,7 @@
     },
     {
       "id": 100257,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 201,
@@ -5789,7 +5789,7 @@
     },
     {
       "id": 100262,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -5854,7 +5854,7 @@
     },
     {
       "id": 100264,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -5884,7 +5884,7 @@
     },
     {
       "id": 100265,
-      "name": "Kasō Burn",
+      "name": "Kas\u014d Burn",
       "effect": [
         {
           "addType": 202,
@@ -6034,7 +6034,7 @@
     },
     {
       "id": 100273,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -6094,7 +6094,7 @@
     },
     {
       "id": 100275,
-      "name": "Kūra",
+      "name": "K\u016bra",
       "effect": [
         {
           "addType": 201,
@@ -6184,7 +6184,7 @@
     },
     {
       "id": 100281,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -6249,7 +6249,7 @@
     },
     {
       "id": 100283,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -6309,7 +6309,7 @@
     },
     {
       "id": 100285,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -6339,7 +6339,7 @@
     },
     {
       "id": 100286,
-      "name": "Shijū no Saimon Shunpo",
+      "name": "Shij\u016b no Saimon Shunpo",
       "effect": [
         {
           "addType": 203,
@@ -6429,7 +6429,7 @@
     },
     {
       "id": 100292,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -6489,7 +6489,7 @@
     },
     {
       "id": 100294,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -6519,7 +6519,7 @@
     },
     {
       "id": 100295,
-      "name": "Hōrin",
+      "name": "H\u014drin",
       "effect": [
         {
           "addType": 1,
@@ -6639,7 +6639,7 @@
     },
     {
       "id": 100302,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -6669,7 +6669,7 @@
     },
     {
       "id": 100303,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -6699,7 +6699,7 @@
     },
     {
       "id": 100304,
-      "name": "Sonído",
+      "name": "Son\u00eddo",
       "effect": [
         {
           "addType": 23,
@@ -6729,7 +6729,7 @@
     },
     {
       "id": 100305,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -6789,7 +6789,7 @@
     },
     {
       "id": 100307,
-      "name": "Kasō",
+      "name": "Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -6879,7 +6879,7 @@
     },
     {
       "id": 100313,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -6909,7 +6909,7 @@
     },
     {
       "id": 100314,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -6939,7 +6939,7 @@
     },
     {
       "id": 100315,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -6999,7 +6999,7 @@
     },
     {
       "id": 100317,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -7089,7 +7089,7 @@
     },
     {
       "id": 100323,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -7149,7 +7149,7 @@
     },
     {
       "id": 100325,
-      "name": "Kasō Shibari",
+      "name": "Kas\u014d Shibari",
       "effect": [
         {
           "addType": 202,
@@ -7239,7 +7239,7 @@
     },
     {
       "id": 200011,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -7304,7 +7304,7 @@
     },
     {
       "id": 200013,
-      "name": "Kyōmon",
+      "name": "Ky\u014dmon",
       "effect": [
         {
           "addType": 21,
@@ -7334,7 +7334,7 @@
     },
     {
       "id": 200014,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -7364,7 +7364,7 @@
     },
     {
       "id": 200015,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -7454,7 +7454,7 @@
     },
     {
       "id": 200021,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -7519,7 +7519,7 @@
     },
     {
       "id": 200023,
-      "name": "Shingurushīrudo",
+      "name": "Shingurush\u012brudo",
       "effect": [
         {
           "addType": 17,
@@ -7579,7 +7579,7 @@
     },
     {
       "id": 200025,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -7639,7 +7639,7 @@
     },
     {
       "id": 200027,
-      "name": "Shijū no Saimon Dankū",
+      "name": "Shij\u016b no Saimon Dank\u016b",
       "effect": [
         {
           "addType": 203,
@@ -7699,7 +7699,7 @@
     },
     {
       "id": 200032,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -7759,7 +7759,7 @@
     },
     {
       "id": 200034,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -7849,7 +7849,7 @@
     },
     {
       "id": 200037,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -7879,7 +7879,7 @@
     },
     {
       "id": 200041,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -7974,7 +7974,7 @@
     },
     {
       "id": 200044,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -8009,7 +8009,7 @@
     },
     {
       "id": 200045,
-      "name": "Shijū no Saimon Raikō",
+      "name": "Shij\u016b no Saimon Raik\u014d",
       "effect": [
         {
           "addType": 203,
@@ -8069,7 +8069,7 @@
     },
     {
       "id": 200047,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -8159,7 +8159,7 @@
     },
     {
       "id": 200053,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -8219,7 +8219,7 @@
     },
     {
       "id": 200055,
-      "name": "Shijū no Saimon Taihō",
+      "name": "Shij\u016b no Saimon Taih\u014d",
       "effect": [
         {
           "addType": 203,
@@ -8309,7 +8309,7 @@
     },
     {
       "id": 200061,
-      "name": "Tentō",
+      "name": "Tent\u014d",
       "effect": [
         {
           "addType": 2,
@@ -8369,7 +8369,7 @@
     },
     {
       "id": 200063,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -8464,7 +8464,7 @@
     },
     {
       "id": 200066,
-      "name": "Shijū no Saimon Taihō",
+      "name": "Shij\u016b no Saimon Taih\u014d",
       "effect": [
         {
           "addType": 203,
@@ -8554,7 +8554,7 @@
     },
     {
       "id": 200072,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -8589,7 +8589,7 @@
     },
     {
       "id": 200073,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -8624,7 +8624,7 @@
     },
     {
       "id": 200074,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -8654,7 +8654,7 @@
     },
     {
       "id": 200075,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -8714,7 +8714,7 @@
     },
     {
       "id": 200077,
-      "name": "Shijū no Saimon Dankū",
+      "name": "Shij\u016b no Saimon Dank\u016b",
       "effect": [
         {
           "addType": 203,
@@ -8744,7 +8744,7 @@
     },
     {
       "id": 200081,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -8779,7 +8779,7 @@
     },
     {
       "id": 200082,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -8874,7 +8874,7 @@
     },
     {
       "id": 200085,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -8964,7 +8964,7 @@
     },
     {
       "id": 200091,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -9029,7 +9029,7 @@
     },
     {
       "id": 200093,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -9064,7 +9064,7 @@
     },
     {
       "id": 200094,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -9154,7 +9154,7 @@
     },
     {
       "id": 200097,
-      "name": "Shijū no Saimon Shun",
+      "name": "Shij\u016b no Saimon Shun",
       "effect": [
         {
           "addType": 203,
@@ -9184,7 +9184,7 @@
     },
     {
       "id": 300011,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -9249,7 +9249,7 @@
     },
     {
       "id": 300013,
-      "name": "Shingurushīrudo",
+      "name": "Shingurush\u012brudo",
       "effect": [
         {
           "addType": 17,
@@ -9309,7 +9309,7 @@
     },
     {
       "id": 300015,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -9399,7 +9399,7 @@
     },
     {
       "id": 300021,
-      "name": "Tentō",
+      "name": "Tent\u014d",
       "effect": [
         {
           "addType": 2,
@@ -9429,7 +9429,7 @@
     },
     {
       "id": 300022,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -9524,7 +9524,7 @@
     },
     {
       "id": 300025,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -9584,7 +9584,7 @@
     },
     {
       "id": 300027,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -9644,7 +9644,7 @@
     },
     {
       "id": 300032,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -9674,7 +9674,7 @@
     },
     {
       "id": 300033,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -9734,7 +9734,7 @@
     },
     {
       "id": 300035,
-      "name": "Ittō Kasō",
+      "name": "Itt\u014d Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -9764,7 +9764,7 @@
     },
     {
       "id": 300036,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 204,
@@ -9794,7 +9794,7 @@
     },
     {
       "id": 300037,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -9854,7 +9854,7 @@
     },
     {
       "id": 400042,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -9889,7 +9889,7 @@
     },
     {
       "id": 400043,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -10009,7 +10009,7 @@
     },
     {
       "id": 400047,
-      "name": "Shijū no Saimon Taihō",
+      "name": "Shij\u016b no Saimon Taih\u014d",
       "effect": [
         {
           "addType": 203,
@@ -10039,7 +10039,7 @@
     },
     {
       "id": 400051,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -10074,7 +10074,7 @@
     },
     {
       "id": 400052,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -10134,7 +10134,7 @@
     },
     {
       "id": 400054,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -10164,7 +10164,7 @@
     },
     {
       "id": 400055,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -10194,7 +10194,7 @@
     },
     {
       "id": 400056,
-      "name": "Kūra",
+      "name": "K\u016bra",
       "effect": [
         {
           "addType": 201,
@@ -10254,7 +10254,7 @@
     },
     {
       "id": 400061,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -10349,7 +10349,7 @@
     },
     {
       "id": 400064,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -10439,7 +10439,7 @@
     },
     {
       "id": 400067,
-      "name": "Ichiman'en Shīrudo",
+      "name": "Ichiman'en Sh\u012brudo",
       "effect": [
         {
           "addType": 201,
@@ -10469,7 +10469,7 @@
     },
     {
       "id": 400081,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -10564,7 +10564,7 @@
     },
     {
       "id": 400084,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -10594,7 +10594,7 @@
     },
     {
       "id": 400085,
-      "name": "Kaidō",
+      "name": "Kaid\u014d",
       "effect": [
         {
           "addType": 34,
@@ -10654,7 +10654,7 @@
     },
     {
       "id": 400087,
-      "name": "Shijū no Saimon Dankū",
+      "name": "Shij\u016b no Saimon Dank\u016b",
       "effect": [
         {
           "addType": 203,
@@ -10684,7 +10684,7 @@
     },
     {
       "id": 400091,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -10809,7 +10809,7 @@
     },
     {
       "id": 400095,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -10839,7 +10839,7 @@
     },
     {
       "id": 400096,
-      "name": "Raikōhō",
+      "name": "Raik\u014dh\u014d",
       "effect": [
         {
           "addType": 28,
@@ -10869,7 +10869,7 @@
     },
     {
       "id": 400097,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -10899,7 +10899,7 @@
     },
     {
       "id": 400101,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -11024,7 +11024,7 @@
     },
     {
       "id": 400105,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -11054,7 +11054,7 @@
     },
     {
       "id": 400106,
-      "name": "Raikōhō",
+      "name": "Raik\u014dh\u014d",
       "effect": [
         {
           "addType": 28,
@@ -11084,7 +11084,7 @@
     },
     {
       "id": 400107,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -11144,7 +11144,7 @@
     },
     {
       "id": 200102,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -11179,7 +11179,7 @@
     },
     {
       "id": 200103,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -11209,7 +11209,7 @@
     },
     {
       "id": 200104,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -11239,7 +11239,7 @@
     },
     {
       "id": 200105,
-      "name": "Kaidō",
+      "name": "Kaid\u014d",
       "effect": [
         {
           "addType": 34,
@@ -11299,7 +11299,7 @@
     },
     {
       "id": 200107,
-      "name": "Shijū no Saimon·Fury",
+      "name": "Shij\u016b no Saimon\u00b7Fury",
       "effect": [
         {
           "addType": 201,
@@ -11359,7 +11359,7 @@
     },
     {
       "id": 200112,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -11424,7 +11424,7 @@
     },
     {
       "id": 200114,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -11484,7 +11484,7 @@
     },
     {
       "id": 200116,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -11514,7 +11514,7 @@
     },
     {
       "id": 200117,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -11544,7 +11544,7 @@
     },
     {
       "id": 200121,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -11609,7 +11609,7 @@
     },
     {
       "id": 200123,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -11639,7 +11639,7 @@
     },
     {
       "id": 200124,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -11669,7 +11669,7 @@
     },
     {
       "id": 200125,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -11699,7 +11699,7 @@
     },
     {
       "id": 200126,
-      "name": "Shijū no Saimon Raikōhō",
+      "name": "Shij\u016b no Saimon Raik\u014dh\u014d",
       "effect": [
         {
           "addType": 203,
@@ -11729,7 +11729,7 @@
     },
     {
       "id": 200127,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -11789,7 +11789,7 @@
     },
     {
       "id": 200132,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -11824,7 +11824,7 @@
     },
     {
       "id": 200133,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -11854,7 +11854,7 @@
     },
     {
       "id": 200134,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -11884,7 +11884,7 @@
     },
     {
       "id": 200135,
-      "name": "Shijū no Saimon Bankin",
+      "name": "Shij\u016b no Saimon Bankin",
       "effect": [
         {
           "addType": 203,
@@ -11974,7 +11974,7 @@
     },
     {
       "id": 400111,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -12039,7 +12039,7 @@
     },
     {
       "id": 400113,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -12069,7 +12069,7 @@
     },
     {
       "id": 400114,
-      "name": "Sōkatsui",
+      "name": "S\u014dkatsui",
       "effect": [
         {
           "addType": 24,
@@ -12099,7 +12099,7 @@
     },
     {
       "id": 400115,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -12189,7 +12189,7 @@
     },
     {
       "id": 400121,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -12254,7 +12254,7 @@
     },
     {
       "id": 400123,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -12314,7 +12314,7 @@
     },
     {
       "id": 400125,
-      "name": "Shijū no Saimon Raikōhō",
+      "name": "Shij\u016b no Saimon Raik\u014dh\u014d",
       "effect": [
         {
           "addType": 203,
@@ -12404,7 +12404,7 @@
     },
     {
       "id": 400131,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -12499,7 +12499,7 @@
     },
     {
       "id": 400134,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -12559,7 +12559,7 @@
     },
     {
       "id": 400136,
-      "name": "Raikōhō",
+      "name": "Raik\u014dh\u014d",
       "effect": [
         {
           "addType": 28,
@@ -12619,7 +12619,7 @@
     },
     {
       "id": 400231,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -12714,7 +12714,7 @@
     },
     {
       "id": 400234,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -12774,7 +12774,7 @@
     },
     {
       "id": 400236,
-      "name": "Raikōhō",
+      "name": "Raik\u014dh\u014d",
       "effect": [
         {
           "addType": 28,
@@ -12834,7 +12834,7 @@
     },
     {
       "id": 500021,
-      "name": "Butō",
+      "name": "But\u014d",
       "effect": [
         {
           "addType": 2,
@@ -12864,7 +12864,7 @@
     },
     {
       "id": 500022,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -12899,7 +12899,7 @@
     },
     {
       "id": 500023,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -12929,7 +12929,7 @@
     },
     {
       "id": 500024,
-      "name": "Shijū no Saimon Shun",
+      "name": "Shij\u016b no Saimon Shun",
       "effect": [
         {
           "addType": 203,
@@ -12959,7 +12959,7 @@
     },
     {
       "id": 500025,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -13049,7 +13049,7 @@
     },
     {
       "id": 500101,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -13204,7 +13204,7 @@
     },
     {
       "id": 500106,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 203,
@@ -13264,7 +13264,7 @@
     },
     {
       "id": 500201,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -13299,7 +13299,7 @@
     },
     {
       "id": 500202,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -13359,7 +13359,7 @@
     },
     {
       "id": 500204,
-      "name": "Raikōhō",
+      "name": "Raik\u014dh\u014d",
       "effect": [
         {
           "addType": 28,
@@ -13389,7 +13389,7 @@
     },
     {
       "id": 500205,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 203,
@@ -13449,7 +13449,7 @@
     },
     {
       "id": 500207,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -13779,7 +13779,7 @@
     },
     {
       "id": 500404,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -13869,7 +13869,7 @@
     },
     {
       "id": 500407,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -13899,7 +13899,7 @@
     },
     {
       "id": 500501,
-      "name": "Sonído",
+      "name": "Son\u00eddo",
       "effect": [
         {
           "addType": 23,
@@ -13929,7 +13929,7 @@
     },
     {
       "id": 500502,
-      "name": "Sonído II",
+      "name": "Son\u00eddo II",
       "effect": [
         {
           "addType": 23,
@@ -13959,7 +13959,7 @@
     },
     {
       "id": 500503,
-      "name": "Sonído III",
+      "name": "Son\u00eddo III",
       "effect": [
         {
           "addType": 23,
@@ -14019,7 +14019,7 @@
     },
     {
       "id": 500505,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -14079,7 +14079,7 @@
     },
     {
       "id": 500507,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -14109,7 +14109,7 @@
     },
     {
       "id": 500601,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -14139,7 +14139,7 @@
     },
     {
       "id": 500602,
-      "name": "Sōren I",
+      "name": "S\u014dren I",
       "effect": [
         {
           "addType": 43,
@@ -14169,7 +14169,7 @@
     },
     {
       "id": 500603,
-      "name": "Sōkatsui II",
+      "name": "S\u014dkatsui II",
       "effect": [
         {
           "addType": 24,
@@ -14199,7 +14199,7 @@
     },
     {
       "id": 500604,
-      "name": "Sōren II",
+      "name": "S\u014dren II",
       "effect": [
         {
           "addType": 43,
@@ -14229,7 +14229,7 @@
     },
     {
       "id": 500605,
-      "name": "Kasō Kido",
+      "name": "Kas\u014d Kido",
       "effect": [
         {
           "addType": 202,
@@ -14289,7 +14289,7 @@
     },
     {
       "id": 500607,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -14469,7 +14469,7 @@
     },
     {
       "id": 500706,
-      "name": "Kasō Utsusemi",
+      "name": "Kas\u014d Utsusemi",
       "effect": [
         {
           "addType": 202,
@@ -14739,7 +14739,7 @@
     },
     {
       "id": 500901,
-      "name": "SōkotsuⅠ",
+      "name": "S\u014dkotsu\u2160",
       "effect": [
         {
           "addType": 16,
@@ -14769,7 +14769,7 @@
     },
     {
       "id": 500902,
-      "name": "Bankin ·Hollowed Silence",
+      "name": "Bankin \u00b7Hollowed Silence",
       "effect": [
         {
           "addType": 105,
@@ -14834,7 +14834,7 @@
     },
     {
       "id": 500904,
-      "name": "SōkotsuⅠ",
+      "name": "S\u014dkotsu\u2160",
       "effect": [
         {
           "addType": 16,
@@ -14864,7 +14864,7 @@
     },
     {
       "id": 500905,
-      "name": "Shijyu Usaimon·Shield",
+      "name": "Shijyu Usaimon\u00b7Shield",
       "effect": [
         {
           "addType": 201,
@@ -14984,7 +14984,7 @@
     },
     {
       "id": 501002,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 20,
@@ -15104,7 +15104,7 @@
     },
     {
       "id": 501006,
-      "name": "Kasō",
+      "name": "Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -15134,7 +15134,7 @@
     },
     {
       "id": 501007,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -15284,7 +15284,7 @@
     },
     {
       "id": 501105,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -15319,7 +15319,7 @@
     },
     {
       "id": 501106,
-      "name": "Kasō Attack",
+      "name": "Kas\u014d Attack",
       "effect": [
         {
           "addType": 202,
@@ -15409,7 +15409,7 @@
     },
     {
       "id": 501202,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 20,
@@ -15529,7 +15529,7 @@
     },
     {
       "id": 501206,
-      "name": "Shijū no Saimon Shunpo",
+      "name": "Shij\u016b no Saimon Shunpo",
       "effect": [
         {
           "addType": 203,
@@ -15619,7 +15619,7 @@
     },
     {
       "id": 501302,
-      "name": "Kuyō Shibari",
+      "name": "Kuy\u014d Shibari",
       "effect": [
         {
           "addType": 201,
@@ -15739,7 +15739,7 @@
     },
     {
       "id": 501306,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 203,
@@ -15829,7 +15829,7 @@
     },
     {
       "id": 501402,
-      "name": "SōkotsuⅠ",
+      "name": "S\u014dkotsu\u2160",
       "effect": [
         {
           "addType": 16,
@@ -15894,7 +15894,7 @@
     },
     {
       "id": 501404,
-      "name": "SōkotsuⅡ",
+      "name": "S\u014dkotsu\u2161",
       "effect": [
         {
           "addType": 16,
@@ -15959,7 +15959,7 @@
     },
     {
       "id": 501406,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 203,
@@ -16049,7 +16049,7 @@
     },
     {
       "id": 501502,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -16139,7 +16139,7 @@
     },
     {
       "id": 501505,
-      "name": "KyokkōⅡ",
+      "name": "Kyokk\u014d\u2161",
       "effect": [
         {
           "addType": 203,
@@ -16199,7 +16199,7 @@
     },
     {
       "id": 501507,
-      "name": "Shijū no Saimon·Poison",
+      "name": "Shij\u016b no Saimon\u00b7Poison",
       "effect": [
         {
           "addType": 201,
@@ -16289,7 +16289,7 @@
     },
     {
       "id": 501603,
-      "name": "Shijū no Saimon Immunity",
+      "name": "Shij\u016b no Saimon Immunity",
       "effect": [
         {
           "addType": 203,
@@ -16499,7 +16499,7 @@
     },
     {
       "id": 501703,
-      "name": "Shijū no Saimon Immunity",
+      "name": "Shij\u016b no Saimon Immunity",
       "effect": [
         {
           "addType": 203,
@@ -16559,7 +16559,7 @@
     },
     {
       "id": 501705,
-      "name": "Kasō Ruin",
+      "name": "Kas\u014d Ruin",
       "effect": [
         {
           "addType": 202,
@@ -16589,7 +16589,7 @@
     },
     {
       "id": 501706,
-      "name": "kūra",
+      "name": "k\u016bra",
       "effect": [
         {
           "addType": 201,
@@ -16649,7 +16649,7 @@
     },
     {
       "id": 501801,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -16799,7 +16799,7 @@
     },
     {
       "id": 501806,
-      "name": "Tenteikūra",
+      "name": "Tenteik\u016bra",
       "effect": [
         {
           "addType": 17,
@@ -17044,7 +17044,7 @@
     },
     {
       "id": 501907,
-      "name": "Exclusive·Blessing",
+      "name": "Exclusive\u00b7Blessing",
       "effect": [
         {
           "addType": 203,
@@ -17104,7 +17104,7 @@
     },
     {
       "id": 502002,
-      "name": "Raikōhō",
+      "name": "Raik\u014dh\u014d",
       "effect": [
         {
           "addType": 28,
@@ -17289,7 +17289,7 @@
     },
     {
       "id": 502101,
-      "name": "ShunpoⅠ",
+      "name": "Shunpo\u2160",
       "effect": [
         {
           "addType": 11,
@@ -17469,7 +17469,7 @@
     },
     {
       "id": 502107,
-      "name": "Shijū no Saimon·Fury",
+      "name": "Shij\u016b no Saimon\u00b7Fury",
       "effect": [
         {
           "addType": 201,
@@ -17499,7 +17499,7 @@
     },
     {
       "id": 502201,
-      "name": "SōkotsuⅠ",
+      "name": "S\u014dkotsu\u2160",
       "effect": [
         {
           "addType": 16,
@@ -17679,7 +17679,7 @@
     },
     {
       "id": 502207,
-      "name": "Shijū no Saimon Ice",
+      "name": "Shij\u016b no Saimon Ice",
       "effect": [
         {
           "addType": 202,
@@ -17909,7 +17909,7 @@
     },
     {
       "id": 502307,
-      "name": "Kasō",
+      "name": "Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -18209,7 +18209,7 @@
     },
     {
       "id": 502503,
-      "name": "ShunpoⅠ",
+      "name": "Shunpo\u2160",
       "effect": [
         {
           "addType": 11,
@@ -18239,7 +18239,7 @@
     },
     {
       "id": 502504,
-      "name": "Kasō",
+      "name": "Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -18449,7 +18449,7 @@
     },
     {
       "id": 502604,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -18479,7 +18479,7 @@
     },
     {
       "id": 502605,
-      "name": "Vollständig",
+      "name": "Vollst\u00e4ndig",
       "effect": [
         {
           "addType": 201,
@@ -18509,7 +18509,7 @@
     },
     {
       "id": 502606,
-      "name": "Vollständig Wing",
+      "name": "Vollst\u00e4ndig Wing",
       "effect": [
         {
           "addType": 201,
@@ -18539,7 +18539,7 @@
     },
     {
       "id": 502607,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 202,
@@ -19849,7 +19849,7 @@
     },
     {
       "id": 503207,
-      "name": "Kasō - Furious Soul",
+      "name": "Kas\u014d - Furious Soul",
       "effect": [
         {
           "addType": 202,
@@ -19939,7 +19939,7 @@
     },
     {
       "id": 503303,
-      "name": "Sōka",
+      "name": "S\u014dka",
       "effect": [
         {
           "addType": 24,
@@ -19999,7 +19999,7 @@
     },
     {
       "id": 503305,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 202,
@@ -20029,7 +20029,7 @@
     },
     {
       "id": 503306,
-      "name": "Shōmon",
+      "name": "Sh\u014dmon",
       "effect": [
         {
           "addType": 201,
@@ -20154,7 +20154,7 @@
     },
     {
       "id": 503403,
-      "name": "Shijū no Saimon Avoid Injury",
+      "name": "Shij\u016b no Saimon Avoid Injury",
       "effect": [
         {
           "addType": 203,
@@ -20215,7 +20215,7 @@
           "amount": 280
         }
       ],
-      "description": "Immune Silence ( If Yhwach and Genryūsai are lined up in the same formation, decrease both attack and damage rate by 30% )"
+      "description": "Immune Silence ( If Yhwach and Genry\u016bsai are lined up in the same formation, decrease both attack and damage rate by 30% )"
     },
     {
       "id": 503405,
@@ -20400,7 +20400,7 @@
           "amount": 124
         }
       ],
-      "description": "Increase own speed by 15%( If Bankai Genryūsai is lined up, increase Bankai Genryūsai's attack and damage rate by 40% )"
+      "description": "Increase own speed by 15%( If Bankai Genry\u016bsai is lined up, increase Bankai Genry\u016bsai's attack and damage rate by 40% )"
     },
     {
       "id": 503504,
@@ -20525,11 +20525,11 @@
           "amount": 1335
         }
       ],
-      "description": "Shin Daiguren Tōshirō attack cast bonus Laceration Debuff for 2 rounds. Laceration prevents targets from restoring HP.\n"
+      "description": "Shin Daiguren T\u014dshir\u014d attack cast bonus Laceration Debuff for 2 rounds. Laceration prevents targets from restoring HP.\n"
     },
     {
       "id": 503601,
-      "name": "Bankin Ⅰ",
+      "name": "Bankin \u2160",
       "effect": [
         {
           "addType": 105,
@@ -20589,7 +20589,7 @@
     },
     {
       "id": 503603,
-      "name": "Bankin Ⅱ",
+      "name": "Bankin \u2161",
       "effect": [
         {
           "addType": 105,
@@ -20739,7 +20739,7 @@
     },
     {
       "id": 503701,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -21010,7 +21010,7 @@
           "amount": 90
         }
       ],
-      "description": "Kidō attack 20%"
+      "description": "Kid\u014d attack 20%"
     },
     {
       "id": 503803,
@@ -21699,7 +21699,7 @@
     },
     {
       "id": 504104,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 201,
@@ -21984,7 +21984,7 @@
     },
     {
       "id": 504206,
-      "name": "Bankin·Invincibility",
+      "name": "Bankin\u00b7Invincibility",
       "effect": [
         {
           "addType": 105,
@@ -22040,7 +22040,7 @@
           "amount": 1335
         }
       ],
-      "description": "When Sternritter Uryū Ishida is in battle, decrease all enemies' max HP by 30%"
+      "description": "When Sternritter\u00a0Ury\u016b\u00a0Ishida is in battle, decrease all enemies' max HP by 30%"
     },
     {
       "id": 504301,
@@ -22560,7 +22560,7 @@
           "amount": 90
         }
       ],
-      "description": "Increase Kidō ATK by 20%"
+      "description": "Increase Kid\u014d ATK by 20%"
     },
     {
       "id": 504503,
@@ -22625,7 +22625,7 @@
           "amount": 280
         }
       ],
-      "description": "Increase own Aid Rate by 30%. When ally Ginjō Kūgo is in battle, increase his 30% of max HP"
+      "description": "Increase own Aid Rate by 30%. When ally Ginj\u014d K\u016bgo is in battle, increase his 30% of max HP"
     },
     {
       "id": 504505,
@@ -22685,7 +22685,7 @@
           "amount": 865
         }
       ],
-      "description": "After death, decrease all enemies’ attack by 50% for 2 rounds."
+      "description": "After death, decrease all enemies\u2019 attack by 50% for 2 rounds."
     },
     {
       "id": 504507,
@@ -22755,7 +22755,7 @@
           "amount": 70
         }
       ],
-      "description": " Immune to Silence, Fury Deduction, and Laceration"
+      "description": "\u00a0Immune to Silence, Fury Deduction, and Laceration"
     },
     {
       "id": 504602,
@@ -22790,7 +22790,7 @@
           "amount": 90
         }
       ],
-      "description": "Increase Speed by 15% & Kidō Attack by 30%"
+      "description": "Increase Speed by 15% & Kid\u014d Attack by 30%"
     },
     {
       "id": 504603,
@@ -22855,7 +22855,7 @@
           "amount": 280
         }
       ],
-      "description": "Speed 15% (When Kūgo Ginjō joins the battle, increase Riruka DEF and Avoid Injury Rate by 30%)"
+      "description": "Speed 15% (When K\u016bgo Ginj\u014d joins the battle, increase Riruka DEF and Avoid Injury Rate by 30%)"
     },
     {
       "id": 504605,
@@ -22915,7 +22915,7 @@
           "amount": 865
         }
       ],
-      "description": "When killed, restore ally Assaulter and Supporter HP by 100% "
+      "description": "When killed, restore ally Assaulter and Supporter HP by 100%\u00a0"
     },
     {
       "id": 504607,
@@ -23390,7 +23390,7 @@
           "amount": 1335
         }
       ],
-      "description": "Accumulatively increase self Critical Damage by 50% each round for 20 rounds."
+      "description": "Accumulatively increase self Critical Damage by 50%\u00a0each round for 20 rounds."
     },
     {
       "id": 504901,
@@ -24029,7 +24029,7 @@
     },
     {
       "id": 505107,
-      "name": "Fornicarás",
+      "name": "Fornicar\u00e1s",
       "effect": [
         {
           "addType": 203,
@@ -25694,7 +25694,7 @@
     },
     {
       "id": 600012,
-      "name": "Ittō Kasō",
+      "name": "Itt\u014d Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -25754,7 +25754,7 @@
     },
     {
       "id": 600014,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -25784,7 +25784,7 @@
     },
     {
       "id": 600015,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -25844,7 +25844,7 @@
     },
     {
       "id": 600017,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 201,
@@ -25904,7 +25904,7 @@
     },
     {
       "id": 600022,
-      "name": "Ittō Kasō",
+      "name": "Itt\u014d Kas\u014d",
       "effect": [
         {
           "addType": 202,
@@ -25964,7 +25964,7 @@
     },
     {
       "id": 600024,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -25994,7 +25994,7 @@
     },
     {
       "id": 600025,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -26054,7 +26054,7 @@
     },
     {
       "id": 600027,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 201,
@@ -26084,7 +26084,7 @@
     },
     {
       "id": 600031,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -26179,7 +26179,7 @@
     },
     {
       "id": 600034,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -26209,7 +26209,7 @@
     },
     {
       "id": 600035,
-      "name": "Shijū no Saimon Dankū",
+      "name": "Shij\u016b no Saimon Dank\u016b",
       "effect": [
         {
           "addType": 203,
@@ -26239,7 +26239,7 @@
     },
     {
       "id": 600036,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -26299,7 +26299,7 @@
     },
     {
       "id": 600041,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -26394,7 +26394,7 @@
     },
     {
       "id": 600044,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -26424,7 +26424,7 @@
     },
     {
       "id": 600045,
-      "name": "Shijū no Saimon Dankū",
+      "name": "Shij\u016b no Saimon Dank\u016b",
       "effect": [
         {
           "addType": 203,
@@ -26454,7 +26454,7 @@
     },
     {
       "id": 600046,
-      "name": "Raikō",
+      "name": "Raik\u014d",
       "effect": [
         {
           "addType": 28,
@@ -26514,7 +26514,7 @@
     },
     {
       "id": 600051,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -26579,7 +26579,7 @@
     },
     {
       "id": 600053,
-      "name": "Tozanshō",
+      "name": "Tozansh\u014d",
       "effect": [
         {
           "addType": 27,
@@ -26639,7 +26639,7 @@
     },
     {
       "id": 600055,
-      "name": "Shijū no Saimon Sekienton",
+      "name": "Shij\u016b no Saimon Sekienton",
       "effect": [
         {
           "addType": 203,
@@ -26699,7 +26699,7 @@
     },
     {
       "id": 600057,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 201,
@@ -26729,7 +26729,7 @@
     },
     {
       "id": 600061,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -26794,7 +26794,7 @@
     },
     {
       "id": 600063,
-      "name": "Tozanshō",
+      "name": "Tozansh\u014d",
       "effect": [
         {
           "addType": 27,
@@ -26854,7 +26854,7 @@
     },
     {
       "id": 600065,
-      "name": "Shijū no Saimon Sekienton",
+      "name": "Shij\u016b no Saimon Sekienton",
       "effect": [
         {
           "addType": 203,
@@ -26914,7 +26914,7 @@
     },
     {
       "id": 600067,
-      "name": "Shijū no Saimon",
+      "name": "Shij\u016b no Saimon",
       "effect": [
         {
           "addType": 201,
@@ -27004,7 +27004,7 @@
     },
     {
       "id": 600073,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -27039,7 +27039,7 @@
     },
     {
       "id": 600074,
-      "name": "Kasō Sonído",
+      "name": "Kas\u014d Son\u00eddo",
       "effect": [
         {
           "addType": 202,
@@ -27069,7 +27069,7 @@
     },
     {
       "id": 600075,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -27219,7 +27219,7 @@
     },
     {
       "id": 600083,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -27254,7 +27254,7 @@
     },
     {
       "id": 600084,
-      "name": "Kasō Sonído",
+      "name": "Kas\u014d Son\u00eddo",
       "effect": [
         {
           "addType": 202,
@@ -27284,7 +27284,7 @@
     },
     {
       "id": 600085,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -27404,7 +27404,7 @@
     },
     {
       "id": 600092,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -27434,7 +27434,7 @@
     },
     {
       "id": 600093,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -27499,7 +27499,7 @@
     },
     {
       "id": 600095,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -27529,7 +27529,7 @@
     },
     {
       "id": 600096,
-      "name": "Kūra",
+      "name": "K\u016bra",
       "effect": [
         {
           "addType": 201,
@@ -27619,7 +27619,7 @@
     },
     {
       "id": 600102,
-      "name": "Sōkat",
+      "name": "S\u014dkat",
       "effect": [
         {
           "addType": 24,
@@ -27649,7 +27649,7 @@
     },
     {
       "id": 600103,
-      "name": "Sōkotsu",
+      "name": "S\u014dkotsu",
       "effect": [
         {
           "addType": 16,
@@ -27714,7 +27714,7 @@
     },
     {
       "id": 600105,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -27744,7 +27744,7 @@
     },
     {
       "id": 600106,
-      "name": "Kūra",
+      "name": "K\u016bra",
       "effect": [
         {
           "addType": 201,
@@ -27834,7 +27834,7 @@
     },
     {
       "id": 600112,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -27894,7 +27894,7 @@
     },
     {
       "id": 600114,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -28044,7 +28044,7 @@
     },
     {
       "id": 600122,
-      "name": "Kyokkō",
+      "name": "Kyokk\u014d",
       "effect": [
         {
           "addType": 25,
@@ -28104,7 +28104,7 @@
     },
     {
       "id": 600124,
-      "name": "Sōren",
+      "name": "S\u014dren",
       "effect": [
         {
           "addType": 43,
@@ -28224,7 +28224,7 @@
     },
     {
       "id": 600131,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -28289,7 +28289,7 @@
     },
     {
       "id": 600133,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -28379,7 +28379,7 @@
     },
     {
       "id": 600136,
-      "name": "Shijū no Saimon Sōren",
+      "name": "Shij\u016b no Saimon S\u014dren",
       "effect": [
         {
           "addType": 203,
@@ -28439,7 +28439,7 @@
     },
     {
       "id": 600141,
-      "name": "Taihō",
+      "name": "Taih\u014d",
       "effect": [
         {
           "addType": 17,
@@ -28504,7 +28504,7 @@
     },
     {
       "id": 600143,
-      "name": "Dankū",
+      "name": "Dank\u016b",
       "effect": [
         {
           "addType": 29,
@@ -28594,7 +28594,7 @@
     },
     {
       "id": 600146,
-      "name": "Shijū no Saimon Sōren",
+      "name": "Shij\u016b no Saimon S\u014dren",
       "effect": [
         {
           "addType": 203,
@@ -28651,6 +28651,887 @@
         }
       ],
       "description": "Immune silent."
+    },
+    {
+      "id": 505715,
+      "name": "Unlimited Playtime",
+      "effect": [
+        {
+          "addType": 101,
+          "addValue": 0.25,
+          "oper": 2
+        },
+        {
+          "addType": 29,
+          "addValue": 0.2,
+          "oper": 1
+        }
+      ],
+      "hero_level": 40,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130060,
+          "amount": 120
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 80
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 70
+        }
+      ],
+      "description": "Increase own HP by 25% and Avoid Injury Rate by 20%."
+    },
+    {
+      "id": 505716,
+      "name": "Friends Over for a Party",
+      "effect": [
+        {
+          "addType": 11,
+          "addValue": 0.2,
+          "oper": 2
+        },
+        {
+          "addType": 203,
+          "addValue": 13900357,
+          "oper": 0
+        }
+      ],
+      "hero_level": 50,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130060,
+          "amount": 280
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 120
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 90
+        }
+      ],
+      "description": "Increase own Speed by 20%. With another female character, increase own and all allied female characters HP by 20%."
+    },
+    {
+      "id": 505717,
+      "name": "Healthy Physique",
+      "effect": [
+        {
+          "addType": 105,
+          "addValue": 8,
+          "oper": 3
+        },
+        {
+          "addType": 105,
+          "addValue": 524288,
+          "oper": 3
+        }
+      ],
+      "hero_level": 60,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130060,
+          "amount": 480
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 210
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 124
+        }
+      ],
+      "description": "Immune to Fury Deduction and Mutilation."
+    },
+    {
+      "id": 505718,
+      "name": "Big and Strong Protector",
+      "effect": [
+        {
+          "addType": 201,
+          "addValue": 13900358,
+          "oper": 0
+        }
+      ],
+      "hero_level": 70,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130060,
+          "amount": 720
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 360
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 280
+        }
+      ],
+      "description": "When attacked, create a shield around self based on the ally with the highest Attack."
+    },
+    {
+      "id": 505719,
+      "name": "Hard to Get",
+      "effect": [
+        {
+          "addType": 203,
+          "addValue": 13900359,
+          "oper": 0
+        }
+      ],
+      "hero_level": 80,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130060,
+          "amount": 1000
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 600
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 644
+        }
+      ],
+      "description": "Reduce all enemies Crit Rate and Hit Rate by 50%. Gain 10% extra HP against non-Main male enemies."
+    },
+    {
+      "id": 505720,
+      "name": "All Night Long",
+      "effect": [
+        {
+          "addType": 201,
+          "addValue": 13900360,
+          "oper": 0
+        }
+      ],
+      "hero_level": 90,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130060,
+          "amount": 1320
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 1335
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 865
+        }
+      ],
+      "description": "When attacked, restore all allies HP by 30% and increase their Defense by 50% for 2 turns."
+    },
+    {
+      "id": 505721,
+      "name": "Goodbye Kiss",
+      "effect": [
+        {
+          "addType": 202,
+          "addValue": 13900361,
+          "oper": 0
+        }
+      ],
+      "hero_level": 90,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130060,
+          "amount": 1848
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 1995
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 1335
+        }
+      ],
+      "description": "When defeated, empty all enemies Fury and reduce their Defense by 80% for 1 turn."
+    },
+    {
+      "id": 505722,
+      "name": "Enduring Lieutenant",
+      "effect": [
+        {
+          "addType": 101,
+          "addValue": 0.2,
+          "oper": 2
+        }
+      ],
+      "hero_level": 40,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130061,
+          "amount": 120
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 80
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 70
+        }
+      ],
+      "description": "Increase own HP by 20%."
+    },
+    {
+      "id": 505723,
+      "name": "Steadfast Guard",
+      "effect": [
+        {
+          "addType": 25,
+          "addValue": 0.15,
+          "oper": 1
+        },
+        {
+          "addType": 17,
+          "addValue": 0.15,
+          "oper": 2
+        },
+        {
+          "addType": 21,
+          "addValue": 0.15,
+          "oper": 2
+        }
+      ],
+      "hero_level": 50,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130061,
+          "amount": 280
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 120
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 90
+        }
+      ],
+      "description": "Increase own Block Rate and Defense by 15%."
+    },
+    {
+      "id": 505724,
+      "name": "Bleeding Retaliation",
+      "effect": [
+        {
+          "addType": 201,
+          "addValue": 13900363,
+          "oper": 0
+        }
+      ],
+      "hero_level": 60,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130061,
+          "amount": 480
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 210
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 124
+        }
+      ],
+      "description": "When attacked, inflict 100% Bleed on the attacker."
+    },
+    {
+      "id": 505725,
+      "name": "Mutilation Immunity",
+      "effect": [
+        {
+          "addType": 105,
+          "addValue": 524288,
+          "oper": 3
+        }
+      ],
+      "hero_level": 70,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130061,
+          "amount": 720
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 360
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 280
+        }
+      ],
+      "description": "Immune to Mutilation."
+    },
+    {
+      "id": 505726,
+      "name": "Lieutenant Support",
+      "effect": [
+        {
+          "addType": 203,
+          "addValue": 13900364,
+          "oper": 0
+        }
+      ],
+      "hero_level": 80,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130061,
+          "amount": 1000
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 600
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 644
+        }
+      ],
+      "description": "Increase allied Assaulters and Supporters Aid Rate by 40%."
+    },
+    {
+      "id": 505727,
+      "name": "Unwavering Guard",
+      "effect": [
+        {
+          "addType": 201,
+          "addValue": 13900365,
+          "oper": 0
+        }
+      ],
+      "hero_level": 90,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130061,
+          "amount": 1320
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 1335
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 865
+        }
+      ],
+      "description": "Once per battle below 50% HP, permanently gain 30% Block Rate and restore 40% Max HP."
+    },
+    {
+      "id": 505728,
+      "name": "Protective Formation",
+      "effect": [
+        {
+          "addType": 203,
+          "addValue": 13900366,
+          "oper": 0
+        }
+      ],
+      "hero_level": 90,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130061,
+          "amount": 1848
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 1995
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 1335
+        }
+      ],
+      "description": "Increase allied Assaulters and Supporters Defense by 25%."
+    },
+    {
+      "id": 505729,
+      "name": "Powerful Kick",
+      "effect": [
+        {
+          "addType": 16,
+          "addValue": 0.15,
+          "oper": 2
+        },
+        {
+          "addType": 20,
+          "addValue": 0.15,
+          "oper": 2
+        }
+      ],
+      "hero_level": 40,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130062,
+          "amount": 120
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 80
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 70
+        }
+      ],
+      "description": "Increase own Attack by 15%."
+    },
+    {
+      "id": 505730,
+      "name": "Perfect Timing",
+      "effect": [
+        {
+          "addType": 24,
+          "addValue": 0.15,
+          "oper": 1
+        }
+      ],
+      "hero_level": 50,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130062,
+          "amount": 280
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 120
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 90
+        }
+      ],
+      "description": "Increase own Critical Hit Rate by 15%."
+    },
+    {
+      "id": 505731,
+      "name": "Endless Energy",
+      "effect": [
+        {
+          "addType": 201,
+          "addValue": 13900367,
+          "oper": 0
+        }
+      ],
+      "hero_level": 60,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130062,
+          "amount": 480
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 210
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 124
+        }
+      ],
+      "description": "At the start of each turn, has a 69% chance to restore 50 Fury."
+    },
+    {
+      "id": 505732,
+      "name": "Heroic Impact",
+      "effect": [
+        {
+          "addType": 43,
+          "addValue": 0.3,
+          "oper": 1
+        }
+      ],
+      "hero_level": 70,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130062,
+          "amount": 720
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 360
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 280
+        }
+      ],
+      "description": "Increase own Critical Hit Damage by 30%."
+    },
+    {
+      "id": 505733,
+      "name": "High-Speed Pressure",
+      "effect": [
+        {
+          "addType": 203,
+          "addValue": 13900368,
+          "oper": 0
+        }
+      ],
+      "hero_level": 80,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130062,
+          "amount": 1000
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 600
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 644
+        }
+      ],
+      "description": "Reduce all enemies Speed by 5%."
+    },
+    {
+      "id": 505734,
+      "name": "Relentless Combo",
+      "effect": [
+        {
+          "addType": 30,
+          "addValue": 0.3,
+          "oper": 1
+        },
+        {
+          "addType": 26,
+          "addValue": 0.5,
+          "oper": 1
+        }
+      ],
+      "hero_level": 90,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130062,
+          "amount": 1320
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 1335
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 865
+        }
+      ],
+      "description": "Increase own Break Defense by 30% and Combo Rate by 50%."
+    },
+    {
+      "id": 505735,
+      "name": "Superheroine Rally",
+      "effect": [
+        {
+          "addType": 203,
+          "addValue": 13900369,
+          "oper": 0
+        }
+      ],
+      "hero_level": 90,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130062,
+          "amount": 1848
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 1995
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 1335
+        }
+      ],
+      "description": "Increase all allies Attack by 10% and Critical Hit Damage by 30%, including self."
+    },
+    {
+      "id": 505736,
+      "name": "Flash-Step Study",
+      "effect": [
+        {
+          "addType": 11,
+          "addValue": 0.15,
+          "oper": 2
+        }
+      ],
+      "hero_level": 40,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130063,
+          "amount": 120
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 80
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 70
+        }
+      ],
+      "description": "Increase own Speed by 15%."
+    },
+    {
+      "id": 505737,
+      "name": "Composed Mind",
+      "effect": [
+        {
+          "addType": 105,
+          "addValue": 4096,
+          "oper": 3
+        },
+        {
+          "addType": 105,
+          "addValue": 8,
+          "oper": 3
+        }
+      ],
+      "hero_level": 50,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130063,
+          "amount": 280
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 120
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 90
+        }
+      ],
+      "description": "Immune to Silence and Fury Deduction."
+    },
+    {
+      "id": 505738,
+      "name": "Precise Incantation",
+      "effect": [
+        {
+          "addType": 24,
+          "addValue": 0.15,
+          "oper": 1
+        }
+      ],
+      "hero_level": 60,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130063,
+          "amount": 480
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 210
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 124
+        }
+      ],
+      "description": "Increase own Critical Hit Rate by 15%."
+    },
+    {
+      "id": 505739,
+      "name": "Protective Kid\u014d",
+      "effect": [
+        {
+          "addType": 201,
+          "addValue": 13900370,
+          "oper": 0
+        }
+      ],
+      "hero_level": 70,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130063,
+          "amount": 720
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 360
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 280
+        }
+      ],
+      "description": "When attacking or being attacked, generate a 20% shield for the whole team."
+    },
+    {
+      "id": 505740,
+      "name": "Prepared Casting",
+      "effect": [
+        {
+          "addType": 104,
+          "addValue": 20,
+          "oper": 1
+        }
+      ],
+      "hero_level": 80,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130063,
+          "amount": 1000
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 600
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 644
+        }
+      ],
+      "description": "Increase initial Fury by 20."
+    },
+    {
+      "id": 505741,
+      "name": "Lasting Resolve",
+      "effect": [
+        {
+          "addType": 201,
+          "addValue": 13900371,
+          "oper": 0
+        }
+      ],
+      "hero_level": 90,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130063,
+          "amount": 1320
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 1335
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 865
+        }
+      ],
+      "description": "Survive a fatal blow once per battle, remain at 1 HP, then recover all allies, including self, by 50% Max HP and 100 Fury."
+    },
+    {
+      "id": 505742,
+      "name": "Supporter Preparedness",
+      "effect": [
+        {
+          "addType": 203,
+          "addValue": 13900372,
+          "oper": 0
+        }
+      ],
+      "hero_level": 90,
+      "rewards": [
+        {
+          "type": 21,
+          "code": 14130063,
+          "amount": 1848
+        },
+        {
+          "type": 22,
+          "code": 25,
+          "amount": 1995
+        },
+        {
+          "type": 22,
+          "code": 26,
+          "amount": 1335
+        }
+      ],
+      "description": "At the start of battle, restore 50 Fury to all allied Supporters, including self."
     }
-  ]
+  ],
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

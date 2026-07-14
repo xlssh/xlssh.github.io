@@ -1,6 +1,6 @@
 {
   "table": "tsystemlanguage",
-  "rowCount": 2034,
+  "rowCount": 2054,
   "rows": [
     {
       "id": 70100000,
@@ -4668,7 +4668,7 @@
     },
     {
       "id": 70133039,
-      "desc": "1. Players who are level 40 or above can join Alliance Battle\n2. After forming a Team, system will automatically Match other waiting team to start battle\n3. Alliance Battle will be held twice per day at: 1:45 - 2:45 PM and 9:00 - 10:00 PM\n4. Reward chances will be reset daily at Midnight; without reward chances, you can still join Alliance Battle, but cannot get reward\n5. If you defeat all enemy, then you are declared winner.\n6. No matter win or lose, you'll get reward"
+      "desc": "1. Players who are level 40 or above can join Alliance Battle\n2. After forming a Team, system will automatically Match other waiting team to start battle\n3. Alliance Battle lasts the entire day\n4. Reward chances will be reset daily at Midnight; without reward chances, you can still join Alliance Battle, but cannot get reward\n5. If you defeat all enemy, then you are declared winner.\n6. No matter win or lose, you'll get reward"
     },
     {
       "id": 70133040,
@@ -7056,7 +7056,7 @@
     },
     {
       "id": 70710006,
-      "desc": "Buy extra attempt for %0?"
+      "desc": "Buy extra attempt for %0 coupons/gold? Coupons used first."
     },
     {
       "id": 70710007,
@@ -8137,7 +8137,87 @@
     {
       "id": 70970091,
       "desc": "<font color='#ffcc00'>1) Yammy's Rampage is open every day from 06:00 to 23:00.<br/>2) You have 3 free challenge attempts per day.<br/>3) Yammy has unlimited HP and cannot be defeated; only your damage is counted.<br/>4) Only currently available recommended heroes can be used.<br/>5) Daily rewards, including Evil Shards and other items, can be earned every day.<br/>6) Weekly bonus rewards are sent according to your weekly ranking.<br/>7) The weekly ranking runs from Monday 06:00 to the following Monday 06:00; battles count until Sunday 23:00.</font>"
+    },
+    {
+      "id": 70991001,
+      "desc": "[\"Urahara Shop\",\"Original\\nprice\",\"Current\\nprice\",\"Info\",\"Click to\\nbuy\",\"Refresh in\",\"Refresh\",\"Gold Refresh\",\"Purchase\\nHistory\",\"High-value\\nitems\",\"Urahara Points\",\"Event duration\",\"Event details\",\"Rewards\",\"Buy Item\",\"Rewards\\navailable\",\"Claim\",\"Received\",\"PURCHASED\",\"Claimed\"]"
+    },
+    {
+      "id": 70991002,
+      "desc": "\u00a0\u00a0\u200aWelcome to\n\u00a0\u00a0the Urahara\nShop!"
+    },
+    {
+      "id": 70991003,
+      "desc": "Spend gold to buy items in the Urahara Shop and earn points. Use your points in the Rewards tab to unlock and claim bonus gifts."
+    },
+    {
+      "id": 70991004,
+      "desc": "Permanent event"
+    },
+    {
+      "id": 70991005,
+      "desc": "Urahara: %0 pts"
+    },
+    {
+      "id": 70991006,
+      "desc": "%0 bought %1"
+    },
+    {
+      "id": 70991007,
+      "desc": "an item"
+    },
+    {
+      "id": 70991008,
+      "desc": "Buy %0 for %1 gold?"
+    },
+    {
+      "id": 70991009,
+      "desc": "Already purchased. Refresh the Urahara Shop to unlock a new offer."
+    },
+    {
+      "id": 70991010,
+      "desc": "You bought %0 x%1 for %2 gold."
+    },
+    {
+      "id": 70991011,
+      "desc": "Refresh the shop for %0 gold? This gold also earns points."
+    },
+    {
+      "id": 70991012,
+      "desc": "Free refresh"
+    },
+    {
+      "id": 70991013,
+      "desc": "Free %0"
+    },
+    {
+      "id": 70991014,
+      "desc": "The Urahara Shop is not available right now."
+    },
+    {
+      "id": 70991015,
+      "desc": "The Urahara Shop is closed."
+    },
+    {
+      "id": 70991016,
+      "desc": "You do not have enough gold."
+    },
+    {
+      "id": 70991017,
+      "desc": "This purchase or reward has already reached its limit."
+    },
+    {
+      "id": 70991018,
+      "desc": "The free refresh is not ready yet."
+    },
+    {
+      "id": 70991019,
+      "desc": "You need more Urahara Shop points for this reward."
+    },
+    {
+      "id": 70991020,
+      "desc": "The Urahara Shop request could not be completed."
     }
   ],
-  "generatedAt": "2026-07-04T17:54:43.119117Z"
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }

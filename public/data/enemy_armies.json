@@ -1,6 +1,6 @@
 {
   "table": "enemy_armies",
-  "rowCount": 4191,
+  "rowCount": 4206,
   "rows": [
     {
       "id": 20101013,
@@ -73823,7 +73823,277 @@
       "leader_id": 14100904,
       "award_id": 23000006,
       "text": ""
+    },
+    {
+      "id": 20713401,
+      "name": "Swimsuit Rukia Stage 1",
+      "front": [
+        12313401
+      ],
+      "middle": [
+        12313402,
+        12313403
+      ],
+      "back": [
+        12313404,
+        12313405
+      ],
+      "leader_id": 12313402,
+      "award_id": 22313401,
+      "text": ""
+    },
+    {
+      "id": 20713402,
+      "name": "Swimsuit Rukia Stage 2",
+      "front": [
+        12313406
+      ],
+      "middle": [
+        12313407,
+        12313408,
+        12313409
+      ],
+      "back": [
+        12313410
+      ],
+      "leader_id": 12313407,
+      "award_id": 22313402,
+      "text": ""
+    },
+    {
+      "id": 20713403,
+      "name": "Swimsuit Rukia Stage 3",
+      "front": [
+        12313411
+      ],
+      "middle": [
+        12313412
+      ],
+      "back": [
+        12313413,
+        12313414,
+        12313415
+      ],
+      "leader_id": 12313412,
+      "award_id": 22313403,
+      "text": ""
+    },
+    {
+      "id": 20713404,
+      "name": "Swimsuit Rukia Stage 4",
+      "front": [
+        12313416
+      ],
+      "middle": [
+        12313417,
+        12313418,
+        12313419
+      ],
+      "back": [
+        12313420
+      ],
+      "leader_id": 12313417,
+      "award_id": 22313404,
+      "text": ""
+    },
+    {
+      "id": 20713405,
+      "name": "Swimsuit Rukia Stage 5",
+      "front": [
+        12313421
+      ],
+      "middle": [
+        12313422,
+        12313423
+      ],
+      "back": [
+        12313424,
+        12313425
+      ],
+      "leader_id": 12313422,
+      "award_id": 22313405,
+      "text": ""
+    },
+    {
+      "id": 20713406,
+      "name": "Swimsuit Rukia Stage 6",
+      "front": [
+        12313426
+      ],
+      "middle": [
+        12313427,
+        12313428
+      ],
+      "back": [
+        12313429,
+        12313430
+      ],
+      "leader_id": 12313427,
+      "award_id": 22313406,
+      "text": ""
+    },
+    {
+      "id": 20713407,
+      "name": "Swimsuit Rukia Stage 7",
+      "front": [
+        12313431
+      ],
+      "middle": [
+        12313432,
+        12313433,
+        12313434
+      ],
+      "back": [
+        12313435
+      ],
+      "leader_id": 12313432,
+      "award_id": 22313407,
+      "text": ""
+    },
+    {
+      "id": 20713408,
+      "name": "Swimsuit Rukia Stage 8",
+      "front": [
+        12313436
+      ],
+      "middle": [
+        12313437
+      ],
+      "back": [
+        12313438,
+        12313439,
+        12313440
+      ],
+      "leader_id": 12313437,
+      "award_id": 22313408,
+      "text": ""
+    },
+    {
+      "id": 20713409,
+      "name": "Swimsuit Rukia Stage 9",
+      "front": [
+        12313441
+      ],
+      "middle": [
+        12313442,
+        12313443
+      ],
+      "back": [
+        12313444,
+        12313445
+      ],
+      "leader_id": 12313442,
+      "award_id": 22313409,
+      "text": ""
+    },
+    {
+      "id": 20713410,
+      "name": "Swimsuit Rukia Stage 10",
+      "front": [
+        12313446
+      ],
+      "middle": [
+        12313447,
+        12313448,
+        12313449
+      ],
+      "back": [
+        12313450
+      ],
+      "leader_id": 12313447,
+      "award_id": 22313410,
+      "text": ""
+    },
+    {
+      "id": 20713411,
+      "name": "Swimsuit Rukia Stage 11",
+      "front": [
+        12313451
+      ],
+      "middle": [
+        12313452,
+        12313453,
+        12313454
+      ],
+      "back": [
+        12313455
+      ],
+      "leader_id": 12313452,
+      "award_id": 22313411,
+      "text": ""
+    },
+    {
+      "id": 20713412,
+      "name": "Swimsuit Rukia Stage 12",
+      "front": [
+        12313456
+      ],
+      "middle": [
+        12313457,
+        12313458,
+        12313459
+      ],
+      "back": [
+        12313460
+      ],
+      "leader_id": 12313457,
+      "award_id": 22313412,
+      "text": ""
+    },
+    {
+      "id": 20713413,
+      "name": "Swimsuit Rukia Stage 13",
+      "front": [
+        12313461
+      ],
+      "middle": [
+        12313462
+      ],
+      "back": [
+        12313463,
+        12313464,
+        12313465
+      ],
+      "leader_id": 12313462,
+      "award_id": 22313413,
+      "text": ""
+    },
+    {
+      "id": 20713414,
+      "name": "Swimsuit Rukia Stage 14",
+      "front": [
+        12313466
+      ],
+      "middle": [
+        12313467,
+        12313468
+      ],
+      "back": [
+        12313469,
+        12313470
+      ],
+      "leader_id": 12313467,
+      "award_id": 22313414,
+      "text": ""
+    },
+    {
+      "id": 20713415,
+      "name": "Swimsuit Rukia Stage 15",
+      "front": [
+        12313471
+      ],
+      "middle": [
+        12313472
+      ],
+      "back": [
+        12313473,
+        12313474,
+        12313475
+      ],
+      "leader_id": 12313472,
+      "award_id": 22313415,
+      "text": ""
     }
   ],
-  "generatedAt": "2026-07-04T17:54:43.119117Z"
+  "generatedAt": "2026-07-14T17:20:24.413758Z"
 }
