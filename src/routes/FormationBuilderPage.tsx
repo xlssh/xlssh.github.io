@@ -29,7 +29,7 @@ import {
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getProfessionLabel, getAttributeName } from '../data/relationships';
-import { getQualityLabel, getQualityColorClass } from './HeroesPage';
+import { getQualityLabel, getQualityColorClass } from '../utils/quality';
 import { calcHeroBP } from '../utils/battlePower';
 import {
   Users, Swords, Shield, Zap, Star, RotateCcw,

@@ -71,6 +71,7 @@ const sidebarGroups: SidebarGroup[] = [
       { name: 'Class Stat Curves', to: '/heroes/stats', icon: BarChart3 },
       { name: 'Articles / Items', to: '/articles', icon: Package },
       { name: 'Farming Planner', to: '/articles/farming', icon: Navigation },
+      { name: 'Enemy Codex', to: '/tools/enemy-codex', icon: Shield },
     ],
   },
   {
@@ -93,6 +94,7 @@ const sidebarGroups: SidebarGroup[] = [
       { name: 'Zanpakuto Weapon Skills', to: '/weapons/skills', icon: Sparkles },
       { name: 'Zanpakuto Stats', to: '/weapons/stats', icon: BarChart3 },
       { name: 'Equipment & Suits', to: '/tools/equipment', icon: Swords },
+      { name: 'Equipment Build Simulator', to: '/tools/build-simulator', icon: Swords },
       { name: 'Treasure Upgrade', to: '/tools/treasure-upgrade', icon: Sparkles },
       { name: 'Spiritual Ornaments', to: '/tools/ornaments', icon: Sparkles },
       { name: 'Beast Souls Planner', to: '/tools/beast-souls', icon: BarChart3 },
@@ -133,6 +135,7 @@ const sidebarGroups: SidebarGroup[] = [
       { name: 'Pet Sanctuary', to: '/tools/pets', icon: LayoutGrid },
       { name: 'Guild Optimizer', to: '/tools/guild-optimizer', icon: Trophy },
       { name: 'Guild Devotion & VIP', to: '/tools/guild-vip', icon: Trophy },
+      { name: 'Guild/Org Planner', to: '/tools/guild-planner', icon: Trophy },
     ],
   },
   {

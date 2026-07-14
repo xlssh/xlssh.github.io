@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { loadPromotionalActivities, loadActivityDetails, loadAwards, loadArticles } from '../data/loaders';
 import { PromotionalActivity, ActivityDetail, Award, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { JsonViewer } from '../components/JsonViewer';
 import { RewardList } from '../components/RewardList';
-import { ArrowLeft, Flame, Calendar, ShieldAlert, Gift, Trophy, Star, Target, Info, Coins, Sparkles, Compass, Shield, BookOpen } from 'lucide-react';
-import { RelatedTools } from '../components/RelatedTools';
+import { Flame, Calendar, ShieldAlert, Gift, Trophy, Star, Target, Info, Coins, Sparkles, Compass, Shield, BookOpen } from 'lucide-react';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { DetailPageWrapper } from '../components/DetailPageWrapper';
 
 function getTimeTypeLabel(type: number): string {
   switch (type) {
@@ -2141,12 +2141,6 @@ const TreasureHuntShopPlanner: React.FC<{ details: ActivityDetail; articlesList:
 
 export const PromotionDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [promo, setPromo] = useState<PromotionalActivity | null>(null);
-  const [details, setDetails] = useState<ActivityDetail | null>(null);
-  const [awardsList, setAwardsList] = useState<Award[]>([]);
-  const [articlesList, setArticlesList] = useState<Article[]>([]);
 
   // Calendar launch simulation date state
   const [launchDate, setLaunchDate] = useState<string>(() => {
@@ -2154,57 +2148,51 @@ export const PromotionDetailPage: React.FC = () => {
     return today.toISOString().split('T')[0];
   });
 
-  const fetchPromoDetails = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const promoId = parseInt(id || '');
+  const { data, loading, error, refetch } = useAsyncData(async () => {
+    const promoId = parseInt(id || '');
 
-      const promosRes = await loadPromotionalActivities();
-      const match = promosRes.rows.find(p => p.id === promoId);
-      if (match) {
-        setPromo(match);
-
-        // Load extra details
-        try {
-          const detailsRes = await loadActivityDetails();
-          const detailMatch = detailsRes[match.act_id?.toString() || ''];
-          if (detailMatch) {
-            setDetails(detailMatch);
-          }
-        } catch (err) {
-          console.error("Failed to load extra activity details:", err);
-        }
-
-        // Load awards table for lookups
-        try {
-          const awardsRes = await loadAwards();
-          setAwardsList(awardsRes.rows);
-        } catch (err) {
-          console.error("Failed to load awards.json:", err);
-        }
-
-        // Load articles table for reward names
-        try {
-          const articlesRes = await loadArticles();
-          setArticlesList(articlesRes.rows);
-        } catch (err) {
-          console.error("Failed to load articles.json:", err);
-        }
-      } else {
-        setError(`Promotion with ID ${id} not found in database.`);
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Failed to load promotion details.");
-    } finally {
-      setLoading(false);
+    const promosRes = await loadPromotionalActivities();
+    const match = promosRes.rows.find(p => p.id === promoId);
+    if (!match) {
+      throw new Error(`Promotion with ID ${id} not found in database.`);
     }
-  };
 
-  useEffect(() => {
-    fetchPromoDetails();
+    let detailMatch = null;
+    try {
+      const detailsRes = await loadActivityDetails();
+      detailMatch = detailsRes[match.act_id?.toString() || ''] || null;
+    } catch (err) {
+      console.error("Failed to load extra activity details:", err);
+    }
+
+    let awards: Award[] = [];
+    try {
+      const awardsRes = await loadAwards();
+      awards = awardsRes.rows;
+    } catch (err) {
+      console.error("Failed to load awards.json:", err);
+    }
+
+    let articles: Article[] = [];
+    try {
+      const articlesRes = await loadArticles();
+      articles = articlesRes.rows;
+    } catch (err) {
+      console.error("Failed to load articles.json:", err);
+    }
+
+    return {
+      promo: match,
+      details: detailMatch,
+      awardsList: awards,
+      articlesList: articles
+    };
   }, [id]);
+
+  const promo = data?.promo;
+  const details = data?.details || null;
+  const awardsList = data?.awardsList || [];
+  const articlesList = data?.articlesList || [];
 
   const simulatedWindow = useMemo(() => {
     if (!promo) return '';
@@ -2255,22 +2243,22 @@ export const PromotionDetailPage: React.FC = () => {
   }, [promo, launchDate]);
 
   if (loading) return <LoadingState message="Downloading campaign timelines and bonus configurations..." />;
-  if (error) return <ErrorState message={error} onRetry={fetchPromoDetails} />;
-  if (!promo) return <ErrorState message="Promotion not found." onRetry={fetchPromoDetails} />;
+  if (error) return <ErrorState message={error} onRetry={refetch} />;
+  if (!promo) return <ErrorState message="Promotion not found." onRetry={refetch} />;
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Back link */}
-      <div>
-        <Link
-          to="/promotions"
-          className="flex items-center gap-1.5 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Promotions List</span>
-        </Link>
-      </div>
-
+    <DetailPageWrapper
+      backTo="/promotions"
+      backLabel="Back to Promotions List"
+      relatedLinks={[
+        { label: 'Event Calendar', to: '/calendar', description: 'View all event schedules' },
+        { label: 'Promotion Schedules', to: '/calendar/schedules', description: 'Planned promotion timeline' },
+        { label: 'Event ROI & VIP Planner', to: '/tools/vip-planner', description: 'Calculate event ROI' },
+        { label: 'All Promotions', to: '/promotions', description: 'Browse all promotions' },
+      ]}
+      rawData={promo}
+      rawTitle={`Raw JSON Database Entry: Promotion #${promo.id}`}
+    >
       {/* Main Panel */}
       <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-5 w-full">
@@ -2622,19 +2610,6 @@ export const PromotionDetailPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Related Tools */}
-      <RelatedTools
-        title="Related Tools & Pages"
-        links={[
-          { label: 'Event Calendar', to: '/calendar', description: 'View all event schedules' },
-          { label: 'Promotion Schedules', to: '/calendar/schedules', description: 'Planned promotion timeline' },
-          { label: 'Event ROI & VIP Planner', to: '/tools/vip-planner', description: 'Calculate event ROI' },
-          { label: 'All Promotions', to: '/promotions', description: 'Browse all promotions' },
-        ]}
-      />
-
-      {/* Raw JSON entry fallback */}
-      <JsonViewer data={promo} title={`Raw JSON Database Entry: Promotion #${promo.id}`} />
-    </div>
+    </DetailPageWrapper>
   );
 };

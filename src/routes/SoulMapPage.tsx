@@ -3,7 +3,7 @@ import { loadStarMaps, loadStarPoints } from '../data/loaders';
 import type { StarMap, StarPoint } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { getQualityLabel, getQualityColorClass } from './HeroesPage';
+import { getQualityLabel, getQualityColorClass } from '../utils/quality';
 import { getProfessionLabel } from '../data/relationships';
 import { Compass, Star, Sparkles, Zap, Shield, RotateCcw, Award } from 'lucide-react';
 

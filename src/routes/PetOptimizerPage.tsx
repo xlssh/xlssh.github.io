@@ -3,7 +3,7 @@ import { loadPetLevelUps, loadVicePetMakes, loadVicePetRankUps, loadMainPetRankU
 import type { PetLevelUp, VicePetMake, VicePetRankUp, MainPetRankUp } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { getQualityLabel, getQualityColorClass } from './HeroesPage';
+import { getQualityLabel, getQualityColorClass } from '../utils/quality';
 import { LayoutGrid, TrendingUp, Star, Coins } from 'lucide-react';
 
 // Attribute type labels

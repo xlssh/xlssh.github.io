@@ -1,45 +1,96 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { loadHeroes, loadRecommendHeroes, loadRelatedPartners, loadRelatedPartnerTypes, loadRelatedConditions, loadRelatedPartnerPoints, loadPartnerChanges, loadHeroChangeAttrs, loadArticles, loadBaseStones, loadSkills, loadHeroTalents, loadAwards, loadActivityDetails, loadPromotionalActivities } from '../data/loaders';
 import { Hero, RecommendHero, RelatedPartner, RelatedPartnerType, RelatedCondition, RelatedPartnerPoint, PartnerChange, HeroChangeAttr, Article, BaseStone, Skill, HeroTalent, Award as AwardType, ActivityDetailsJson, PromotionalActivity } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { JsonViewer } from '../components/JsonViewer';
-import { getQualityLabel, getQualityColorClass } from './HeroesPage';
+import { getQualityLabel, getQualityColorClass } from '../utils/quality';
 import { getProfessionLabel, getAttributeName, getActivationArticleForHero, getActivitiesAwardingArticle } from '../data/relationships';
-import { ArrowLeft, Swords, Sparkles, TrendingUp, ShieldAlert, Share2, Check, Scale, Cpu, Lock, HeartHandshake, HelpCircle, Activity, Star, AlertCircle } from 'lucide-react';
-import { RelatedTools } from '../components/RelatedTools';
+import { Swords, Sparkles, TrendingUp, ShieldAlert, Share2, Check, Scale, Cpu, Lock, HeartHandshake, HelpCircle, Activity, Star, AlertCircle } from 'lucide-react';
 import { calcHeroBP, getBPBreakdown } from '../utils/battlePower';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { DetailPageWrapper } from '../components/DetailPageWrapper';
 
 export const HeroDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
-  const [hero, setHero] = useState<Hero | null>(null);
-  const [allHeroes, setAllHeroes] = useState<Hero[]>([]);
-  const [recommendations, setRecommendations] = useState<RecommendHero[]>([]);
+  const { data, loading, error, refetch } = useAsyncData(async () => {
+    const [
+      heroesRes,
+      recsRes,
+      partnersRes,
+      typesRes,
+      conditionsRes,
+      pointsRes,
+      changesRes,
+      attrsRes,
+      artRes,
+      stonesRes,
+      skillsRes,
+      talentsRes,
+      awardsRes,
+      actDetailsRes,
+      promosRes
+    ] = await Promise.all([
+      loadHeroes(),
+      loadRecommendHeroes(),
+      loadRelatedPartners(),
+      loadRelatedPartnerTypes(),
+      loadRelatedConditions(),
+      loadRelatedPartnerPoints(),
+      loadPartnerChanges(),
+      loadHeroChangeAttrs(),
+      loadArticles(),
+      loadBaseStones(),
+      loadSkills(),
+      loadHeroTalents(),
+      loadAwards(),
+      loadActivityDetails(),
+      loadPromotionalActivities()
+    ]);
+    const heroId = parseInt(id || '');
+    const match = heroesRes.rows.find(h => h.id === heroId) || null;
+    return {
+      hero: match,
+      allHeroes: heroesRes.rows,
+      recommendations: recsRes.rows,
+      partners: partnersRes.rows,
+      partnerTypes: typesRes.rows,
+      conditions: conditionsRes.rows,
+      partnerPoints: pointsRes.rows,
+      partnerChanges: changesRes.rows,
+      heroChangeAttrs: attrsRes.rows,
+      articles: artRes.rows,
+      baseStones: stonesRes.rows,
+      skills: skillsRes.rows,
+      heroTalents: talentsRes.rows,
+      awardsList: awardsRes.rows,
+      activityDetails: actDetailsRes,
+      promos: promosRes.rows,
+    };
+  }, [id]);
 
-  const [partners, setPartners] = useState<RelatedPartner[]>([]);
-  const [partnerTypes, setPartnerTypes] = useState<RelatedPartnerType[]>([]);
-  const [conditions, setConditions] = useState<RelatedCondition[]>([]);
-  const [partnerPoints, setPartnerPoints] = useState<RelatedPartnerPoint[]>([]);
+  const hero = data?.hero || null;
+  const allHeroes = data?.allHeroes || [];
+  const recommendations = data?.recommendations || [];
+  const partners = data?.partners || [];
+  const partnerTypes = data?.partnerTypes || [];
+  const conditions = data?.conditions || [];
+  const partnerPoints = data?.partnerPoints || [];
+  const partnerChanges = data?.partnerChanges || [];
+  const heroChangeAttrs = data?.heroChangeAttrs || [];
+  const articles = data?.articles || [];
+  const baseStones = data?.baseStones || [];
+  const skills = data?.skills || [];
+  const heroTalents = data?.heroTalents || [];
+  const awardsList = data?.awardsList || [];
+  const activityDetails = data?.activityDetails || {};
+  const promos = data?.promos || [];
+
   const [bondLevelsState, setBondLevelsState] = useState<Record<number, number>>({});
-  const [skills, setSkills] = useState<Skill[]>([]);
-  const [heroTalents, setHeroTalents] = useState<HeroTalent[]>([]);
-
-  const [partnerChanges, setPartnerChanges] = useState<PartnerChange[]>([]);
-  const [heroChangeAttrs, setHeroChangeAttrs] = useState<HeroChangeAttr[]>([]);
-  const [articles, setArticles] = useState<Article[]>([]);
   const [activeSubTab, setActiveSubTab] = useState<'bonds' | 'modify'>('bonds');
   const [simulatedStars, setSimulatedStars] = useState<number>(1);
-  const [baseStones, setBaseStones] = useState<BaseStone[]>([]);
   const [simulatedJadeLevels, setSimulatedJadeLevels] = useState<Record<number, number>>({ 0: 10, 1: 10, 2: 10 }); // default to level 10 suggest
-  const [awardsList, setAwardsList] = useState<AwardType[]>([]);
-  const [activityDetails, setActivityDetails] = useState<ActivityDetailsJson>({});
-  const [promos, setPromos] = useState<PromotionalActivity[]>([]);
-
-
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [targetLevel, setTargetLevel] = useState<number>(50);
 
@@ -88,76 +139,6 @@ export const HeroDetailPage: React.FC = () => {
         };
     }
   }, [hero]);
-
-  const fetchHero = useCallback(async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const [
-        heroesRes,
-        recsRes,
-        partnersRes,
-        typesRes,
-        conditionsRes,
-        pointsRes,
-        changesRes,
-        attrsRes,
-        artRes,
-        stonesRes,
-        skillsRes,
-        talentsRes,
-        awardsRes,
-        actDetailsRes,
-        promosRes
-      ] = await Promise.all([
-        loadHeroes(),
-        loadRecommendHeroes(),
-        loadRelatedPartners(),
-        loadRelatedPartnerTypes(),
-        loadRelatedConditions(),
-        loadRelatedPartnerPoints(),
-        loadPartnerChanges(),
-        loadHeroChangeAttrs(),
-        loadArticles(),
-        loadBaseStones(),
-        loadSkills(),
-        loadHeroTalents(),
-        loadAwards(),
-        loadActivityDetails(),
-        loadPromotionalActivities()
-      ]);
-      const match = heroesRes.rows.find(h => h.id === parseInt(id || ''));
-      setAllHeroes(heroesRes.rows);
-      setRecommendations(recsRes.rows);
-      setPartners(partnersRes.rows);
-      setPartnerTypes(typesRes.rows);
-      setConditions(conditionsRes.rows);
-      setPartnerPoints(pointsRes.rows);
-      setPartnerChanges(changesRes.rows);
-      setHeroChangeAttrs(attrsRes.rows);
-      setArticles(artRes.rows);
-      setBaseStones(stonesRes.rows);
-      setSkills(skillsRes.rows);
-      setHeroTalents(talentsRes.rows);
-      setAwardsList(awardsRes.rows);
-      setActivityDetails(actDetailsRes);
-      setPromos(promosRes.rows);
-      if (match) {
-        setHero(match);
-      } else {
-        setError(`Hero with ID ${id} not found in the database.`);
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Failed to load hero record.");
-    } finally {
-      setLoading(false);
-    }
-  }, [id]);
-
-  useEffect(() => {
-    fetchHero();
-  }, [fetchHero]);
 
   const copyDirectLink = async () => {
     try {
@@ -297,7 +278,7 @@ export const HeroDetailPage: React.FC = () => {
   const heroModifyStages = useMemo(() => {
     if (!heroChangeAttr || !partnerChanges.length) return [];
     return heroChangeAttr.star
-      .map(stageId => partnerChanges.find(pc => pc.id === stageId))
+      .map((stageId: number) => partnerChanges.find(pc => pc.id === stageId))
       .filter(Boolean) as PartnerChange[];
   }, [heroChangeAttr, partnerChanges]);
 
@@ -329,8 +310,8 @@ export const HeroDetailPage: React.FC = () => {
   };
 
   if (loading) return <LoadingState message="Downloading character sheet & model coefficient matrix..." />;
-  if (error) return <ErrorState message={error} onRetry={fetchHero} />;
-  if (!hero) return <ErrorState message="Hero not found." onRetry={fetchHero} />;
+  if (error) return <ErrorState message={error} onRetry={refetch} />;
+  if (!hero) return <ErrorState message="Hero not found." onRetry={refetch} />;
 
   const baseStats = [
     { label: 'Power (STR)', value: hero.power, labelDesc: 'Physical attack power influence' },
@@ -365,17 +346,22 @@ export const HeroDetailPage: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Back link & Actions */}
-      <div className="flex items-center justify-between">
-        <Link
-          to="/heroes"
-          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Heroes</span>
-        </Link>
-
+    <DetailPageWrapper
+      backTo="/heroes"
+      backLabel="Back to Heroes"
+      relatedLinks={[
+        { label: 'Formation Builder', to: '/tools/formation', description: 'Build a team with this hero' },
+        { label: 'Hero Comparison', to: '/heroes/compare', description: 'Compare stats side-by-side' },
+        { label: 'Tier Heatmap', to: '/tools/tier-heatmap', description: 'See tier rankings' },
+        { label: 'Bond Optimizer', to: '/tools/bond-optimizer', description: 'Optimize bond synergies' },
+        { label: 'Hero Talents', to: '/tools/talents', description: 'Plan talent upgrades' },
+        { label: 'Skill Handbook', to: '/tools/skills', description: 'Browse all skills' },
+      ]}
+      rawData={hero}
+      rawTitle={`Raw JSON Database Entry: Hero #${hero.id}`}
+    >
+      {/* Share Actions */}
+      <div className="flex justify-end">
         <button
           onClick={copyDirectLink}
           className="flex items-center gap-1.5 text-xs text-violet-600 dark:text-violet-400 hover:text-violet-700 font-semibold px-3 py-1.5 border border-violet-100 dark:border-violet-950 rounded-lg bg-violet-50/50 dark:bg-violet-950/25 transition-colors cursor-pointer"
@@ -1303,21 +1289,6 @@ export const HeroDetailPage: React.FC = () => {
         </div>
       )}
 
-      {/* Related Tools */}
-      <RelatedTools
-        title="Related Tools & Pages"
-        links={[
-          { label: 'Formation Builder', to: '/tools/formation', description: 'Build a team with this hero' },
-          { label: 'Hero Comparison', to: '/heroes/compare', description: 'Compare stats side-by-side' },
-          { label: 'Tier Heatmap', to: '/tools/tier-heatmap', description: 'See tier rankings' },
-          { label: 'Bond Optimizer', to: '/tools/bond-optimizer', description: 'Optimize bond synergies' },
-          { label: 'Hero Talents', to: '/tools/talents', description: 'Plan talent upgrades' },
-          { label: 'Skill Handbook', to: '/tools/skills', description: 'Browse all skills' },
-        ]}
-      />
-
-      {/* Raw Record FALLBACK for Dataminers */}
-      <JsonViewer data={hero} title={`Raw JSON Database Entry: Hero #${hero.id}`} />
-    </div>
+    </DetailPageWrapper>
   );
 };

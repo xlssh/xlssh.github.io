@@ -89,6 +89,12 @@ const ButterflyGuidePage = React.lazy(() => import('./routes/ButterflyGuidePage'
 const WeaponEvolutionPage = React.lazy(() => import('./routes/WeaponEvolutionPage').then(m => ({ default: m.WeaponEvolutionPage })));
 const SoulCollectionPage = React.lazy(() => import('./routes/SoulCollectionPage').then(m => ({ default: m.SoulCollectionPage })));
 
+// Phase 3 Features
+const EnemyCodexPage = React.lazy(() => import('./routes/EnemyCodexPage').then(m => ({ default: m.EnemyCodexPage })));
+const EnemyDetailPage = React.lazy(() => import('./routes/EnemyDetailPage').then(m => ({ default: m.EnemyDetailPage })));
+const GuildPlannerPage = React.lazy(() => import('./routes/GuildPlannerPage').then(m => ({ default: m.GuildPlannerPage })));
+const BuildSimulatorPage = React.lazy(() => import('./routes/BuildSimulatorPage').then(m => ({ default: m.BuildSimulatorPage })));
+
 
 function App() {
   return (
@@ -172,6 +178,11 @@ function App() {
             <Route path="/tools/pet-optimizer" element={<PetOptimizerPage />} />
             <Route path="/tools/guild-optimizer" element={<GuildOptimizerPage />} />
             <Route path="/tools/treasure-upgrade" element={<TreasureUpgradePage />} />
+            {/* Phase 3 Features */}
+            <Route path="/tools/enemy-codex" element={<EnemyCodexPage />} />
+            <Route path="/tools/enemy-codex/:id" element={<EnemyDetailPage />} />
+            <Route path="/tools/guild-planner" element={<GuildPlannerPage />} />
+            <Route path="/tools/build-simulator" element={<BuildSimulatorPage />} />
             <Route path="/tools/culling-optimizer" element={<CullingOptimizerPage />} />
             <Route path="/tools/tavern-simulator" element={<TavernSimulatorPage />} />
             <Route path="/tools/spirit-school" element={<SpiritSchoolPage />} />

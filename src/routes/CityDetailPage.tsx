@@ -1,47 +1,28 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useMemo } from 'react';
+import { useParams } from 'react-router-dom';
 import { loadCities } from '../data/loaders';
 import { City } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { JsonViewer } from '../components/JsonViewer';
-import { ArrowLeft, MapPin, Compass, AlertCircle, RefreshCw } from 'lucide-react';
-import { RelatedTools } from '../components/RelatedTools';
+import { MapPin, Compass, AlertCircle, RefreshCw } from 'lucide-react';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { DetailPageWrapper } from '../components/DetailPageWrapper';
 
 export const CityDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const [city, setCity] = useState<City | null>(null);
-  const [allCities, setAllCities] = useState<City[]>([]);
-
-  const fetchCityDetails = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const cityId = parseInt(id || '');
-
-      const citiesRes = await loadCities();
-      setAllCities(citiesRes.rows);
-
-      const match = citiesRes.rows.find(c => c.id === cityId);
-      if (match) {
-        setCity(match);
-      } else {
-        setError(`City with ID ${id} not found in the geographic indexes.`);
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Failed to load city/town configurations.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchCityDetails();
+  const { data, loading, error, refetch } = useAsyncData(async () => {
+    const cityId = parseInt(id || '');
+    const citiesRes = await loadCities();
+    const match = citiesRes.rows.find(c => c.id === cityId);
+    return {
+      city: match || null,
+      allCities: citiesRes.rows
+    };
   }, [id]);
+
+  const city = data?.city;
+  const allCities = data?.allCities || [];
 
   const preCityRecord = useMemo(() => {
     if (!city || !city.pre_city) return null;
@@ -54,22 +35,22 @@ export const CityDetailPage: React.FC = () => {
   }, [city, allCities]);
 
   if (loading) return <LoadingState message="Downloading town coordinate nodes and pre-requisite linkages..." />;
-  if (error) return <ErrorState message={error} onRetry={fetchCityDetails} />;
-  if (!city) return <ErrorState message="City not found." onRetry={fetchCityDetails} />;
+  if (error) return <ErrorState message={error} onRetry={refetch} />;
+  if (!city) return <ErrorState message="City not found." onRetry={refetch} />;
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Back button */}
-      <div>
-        <Link
-          to="/cities"
-          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Cities</span>
-        </Link>
-      </div>
-
+    <DetailPageWrapper
+      backTo="/cities"
+      backLabel="Back to Cities"
+      relatedLinks={[
+        { label: 'World Unlock Map', to: '/cities/map', description: 'Visual city progression' },
+        { label: 'Stages', to: '/stages', description: 'Combat stages in this region' },
+        { label: 'Campaign Roadmap', to: '/tools/campaign-roadmap', description: 'Plan your campaign path' },
+        { label: 'All Cities', to: '/cities', description: 'Browse all cities' },
+      ]}
+      rawData={city}
+      rawTitle={`Raw JSON Database Entry: City #${city.id}`}
+    >
       {/* Main City card */}
       <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
@@ -126,10 +107,7 @@ export const CityDetailPage: React.FC = () => {
           </h3>
 
           {preCityRecord ? (
-            <Link
-              to={`/cities/${preCityRecord.id}`}
-              className="p-4 border border-border rounded-xl flex items-center justify-between hover:border-rose-500 hover:shadow-sm transition-all text-sm block"
-            >
+            <span className="block p-4 border border-border rounded-xl flex items-center justify-between hover:border-rose-500 hover:shadow-sm transition-all text-sm">
               <div>
                 <span className="font-bold text-text hover:text-rose-600 transition-colors">{preCityRecord.name}</span>
                 <span className="block text-[11px] text-subtle font-medium">Req Level: Lv. {preCityRecord.open_level} | Map ID: {preCityRecord.map_id}</span>
@@ -137,7 +115,7 @@ export const CityDetailPage: React.FC = () => {
               <span className="px-2 py-0.5 rounded bg-surface-raised font-mono text-[10px] text-muted">
                 City #{preCityRecord.id}
               </span>
-            </Link>
+            </span>
           ) : (
             <div className="text-sm text-subtle italic py-2 flex items-center gap-1.5">
               <AlertCircle size={14} />
@@ -156,9 +134,8 @@ export const CityDetailPage: React.FC = () => {
           {postCities.length > 0 ? (
             <div className="space-y-3">
               {postCities.map((postCity) => (
-                <Link
+                <span
                   key={postCity.id}
-                  to={`/cities/${postCity.id}`}
                   className="p-3 border border-border rounded-lg flex items-center justify-between hover:border-indigo-500 hover:shadow-sm transition-all text-sm block"
                 >
                   <div>
@@ -168,7 +145,7 @@ export const CityDetailPage: React.FC = () => {
                   <span className="px-2 py-0.5 rounded bg-surface-raised font-mono text-[10px] text-muted">
                     City #{postCity.id}
                   </span>
-                </Link>
+                </span>
               ))}
             </div>
           ) : (
@@ -179,20 +156,6 @@ export const CityDetailPage: React.FC = () => {
           )}
         </div>
       </div>
-
-      {/* Related Tools */}
-      <RelatedTools
-        title="Related Tools & Pages"
-        links={[
-          { label: 'World Unlock Map', to: '/cities/map', description: 'Visual city progression' },
-          { label: 'Stages', to: '/stages', description: 'Combat stages in this region' },
-          { label: 'Campaign Roadmap', to: '/tools/campaign-roadmap', description: 'Plan your campaign path' },
-          { label: 'All Cities', to: '/cities', description: 'Browse all cities' },
-        ]}
-      />
-
-      {/* Raw entry fallback */}
-      <JsonViewer data={city} title={`Raw JSON Database Entry: City #${city.id}`} />
-    </div>
+    </DetailPageWrapper>
   );
 };

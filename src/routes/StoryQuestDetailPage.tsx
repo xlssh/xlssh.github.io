@@ -1,68 +1,55 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { loadStoryQuests, loadArticles } from '../data/loaders';
 import { StoryQuest, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { RewardList } from '../components/RewardList';
-import { JsonViewer } from '../components/JsonViewer';
-import { ArrowLeft, MessageSquare, Compass, ShieldAlert, Award } from 'lucide-react';
+import { MessageSquare, Compass, ShieldAlert, Award } from 'lucide-react';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { DetailPageWrapper } from '../components/DetailPageWrapper';
 
 export const StoryQuestDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const [quest, setQuest] = useState<StoryQuest | null>(null);
-  const [articles, setArticles] = useState<Article[]>([]);
+  const { data, loading, error, refetch } = useAsyncData(async () => {
+    const questId = parseInt(id || '');
 
-  const fetchQuestDetails = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const questId = parseInt(id || '');
+    const [questsRes, articlesRes] = await Promise.all([
+      loadStoryQuests(),
+      loadArticles()
+    ]);
 
-      const [questsRes, articlesRes] = await Promise.all([
-        loadStoryQuests(),
-        loadArticles()
-      ]);
-
-      const match = questsRes.rows.find(q => q.id === questId);
-      if (match) {
-        setQuest(match);
-        setArticles(articlesRes.rows);
-      } else {
-        setError(`Story Quest with ID ${id} not found in database.`);
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Failed to load story quest details.");
-    } finally {
-      setLoading(false);
+    const match = questsRes.rows.find(q => q.id === questId);
+    if (!match) {
+      throw new Error(`Story Quest with ID ${id} not found in database.`);
     }
-  };
 
-  useEffect(() => {
-    fetchQuestDetails();
+    return {
+      quest: match,
+      articles: articlesRes.rows
+    };
   }, [id]);
 
+  const quest = data?.quest;
+  const articles = data?.articles || [];
+
   if (loading) return <LoadingState message="Downloading quest transcripts and award configurations..." />;
-  if (error) return <ErrorState message={error} onRetry={fetchQuestDetails} />;
-  if (!quest) return <ErrorState message="Quest not found." onRetry={fetchQuestDetails} />;
+  if (error) return <ErrorState message={error} onRetry={refetch} />;
+  if (!quest) return <ErrorState message="Quest not found." onRetry={refetch} />;
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Back button */}
-      <div>
-        <Link
-          to="/story-quests"
-          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Story Quests</span>
-        </Link>
-      </div>
-
+    <DetailPageWrapper
+      backTo="/story-quests"
+      backLabel="Back to Story Quests"
+      relatedLinks={[
+        { label: 'Story Quests', to: '/story-quests', description: 'Browse story questlines' },
+        { label: 'Quest Chain flow', to: '/story-quests/chain', description: 'View full progression chain' },
+        { label: 'Daily Quests', to: '/daily-quests', description: 'Daily active list' },
+      ]}
+      rawData={quest}
+      rawTitle={`Raw JSON Database Entry: StoryQuest #${quest.id}`}
+    >
       {/* Main Quest spec panel */}
       <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
@@ -232,9 +219,6 @@ export const StoryQuestDetailPage: React.FC = () => {
           )}
         </div>
       </div>
-
-      {/* Raw table details */}
-      <JsonViewer data={quest} title={`Raw JSON Database Entry: StoryQuest #${quest.id}`} />
-    </div>
+    </DetailPageWrapper>
   );
 };

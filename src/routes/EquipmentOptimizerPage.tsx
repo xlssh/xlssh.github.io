@@ -4,7 +4,7 @@ import type { BaseEquip, Suit, Hero } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getProfessionLabel } from '../data/relationships';
-import { getQualityLabel, getQualityColorClass } from './HeroesPage';
+import { getQualityLabel, getQualityColorClass } from '../utils/quality';
 import { calcHeroBP } from '../utils/battlePower';
 import { Swords, Sparkles, RefreshCw, Layers, Shield, Heart, Zap, Dices } from 'lucide-react';
 

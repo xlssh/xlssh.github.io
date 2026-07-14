@@ -5,7 +5,7 @@ import { Hero } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getProfessionLabel } from '../data/relationships';
-import { getQualityColorClass, getQualityLabel } from './HeroesPage';
+import { getQualityColorClass, getQualityLabel } from '../utils/quality';
 import { ArrowLeft, Swords, Sparkles, Scale, AlertCircle, ChevronDown } from 'lucide-react';
 
 export const HeroComparisonPage: React.FC = () => {

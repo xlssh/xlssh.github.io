@@ -1,86 +1,74 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { loadArticles, loadMallItems, loadDailyQuests, loadStoryQuests, loadStages, loadAwards, loadActivityDetails, loadPromotionalActivities } from '../data/loaders';
 import type { Article, MallItem, DailyQuest, StoryQuest, Stage, Award, ActivityDetailsJson, PromotionalActivity } from '../types/db';
 import { getMallItemsSellingArticle, getQuestsAwardingArticle, getStagesAwardingArticle, getActivitiesAwardingArticle, getMajorTypeLabel, getMinorTypeLabel } from '../data/relationships';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { JsonViewer } from '../components/JsonViewer';
-import { getQualityColorClass, getQualityLabel } from './HeroesPage';
-import { ArrowLeft, ShoppingCart, AlertCircle, Swords, Activity, AwardIcon } from 'lucide-react';
-import { RelatedTools } from '../components/RelatedTools';
+import { getQualityColorClass, getQualityLabel } from '../utils/quality';
+import { ShoppingCart, AlertCircle, Swords, Activity, AwardIcon } from 'lucide-react';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { DetailPageWrapper } from '../components/DetailPageWrapper';
 
 export const ArticleDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const [article, setArticle] = useState<Article | null>(null);
-  const [sellers, setSellers] = useState<MallItem[]>([]);
-  const [awardingQuests, setQuests] = useState<{ story: StoryQuest[]; daily: DailyQuest[] }>({ story: [], daily: [] });
-  const [awardingStages, setStages] = useState<Stage[]>([]);
-  const [awardsList, setAwardsList] = useState<Award[]>([]);
-  const [activityDetails, setActivityDetails] = useState<ActivityDetailsJson>({});
-  const [promos, setPromos] = useState<PromotionalActivity[]>([]);
+  const { data, loading, error, refetch } = useAsyncData(async () => {
+    const articleId = parseInt(id || '');
 
-  const fetchArticleDetails = useCallback(async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const articleId = parseInt(id || '');
+    const [articlesRes, mallRes, dailyRes, storyRes, stagesRes, awardsRes, actDetailsRes, promosRes] = await Promise.all([
+      loadArticles(),
+      loadMallItems(),
+      loadDailyQuests(),
+      loadStoryQuests(),
+      loadStages(),
+      loadAwards(),
+      loadActivityDetails(),
+      loadPromotionalActivities()
+    ]);
 
-      const [articlesRes, mallRes, dailyRes, storyRes, stagesRes, awardsRes, actDetailsRes, promosRes] = await Promise.all([
-        loadArticles(),
-        loadMallItems(),
-        loadDailyQuests(),
-        loadStoryQuests(),
-        loadStages(),
-        loadAwards(),
-        loadActivityDetails(),
-        loadPromotionalActivities()
-      ]);
-
-      const match = articlesRes.rows.find(a => a.id === articleId);
-      if (match) {
-        setArticle(match);
-        setSellers(getMallItemsSellingArticle(mallRes.rows, articleId));
-        setQuests(getQuestsAwardingArticle(storyRes.rows, dailyRes.rows, articleId));
-        setStages(getStagesAwardingArticle(stagesRes.rows, articleId));
-        setAwardsList(awardsRes.rows);
-        setActivityDetails(actDetailsRes);
-        setPromos(promosRes.rows);
-      } else {
-        setError(`Article/Item with ID ${id} not found in the catalog.`);
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Failed to load item specification sheets.");
-    } finally {
-      setLoading(false);
+    const match = articlesRes.rows.find(a => a.id === articleId);
+    if (!match) {
+      throw new Error(`Article/Item with ID ${id} not found in the catalog.`);
     }
+
+    return {
+      article: match,
+      sellers: getMallItemsSellingArticle(mallRes.rows, articleId),
+      awardingQuests: getQuestsAwardingArticle(storyRes.rows, dailyRes.rows, articleId),
+      awardingStages: getStagesAwardingArticle(stagesRes.rows, articleId),
+      awardsList: awardsRes.rows,
+      activityDetails: actDetailsRes,
+      promos: promosRes.rows
+    };
   }, [id]);
 
-  useEffect(() => {
-    fetchArticleDetails();
-  }, [fetchArticleDetails]);
+  const article = data?.article;
+  const sellers = data?.sellers || [];
+  const awardingQuests = data?.awardingQuests || { story: [], daily: [] };
+  const awardingStages = data?.awardingStages || [];
+  const awardsList = data?.awardsList || [];
+  const activityDetails = data?.activityDetails || {};
+  const promos = data?.promos || [];
 
   if (loading) return <LoadingState message="Downloading item specification and cross-referencing relationships..." />;
-  if (error) return <ErrorState message={error} onRetry={fetchArticleDetails} />;
-  if (!article) return <ErrorState message="Article/Item not found." onRetry={fetchArticleDetails} />;
+  if (error) return <ErrorState message={error} onRetry={refetch} />;
+  if (!article) return <ErrorState message="Article/Item not found." onRetry={refetch} />;
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Back button */}
-      <div>
-        <Link
-          to="/articles"
-          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Articles</span>
-        </Link>
-      </div>
-
+    <DetailPageWrapper
+      backTo="/articles"
+      backLabel="Back to Articles"
+      relatedLinks={[
+        { label: 'Farming Planner', to: '/articles/farming', description: 'Where to farm this item' },
+        { label: 'Mall Shop', to: '/mall-items', description: 'Check shop availability' },
+        { label: 'Black Market', to: '/tools/black-market', description: 'Check black market deals' },
+        { label: 'Loot Table Oracle', to: '/tools/loot-oracle', description: 'Drop rate analysis' },
+        { label: 'Global Search', to: `/search?q=${encodeURIComponent(article?.name || '')}`, description: 'Search all references' },
+      ]}
+      rawData={article}
+      rawTitle={`Raw JSON Database Entry: Item/Article #${article.id}`}
+    >
       {/* Main specification panel */}
       <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
@@ -345,20 +333,6 @@ export const ArticleDetailPage: React.FC = () => {
         );
       })()}
 
-      {/* Related Tools */}
-      <RelatedTools
-        title="Related Tools & Pages"
-        links={[
-          { label: 'Farming Planner', to: '/articles/farming', description: 'Where to farm this item' },
-          { label: 'Mall Shop', to: '/mall-items', description: 'Check shop availability' },
-          { label: 'Black Market', to: '/tools/black-market', description: 'Check black market deals' },
-          { label: 'Loot Table Oracle', to: '/tools/loot-oracle', description: 'Drop rate analysis' },
-          { label: 'Global Search', to: `/search?q=${encodeURIComponent(article?.name || '')}`, description: 'Search all references' },
-        ]}
-      />
-
-      {/* Raw entry */}
-      <JsonViewer data={article} title={`Raw JSON Database Entry: Item/Article #${article.id}`} />
-    </div>
+    </DetailPageWrapper>
   );
 };

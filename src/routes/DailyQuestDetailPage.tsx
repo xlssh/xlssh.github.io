@@ -1,68 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { loadDailyQuests, loadArticles } from '../data/loaders';
 import { DailyQuest, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { RewardList } from '../components/RewardList';
-import { JsonViewer } from '../components/JsonViewer';
-import { ArrowLeft, Award, ShieldAlert, Target } from 'lucide-react';
+import { Award, ShieldAlert, Target } from 'lucide-react';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { DetailPageWrapper } from '../components/DetailPageWrapper';
 
 export const DailyQuestDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const [quest, setQuest] = useState<DailyQuest | null>(null);
-  const [articles, setArticles] = useState<Article[]>([]);
+  const { data, loading, error, refetch } = useAsyncData(async () => {
+    const questId = parseInt(id || '');
 
-  const fetchQuestDetails = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const questId = parseInt(id || '');
+    const [questsRes, articlesRes] = await Promise.all([
+      loadDailyQuests(),
+      loadArticles()
+    ]);
 
-      const [questsRes, articlesRes] = await Promise.all([
-        loadDailyQuests(),
-        loadArticles()
-      ]);
-
-      const match = questsRes.rows.find(q => q.id === questId);
-      if (match) {
-        setQuest(match);
-        setArticles(articlesRes.rows);
-      } else {
-        setError(`Daily Quest with ID ${id} not found in database.`);
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Failed to load daily quest details.");
-    } finally {
-      setLoading(false);
+    const match = questsRes.rows.find(q => q.id === questId);
+    if (!match) {
+      throw new Error(`Daily Quest with ID ${id} not found in database.`);
     }
-  };
 
-  useEffect(() => {
-    fetchQuestDetails();
+    return {
+      quest: match,
+      articles: articlesRes.rows
+    };
   }, [id]);
 
+  const quest = data?.quest;
+  const articles = data?.articles || [];
+
   if (loading) return <LoadingState message="Downloading daily activity transcripts and milestones..." />;
-  if (error) return <ErrorState message={error} onRetry={fetchQuestDetails} />;
-  if (!quest) return <ErrorState message="Quest not found." onRetry={fetchQuestDetails} />;
+  if (error) return <ErrorState message={error} onRetry={refetch} />;
+  if (!quest) return <ErrorState message="Quest not found." onRetry={refetch} />;
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Back link */}
-      <div>
-        <Link
-          to="/daily-quests"
-          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Daily Quests</span>
-        </Link>
-      </div>
-
+    <DetailPageWrapper
+      backTo="/daily-quests"
+      backLabel="Back to Daily Quests"
+      relatedLinks={[
+        { label: 'All Daily Quests', to: '/daily-quests', description: 'Daily active list' },
+        { label: 'Story Quests', to: '/story-quests', description: 'Browse story questlines' },
+        { label: 'World Unlock Map', to: '/cities/map', description: 'Track progression landmarks' },
+      ]}
+      rawData={quest}
+      rawTitle={`Raw JSON Database Entry: DailyQuest #${quest.id}`}
+    >
       {/* Main Quest Spec sheet */}
       <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
@@ -171,9 +158,6 @@ export const DailyQuestDetailPage: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {/* Raw entry */}
-      <JsonViewer data={quest} title={`Raw JSON Database Entry: DailyQuest #${quest.id}`} />
-    </div>
+    </DetailPageWrapper>
   );
 };

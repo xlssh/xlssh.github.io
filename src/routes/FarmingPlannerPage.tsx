@@ -6,7 +6,7 @@ import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getStagesAwardingArticle, getQuestsAwardingArticle, getMallItemsSellingArticle, getMinorTypeLabel } from '../data/relationships';
 import { ArrowLeft, Search, Navigation, Swords, Award, ShoppingBag, AlertCircle, Compass } from 'lucide-react';
-import { getQualityColorClass } from './HeroesPage';
+import { getQualityColorClass } from '../utils/quality';
 
 export const FarmingPlannerPage: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);

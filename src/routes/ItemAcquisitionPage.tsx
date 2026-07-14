@@ -8,7 +8,7 @@ import type { Article, Award, ActivityDetailsJson, PromotionalActivity, MallItem
 import { getActivitiesAwardingArticle, getQuestsAwardingArticle, getStagesAwardingArticle, getMajorTypeLabel, getMinorTypeLabel } from '../data/relationships';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { getQualityLabel, getQualityColorClass } from './HeroesPage';
+import { getQualityLabel, getQualityColorClass } from '../utils/quality';
 import { Package, Search, ShoppingCart, Map, Calendar, Flame, ArrowRight, ExternalLink } from 'lucide-react';
 
 interface AcquisitionSource {

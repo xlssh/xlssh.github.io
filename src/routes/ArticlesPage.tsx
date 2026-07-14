@@ -7,7 +7,7 @@ import { ErrorState } from '../components/ErrorState';
 import { DataTable } from '../components/DataTable';
 import { ColumnDef } from '@tanstack/react-table';
 import { Package } from 'lucide-react';
-import { getQualityColorClass, getQualityLabel } from './HeroesPage';
+import { getQualityColorClass, getQualityLabel } from '../utils/quality';
 import { getMajorTypeLabel, getMinorTypeLabel } from '../data/relationships';
 
 export const ArticlesPage: React.FC = () => {

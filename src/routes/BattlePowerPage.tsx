@@ -4,7 +4,7 @@ import { Hero, RecommendHero, RelatedPartner, RelatedPartnerType, BaseStone } fr
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getProfessionLabel, getAttributeName } from '../data/relationships';
-import { getQualityLabel, getQualityColorClass } from './HeroesPage';
+import { getQualityLabel, getQualityColorClass } from '../utils/quality';
 import { Swords, TrendingUp, Shield, Sparkles, BarChart3, Target, Zap, HeartHandshake } from 'lucide-react';
 
 // Core BP formula from game client

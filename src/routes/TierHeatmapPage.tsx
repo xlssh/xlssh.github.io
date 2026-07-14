@@ -5,7 +5,7 @@ import { Hero } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getProfessionLabel } from '../data/relationships';
-import { getQualityColorClass } from './HeroesPage';
+import { getQualityColorClass } from '../utils/quality';
 import { LayoutGrid } from 'lucide-react';
 
 const TIER_ORDER = ['SS', 'S+', 'S', 'A+', 'A', 'A-', 'B+', 'B', 'C', 'D'];

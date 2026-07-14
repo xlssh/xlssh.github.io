@@ -1,50 +1,37 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { loadStages, loadArticles } from '../data/loaders';
 import { Stage, Article } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { JsonViewer } from '../components/JsonViewer';
-import { ArrowLeft, Swords, Award, AlertCircle } from 'lucide-react';
-import { RelatedTools } from '../components/RelatedTools';
+import { Swords, Award, AlertCircle } from 'lucide-react';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { DetailPageWrapper } from '../components/DetailPageWrapper';
 
 export const StageDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const [stage, setStage] = useState<Stage | null>(null);
-  const [articles, setArticles] = useState<Article[]>([]);
+  const { data, loading, error, refetch } = useAsyncData(async () => {
+    const stageId = parseInt(id || '');
 
-  const fetchStageDetails = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const stageId = parseInt(id || '');
+    const [stagesRes, articlesRes] = await Promise.all([
+      loadStages(),
+      loadArticles()
+    ]);
 
-      const [stagesRes, articlesRes] = await Promise.all([
-        loadStages(),
-        loadArticles()
-      ]);
-
-      const match = stagesRes.rows.find(s => s.id === stageId);
-      if (match) {
-        setStage(match);
-        setArticles(articlesRes.rows);
-      } else {
-        setError(`Stage with ID ${id} not found in database.`);
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Failed to load stage specifications.");
-    } finally {
-      setLoading(false);
+    const match = stagesRes.rows.find(s => s.id === stageId);
+    if (!match) {
+      throw new Error(`Stage with ID ${id} not found in database.`);
     }
-  };
 
-  useEffect(() => {
-    fetchStageDetails();
+    return {
+      stage: match,
+      articles: articlesRes.rows
+    };
   }, [id]);
+
+  const stage = data?.stage;
+  const articles = data?.articles || [];
 
   const awardList = useMemo<Article[]>(() => {
     if (!stage || !stage.award_json || !Array.isArray(stage.award_json.award)) return [];
@@ -55,22 +42,22 @@ export const StageDetailPage: React.FC = () => {
   }, [stage, articles]);
 
   if (loading) return <LoadingState message="Downloading stage loot registry and boundary coordinates..." />;
-  if (error) return <ErrorState message={error} onRetry={fetchStageDetails} />;
-  if (!stage) return <ErrorState message="Stage not found." onRetry={fetchStageDetails} />;
+  if (error) return <ErrorState message={error} onRetry={refetch} />;
+  if (!stage) return <ErrorState message="Stage not found." onRetry={refetch} />;
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Back link */}
-      <div>
-        <Link
-          to="/stages"
-          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Stages</span>
-        </Link>
-      </div>
-
+    <DetailPageWrapper
+      backTo="/stages"
+      backLabel="Back to Stages"
+      relatedLinks={[
+        { label: 'All Stages', to: '/stages', description: 'Browse all combat stages' },
+        { label: 'Campaign Roadmap', to: '/tools/campaign-roadmap', description: 'Campaign progression plan' },
+        { label: 'Loot Table Oracle', to: '/tools/loot-oracle', description: 'Drop rate analysis' },
+        { label: 'Farming Planner', to: '/articles/farming', description: 'Plan your farming routes' },
+      ]}
+      rawData={stage}
+      rawTitle={`Raw JSON Database Entry: Stage #${stage.id}`}
+    >
       {/* Main Stage Panel */}
       <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
@@ -160,20 +147,6 @@ export const StageDetailPage: React.FC = () => {
           </div>
         )}
       </div>
-
-      {/* Related Tools */}
-      <RelatedTools
-        title="Related Tools & Pages"
-        links={[
-          { label: 'All Stages', to: '/stages', description: 'Browse all combat stages' },
-          { label: 'Campaign Roadmap', to: '/tools/campaign-roadmap', description: 'Campaign progression plan' },
-          { label: 'Loot Table Oracle', to: '/tools/loot-oracle', description: 'Drop rate analysis' },
-          { label: 'Farming Planner', to: '/articles/farming', description: 'Plan your farming routes' },
-        ]}
-      />
-
-      {/* Raw JSON viewer */}
-      <JsonViewer data={stage} title={`Raw JSON Database Entry: Stage #${stage.id}`} />
-    </div>
+    </DetailPageWrapper>
   );
 };

@@ -5,7 +5,7 @@ import { Hero } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getProfessionLabel } from '../data/relationships';
-import { getQualityColorClass } from './HeroesPage';
+import { getQualityColorClass } from '../utils/quality';
 import { ArrowRight, ChevronDown, Info } from 'lucide-react';
 
 // Profession counter system derived from CONST_CHARACTER.as + weakness field

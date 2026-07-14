@@ -6,7 +6,7 @@ import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
 import { getStagesAwardingArticle, getQuestsAwardingArticle, getMallItemsSellingArticle, getAttributeName } from '../data/relationships';
 import { Swords, ArrowLeft, ShieldAlert, Zap, RefreshCw, Cpu, Award, ShoppingCart, HelpCircle, Target, Sparkles } from 'lucide-react';
-import { getQualityColorClass } from './HeroesPage';
+import { getQualityColorClass } from '../utils/quality';
 
 interface EvolutionStage {
   levelName: string;

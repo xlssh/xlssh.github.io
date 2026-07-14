@@ -3,7 +3,7 @@ import { loadTavernGrades, loadTavernWarriors, loadTavernPayConfigs } from '../d
 import type { TavernGrade, TavernWarrior, TavernPayConfig } from '../types/db';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { getQualityLabel, getQualityColorClass } from './HeroesPage';
+import { getQualityLabel, getQualityColorClass } from '../utils/quality';
 import { Coins, Star, RotateCcw, Trophy } from 'lucide-react';
 
 export const TavernSimulatorPage: React.FC = () => {

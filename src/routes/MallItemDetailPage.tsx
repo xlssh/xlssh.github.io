@@ -1,50 +1,38 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { loadMallItems, loadArticles } from '../data/loaders';
 import { MallItem, Article } from '../types/db';
 import { getMajorTypeLabel } from '../data/relationships';
 import { LoadingState } from '../components/LoadingState';
 import { ErrorState } from '../components/ErrorState';
-import { JsonViewer } from '../components/JsonViewer';
-import { ArrowLeft, ShoppingBag, ShieldAlert, Sparkles, Tag, ArrowRight } from 'lucide-react';
+import { ShoppingBag, ShieldAlert, Sparkles, Tag, ArrowRight } from 'lucide-react';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { DetailPageWrapper } from '../components/DetailPageWrapper';
 
 export const MallItemDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const [mallItem, setMallItem] = useState<MallItem | null>(null);
-  const [articles, setArticles] = useState<Article[]>([]);
+  const { data, loading, error, refetch } = useAsyncData(async () => {
+    const itemId = parseInt(id || '');
 
-  const fetchMallItemDetails = async () => {
-    try {
-      setLoading(true);
-      setError(null);
-      const itemId = parseInt(id || '');
+    const [mallRes, articlesRes] = await Promise.all([
+      loadMallItems(),
+      loadArticles()
+    ]);
 
-      const [mallRes, articlesRes] = await Promise.all([
-        loadMallItems(),
-        loadArticles()
-      ]);
-
-      const match = mallRes.rows.find(m => m.id === itemId);
-      if (match) {
-        setMallItem(match);
-        setArticles(articlesRes.rows);
-      } else {
-        setError(`Mall shop item with ID ${id} not found in database.`);
-      }
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Failed to load shop item details.");
-    } finally {
-      setLoading(false);
+    const match = mallRes.rows.find(m => m.id === itemId);
+    if (!match) {
+      throw new Error(`Mall shop item with ID ${id} not found in database.`);
     }
-  };
 
-  useEffect(() => {
-    fetchMallItemDetails();
+    return {
+      mallItem: match,
+      articles: articlesRes.rows
+    };
   }, [id]);
+
+  const mallItem = data?.mallItem;
+  const articles = data?.articles || [];
 
   const linkedArticle = useMemo(() => {
     if (!mallItem || !mallItem.item_id) return null;
@@ -52,22 +40,21 @@ export const MallItemDetailPage: React.FC = () => {
   }, [mallItem, articles]);
 
   if (loading) return <LoadingState message="Downloading merchandise properties and price indexes..." />;
-  if (error) return <ErrorState message={error} onRetry={fetchMallItemDetails} />;
-  if (!mallItem) return <ErrorState message="Shop item not found." onRetry={fetchMallItemDetails} />;
+  if (error) return <ErrorState message={error} onRetry={refetch} />;
+  if (!mallItem) return <ErrorState message="Shop item not found." onRetry={refetch} />;
 
   return (
-    <div className="space-y-6 animate-fade-in">
-      {/* Back link */}
-      <div>
-        <Link
-          to="/mall-items"
-          className="flex items-center gap-1 text-sm font-semibold text-muted hover:text-text dark:hover:text-zinc-100 transition-colors"
-        >
-          <ArrowLeft size={16} />
-          <span>Back to Mall Items</span>
-        </Link>
-      </div>
-
+    <DetailPageWrapper
+      backTo="/mall-items"
+      backLabel="Back to Mall Items"
+      relatedLinks={[
+        { label: 'Mall Shop', to: '/mall-items', description: 'Browse all items' },
+        { label: 'Mall Analytics', to: '/mall-items/analytics', description: 'Price and sales graphs' },
+        { label: 'Black Market', to: '/tools/black-market', description: 'Black market sales' },
+      ]}
+      rawData={mallItem}
+      rawTitle={`Raw JSON Database Entry: MallItem #${mallItem.id}`}
+    >
       {/* Main Panel */}
       <div className="p-6 border border-border bg-surface rounded-2xl shadow-sm flex flex-col md:flex-row gap-6 items-start">
         <div className="flex-1 space-y-4">
@@ -223,9 +210,6 @@ export const MallItemDetailPage: React.FC = () => {
           </div>
         </div>
       )}
-
-      {/* Raw entry fallback */}
-      <JsonViewer data={mallItem} title={`Raw JSON Database Entry: MallItem #${mallItem.id}`} />
-    </div>
+    </DetailPageWrapper>
   );
 };
